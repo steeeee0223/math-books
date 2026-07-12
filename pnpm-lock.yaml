@@ -12,6 +12,8 @@ importers:
         specifier: ^2.10.4
         version: 2.10.4
 
+  books/alg-geo: {}
+
 packages:
 
   '@turbo/darwin-64@2.10.4':

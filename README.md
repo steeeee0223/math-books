@@ -1,10 +1,18 @@
 # Math Docs
 
+## Environment
+
+1. Install typst
+
+```bash
+brew install typst
+```
+
 ## Initialize
 
 1. Initialize with template
 
-```text
+```bash
 typst init @preview/ilm:1.4.1 <DIR>
 ```
 
