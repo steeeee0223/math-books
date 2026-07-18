@@ -14,11 +14,14 @@ SOURCE_ENV_RE = re.compile(
     r"(?:\{(?P<title>[^}]*)\})?"
 )
 TYPST_BLOCK_RE = re.compile(
-    r"^\s*#(?P<kind>definition|proposition|lemma|theorem|corollary|remark|note|exercise|proof|notation)(?:-box)?\b"
+    r"^\s*#(?P<kind>definition|proposition|lemma|theorem|corollary|remark|example|note|exercise|proof|notation)(?:-box)?\b"
 )
-NUMBER_RE = re.compile(r"\bnumber:\s*(?P<number>[0-9]+(?:\.[0-9A-Za-z]+)?)")
+NUMBER_RE = re.compile(
+    r'\bnumber:\s*(?:"(?P<quoted>[0-9]+(?:\.[0-9A-Za-z]+)?\*{0,2})"|(?P<number>[0-9]+(?:\.[0-9A-Za-z]+)?))'
+)
 TITLE_RE = re.compile(r'title:\s*"(?P<title>[^"]+)"')
 FACT_TITLE_RE = re.compile(r"\bFact\s+(?P<number>[0-9]+(?:\.[0-9A-Za-z]+)?)\b")
+SOURCE_NUMBER_RE = re.compile(r"^(?P<number>[0-9]+(?:\.[0-9A-Za-z]+)?\*{0,2})")
 COMMENTED_SOURCE_RE = re.compile(r"^\s*//\s*\\begin\{(?P<kind>[^}]+)\}(?:\{(?P<title>[^}]*)\})?")
 LATEX_RESIDUE_RE = re.compile(
     r"\\(?:begin|end|item|text|textit|textbf|frac|xrightarrow|xhookrightarrow|widetilde|mathcal|mathfrak|operatorname|Spec|Proj|OO|FF|GG|MOD|qcoh|coh)\b"
@@ -62,6 +65,15 @@ def find_marker(lines: list[str], marker: str, *, start_at: int = 0) -> int:
     raise SystemExit(f"marker not found: {marker}")
 
 
+def resolve_span(lines: list[str], start_marker: str, end_marker: str) -> tuple[int, int]:
+    starts = [index for index, line in enumerate(lines) if start_marker in line]
+    ends = [index for index, line in enumerate(lines) if end_marker in line]
+    pairs = [(start, end) for start in starts for end in ends if start < end]
+    if not pairs:
+        raise SystemExit(f"ordered markers not found: {start_marker} -> {end_marker}")
+    return max(pairs, key=lambda pair: pair[0])
+
+
 def source_outline(lines: list[str], start: int, end: int) -> list[Entry]:
     entries: list[Entry] = []
     for index in range(start, end):
@@ -69,7 +81,8 @@ def source_outline(lines: list[str], start: int, end: int) -> list[Entry]:
         if not match:
             continue
         title = match.group("title") or ""
-        number = title if re.fullmatch(r"[0-9]+(?:\.[0-9A-Za-z]+)?", title) else ""
+        number_match = SOURCE_NUMBER_RE.match(title)
+        number = number_match.group("number") if number_match else ""
         entries.append(Entry(index + 1, match.group("kind"), title, number))
     return entries
 
@@ -86,7 +99,7 @@ def typst_outline(lines: list[str]) -> list[Entry]:
         open_paren = line.find("(")
         open_bracket = line.find("[")
         has_parameter_list = open_paren >= 0 and (open_bracket < 0 or open_paren < open_bracket)
-        if has_parameter_list:
+        if has_parameter_list and ")[" not in line:
             for next_line in lines[index + 1 : min(index + 8, len(lines))]:
                 window_lines.append(next_line)
                 if ")[" in next_line:
@@ -102,7 +115,7 @@ def typst_outline(lines: list[str]) -> list[Entry]:
                 match.group("kind"),
                 title=title,
                 number=(
-                    number_match.group("number")
+                    (number_match.group("quoted") or number_match.group("number"))
                     if number_match
                     else fact_title_match.group("number")
                     if fact_title_match
@@ -195,8 +208,7 @@ def main() -> int:
     source_lines = read_lines(args.source)
     target_lines = read_lines(args.target)
 
-    start = find_marker(source_lines, args.start)
-    end = find_marker(source_lines, args.end, start_at=start + 1)
+    start, end = resolve_span(source_lines, args.start, args.end)
     source_entries = source_outline(source_lines, start, end)
     target_entries = typst_outline(target_lines)
     commented = first_commented_source(target_lines)

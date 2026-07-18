@@ -1,0 +1,12 @@
+{
+  "name": "@math-books/alg-num-theo",
+  "version": "1.0.0",
+  "author": "steeeee0223",
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "build": "typst compile src/main.typ",
+    "dev": "typst watch src/main.typ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
