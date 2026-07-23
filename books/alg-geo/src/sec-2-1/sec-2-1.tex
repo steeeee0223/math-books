@@ -1,0 +1,39 @@
+\chapter{Sheaves}
+\begin{notation}{}
+    From now on, we denote the category of \textit{presheaf} and \textit{sheaf} of the category $\Af$ on $X\in\Top$ by $'\Af_X$ and $\Af_X$, respectively. For example, $'\Ab_X$ means the category of "presheaf of abelian groups on $X$".\\
+    Moreover, if $\FF\in\Af_X$, we denote the presheaf $'\FF\in\,'\Af_X$ by the forgetting the sheaf structure on $\FF$, i.e. only regard $\FF$ as a presheaf.
+\end{notation}
+
+\begin{exe}{1.18. (Adjoint Property)}
+    Given $X\xrightarrow[\Top]{f}Y$, (i.e. a continuous map $f$). Then,
+    \begin{itemize}
+        \item[(i)] For any $\FF\in\Ab_X$, there is a natural map $f^{-1}f_\ast\FF\xrightarrow[\Ab_X]{}\FF$.
+        \item[(ii)] For any $\GG\in\Ab_X$, there is a natural map $\GG\xrightarrow[\Ab_X]{}f_\ast f^{-1}\GG$.
+        \item[(iii)] There is a natural bijection
+        \begin{align*}
+            u:\Hom_{\Ab_X}(f^{-1}\GG,\FF)\isolongto\Hom_{\Ab_Y}(\GG,f_\ast\FF)
+        \end{align*}
+        in $\Set$, for any $\FF\in\Ab_X$ and $\GG\in\Ab_Y$.
+    \end{itemize}
+\end{exe}
+\begin{proof}\mbox{}
+    \begin{itemize}
+        \item[(i)] We consider the presheaf $\FF'\in\,'\Ab_X$ defined by
+        \begin{align*}
+            \FF':\ U\longmapsto\varinjlim_{V\supset f(U)}(f_\ast\FF)(V)=\varinjlim_{f^{-1}V\supset U}\FF(f^{-1}V),
+        \end{align*}
+        i.e. $\FF'=\,'(f^{-1}f_\ast\FF)$. Further, we have a natural map $\phi_U:\varinjlim_{f^{-1}V\supset U}\FF(f^{-1}V)\to\FF(U)$ for any open set $U\subset X$ (since the direct order ends at $U$). This gives a presheaf morphism $\FF'\xrightarrow[\,'\Ab_X]{\phi}\FF$ mapping into the sheaf $\FF\in\Ab_X$. By \textit{Universal Property} of $(\FF')^+,\ \exists$ unique sheaf morphism $f^{-1}f_\ast\FF=(\FF')^+\xrightarrow[\Ab_X]{\phi^+}\FF$.
+        \item[(ii)] For any open set $V\subset Y$, we have $V\supset f(f^{-1}V)$, so there is a natural map:
+        \begin{align*}
+            \psi_V:\GG(V)\xrightarrow[\text{Def. of $\varinjlim$}]{}\varinjlim_{U\supset f(f^{-1}V)}\GG(U)=\,'(f^{-1}\GG)(f^{-1}V)\xrightarrow[\text{sheafify}]{}(f^{-1}\GG)(f^{-1}V)=(f_\ast f^{-1}\GG)(V),
+        \end{align*}
+        which gives a sheaf morphism $\GG\xrightarrow[\Ab_X]{\psi}f_\ast f^{-1}\GG$.
+        \item[(iii)] For any $\FF\in\Ab_X$ and $\GG\in\Ab_Y$, we define the maps:
+        \begin{align*}
+            u:\Hom_{\Ab_X}(f^{-1}\GG,\FF)\longrightarrow\Hom_{\Ab_Y}(\GG,f_\ast\FF), &\quad\alpha\longmapsto(\GG\xrightarrow{\psi}f_\ast f^{-1}\GG\xrightarrow{f_\ast\alpha}f_\ast\theta);\\
+            v:\Hom_{\Ab_Y}(\GG,f_\ast\FF)\longrightarrow\Hom_{\Ab_X}(f^{-1}\GG,\FF), &\quad\beta\longmapsto(f^{-1}\GG\xrightarrow{f^{-1}\beta}f^{-1}f_\ast\FF\xrightarrow{\phi^+}\FF).
+        \end{align*}
+        One can verify that these maps are inverse to each other. It will be a long story......
+    \end{itemize}
+\end{proof}
+

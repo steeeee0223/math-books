@@ -1,0 +1,22 @@
+\chapter{Schemes}
+\begin{exe}{2.A}
+    Let $A$ be any ring, let, $X=\Spec A$, and given $f\in A$. Then:
+    \begin{itemize}
+        \item[(i)] $D(f)=\emptyset\ \Longleftrightarrow\ f$ is nilpotent.
+        \item[(ii)] $D(f)=X\ \Longleftrightarrow\ f$ is a unit.
+        \item[(iii)] $X=\emptyset\ \Longleftrightarrow\ 0=1$ in $A$, i.e. $A$ is the zero ring.
+        \item[(iv)] For any closed subset $Y\subset X$, we may define $I(Y)\coloneqq\bigcap\{\pp:\pp\in Y\}$, which is clearly an ideal of $A$. Show that we have the 1-1 correspondence (with reverse inclusion) as before:
+        \begin{gather*}
+            \{Y\subset X:\text{closed subset}\}\ \longleftrightarrow\ \{\aa\triangleleft A:\text{radical ideal}\},\\
+            Y\longmapsto I(Y),\qquad V(\aa)\longmapsfrom\aa.
+        \end{gather*}
+        \item[(v)] Show that $D(f)$ is quasi-compact, i.e. every open cover of $D(f)$ has a finite subcover. In particular, $X=D(1)$ is quasi-compact.
+        \item[(vi)] A point $x\in X$ is closed (i.e. its closure $\overline{\{x\}}=\{x\}$) $\Longleftrightarrow\ x=\mm$ is a maximal ideal of $A$. Thus,
+        \begin{align*}
+            \maxSpec A=\{\mm\triangleleft A:\text{maximal ideal}\}=\{x\in X:\text{closed point}\}.
+        \end{align*}
+    \end{itemize}
+\end{exe}
+\begin{proof}
+    Some of them are from \text{Proposition 2.2 \& 2.3} of \textit{Algebraic Geometry, Lei Fu}.
+\end{proof}

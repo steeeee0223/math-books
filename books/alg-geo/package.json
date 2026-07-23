@@ -5,8 +5,8 @@
   "type": "module",
   "license": "ISC",
   "scripts": {
-    "build": "typst compile src/main.typ",
-    "dev": "typst watch src/main.typ",
+    "build": "mkdir -p dist && typst compile src/main.typ dist/alg-geo.pdf",
+    "dev": "typst watch src/main.typ dist/alg-geo.pdf",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

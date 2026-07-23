@@ -2,6 +2,8 @@
   "[typst]": {
     "editor.defaultFormatter": "myriad-dreamin.tinymist"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   "editor.formatOnSave": true
 }
