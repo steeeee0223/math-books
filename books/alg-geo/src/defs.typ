@@ -16,6 +16,8 @@
 #let tildeOf(x) = $accent(#x, tilde.op)$
 // tensor product of `x` and `y` over `base`
 #let tensor(x, y, base) = $#x times.o_#base #y$
+// fiber product of `x` and `y` over `base`
+#let fiber(x, y, base: "") = $#x times_#base #y$
 // a morphism named `top` under category `bottom`
 #let morph(top, bottom) = $stretch(->, size: #150%)_#bottom^#top$
 #let inclusion(top, bottom) = $stretch(arrow.r.hook, size: #150%)_#bottom^#top$

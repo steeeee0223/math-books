@@ -29,8 +29,8 @@
 // Hartshorne II.2, Exercise 2.4
 #exercise(title: "Exercise 2.4")[
   Show that taking global sections gives a natural bijection
-  $op("Hom")_(op("Sch")) (X,ops.spec A) simeq
-  op("Hom")_(op("Ring")) (A,Gamma(X,shf.o_X))$.
+  $ops.hom(X, ops.spec A, over: cat.sch) simeq
+  ops.hom(A, Gamma(X, shf.o_X), over: cat.ring)$.
 ]
 
 // Hartshorne II.2, Exercise 2.5
@@ -110,32 +110,32 @@
 
 // Hartshorne II.2, Exercise 2.15
 #exercise(title: "Exercise 2.15")[
-  + For a variety $V\/k$, show $P in t(V)$ is closed iff $kappa(P)=k$.
+  + For a variety $V in cat.var(k)$, show $P in t(V)$ is closed iff $kappa(P)=k$.
   + A $k$-morphism of schemes sends points with residue field $k$ to such
     points.
   + Deduce that the natural map
-    $op("Hom")_(op("Var")(k)) (V,W)->
-    op("Hom")_(op("Sch")(k)) (t(V),t(W))$ is bijective.
+    $ops.hom(V, W, over: cat.var(k))->
+    ops.hom(t(V), t(W), over: cat.sch(k))$ is bijective.
 ]
 
 // Hartshorne II.2, Exercise 2.16
 #exercise(title: "Exercise 2.16")[
-  For $f in Gamma(X,shf.o_X)$, let $X_f$ be the points where $f_x$ is a unit.
+  For $f in Gamma(X, shf.o_X)$, let $X_f$ be the points where $f_x$ is a unit.
 
   + On $ops.spec B subset.eq X$, show $X_f inter ops.spec B=D(f|_(ops.spec B))$; hence
     $X_f$ is open.
   + If $X$ is quasi-compact and $a|_(X_f)=0$, show $f^n a=0$ for some $n$.
   + If $X$ has a finite affine cover with quasi-compact pairwise
-    intersections, show each $b in Gamma(X_f,shf.o)$ satisfies
-    $f^n b=a|_(X_f)$ for some $n$ and $a in Gamma(X,shf.o_X)$.
-  + Under this hypothesis, conclude $Gamma(X_f,shf.o) simeq Gamma(X,shf.o_X)_f$.
+    intersections, show each $b in Gamma(X_f, shf.o)$ satisfies
+    $f^n b=a|_(X_f)$ for some $n$ and $a in Gamma(X, shf.o_X)$.
+  + Under this hypothesis, conclude $Gamma(X_f, shf.o) simeq Gamma(X, shf.o_X)_f$.
 ]
 
 // Hartshorne II.2, Exercise 2.17
 #exercise(title: "Exercise 2.17 (A Criterion for Affineness)")[
   + If $f:X->Y$ is locally an isomorphism over an open cover of $Y$, show
     $f$ is an isomorphism.
-  + Show $X$ is affine iff finitely many $f_i in A=Gamma(X,shf.o_X)$ generate
+  + Show $X$ is affine iff finitely many $f_i in A=Gamma(X, shf.o_X)$ generate
     the unit ideal and every $X_(f_i)$ is affine.
 ]
 
@@ -161,9 +161,12 @@
 ]
 
 #exercise(title: "Exercise 2.A (Supplementary)")[
-  For $X=ops.spec A$ and $f in A$, verify: $D(f)$ is empty exactly when $f$ is
-  nilpotent; $D(f)=X$ exactly when $f$ is a unit; $X$ is empty exactly when
-  $A$ is the zero ring; closed subsets correspond contravariantly to radical
-  ideals; every $D(f)$ is quasi-compact; and the closed points of $X$ are
-  precisely the maximal ideals.
+  For $X=ops.spec A$ and $f in A$, verify:
+
+  + $D(f)$ is empty exactly when $f$ is nilpotent
+  + $D(f)=X$ exactly when $f$ is a unit
+  + $X$ is empty exactly when $A$ is the zero ring
+  + closed subsets correspond contravariantly to radical ideals
+  + every $D(f)$ is quasi-compact
+  + the closed points of $X$ are precisely the maximal ideals.
 ]

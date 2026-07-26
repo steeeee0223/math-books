@@ -95,10 +95,10 @@
 
 // Hartshorne II.4, Definition D3
 #definition(number: none, title: "Projective and Quasi-projective Morphisms")[
-  For a scheme $Y$, set $sch.p^n_Y=sch.p^n_ZZ times_(ops.spec ZZ) Y$. A morphism
-  $X->Y$ is *projective* if it factors as a closed immersion
-  $X->sch.p^n_Y$ followed by projection. It is *quasi-projective* if it factors
-  as an open immersion followed by a projective morphism.
+  For a scheme $Y$, set $sch.p^n_Y=fiber(sch.p^n_ZZ, Y, base: ops.spec ZZ)$.
+
+  - A morphism $X->Y$ is *projective* if it factors as a closed immersion $X->sch.p^n_Y$ followed by projection.
+  - It is *quasi-projective* if it factors as an open immersion followed by a projective morphism.
 ]
 
 // Hartshorne II.4, Theorem 4.9

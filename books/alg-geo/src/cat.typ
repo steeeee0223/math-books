@@ -9,7 +9,7 @@
   if x == "" [
     $frak("Mod")$
   ] else [
-    $frak("Mod")_#x$
+    $frak("Mod")(#x)$
   ]
 }
 #let shf = $frak("Shf")$

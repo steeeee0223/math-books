@@ -21,7 +21,9 @@
   \
   Fix a ring $A$ and a graded $A$-module $M$. We define the _sheaf associated_ to $M$ on $ops.spec A$, denoted by $tildeOf(M)$, as follows. For any open subset $U subset ops.spec A$, define
 
-  $ tildeOf(M)(U):={s:U -> product.co_(idl.p in U)M_(idl.p) | s text("is locally a fraction") m/f med (m in M, f in A)}. $
+  $
+    tildeOf(M)(U):={s:U -> product.co_(idl.p in U)M_(idl.p) | s text("is locally a fraction") m/f med (m in M, f in A)}.
+  $
   This make $tildeOf(M)$ into a sheaf with obvious restriction maps.
 
 ]
@@ -85,25 +87,25 @@
 
   + For each $idl.p in ops.spec A$, we have the isomorphisms
     $
-      (tensor(M, N, A))^tilde_idl.p isoBy("(5.1b)")
-      (tensor(M, N, A))_idl.p isoBy("AM")
-      tensor(M_idl.p, N_idl.p, A_idl.p) isoBy("(5.1b)")
-      tensor(tildeOf(M)_idl.p, tildeOf(N)_idl.p, shf.o_(X,idl.p)) isoBy("Def.")
-      (tensor(M, N, A))^tilde_idl.p
+      (tensor(M, N, A))^tilde_idl.p & isoBy("(5.1b)")
+                                      (tensor(M, N, A))_idl.p isoBy("AM")
+                                      tensor(M_idl.p, N_idl.p, A_idl.p) isoBy("(5.1b)")
+                                      tensor(tildeOf(M)_idl.p, tildeOf(N)_idl.p, shf.o_(X,idl.p)) \
+                                    & isoBy("Def.")
+                                      (tensor(M, N, A))^tilde_idl.p
     $
     as stalks. Thus, _(1.1)_ implies that $(tensor(M, N, A))^tilde simeq tensor(tildeOf(M), tildeOf(N), shf.o_X)$ as sheaves.
 
   + For each $idl.p in ops.spec A$, we have the isomorphisms
 
     $
-      (bigOPlus(M_i, i in I))^tilde_idl.p
-      attach(simeq, b: "(5.1b)")
-      (bigOPlus(M_i, i in I))_idl.p
-      simeq bigOPlus((M_i)_idl.p, i in I)
-      \ attach(simeq, b: "(5.1b)")
-      bigOPlus((tildeOf(M_i))_idl.p, i in I)
-      attach(simeq, b: "Def.")
-      (bigOPlus(tildeOf(M_i), i in I))_idl.p
+      (bigOPlus(M_i, i in I))^tilde_idl.p & isoBy("(5.1b)")
+                                            (bigOPlus(M_i, i in I))_idl.p
+                                            simeq bigOPlus((M_i)_idl.p, i in I) \
+                                          & isoBy("(5.1b)")
+                                            bigOPlus((tildeOf(M_i))_idl.p, i in I)
+                                            isoBy("Def.")
+                                            (bigOPlus(tildeOf(M_i), i in I))_idl.p
     $
 
     as stalks. Thus, $(bigOPlus(M_i, i in I))^tilde simeq bigOPlus(tildeOf(M_i), i in I)$ as sheaves.
@@ -126,7 +128,7 @@
         cell-size: 15mm,
         $
           shf.o_X edge("d", f^sharp, ->) edge("r", tildeOf(alpha), ->) & attach(tildeOf(N), bl: A) edge("d", tildeOf(f)^sharp, -->) \
-                              f_* shf.o_Y edge("r", tildeOf(beta), ->) & f_* tildeOf(N)
+          f_* shf.o_Y edge("r", tildeOf(beta), ->) & f_* tildeOf(N)
         $,
       )
     ]
@@ -140,7 +142,7 @@
         cell-size: 15mm,
         $
           A_(phi^(-1) (idl.q)) edge("r", ->) edge("d", phi_idl.q, ->) & attach(N, bl: A)_(phi^(-1) (idl.q)) edge("d", tilde(phi)_idl.q, ->) \
-                                            B_idl.q edge("r", ->) & N_idl.q
+          B_idl.q edge("r", ->) & N_idl.q
         $,
       )
     ]
@@ -872,9 +874,9 @@
     For the second,
     $
       tensor(shf.o_X (n), shf.o_X (m), shf.o_X) & simeq tensor(tildeOf(S(n)), tildeOf(S(m)), tildeOf(S))
-                                       isoBy("(5.Ab)") (tensor(S(n), S(m), S))^tilde
-                                       = tildeOf(S(n+m)) \
-                                     & = shf.o_X (n+m).
+                                                  isoBy("(5.Ab)") (tensor(S(n), S(m), S))^tilde
+                                                  = tildeOf(S(n+m)) \
+                                                & = shf.o_X (n+m).
     $
 
   + First,
@@ -888,10 +890,10 @@
     Also,
     $
       f_ast (shf.o_Y (n)|_U) & = f_ast (tildeOf(T(n))|_U)
-                          isoBy("(5.Ad)") (attach(T(n), bl: S))^tilde
-                          eqBy("(b)") tildeOf(attach(T, bl: S))(n)
-                          isoBy("(5.Ad)") (f_ast (tildeOf(T)|_U))(n) \
-                        & = (f_ast (shf.o_Y|_U))(n).
+                               isoBy("(5.Ad)") (attach(T(n), bl: S))^tilde
+                               eqBy("(b)") tildeOf(attach(T, bl: S))(n)
+                               isoBy("(5.Ad)") (f_ast (tildeOf(T)|_U))(n) \
+                             & = (f_ast (shf.o_Y|_U))(n).
     $
 ]
 
@@ -968,8 +970,8 @@
   - Summing over all $n in ZZ$,
     $
       Gamma_ast (shf.o_X) & = bigOPlus(Gamma(X, shf.o_X (n)), n in ZZ) \
-                       & = { (t_0, dots.c, t_r) : t_i in S_(x_i) text(" with ")
-                           t_i|_j = t_j|_i text(" for every ") i,j }.
+                          & = { (t_0, dots.c, t_r) : t_i in S_(x_i) text(" with ")
+                              t_i|_j = t_j|_i text(" for every ") i,j }.
     $
   - Since each $x_i$ is not a zero divisor of $S = A[x_0, dots.c, x_r]$, the
     localization maps
@@ -982,8 +984,8 @@
     Then $g in S_(x_i)$ iff $d_k >= 0$ for every $k != i$. Therefore
     $
       g in Gamma_ast (shf.o_X) & arrow.l.r.double.long g in S_(x_i) text(" for all ") 0 lt.eq i lt.eq r \
-                            & arrow.l.r.double.long d_i >= 0 text(" for all ") 0 lt.eq i lt.eq r \
-                            & arrow.l.r.double.long g in S.
+                               & arrow.l.r.double.long d_i >= 0 text(" for all ") 0 lt.eq i lt.eq r \
+                               & arrow.l.r.double.long g in S.
     $
     Hence $Gamma_ast (shf.o_X) simeq S$.
 ]
@@ -1072,9 +1074,9 @@
     $D_+(f) simeq ops.spec S_((f))$ with $f in S_1$, we have
     $
       (Gamma_ast (shf.f))^tilde|_(D_+(f)) & simeq (Gamma_ast (shf.f))_((f)) \
-                                       & simeq bigOPlus(Gamma(X, shf.f (n))_((f)), n in ZZ) \
-                                       & simeq bigOPlus(Gamma(D_+(f), shf.f|_(D_+(f)) (n))^tilde, n in ZZ) \
-                                       & simeq (Gamma_ast (shf.f|_(D_+(f))))^tilde.
+                                          & simeq bigOPlus(Gamma(X, shf.f (n))_((f)), n in ZZ) \
+                                          & simeq bigOPlus(Gamma(D_+(f), shf.f|_(D_+(f)) (n))^tilde, n in ZZ) \
+                                          & simeq (Gamma_ast (shf.f|_(D_+(f))))^tilde.
     $
     By _[5.3]_,
     $

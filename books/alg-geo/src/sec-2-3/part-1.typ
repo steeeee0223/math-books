@@ -60,9 +60,10 @@
 
 // Hartshorne II.3, Definition D7
 #definition(number: none, title: "Open and Closed Subschemes")[
-  An *open subscheme* of $X$ has an open underlying subset and the restricted
-  structure sheaf. A *closed subscheme* is the image data of a closed
-  immersion into $X$.
+  Let $X$ be a scheme.
+
+  - An *open subscheme* of $X$ has an open underlying subset and the restricted structure sheaf.
+  - A *closed subscheme* is the image data of a closed immersion into $X$.
 ]
 
 // Hartshorne II.3, Definition D8
@@ -81,14 +82,14 @@
 
 // Hartshorne II.3, Definition D10
 #definition(number: none, title: "Fibred Product")[
-  For $X,Y$ over $S$, a fibred product is an $S$-scheme $X times_S Y$ with
+  For $X,Y$ over $S$, a fibred product is an $S$-scheme $fiber(X, Y, base: S)$ with
   projections to $X,Y$ such that every $S$-scheme mapping compatibly to both
-  factors admits a unique map to $X times_S Y$.
+  factors admits a unique map to $fiber(X, Y, base: S)$.
 ]
 
 // Hartshorne II.3, Theorem 3.3
 #theorem(number: "3.3", title: "Existence of Fibred Products")[
-  For any schemes $X,Y$ over $S$, the fibred product $X times_S Y$ exists
+  For any schemes $X,Y$ over $S$, the fibred product $fiber(X, Y, base: S)$ exists
   and is unique up to unique isomorphism.
 ]
 
@@ -96,6 +97,6 @@
 // Hartshorne II.3, Definition D11
 #definition(number: none, title: "Fibre of a Morphism")[
   For $f:X->Y$ and $y in Y$, the *fibre over* $y$ is
-  $X_y=X times_Y ops.spec kappa(y)$, where $ops.spec kappa(y)->Y$ is the natural
+  $X_y=fiber(X, Y, base: ops.spec kappa(y))$, where $ops.spec kappa(y)->Y$ is the natural
   morphism associated with $y$.
 ]

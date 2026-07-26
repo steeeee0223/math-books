@@ -27,8 +27,8 @@
   Let $(ops.spec A,shf.o)$ be the spectrum of $A$.
 
   + For $idl.p in ops.spec A$, $shf.o_idl.p simeq A_idl.p$.
-  + For $f in A$, $shf.o (D(f)) simeq A_f$.
-  + In particular, $Gamma(ops.spec A,shf.o) simeq A$.
+  + For $f in A$, $shf.o\(D(f)) simeq A_f$.
+  + In particular, $Gamma(ops.spec A, shf.o) simeq A$.
 ]
 
 
@@ -74,7 +74,7 @@
 // Hartshorne II.2, Definition D4
 #definition(number: none, title: "Proj of a Graded Ring")[
   Let $ops.proj S$ be the homogeneous prime ideals not containing
-  $S_+=bigOPlus(S_d,d>0)$, with closed sets $V(idl.a)$. For
+  $S_+=bigOPlus(S_d, d>0)$, with closed sets $V(idl.a)$. For
   $idl.p in ops.proj S$, let $S_(idl.p)$ be the degree-zero part of the homogeneous
   localization. Define $shf.o (U)$ as functions into the $S_(idl.p)$ that locally
   are quotients of homogeneous elements of equal degree. The resulting
@@ -97,14 +97,14 @@
 #definition(number: none, title: "Schemes over a Base")[
   A *scheme over* $S$ is a scheme $X$ with a morphism $X->S$. An
   $S$-morphism $X->Y$ commutes with the structure maps. Their category is
-  denoted $op("Sch")(S)$; for a ring $A$, $op("Sch")(A)$ means
-  $op("Sch")(ops.spec A)$.
+  denoted $cat.sch(S)$; for a ring $A$, $cat.sch(A)$ means
+  $cat.sch(ops.spec A)$.
 ]
 
 // Hartshorne II.2, Proposition 2.6
 #proposition(number: "2.6", title: "Varieties as Schemes")[
   If $k$ is algebraically closed, there is a natural fully faithful functor
-  $t:op("Var")(k)->op("Sch")(k)$. For a variety $V$, its space is
+  $t:cat.var(k)->cat.sch(k)$. For a variety $V$, its space is
   homeomorphic to the closed points of $ops.sp (t(V))$, and its sheaf of regular
   functions is the restriction of the structure sheaf of $t(V)$.
 ]
