@@ -7,7 +7,7 @@
   f: $scr("F")$,
   g: $scr("G")$,
   h: $scr("H")$,
-  hom: $scr("Hom")$,
+  hom: $scr("H")op("om")$,
   i: $scr("I")$,
   j: $scr("J")$,
   k: $scr("K")$,

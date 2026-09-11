@@ -44,7 +44,7 @@
 // Hartshorne II.1, Definition D3
 #definition(number: none, title: "Stalk")[
   If $shf.f$ is a presheaf on $X$ and $P in X$, its *stalk* at $P$ is
-  $shf.f_P=op("colim")_(P in U) shf.f (U)$. Its elements are germs: $(U,s)$ and $(V,t)$
+  $shf.f_P=ops.colim_(P in U) shf.f (U)$. Its elements are germs: $(U,s)$ and $(V,t)$
   represent the same germ when their restrictions agree on some open
   neighborhood of $P$ contained in $U inter V$.
 ]
@@ -97,7 +97,7 @@
 
   Let $f:X->Y$ be continuous.
   - For a sheaf $shf.f$ on $X$, its direct image $f_*shf.f$ is sheaf $V mapsto shf.f (f^(-1) (V))$.
-  - For a sheaf $shf.g$ on $Y$, its inverse image $f^(-1)shf.g$ is the sheaf associated to $U mapsto lim_(V supset.eq f(U)) shf.g (V)$.
+  - For a sheaf $shf.g$ on $Y$, its inverse image $f^(-1)shf.g$ is the sheaf associated to $U mapsto ops.colim_(V supset.eq f(U)) shf.g (V)$.
 ]
 
 // Hartshorne II.1, Definition D8

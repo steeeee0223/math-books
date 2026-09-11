@@ -27,6 +27,8 @@
 #let trdeg = $op("trdeg")$
 #let ob = $op("Ob")$
 
+#let colim = $op("colim")$
+
 #let hom(from, to, over: "") = $op("Hom")_#over paren.l #from, #to paren.r$
 #let dim(body, over: "") = $op("dim")_#over #body$
 #let rank(body, over: "") = $op("rank")_#over #body$
