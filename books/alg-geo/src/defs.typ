@@ -22,8 +22,9 @@
 #let ideal(x) = $lr(chevron.l #x chevron.r)$
 // wide tilde of `x`
 #let tildeOf(x) = $accent(#x, tilde.op)$
-// tensor product of `x` and `y` over `base`
-#let tensor(x, y, base) = $#x times.o_#base #y$
+// Pure tensor `tensor(x, y)`, or tensor product over a base via
+// `tensor(x, y, over: base)`.
+#let tensor(x, y, over: "") = $#x times.o_#over #y$
 // fiber product of `x` and `y` over `base`
 #let fiber(x, y, base: "") = $#x times_#base #y$
 // a morphism named `top` under category `bottom`

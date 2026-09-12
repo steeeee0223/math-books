@@ -150,7 +150,7 @@
 
   + Show that $X times Y subset.eq sch.a^(n+m)$ is irreducible in its induced
     topology. This affine variety is called the *product* of $X$ and $Y$.
-  + Show that $A(X times Y) simeq tensor(A(X),A(Y),k)$.
+  + Show that $A(X times Y) simeq tensor(A(X), A(Y), over: k)$.
   + Show that $X times Y$ is a categorical product: the projections are
     morphisms, and for morphisms $Z->X$ and $Z->Y$ there is a unique morphism
     $Z->X times Y$ with those composites.
@@ -236,9 +236,9 @@
   #set enum(numbering: "a)", spacing: 0.8em)
 
   + The additive group $shf.g_a$ is $sch.a^1$ with
-    $mu(a,b)=a+b$. Show that it is a group variety.
+    $mu(a, b)=a+b$. Show that it is a group variety.
   + The multiplicative group $shf.g_m$ is $sch.a^1 without {0}$ with
-    $mu(a,b)=a b$. Show that it is a group variety.
+    $mu(a, b)=a b$. Show that it is a group variety.
   + If $G$ is a group variety and $X$ any variety, show that
     $op("Hom")(X,G)$ has a natural group structure.
   + Show that $op("Hom")(X,shf.g_a) simeq shf.o (X)$ as additive groups.

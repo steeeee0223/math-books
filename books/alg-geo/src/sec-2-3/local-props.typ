@@ -29,7 +29,7 @@ $ops.spec B -> ops.spec A$, not to the ring map.
   The following are preservation conditions.
 
   - *(BC), base-change stability.* For every $A$-algebra $A'$, one has
-    $P(A -> B) Rightarrow P(A' -> tensor(B, A', A))$.
+    $P(A -> B) Rightarrow P(A' -> tensor(B, A', over: A))$.
   - *(T), target localization.* For every $f in A$, one has
     $P(A -> B) Rightarrow P(A_f -> B_f)$.
   - *(S), source localization.* For every $g in B$, one has
@@ -92,7 +92,7 @@ $ops.spec B -> ops.spec A$, not to the ring map.
 #proposition(number: none, title: "Base Change Contains Target Localization")[
 
   Every property satisfying BC satisfies T, since
-  $B_f simeq tensor(B, A_f, A)$.
+  $B_f simeq tensor(B, A_f, over: A)$.
 
   Source localization is different: $B_g$ is obtained by localizing the
   codomain ring $B$, and need not be a base change from $A$.
@@ -125,7 +125,7 @@ $A -> B$.
 #proposition(number: none, title: "Affine Communication Lemma (Fixed Target)")[
   Let $f:X -> ops.spec A$ be a morphism.  Suppose $P$ satisfies S and GS.  If
   $X$ has an affine cover $U_i=ops.spec B_i$ such that every
-  $A -> B_i$ has $P$, then $A -> Gamma(U,shf.o_X)$ has $P$ for every affine
+  $A -> B_i$ has $P$, then $A -> Gamma(U, shf.o_X)$ has $P$ for every affine
   open $U subset.eq X$.
 ]
 
@@ -143,7 +143,7 @@ $A -> B$.
   $x in D_(U_i)(h) subset.eq D_U(a)$.  The restriction of $h$ to $D_U(a)$
   has the form $c/a^n$, so $D_(U_i)(h)=D_U(a c)$.
 
-  By S applied in $U_i$, the map $A -> Gamma(W,shf.o_X)$ has $P$.
+  By S applied in $U_i$, the map $A -> Gamma(W, shf.o_X)$ has $P$.
   Isomorphism invariance identifies this with $A -> B_g$.  These $W$ cover
   $U$; quasi-compactness selects finitely many, and their defining elements
   generate the unit ideal of $B$.  GS gives $P(A -> B)$.
@@ -256,10 +256,10 @@ $A -> B$.
 
   For a distinguished target cover $D(a_i)$, suppose each whole inverse
   image $X_i$ is affine and has $P$.  The pullbacks of the $a_i$ are global
-  sections of $X$, generate the unit ideal in $Gamma(X,shf.o_X)$, and
+  sections of $X$, generate the unit ideal in $Gamma(X, shf.o_X)$, and
   have affine nonvanishing loci $X_i$.  The affineness criterion
   `isAffine_of_isAffineOpen_basicOpen` gives that $X$ is affine.
-  Its proof compares $X$ with $ops.spec Gamma(X,shf.o_X)$ on these
+  Its proof compares $X$ with $ops.spec Gamma(X, shf.o_X)$ on these
   distinguished opens and glues the isomorphisms.  Once $X$ is affine,
   GT applies to its global ring map.  Affine-open induction on the target
   then proves target locality for arbitrary open covers.
@@ -734,10 +734,10 @@ best tested using RS, GSS, RT, and GTT directly.
   the diagonal construction applied to closed immersions.  Diagonals
   commute with base change; use BC for closed immersions.  For a target
   cover $Y=union_i V_i$, the opens
-  $f^(-1)(V_i) times_(V_i) f^(-1)(V_i)$ cover $fiber(X,X,base: Y)$,
+  $f^(-1)(V_i) times_(V_i) f^(-1)(V_i)$ cover $fiber(X, X, base: Y)$,
   so target locality for closed immersions gives RT and GTT.  Restricting
   the source to $U$ pulls the diagonal back to the open
-  $fiber(U,U,base: Y)$, proving RS.  A source cover does not generally
+  $fiber(U, U, base: Y)$, proving RS.  A source cover does not generally
   cover the fiber product by these self-products: the mixed products
   still have to be checked.  This accounts for the doubled-origin
   counterexample to GSS.

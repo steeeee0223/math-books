@@ -49,10 +49,10 @@
   #set enum(numbering: "a)", spacing: 1em)
 
   + The map $M mapsto tildeOf(M)$ gives an exact, fully faithful functor $cat.mod(A) ->cat.mod(shf.o_X)$.
-  + If $M,N in cat.mod(A)$, then $(tensor(M, N, A))^tilde simeq tensor(tildeOf(M), tildeOf(N), shf.o_X)$.
+  + If $M,N in cat.mod(A)$, then $(tensor(M, N, over: A))^tilde simeq tensor(tildeOf(M), tildeOf(N), over: shf.o_X)$.
   + If $M_i in cat.mod(A) med (i in I)$, then $(bigOPlus(M_i, i in I))^tilde simeq bigOPlus(tildeOf(M_i), i in I)$.
   + For any $N in cat.mod(B)$, $f_ast (tildeOf(N)) simeq attach(tildeOf(N), bl: A)$ as $shf.o_X$-modules, where $N= attach(N, bl: A) in cat.mod(A)$.
-  + For any $M in cat.mod(A)$, $f^ast (tildeOf(M)) simeq (tensor(M, B, A))^tilde$ as $shf.o_Y$-modules.
+  + For any $M in cat.mod(A)$, $f^ast (tildeOf(M)) simeq (tensor(M, B, over: A))^tilde$ as $shf.o_Y$-modules.
 ]
 
 #proof[
@@ -87,14 +87,14 @@
 
   + For each $idl.p in ops.spec A$, we have the isomorphisms
     $
-      (tensor(M, N, A))^tilde_idl.p & isoBy("(5.1b)")
-                                      (tensor(M, N, A))_idl.p isoBy("AM")
-                                      tensor(M_idl.p, N_idl.p, A_idl.p) isoBy("(5.1b)")
-                                      tensor(tildeOf(M)_idl.p, tildeOf(N)_idl.p, shf.o_(X,idl.p)) \
-                                    & isoBy("Def.")
-                                      (tensor(M, N, A))^tilde_idl.p
+      (tensor(M, N, over: A))^tilde_idl.p & isoBy("(5.1b)")
+                                            (tensor(M, N, over: A))_idl.p isoBy("AM")
+                                            tensor(M_idl.p, N_idl.p, over: A_idl.p) isoBy("(5.1b)")
+                                            tensor(tildeOf(M)_idl.p, tildeOf(N)_idl.p, over: shf.o_(X,idl.p)) \
+                                          & isoBy("Def.")
+                                            (tensor(M, N, over: A))^tilde_idl.p
     $
-    as stalks. Thus, _(1.1)_ implies that $(tensor(M, N, A))^tilde simeq tensor(tildeOf(M), tildeOf(N), shf.o_X)$ as sheaves.
+    as stalks. Thus, _(1.1)_ implies that $(tensor(M, N, over: A))^tilde simeq tensor(tildeOf(M), tildeOf(N), over: shf.o_X)$ as sheaves.
 
   + For each $idl.p in ops.spec A$, we have the isomorphisms
 
@@ -163,22 +163,22 @@
     is a natural isomorphism of stalks. Hence, $tilde(f)^sharp$ gives an isomorphism $f_* (tildeOf(N)) simeq attach(tildeOf(N), bl: A)$ of $shf.o_X$-modules.
 
   + Note that $f^(-1) shf.o_X = coprod(shf.o_(X, f(y)), y in Y) in cat.shf (Y)$; and recall that
-    $f^* shf.f = tensor(f^(-1) shf.f, shf.o_Y, f^(-1) shf.o_X)$ if $shf.f in cat.mod(shf.o_X)$.
+    $f^* shf.f = tensor(f^(-1) shf.f, shf.o_Y, over: f^(-1) shf.o_X)$ if $shf.f in cat.mod(shf.o_X)$.
 
     Now, for each $idl.q in ops.spec B = Y$, we see that
 
     $
       (f^* tildeOf(M))_idl.q eqBy("Def.")
-      tensor(M_(phi^(-1) (idl.q)), B_idl.q, A_(phi^(-1) (idl.q)))
-      simeq tensor((tensor(M_(phi^(-1) (idl.q)), A_(phi^(-1) (idl.q)), A)), B_idl.q, A_(phi^(-1) (idl.q))) \
-      simeq tensor((tensor(M, B, A)), B_idl.q, B)
-      simeq tensor(M, B_idl.q, A) \
-      simeq (tensor(M, B, A))_idl.q
+      tensor(M_(phi^(-1) (idl.q)), B_idl.q, over: A_(phi^(-1) (idl.q)))
+      simeq tensor((tensor(M_(phi^(-1) (idl.q)), A_(phi^(-1) (idl.q)), over: A)), B_idl.q, over: A_(phi^(-1) (idl.q))) \
+      simeq tensor((tensor(M, B, over: A)), B_idl.q, over: B)
+      simeq tensor(M, B_idl.q, over: A) \
+      simeq (tensor(M, B, over: A))_idl.q
       isoBy("(5.1b)")
-      (tensor(M, B, A))^tilde_idl.q
+      (tensor(M, B, over: A))^tilde_idl.q
     $
 
-    Therefore, $f^* tildeOf(M) simeq (tensor(M, B, A))^tilde$ as $shf.o_Y$-modules.
+    Therefore, $f^* tildeOf(M) simeq (tensor(M, B, over: A))^tilde$ as $shf.o_Y$-modules.
 ]
 
 // Hartshorne II.5, Definition D3
@@ -222,7 +222,7 @@
       $
         shf.f|_(D(g)) = i^* (shf.f|_V)
         isoBy("(5.2e)") i^* tildeOf(M)
-        isoBy("Def.") tildeOf(M tensor(B, A_g, B)).
+        isoBy("Def.") tildeOf(M tensor(B, A_g, over: B)).
       $
 
     - Since $shf.f$ is quasi-coherent on $X$, $X$ can be covered by $D(g_i)$’s
@@ -578,17 +578,17 @@
     $N in cat.mod(B)$. Hence
     $
       f^ast shf.g = f^ast tildeOf(N)
-      isoBy("(5.2e)") (tensor(N, A, B))^tilde in cat.qcoh (X),
+      isoBy("(5.2e)") (tensor(N, A, over: B))^tilde in cat.qcoh (X),
     $
-    since $tensor(N, A, B) in cat.mod(A)$.
+    since $tensor(N, A, over: B) in cat.mod(A)$.
 
   + If $X,Y$ are Noetherian and $shf.g in cat.coh (Y)$, then in addition to (a) we
     have $N in fg(cat.mod(B))$. There is an $n > 0$ and a surjection
     $B^n -> N$. Since $- tensor_B A$ is right
     exact,
-    $A^n simeq tensor(B^n, A, B) ->
-    tensor(N, A, B)$, so $tensor(N, A, B) in fg(cat.mod(A))$. Thus
-    $f^ast shf.g simeq (tensor(N, A, B))^tilde in cat.coh (X)$ by _(5.5)_.
+    $A^n simeq tensor(B^n, A, over: B) ->
+    tensor(N, A, over: B)$, so $tensor(N, A, over: B) in fg(cat.mod(A))$. Thus
+    $f^ast shf.g simeq (tensor(N, A, over: B))^tilde in cat.coh (X)$ by _(5.5)_.
 
   + This question is local on $Y$ only.
 
@@ -735,16 +735,16 @@
   #set enum(numbering: "a)", spacing: 1em)
 
   + For any $M,N in cat.gr cat.mod(S)$ and $f in S_1$,
-    $(tensor(M, N, S))_((f)) simeq tensor(M_((f)), N_((f)), S_((f)))$.
+    $(tensor(M, N, over: S))_((f)) simeq tensor(M_((f)), N_((f)), over: S_((f)))$.
   + Continuing (a),
-    $(tensor(M, N, S))^tilde simeq tensor(tildeOf(M), tildeOf(N), shf.o_X)$.
+    $(tensor(M, N, over: S))^tilde simeq tensor(tildeOf(M), tildeOf(N), over: shf.o_X)$.
 
   Let $T$ be another graded ring, generated by $T_1$ as a $T_0$-algebra. Let
   $phi: S -> T$ be a graded homomorphism, let $U subset Y = ops.proj T$, and let
   $f: U -> X$ be determined by $phi$ as in _[2.14]_.
 
   + For any $M in cat.gr cat.mod(S)$,
-    $f^ast tildeOf(M) simeq (tensor(M, T, S))^tilde|_U$ as $shf.o_Y$-modules.
+    $f^ast tildeOf(M) simeq (tensor(M, T, over: S))^tilde|_U$ as $shf.o_Y$-modules.
   + For any $N in cat.gr cat.mod(T)$,
     $f_ast (tildeOf(N)|_U) simeq (attach(N, bl: S))^tilde$ as $shf.o_X$-modules.
 ]
@@ -752,32 +752,32 @@
 #proof[
   #set enum(numbering: "a)", spacing: 1em)
 
-  + Note that $tensor(M, N, S)$ is a graded $S$-module by
-    $(tensor(M, N, S))_d = bigOPlus(tensor(M_(d_1), N_(d_2), S), d_1+d_2=d)$.
+  + Note that $tensor(M, N, over: S)$ is a graded $S$-module by
+    $(tensor(M, N, over: S))_d = bigOPlus(tensor(M_(d_1), N_(d_2), over: S), d_1+d_2=d)$.
     Fix $f in S_1$. The canonical inclusions
     $S_((f)) -> S_f$, $M_((f)) -> M_f$, and $N_((f)) -> N_f$ induce a
     homomorphism
-    $tensor(M_((f)), N_((f)), S_((f))) -> tensor(M_f, N_f, S_f)$. The
+    $tensor(M_((f)), N_((f)), over: S_((f))) -> tensor(M_f, N_f, over: S_f)$. The
     canonical isomorphism
-    $tensor(M_f, N_f, S_f) -> (tensor(M, N, S))_f$ preserves degrees, yielding
+    $tensor(M_f, N_f, over: S_f) -> (tensor(M, N, over: S))_f$ preserves degrees, yielding
     a map
     $
-      phi_f: tensor(M_((f)), N_((f)), S_((f))) ->
-      (tensor(M, N, S))_((f)), quad
+      phi_f: tensor(M_((f)), N_((f)), over: S_((f))) ->
+      (tensor(M, N, over: S))_((f)), quad
       m/f^(d_1) times.o n/f^(d_2) mapsto.long (m times.o n)/f^(d_1+d_2)
     $
     for $m in M_(d_1)$ and $n in N_(d_2)$. It remains to show that $phi_f$ is
     an isomorphism.
 
-    - *Surjectivity.* If $(m times.o n)/f^d in (tensor(M, N, S))_((f))$,
+    - *Surjectivity.* If $(m times.o n)/f^d in (tensor(M, N, over: S))_((f))$,
       then $deg(m times.o n) = d$, say
-      $m times.o n in tensor(M_(d_1), N_(d_2), S)$ with $d_1 + d_2 = d$.
+      $m times.o n in tensor(M_(d_1), N_(d_2), over: S)$ with $d_1 + d_2 = d$.
       Then $m/f^(d_1) times.o n/f^(d_2)$ maps to $(m times.o n)/f^d$.
     - *Injectivity.* Suppose $m/f^(d_1) times.o n/f^(d_2)$ maps to $0$.
-      Then $f^r (m times.o n) = 0$ in $tensor(M, N, S)$ for some $r > 0$.
+      Then $f^r (m times.o n) = 0$ in $tensor(M, N, over: S)$ for some $r > 0$.
       Viewing $S_((f))$ as an $S$-algebra via
       $s in S_d mapsto s/f^d$, we get a canonical homomorphism
-      $psi_f: tensor(M, N, S) -> tensor(M_((f)), N_((f)), S_((f)))$. Hence
+      $psi_f: tensor(M, N, over: S) -> tensor(M_((f)), N_((f)), over: S_((f)))$. Hence
       $
         m/f^(d_1) times.o n/f^(d_2)
         = (f^r m)/f^(r+d_1) times.o n/f^(d_2)
@@ -790,19 +790,19 @@
     the desired isomorphism on every $D_+(f)$ with $f in S_+$. Since $S_1$
     generates $S_+$ over $S_0$, it is enough to check $f in S_1$:
     $
-      (tensor(M, N, S))^tilde|_(D_+(f))
-      isoBy("(5.11b)") ((tensor(M, N, S))_((f)))^tilde
-      isoBy("(a)") (tensor(M_((f)), N_((f)), S_((f))))^tilde
-      isoBy("(5.2b)") tensor(tildeOf(M_((f))), tildeOf(N_((f))), tildeOf(S_((f))))
-      isoBy("(5.11b)") tensor(tildeOf(M)|_(D_+(f)), tildeOf(N)|_(D_+(f)), shf.o_X|_(D_+(f))).
+      (tensor(M, N, over: S))^tilde|_(D_+(f))
+      isoBy("(5.11b)") ((tensor(M, N, over: S))_((f)))^tilde
+      isoBy("(a)") (tensor(M_((f)), N_((f)), over: S_((f))))^tilde
+      isoBy("(5.2b)") tensor(tildeOf(M_((f))), tildeOf(N_((f))), over: tildeOf(S_((f))))
+      isoBy("(5.11b)") tensor(tildeOf(M)|_(D_+(f)), tildeOf(N)|_(D_+(f)), over: shf.o_X|_(D_+(f))).
     $
 
   + The sets ${D_+(g): g in phi(S_+)}$ form an open affine cover of $U$, and
     $D_+(g) simeq ops.spec T_((g))$ is affine. For $g := phi(h)$,
     $
-      (tensor(M, T, S))^tilde|_(D_+(g))
-      isoBy("(5.11b)") ((tensor(M, T, S))_((g)))^tilde
-      simeq (tensor(M_((h)), T_((g)), S_((h))))^tilde
+      (tensor(M, T, over: S))^tilde|_(D_+(g))
+      isoBy("(5.11b)") ((tensor(M, T, over: S))_((g)))^tilde
+      simeq (tensor(M_((h)), T_((g)), over: S_((h))))^tilde
       isoBy("(5.2e)") f^ast (tildeOf(M_((h))))
       isoBy("(5.11b)") f^ast (tildeOf(M)|_(D_+(h))).
     $
@@ -826,7 +826,7 @@
     $S(n) := bigOPlus(S_d, d >= n)$, is called the *twisting sheaf of Serre*
     when $n = 1$.
   - For any $shf.f in cat.mod(shf.o_X)$, denote
-    $shf.f (n) := tensor(shf.f, shf.o_X (n), shf.o_X)$.
+    $shf.f (n) := tensor(shf.f, shf.o_X (n), over: shf.o_X)$.
 ]
 
 // Hartshorne II.5, Proposition 5.12
@@ -839,7 +839,7 @@
   + The sheaf $shf.o_X (n)$ is an invertible sheaf on $X$ for every
     $n in ZZ$.
   + For any $M in cat.gr cat.mod(S)$, $tildeOf(M)(n) simeq tildeOf(M(n))$. Further,
-    $tensor(shf.o_X (n), shf.o_X (m), shf.o_X) simeq shf.o_X (n+m)$.
+    $tensor(shf.o_X (n), shf.o_X (m), over: shf.o_X) simeq shf.o_X (n+m)$.
   + Let $T$, $phi$, and $f$ be as in _(5.A)_. Then
     $f^ast (shf.o_X (n)) simeq shf.o_Y (n)|_U$ and
     $f_ast (shf.o_Y (n)|_U) simeq (f_ast (shf.o_Y|_U))(n)$.
@@ -866,24 +866,24 @@
   + For the first isomorphism,
     $
       tildeOf(M)(n)
-      eqBy("Def.") tensor(tildeOf(M), shf.o_X (n), shf.o_X)
-      = tensor(tildeOf(M), tildeOf(S(n)), tildeOf(S))
-      isoBy("(5.Ab)") (tensor(M, S(n), S))^tilde
+      eqBy("Def.") tensor(tildeOf(M), shf.o_X (n), over: shf.o_X)
+      = tensor(tildeOf(M), tildeOf(S(n)), over: tildeOf(S))
+      isoBy("(5.Ab)") (tensor(M, S(n), over: S))^tilde
       simeq tildeOf(M(n)).
     $
     For the second,
     $
-      tensor(shf.o_X (n), shf.o_X (m), shf.o_X) & simeq tensor(tildeOf(S(n)), tildeOf(S(m)), tildeOf(S))
-                                                  isoBy("(5.Ab)") (tensor(S(n), S(m), S))^tilde
-                                                  = tildeOf(S(n+m)) \
-                                                & = shf.o_X (n+m).
+      tensor(shf.o_X (n), shf.o_X (m), over: shf.o_X) & simeq tensor(tildeOf(S(n)), tildeOf(S(m)), over: tildeOf(S))
+                                                        isoBy("(5.Ab)") (tensor(S(n), S(m), over: S))^tilde
+                                                        = tildeOf(S(n+m)) \
+                                                      & = shf.o_X (n+m).
     $
 
   + First,
     $
       f^ast (shf.o_X (n))
       = f^ast (tildeOf(S(n)))
-      isoBy("(5.Ac)") (tensor(S(n), T, S))^tilde|_U
+      isoBy("(5.Ac)") (tensor(S(n), T, over: S))^tilde|_U
       = tildeOf(T(n))|_U
       eqBy("(b)") shf.o_Y (n)|_U.
     $
@@ -920,8 +920,8 @@
     $shf.o_X (n)|_(D_+(f)) simeq shf.o_X|_(D_+(f))$ is free by _(5.12a)_, so
     $shf.o_X (n)(D_+(f))$ is a flat $shf.o_X (D_+(f))$-module. Hence
     $
-      shf.f'(n)(D_+(f)) simeq tensor(shf.f', shf.o_X (D_+(f)), shf.o_X)
-      -> tensor(shf.f, shf.o_X (D_+(f)), shf.o_X) simeq shf.f (n)(D_+(f))
+      shf.f'(n)(D_+(f)) simeq tensor(shf.f', shf.o_X (D_+(f)), over: shf.o_X)
+      -> tensor(shf.f, shf.o_X (D_+(f)), over: shf.o_X) simeq shf.f (n)(D_+(f))
     $
     is injective as a presheaf map, hence as a sheaf map by _[1.4a]_. Since
     the $f in S_1$ generate $S$ over $S_0$, this gives the injection
@@ -942,7 +942,7 @@
   section $s in Gamma(X, shf.o_X (d))$. For $t in Gamma(X, shf.f (n))$, define
   $s dot t in Gamma(X, shf.f (n+d))$ by taking the tensor product
   $s times.o t$ via the natural isomorphism
-  $tensor(shf.f (n), shf.o_X (d), shf.o_X) simeq shf.f (n+d)$.
+  $tensor(shf.f (n), shf.o_X (d), over: shf.o_X) simeq shf.f (n+d)$.
 ]
 
 // Hartshorne II.5, Proposition 5.13
@@ -1000,11 +1000,11 @@
 
   + Suppose $X$ is quasi-compact and $s in Gamma(X, shf.f)$ has
     $s|_(X_f) = 0$. Then $f^n s = 0$ in
-    $Gamma(X, tensor(shf.f, shf.l^(times.o n), shf.o_X))$ for some $n > 0$.
+    $Gamma(X, tensor(shf.f, shf.l^(times.o n), over: shf.o_X))$ for some $n > 0$.
   + Suppose further that $X$ has a finite open affine cover $U_i$ such that
     $shf.l|_(U_i)$ is free for each $i$ and $U_i inter U_j$ is quasi-compact for
     every $i,j$. Given $t in Gamma(X_f, shf.f)$, then $f^n t$ extends to a global
-    section $s in Gamma(X, tensor(shf.f, shf.l^(times.o n), shf.o_X))$ for some
+    section $s in Gamma(X, tensor(shf.f, shf.l^(times.o n), over: shf.o_X))$ for some
     $n > 0$.
 ]
 
@@ -1047,7 +1047,7 @@
       $m >= max{ m_(i j) : 1 lt.eq i,j lt.eq r }$. Then
       $f^m tilde(t)_i|_j = f^m tilde(t)_j|_i$.
     - Glue the sections ${f^m tilde(t)_i}_(i=1)^r$ on ${U_i}_(i=1)^r$ to
-      obtain $s in Gamma(X, tensor(shf.f, shf.l^(times.o (n+m)), shf.o_X))$ with
+      obtain $s in Gamma(X, tensor(shf.f, shf.l^(times.o (n+m)), over: shf.o_X))$ with
       $s|_(X_f) = f^(n+m) t$.
 ]
 
@@ -1089,7 +1089,7 @@
     $
     Define
     $m/f^d mapsto.long m times.o f^(-d) in
-    Gamma(D_+(f), tensor(shf.f (d), shf.o_X (-d), shf.o_X)) = Gamma(D_+(f), shf.f)$
+    Gamma(D_+(f), tensor(shf.f (d), shf.o_X (-d), over: shf.o_X)) = Gamma(D_+(f), shf.f)$
     for $d >= 0$ and $m in Gamma(X, shf.f (d))$.
 
   + We claim that $alpha_f$ is an $S_((f))$-module isomorphism.
@@ -1107,7 +1107,7 @@
       such that $f^n m = 0$ in $Gamma(X, shf.f (n))$. Hence
       $m/f^d = f^n m/f^(n+d) = 0$ in $(Gamma_ast (shf.f))_((f))$.
     - *Surjectivity.* Given $t in Gamma(D_+(f), shf.f)$, by _(5.14b)_ there are
-      $n > 0$ and $s in Gamma(X, tensor(shf.f, shf.l^(times.o n), shf.o_X)) =
+      $n > 0$ and $s in Gamma(X, tensor(shf.f, shf.l^(times.o n), over: shf.o_X)) =
       Gamma(X, shf.f (n))$ such that $s|_(D_+(f)) = f^n t$. Thus $s/f^n$ maps to
       $t$.
 ]
@@ -1253,8 +1253,8 @@
   - Set $M_i' := M_i (n)$. Then
     $
       shf.f (n)|_(D_+(x_i))
-      = tensor(shf.f, shf.o_X (n), shf.o_X)|_(D_+(x_i))
-      simeq tensor(tildeOf(M)_i, tildeOf(B_i)(n), tildeOf(B_i))
+      = tensor(shf.f, shf.o_X (n), over: shf.o_X)|_(D_+(x_i))
+      simeq tensor(tildeOf(M)_i, tildeOf(B_i)(n), over: tildeOf(B_i))
       simeq tildeOf(M_i (n)) = tildeOf(M_i').
     $
     The map

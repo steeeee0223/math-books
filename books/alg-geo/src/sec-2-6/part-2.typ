@@ -169,7 +169,7 @@
       #diagram(
         cell-size: 18mm,
         $
-          ops.spec (tensor(A_idl.p, A slash idl.q_i, A)) edge("r", ->) edge("d", text("(v)"), ->)
+          ops.spec (tensor(A_idl.p, A slash idl.q_i, over: A)) edge("r", ->) edge("d", text("(v)"), ->)
           & ops.spec (A slash idl.q_i) edge("r", text("(iii)"), ->) edge("d", ->)
           & U inter Y_i edge("r", text("(3.3)"), ->)
           & U times_X Y_i edge("r", ->) edge("d", text("(ii)"), ->)
@@ -203,17 +203,17 @@
 
     + Again, as (ii) is a closed immersion, so is the base extension (v) via
       (iv). Further,
-      $tensor(A_idl.p, A slash idl.q_i, A) simeq A_idl.p \/ idl.q_i A_idl.p$ is an integral
+      $tensor(A_idl.p, A slash idl.q_i, over: A) simeq A_idl.p \/ idl.q_i A_idl.p$ is an integral
       domain, whence
-      $Y_i inter T_x = ops.spec (tensor(A_idl.p, A slash idl.q_i, A))$ is a closed
+      $Y_i inter T_x = ops.spec (tensor(A_idl.p, A slash idl.q_i, over: A))$ is a closed
       integral subscheme of $T_x$.
 
   - Moreover,
     $
       ops.codim(Y_i inter T_x, T_x) & = ops.codim(idl.q_i A_idl.p, A_idl.p)
-                                  = ops.codim(A \/ idl.q_i, A)
-                                  = ops.codim(U inter Y_i, U) \
-                                & = ops.codim(Y_i, X) = 1.
+                                      = ops.codim(A \/ idl.q_i, A)
+                                      = ops.codim(U inter Y_i, U) \
+                                    & = ops.codim(Y_i, X) = 1.
     $
     Thus $U inter Y_i$ is a prime divisor of $U$ with generic point $idl.q_i$.
     Further, $x in U inter Y_i$, so $Y_i inter T_x$ is also a prime divisor

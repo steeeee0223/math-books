@@ -55,7 +55,7 @@
   + $hat(A)$ is local with maximal ideal $idl.m hat(A)$, and $A->hat(A)$ is
     injective.
   + For a finitely generated $A$-module $M$, its completion is
-    $hat(M) simeq tensor(M, hat(A), A)$.
+    $hat(M) simeq tensor(M, hat(A), over: A)$.
   + $dim hat(A)=dim A$.
   + $A$ is regular if and only if $hat(A)$ is regular.
 ]
