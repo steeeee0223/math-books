@@ -1,0 +1,4 @@
+interface:
+  display_name: "Algebraic Geometry Proofs"
+  short_description: "Write and verify Hartshorne-style textbook proofs"
+  default_prompt: "Use $ag-proof to improve the specified algebraic-geometry proof and verify its formal companion."
