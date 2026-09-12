@@ -6,16 +6,11 @@
 === A Locality Calculus for Morphisms
 
 Many definitions in algebraic geometry begin with a property of a ring map
-$A -> B$ and then pass to affine charts.  We follow mathlib's proofs of this
-passage: affine-open induction, target-local affine properties, and properties
-of all affine pairs.  The letters below name the operations used in those
-proofs; they are not additional definitions from Hartshorne.
-
-The source references in this section refer to mathlib commit
-`e281a66114fe17935e6ea7917a01b714d0c1e493`.  The companion file
-`local-props-mathlib.md` records the declarations and the distinction between
-direct source proofs and deductions from them.  These are mathematical
-expositions of the proofs, not a Lean verification of this text.
+$A -> B$ and then pass to affine charts.  The passage rests on three standard
+methods: induction over affine open covers, criteria involving the whole
+inverse image of an affine open, and criteria involving all affine pairs.
+The letters below abbreviate the restriction and gluing operations used in
+these arguments.
 
 ==== Ring-local conditions
 
@@ -66,30 +61,9 @@ $ops.spec B -> ops.spec A$, not to the ring map.
   under composition.  If GS and PL hold, then GT follows.  Indeed, from
   $P(A_(a_i) -> B_(a_i))$, PL gives $P(A -> B_(a_i))$; the images of the
   $a_i$ generate the unit ideal of $B$, so GS gives $P(A -> B)$.
-
-  This is mathlib's `RingHom.OfLocalizationSpanTarget.ofLocalizationSpan`.
-  Its `Source` in the composition hypothesis means the ring-theoretic
-  source $A$.  PL is not a field of `RingHom.PropertyIsLocal`; mathlib uses
-  it to construct the GT field for finite type, finite presentation, and
-  flatness.
 ]
 
-#remark(title: "The mathlib dictionary")[
-  With isomorphisms of localizations understood, the correspondence is:
-
-  - T: `RingHom.LocalizationAwayPreserves`.
-  - S: `RingHom.StableUnderCompositionWithLocalizationAwayTarget`.
-  - GS: `RingHom.OfLocalizationSpanTarget`.
-  - GT: `RingHom.OfLocalizationSpan`.
-  - PL: `RingHom.StableUnderCompositionWithLocalizationAwaySource`.
-  - BC: `RingHom.IsStableUnderBaseChange`.
-
-  `RingHom.PropertyIsLocal` packages T, GS, GT, and S.  It does not require
-  BC, PL, or stability under arbitrary composition.  Isomorphism invariance
-  is built into the use of arbitrary models of localization in its T field.
-]
-
-#proposition(number: none, title: "Base Change Contains Target Localization")[
+#proposition(title: "Base Change Contains Target Localization")[
 
   Every property satisfying BC satisfies T, since
   $B_f simeq tensor(B, A_f, over: A)$.
@@ -105,7 +79,7 @@ $U=ops.spec B subset.eq X$ and $V=ops.spec A subset.eq Y$ such that
 $U subset.eq f^(-1)(V)$.  The restriction $U -> V$ corresponds to a ring map
 $A -> B$.
 
-#proposition(number: none, title: "Affine Locality Principle")[
+#proposition(title: "Affine Locality Principle")[
   Suppose $P$ satisfies T and S.  If an affine cover of $Y$, together with
   affine covers of its inverse images, consists of charts whose ring maps have
   $P$, then every principal affine refinement of those charts also has $P$.
@@ -122,7 +96,7 @@ $A -> B$.
   to principal refinements of the original affine pair.
 ]
 
-#proposition(number: none, title: "Affine Communication Lemma (Fixed Target)")[
+#proposition(title: "Affine Communication Lemma (Fixed Target)")[
   Let $f:X -> ops.spec A$ be a morphism.  Suppose $P$ satisfies S and GS.  If
   $X$ has an affine cover $U_i=ops.spec B_i$ such that every
   $A -> B_i$ has $P$, then $A -> Gamma(U, shf.o_X)$ has $P$ for every affine
@@ -130,16 +104,13 @@ $A -> B$.
 ]
 
 #proof[
-  This is the affine-open induction in mathlib's `of_affine_open_cover`,
-  as used by `HasRingHomProperty.of_source_openCover`.
-
   Put $U=ops.spec B$.  For $x in U inter U_i$, choose a neighborhood which
   is distinguished in both affine opens:
   $
     x in W = D_U(g) = D_(U_i)(h).
   $
-  Such neighborhoods exist by `exists_basicOpen_le_affine_inter`.  To see
-  the construction, first choose $x in D_U(a) subset.eq U inter U_i$, then
+  To construct such a neighborhood, first choose
+  $x in D_U(a) subset.eq U inter U_i$, then
   $x in D_(U_i)(h) subset.eq D_U(a)$.  The restriction of $h$ to $D_U(a)$
   has the form $c/a^n$, so $D_(U_i)(h)=D_U(a c)$.
 
@@ -152,7 +123,7 @@ $A -> B$.
   $D_U(g) subset.eq U_i$ does not make $g$ a section on $U_i$.
 ]
 
-#proposition(number: none, title: "Exactly what fixed-target communication requires")[
+#proposition(title: "Exactly what fixed-target communication requires")[
   For an isomorphism-invariant ring-map property, the fixed-target affine
   communication statement above, required for every $A$, $X$, and affine
   cover, is equivalent to S and GS together.
@@ -168,7 +139,7 @@ $A -> B$.
   needed for the fixed-target proof.
 ]
 
-#proposition(number: none, title: "Strong Affine Locality via PropertyIsLocal")[
+#proposition(title: "Strong Affine Locality from Ring-Local Conditions")[
   Suppose $P$ satisfies T, S, GS, and GT.  If one system of affine charts for
   $f:X -> Y$ has $P$, then the ring map associated with every affine pair for
   $f$ has $P$.  In this situation the resulting morphism property is *strongly
@@ -176,9 +147,8 @@ $A -> B$.
 ]
 
 #proof[
-  Following `sourceAffineLocally_isLocal`, for an affine target
-  $V=ops.spec A$ let $H(V)$ mean that every affine open of $f^(-1)(V)$
-  has a ring map from $A$ with $P$.
+  For an affine target $V=ops.spec A$, let $H(V)$ mean that every affine open
+  $U=ops.spec B subset.eq f^(-1)(V)$ has $P(A -> B)$.
 
   First, S and GS give $H(V_i)$ on each member of the original target
   cover, by fixed-target communication.
@@ -192,35 +162,36 @@ $A -> B$.
   $U inter f^(-1)(D(a_i))=ops.spec B_(a_i)$ give
   $P(A_(a_i) -> B_(a_i))$.  GT gives $P(A -> B)$, hence $H(V)$.
 
-  Apply affine-open induction on $Y$ to these last two steps.  This is
-  `HasAffineProperty.of_iSup_eq_top`: $H$ holds on every affine target,
-  which proves the assertion about every affine pair.
+  The second step permits restriction to a distinguished open of any affine
+  target on which $H$ holds, and the third glues over a finite distinguished
+  cover.  Every affine open is quasi-compact, so any affine cover of it has a
+  finite refinement by distinguished opens.  Starting from the original
+  affine target cover and applying these two operations therefore proves
+  $H(V)$ for every affine open $V subset.eq Y$.  This is precisely the
+  assertion about every affine pair.
 
   Restriction to an open source or target preserves the all-affine-pairs
   condition.  For source gluing, restrict to an affine target, refine the
   source cover by affine opens, and use fixed-target communication.  For
-  target gluing, refine the target cover by affine opens and use the
-  target induction just proved.  These are the source and target locality
-  instances supplied by `HasRingHomProperty`.
+  target gluing, refine the target cover by affine opens and repeat the
+  distinguished-open induction above.  Thus the condition is local on both
+  source and target.
 ]
 
-#remark(title: "Necessity has a specified meaning")[
+#remark(title: "A Characterization of Strong Affine Locality")[
   If a scheme-morphism property $Q$ is local on both source and target and
   $Q(ops.spec B -> ops.spec A)$ is equivalent to $P(A -> B)$, then T, S,
   GS, and GT are necessary: apply restriction and gluing to distinguished
   covers of the two spectra.  Conversely, the preceding proof constructs
-  such a $Q$ from these four conditions, namely `affineLocally P`.
-  In particular its value on an affine morphism between spectra is $P$,
-  by fixed-target communication and target induction.
+  such a $Q$ from these four conditions: require $P$ for every affine pair.
+  Its value on a morphism between affine spectra is then exactly $P$, by
+  fixed-target communication and induction over distinguished target covers.
 
-  Mathlib records the converse in
-  `HasRingHomProperty.isLocal_ringHomProperty_of_isZariskiLocalAtSource_of_isZariskiLocalAtTarget`.
-  This is a characterization of extension to a property local on both
-  sides, not a claim that the four fields are logically independent.
-  Properties local only on the target, such as finite morphisms, do not
-  require S or GS.  BC is a separate stability question.  PL is an optional
-  sufficient ingredient for constructing GT, not an additional requirement
-  of this characterization.
+  This characterizes when $P$ extends in this way to a property local on both
+  sides; it does not assert that the four conditions are logically
+  independent.  A property local only on the target, such as finiteness, need
+  not satisfy S or GS.  Base-change stability is a separate question, while
+  PL is merely one sufficient device for proving GT.
 ]
 
 #remark(title: "Whole inverse images versus affine pairs")[
@@ -241,7 +212,7 @@ $A -> B$.
   Thus BC is not necessary for locality, even on both sides.
 ]
 
-#proposition(number: none, title: "The affineAnd target-local route")[
+#proposition(title: "The Whole-Inverse-Image Target Criterion")[
   Suppose $P$ respects isomorphisms and satisfies T and GT.  Define $Q(f)$
   by requiring, for every affine $V=ops.spec A$ in the target, that the
   entire inverse image be affine, $f^(-1)(V)=ops.spec B$, and that
@@ -250,25 +221,26 @@ $A -> B$.
 ]
 
 #proof[
-  This is `affineAnd_isLocal`, followed by `HasAffineProperty`.
   On an affine target, restriction to $D(a)$ replaces the whole inverse
   image $ops.spec B$ by $ops.spec B_a$; use T.
 
   For a distinguished target cover $D(a_i)$, suppose each whole inverse
   image $X_i$ is affine and has $P$.  The pullbacks of the $a_i$ are global
   sections of $X$, generate the unit ideal in $Gamma(X, shf.o_X)$, and
-  have affine nonvanishing loci $X_i$.  The affineness criterion
-  `isAffine_of_isAffineOpen_basicOpen` gives that $X$ is affine.
-  Its proof compares $X$ with $ops.spec Gamma(X, shf.o_X)$ on these
-  distinguished opens and glues the isomorphisms.  Once $X$ is affine,
-  GT applies to its global ring map.  Affine-open induction on the target
-  then proves target locality for arbitrary open covers.
+  have affine nonvanishing loci $X_i$.  The canonical morphism
+  $X -> ops.spec Gamma(X, shf.o_X)$ restricts on each $X_i$ to the usual
+  affine isomorphism.  These restrictions agree on overlaps, so they glue;
+  hence $X$ is affine.  Writing $X=ops.spec B$, the restricted coordinate
+  maps are $A_(a_i) -> B_(a_i)$, and GT gives $P(A -> B)$.  Since an affine
+  target is quasi-compact, an arbitrary target cover admits a finite
+  distinguished refinement, so this proves target locality.
 
   For BC, reduce both base schemes to affine opens using target locality.
-  The pullback of the affine source is the spectrum of the tensor product,
-  where ring-theoretic BC applies.  This is
-  `affineAnd_isStableUnderBaseChange` and
-  `HasAffineProperty.isStableUnderBaseChange`.
+  If the base change is $ops.spec A' -> ops.spec A$, the pullback of
+  $ops.spec B -> ops.spec A$ is
+  $ops.spec tensor(B, A', over: A) -> ops.spec A'$.  Its source is affine and
+  its ring map has $P$ by BC.  The affine-local reductions just proved glue
+  these affine calculations, so $Q$ is stable under arbitrary base change.
 ]
 
 ==== Locality directly on schemes
@@ -290,7 +262,7 @@ scheme level.
     $f^(-1)(V_i) -> V_i$ has $Q$, then $f$ has $Q$.
 ]
 
-#corollary(number: none, title: "Zariski Locality")[
+#corollary(title: "Zariski Locality")[
   A property satisfying RS and GSS is Zariski local on the source.  A property
   satisfying RT and GTT is Zariski local on the target.
 
@@ -317,26 +289,28 @@ scheme level.
   $B=A[b_1, dots, b_n]$ for finitely many elements of $B$.
 ]
 
-#proposition(number: none, title: "Locality Profile: Finite Type")[
+#proposition(title: "Locality Profile: Finite Type")[
   Finite type satisfies BC, T, S, GS, and GT.
 ]
 
 #proof[
-  Follow `RingHom.finiteType_isLocal`.  Tensor products preserve a finite
-  set of algebra generators, giving BC and hence T.  A principal
+  If $B$ is generated over $A$ by $b_1,dots,b_n$, then
+  $tensor(B, A', over: A)$ is generated over $A'$ by the elements
+  $b_j tensor 1$.  This proves BC and hence T.  A principal
   localization is generated by one inverse; together with composition
-  stability this gives S and PL.  The substantive gluing input is
-  `Algebra.FiniteType.of_span_eq_top_target`, giving GS.  It constructs
-  finitely many global generators as follows.  Choose coefficients $c_i$
+  stability this gives S and PL.
+
+  For GS, choose coefficients $c_i$
   with $sum_i c_i g_i=1$ and let $C$ be the $A$-subalgebra generated by
   the $g_i$, the $c_i$, and numerators of finite generating sets for the
   $B_(g_i)$.  For $b in B$, clearing denominators gives
   $g_i^(n_i) b in C$.  The powers $g_i^(n_i)$ still generate the unit ideal
-  in $C$, so $b in C$.  Hence $C=B$.  Finally GS and PL give GT by
-  `OfLocalizationSpanTarget.ofLocalizationSpan`.
+  in $C$, so $b in C$.  Hence $C=B$.  Finally, given a distinguished target
+  cover, PL converts each $P(A_(a_i) -> B_(a_i))$ into
+  $P(A -> B_(a_i))$, and GS then gives $P(A -> B)$.  Thus GT holds.
 ]
 
-#corollary(number: none, title: "Locally Finite-type Morphisms")[
+#corollary(title: "Locally Finite-type Morphisms")[
   The corresponding chartwise property is *locally of finite type*.  It is
   strongly affine local, Zariski local on both source and target, and stable
   under base change.  A morphism is of finite type precisely when it is locally
@@ -344,13 +318,18 @@ scheme level.
 ]
 
 #proof[
-  The `HasRingHomProperty` instance in `Morphisms/FiniteType.lean` applies
-  the preceding four-field locality theorem to finite type.  BC is then
-  transported separately by `HasRingHomProperty.isStableUnderBaseChange`.
-  To compare with Hartshorne's cover definition, use the equivalence of one
-  affine atlas and every affine pair.  Requiring finitely many source charts
-  over each affine target is exactly quasi-compactness in addition to the
-  local finite-type condition.
+  The preceding proposition and the Strong Affine Locality proposition show
+  that one affine atlas with finite-type coordinate maps is equivalent to the
+  same condition on every affine pair; they also give locality on both source
+  and target.  On affine pairs, base change is the tensor-product construction,
+  so BC gives stability under base change and locality glues the result.
+
+  If $f$ is of finite type, the finitely many source charts in its defining
+  affine atlas show that inverse images of affine opens are quasi-compact.
+  Conversely, if $f$ is quasi-compact and locally of finite type, cover the
+  inverse image of an affine target by finite-type affine charts and use
+  quasi-compactness to retain finitely many of them.  This is precisely the
+  finite atlas required in the definition of a finite-type morphism.
 ]
 
 ===== Finite presentation
@@ -361,29 +340,32 @@ scheme level.
   generators and relations.
 ]
 
-#proposition(number: none, title: "Locality Profile: Finite Presentation")[
+#proposition(title: "Locality Profile: Finite Presentation")[
   Finite presentation satisfies BC, T, S, GS, and GT.
 ]
 
 #proof[
-  The construction is `RingHom.finitePresentation_isLocal`.  Finite
-  presentations survive tensor products, giving BC and T.  The presentation
+  Tensoring a finite list of generators and relations with an $A$-algebra
+  gives a finite presentation after base change, so BC and T hold.  The
+  presentation
   $A_a simeq A[t]\/ideal((a t-1))$, together with composition stability,
-  gives S and PL.  GS is the algebraic gluing theorem
-  `Algebra.FinitePresentation.of_span_eq_top_target`: it first obtains
-  finite type, then glues finite generation of the relation ideal after
-  localization.  More precisely, start with a finite polynomial algebra
-  surjecting onto $B$.  Lifts of the $g_i$ need not generate its unit ideal.
-  Mathlib first imposes the single relation $sum_i tilde(g)_i tilde(c)_i=1$
-  for lifts of a unit-ideal expression in $B$.  In this finitely presented
-  intermediate algebra the lifted opens do cover.  Local finite
-  presentation gives finitely generated localized kernels, and
-  `RingHom.ker_fg_of_localizationSpan` glues their finite generation.
-  GS and PL give GT.  The corresponding
-  `HasRingHomProperty` instance supplies the following corollary.
+  gives S and PL.
+
+  For GS, first apply finite-type GS, then choose a surjection from a
+  polynomial algebra in finitely many variables onto $B$.  Its kernel must be
+  shown finitely generated.  Lifts of the $g_i$ need not generate the unit
+  ideal in the polynomial algebra, so choose lifts of a relation
+  $sum_i c_i g_i=1$ and impose the single relation
+  $sum_i tilde(c)_i tilde(g)_i-1$.  In the resulting finitely presented
+  intermediate algebra the lifted distinguished opens cover.  The localized
+  kernels are finitely generated by the local finite presentations.  Clearing
+  denominators in finite generating sets and using the unit-ideal relation
+  then gives finitely many generators of the global kernel.  Thus GS holds.
+  As in the finite-type case, GS and PL imply GT.  Strong Affine Locality and
+  BC now give the assertions of the corollary.
 ]
 
-#corollary(number: none, title: "Locally Finite-presentation Morphisms")[
+#corollary(title: "Locally Finite-presentation Morphisms")[
   The corresponding chartwise property is *locally of finite presentation*.
   It is strongly affine local, Zariski local on both source and target, and
   stable under base change.
@@ -395,22 +377,21 @@ scheme level.
   A ring map $A -> B$ is *finite* if $B$ is a finitely generated $A$-module.
 ]
 
-#proposition(number: none, title: "Locality Profile: Finite")[
+#proposition(title: "Locality Profile: Finite")[
   Finite satisfies BC, T, GS, and GT, but it does not satisfy S.
 ]
 
 #proof[
-  `RingHom.finite_isStableUnderBaseChange` transports finite module
-  generators through tensor products.  T follows.  For GT,
-  `RingHom.finite_ofLocalizationSpan` lifts finite generating sets from
-  the localizations and clears denominators.  For each $b in B$, a power
+  A finite set of $A$-module generators of $B$ tensors to a finite set of
+  $A'$-module generators after any base change $A -> A'$, proving BC and
+  hence T.  For GT, lift finite generating sets from the localizations
+  $B_(a_i)$ and clear denominators.  For each $b in B$, a power
   of each covering element times $b$ lies in the span of these lifts;
   the unit-ideal condition then puts $b$ itself in that span.
 
   GS follows from integral GS proved below and finite-type GS, using
   the equivalence of module-finiteness with integrality plus finite type.
-  This is a deduction from those results, not a GS field used by mathlib's
-  finite-morphism locality construction.  The example proves failure of S.
+  The example proves failure of S.
 ]
 
 #example(title: "Failure of S for finite maps")[
@@ -418,7 +399,7 @@ scheme level.
   $k[t] -> k[t,t^(-1)]$ is not finite as a map of $k[t]$-modules.
 ]
 
-#corollary(number: none, title: "Finite Morphisms")[
+#corollary(title: "Finite Morphisms")[
   A morphism $f:X -> Y$ is finite if, over every affine open
   $V=ops.spec A subset.eq Y$, the whole inverse image is
   $f^(-1)(V)=ops.spec B$ with $A -> B$ finite.  This criterion is affine local
@@ -428,13 +409,13 @@ scheme level.
 ]
 
 #proof[
-  The `HasAffineProperty` instance in `Morphisms/Finite.lean` uses
-  `affineAnd` with ring finiteness,
-  feeding it T and GT.  It therefore proves equivalence of Hartshorne's
-  existence-of-an-affine-cover definition with the every-affine-target
-  criterion.  The affineAnd route also transports BC.  The displayed
-  failure of S is a failure of restriction to an open source, so source
-  locality fails even though ring GS holds.
+  Apply the whole-inverse-image target criterion to ring finiteness, using T
+  and GT from the preceding proposition.  This proves that the criterion may
+  be checked on one affine cover of the target or on every affine target.
+  The same proposition transports BC from rings to schemes.  The displayed
+  localization $k[t] -> k[t,t^(-1)]$ is the coordinate map of an open-source
+  restriction of the identity of $ops.spec k[t]$; since it is not finite,
+  source restriction, and hence source locality, fails.
 ]
 
 ===== Integral
@@ -444,26 +425,25 @@ scheme level.
   polynomial with coefficients in $A$.
 ]
 
-#proposition(number: none, title: "Locality Profile: Integral")[
+#proposition(title: "Locality Profile: Integral")[
   Integral satisfies BC, T, GS, and GT, but it does not satisfy S.
 ]
 
 #proof[
-  Use `RingHom.isIntegral_isStableUnderBaseChange` for BC and hence T.
-  For GT, `RingHom.isIntegral_ofLocalizationSpan` clears denominators in
-  local monic equations.  A power of each covering element times a given
+  A monic equation remains monic after extension of scalars, which proves BC
+  and hence T.  For GT, clear denominators in local monic equations.  A power
+  of each covering element times a given
   $b in B$ belongs to the integral closure of $A$ in $B$; gluing membership
   in this $A$-submodule shows that $b$ belongs to the integral closure.
 
-  For GS we use a consequence of mathlib's geometric characterization
-  `IsIntegralHom.iff_universallyClosed_and_isAffineHom`.  This
-  characterization uses T and GT, not GS.  If finitely many $D(g_i)$ cover
+  For GS, use the affine characterization that a morphism is integral if and
+  only if it is affine and universally closed.  If finitely many $D(g_i)$ cover
   $ops.spec B$ and their maps to $ops.spec A$ are integral, these maps are
   universally closed.  After any base change, the image of a closed subset
   of the whole source is the finite union of its images from the $D(g_i)$;
   each is closed.  Hence the whole affine morphism is universally closed
-  and therefore integral.  This derives ring GS without claiming that
-  integral morphisms are local on arbitrary open source covers.  The
+  and therefore integral.  This argument uses a finite distinguished cover;
+  it does not assert gluing over arbitrary open covers of the source.  The
   following example proves failure of S.
 ]
 
@@ -473,7 +453,7 @@ scheme level.
   $k[t]$.
 ]
 
-#corollary(number: none, title: "Integral Morphisms")[
+#corollary(title: "Integral Morphisms")[
   A morphism is integral exactly when inverse images of affine targets are
   affine and induce integral ring maps.  Integral morphisms are affine local
   and Zariski local on the target and are stable under base change.  They are
@@ -482,9 +462,11 @@ scheme level.
 ]
 
 #proof[
-  `IsIntegralHom.hasAffineProperty` uses the affineAnd route with T and GT;
-  its base-change instance uses ring BC.  The open restriction in the
-  example is not integral, which rules out source locality.
+  Apply the whole-inverse-image target criterion with T and GT for integral
+  ring maps.  It gives the stated every-affine-target criterion and target
+  locality; ring BC gives stability under base change.  The open restriction
+  in the example has coordinate map $k[t] -> k[t,t^(-1)]$, which is not
+  integral, so source locality fails.
 ]
 
 ===== Surjective
@@ -494,15 +476,15 @@ scheme level.
   an element of $A$, equivalently $B simeq A\/I$ for some ideal $I subset.eq A$.
 ]
 
-#proposition(number: none, title: "Locality Profile: Surjective")[
+#proposition(title: "Locality Profile: Surjective")[
   Surjectivity satisfies BC, T, and GT, but it satisfies neither S nor GS.
 ]
 
 #proof[
-  `RingHom.surjective_isStableUnderBaseChange` proves BC by expressing
-  tensors as sums of pure tensors and lifting their $B$-entries to $A$.
-  Thus T follows.  For GT, `RingHom.surjective_ofLocalizationSpan` treats
-  the image of $A -> B$ as an $A$-submodule: local surjectivity and clearing
+  Every tensor is a sum of pure tensors.  If $A -> B$ is surjective, lift the
+  $B$-entry of each pure tensor to $A$; this proves that the base-changed map
+  is surjective.  Thus BC, and hence T, holds.  For GT, regard the image of
+  $A -> B$ as an $A$-submodule.  Local surjectivity and clearing
   denominators put a suitable covering-element power times each $b$ in
   this image; the unit-ideal condition gives $b$ itself.  The two examples
   below disprove S and GS.
@@ -517,7 +499,7 @@ scheme level.
   and both localized maps are isomorphic to $k -> k$, hence are surjective.
 ]
 
-#corollary(number: none, title: "Closed Immersions")[
+#corollary(title: "Closed Immersions")[
   Contravariantly, a surjective ring map $A -> B$ gives a closed immersion
   $ops.spec B -> ops.spec A$.  Closed immersions are affine local and Zariski
   local on the target and are stable under base change.  They are not local on
@@ -525,17 +507,21 @@ scheme level.
 ]
 
 #proof[
-  Mathlib defines `IsClosedImmersion` by a closed embedding of underlying
-  spaces and surjectivity on stalks.  This matches Hartshorne's closed-image
-  homeomorphism and surjective sheaf map: sheaf surjectivity is tested on
-  stalks, not on sections of every open set.  Its target-locality instance
-  comes first, from target locality of these two conditions.
+  A closed immersion is a homeomorphism onto a closed subset together with a
+  surjective morphism of structure sheaves.  Both conditions may be checked
+  after restricting the target to an open cover: closed subsets and the
+  induced homeomorphisms glue, while surjectivity of a sheaf morphism is
+  equivalent to surjectivity on every stalk.  Thus closed immersions are
+  target local.
 
-  `IsClosedImmersion.hasAffineProperty` then identifies the affine-target
-  criterion as affine source plus a surjective global ring map.  BC is
-  transported from ring surjectivity using that criterion.  The failure of
-  S above rules out source locality; the diagonal $k -> k times k$ also
-  gives a source-gluing failure for the corresponding two-point morphism.
+  Over $V=ops.spec A$, this definition is equivalent to requiring
+  $f^(-1)(V)=ops.spec B$ and a surjective coordinate map $A -> B$.
+  The whole-inverse-image criterion and BC for surjections therefore give affine
+  locality, target locality, and base-change stability.  The localization
+  example above is an open-source restriction of a closed immersion which is
+  not a closed immersion.  The diagonal $k -> k times k$ similarly gives a
+  source cover whose restrictions are closed immersions although the whole
+  morphism is not; hence source locality fails.
 ]
 
 ===== Flat
@@ -545,21 +531,24 @@ scheme level.
   an exact sequence of $A$-modules with $B$ preserves exactness.
 ]
 
-#proposition(number: none, title: "Locality Profile: Flat")[
+#proposition(title: "Locality Profile: Flat")[
   Flatness satisfies BC, T, S, GS, and GT.
 ]
 
 #proof[
-  Follow `RingHom.Flat.propertyIsLocal`.  Module flatness is stable under
-  tensor-product base change and composition, and localizations are flat.
-  These give BC, T, S, and PL.  The gluing input for GS is
-  `Module.flat_of_isLocalized_span`: localizing a tensor-product
-  injectivity test at a unit-ideal cover detects whether its kernel is
-  zero.  GS and PL give GT.  The `HasRingHomProperty` instance in
-  `Morphisms/Flat.lean` then supplies source and target locality.
+  Module flatness is stable under tensor-product base change and composition,
+  and every localization is flat.  These facts give BC, T, S, and PL.
+  To prove GS, use the criterion that $B$ is flat over $A$ exactly when, for
+  every injection $M' -> M$ of $A$-modules, the induced map
+  $M' tensor_A B -> M tensor_A B$ is injective.  After localizing at every
+  $g_i$, this map is injective by hypothesis.  Its kernel localizes to zero
+  at each $g_i$; because the $g_i$ generate the unit ideal, the kernel itself
+  is zero.  Hence $B$ is flat over $A$.  Finally GS and PL imply GT by the
+  principal-target-extension argument above.  Strong Affine Locality then
+  gives source and target locality for flat morphisms.
 ]
 
-#corollary(number: none, title: "Flat Morphisms")[
+#corollary(title: "Flat Morphisms")[
   Flatness of a morphism may be checked on affine pairs, or equivalently on
   the local maps $shf.o_(Y,f(x)) -> shf.o_(X,x)$.  It is strongly affine local,
   Zariski local on both source and target, and stable under base change.
@@ -567,13 +556,15 @@ scheme level.
 
 #proof[
   The affine-pair criterion follows from the preceding locality package.
-  For the comparison with Hartshorne's stalk definition, mathlib uses
-  `RingHom.Flat.localRingHom` in one direction and
-  `RingHom.Flat.ofLocalizationPrime` in the other.  A stalk map on an
-  affine pair is the corresponding localization at a prime and its inverse
-  image.  The resulting comparison is `Flat.iff_flat_stalkMap`; it uses
-  an additional local algebra theorem, not merely a change of notation.
-  Ring BC transports to scheme BC separately.
+  On an affine pair $ops.spec B -> ops.spec A$, the stalk map at the prime
+  $q subset.eq B$, with inverse image $p subset.eq A$, is the localized ring
+  map $A_p -> B_q$.  Flatness of $A -> B$ implies flatness of all these maps
+  by localization.  Conversely, if every $A_p -> B_q$ is flat, then for each
+  prime $q$ the localization $B_q$ is flat over $A$ by composition with the
+  flat map $A -> A_p$; flatness of $B$ over $A$ follows because it may be
+  checked after localization at all primes of $B$.  Thus the affine and stalk
+  criteria agree.  BC for rings, followed by affine locality, gives BC for
+  morphisms.
 ]
 
 ===== Faithfully flat
@@ -584,34 +575,35 @@ scheme level.
   $ops.spec B -> ops.spec A$ is surjective.
 ]
 
-#proposition(number: none, title: "Locality Profile: Faithfully Flat")[
+#proposition(title: "Locality Profile: Faithfully Flat")[
   Faithful flatness satisfies BC, T, and GT, but it satisfies neither S nor
   GS when empty distinguished covers are allowed.  GS does hold for
   nonempty finite distinguished covers.
 ]
 
 #proof[
-  Use `RingHom.FaithfullyFlat.isStableUnderBaseChange` for BC and T, and
-  `RingHom.FaithfullyFlat.iff_flat_and_comap_surjective` for gluing.
-  Under GS hypotheses for a nonempty indexing family, flatness glues and
-  any member's faithfully flat map already surjects onto $ops.spec A$.
+  Use the equivalence between faithful flatness of $A -> B$ and the
+  conjunction of flatness with surjectivity of
+  $ops.spec B -> ops.spec A$.  Both conditions survive base change, so BC
+  and hence T hold.  Under GS hypotheses for a nonempty indexing family,
+  flatness glues and any member's faithfully flat map already surjects onto
+  $ops.spec A$.
   Thus the whole spectrum map is surjective.  Under GT hypotheses
   flatness again glues,
   and surjectivity is checked over the covering $D(a_i)$ of $ops.spec A$.
   If that target cover is empty, $A$ and hence $B$ are zero rings, and
-  faithful flatness holds.  These arguments deduce nonempty-cover GS and
-  unrestricted GT from the equivalence; they are not a `PropertyIsLocal`
-  instance.  The examples disprove S and unrestricted GS.
+  faithful flatness holds.  This proves nonempty-cover GS and unrestricted
+  GT.  The examples disprove S and unrestricted GS.
 ]
 
-#example(title: "The empty-cover obstruction to GS")[
+#example(title: "Why Source Gluing Fails for the Empty Cover")[
   Take $A=k$ and $B=0$, the zero ring.  The empty family generates the
   unit ideal in $B$ because $0=1$, and all its localized-map hypotheses
   hold vacuously.  But $k -> 0$ is not faithfully flat: the nonzero
-  $k$-module $k$ tensors to zero.  Thus GS as defined in
-  `RingHom.OfLocalizationSpanTarget` fails.  If one instead requires
-  $n>=1$ in the definition of GS, the faithfully-flat GS entry becomes
-  yes; that is a different convention.
+  $k$-module $k$ tensors to zero.  Thus GS fails when the empty distinguished
+  cover of the zero ring is admitted.  If GS is instead formulated only for
+  nonempty finite distinguished covers, faithful flatness does satisfy it;
+  that is a different convention.
 ]
 
 #example(title: "Failure of S for faithful flatness")[
@@ -620,7 +612,7 @@ scheme level.
   module $k[t]\/(t)$ with $k[t,t^(-1)]$ gives zero.
 ]
 
-#corollary(number: none, title: "Faithfully Flat Morphisms")[
+#corollary(title: "Faithfully Flat Morphisms")[
   A faithfully flat ring map gives an affine, flat, surjective morphism of
   spectra.  For a general morphism, faithful flatness means flatness together
   with surjectivity.  It is stable under base change and local on the target,
@@ -629,12 +621,15 @@ scheme level.
 ]
 
 #proof[
-  Mathlib's `flat_and_surjective_iff_faithfullyFlat_of_isAffine` supplies
-  the affine comparison.  For general schemes use the conjunction of
-  flatness and surjectivity, both of which are target local and stable
-  under base change.  The example shows that restriction to an open source
-  can destroy surjectivity.  Gluing a family of surjective restrictions
-  and demanding that every restriction be surjective are different tests.
+  On affine spectra, the equivalence in the preceding proof identifies a
+  faithfully flat ring map with a flat and surjective morphism.  This
+  identification is compatible with restriction to affine targets, so for
+  general schemes faithful flatness is equivalent to flatness together with
+  surjectivity.  Both properties are local on the target and stable under
+  base change, hence so is their conjunction.  The localization example
+  shows that an open-source restriction can destroy surjectivity and rules
+  out source locality.  Gluing a family of surjective restrictions and
+  demanding that every restriction be surjective are different tests.
 ]
 
 ==== Geometric-property case studies
@@ -650,22 +645,26 @@ best tested using RS, GSS, RT, and GTT directly.
   $V subset.eq Y$.
 ]
 
-#proposition(number: none, title: "Locality Profile: Quasi-compact")[
+#proposition(title: "Locality Profile: Quasi-compact")[
   Quasi-compactness satisfies RT and GTT and is stable under base change.  It
   satisfies neither RS nor GSS.
 ]
 
 #proof[
-  Mathlib uses `HasAffineProperty` with the affine-target property
-  that the whole source is quasi-compact.  A basic open of a global section
-  in a quasi-compact scheme is quasi-compact: take finitely many affine
-  charts and restrict the section on each.  This gives distinguished
-  target restriction.  A finite union of quasi-compact inverse images is
-  quasi-compact, giving distinguished target gluing.  Affine-open
-  induction upgrades these to RT and GTT.  For BC, over affine bases cover
-  the quasi-compact source by finitely many affine opens; their pullbacks
-  are affine and still form a finite cover.  The examples prove the two
-  source failures.
+  Let $V=ops.spec A subset.eq Y$.  If $f^(-1)(V)$ is quasi-compact, then the
+  inverse image of a distinguished open $D(a) subset.eq V$ is the
+  nonvanishing locus of the pulled-back section.  Choose finitely many affine
+  charts covering $f^(-1)(V)$; on each chart that locus is distinguished and
+  hence quasi-compact.  Their finite union is quasi-compact, proving target
+  restriction.  Conversely, quasi-compact inverse images over a finite
+  distinguished cover of $V$ have quasi-compact union, proving target gluing.
+  Quasi-compactness of affine targets upgrades these distinguished tests to
+  arbitrary target covers.
+
+  For base change, work over affine bases and cover the quasi-compact source
+  by finitely many affine opens.  Their pullbacks are affine and form a finite
+  cover of the new source, which is therefore quasi-compact.  Target locality
+  glues this calculation.  The examples prove the two source failures.
 ]
 
 #example(title: "Source failures for quasi-compactness")[
@@ -677,7 +676,7 @@ best tested using RS, GSS, RT, and GTT directly.
   components, but its map to one point is not quasi-compact.  Thus GSS fails.
 ]
 
-#corollary(number: none, title: "Target Criterion for Quasi-compactness")[
+#corollary(title: "Target Criterion for Quasi-compactness")[
   Quasi-compactness is affine local and Zariski local on the target, and it is
   stable under base change.  It is not local on the source.
 ]
@@ -689,19 +688,27 @@ best tested using RS, GSS, RT, and GTT directly.
   open $V subset.eq Y$.
 ]
 
-#proposition(number: none, title: "Locality Profile: Affine")[
+#proposition(title: "Locality Profile: Affine")[
   Affineness satisfies RT and GTT and is stable under base change.  It
   satisfies neither RS nor GSS.
 ]
 
 #proof[
-  The `HasAffineProperty` instance for `IsAffineHom` takes affineness of
-  the entire source as its affine-target property.  Distinguished target
-  restriction gives a distinguished open in an affine scheme.  Gluing
-  uses `isAffine_of_isAffineOpen_basicOpen`, as in the affineAnd proof,
-  followed by affine-open induction.  BC reduces to the affine tensor
-  product description of pullbacks.  Neither argument asserts affineness
-  of a union of arbitrary affine source opens; the examples show why.
+  Let $V=ops.spec A subset.eq Y$ and suppose $f^(-1)(V)=ops.spec B$.
+  The inverse image of $D(a)$ is the distinguished affine
+  $ops.spec B_a$, proving RT on distinguished opens.  Conversely, if the
+  inverse images of a finite distinguished cover $D(a_i)$ are affine, the
+  pullbacks of the $a_i$ are global sections of $f^(-1)(V)$ whose
+  nonvanishing loci are precisely those affine inverse images.  The canonical
+  map to the spectrum of global sections is an isomorphism on these loci;
+  the local isomorphisms agree on overlaps and glue, so $f^(-1)(V)$ is affine.
+  An affine target is quasi-compact, so distinguished refinements extend this
+  to arbitrary target covers and prove GTT.
+
+  After an affine base change $ops.spec A' -> ops.spec A$, the pullback is
+  $ops.spec tensor(B, A', over: A)$ and is affine.  Target locality glues these
+  affine computations, proving BC.  Neither argument asserts that a union of
+  arbitrary affine source opens is affine; the examples show why.
 ]
 
 #example(title: "Source failures for affineness")[
@@ -712,7 +719,7 @@ best tested using RS, GSS, RT, and GTT directly.
   $sch.p^1_k -> ops.spec k$ is not affine.  Hence GSS fails.
 ]
 
-#corollary(number: none, title: "Target Criterion for Affineness")[
+#corollary(title: "Target Criterion for Affineness")[
   Affineness is affine local and Zariski local on the target and is stable
   under base change.  It is not local on the source.
 ]
@@ -724,15 +731,15 @@ best tested using RS, GSS, RT, and GTT directly.
   $Delta_f:X -> fiber(X, X, base: Y)$ is a closed immersion.
 ]
 
-#proposition(number: none, title: "Locality Profile: Separated")[
+#proposition(title: "Locality Profile: Separated")[
   Separatedness satisfies RS, RT, and GTT and is stable under base change.  It
   does not satisfy GSS.
 ]
 
 #proof[
-  `isSeparated_eq_diagonal_isClosedImmersion` expresses separatedness as
-  the diagonal construction applied to closed immersions.  Diagonals
-  commute with base change; use BC for closed immersions.  For a target
+  The diagonal of a base change of $f$ is the base change of $Delta_f$.
+  Since closed immersions are stable under base change, separatedness is also
+  stable under base change.  For a target
   cover $Y=union_i V_i$, the opens
   $f^(-1)(V_i) times_(V_i) f^(-1)(V_i)$ cover $fiber(X, X, base: Y)$,
   so target locality for closed immersions gives RT and GTT.  Restricting
@@ -749,7 +756,7 @@ best tested using RS, GSS, RT, and GTT directly.
   itself is not separated.  Thus GSS fails.
 ]
 
-#corollary(number: none, title: "Target Criterion for Separatedness")[
+#corollary(title: "Target Criterion for Separatedness")[
   Separatedness is affine local and Zariski local on the target and is stable
   under base change.  It is preserved by restriction to an open source, but
   it is not local on the source because source gluing fails.
@@ -763,20 +770,18 @@ best tested using RS, GSS, RT, and GTT directly.
   spaces.
 ]
 
-#proposition(number: none, title: "Locality Profile: Universally Closed")[
+#proposition(title: "Locality Profile: Universally Closed")[
   Universal closedness satisfies RT and GTT and is stable under base change.
   It satisfies neither RS nor GSS.
 ]
 
 #proof[
-  `universallyClosed_eq` writes the property as universalization of
-  closedness of the underlying map.  BC follows by composing base changes.
+  A further base change of a base change of $f$ is again a base change of
+  $f$, so universal closedness is stable under base change.
   Closedness of a continuous map is local on the target: for a closed
   $Z subset.eq X$, check $f(Z) inter V_i$ in each member of an open target
   cover.  Apply this after every base change, whose pulled-back target
-  opens still cover.  This is the proof of
-  `universallyClosed_isZariskiLocalAtTarget` using
-  `universally_isZariskiLocalAtTarget`.  The examples give the source
+  opens still cover.  This proves RT and GTT.  The examples give the source
   failures.
 ]
 
@@ -796,7 +801,7 @@ best tested using RS, GSS, RT, and GTT directly.
   points, which is not closed.  Thus GSS fails.
 ]
 
-#corollary(number: none, title: "Target Criterion for Universal Closedness")[
+#corollary(title: "Target Criterion for Universal Closedness")[
   Universal closedness is affine local and Zariski local on the target and is
   stable under base change.  It is not local on the source.
 ]
@@ -838,17 +843,17 @@ convention, this entry alone would be yes.
   caption: [Scheme-level locality profiles.],
 )
 
-#remark(title: "Locality Checklist")[
+#remark(title: "A Procedure for Checking Locality")[
   When studying a new property, proceed in the following order.
 
   + Distinguish the all-affine-pairs route from the affine-whole-inverse-image
     route before choosing hypotheses.
   + Use T and S for affine refinements.  For a fixed affine target, S and GS
     give affine communication.
-  + For all affine pairs use T, S, GS, and GT, as in `PropertyIsLocal`.
-    PL can help prove GT, but is not an additional required field.
+  + For a criterion imposed on every affine pair, verify T, S, GS, and GT.
+    PL can help prove GT, but is not an additional hypothesis once GT is known.
   + For an affine whole inverse image with a ring property, use T and GT
-    in `affineAnd`, then target-local `HasAffineProperty`.
+    to pass between affine target charts and glue the inverse images.
   + If the property involves the topology of a whole inverse image, a
     diagonal, or all base changes, test RS, GSS, RT, and GTT directly.
   + Record base-change stability separately: it is a transport principle,
