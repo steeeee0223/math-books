@@ -33,4 +33,17 @@ noncomputable def homEquiv (G : TopCat.Sheaf Ab Y)
       (G ⟶ (TopCat.Sheaf.pushforward Ab f).obj F) :=
   (adjunction f).homEquiv G F
 
+
+/-- The first triangle identity used to show that the two hom-set maps invert. -/
+theorem left_triangle (G : TopCat.Sheaf Ab Y) :
+    (TopCat.Sheaf.pullback Ab f).map (unit f G) ≫
+      counit f ((TopCat.Sheaf.pullback Ab f).obj G) = 𝟙 _ :=
+  (adjunction f).left_triangle_components G
+
+/-- The second triangle identity, on direct images. -/
+theorem right_triangle (F : TopCat.Sheaf Ab X) :
+    unit f ((TopCat.Sheaf.pushforward Ab f).obj F) ≫
+      (TopCat.Sheaf.pushforward Ab f).map (counit f F) = 𝟙 _ :=
+  (adjunction f).right_triangle_components F
+
 end Exercise1_18

@@ -1,3 +1,5 @@
+import Mathlib.CategoryTheory.Sites.LocalProperties
+import Mathlib.LinearAlgebra.TensorProduct.Pi
 import Mathlib.Algebra.Category.ModuleCat.Sheaf.LocallyFree
 import Mathlib.Algebra.Module.FinitePresentation
 import Mathlib.AlgebraicGeometry.Modules.Tilde
@@ -10,10 +12,11 @@ import Mathlib.RingTheory.Spectrum.Prime.FreeLocus
 # Hartshorne II.5, Exercises
 
 Kernel-checked interfaces to the mathlib results used in the human-readable
-proofs in `../exe.typ`.  The sheaf theory in mathlib presently covers
-quasi-coherent presentations and locally free sheaves, but not every operation
-on coherent sheaves used by Hartshorne.  In those cases we check the affine
-module lemma to which the prose reduces the assertion.
+proofs in `../exe.typ`.  These declarations check the algebraic or categorical
+reductions of the prose; they should not be read as formalizations of every
+full sheaf statement. For Exercise 5.1(d), tensorFiniteFree checks the
+finite-free calculation on the target cover. projectionFormulaAffine is an
+additional affine comparison, not a substitute for that calculation.
 -/
 
 open CategoryTheory TensorProduct TopologicalSpace
@@ -51,7 +54,8 @@ variable (A : Type*) [CommRing A] [Algebra R A]
 variable (L : Type*) [AddCommGroup L] [Module R L] [Module A L]
 variable [IsScalarTower R A L]
 
-/-- Exercise 5.1(d), after restricting to affine opens. -/
+/-- Exercise 5.1(d), the algebraic comparison when both the chosen target open
+and its inverse image are affine and the sheaves involved come from modules. -/
 noncomputable def projectionFormulaAffine :
     L ⊗[A] (A ⊗[R] M) ≃ₗ[A] L ⊗[R] M := by
   exact TensorProduct.AlgebraTensorModule.cancelBaseChange R A A L M
@@ -143,5 +147,84 @@ theorem invertible_is_locally_free [Module.Invertible R M] :
   exact Module.Invertible.exists_finset_free_localization R M
 
 end Exercise5_7
+
+
+/- The revised 5.1(d) uses finite products on every open of a trivializing
+cover, without assuming the source or target affine.  This is the actual
+finite-free computation; projectionFormulaAffine above is only an optional
+comparison, not a verification of the general projection formula. -/
+noncomputable def tensorFiniteFree (R N : Type*) [CommRing R]
+    [AddCommGroup N] [Module R N] (n : ℕ) :
+    N ⊗[R] (Fin n → R) ≃ₗ[R] (Fin n → N) :=
+  TensorProduct.piScalarRight R R N (Fin n)
+
+/-- The comparison sends a pure tensor to its coordinatewise scalar products. -/
+theorem tensorFiniteFree_pure (R N : Type*) [CommRing R]
+    [AddCommGroup N] [Module R N] (n : ℕ) (x : N) (a : Fin n → R) :
+    tensorFiniteFree R N n (x ⊗ₜ[R] a) = fun i => a i • x := by
+  exact TensorProduct.piScalarRightHom_tmul R R N (Fin n) x a
+
+/-- The gluing criterion used in 5.1: local inverses on a cover give an inverse. -/
+theorem iso_on_cover {C A : Type*} [Category C] [Category A]
+    {J : GrothendieckTopology C} {ι : Type*} {U : ι → C}
+    (hU : J.CoversTop U) {F G : Sheaf J A} (g : F ⟶ G) :
+    IsIso g ↔ ∀ i, IsIso ((J.overPullback A (U i)).map g) :=
+  Sheaf.isIso_iff_of_coversTop hU g
+
+/- Verification boundaries, by revised exercise:
+5.1(a,b): the evaluation and dual-tensor maps are checked for finite free
+modules; iso_on_cover checks the sheaf gluing criterion. The identifications
+of module-sheaf restriction, internal Hom and sheaf tensor with those local
+maps are not yet assembled as a theorem of ringed-space modules.
+5.1(c): tensorHomAdjunction verifies currying; its naturality with restriction
+and passage through sheafification are not assembled here.
+5.1(d): tensorFiniteFree and tensorFiniteFree_pure check the local map actually
+used in the prose; restriction of pushforward, pullback of a finite free sheaf,
+and their compatibility with this comparison still require interface lemmas.
+5.2: the affine quasi-coherence criterion is checked. The two-open DVR-space
+classification and its equivalence with triples are not formalized here.
+5.3: tildeGammaHomEquiv checks the complete adjunction.
+5.4: mathlib defines quasi-coherence by local free presentations. The affine
+comparison is supplied above, and finitePresentation_of_noetherian_finite
+checks the finite-presentation algebra. The comparison with Hartshorne's
+finite-module definition of coherence at the sheaf level remains.
+5.5(b): the complete closed-immersion claim is checked. For (c), finite
+restriction of scalars is checked; the pushforward/tilde identification is not
+assembled here. The Laurent-polynomial non-finiteness example in (a) remains.
+5.7: openness of the free locus and the tensor-inverse implication are checked.
+finitePresentation_of_noetherian_finite supplies the finite-presentation
+hypothesis and free_stalk_spreads checks the distinguished-neighborhood
+reduction with its rank. The sheaf/stalk bridge is not assembled here. The existing final theorem only
+states local freeness; the following theorem checks rank one over a local ring.
+-/
+theorem tensor_inverse_over_local_ring (R M N : Type*) [CommRing R]
+    [IsLocalRing R] [AddCommGroup M] [AddCommGroup N]
+    [Module R M] [Module R N] (e : N ⊗[R] M ≃ₗ[R] R) :
+    Nonempty (M ≃ₗ[R] R) := by
+  letI : Module.Invertible R M := Module.Invertible.right e
+  exact (Module.Invertible.free_iff_linearEquiv (R := R) (M := M)).mp inferInstance
+
+
+/-- The noetherian finite-module to finite-presentation bridge in 5.4 and 5.7. -/
+theorem finitePresentation_of_noetherian_finite (R M : Type*) [CommRing R]
+    [IsNoetherianRing R] [AddCommGroup M] [Module R M] [Module.Finite R M] :
+    Module.FinitePresentation R M :=
+  Module.finitePresentation_of_finite R M
+
+/-- Exercise 5.7(a): a free stalk spreads to a distinguished neighborhood
+with the same rank. This is stronger than mere openness of the free locus. -/
+theorem free_stalk_spreads (R M : Type*) [CommRing R]
+    [AddCommGroup M] [Module R M] [Module.FinitePresentation R M]
+    (p : PrimeSpectrum R)
+    [Module.Free (Localization.AtPrime p.asIdeal)
+      (LocalizedModule p.asIdeal.primeCompl M)] :
+    ∃ a, a ∉ p.asIdeal ∧
+      Module.Free (Localization.Away a) (LocalizedModule.Away a M) ∧
+      Module.finrank (Localization.Away a) (LocalizedModule.Away a M) =
+        Module.finrank (Localization.AtPrime p.asIdeal)
+          (LocalizedModule p.asIdeal.primeCompl M) := by
+  exact Module.FinitePresentation.exists_free_localizedModule_powers
+    p.asIdeal.primeCompl (LocalizedModule.mkLinearMap p.asIdeal.primeCompl M)
+    (Localization.AtPrime p.asIdeal)
 
 end HartshorneII5

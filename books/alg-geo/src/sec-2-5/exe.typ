@@ -20,8 +20,36 @@
 ]
 
 #proof[
-  Every isomorphism below is the canonical one; this matters because it lets
-  the affine calculations glue.
+  We first isolate the local-to-global step used below.  If
+  $j_i:U_i arrow.r.hook X$ is an open cover, then a morphism of sheaves is
+  an isomorphism if and only if every $j_i^*$-restriction is an isomorphism.
+  Moreover, restriction to an open subset commutes with finite direct sums,
+  tensor products, and sheaf Hom:
+  $
+    j_i^* tensor(shf.f,shf.g) &simeq
+      tensor(j_i^*shf.f,j_i^*shf.g), \
+    j_i^* shf.hom (shf.f,shf.g) &simeq
+      shf.hom (j_i^*shf.f,j_i^*shf.g).
+  $
+  Indeed, the open subsets of $U_i$ are exactly the open subsets of $X$
+  contained in $U_i$, so the two definitions of sheaf Hom agree on every
+  such open; in the tensor case one additionally uses the universal property
+  of sheafification.  Thus, after constructing a
+  canonical morphism, we may test whether it is an isomorphism on any
+  trivializing cover of $shf.e$.  Since affine opens form a basis of a
+  scheme, this cover may be refined so that
+  $
+    U_i=ops.spec A_i
+    quad "and" quad
+    shf.e|_(U_i) simeq tildeOf(A_i^(r_i)).
+  $
+  On a fixed member write $r=r_i$; the rank may vary
+  between members of the cover.  This is the precise sense in which
+  the parts relying on local freeness
+  reduce to finite-free algebra.  We leave the elementary restriction
+  assertions to the reader.  For the isomorphism assertion,
+  local inverses agree on overlaps because they invert the same morphism;
+  Exercise 1.15 glues them to a global inverse.
 
   #set enum(numbering: "a)", spacing: 1em)
 
@@ -30,60 +58,111 @@
       shf.e -> (shf.e^or)^or,
       quad e mapsto (lambda mapsto lambda(e)).
     $
-    On an open set $U$ on which $shf.e|_U simeq shf.o_U^r$, this is the usual
-    map from a finite free module to its double dual.  If
-    $e_1,dots.c,e_r$ is the standard basis and $e_1^or,dots.c,e_r^or$ its
-    dual basis, its inverse sends a functional $Phi$ to
-    $sum_(i=1)^r Phi(e_i^or)e_i$.  Hence evaluation is an isomorphism on a
-    cover of $X$, and therefore is an isomorphism of sheaves:
-    $(shf.e^or)^or simeq shf.e$.
+    Restrict this map to one of the affine opens $U_i$ above.  Under
+    $shf.e|_(U_i) simeq tildeOf(A_i^r)$ and the restriction--Hom
+    identification, it becomes exactly
+    $
+      A_i^r -> ((A_i^r)^or)^or,
+      quad m mapsto (lambda mapsto lambda(m)).
+    $
+    If $e_1,dots.c,e_r$ is the standard basis and
+    $e_1^or,dots.c,e_r^or$ its dual basis, the inverse is
+    $
+      Phi mapsto sum_(k=1)^r Phi(e_k^or)e_k.
+    $
+    The same formula over $shf.o_X(W)$ for every open $W subset.eq U_i$
+    commutes with restriction, since the basis and its dual restrict to
+    the corresponding bases on $W$.  Thus it gives a sheaf inverse, and
+    the restricted evaluation map is an isomorphism.  The
+    local-to-global step gives $(shf.e^or)^or simeq shf.e$.
 
   + Define
     $
       alpha:tensor(shf.e^or, shf.f, over: shf.o_X)
       -> shf.hom_(shf.o_X)(shf.e,shf.f)
     $
-    by $alpha(tensor(lambda, s))(e)=lambda(e)s$.  This construction commutes
-    with restriction.  On an open set where $shf.e simeq shf.o_X^r$, it is
-    the evident isomorphism
+    by $alpha(tensor(lambda, s))(e)=lambda(e)s$.  Restricting to $U_i$ turns
+    its source and target into
     $
-      tensor((shf.o_X^r)^or, shf.f, over: shf.o_X) simeq shf.f^r
-      simeq shf.hom (shf.o_X^r,shf.f).
+      tensor((shf.o_(U_i)^r)^or, shf.f|_(U_i), over: shf.o_(U_i))
+      quad "and" quad
+      shf.hom (shf.o_(U_i)^r,shf.f|_(U_i)).
     $
-    Thus $alpha$ is locally, hence globally, an isomorphism.
+    Both are canonically $(shf.f|_(U_i))^r$: the first by distributing
+    tensor product over the finite direct sum, and the second because a map
+    out of a finite free module is determined by the images of its basis.
+    Under these identifications $alpha|_(U_i)$ is the identity.  It is
+    therefore an isomorphism on the cover and hence on $X$.  Explicitly,
+    on any open $W subset.eq U_i$ put $R=shf.o_X(W)$ and
+    $N=shf.f (W)$.  The inverse finite-free map sends $v:R^r->N$ to
+    $sum_(k=1)^r tensor(e_k^or,v(e_k))$.  This formula commutes with
+    restriction.  It applies even when $shf.f$ is not quasi-coherent, so no
+    affine module presentation of $shf.f$ is needed.
 
-  + A morphism $u:tensor(shf.e, shf.f, over: shf.o_X) -> shf.g$ determines
+  + This part does not use local freeness and need not be reduced to affine
+    opens.  Since the sheaf tensor product is the sheafification of the
+    presheaf tensor product, specifying a morphism
+    $u:tensor(shf.e,shf.f)->shf.g$ is equivalent to specifying compatible
+    balanced maps
+    $
+      beta_U:shf.e (U) times shf.f (U) -> shf.g (U),
+      quad beta_U(e,s)=u_U(tensor(e,s)).
+    $
+    Here $u_U$ is the map on sections induced by $u$.  For
+    $s in shf.f (U)$, the resulting element of sheaf Hom is the entire
+    family $e mapsto beta_V(e,s|_V)$ for opens $V subset.eq U$;
+    compatibility of $beta$ with restrictions is precisely what makes
+    this family a morphism of restricted sheaves.  Currying $beta_U$ for
+    every $U$ gives
     $
       tildeOf(u):shf.f -> shf.hom (shf.e,shf.g),
       quad tildeOf(u)(s)(e)=u(tensor(e, s)).
     $
     Conversely, from $v:shf.f->shf.hom (shf.e,shf.g)$ define
     $u_v(tensor(e, s))=v(s)(e)$.  Bilinearity gives a morphism from the tensor
-    product, and the two constructions are inverse and natural.  Therefore
+    product.  Checking on local sections shows that the two constructions
+    are inverse and natural.  Therefore
     $
       ops.hom(tensor(shf.e, shf.f, over: shf.o_X), shf.g)
       simeq ops.hom(shf.f, shf.hom (shf.e,shf.g)).
     $
 
-  + Assume, as in the exercise, that $shf.e$ is locally free of finite rank.
+  + In this part $f:X->Y$, $shf.f$ is an $shf.o_X$-module, and
+    $shf.e$ is a locally free $shf.o_Y$-module of finite rank.
     There is a natural morphism
     $
       theta:tensor(f_*shf.f, shf.e, over: shf.o_Y)
       -> f_*tensor(shf.f, f^*shf.e, over: shf.o_X),
       quad tensor(s, e) mapsto tensor(s, f^*e).
     $
-    It is enough to check $theta$ on an open cover of $Y$.  If
-    $shf.e|_V simeq shf.o_V^r$, then
+    Let $j:V arrow.r.hook Y$ be a member of a trivializing cover for
+    $shf.e$, and write $f_V:f^(-1)(V)->V$ for the restriction of $f$.  Directly
+    from the definition of pushforward,
     $
-         tensor(f_*shf.f, shf.e, over: shf.o_Y)|_V & simeq (f_*shf.f|_V)^r, \
-      f_*tensor(shf.f, f^*shf.e, over: shf.o_X)|_V & simeq f_*((shf.f|_(f^(-1)V))^r)
-                                                     simeq (f_*shf.f|_V)^r.
+      (f_*shf.f)|_V simeq (f_V)_*(shf.f|_(f^(-1)(V))),
     $
-    The last equality follows directly from the definition of pushforward,
-    since sections commute with finite direct sums.  Under these
-    identifications $theta|_V$ is the identity.  Hence $theta$ is an
-    isomorphism, which gives the displayed projection formula after taking
-    its inverse if necessary.
+    while functoriality of pullback gives
+    $
+      (f^*shf.e)|_(f^(-1)(V))
+      simeq f_V^*(shf.e|_V)
+      simeq shf.o_(f^(-1)(V))^r.
+    $
+    Consequently, after restricting $theta$ to $V$, its two sides reduce as
+    follows:
+    $
+      (tensor(f_*shf.f,shf.e))|_V
+        &simeq tensor((f_V)_*(shf.f|_(f^(-1)(V))),shf.o_V^r)
+         simeq ((f_V)_*(shf.f|_(f^(-1)(V))))^r, \
+      (f_*tensor(shf.f,f^*shf.e))|_V
+        &simeq (f_V)_* tensor(shf.f|_(f^(-1)(V)),shf.o_(f^(-1)(V))^r) \
+        &simeq (f_V)_*((shf.f|_(f^(-1)(V)))^r)
+         simeq ((f_V)_*(shf.f|_(f^(-1)(V))))^r.
+    $
+    The final isomorphism is checked on every open $W subset.eq V$:
+    both sides are $shf.f (f^(-1)(W))^r$.  Under the displayed chain,
+    $theta|_V$ is the identity on this finite direct sum.  Hence $theta$ is
+    locally, and therefore globally, an isomorphism.  Inverting it gives the
+    formula in the exercise.
 ]
 
 // Hartshorne II.5, Exercise 5.2
@@ -119,9 +198,12 @@
   $X$, $L$ to ${eta}$, zero to the empty set, and using the associated map
   $M->L$ for restriction.  There are no other nontrivial covers, so the
   sheaf axiom is automatic.  These constructions are inverse, also on
-  morphisms.
+  morphisms: a morphism of triples is a pair of linear maps on $M$ and
+  $L$ commuting with $bar(rho)$.  Every cover of a nonempty open contains
+  that open itself, which justifies the sheaf assertion above.
 
-  If $shf.f$ is quasi-coherent, Proposition 5.1 gives
+  If $shf.f$ is quasi-coherent, the affine characterization of
+  quasi-coherent sheaves gives
   $shf.f simeq tildeOf(M)$, where $M=Gamma(X, shf.f)$.  On $D(pi)={eta}$,
   $
     tildeOf(M)({eta})=M_pi=tensor(M, K, over: R).
@@ -148,8 +230,12 @@
     tildeOf(u)_(D(a))(m/a^n)
     = a^(-n) u(m)|_(D(a)).
   $
-  This is well-defined by the universal property of localization, is
-  compatible with restriction, and therefore defines a sheaf morphism
+  The section $a$ is a unit in $shf.o_X(D(a))$, so it acts invertibly
+  on $shf.f (D(a))$; the universal property of $M_a$ makes the formula
+  well-defined.  For $D(b) subset.eq D(a)$, restricting the formula to
+  $D(b)$ gives the unique localized linear map extending
+  $m mapsto u(m)|_(D(b))$.  Thus the formulas commute with restrictions
+  and agree on $D(a) inter D(b)=D(a b)$.  They define a sheaf morphism
   because distinguished opens form a basis.
 
   Conversely, a morphism $v:tildeOf(M)->shf.f$ gives on global sections an
@@ -173,7 +259,12 @@
 ]
 
 #proof[
-  First suppose that $shf.f$ is quasi-coherent.  On a suitable affine open
+  Restriction to an open set preserves sheaf cokernels, since these are
+  sheafified presheaf cokernels, and preserves direct sums by the same
+  construction.  Refine any given presentation cover by affine opens.
+  Quasi-coherence and coherence are defined by such local presentations
+  by associated modules, so it suffices to establish the assertions on
+  these refined opens.  First suppose that $shf.f$ is quasi-coherent.  On a suitable affine open
   $U=ops.spec A$ we may write $shf.f|_U simeq tildeOf(M)$.  Choose generators
   $(m_i)_(i in I)$ of $M$.  They give a surjection
   $
@@ -234,7 +325,8 @@
   + Let $Y=bb(A)^1_k=ops.spec k[t]$, let
     $U=D(t)=ops.spec k[t,t^(-1)]$, and let $j:U inclusion(#none, cat.sch) Y$
     be the open immersion.  The sheaf $shf.o_U$ is coherent.  Since $j$ is a
-    quasi-compact open immersion, Proposition 5.2(d), applied on $Y$, gives
+    morphism between the affine schemes $ops.spec k[t,t^(-1)]$ and
+    $ops.spec k[t]$, Proposition 5.2(d) gives
     $
       j_*shf.o_U simeq tildeOf(k[t,t^(-1)])
     $
@@ -244,15 +336,16 @@
     $t^(-n)$ have arbitrarily large pole order.  Thus $j_*shf.o_U$ is not
     coherent.  Both $U$ and $Y$ are varieties over $k$.
 
-  + Finiteness is local on the target.  This is exactly the target-local
-    affine reduction developed in the locality calculus: finite ring maps
-    are preserved by target localization and glue across finite
-    distinguished covers.  We may therefore take $Y=ops.spec A$.
+  + Use the corollaries "Finite Morphisms" and "Closed Immersions"
+    of the locality calculus in Section 2.3.  Restrict a closed immersion
+    $f:X->Y$ to each affine target $V=ops.spec A$.  The restricted map
+    $f^(-1)(V)->V$ is again a closed immersion; it suffices by target
+    locality of finiteness to prove that each of these maps is finite.
 
     A closed immersion into an affine scheme is the closed subscheme defined
     by a quasi-coherent ideal sheaf; hence it has the form
     $
-      X=ops.spec(A/idl.a) -> ops.spec A.
+      f^(-1)(V)=ops.spec(A/idl.a) -> ops.spec A.
     $
     The $A$-algebra $A/idl.a$ is generated as an $A$-module by $1$.
     Therefore the morphism is finite.  Target locality proves the assertion
@@ -267,6 +360,11 @@
     $
       (f_*shf.f)|_V simeq tildeOf(attach(M, bl: A)).
     $
+    Indeed, restriction of pushforward is pushforward by $f|_(f^(-1)(V))$:
+    both evaluate on $W subset.eq V$ as $shf.f (f^(-1)(W))$.  On a
+    distinguished $D(a) subset.eq V$, this is $M_a$, with $A$ acting
+    through $A->B$.  These localization identifications commute with
+    restriction and hence identify the sheaves on the entire basis.
     If $b_1,dots.c,b_r$ generate $B$ over $A$ and
     $m_1,dots.c,m_s$ generate $M$ over $B$, then the finitely many elements
     $b_i m_j$ generate $M$ over $A$.  Thus $M$ is finite as an $A$-module,
@@ -307,7 +405,9 @@
     $idl.p$ correspond to $x$.  By Proposition 5.1(b), the hypothesis says
     that $M_idl.p$ is a finite free $A_idl.p$-module, say of rank $r$.
 
-    Choose $m_1,dots.c,m_r in M$ whose images form a basis of $M_idl.p$, and
+    Represent a basis of $M_idl.p$ by fractions $m_i/s_i$ with
+    $s_i in.not idl.p$.  Multiplying each basis vector by the unit $s_i$
+    shows that the images of $m_1,dots.c,m_r in M$ still form a basis.  Let
     let
     $
       phi:A^r -> M, quad (a_i) mapsto sum_i a_i m_i.
@@ -364,9 +464,9 @@
     $a tensor(m, n)=0$, so $a=0$.  Thus $R->M$, $a mapsto a m$, is also
     injective, and it is already surjective.  Hence $M simeq R$.
 
-    We have proved that every stalk $shf.f_x$ is free of rank one.  Part (b)
-    makes $shf.f$ locally free; the rank is one on each resulting
-    neighborhood.  Therefore $shf.f$ is invertible.
+    We have proved that every stalk $shf.f_x$ is free of rank one.  Part (a)
+    applied with rank $1$ gives a neighborhood of each point on which
+    $shf.f$ is free of rank $1$.  Therefore $shf.f$ is invertible.
 ]
 
 // Hartshorne II.5, Exercise 5.8

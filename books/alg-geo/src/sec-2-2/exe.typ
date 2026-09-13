@@ -18,10 +18,12 @@
   $
   because the prime ideals of a localization are exactly the primes disjoint
   from the localized multiplicative set ${1,f,f^2,dots}$.  Thus $pi$ is a
-  homeomorphism from $ops.spec A_f$ onto $D(f)$.
+  homeomorphism from $ops.spec A_f$ onto $D(f)$: the inverse image of
+  $D(g)$ is $D(g/1)$, and these distinguished opens form bases on both sides.
 
-  This homeomorphism also identifies the structure sheaves.  The principal
-  opens $D(g) subset.eq D(f)$ form a basis, and on such an open the two rings
+  This homeomorphism also identifies the structure sheaves.  The opens
+  $D(f g)=D(f) inter D(g)$, for $g in A$, form a basis
+  of $D(f)$; their inverse images are $D(g/1)$, and on these opens the two rings
   of sections are
   $
     shf.o_(ops.spec A)(D(f g))=A_(f g)
@@ -31,9 +33,6 @@
   The canonical localization map identifies these rings, compatibly with
   restriction.  A morphism of sheaves which is an isomorphism on a basis is
   an isomorphism, so $pi$ yields the required isomorphism of schemes.
-
-  This is exactly mathlib's `basicOpenIsoSpecAway`, used directly in the Lean
-  companion.
 ]
 
 // Hartshorne II.2, Exercise 2.2
@@ -52,11 +51,10 @@
   $
   By Exercise 2.1, with its restricted structure sheaf this neighborhood is
   $ops.spec A_f$.  Hence every point of $(U,shf.o_X|_U)$ has an affine open
-  neighborhood, which is the definition of a scheme.
-
-  In mathlib an open `U : X.Opens` coerces directly to a scheme, and its
-  canonical map `U.ι : U ⟶ X` is an open immersion; the Lean companion checks
-  both declarations.
+  neighborhood, which is the definition of a scheme.  The sheaf
+  restriction is transitive, so on $D(f)$ the structure sheaf restricted
+  from $U$ is exactly the one restricted from $V$.  In particular its stalks
+  are the same local rings as those of $X$.
 ]
 
 // Hartshorne II.2, Exercise 2.3
@@ -83,16 +81,26 @@
     $shf.o_X (V)$ gives $s|_V=0$, hence $a=0$.  Thus every local ring is
     reduced.
 
-  + Let $cal(N) subset.eq shf.o_X$ be the sheaf of nilpotent sections; it is
-    the nilradical ideal sheaf.  Define
+  + Let $cal(N)$ be the sheafification of the ideal presheaf
+    $U mapsto sqrt((0)) subset.eq shf.o_X(U)$.  Its inclusion into
+    $shf.o_X$ is injective by Exercise 1.4.  Thus $cal(N)(U)$ consists
+    of locally nilpotent sections; a uniform nilpotence exponent on an
+    arbitrary open $U$ is not required.  Define
     $
       X_(red)=(X,shf.o_X\/cal(N)).
     $
     Equivalently, this quotient sheaf is the sheafification of
     $U mapsto shf.o_X (U)_(red)$.  On an affine open
     $V=ops.spec A$, its restriction is the structure sheaf of
-    $ops.spec(A\/sqrt((0)))$.  Hence these affine reductions glue and make
-    $X_(red)$ a scheme.  The quotient maps define a closed immersion
+    $ops.spec(A\/sqrt((0)))$.  To see this, on every $D(a) subset.eq V$
+    a locally nilpotent section is nilpotent because $D(a)$ is
+    quasi-compact: choose a finite cover with nilpotence exponents and take
+    their maximum.  The nilradical of $A_a$ is $sqrt((0))A_a$, and
+    $A_a\/sqrt((0))A_a simeq (A\/sqrt((0)))_(bar(a))$.  Localization
+    commutes with these quotient maps, so these identifications respect all
+    restrictions on the distinguished basis.  They identify the quotient
+    sheaf with the indicated affine structure sheaf.  Hence these affine reductions
+    glue and make $X_(red)$ a scheme.  The quotient maps define a closed immersion
     $i:X_(red)->X$.
 
     Every prime ideal of $A$ contains $sqrt((0))$, so contraction gives a
@@ -106,12 +114,14 @@
     pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus
     $f^sharp$ kills the nilradical ideal sheaf of $Y$ and factors through
     $shf.o_Y\/cal(N)_Y$.  This gives a morphism
-    $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.  It is unique because
-    $i$ is a closed immersion, hence a monomorphism.
-
-  Mathlib already has the nilradical ideal sheaf and its associated
-  subscheme.  The Lean companion defines `reduction` from them and verifies
-  reducedness, the underlying homeomorphism, and the unique factorization.
+    $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.  At $x in X$
+    the induced map is the factor of the local homomorphism
+    $shf.o_(Y,f(x))->shf.o_(X,x)$ through its nilradical quotient.  It is
+    local because the maximal ideal of that quotient is the image of the
+    original maximal ideal.  Thus this is a morphism of locally ringed
+    spaces.  The underlying map is forced by the homeomorphism $i$, and
+    the sheaf map is forced by the epimorphism to the quotient, proving
+    uniqueness.
 ]
 
 // Hartshorne II.2, Exercise 2.4
@@ -132,18 +142,17 @@
   Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open
   $U=ops.spec B subset.eq X$, restriction gives a ring map
   $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism
-  $U->ops.spec A$.  On overlaps these morphisms induce the same maps on all
-  sections, because both arise by restricting $phi$.  They therefore glue
+  $U->ops.spec A$.  Cover each overlap $U inter U'$ by affine opens
+  $W=ops.spec C$.  Both restricted morphisms $W->ops.spec A$ correspond
+  to the same ring map $A->Gamma(X,shf.o_X)->C$.  The affine
+  correspondence therefore makes them equal on $W$, and hence on the
+  overlap.  The gluing lemma for scheme morphisms now glues them
   to a morphism $X->ops.spec A$.
 
   On an affine open, the two constructions are inverse by the contravariant
   equivalence between rings and affine schemes.  Since affine opens cover
   $X$, they are inverse globally.  Every step commutes with precomposition in
   $X$ and with ring maps in $A$, so the bijection is natural.
-
-  Mathlib packages precisely this bijection as the hom-set equivalence of
-  `ΓSpec.adjunction`; the Lean companion specializes that equivalence to the
-  displayed statement.
 ]
 
 // Hartshorne II.2, Exercise 2.5
@@ -213,7 +222,11 @@
   Give it the topology in which $W subset.eq X$ is open precisely when its
   inverse image in every $X_i$ is open.  Because each $U_(i j)$ is open and
   every $phi_(i j)$ is a homeomorphism, the maps
-  $q_i:X_i->X$ are open embeddings.  Their images cover $X$, and
+  $q_i:X_i->X$ are open embeddings.  More explicitly, the inverse image
+  in $X_j$ of the image of an open $W_i subset.eq X_i$ is
+  $phi_(i j)(W_i inter U_(i j))$, which is open; the cocycle condition
+  ensures that no further identifications occur within a single $X_i$.
+  Their images cover $X$, and
   $q_i(X_i) inter q_j(X_j)$ is the common image of $U_(i j)$ and $U_(j i)$.
 
   Define the structure sheaf by compatible families:
@@ -240,11 +253,6 @@
   $U_(i i)=X_i$.  There are then no cross-component compatibility conditions,
   so the construction is the ordinary topological disjoint union with
   componentwise structure sheaf.
-
-  Mathlib formalizes the entire construction as `Scheme.GlueData.glued`.
-  It proves that the component maps are open immersions, jointly surjective,
-  and have the prescribed overlaps as pullbacks; the Lean companion checks
-  those interfaces.
 ]
 
 // Hartshorne II.2, Exercise 2.13
@@ -329,17 +337,12 @@
     $
       theta:A_f->Gamma(X_f, shf.o).
     $
-    Part (c) says it is surjective.  If $theta(a/f^r)=0$, then
+    This map exists because $f|_(X_f)$ is a unit: its stalkwise inverses
+    are represented by local inverses, which agree and glue.  Part (c) says
+    it is surjective.  If $theta(a/f^r)=0$, then
     $a|_(X_f)=0$; by part (b), $f^n a=0$ for some $n$, which is exactly the
     criterion for $a/f^r=0$ in $A_f$.  Thus $theta$ is also injective and is
     the required isomorphism.
-
-  A finite affine cover makes $X$ quasi-compact, and quasi-compact pairwise
-  intersections make it quasi-separated.  Mathlib's
-  `isLocalization_basicOpen_of_qcqs` states part (d) in this equivalent qcqs
-  form.  The Lean companion also checks the open-intersection identity,
-  the power-clearing assertion of part (b), and the numerator assertion of
-  part (c).
 ]
 
 // Hartshorne II.2, Exercise 2.17
@@ -366,7 +369,8 @@
   + If $X$ is affine, take the single section $f_1=1$.  It generates the unit
     ideal, $X_(f_1)=X$, and this open is affine.
 
-    Conversely, suppose $f_1,dots,f_r$ generate $A$.  Then the opens
+    Conversely, suppose $f_1,dots,f_r$ generate the unit ideal of $A$.
+    Then the opens
     $X_(f_i)$ cover $X$: at every point some $(f_i)_x$ must be a unit, since a
     linear combination of the $f_i$ is $1$.  The principal opens
     $D(f_i)$ likewise cover $ops.spec A$.
@@ -387,11 +391,6 @@
     isomorphism.  Part (a), applied to the cover ${D(f_i)}$ of
     $ops.spec A$, now shows that $psi$ is an isomorphism.  Hence $X$ is
     affine.
-
-  Mathlib records part (a) by making isomorphisms Zariski-local on the target,
-  and records the converse direction of part (b) as
-  `isAffine_of_isAffineOpen_basicOpen`.  The Lean companion combines the
-  latter with the one-element cover ${1}$ to check the stated equivalence.
 ]
 
 // Hartshorne II.2, Exercise 2.18

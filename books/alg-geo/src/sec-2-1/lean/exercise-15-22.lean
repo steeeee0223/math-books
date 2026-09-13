@@ -67,4 +67,12 @@ example (i j : D.J) :
 
 end Exercise1_22
 
+
+/- The revised 1.15 proof is checked by sheafHom_isSheaf and
+sheafHom_sections, with the abelian group instance above. For 1.22 the gluing
+API checks the open pieces, cover and overlaps of the glued sheafed space.
+The identification of its underlying space with the fixed X and the
+compatible-family formula for sections are not assembled here as an
+isomorphism over X; this is the remaining interface gap for that exercise. -/
+
 end HartshorneII1

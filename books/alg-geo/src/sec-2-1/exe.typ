@@ -17,7 +17,10 @@
   Let $shf.a^-$ denote the given presheaf and let $shf.a$ be the sheaf
   of locally constant $A$-valued functions.  There is a presheaf morphism
   $theta:shf.a^- ->shf.a$ which sends $a in A$ to the constant function
-  with value $a$.
+  with value $a$.  At the empty open set take the zero group; its unique
+  section maps to the empty function.  Pointwise operations make $shf.a$ a
+  sheaf of abelian groups, since compatible functions glue uniquely and
+  local constancy can be tested on an open cover.
 
   We verify the universal property of sheafification.  Let $shf.g$ be a sheaf
   and let $u:shf.a^- ->shf.g$ be a presheaf morphism.  If
@@ -33,9 +36,6 @@
   sections are locally in the image of $theta$, uniqueness follows from the
   uniqueness part of the sheaf axiom.  Hence $(shf.a,theta)$ is the associated
   sheaf of $shf.a^-$.
-
-  In mathlib this is built into the definition `constantSheaf`: it is the
-  constant-presheaf functor followed by `presheafToSheaf`.
 ]
 
 // Hartshorne II.1, Exercise 1.2
@@ -50,8 +50,12 @@
 ]
 
 #proof[
-  + An element of $(ops.ker phi)_P$ is represented by a section
-    $s in shf.f (U)$ whose image has zero germ at $P$.  After shrinking $U$
+  + The inclusion $ops.ker phi arrow.r.hook shf.f$ induces a map
+    $(ops.ker phi)_P -> ops.ker(phi_P)$.  It is injective: equality of
+    germs is equality after restricting to a common neighborhood, also in
+    the kernel presheaf.  Conversely, an element of $ops.ker(phi_P)$ is
+    represented by a section $s in shf.f (U)$ whose image has zero germ at $P$.
+    After shrinking $U$
     around $P$, $phi(s)$ is zero, so the same germ is represented by a section
     of $ops.ker phi$.  This proves
     $(ops.ker phi)_P simeq ops.ker(phi_P)$.  For the image, a germ in
@@ -71,10 +75,6 @@
     every stalk into the usual equality of image and kernel for abelian
     groups.  Since equality of subsheaves can be checked on all stalks, the
     original sequence is exact exactly when all stalk sequences are exact.
-
-  Mathlib packages the last statement as
-  `TopCat.Sheaf.exact_iff_stalkFunctor_map_exact`; the Lean companion also
-  checks that stalk functors preserve finite limits and finite colimits.
 ]
 
 // Hartshorne II.1, Exercise 1.3
@@ -109,13 +109,12 @@
     is locally surjective because the quotient map $RR->RR\/ZZ$ has local
     continuous sections.  Hence it is a surjective sheaf morphism.  On the
     open set $X$ itself, however, the identity map $X->RR\/ZZ$ has no
-    continuous lift to $RR$: such a lift would make the degree-one map of the
-    circle factor through the contractible space $RR$.  Therefore the map on
+    continuous lift $h:RR\/ZZ->RR$.  Indeed, with $q:RR->RR\/ZZ$ the
+    quotient map, $h(q(t))-t$ would be a continuous integer-valued function
+    on the connected space $RR$, hence constant.  But its values at $t=0$
+    and $t=1$ differ by $1$, since $q(0)=q(1)$, a contradiction.
+    Therefore the map on
     global sections is not surjective.
-
-  The equivalence in the first part is
-  `TopCat.Sheaf.isLocallySurjective_iff_epi` together with
-  `TopCat.Presheaf.locally_surjective_iff_surjective_on_stalks` in mathlib.
 ]
 
 // Hartshorne II.1, Exercise 1.4
@@ -141,10 +140,6 @@
     $ops.im phi=(U mapsto ops.im(phi_U))^+ arrow.r.hook shf.g^+$.
     Since $shf.g$ is already a sheaf, $shf.g^+ simeq shf.g$.  This realizes the
     image sheaf naturally as a subsheaf of the target.
-
-  Mathlib proves this abstractly from the left exactness of
-  `presheafToSheaf`; the Lean companion checks that its map sends every
-  monomorphism to a monomorphism.
 ]
 
 // Hartshorne II.1, Exercise 1.5
@@ -158,10 +153,6 @@
   $phi$ is injective and surjective, Exercise 1.2 says that every stalk map
   $phi_P$ is an injective and surjective homomorphism of abelian groups, hence
   an isomorphism.  Proposition 1.1 then implies that $phi$ is an isomorphism.
-
-  Categorically, this says that the category of sheaves of abelian groups is
-  balanced: a morphism which is both a monomorphism and an epimorphism is an
-  isomorphism.  The Lean companion derives this statement stalkwise.
 ]
 
 // Hartshorne II.1, Exercise 1.6
@@ -174,7 +165,8 @@
 
 #proof[
   + Let $q:shf.f->shf.f\/shf.f'$ be the canonical map.  At a point $P$ it is
-    the quotient homomorphism
+    the quotient homomorphism (filtered colimits of abelian groups commute
+    with quotients, and sheafification preserves stalks)
     $shf.f_P->shf.f_P\/shf.f'_P$.  It is surjective and its kernel is exactly
     $shf.f'_P$.  Exercise 1.2 therefore shows that $q$ is surjective and that
     its kernel is $shf.f'$.  Hence
@@ -189,10 +181,6 @@
     isomorphism theorem for abelian groups because $q_P$ is surjective.
     Proposition 1.1 gives
     $shf.f\/shf.f' simeq shf.f\/ops.ker q simeq shf.f''$.
-
-  In mathlib the two canonical exact sequences are
-  `ShortComplex.exact_kernel` and `ShortComplex.exact_cokernel` in the abelian
-  category of sheaves.
 ]
 
 // Hartshorne II.1, Exercise 1.7
@@ -210,15 +198,13 @@
   $shf.f\/ops.ker phi simeq ops.im phi$.
 
   By definition, $ops.coker phi$ is the sheafification of the presheaf
-  $U mapsto shf.g (U)\/ops.im(phi_U)$.  The inclusion of the presheaf image into
-  its sheafification does not change the resulting quotient sheaf.  Equivalently,
-  on every stalk both sides are
+  $U mapsto shf.g (U)\/ops.im(phi_U)$.  The quotient morphism
+  $shf.g->shf.g\/ops.im phi$ kills the presheaf
+  image, so it induces a canonical morphism from $ops.coker phi$ to this
+  quotient.  On every stalk this is the identity of the quotient group:
+  both sides are
   $shf.g_P\/ops.im(phi_P)$.  Thus
   $ops.coker phi simeq shf.g\/ops.im phi$.
-
-  Mathlib combines the first statement into the canonical isomorphism
-  `Abelian.coimageIsoImage`: its coimage is the cokernel of the kernel, while
-  its image is the kernel of the cokernel.
 ]
 
 // Hartshorne II.1, Exercise 1.8
@@ -240,13 +226,12 @@
   Exactness on stalks gives, near every $P in U$, a section
   $t_P in shf.f'(V_P)$ with $i(t_P)=s|_(V_P)$.  On overlaps the sections
   $t_P$ agree because $i$ is injective there.  They glue to
-  $t in shf.f'(U)$, and injectivity of the sheaf restriction test gives
+  $t in shf.f'(U)$, and the separatedness axiom for $shf.f$ gives
   $i_U(t)=s$.  Hence $ops.im(i_U)=ops.ker(q_U)$.
 
   There is generally no reason for $q_U$ to be surjective: the counterexample
   in Exercise 1.3 already supplies a surjective sheaf morphism which is not
-  surjective on global sections.  Mathlib formalizes the positive statement as
-  `TopCat.Sheaf.sections_exact_of_left_exact`.
+  surjective on global sections.
 ]
 
 // Hartshorne II.1, Exercise 1.9
@@ -280,9 +265,7 @@
     simeq ops.hom(shf.f, shf.k) times ops.hom(shf.g, shf.k).
   $
   The inverse sends $(a,b)$ to the morphism $(s,t) mapsto a(s)+b(t)$.  Thus
-  $shf.h$ is also the direct sum.  In mathlib this common object is a binary
-  biproduct, supplied by the `HasBinaryBiproducts` instance for sheaves of
-  abelian groups.
+  $shf.h$ is also the direct sum.
 ]
 
 // Hartshorne II.1, Exercise 1.10
@@ -312,9 +295,7 @@
   $u$ uniquely to $u^+:cal(P)^+->shf.g$.  This map factors the original cocone,
   and any other such factorization restricts to the same map on $cal(P)$, so
   it is equal to $u^+$.  Therefore $cal(P)^+$ has the universal property of
-  $ops.colim_i shf.f_i$.  Mathlib implements exactly this construction:
-  colimits of sheaves are obtained by sheafifying the pointwise presheaf
-  colimit.
+  $ops.colim_i shf.f_i$.
 ]
 
 // Hartshorne II.1, Exercise 1.11
@@ -328,7 +309,10 @@
   Write $cal(P)(U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
   every open subset of $X$ is quasi-compact.  We check the sheaf axiom for an
   open cover $(U_a)$ of $U$.  Only finitely many members are needed, so replace
-  the cover by $U_1,dots,U_n$.
+  the cover by $U_1,dots,U_n$ for the finite gluing argument below.
+  Once a section on $U$ is obtained, it has the prescribed restriction on
+  any omitted $U_a$: apply separatedness to the finite cover
+  $(U_a inter U_i)_(i=1)^n$.  The empty open has zero colimit group.
 
   Let $s_a in cal(P)(U_a)$ be compatible.  Choose a representative of each
   $s_a$ in some $shf.f_(i_a) (U_a)$.  Since the index category is filtered and
@@ -352,9 +336,6 @@
     Gamma(X, ops.colim_i shf.f_i)
     = ops.colim_i Gamma(X, shf.f_i).
   $
-  The Lean companion checks the two mathlib ingredients used here: opens in a
-  noetherian space are compact, and filtered colimits of abelian groups are
-  created on the underlying types.
 ]
 
 // Hartshorne II.1, Exercise 1.12
@@ -382,9 +363,6 @@
   a sheaf morphism $u:shf.g->cal(L)$.  Its composites with the projections are
   the $u_i$, and those equations determine every component of $u$, proving
   uniqueness.  This is the universal property of the inverse limit.
-
-  Mathlib states the pointwise sheaf assertion as `TopCat.limit_isSheaf` and
-  records that the forgetful functor from sheaves creates all limits.
 ]
 
 // Hartshorne II.1, Exercise 1.13
@@ -439,10 +417,6 @@
   $W subset.eq U$ agree on the cover ${W inter U_i}$ and hence agree by the
   uniqueness axiom for $shf.g$.  The gluing is therefore unique, proving that
   $shf.hom (shf.f,shf.g)$ is a sheaf of abelian groups.
-
-  Mathlib's `Presheaf.IsSheaf.hom` proves the sheaf condition, and
-  `sheafHomSectionsEquiv` identifies its global sections with morphisms of
-  sheaves.  The Lean companion checks both statements.
 ]
 
 // Hartshorne II.1, Exercise 1.16
@@ -510,7 +484,12 @@
      Psi(beta) & =epsilon_(shf.f) compose f^(-1)beta, && Psi(beta):f^(-1)shf.g->shf.f.
   $
 
-  The colimit maps used above satisfy the two triangle identities
+  On stalks, identify $(f^(-1)shf.g)_x$ with $shf.g_(f(x))$ by
+  representing a germ on a neighborhood $V$ of $f(x)$.  The unit sends this
+  representative to its inverse-image section on $f^(-1)(V)$, and the
+  counit restricts a representative to the chosen source neighborhood.
+  Applying these operations successively recovers the original germ.
+  Thus the colimit maps used above satisfy the two triangle identities
   $
     f^(-1)shf.g
     ->^(f^(-1)eta_(shf.g))f^(-1)f_*f^(-1)shf.g
@@ -620,7 +599,8 @@
   of $shf.f_j$ makes it hold globally.  Hence $(s_i)_i$ is a section of
   $shf.f (V)$, and componentwise uniqueness proves uniqueness in $shf.f$.
 
-  Fix $i$.  Projection to the $i$-th component gives
+  The construction also handles empty intersections, whose section groups
+  are zero.  Fix $i$.  Projection to the $i$-th component gives
   $rho_i:shf.f|_(U_i)->shf.f_i$.  It is an isomorphism.  Indeed, if
   $t in shf.f_i(V)$ for $V subset.eq U_i$, its inverse image has $j$-th
   component
@@ -638,8 +618,4 @@
   so the construction in Exercise 1.15 glues them to an isomorphism
   $shf.g simeq shf.f$.  Its restrictions are prescribed, hence the same
   separatedness argument makes it unique.
-
-  Mathlib packages this construction as `SheafedSpace.GlueData`: its glued
-  object is covered by the input pieces and its pullback intersections are
-  the prescribed overlaps.  These facts are checked in the Lean companion.
 ]

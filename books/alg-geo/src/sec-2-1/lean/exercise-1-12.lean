@@ -156,4 +156,21 @@ example : PreservesFilteredColimits (CategoryTheory.forget AddCommGrpCat.{u}) :=
 
 end SheavesOfAbelianGroups
 
+
+/- Verification boundaries for the revised exposition:
+1.1: constantSheaf_eq_sheafification checks the categorical definition, not
+the explicit locally constant function model. Mathlib's constant presheaf
+also has value A on the empty open; Hartshorne's has zero there. Their stalks
+agree since neighborhoods of a point are nonempty, so their associated
+sheaves agree; this comparison is not a separate theorem in this file.
+1.2--1.10, 1.12: the declarations above check the categorical terminal claims
+and stalk exactness used in the prose. In 1.3(b), the elementary obstruction
+to a circle lift and the local sections of the real quotient map are not
+formalized here. For 1.10 the construction of the colimit cocone and its
+universal factorization through sheafification are not explicitly packaged.
+1.11: compactness of opens and creation of filtered colimits on underlying
+types are checked. The finite-stage gluing argument, including recovery of
+sections on omitted members of a cover, is not yet assembled as a sheaf theorem.
+-/
+
 end HartshorneII1

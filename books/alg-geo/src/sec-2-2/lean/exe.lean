@@ -210,4 +210,20 @@ theorem isAffine_iff_exists_basicOpen_cover {X : Scheme.{u}} :
 
 end Exercise2_17
 
+
+/- Comparison with the revised Hartshorne construction in 2.3:
+X.nilradical records radical ideals on affine opens. On arbitrary opens the
+associated ideal sheaf consists of locally nilpotent sections, not necessarily
+sections killed by one global exponent. The prose sheafifies the nilradical
+presheaf before taking its quotient. reduction_isReduced,
+reduction_isHomeomorph, and existsUnique_lift_reduction check the resulting
+scheme-level conclusions. The identification of that explicit sheafification
+with the ideal-sheaf-data construction is not assembled here.
+The other revised exercises are checked by the scheme isomorphisms,
+adjunction, gluing cover/intersection theorems and localization statements
+above. For 2.12 the compatible-family formula is not separately identified
+with Scheme.GlueData.glued. In 2.16 the stated finite affine-cover hypothesis
+is represented by CompactSpace and QuasiSeparatedSpace; the finite-cover
+criterion establishing these instances is not packaged in this file. -/
+
 end HartshorneII2
