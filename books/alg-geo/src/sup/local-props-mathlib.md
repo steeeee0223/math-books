@@ -1,3 +1,5 @@
+> 搬移註記：教材與 companion 已移至 `sup/`，並由 `sup.typ` 納入主書。以下保留原改寫時的歷史記錄。
+
 # local-props 的 mathlib 證明來源
 
 教材：[local-props.typ](local-props.typ)。查閱日期：2026-09-07。
@@ -74,6 +76,6 @@
 
 ## 檢查
 
-- 單獨編譯教材：`typst compile --root . books/alg-geo/src/sec-2-3/local-props.typ /private/tmp/local-props-mathlib.pdf`。
+- 單獨編譯教材：`typst compile --root . books/alg-geo/src/sup/local-props.typ /private/tmp/local-props-mathlib.pdf`。
 - 對照 git HEAD：兩份表格只有 faithfully flat / GS 由 yes 改為 no；保留全部 8 個反例，另加 2 個反例（BC 與空-cover GS）。
 - sec-2-3.typ 維持原有 include。

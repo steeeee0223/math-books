@@ -1,3 +1,4 @@
+/- Relocated from sec-2-1/lean/exercise-1-12.lean; mathematical declarations unchanged. -/
 import Mathlib.Algebra.Category.Grp.FilteredColimits
 import Mathlib.CategoryTheory.Sites.ConstantSheaf
 import Mathlib.CategoryTheory.Sites.LeftExact
@@ -9,7 +10,7 @@ import Mathlib.Topology.Sheaves.LocallySurjective
 # Hartshorne II.1, Exercises 1.1--1.12
 
 The declarations below are small, kernel-checked interfaces to the mathlib
-results used by the accompanying human-readable proofs in `exe.typ`.
+results used by the accompanying human-readable proofs in the supplement applications indexed by the original exercise numbers.
 
 Mathlib formulates injective and surjective sheaf morphisms categorically as
 monomorphisms and epimorphisms. For sheaves of abelian groups these are the
@@ -145,7 +146,7 @@ theorem pointwise_limit_is_sheaf {I : Type} [SmallCategory I]
 /- Exercise 1.11 uses these two formal ingredients: every open subset of a
 Noetherian space is compact, and filtered colimits of abelian groups are
 computed on underlying types. The finite-subcover gluing argument is written
-out in `exe.typ`. -/
+out in the supplement applications indexed by the original exercise numbers. -/
 theorem open_isCompact [TopologicalSpace.NoetherianSpace X]
     (U : TopologicalSpace.Opens X) :
     IsCompact (U : Set X) :=

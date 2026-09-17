@@ -1,3 +1,4 @@
+/- Relocated from sec-2-3/lean/local-props.lean; mathematical declarations unchanged. -/
 import Mathlib.AlgebraicGeometry.Morphisms.Affine
 import Mathlib.AlgebraicGeometry.Morphisms.ClosedImmersion
 import Mathlib.AlgebraicGeometry.Morphisms.Finite
@@ -10,6 +11,7 @@ import Mathlib.AlgebraicGeometry.Morphisms.Separated
 import Mathlib.AlgebraicGeometry.Morphisms.UniversallyClosed
 import Mathlib.RingTheory.RingHom.FaithfullyFlat
 import Mathlib.RingTheory.RingHom.Surjective
+import Mathlib.RingTheory.Ideal.Quotient.Operations
 
 /-!
 # Local properties of morphisms
@@ -22,6 +24,13 @@ mathlib.  The negative examples, the derivation of source gluing for integral
 and finite maps, and the faithful-flat gluing arguments remain mathematical
 arguments in the textbook; their supporting positive equivalences are checked
 below.
+
+The shared proof locations are now XL-7 / II.2.17(b) for the global
+principal-open affineness criterion and CS-1 for the affine closed-immersion
+dictionary. The declarations below check those inputs, the trivial-property
+specialization in LP-47, and the surjectivity specialization in LP-33.
+LP-44, LP-48 and LP-52 now refer to the existing XP/MG examples; those
+explicit counterexample schemes are still not assembled in this file.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -33,7 +42,43 @@ universe u
 
 namespace HartshorneII3LocalProperties
 
+/-- LP-30: the quotient isomorphism must recover the specified ring map. -/
+theorem surjective_iff_compatible_quotient_iso {R S : Type u}
+    [CommRing R] [CommRing S] (f : R →+* S) :
+    Function.Surjective f ↔
+      ∃ e : R ⧸ RingHom.ker f ≃+* S,
+        ∀ a, e (Ideal.Quotient.mk (RingHom.ker f) a) = f a := by
+  constructor
+  · intro hf
+    exact ⟨f.quotientKerEquivOfSurjective hf, fun _ ↦ rfl⟩
+  · rintro ⟨e, he⟩ b
+    obtain ⟨q, hq⟩ := e.surjective b
+    obtain ⟨a, rfl⟩ := Ideal.Quotient.mk_surjective q
+    exact ⟨a, (he a).symm.trans hq⟩
+
 section AbstractLocality
+
+/-- LP-13 uses exactly the global principal-open criterion proved in XL-7,
+including the empty scheme and the empty generating set. -/
+theorem affine_of_global_principal_cover {X : Scheme.{u}}
+    (s : Set Γ(X, ⊤)) (hs : Ideal.span s = ⊤)
+    (hAffine : ∀ a ∈ s, IsAffineOpen (X.basicOpen a)) : IsAffine X :=
+  isAffine_of_isAffineOpen_basicOpen s hs hAffine
+
+/-- LP-47: on an affine target the whole-inverse-image property for the
+always-true ring property is exactly affineness of the source. -/
+theorem affineAnd_true_iff {X Y : Scheme.{u}} (f : X ⟶ Y) [IsAffine Y] :
+    affineAnd (fun _ ↦ True) f ↔ IsAffine X := by
+  simp only [affineAnd_apply, and_true]
+
+/-- LP-33 / CS-1: the affine closed-immersion dictionary supplies the
+whole-inverse-image criterion before locality is applied. Mathlib's
+HasAffineProperty compares the restricted morphism on the entire inverse
+image of an affine target, as in the textbook. -/
+theorem closedImmersion_affine_target_criterion {X Y : Scheme.{u}}
+    (f : X ⟶ Y) [IsAffine Y] :
+    IsClosedImmersion f ↔ IsAffine X ∧ Function.Surjective f.appTop := by
+  exact HasAffineProperty.iff_of_isAffine (P := @IsClosedImmersion) (f := f)
 
 variable (P : ∀ {R S : Type u} [CommRing R] [CommRing S], (R →+* S) → Prop)
 

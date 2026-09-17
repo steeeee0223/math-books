@@ -9,7 +9,7 @@
 // Hartshorne II.8, Definition D4
 #definition(title: "Nonsingular Varieties")[
   - *(Abstract Varieties).* From now on, our _(abstract) variety_ means an integral separated scheme of finite type over an algebraically closed field $k$.
-  - *(Nonsingularity).* An (abstract) variety $X$ over $k$ is _nonsigular_ if all its local rings $shf.o_X,P$ are regular.
+  - *(Nonsingularity).* An (abstract) variety $X$ over $k$ is _nonsigular_ if all its local rings $shf.o_(X,P)$ are regular.
 ]
 // Hartshorne II.8, Theorem 8.14A
 #theorem(number: "8.14A")[
@@ -19,141 +19,141 @@
 #theorem(number: "8.15")[
   Let $X$ be an irreducible separated scheme of finite type over $k$. Then,
   $
-    Omega_(X\/k) in cat.mod(shf.o_X)\ text("is locally free of rank")\ n=ops.dim(X)\ arrow.l.r.double.long \ X\ text("is a nons in gular variety over")\ k.
+    &Omega_(X\/k) in cat.mod(shf.o_X) text("is locally free of rank") n=ops.dim(X) \
+    &quad arrow.l.r.double.long X text("is a nonsingular variety over") k.
   $
 ]
 #proof[
   Note that the question is local by covering $X$ with open affine subsets, so we may assume $X$ is affine, say $X=ops.spec A$.
-  - If $P in X$ is a closed point, we have $ops.dim(shf.o_X),op("Pattach")(=, b: "_[3.20a]_")ops.dim(X)=n,\ shf.o_X,P\/ idl.m_P simeq k$. Write $B= shf.o_X,P=A_idl.m$, where $idl.m = idl.m_P$ corresponds to the point $P$. Thus,
+  - If $P in X$ is a closed point, we have $ops.dim(shf.o_(X,P)) eqBy(text("[3.20a]"))ops.dim(X)=n, shf.o_(X,P)\/ idl.m_P simeq k$. Write $B= shf.o_(X,P)=A_idl.m$, where $idl.m = idl.m_P$ corresponds to the point $P$. Thus,
   $
-    (Omega_(X\/k))_op("Pattach") (simeq, b: "text(\"(8.9.2)\")")(Omega_(A\/k))op("widetilde")_op("Pattach") (simeq, b: "text(\"(5.1)\")")(Omega_(A\/k))_idl.m attach(simeq, b: "text(\"(8.2)\")")Omega_(B\/k).
+    (Omega_(X\/k))_P isoBy(text("(8.9.2)")) tildeOf(Omega_(A\/k))_P isoBy(text("(5.1)")) (Omega_(A\/k))_idl.m isoBy(text("(8.2)")) Omega_(B\/k).
   $
-  - Since $X$ is of finite type over $k$, we have $A in fg cat.alg_k$. Further, $k$ is perfect as it is algebraically closed, so we see from _(8.8)_ that
+  - Since $X$ is of finite type over $k$, we have $A in fg(cat.alg_k)$. Further, $k$ is perfect as it is algebraically closed, so we see from _(8.8)_ that
   $
-    Omega_(B\/k) in cat.mod(B)\ text("is free of rank")\ n\ arrow.l.r.double.long \ B\ text("is regular").
+    Omega_(B\/k) in cat.mod(B) text("is free of rank") n arrow.l.r.double.long  B text("is regular").
   $
   - Thus, we have
   $
-                                          Omega_(X\/k) \
-                       text("is locally free of rank") \
-                                                     n & attach(arrow.l.r.double.long, b: "text(\"[5.7b]\")") \
-                  (Omega_(X\/k))_P in op("MOD")_shf.o_X,P \
-                   text("is free of rank $n$ for all") \
-                                                P in X \
-                                                       & arrow.l.r.double.long \
-                       (Omega_(A_idl.m \/k)) in cat.mod(A_idl.m) \
-    text("is free of rank $n$ for all closed po in t") \
-                               idl.m op("triangleleft") X \
-                                                       & attach(arrow.l.r.double.long, b: "text(\"(8.8)\")") \
-                                                  A_idl.m \
-             text("is regular for all closed po in t") \
-                               idl.m op("triangleleft") A \
-                                                       & attach(arrow.l.r.double.long, b: "text(\"(8.14)\")") \
-                                                  A_idl.p \
-                    text("is regular for all po in t") \
-                               idl.p op("triangleleft") A \
-                                                       & arrow.l.r.double.long \
-                                             X= ops.spec A \
-              text("is (integral and) nons in gular").
+    Omega_(X\/k) "is locally free of rank" n
+      &attach(arrow.l.r.double.long,b:text("[5.7b]")) (Omega_(X\/k))_P in cat.mod(shf.o_(X,P)) \
+      &quad "is free of rank" n "for all" P in X \
+      &arrow.l.r.double.long (Omega_(A_idl.m\/k)) in cat.mod(A_idl.m) \
+      &quad "is free of rank" n "for all closed point" idl.m lt.closed X \
+      &attach(arrow.l.r.double.long,b:text("(8.8)")) A_idl.m "is regular for all closed point" idl.m lt.closed A \
+      &attach(arrow.l.r.double.long,b:text("(8.14)")) A_idl.p "is regular for all point" idl.p lt.closed A \
+      &arrow.l.r.double.long X=ops.spec A "is (integral and) nonsingular".
   $
-  Here, for the second arrow, we note that is $M_idl.m$ is a free $A_idl.m$-module (where $idl.m op("triangleleft") A$ maximal), then $M_idl.p =(M_idl.m )_idl.p =M_idl.m times.o_sch.a_idl.p$ is a free $A_idl.p$-module for any prime $idl.p op("triangleleft") A$ with $idl.p subset idl.m$.
+  Here, for the second arrow, we note that is $M_idl.m$ is a free $A_idl.m$-module (where $idl.m lt.closed A$ maximal), then $M_idl.p =(M_idl.m )_idl.p =tensor(M_idl.m,A_idl.p,over:A)$ is a free $A_idl.p$-module for any prime $idl.p lt.closed A$ with $idl.p subset idl.m$.
 ]
 // Hartshorne II.8, Corollary 8.16
 #corollary(number: "8.16")[
   If $X in cat.var_k$, then there is an open dense subset $U subset X$ which is nonsingular. Note, this gives a new proof of _(I, 5.3)_.
 ]
 #proof[
-  Suppose $ops.dim(X)=n$ and write $K=K(X)$. Then $ops.trdeg_op("kK")=n$ by _[3.20b_, where $K\/k$ is a finitely generated field extension, whence $K\/k$ is separably generated by _(I, 4.8)_. Now, we have $ops.rank(("Omega")_(K\/k), over: op("Kop"))attach(=, b: "_(8.6)_") ops.trdeg_op("kK")=n$. On the other hand, we note that $(Omega_(X\/k))_op("eta")=Omega_(K\/k)$ where $op("eta") in X$ is the generic point. Clearly, the field $K$ is a regular local ring, so _(8.8)_ shows that $(Omega_(X\/k))_op("eta")=Omega_(K\/k)$ is a free $shf.o_X,op("eta")=K$-module of rank $n$. By _[5.7a]_, $exists \ U in shf.n_op("eta") (X)$ on which $Omega_(X\/k)|_U in cat.mod(shf.o_X|_U)$ is free of rank $n$. Thus, $U$ is a nonsingular variety over $k$ by _(8.15)_. Clearly, such $U$ is a dense subset as it is a nonempty open set in the irreducible topological space $X$. Done!
+  Suppose $ops.dim(X)=n$ and write $K=K(X)$. Then $ops.trdeg_k K=n$ by _[3.20b_, where $K\/k$ is a finitely generated field extension, whence $K\/k$ is separably generated by _(I, 4.8)_. Now, we have $ops.rank(Omega_(K\/k),over:K)attach(=, b: text("(8.6)")) ops.trdeg_k K=n$. On the other hand, we note that $(Omega_(X\/k))_eta=Omega_(K\/k)$ where $eta in X$ is the generic point. Clearly, the field $K$ is a regular local ring, so _(8.8)_ shows that $(Omega_(X\/k))_eta=Omega_(K\/k)$ is a free $shf.o_(X,eta)=K$-module of rank $n$. By _[5.7a]_, $exists  U in shf.n_eta (X)$ on which $Omega_(X\/k)|_U in cat.mod(shf.o_X|_U)$ is free of rank $n$. Thus, $U$ is a nonsingular variety over $k$ by _(8.15)_. Clearly, such $U$ is a dense subset as it is a nonempty open set in the irreducible topological space $X$. Done!
 ]
 // Hartshorne II.8, Theorem 8.17
 #theorem(number: "8.17")[
+  #set enum(numbering: "(1)")
   Let $X$ be a nonsingular variety over $k$, and let $Y subset X$ be an irreducible closed subscheme with its ideal sheaf $shf.i$. Then, $Y$ is nonsingular if and only if
-  + *(1).* $Omega_(Y\/k) in cat.mod(shf.o_Y)$ is locally free.
-  + *(2).* The sequence of _(8.12)_ is exact on the left, i.e.
+  + $Omega_(Y\/k) in cat.mod(shf.o_Y)$ is locally free.
+  + The sequence of _(8.12)_ is exact on the left, i.e.
   $
-    0 arrow.r.long shf.i \/ shf.i^2 arrow.r.long Omega_(X\/k) times.o shf.o_Y arrow.r.long Omega_(Y\/k) arrow.r.long 0.
+    0 arrow.r.long shf.i \/ shf.i^2 morph(delta,"") Omega_(X\/k) times.o shf.o_Y arrow.r.long Omega_(Y\/k) arrow.r.long 0.
   $
   Furthermore, in this case, $shf.i$ is locally generated by $r= ops.codim(Y,X)$ elements, and $shf.i \/ shf.i^2 in cat.mod(shf.o_Y)$ is a locally free sheaf of rank $r$.
 ]
 #proof[
-  ($op("Leftarrow")$) Suppose both (1) and (2) are satisfied.
-  - From (1), $Omega_(Y\/k)$ is locally free. By _(8.15)_, it suffices to show that $ops.rank(("Omega")_(Y\/k), over: shf.o_op("Yop"))=ops.dim(Y)$. Say $q= ops.rank(("Omega")_(Y\/k), over: shf.o_op("Yop"))$.
+  ($Leftarrow$) Suppose both (1) and (2) are satisfied.
+  - From (1), $Omega_(Y\/k)$ is locally free. By _(8.15)_, it suffices to show that $ops.rank(Omega_(Y\/k),over:shf.o_Y)=ops.dim(Y)$. Say $q= ops.rank(Omega_(Y\/k),over:shf.o_Y)$.
   - As $X$ is nonsingular, we see also from _(8.15)_ that $Omega_(X\/k) in cat.mod(shf.o_X)$ is locally free of rank $n=ops.dim(X)$. By (2), it follows that $ops.rank(( shf.i \/ shf.i^2), over: shf.o_Y)=n-q$. By _Nakayama Lemma_, $shf.i$ can be locally generated by $n-q$ elements. Thus, $ops.dim(Y) >= n-(n-q)=q$ by _[I, 1.9]_.
-  - For any closed point $P in Y$, write $B := shf.o_Y,P$, then
+  - For any closed point $P in Y$, write $B := shf.o_(Y,P)$, then
   $
-    ops.dim(op("Yattach")(<=, b: "text(\"(I,5.2)\")"))ops.dim(( idl.m_P\/ idl.m_P^2), over: k)attach(=, b: "text(\"(8.7)\")") ops.rank((Omega_(B\/k) times.o_op("Bk")), over: k)= ops.rank(("Omega")_(Y\/k), over: op("Bop"))= ops.rank(("Omega")_(Y\/k), over: shf.o_op("Yop"))=q.
+    ops.dim(Y) &attach(<=,b:text("(I,5.2)")) ops.dim((idl.m_P\/idl.m_P^2),over:k) \
+      &eqBy(text("(8.7)")) ops.rank(tensor(Omega_(B\/k),k,over:B),over:k) \
+      &=ops.rank(Omega_(Y\/k),over:B)=ops.rank(Omega_(Y\/k),over:shf.o_Y)=q.
   $
   Therefore, $Y$ is nonsingular, and that $ops.rank(( shf.i \/ shf.i^2), over: shf.o_Y)=n-q=ops.dim(X)-ops.dim(Y)= ops.codim(Y,X)$.
-  ($op("Rightarrow")$) Conversely, suppose $Y$ is a nonsingular variety.
-  - Again, (1) follows from _(8.15)_, and that $ops.rank(("Omega")_(Y\/k), over: shf.o_op("Yop"))=ops.dim(Y)$, say $q$. Further, we have the exact sequence $shf.i \/ shf.i^2 arrow.r.long Omega_(X\/k) times.o shf.o_Y arrow.r.long Omega_(Y\/k) arrow.r.long 0$ of $shf.o_Y$-modules from _(8.12)_. So, it suffices to show that $op("delta")$ is injective.
+  ($Rightarrow$) Conversely, suppose $Y$ is a nonsingular variety.
+  - Again, (1) follows from _(8.15)_, and that $ops.rank(Omega_(Y\/k),over:shf.o_Y)=ops.dim(Y)$, say $q$. Further, we have the exact sequence $shf.i \/ shf.i^2 morph(delta,"") Omega_(X\/k) times.o shf.o_Y morph(phi,"") Omega_(Y\/k) arrow.r.long 0$ of $shf.o_Y$-modules from _(8.12)_. So, it suffices to show that $delta$ is injective.
   - Let $y in Y$ be any closed point. We have the short exact sequence
   $
-    0 arrow.r.long ops.im op("delta")= ops.ker op("phi") arrow.r.long Omega_(X\/k) times.o shf.o_Y arrow.r.long Omega_(Y\/k) arrow.r.long 0
+    0 arrow.r.long ops.im delta= ops.ker phi arrow.r.long Omega_(X\/k) times.o shf.o_Y morph(delta,"") Omega_(Y\/k) arrow.r.long 0
   $
-  of $shf.o_Y$-modules (as $op("phi")$ is surjective). Note that $Omega_(Y\/k) in cat.coh (Y)$ by _(8.9.1)_, so $ops.ker op("phi") in cat.coh (Y)$ by _(5.7)_ Thus, $( ops.im op("delta"))_y=( ops.ker op("phi"))_y$ is a free $shf.o_Y,y$-module of rank $r=n-q$. From _[5.7a]_, $exists \ U in shf.n_y (Y)$ on which $( ops.ker op("phi"))|_U in cat.mod(shf.o_Y|_U)$ is free of rank $r$. Now, we may choose some sections $x_i in op("Gamma")(U, shf.i )$ ($1 <= i <= r$) such that $op("dx")_i_i=1^r$ forms an $shf.o_Y|_U$-basis of $( ops.ker op("phi"))|_U$.
-  - Now, consider the ideal sheaf $shf.i '$ generated by the sections $x_i_i=1^r$ over $shf.o_X$, and let $Y' subset X$ be the corresponding closed subscheme. Then, we have $shf.i ' subset shf.i$, and thus,
+  of $shf.o_Y$-modules (as $phi$ is surjective). Note that $Omega_(Y\/k) in cat.coh (Y)$ by _(8.9.1)_, so $ops.ker phi in cat.coh (Y)$ by _(5.7)_ Thus, $( ops.im delta)_y=( ops.ker phi)_y$ is a free $shf.o_(Y,y)$-module of rank $r=n-q$. From _[5.7a]_, $exists  U in shf.n_y (Y)$ on which $( ops.ker phi)|_U in cat.mod(shf.o_Y|_U)$ is free of rank $r$. Now, we may choose some sections $x_i in Gamma(U, shf.i )$ ($1 <= i <= r$) such that ${d x_i}_(i=1)^r$ forms an $shf.o_Y|_U$-basis of $( ops.ker phi)|_U$.
+  - Now, consider the ideal sheaf $shf.i '$ generated by the sections ${x_i}_(i=1)^r$ over $shf.o_X$, and let $Y' subset X$ be the corresponding closed subscheme. Then, we have $shf.i ' subset shf.i$, and thus,
   $
-    Y'= ops.supp ( shf.o_X\/shf.i ')=y in X: shf.i_y' subset.neq shf.o_X,y supset y in X: shf.i_y subset.neq shf.o_X,y= ops.supp ( shf.o_X\/shf.i )=Y.
+    Y' &=ops.supp(shf.o_X\/shf.i')={y in X:shf.i'_y subset.neq shf.o_(X,y)} \
+    &supset {y in X:shf.i_y subset.neq shf.o_(X,y)}=ops.supp(shf.o_X\/shf.i)=Y.
   $
-  - From this construction, $op("dx")_i_i=1^r$ generates a free $shf.o_Y'$-submodule of $Omega_(X\/k) times.o shf.o_Y'$ of rank $r$ in the neighborhood $U in shf.n_y (Y')$. Apply the exact sequence of _(8.12)_ again to $Y'$, then the map $op("delta"): shf.i '\/ shf.i '^2 to Omega_(X\/k) times.o shf.o_Y'$ is injective since $( ops.im op("delta"))_y= ops.im (op("delta")_y)$ is free of rank $r$ on each closed point $y in Y$. Further, this shows that $Omega_(Y'\/k) in op("MOD")_shf.o_Y'$ is locally free of rank $n-r=q$.
-  - Finally, applying these results to the proof of ($op("Leftarrow")$) yields that $Y'$ is nonsingular (thus, irreducible and integral) of dimension $ops.dim(Y')=q$. So, $Y subset Y'$ are integral schemes having the same dimension, so we must have $Y=Y'$ and $shf.i = shf.i '$. Therefore, $op("delta")$ is injective.
+  - From this construction, ${d x_i}_(i=1)^r$ generates a free $shf.o_(Y')$-submodule of $Omega_(X\/k) times.o shf.o_(Y')$ of rank $r$ in the neighborhood $U in shf.n_y (Y')$. Apply the exact sequence of _(8.12)_ again to $Y'$, then the map $delta: shf.i '\/ shf.i '^2 to Omega_(X\/k) times.o shf.o_(Y')$ is injective since $( ops.im delta)_y= ops.im (delta_y)$ is free of rank $r$ on each closed point $y in Y$. Further, this shows that $Omega_(Y'\/k) in cat.mod(shf.o_(Y'))$ is locally free of rank $n-r=q$.
+  - Finally, applying these results to the proof of ($Leftarrow$) yields that $Y'$ is nonsingular (thus, irreducible and integral) of dimension $ops.dim(Y')=q$. So, $Y subset Y'$ are integral schemes having the same dimension, so we must have $Y=Y'$ and $shf.i = shf.i '$. Therefore, $delta$ is injective.
 ]
 #lemma(number: "8.D")[
-  Let $(A, idl.m )$ be a regular local ring, and given a nonzero element $a in idl.m$. Then, $A\/chevron.l a chevron.r$ is a regular local ring $arrow.l.r.double.long \ a in.not idl.m^2$.
+  Let $(A, idl.m )$ be a regular local ring, and given a nonzero element $a in idl.m$. Then, $A\/ideal(a)$ is a regular local ring $arrow.l.r.double.long  a in.not idl.m^2$.
 ]
 #proof[
   Suppose $A$ is regular of dimension $n >= 1$. Denote $V$ for the $k$-vector space
   $
-    (idl.m \/chevron.l a chevron.r)\/(( idl.m \/chevron.l a chevron.r)^2) simeq (A\/chevron.l a chevron.r)\/(idl.m \/chevron.l a chevron.r) times.o_A\/chevron.l a chevron.r idl.m \/chevron.l a chevron.r simeq k times.o_A\/chevron.l a chevron.r idl.m \/chevron.l a chevron.r.
+    frac(idl.m\/ideal(a),(idl.m\/ideal(a))^2) simeq tensor(frac(A\/ideal(a),idl.m\/ideal(a)),idl.m\/ideal(a),over:A\/ideal(a)) simeq tensor(k,idl.m\/ideal(a),over:A\/ideal(a)).
   $
-  ($op("Rightarrow")$) Suppose $A\/chevron.l a chevron.r$ is regular. Suppose on the contrary that $a in idl.m^2$, then we have $( idl.m \/chevron.l a chevron.r)^2= idl.m^2\/chevron.l a chevron.r$, whence $V simeq idl.m \/ idl.m^2$. Thus, $ops.dim(A)\/chevron.l a chevron.r=ops.dim("", over: op("kV"))=ops.dim(A)=n$. However, if we choose a maximal chain
+  ($Rightarrow$) Suppose $A\/ideal(a)$ is regular. Suppose on the contrary that $a in idl.m^2$, then we have $( idl.m \/ideal(a))^2= idl.m^2\/ideal(a)$, whence $V simeq idl.m \/ idl.m^2$. Thus, $ops.dim(A\/ideal(a))=ops.dim(V,over:k)=ops.dim(A)=n$. However, if we choose a maximal chain
   $
-    idl.p_0\/chevron.l a chevron.r subset.neq idl.p_1\/chevron.l a chevron.r subset.neq dots.c subset.neq idl.p_n\/chevron.l a chevron.r= idl.m \/chevron.l a chevron.r
+    idl.p_0\/ideal(a) subset.neq idl.p_1\/ideal(a) subset.neq dots.c subset.neq idl.p_n\/ideal(a)= idl.m \/ideal(a)
   $
-  of prime ideals of $A\/chevron.l a chevron.r$, as $a != 0$ and $A$ is integral (since it is regular), we obtain a chain $0 subset.neq idl.p_0 subset.neq idl.p_1 subset.neq dots.c subset.neq idl.p_n= idl.m$ of prime ideals of $A$, whence $ops.dim(A) >= n+1$, a contradiction.\
-  ($op("Leftarrow")$) _Claim._ $A\/chevron.l a chevron.r$ is regular of dimension $n-1$. Clearly, $A\/chevron.l a chevron.r$ is also a local ring with maximal ideal $idl.m \/chevron.l a chevron.r$. If $a in.not idl.m^2$, we may extend $op("bar")a in idl.m \/ idl.m^2$ to a $k$-basis $op("bar")a_i_i=1^n$ of $idl.m \/ idl.m^2$ (where $a_i in idl.m$ and $op("bar")a=op("bar")a_1$). Then, $1 times.o (a_i+chevron.l a chevron.r)_i=2^n$ generates the $k$-vector space $V$, whence $ops.dim("", over: op("kV")) <= n-1$. On the other hand, consider a maximal chain $0= idl.p_0 subset.neq idl.p_1 subset.neq dots.c subset.neq idl.p_n= idl.m$ of prime ideals of $A$. (Note. $A$ is regular, thus integral). Moreover, $A$ is Noetherian with $0 != a in idl.m$, so we may modify the chain $idl.p_i_i=0^n$ and assume that $a in idl.p_1$. Thus,
+  of prime ideals of $A\/ideal(a)$, as $a != 0$ and $A$ is integral (since it is regular), we obtain a chain $0 subset.neq idl.p_0 subset.neq idl.p_1 subset.neq dots.c subset.neq idl.p_n= idl.m$ of prime ideals of $A$, whence $ops.dim(A) >= n+1$, a contradiction.\
+  ($Leftarrow$) _Claim._ $A\/ideal(a)$ is regular of dimension $n-1$. Clearly, $A\/ideal(a)$ is also a local ring with maximal ideal $idl.m \/ideal(a)$. If $a in.not idl.m^2$, we may extend $overline(a) in idl.m \/ idl.m^2$ to a $k$-basis ${overline(a)_i}_(i=1)^n$ of $idl.m \/ idl.m^2$ (where $a_i in idl.m$ and $overline(a)=overline(a)_1$). Then, ${1 times.o (a_i+ideal(a))}_(i=2)^n$ generates the $k$-vector space $V$, whence $ops.dim(V,over:k) <= n-1$. On the other hand, consider a maximal chain $0= idl.p_0 subset.neq idl.p_1 subset.neq dots.c subset.neq idl.p_n= idl.m$ of prime ideals of $A$. (Note. $A$ is regular, thus integral). Moreover, $A$ is Noetherian with $0 != a in idl.m$, so we may modify the chain ${idl.p_i}_(i=0)^n$ and assume that $a in idl.p_1$. Thus,
   $
-    idl.p_1\/chevron.l a chevron.r subset.neq idl.p_2\/chevron.l a chevron.r subset.neq dots.c subset.neq idl.p_n\/chevron.l a chevron.r= idl.m \/chevron.l a chevron.r
+    idl.p_1\/ideal(a) subset.neq idl.p_2\/ideal(a) subset.neq dots.c subset.neq idl.p_n\/ideal(a)= idl.m \/ideal(a)
   $
-  is a chain of prime ideal of $A\/chevron.l a chevron.r$, whence $ops.dim(A)\/chevron.l a chevron.r >= n-1$. However, we already have $ops.dim(A)\/chevron.l a chevron.r <= ops.dim("", over: op("kV"))$. Combining these all, we obtain $ops.dim(A)\/chevron.l a chevron.r=ops.dim("", over: op("kV"))=n-1$.
+  is a chain of prime ideal of $A\/ideal(a)$, whence $ops.dim(A\/ideal(a)) >= n-1$. However, we already have $ops.dim(A\/ideal(a)) <= ops.dim(V,over:k)$. Combining these all, we obtain $ops.dim(A\/ideal(a))=ops.dim(V,over:k)=n-1$.
 ]
 // Hartshorne II.8, Theorem 8.18
 #theorem(number: "8.18", title: "Bertini Theorem")[
+  #set enum(numbering: "(i)")
   Let $X$ be a nonsingular closed subvariety of $sch.p_k^n$. Then
-  + *(i).* There exists a hyperplane $H subset sch.p_k^n$, not containing $X$, such that the scheme $op("Hop")("cap") X$ is regular at every point.
-  + *(ii).* The set of such hyperplanes forms an open dense subset of the complete linear system $|H|$, considered as a projective space.
+  + There exists a hyperplane $H subset sch.p_k^n$, not containing $X$, such that the scheme $H inter X$ is regular at every point.
+  + The set of such hyperplanes forms an open dense subset of the complete linear system $|H|$, considered as a projective space.
 ]
 #proof[
   (I) For each closed point $x in X$, we consider the set
   $
-    B_x := text("hyperplanes")\ H\ |\ H supset X,\ text("or")\ op("Hop")("not") supset X\ text("with")\ x in op("Hop")("cap") X\ text("non-regular").
+    B_x := {text("hyperplanes") H | H supset X, text("or") H supset.not X text("with") x in H inter X text("non-regular")}.
   $
-  Note that a hyperplane $H subset sch.p_k^n$ is determined by a nonzero global section $f in S_1=op("Gamma")( sch.p_k^n, shf.o (1))=:V$. Fix an $f_0 in V$ for which $x_0 in.not H_0 := V_+(f_0)$. Now, we define a map of $k$-linear spaces as follows:
-  #remark[Diagram.]
-  where $i$ is the closed immersion $X arrow.r.hook sch.p_k^n=Y$. Now, the scheme $op("Hop")("cap") X$ is given by $V_+(f)op("cap") X=V_+(i^op("hash") (f/f_0))$. Thus, we see that
+  Note that a hyperplane $H subset sch.p_k^n$ is determined by a nonzero global section $f in S_1=Gamma( sch.p_k^n, shf.o (1))=:V$. Fix an $f_0 in V$ for which $x_0 in.not H_0 := V_+(f_0)$. Now, we define a map of $k$-linear spaces as follows:
+  #align(center)[
+    #diagram(cell-size: 6mm, $
+      V edge("r", ->) & S_((f_0)) edge("r", "=") & shf.o_(sch.p_k^n)(D_+(f_0)) edge("dr", ↻, stroke: #none, label-side: #center, label-fill: #false) edge("r", i^sharp, ->) edge("d", ->) & shf.o_(X)(X without H_0) edge("d", ->) & \
+      & & shf.o_(sch.p_k^n,x) edge("r", i_x^sharp, ->) & shf.o_(X,x) edge("r", ->>) & shf.o_(X,x)\/idl.m_x^2 \
+      f edge("r", |->) & frac(f,f_0) edge("r", |->) & lr([frac(f,f_0)])_x edge("r", |->) & lr([i^sharp lr((frac(f,f_0)))])_x=:phi_(x)(f) &
+    $)
+  ]
+  where $i$ is the closed immersion $X arrow.r.hook sch.p_k^n=Y$. Now, the scheme $H inter X$ is given by $V_+(f) inter X=V_+(i^sharp (f/f_0))$. Thus, we see that
   - First, note that
   $
-    x in op("Hop")("setm in us") H_0\ arrow.l.r.double.long \ op("Big")[(f)/(f_0)op("Big")]_x in idl.m_Y,x\ arrow.l.r.double.long \ op("phi")_x (f) in idl.m_x.
+    x in H without H_0 arrow.l.r.double.long  lr([frac(f,f_0)])_x in idl.m_(Y,x) arrow.l.r.double.long  phi_x (f) in idl.m_x.
   $
-  - Suppose $X$ is defined by the homogeneous prime ideal $op("Iop")("triangleleft") S=k[x_0, dots.c ,x_n]$, i.e. $shf.o_X simeq (S\/I)op("widetilde")$. Then
+  - Suppose $X$ is defined by the homogeneous prime ideal $I lt.closed S=k[x_0, dots.c ,x_n]$, i.e. $shf.o_X simeq tildeOf(S\/I)$. Then
   $
-    H supset X\ text("(as a closed subscheme)")\ & arrow.l.r.double.long \ f in I\ arrow.l.r.double.long \ op("Big")[i^op("hash") op("Big")((f)/(f_0)op("Big"))op("Big")]_x=op("Big")[(f)/(f_0)op("Big")]_x+chevron.l op("phi")_x (f) chevron.r\
-    & arrow.l.r.double.long \ op("phi")_x (f)=0\ text("in")\ idl.m_x= idl.m_Y,x\/chevron.l op("phi")_x (f) chevron.r.
+    H supset X text("(as a closed subscheme)") & arrow.l.r.double.long  f in I arrow.l.r.double.long  lr([i^sharp lr((frac(f,f_0)))])_x=lr([frac(f,f_0)])_x+ideal(phi_(x)(f))\
+    & arrow.l.r.double.long  phi_x (f)=0 text("in") idl.m_x= idl.m_(Y,x)\/ideal(phi_(x)(f)).
   $
-  - If $op("Hop")("not") supset X$, then $x in op("Hop")("cap") X\ arrow.l.r.double.long \ op("phi")_x (f)=[i^op("hash") (f/f_0)]_x in idl.m_x$ is nonzero. In this case,
+  - If $H supset.not X$, then $x in H inter X arrow.l.r.double.long  phi_x (f)=[i^sharp (f/f_0)]_x in idl.m_x$ is nonzero. In this case,
   $
-    x in op("Hop")("cap") X\ text("is nonregular")\ & arrow.l.r.double.long \ shf.o_op("Hop") ("cap") X,x= shf.o_X,x\/chevron.l op("phi")_x (f) chevron.r\ text("is not a regular r in g")\ &attach(arrow.l.r.double.long, b: "text(\"(8.D)\")")\ op("phi")_x (f) in.not idl.m_x^2.
+    x in H inter X text("is nonregular") & arrow.l.r.double.long  shf.o_(H inter X,x)= shf.o_(X,x)\/ideal(phi_(x)(f)) text("is not a regular ring") \
+    &attach(arrow.l.r.double.long, b: text("(8.D)")) phi_x (f) in.not idl.m_x^2.
   $
-  Therefore, we conclude that $H in B_x\ arrow.l.r.double.long \ f in ops.ker (op("phi")_x)$. \
-  (II) Since $x in X$ is a closed point and $k$ is algebraically closed, the maximal ideal $idl.m_x$ is generated by $a_op("jx")_i-a_op("jx")_i:1 <= i,j <= n$ where $a_i in k$ not all zero. Now, it is an algebraic problem: writing $A= shf.o_X,x,\ idl.m = idl.m_x,\ M=A\/ idl.m^2$, then
-  $(a_op("jx")_i-a_op("ix")_j)/f_0+ idl.m^2_i,j$ generates $idl.m \/ idl.m^2 subset M$ over $k$. In particular, $A^op("times")=op("Aop")("setm in us") idl.m$ implies that the image of $op("phi")_x (f_0)=f_0/f_0+ idl.m^2$ generates the $k$-vector space $M\/ idl.m M simeq k$. By _Nakayama (AM, 2.8)_, $M$ is finitely generated by $op("phi")_x (a_op("jx")_i-a_op("jx")_i)_i,op("jop")("cup")op("phi")_x (f_0)$ over $k$, and therefore, $op("phi")_x$ is surjective. Now, the _Isomorphism Theorem_ gives $V\/ ops.ker op("phi")_x simeq A\/ idl.m^2$. If $ops.dim(X)=r$, recall that $V=k spn x_i_i=0^n$, we obtain
+  Therefore, we conclude that $H in B_x arrow.l.r.double.long  f in ops.ker (phi_x)$. \
+  (II) Since $x in X$ is a closed point and $k$ is algebraically closed, the maximal ideal $idl.m_x$ is generated by ${a_j x_i-a_j x_i:1 <= i,j <= n}$ where $a_i in k$ not all zero. Now, it is an algebraic problem: writing $A= shf.o_(X,x), idl.m = idl.m_x, M=A\/ idl.m^2$, then
+  ${(a_j x_i-a_i x_j)/f_0+idl.m^2}_(i,j)$ generates $idl.m \/ idl.m^2 subset M$ over $k$. In particular, $A^times=A without idl.m$ implies that the image of $phi_x (f_0)=f_0/f_0+ idl.m^2$ generates the $k$-vector space $M\/ idl.m M simeq k$. By _Nakayama (AM, 2.8)_, $M$ is finitely generated by ${phi_(x)(a_j x_i-a_j x_i)}_(i,j) union {phi_(x)(f_0)}$ over $k$, and therefore, $phi_x$ is surjective. Now, the _Isomorphism Theorem_ gives $V\/ ops.ker phi_x simeq A\/ idl.m^2$. If $ops.dim(X)=r$, recall that $V=k spn {x_i}_(i=0)^n$, we obtain
   $
-    dim_k (ops.ker op("phi")_x) & =dim_k V-dim_k (V \/ ops.ker op("phi")_x)=(n+1)-dim_k (A\/ idl.m^2) \
-                            & =(n+1)-[dim_k ( idl.m \/ idl.m^2)+dim_k (A\/idl.m^2)\/(idl.m\/idl.m^2)] \
-                            & =(n+1)-[attach(dim X, b: "text(\"nons in gular\")")+dim_k k] \
+    dim_k (ops.ker phi_x) & =dim_k V-dim_k (V \/ ops.ker phi_x)=(n+1)-dim_k (A\/ idl.m^2) \
+                            & =(n+1)-[dim_k ( idl.m \/ idl.m^2)+dim_k frac(A\/idl.m^2,idl.m\/idl.m^2)] \
+                            & =(n+1)-[attach(limits(dim X), b: text("nonsingular"))+dim_k k] \
                             & =(n+1)-(r+1)=n-r.
   $
-  Now, we may identify $B_x= sch.p ( ops.ker op("phi")_x)$, i.e. a linear system of hyperplanes in $|H_0|$, which has dimension $dim B_x=n-r-1$. (cf. S II.7).
+  Now, we may identify $B_x= sch.p ( ops.ker phi_x)$, i.e. a linear system of hyperplanes in $|H_0|$, which has dimension $dim B_x=n-r-1$. (cf. § II.7).
 ]
 
 // Hartshorne II.8, Remark 8.18.1

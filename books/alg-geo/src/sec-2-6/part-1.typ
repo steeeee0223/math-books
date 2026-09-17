@@ -73,8 +73,8 @@
 #remark[
   If $X = ops.spec A$ is affine, there is a one-to-one correspondence
   $
-    {Y subset X : text("prime divisor")} & arrow.l.r.double.long {idl.p in ops.spec A : ops.ht idl.p = 1}, \
-                            ops.spec (A \/ idl.p) & arrow.long.l idl.p.
+    {Y subset X : text("prime divisor")} & arrow.l.r.long {idl.p in ops.spec A : ops.ht idl.p = 1}, \
+                            ops.spec (A \/ idl.p) & arrow.l.bar.long idl.p.
   $
 ]
 
@@ -232,7 +232,7 @@
     - If $idl.q in ops.spec A$ is another prime ideal of height $1$, we have another
       corresponding prime divisor $Z = ops.spec (A \/ idl.q)$. As $ops.dv (f) = Y$, we see
       that $nu_Z (f) = 0$, i.e. $f in A_idl.q$. It follows that
-      $f in inter_(ops.ht idl.q = 1) A_idl.q eqBy("(6.3)") A$. Now,
+      $f in inter.big_(ops.ht idl.q = 1) A_idl.q eqBy("(6.3)") A$. Now,
       $f in A inter idl.p A_idl.p = idl.p$, which implies $ideal(f) subset idl.p$.
 
     - For $g in idl.p$, we have $g / 1 in idl.p A_idl.p$, so
@@ -240,7 +240,7 @@
       $W subset X$ is any other prime divisor, then $nu_W (g) = 0$. Thus
       $nu_W (g / f) >= 0$, i.e. $g / f in A_idl.q$, for every prime divisor
       $W subset X$ with corresponding prime ideal $idl.q$. Again,
-      $g / f in inter_(ops.ht idl.q = 1) A_idl.q eqBy("(6.3)") A$, so
+      $g / f in inter.big_(ops.ht idl.q = 1) A_idl.q eqBy("(6.3)") A$, so
       $g in ideal(f)$. Thus $idl.p subset ideal(f)$, and therefore
       $idl.p = ideal(f)$ is principal.
 ]
@@ -251,14 +251,14 @@
 )[
   Let $A$ be an integrally closed Noetherian domain. Then
   $
-    A = inter { A_idl.p : idl.p lt.closed A text(" prime with ") ops.ht idl.p = 1 }.
+    A = inter.big { A_idl.p : idl.p lt.closed A text(" prime with ") ops.ht idl.p = 1 }.
   $
 ]
 
 #lemma-box(title: "Fact 6.A")[
   Let $X$ be a scheme satisfying $(star)$, and let $x in X$. Then
   $
-    x text(" is not in any prime divisor ") Y text(" of ") X
+    x text(" is not in any prime divisor ") Y text(" of ") X \
     arrow.l.r.double.long
     x = eta, text(" the unique generic point of ") X.
   $
@@ -291,7 +291,7 @@
   #set enum(numbering: "i)", spacing: 1em)
 
   + For any subset $Y subset X$, define
-    $I_+(Y) := inter { idl.p : idl.p in Y }$; in particular,
+    $I_+(Y) := inter.big { idl.p : idl.p in Y }$; in particular,
     $I_+(emptyset) = S$. Then $I_+(Y_2) subset I_+(Y_1)$ for any subsets
     $Y_1 subset Y_2 subset X$.
 
@@ -308,28 +308,29 @@
     $
       {idl.a lt.closed S : idl.a text(" homogeneous radical ideal with ") idl.a
         text(" not containing ") S_+} \
-      arrow.l.r.double.long
+      arrow.l.r.long
       {Y subset X : text("closed subset")}, \
-      idl.a mapsto V_+(idl.a), quad I_+(Y) arrow.long.l Y.
+      idl.a mapsto V_+(idl.a), quad I_+(Y) arrow.l.bar.long Y.
     $
-    Note that $S arrow.l.r.double.long emptyset$ and $S_+ mapsto emptyset$.
+    Note that $S arrow.l.r emptyset$ and $S_+ mapsto emptyset$.
     In particular, this restricts to the one-to-one correspondence between
     the following two subsets:
     $
-      ops.proj S =
+      ops.proj S = \
       {idl.p lt.closed S : idl.p text(" homogeneous prime ideal with ") idl.p
         text(" not containing ") S_+}\
-      arrow.l.r.double.long
+      arrow.l.r.long
       {Y subset X : text("irreducible closed subset")}.
     $
 
   + Further, the correspondence above yields:
     $
-      {idl.p in ops.proj S : ops.ht idl.p = 1} & arrow.l.r.double.long
-                                   {Y subset sch.p_k^n : text("prime divisor, i.e. irreducible hypersurface")} \
-                                 & arrow.l.r.double.long
-                                   {f in S : text("homogeneous and irreducible, up to associates")}, \
-                        ideal(f) & arrow.long.l V_+(f) arrow.long.l f,
+      {idl.p in ops.proj S : ops.ht idl.p = 1} \
+      arrow.l.r.long
+      {Y subset sch.p_k^n : text("prime divisor, i.e. irreducible hypersurface")} \
+      arrow.l.r.long
+      {f in S : text("homogeneous and irreducible, up to associates")}, \
+      ideal(f) arrow.l.bar.long V_+(f) arrow.l.bar.long f,
     $
     if we give each closed subset the reduced induced subscheme structure.
 ]
@@ -372,7 +373,7 @@
   *(b).* Suppose $S = k[x_0, dots.c, x_n]$ is the homogeneous coordinate ring
   of $X = sch.p_k^n$.
 
-  - The function field $K$ of $X$ is $S_((0)) = (ops.frac S)_0$.
+  - The function field $K$ of $X$ is $S_(((0))) = (ops.frac S)_0$.
 
   - If $g in S_d$ with $d >= 0$ is a homogeneous polynomial, then as $S$ is a
     UFD, we may factor $g$ into irreducible polynomials
@@ -495,7 +496,7 @@
     is the restriction of its closure in $X$.
 
   *(b).* Since $X$ is a Noetherian topological space, decompose $Z$ into
-  finitely many irreducible components $Z := union_(i=1)^r Z_i$. If
+  finitely many irreducible components $Z := union.big_(i=1)^r Z_i$. If
   $Y subset X$ is a prime divisor with $Y inter U = emptyset$, i.e.
   $Y subset Z$, then $Y subset Z_i$ for some $i$. It follows that
   $

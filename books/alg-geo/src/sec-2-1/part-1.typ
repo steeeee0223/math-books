@@ -6,7 +6,7 @@
 #set list(indent: 1em)
 #set enum(numbering: "(a)", indent: 1em)
 
-== Sheaves
+== Sheaves <text-ii-1>
 
 // Hartshorne II.1, Definition D1
 #definition(number: none, title: "Presheaf")[

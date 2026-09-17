@@ -30,7 +30,7 @@ pnpm -F @math-books/alg-geo lean
 Check one Lean file from the repository root:
 
 ```bash
-lake env lean books/alg-geo/src/sec-2-5/lean/exe.lean
+lake env lean books/alg-geo/src/sup/lean/ii-5-exe.lean
 ```
 
 ## Initialize

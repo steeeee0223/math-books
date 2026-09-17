@@ -45,6 +45,7 @@
 #include "sec-2-7/sec-2-7.typ"
 #include "sec-2-8/sec-2-8.typ"
 #include "sec-2-9/sec-2-9.typ"
+#include "sup/sup.typ"
 
 = Cohomology
 

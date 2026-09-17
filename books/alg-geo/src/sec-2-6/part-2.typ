@@ -74,7 +74,7 @@
 
 #proof[
   *Proof of (i).* If $X$ is irreducible, then
-  $inter_(U in shf.t_X) U = {eta}$, where $eta in X$ is the unique generic point
+  $inter.big_(U in shf.t_X) U = {eta}$, where $eta in X$ is the unique generic point
   by _[2.9]_. Thus, any two nonempty open sets have nonempty intersection.
   Further, if $V subset U$ are nonempty open sets, then
   $shf.f (U) = A = shf.f (V)$, i.e. the restriction map is $ops.id_A$.
@@ -167,16 +167,19 @@
 
     #align(center)[
       #diagram(
-        cell-size: 18mm,
+        cell-size: (11mm, 15mm),
+        spacing: 2em,
         $
           ops.spec (tensor(A_idl.p, A slash idl.q_i, over: A)) edge("r", ->) edge("d", text("(v)"), ->)
-          & ops.spec (A slash idl.q_i) edge("r", text("(iii)"), ->) edge("d", ->)
-          & U inter Y_i edge("r", text("(3.3)"), ->)
+            edge("dr", square, stroke: #none, label-side: #center)
+          & ops.spec (A slash idl.q_i) edge("r", text("(iii)"), "=") edge("d", ->)
+          & U inter Y_i edge("r", text("(3.3)"), "=")
           & U times_X Y_i edge("r", ->) edge("d", text("(ii)"), ->)
-          & Y_i edge("d", text("closed"), ->) \
-          T_x = ops.spec shf.o_x edge("r", text("(iv)"), ->)
-          & ops.spec A edge("rr", text("(i)"), ->)
-          & & U edge("r", text("open"), ->)
+            edge("dr", square, stroke: #none, label-side: #center)
+          & Y_i edge("d", text("closed"), arrow.r.hook, label-side: #left) \
+          T_x = ops.spec shf.o_x edge("r", text("(iv)"), ->, label-side: #right)
+          & ops.spec A edge("rr", text("(i)"), "=", label-side: #right)
+          & & U edge("r", text("open"), arrow.r.hook, label-side: #right)
           & X
         $,
       )
@@ -210,8 +213,8 @@
 
   - Moreover,
     $
-      ops.codim(Y_i inter T_x, T_x) & = ops.codim(idl.q_i A_idl.p, A_idl.p)
-                                      = ops.codim(A \/ idl.q_i, A)
+      ops.codim(Y_i inter T_x, T_x) & = ops.codim(idl.q_i A_idl.p, A_idl.p) \
+                                    & = ops.codim(A \/ idl.q_i, A)
                                       = ops.codim(U inter Y_i, U) \
                                     & = ops.codim(Y_i, X) = 1.
     $
@@ -238,7 +241,7 @@
     only finitely many $Y_i$ not containing $x$ for which
     $nu_(Y_i) (f_x) != 0$ or $n_i != 0$.
 
-  - In fact, the space $T_x = inter { U_x : U_x in shf.n_x (X) }$, so we may
+  - In fact, the space $T_x = inter.big { U_x : U_x in shf.n_x (X) }$, so we may
     replace $T_x$ by some open neighborhood $U_x$ so that $D$ and $ops.dv (f_x)$
     have the same restriction to $U_x$, e.g. the open affine $U$ chosen above.
     Cover $X$ by these open sets ${U_x}_(x in X)$. Since each
@@ -254,8 +257,8 @@
       $xi_i = idl.q_i in ops.spec B$. Then $shf.o_(xi_i)^times = B_(idl.q_i)^times$ and
       $ops.ht idl.q_i = 1$. Since $B = shf.o (V)$ is a normal Noetherian domain, we have
       $
-        f \/ f' in inter_(Y_i inter V != emptyset) shf.o_(xi_i)
-        = inter_(ops.ht idl.q_i = 1) B_(idl.q_i) eqBy("(6.3)") B.
+        f \/ f' in inter.big_(Y_i inter V != emptyset) shf.o_(xi_i)
+        = inter.big_(ops.ht idl.q_i = 1) B_(idl.q_i) eqBy("(6.3)") B.
       $
 
     - Let ${V_i}$ be an open affine cover of $U$. Then

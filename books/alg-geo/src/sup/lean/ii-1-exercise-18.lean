@@ -1,3 +1,4 @@
+/- Relocated from sec-2-1/lean/exercise-18.lean; mathematical declarations unchanged. -/
 import Mathlib.Topology.Sheaves.Functors
 import Mathlib.Algebra.Category.Grp.Colimits
 import Mathlib.Algebra.Category.Grp.FilteredColimits

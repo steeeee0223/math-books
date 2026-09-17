@@ -1,3 +1,4 @@
+/- Relocated from sec-2-2/lean/exe.lean; mathematical declarations unchanged. -/
 import Mathlib.AlgebraicGeometry.Gluing
 import Mathlib.AlgebraicGeometry.IdealSheaf.Subscheme
 import Mathlib.AlgebraicGeometry.Morphisms.Affine
@@ -9,7 +10,7 @@ import Mathlib.AlgebraicGeometry.Properties
 # Hartshorne II.2, Exercises 2.1--2.4, 2.12, 2.16 and 2.17
 
 These declarations are kernel-checked versions of the mathlib results used by
-the human-readable proofs in `exe.typ`.  For Exercise 2.3 we define the
+the human-readable proofs in the supplement applications indexed by the original exercise numbers.  For Exercise 2.3 we define the
 reduction as the subscheme cut out by the nilradical and verify its universal
 property.
 -/

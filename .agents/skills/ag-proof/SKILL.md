@@ -32,7 +32,7 @@ verification tools, not part of the textbook exposition.
    It imports the notation dictionaries in `cat.typ`, `sym.typ`, and `ops.typ`;
    inspect those files rather than inventing parallel syntax.
 3. Before devising a new reduction, search
-   `books/alg-geo/src/sec-2-3/local-props.typ` and the rest of the existing
+   `books/alg-geo/src/sup/local-props.typ` and the rest of the existing
    textbook for an applicable locality or reduction lemma. Cite the relevant
    textbook result when it already exists.
 4. Inspect the corresponding Lean companion and mathlib source for useful
@@ -109,7 +109,7 @@ created or updated under the relevant section's `lean/` directory.
 Run the relevant file from the repository root, for example:
 
 ```bash
-lake env lean books/alg-geo/src/sec-2-5/lean/exe.lean
+lake env lean books/alg-geo/src/sup/lean/ii-5-exe.lean
 ```
 
 ## Verification and Handoff

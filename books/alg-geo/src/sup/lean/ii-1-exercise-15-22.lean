@@ -1,3 +1,4 @@
+/- Relocated from sec-2-1/lean/exercise-15-22.lean; mathematical declarations unchanged. -/
 import Mathlib.CategoryTheory.Sites.SheafHom
 import Mathlib.Geometry.RingedSpace.PresheafedSpace.Gluing
 import Mathlib.Topology.Sheaves.AddCommGrpCat
@@ -6,7 +7,7 @@ import Mathlib.Topology.Sheaves.AddCommGrpCat
 # Hartshorne II.1, Exercises 1.15 and 1.22
 
 The declarations below connect the accompanying human-readable proofs in
-`exe.typ` to mathlib's internal-Hom sheaf and sheafed-space gluing APIs.
+the supplement applications indexed by the original exercise numbers to mathlib's internal-Hom sheaf and sheafed-space gluing APIs.
 -/
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace

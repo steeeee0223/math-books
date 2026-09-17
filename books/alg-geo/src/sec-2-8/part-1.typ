@@ -9,311 +9,387 @@
 // Hartshorne II.8, Definition D1
 #definition(title: "Derivations")[
   Given $A in cat.ring , B in cat.alg_A$ and $M in cat.mod(B)$. An $A$-_deriviation_ of $B$ into $M$ is a map $d:B to M$ satisfying:
-  + *(D1).* $d$ is additive.
-  + *(D2).* $d(b b')=op("bdb")'+b' op("db")$ for every $b,b' in B$.
-  + *(D3).* $op("da")=0$ for every $a in A$.
+  #set enum(numbering: "(D1)")
+  + $d$ is additive.
+  + $d(b b')=b d b'+b' d b$ for every $b,b' in B$.
+  + $d a=0$ for every $a in A$.
   The set of all $A$-deriviations of $B$ into $M$ is denoted by $ops.der_A (B,M)$.
 ]
 // Hartshorne II.8, Definition D2
 #definition(title: "Modules of Relative Differential Forms")[
-  Given $A$ and $B$ as above. The _module of relative differential forms_ of $B$ over $A$ is a pair $chevron.l Omega_(B\/A),d chevron.r$, where $Omega_(B\/A) in cat.mod(B)$ and $d in ops.der_A (B,Omega_(B\/A))$, satisfying the _Universal Property_: for any $M in cat.mod(B)$, and any $d' in ops.der_A (B,M)$, there exists a unique homomorphism $f:Omega_(B\/A) arrow.r.long M$ such that $d'=op("fd")$.
+  Given $A$ and $B$ as above. The _module of relative differential forms_ of $B$ over $A$ is a pair $chevron.l Omega_(B\/A),d chevron.r$, where $Omega_(B\/A) in cat.mod(B)$ and $d in ops.der_A (B,Omega_(B\/A))$, satisfying the _Universal Property_: for any $M in cat.mod(B)$, and any $d' in ops.der_A (B,M)$, there exists a unique homomorphism $f:Omega_(B\/A) morph(#none, cat.mod(B)) M$ such that $d'=f d$.
 ]
 #remark[
-  Let $F in cat.mod(B)$ be a free module with a $B$-basis of symbols $op("db"):b in B$. Consider the set
+  Let $F in cat.mod(B)$ be a free module with a $B$-basis of symbols ${d b:b in B}$. Consider the set
   $
-    F' := B spn d(b+b')-op("db")-op("db")',\ d(b b')-op("bdb")'-b' op("db"),\ op("da")\ |\ b,b' in B,\ a in A,
+    F' := B spn lr({
+      d(b+b')-d b-d b', d(b b')-b d b'-b' d b, \
+      d a | b,b' in B, a in A
+    }),
   $
   which is a $B$-submodule of $F$. We define $Omega_(B\/A) := F\/F' in cat.mod(B)$ with $A$-deriviation given by
   $
-    d:B arrow.r.long F\/F',op("quad") b mapsto op("db")+F'.
+    d:B arrow.r.long F\/F',quad b mapsto d b+F'.
   $
-  Further, we have a natural isomorphism $ops.der_A (B,M)attach(isolongto, b: "Ab")op("Hom")_(B) (Omega_(B\/A),M)$ in $M in cat.mod(B)$.
+  Further, we have a natural isomorphism $ops.der_A (B,M)attach(isolongto, b: cat.ab)ops.hom(Omega_(B\/A),M, over: B)$ in $M in cat.mod(B)$.
 ]
 #proof[
   We show that such construction satisfies the _Universal Property_. Given any pair $chevron.l M,d' chevron.r$, we define
   $
-    f:F\/F' arrow.r.long M,op("quad") op("db")+F' mapsto d'b,
+    f:F\/F' arrow.r.long M,quad d b+F' mapsto d'b,
   $
-  which is clearly $B$-linear and we have $op("fd")=d'$. Suppose there is another homomorphism $f':F\/F' arrow.r.long M$ such that $f'd=d'$. Then we have $f'd=d'=op("fd")$. But $d$ is surjective, which implies that the homomorphism $f'=f$ is unique.
+  which is clearly $B$-linear and we have $f d=d'$. Suppose there is another homomorphism $f':F\/F' morph(#none, cat.mod(B)) M$ such that $f'd=d'$. Then we have $f'd=d'=f d$. But $d$ is surjective, which implies that the homomorphism $f'=f$ is unique.
 ]
 // Hartshorne II.8, Proposition 8.1A
 #proposition(number: "8.1A")[
-  Let $B in cat.alg_A$, and let $f:B times.o_op("AB") arrow.r.long B$ be the natural "diagonal homomorphism" defined by $b times.o b mapsto b$, and set $I := ops.ker f$. Regarding $B times.o_op("AB") in cat.mod(A)$, then $I\/I^2$ has a $B$-module structure given by
+  Let $B in cat.alg_A$, and let $f:tensor(B, B, over: A) morph(#none, cat.alg_B) B$ be the natural "diagonal homomorphism" defined by $b times.o b mapsto b$, and set $I := ops.ker f$. Regarding $tensor(B, B, over: A) in cat.mod(A)$, then $I\/I^2$ has a $B$-module structure given by
   $
-    op("Bop")("times") I\/I^2 arrow.r.long I\/I^2,op("quad") b dot (b' times.o b''+I^2) mapsto b b' times.o b''+I^2.
+    B times I\/I^2 arrow.r.long I\/I^2,quad b dot (b' times.o b''+I^2) mapsto b b' times.o b''+I^2.
   $
   Now, define a map
   $
-    d:B arrow.r.long I\/I^2,op("quad") b mapsto (1 times.o b-b times.o 1)+I^2.
+    d:B arrow.r.long I\/I^2,quad b mapsto (1 times.o b-b times.o 1)+I^2.
   $
   Then, the pair $chevron.l I\/I^2,d chevron.r$ gives a relative differential form $Omega_(B\/A)$.
 ]
 #proof[
   (I) _Check._ $d in ops.der_A (B,I\/I^2)$ is an $A$-deriviation.
-  + *(D1).* This is easy.
-  + *(D2).* Note that $(1 times.o b-b times.o 1)(1 times.o b'-b' times.o 1) in I^2$, which implies $1 times.o b b'+b b' times.o 1=b times.o b'+b' times.o b$ in $I\/I^2$. Thus, for any $b,b' in B$, we have
-  $
-    op("bdb")'+b' op("db") & =b(1 times.o b'-b' times.o 1)+b'(1 times.o b-b times.o 1)+I^2 \
-                           & =b times.o b'-b b' times.o 1+b' times.o b-b b' times.o 1+I^2 \
-                           & =1 times.o b b'-b b' times.o 1+I^2=d(b b').
-  $
-  + *(D3).* Clearly, $op("da")=1 times.o a-a times.o 1+I^2=0+I^2$ for all $a in A$.
+  #set enum(numbering: "(D1)")
+  + This is easy.
+  + Note that $(1 times.o b-b times.o 1)(1 times.o b'-b' times.o 1) in I^2$, which implies $1 times.o b b'+b b' times.o 1=b times.o b'+b' times.o b$ in $I\/I^2$. Thus, for any $b,b' in B$, we have
+    $
+      b d b'+b' d b & =b(1 times.o b'-b' times.o 1)+b'(1 times.o b-b times.o 1)+I^2 \
+                             & =b times.o b'-b b' times.o 1+b' times.o b-b b' times.o 1+I^2 \
+                             & =1 times.o b b'-b b' times.o 1+I^2=d(b b').
+    $
+  + Clearly, $d a=1 times.o a-a times.o 1+I^2=0+I^2$ for all $a in A$.
   (II) _Claim._ The pair $chevron.l I\/I^2,d chevron.r$ satisfies the _Universal Property_ of $Omega_(B\/A)$.
-  - _Claim_. The kernel $I$ is generated by $1 times.o b-b times.o 1:\ b in B$.
-  Clearly, $1 times.o b-b times.o 1 in I$ for every $b in B$. On the other hand, we note that for any $b times.o b' in B times.o_op("AB")$, we have
+  - _Claim_. The kernel $I$ is generated by ${1 times.o b-b times.o 1: b in B}$.
+  Clearly, $1 times.o b-b times.o 1 in I$ for every $b in B$. On the other hand, we note that for any $b times.o b' in tensor(B, B, over: A)$, we have
   $
     b times.o b'=b b' times.o 1+b(1 times.o b'-b' times.o 1).
   $
-  Now, suppose $op("sum")_op("ia")_i (b_i times.o b_i') in I$, then $op("sum")_op("ia")_op("ib")_op("ib")_i'=f(op("sum")_op("ia")_i (b_i times.o b_i'))=0$, whence
+  Now, suppose $sum_i a_i (b_i times.o b_i') in I$, then $sum_i a_i b_i b_i'=f(sum_i a_i (b_i times.o b_i'))=0$, whence
   $
-    op("sum") a_i (b_i times.o b_i')=op("underbrace")op("sum") a_i (b_op("ib")_i' times.o 1)_=0+op("sum") a_op("ib")_i (1 times.o b_i'-b_i' times.o 1) in B spn 1 times.o b-b times.o 1:\ b in B.
+    sum a_i (b_i times.o b_i')
+      &= underbrace(sum a_i (b_i b_i' times.o 1), =0)
+        + sum a_i b_i (1 times.o b_i'-b_i' times.o 1) \
+      &in B spn {1 times.o b-b times.o 1: b in B}.
   $
   - For any pair $chevron.l M,d' chevron.r$ with $M in cat.mod(B)$ and $d' in ops.der_A (B,M)$, we define
   $
-    h:I\/I^2 arrow.r.long M,op("quad")1 times.o b-b times.o 1+I^2 mapsto d'b,
+    h:I\/I^2 arrow.r.long M,quad 1 times.o b-b times.o 1+I^2 mapsto d'b,
   $
-  which is clearly $B$-linear and satisfies $d'=op("hd")$. Further, $d$ is surjective, which shows that such $h$ must be unique.
+  which is clearly $B$-linear and satisfies $d'=h d$. Further, $d$ is surjective, which shows that such $h$ must be unique.
 ]
 // Hartshorne II.8, Proposition 8.2A
 #proposition(number: "8.2A")[
-  If $A',B in cat.alg_A$, and $B' := B times.o_sch.a'$. Then, $Omega_(B'\/A') simeq Omega_(B\/A) times.o_op("BB")'$ (as $B'$-modules). Further, if $S subset B$ is multiplicatively closed, then $Omega_S^(-1)B\/A simeq S^(-1)Omega_(B\/A)$.
+  If $A',B in cat.alg_A$, and $B' := tensor(B, A', over: A)$. Then, $Omega_(B'\/A') simeq tensor(Omega_(B\/A), B', over: B)$ (as $B'$-modules). Further, if $S subset B$ is multiplicatively closed, then $Omega_(S^(-1) B\/A) simeq S^(-1)Omega_(B\/A)$.
 ]
 #proof[
   Let $chevron.l Omega_(B\/A),d chevron.r$ be the differential form of $B\/A$. First, note that
   $
-    Omega_(B\/A) times.o_op("BB")'=Omega_(B\/A) times.o_B (B times.o_sch.a') simeq Omega_(B\/A) times.o_sch.a'.
+    tensor(Omega_(B\/A), B', over: B)=Omega_(B\/A) times.o_B (tensor(B, A', over: A)) simeq Omega_(B\/A) times.o_A A'.
   $
-  - We consider the map $d' := d times.o op("mathds")1:B'=B times.o_sch.a' to Omega_(B\/A) times.o_sch.a'$, which clearly satisfies (D1) and (D3). For (D2), we see that
+  - We consider the map $d' := d times.o ops.one:B'=tensor(B, A', over: A) to Omega_(B\/A) times.o_A A'$, which clearly satisfies (D1) and (D3). For (D2), we see that
   $
-    (d times.o op("mathds")1)((b_1 times.o a_1')(b_1 times.o a_2')) &=(d times.o op("mathds")1)(b_1b_2 times.o a_1'a_2')=d(b_1b_2) times.o a_1'a_2'\ &=(b_1op("db")_2+b_2op("db")_1) times.o a_1'a_2'\ &=b_1op("db")_2 times.o a_1'a_2'+b_2op("db")_1 times.o a_1'a_2'\ &=(b_1 times.o a_1')(op("db")_2 times.o a_2')+(b_2 times.o a_2')(op("db")_1 times.o a_1'),
+    (d times.o ops.one)((b_1 times.o a_1')(b_1 times.o a_2'))
+      &=(d times.o ops.one)(b_1 b_2 times.o a_1' a_2') \
+      &=d(b_1 b_2) times.o a_1' a_2' \
+      &=(b_1 d b_2+b_2 d b_1) times.o a_1' a_2' \
+      &=b_1 d b_2 times.o a_1' a_2'+b_2 d b_1 times.o a_1' a_2' \
+      &=(b_1 times.o a_1')(d b_2 times.o a_2')+(b_2 times.o a_2')(d b_1 times.o a_1'),
   $
-  for any $b_1 times.o a_1',b_2 times.o a_2' in B times.o_sch.a'=B$. Therefore, $d' in ops.der_A' (B',Omega_(B\/A) times.o_sch.a')$.
-  - _Claim._ The pair $chevron.l Omega_(B\/A) times.o_sch.a',d' chevron.r$ satisfies the _Universal Property_ of $Omega_(B'\/A')$.
-  Given any $M in cat.mod(B')$ and any $D' in ops.der_A' (B',M)$. Clearly, the composition $D'i$ is an $A$-deriviation of $B$ into $M$, i.e. $D'i in ops.der_A (B,M)$, where $i:B arrow.r.hook B',\ b mapsto b times.o 1$ is the canonical injection of $B$-algebras. By the _Universal Property_ of $Omega_(B\/A)$, $exists \ D in ops.der_A (Omega_(B\/A),M)$ for which $D'i=op("Dd")$. Now, consider the $B'$-module homomorphism
+  for any $b_1 times.o a_1',b_2 times.o a_2' in tensor(B, A', over: A)=B$. Therefore, $d' in ops.der_(A') (B',Omega_(B\/A) times.o_A A')$.
+  - _Claim._ The pair $chevron.l Omega_(B\/A) times.o_A A',d' chevron.r$ satisfies the _Universal Property_ of $Omega_(B'\/A')$.
+  Given any $M in cat.mod(B')$ and any $D' in ops.der_(A') (B',M)$. Clearly, the composition $D'i$ is an $A$-deriviation of $B$ into $M$, i.e. $D'i in ops.der_A (B,M)$, where $i:B arrow.r.hook B',  b mapsto b times.o 1$ is the canonical injection of $B$-algebras. By the _Universal Property_ of $Omega_(B\/A)$, $exists   D in ops.der_A (Omega_(B\/A),M)$ for which $D'i=D d$. Now, consider the $B'$-module homomorphism
   $
-    E:Omega_(B\/A) times.o_sch.a' arrow.r.long M,op("quad") c times.o a mapsto a' op("Dc").
+    E:Omega_(B\/A) times.o_A A' arrow.r.long M,quad c times.o a mapsto a' D c.
   $
   Then, for any $b times.o a' in B'$, we have
   $
-    op("Ed")'(b times.o a')=E(op("db") times.o a')=a'D(op("db"))=a'D'i(b)=a'D'(b times.o 1)=D'(b times.o a').
+    E d'(b times.o a')&=E(d b times.o a')=a'D(d b) \
+      &=a'D'i(b)=a'D'(b times.o 1)=D'(b times.o a').
   $
-  Therefore, $op("Ed")'=D'$ as required. The uniqueness is clear, so we get $chevron.l Omega_(B\/A) times.o_op("BB")',d' chevron.r simeq Omega_(B'\/A')$.
+  Therefore, $E d'=D'$ as required. The uniqueness is clear, so we get $chevron.l tensor(Omega_(B\/A), B', over: B),d' chevron.r simeq Omega_(B'\/A')$.
 ]
 #example(title: "8.2.1")[
-  Consider $B=A[x_1, dots.c ,x_n]$. Then $Omega_(B\/A) in cat.mod(B)$ is a free module of rank $n$ generated by $op("dx")_1, dots.c ,op("dx")_n$. In general, for $B=A[x_i_i in I]$, the $B$-module $Omega_(B\/A)$ is free with a $B$-basis $op("dx")_i_i in I$.
+  Consider $B=A[x_1, dots.c ,x_n]$. Then $Omega_(B\/A) in cat.mod(B)$ is a free module of rank $n$ generated by $d x_1, dots.c ,d x_n$. In general, for $B=A[{x_i}_(i in I)]$, the $B$-module $Omega_(B\/A)$ is free with a $B$-basis ${d x_i}_(i in I)$.
 ]
 #proof[
-  Clearly, $op("dx")_i_i in I$ generates $Omega_(B\/A)$, so it suffices to show that $op("dx")_i_i in I$ is $B$-linearly independent. Suppose $op("sum") f_op("idx")_i=0$ ($f_i in B$). For any $j in I$, consider the $j$th partial derivative $op("partial")/op("partial") x_j in ops.der_A (B,B)$. Then $chevron.l B,op("partial")/op("partial") x_j chevron.r$ gives a pair. By _Universal Property_ of $Omega_(B\/A),\ exists$ unique $Omega_(B\/A) arrow.r.long B$ such that $op("theta")_op("jd")=op("partial")/op("partial") x_j$. It follows that $op("theta")_j (op("dx")_i)=op("partial") x_i/op("partial") x_j=delta_(op("ij"))$ for every $i in I$. Thus, we have
+  Clearly, ${d x_i}_(i in I)$ generates $Omega_(B\/A)$, so it suffices to show that ${d x_i}_(i in I)$ is $B$-linearly independent. Suppose $sum f_i d x_i=0$ ($f_i in B$). For any $j in I$, consider the $j$th partial derivative $partial/(partial x_j) in ops.der_A (B,B)$. Then $chevron.l B,partial/(partial x_j) chevron.r$ gives a pair. By _Universal Property_ of $Omega_(B\/A), exists$ unique $Omega_(B\/A) morph(theta_j, cat.mod(B)) B$ such that $theta_j d=partial/(partial x_j)$. It follows that $theta_j (d x_i)=(partial x_i)/(partial x_j)=delta_(i j)$ for every $i in I$. Thus, we have
   $
-    0=op("theta")_j (op("sum") f_op("idx")_i)=op("sum") f_op("iop") ("theta")_j (op("dx")_i)=op("sum") f_op("iop") ("delta")_(op("ij"))=f_j
+    0=theta_j (sum f_i d x_i)=sum f_i theta_j (d x_i)=sum f_i delta_(i j)=f_j
   $
-  for every $j in I$. Therefore, $op("dx")_i_i in I$ is $B$-linearly independent.
+  for every $j in I$. Therefore, ${d x_i}_(i in I)$ is $B$-linearly independent.
 ]
-#lemma(number: "8.A (Categorical Fact")[
-  Suppose we have morphisms $A arrow.r.long B arrow.r.long C$ in an Abelian category $Af$ such that $op("uv")=0$ and $u$ is epi. If the sequence
+#lemma(number: "8.A", title: "Categorical Fact")[
+  Suppose we have morphisms $A arrow.r.long^v B arrow.r.long^u C$ in an Abelian category $Af$ such that $u v=0$ and $u$ is epi. If the sequence
   $
-    op("Hom")_Af (A,T) arrow.l.long op("Hom")_Af (B,T) arrow.l.long op("Hom")_Af (C,T)
+    ops.hom(A,T, over: Af) arrow.l.long^(- compose v) ops.hom(B,T, over: Af) arrow.l.long^(- compose u) ops.hom(C,T, over: Af)
   $
-  is exact (in $cat.ab$) for every $T in ops.ob Af$. Then, $(B arrow.r.long C)= ops.coker (A arrow.r.long B)$, and thus, (this is equivalent to that) the sequence $A to B to C to 0$ is exact in $Af$.
+  is exact (in $cat.ab$) for every $T in ops.ob Af$. Then, $(B arrow.r.long^u C)= ops.coker (A arrow.r.long^v B)$, and thus, (this is equivalent to that) the sequence $A to B to C to 0$ is exact in $Af$.
 ]
 #proof[
-  Consider $T := ops.coker (A arrow.r.long B) in Af$ with $B arrow.r.long T$. Then, we have $op("pv")=0$. By _exactness_, $exists \ op("alpha") in op("Hom")_Af (C,T)$ such that $op("alpha") u=p$. Note that the morphism $B arrow.r.long C$ satisfies $op("uv")=0$, it follows from the _Universal Property of Cokernel (or Coequalizer)_, $exists$ unique $T arrow.r.long C$' with $op("theta") p=u$. Now, $u=op("theta") p=op("theta")op("alpha") u$, but $u$ is epi, so $op("theta")op("alpha")=op("mathds")1_C$; on the other hand, $op("alpha")op("theta") p=op("alpha") u=p$, but $chevron.l T,p chevron.r= ops.coker v$, i.e. $p$ is epi, so $op("alpha")op("theta")=op("mathds")1_T$. Therefore, $C=T$, and thus, $(B arrow.r.long C)= ops.coker (A arrow.r.long B)$.
+  Consider $T := ops.coker (A arrow.r.long^v B) in Af$ with $B morph(p, Af) T$. Then, we have $p v=0$. By _exactness_, $exists   alpha in ops.hom(C,T, over: Af)$ such that $alpha u=p$. Note that the morphism $B arrow.r.long^u C$ satisfies $u v=0$, it follows from the _Universal Property of Cokernel (or Coequalizer)_, $exists$ unique $T morph(theta, Af) C$' with $theta p=u$. Now, $u=theta p=theta alpha u$, but $u$ is epi, so $theta alpha=ops.one_C$; on the other hand, $alpha theta p=alpha u=p$, but $chevron.l T,p chevron.r= ops.coker v$, i.e. $p$ is epi, so $alpha theta=ops.one_T$. Therefore, $C=T$, and thus, $(B arrow.r.long^u C)= ops.coker (A arrow.r.long^v B)$.
 ]
 #remark(title: "8.A*")[
-  As a special case of _(8.A)_. Suppose the morphism $A arrow.r.long B$ is mono [resp. epi]. If one can show that the map $op("Hom")_Af (A, ops.coker v) arrow.l.long op("Hom")_Af (B, ops.coker v)$ is epi [resp. $op("Hom")_Af (A,A) arrow.l.long op("Hom")_Af (B,A)$ is mono], then $A arrow.r.long B$ is an isomorphism.
+  As a special case of _(8.A)_. Suppose the morphism $A arrow.r.long^v B$ is mono [resp. epi]. If one can show that the map $ops.hom(A, ops.coker v, over: Af) attach(arrow.l.long, t: - compose v, b: cat.ab) ops.hom(B, ops.coker v, over: Af)$ is epi [resp. $ops.hom(A,A, over: Af) attach(arrow.l.long, t: - compose v, b: cat.ab) ops.hom(B,A, over: Af)$ is mono], then $A arrow.r.long^v B$ is an isomorphism.
 ]
 // Hartshorne II.8, Proposition 8.3A
 #proposition(number: "8.3A", title: "First Fundamental Exact Sequence")[
-  Consider the ring homomorphisms $A arrow.r.long to B arrow.r.long C$. Then there is a natural exact sequence of $C$-modules:
+  Consider the ring homomorphisms $A arrow.r.long^phi to B arrow.r.long^psi C$. Then there is a natural exact sequence of $C$-modules:
   $
-    Omega_(B\/A) times.o_op("BC") arrow.r.long Omega_(C\/A) arrow.r.long Omega_(C\/B) arrow.r.long 0.
+    tensor(Omega_(B\/A), C, over: B) arrow.r.long^v Omega_(C\/A) arrow.r.long^u Omega_(C\/B) arrow.r.long 0.
   $
 ]
 #proof[
   We apply the categorical fact _(8.A)_. First, we define the maps
   $
-    v:Omega_(B\/A) times.o_op("BC") & arrow.r.long \
-                      Omega_(C\/A), & u:Omega_(C\/A)                     & arrow.r.long \
-                      Omega_(C\/B), \
-                d_(B\/A)b times.o c & mapsto c dot d_(C\/A)op("psi")(b). &    d_(C\/A)c & mapsto \
-                         d_(C\/B)c,
+    v:tensor(Omega_(B\/A), C, over: B) & arrow.r.long Omega_(C\/A),
+      & u:Omega_(C\/A) & arrow.r.long Omega_(C\/B), \
+    d_(B\/A) b times.o c & mapsto c dot d_(C\/A) psi(b).
+      & d_(C\/A) c & mapsto d_(C\/B) c,
   $
   which are clearly $C$-linear.
   - Note that $u$ is clearly surjective. Further, for any $b in B$ and $c in C$, we have
   $
-    op("uv")(d_(B\/A)b times.o c)=u(c dot d_(C\/A)op("psi")(b))=c dot u(d_(C\/A)op("psi")(b))=c dot op("underbrace")d_(C\/B)op("psi")(b)_=0=0.
+    u v(d_(B\/A) b times.o c)
+      &=u(c dot d_(C\/A) psi(b))=c dot u(d_(C\/A) psi(b)) \
+      &=c dot underbrace(d_(C\/B) psi(b), =0)=0.
   $
-  - Now, it suffices to show that the exactness of the sequence $op("Hom")_(C) (-,T)$ for any $T in cat.mod(C)$, which can be rewrite as
-  #remark[Diagram.]
-  where $op("alpha")$ is just the map $D mapsto D$. Since we already have $op("uv")=0$, it only remains to show that $ops.ker (- compose op("psi")) subset ops.im op("alpha")$. Suppose $D in ops.der_A (C,T)$ with $op("Dop")("psi")=0$, i.e. the differential is $0$ on $B$, so we may extend $D$ to a $B$-deriviation of $C$, i.e. $D in ops.der_B (C,T)$.
+  - Now, it suffices to show that the exactness of the sequence $ops.hom(-,T, over: C)$ for any $T in cat.mod(C)$, which can be rewrite as
+  #align(center)[
+    #set text(size: 0.9em)
+    #diagram(
+      spacing: (12pt, 18pt),
+      $
+        ops.hom(tensor(Omega_(B\/A), C, over: B), T, over: C) edge("d", simeq, ->)
+        & ops.hom(Omega_(C\/A), T, over: C) edge("l", - compose v, ->) edge("dd", "=")
+        & ops.hom(Omega_(C\/B), T, over: C) edge("l", - compose u, ->) edge("dd", "=") \
+        ops.hom(Omega_(B\/A), T, over: B) edge("d", "=") & & \
+        ops.der_A (B,T)
+        & ops.der_A (C,T) edge("l", - compose psi, ->)
+        & ops.der_B (C,T) edge("l", alpha, ->)
+      $,
+    )
+  ]
+  where $alpha$ is just the map $D mapsto D$. Since we already have $u v=0$, it only remains to show that $ops.ker (- compose psi) subset ops.im alpha$. Suppose $D in ops.der_A (C,T)$ with $D psi=0$, i.e. the differential is $0$ on $B$, so we may extend $D$ to a $B$-deriviation of $C$, i.e. $D in ops.der_B (C,T)$.
 ]
 // Hartshorne II.8, Proposition 8.4A
 #proposition(number: "8.4A", title: "Second Fundamental Exact Sequence")[
-  Let $B in cat.alg_A,\ op("Iop")("triangleleft") B$, and $C=B\/I$. Then there is a natural exact sequence of $C$-modules:
+  Let $B in cat.alg_A,  I lt.closed B$, and $C=B\/I$. Then there is a natural exact sequence of $C$-modules:
   $
-    I\/I^2 arrow.r.long Omega_(B\/A) times.o_op("BC") arrow.r.long Omega_(C\/A) arrow.r.long 0,
+    I\/I^2 arrow.r.long^delta tensor(Omega_(B\/A), C, over: B) arrow.r.long^v Omega_(C\/A) arrow.r.long 0,
   $
   where $delta$ is a $C$-module homomorphism defined by
   $
-    delta :I\/I^2 arrow.r.long Omega_(B\/A) times.o_op("BC"),op("quad") b+I^2 mapsto d_(B\/A)b times.o 1.
+    delta :I\/I^2 arrow.r.long tensor(Omega_(B\/A), C, over: B),quad b+I^2 mapsto d_(B\/A)b times.o 1.
   $
 ]
 #proof[
   We again apply the fact _(8.A)_ and use the notations in _(8.3)_.
-  - Note that $Omega_(C\/A)$ is generated by $d_(C\/A)op("bar")b$ (where $op("bar")b=b+I in C,\ b in B$). Further, we have $v(d_(B\/A)b times.o 1)=d_(C\/A)op("psi")(b)=d_(C\/A)op("bar")b$. Thus, $v$ is surjective.
-  - For any $b in I$, we have $op("bar")b=0$ in $C$, so $op("vop")("delta")(b+I^2)=v(d_(B\/A)b times.o 1)=d_(C\/A)op("bar")b=0.$
-  - For any $T in cat.mod(C)$, we again rewrite the sequence $op("Hom")_(C) (-,T)$:
-  #remark[Diagram.]
-  Again, we have only to show that  $ops.ker ( dot )|_I subset ops.im (- compose op("psi"))$. Indeed, if $D in ops.der_A (B,T)$ with $D|_I=0$, this clearly lifts to an $A$-deriviation $B\/I to T$.
+  - Note that $Omega_(C\/A)$ is generated by $d_(C\/A)overline(b)$ (where $overline(b)=b+I in C,  b in B$). Further, we have $v(d_(B\/A)b times.o 1)=d_(C\/A)psi(b)=d_(C\/A)overline(b)$. Thus, $v$ is surjective.
+  - For any $b in I$, we have $overline(b)=0$ in $C$, so $v delta(b+I^2)=v(d_(B\/A)b times.o 1)=d_(C\/A)overline(b)=0.$
+  - For any $T in cat.mod(C)$, we again rewrite the sequence $ops.hom(-,T, over: C)$:
+  #align(center)[
+    #set text(size: 0.9em)
+    #diagram(
+      spacing: (12pt, 18pt),
+      $
+        ops.hom(I\/I^2, T, over: C) edge("d", simeq, ->)
+        & ops.hom(tensor(Omega_(B\/A), C, over: B), T, over: C) edge("l", delta, ->) edge("d", simeq, ->)
+        & ops.hom(Omega_(C\/A), T, over: C) edge("l", - compose v, ->) edge("d", "=") \
+        ops.hom(I, T, over: B)
+        & ops.der_A (B,T) edge("l", (dot)|_I, ->)
+        & ops.der_A (B\/I,T) edge("l", - compose psi, ->) \
+        D|_I & D edge("l", mapsto) &
+      $,
+    )
+  ]
+  Again, we have only to show that  $ops.ker ( dot )|_I subset ops.im (- compose psi)$. Indeed, if $D in ops.der_A (B,T)$ with $D|_I=0$, this clearly lifts to an $A$-deriviation $B\/I to T$.
 ]
 // Hartshorne II.8, Corollary 8.5
 #corollary(number: "8.5")[
-  Let $B in fg cat.alg_A$ or $B=S^(-1)R$ for some $R in fg cat.alg_A$, then $Omega_(B\/A) in fg cat.mod(B)$.
+  Let $B in fg(cat.alg_A)$ or $B=S^(-1)R$ for some $R in fg(cat.alg_A)$, then $Omega_(B\/A) in fg(cat.mod(B))$.
 ]
 #proof[
-  In the first case, write $B=A[x_1, dots.c ,x_n]\/I$. From _(8.4)_, the map $Omega_(A[x_1, dots.c ,x_n]\/A) times.o_A[x_1, dots.c ,x_n]B arrow.r.long Omega_(B\/A)$ is surjective. Further, $op("dx")_i times.o 1_i=1^n$ is a $B$-basis of $Omega_(A[x_1, dots.c ,x_n]\/A) times.o_A[x_1, dots.c ,x_n]B$, which implies that $Omega_(B\/A)$ is finitely generated by $d_(B\/A)op("bar")x_i_i=1^n$ over $B$. Now, for the second case, we see that
+  In the first case, write $B=A[x_1, dots.c ,x_n]\/I$. From _(8.4)_, the map $Omega_(A[x_1, dots.c ,x_n]\/A) times.o_(A[x_1, dots.c ,x_n]) B arrow.r.long^v Omega_(B\/A)$ is surjective. Further, ${d x_i times.o 1}_(i=1)^n$ is a $B$-basis of $Omega_(A[x_1, dots.c ,x_n]\/A) times.o_(A[x_1, dots.c ,x_n]) B$, which implies that $Omega_(B\/A)$ is finitely generated by ${d_(B\/A) overline(x)_i}_(i=1)^n$ over $B$. Now, for the second case, we see that
   $
-    Omega_(B\/A)=Omega_S^(-1)R\/op("Aattach")(simeq, b: "text(\"(8.2)\")")S^(-1)Omega_(R\/A)=S^(-1)R spn d_(R\/A)op("bar")x_i/1_i=1^n in fg cat.mod(B).
+    Omega_(B\/A)&=Omega_(S^(-1) R\/A) isoBy("(8.2)") S^(-1) Omega_(R\/A) \
+      &=S^(-1) R spn {d_(R\/A) overline(x)_i/1}_(i=1)^n in fg(cat.mod(B)).
   $
 ]
 #lemma(number: "8.B")[
   Let $k subset K subset L$ be finitely generated field extensions. We have the following four cases:
-  + *(i).* If $L\/K$ is purely transcendental, then $ops.rank(Omega_(L\/k), over: op("Lop"))= ops.rank(Omega_(K\/k), over: op("Kop"))+ ops.trdeg_op("KL")$.
-  + *(ii).* If $L\/K$ is algebraic and separable, then $ops.rank(Omega_(L\/k), over: op("Lop"))= ops.rank(Omega_(K\/k), over: op("Kop"))$.
-  + *(iii).* If $L=K(t)$ is algebraic but purely inseparable over $K$, then $ops.rank(Omega_(L\/k), over: op("Lop")) >= ops.rank(Omega_(K\/k), over: op("Kop"))$.
-  + *(iv).* If, in general, $L\/K$ is algebraic and purely inseparable, then $ops.rank(Omega_(L\/k), over: op("Lop")) >= ops.rank(Omega_(K\/k), over: op("Kop"))$.
+  #set enum(numbering: "(i)")
+  + If $L\/K$ is purely transcendental, then $ops.rank(Omega_(L\/k), over: L)= ops.rank(Omega_(K\/k), over: K)+ ops.trdeg_K L$.
+  + If $L\/K$ is algebraic and separable, then $ops.rank(Omega_(L\/k), over: L)= ops.rank(Omega_(K\/k), over: K)$.
+  + If $L=K(t)$ is algebraic but purely inseparable over $K$, then $ops.rank(Omega_(L\/k), over: L) >= ops.rank(Omega_(K\/k), over: K)$.
+  + If, in general, $L\/K$ is algebraic and purely inseparable, then $ops.rank(Omega_(L\/k), over: L) >= ops.rank(Omega_(K\/k), over: K)$.
 ]
 #proof[
-  Note that $L\/k$ is finitely generated, so $ops.rank(Omega_(L\/k), over: op("Lop"))< in op("fty")$ by _(8.5)_. Put $r := ops.trdeg_op("KL")$, which is finite since $L\/K$ is finitely generated. Further, we may assume $K subset.neq L$, otherwise the result is clear.\
+  Note that $L\/k$ is finitely generated, so $ops.rank(Omega_(L\/k), over: L)< infinity$ by _(8.5)_. Put $r := ops.trdeg_K L$, which is finite since $L\/K$ is finitely generated. Further, we may assume $K subset.neq L$, otherwise the result is clear.\
+
   (i) $L\/K$ is purely transcendental, say $L=K(t_1, dots.c ,t_r)$. Put $B := K[x_1, dots.c ,x_r]$, then $L simeq ops.frac B$ (over $K$). In this case, the exact sequence in _(8.3)_ becomes
   $
-    0 arrow.r.long Omega_(K\/k) times.o_op("KB") arrow.r.long Omega_(B\/k) arrow.r.long Omega_(B\/K) arrow.r.long 0,
+    0 arrow.r.long Omega_(K\/k) times.o_K B arrow.r.long^v Omega_(B\/k) arrow.r.long^u Omega_(B\/K) arrow.r.long 0,
   $
   and it splits since $v$ has a left inverse given by:
   $
-    w:Omega_(B\/k) arrow.r.long Omega_(K\/k) times.o_op("KB"),op("quad") d_(B\/k)f mapsto op("sum")_(op("alpha")=(op("alpha")_1, dots.c ,op("alpha")_r))d_(K\/k)f_op("alpha") times.o x_1^(op("alpha")_1) dots.c x_r^(op("alpha")_r).
+    w:Omega_(B\/k) &arrow.r.long Omega_(K\/k) times.o_K B, \
+    d_(B\/k) f &mapsto sum_(alpha=(alpha_1, dots.c ,alpha_r)) d_(K\/k) f_alpha times.o x_1^(alpha_1) dots.c x_r^(alpha_r).
   $
   Now, we get
   $
-    Omega_(B\/k) simeq (Omega_(K\/k) times.o_op("KB")) plus.o Omega_(B\/K)attach(=, b: "text(\"(8.2.1)\")")(Omega_(K\/k) times.o_op("KB")) plus.o op("Bdx")_1 plus.o dots.c plus.o op("Bdx")_r,\
-    Omega_(L\/k)attach(simeq, b: "text(\"(8.2)\")") ops.frac Omega_(B\/k) simeq (Omega_(K\/k) times.o_op("KL")) plus.o op("Ldt")_1 plus.o dots.c plus.o op("Ldt")_r,
+    Omega_(B\/k) &simeq (Omega_(K\/k) times.o_K B) plus.o Omega_(B\/K) \
+      &eqBy("(8.2.1)") (Omega_(K\/k) times.o_K B) plus.o B d x_1 plus.o dots.c plus.o B d x_r, \
+    Omega_(L\/k) &isoBy("(8.2)") ops.frac Omega_(B\/k) \
+      &simeq (Omega_(K\/k) times.o_K L) plus.o L d t_1 plus.o dots.c plus.o L d t_r,
   $
-  whence $ops.rank(Omega_(L\/k), over: op("Lop"))= ops.rank(Omega_(K\/k), over: op("Kop"))+r$.\
-  (ii) If $L\/K$ is algebraic and separable, since $L\/K$ is finitely generated, it is also finite separable. By _Primitive Element Theorem_, $exists \ t in L$ such that $L=K(t)$. Let $f in K[x]$ be the minimal polynomial of $t$ of degree $n >= 2$, then $t^k_k=0^n-1$ is a $K$-basis for $L$. Now, to see the ranks are equal, it suffices to show that $Omega_(K\/k) times.o_op("KL") arrow.r.long Omega_(L\/K)$ defined in _(8.3)_ is an isomorphism.
-  - _Claim._ $Omega_(L\/K)=0$. Given any $d in ops.der_K (L,Omega_(L\/K))$. For any $op("alpha") in L$, since $L\/K$ is finite separable, we have $g(op("alpha"))=0$ but $g'(op("alpha")) != 0$ for some polynomial $g in K[x]$. It follows that $0=op("df")(op("alpha"))=f'(op("alpha"))op("dop")("alpha")$, whence $op("dop")("alpha")=0$. But $Omega_(L\/K)$ is generated by the set $op("dop")("alpha"):\ op("alpha") in L$, thus, $Omega_(L\/K)=0$.
+  whence $ops.rank(Omega_(L\/k), over: L)= ops.rank(Omega_(K\/k), over: K)+r$.\
+
+  (ii) If $L\/K$ is algebraic and separable, since $L\/K$ is finitely generated, it is also finite separable. By _Primitive Element Theorem_, $exists   t in L$ such that $L=K(t)$. Let $f in K[x]$ be the minimal polynomial of $t$ of degree $n >= 2$, then ${t^k}_(k=0)^(n-1)$ is a $K$-basis for $L$. Now, to see the ranks are equal, it suffices to show that $Omega_(K\/k) times.o_K L morph(v, cat.mod(L)) Omega_(L\/K)$ defined in _(8.3)_ is an isomorphism.
+  - _Claim._ $Omega_(L\/K)=0$. Given any $d in ops.der_K (L,Omega_(L\/K))$. For any $alpha in L$, since $L\/K$ is finite separable, we have $g(alpha)=0$ but $g'(alpha) != 0$ for some polynomial $g in K[x]$. It follows that $0=d f(alpha)=f'(alpha)d alpha$, whence $d alpha=0$. But $Omega_(L\/K)$ is generated by the set ${d alpha: alpha in L}$, thus, $Omega_(L\/K)=0$.
   - Now, apply $Omega_(L\/K)=0$ to the exact sequence in _(8.3)_, then $v$ is surjective. Finally, to show that $v$ is injective, it is enough to show that the map
-  #remark[Diagram.]
+  #align(center)[
+    #diagram(
+      spacing: (18pt, 18pt),
+      $
+        ops.hom(tensor(Omega_(K\/k), L, over: K), T, over: L) edge("d", simeq, ->)
+        & ops.hom(Omega_(L\/k), T, over: L) edge("l", - compose v, ->) edge("d", "=") \
+        ops.der_k (K,T) & ops.der_k (L,T) edge("l", ->)
+      $,
+    )
+  ]
   is surjective for any $T in cat.mod(L)$. Now, for any $D in ops.der_k (L,T)$, we define
   $
-    E:L arrow.r.long T,op("quad")\ op("sum")_(k=0)^(n-1)a_op("kt")^k mapsto \ op("sum")_(k=0)^(n-1)t^op("kDa")_k.
+    E:L arrow.r.long T,quad sum_(k=0)^(n-1) a_k t^k mapsto sum_(k=0)^(n-1) t^k D a_k.
   $
   It is easy to show that $E in ops.der_k (L,T)$ and that $E mapsto D$.
-  (iii) Suppose $L=K(t)$ is algebraic but purely inseparable over $K$. In this case, we may assume that $t in.not K,\ ops.char k=p>0$, and $e >= 1$ is the minimal for which $a=t^(p^e) in K$. I claim that
+
+  (iii) Suppose $L=K(t)$ is algebraic but purely inseparable over $K$. In this case, we may assume that $t in.not K,  ops.char k=p>0$, and $e >= 1$ is the minimal for which $a=t^(p^e) in K$. I claim that
   $
-    ops.rank(Omega_(L\/k), over: op("Lop"))=op("left")op("begin")op("arraylc")
-    ops.rank(Omega_(K\/k), over: op("Kop"))+1, & text("if") \
-                                  d_(K\/k)a=0; \
-      ops.rank(Omega_(K\/k), over: op("Kop")), & text("if") \
-                               d_(K\/k)a != 0. \
-              op("end")op("arrayop")("right").
+    ops.rank(Omega_(L\/k), over: L)=cases(
+      ops.rank(Omega_(K\/k), over: K)+1 & quad text("if") d_(K\/k) a=0,
+      ops.rank(Omega_(K\/k), over: K) & quad text("if") d_(K\/k) a != 0.,
+    )
   $
   Note that $f := x^(p^e)-a in K[x]$ is the minimal polynomial of $t$, and that $L simeq K[x]\/chevron.l f chevron.r$. Now,
   $
-    Omega_(L\/K) &attach(simeq, b: "text(\"(8.4)\")")(Omega_(K[x]\/k) times.o_K[x]L)\/ ops.im delta attach(simeq, b: "text(\"(i)\")")[(Omega_(K\/k) times.o_shf.k[x] plus.o K[x]op("dx")) times.o_K[x]L]\/ ops.im delta \ & simeq [(Omega_(K\/k) times.o_op("KL")) plus.o op("Ldx")]\/ ops.im delta
+    Omega_(L\/K) &isoBy("(8.4)") (Omega_(K[x]\/k) times.o_(K[x]) L)\/ ops.im delta \
+      &isoBy("(i)") [(Omega_(K\/k) times.o_K K[x] plus.o K[x] d x) times.o_(K[x]) L]\/ ops.im delta \
+      &simeq [(Omega_(K\/k) times.o_K L) plus.o L d x]\/ ops.im delta
   $
-  as $L$-modules, where $delta op("bar")f=d_(K\/k)f times.o 1=-d_(K\/k)a times.o 1$. If $d_(K\/k)a=0$, then clearly, $ops.rank(Omega_(L\/k), over: op("Lop"))= ops.rank(Omega_(K\/k), over: op("Kop"))+1$; otherwise, $delta op("bar")f$ generates an $L$-subspace of $Omega_(L\/k)$ of rank $1$, so $ops.rank(Omega_(L\/k), over: op("Lop"))= ops.rank(Omega_(K\/k), over: op("Kop"))+1-1= ops.rank(Omega_(K\/k), over: op("Kop"))$.\
+  as $L$-modules, where $delta overline(f)=d_(K\/k)f times.o 1=-d_(K\/k)a times.o 1$. If $d_(K\/k)a=0$, then clearly, $ops.rank(Omega_(L\/k), over: L)= ops.rank(Omega_(K\/k), over: K)+1$; otherwise, $delta overline(f)$ generates an $L$-subspace of $Omega_(L\/k)$ of rank $1$, so $ops.rank(Omega_(L\/k), over: L)= ops.rank(Omega_(K\/k), over: K)+1-1= ops.rank(Omega_(K\/k), over: K)$.\
+
   (iv) In general, if $L\/K$ is algebraic and purely inseparable, say $L=K(t_1, dots.c ,t_m)$ with $t_i in.not K$. We have a chain of purely inseparable field extensions:
   $
     K subset K(t_1) subset K(t_1,t_2) subset dots.c subset K(t_1, dots.c ,t_m)=L.
   $
-  Therefore, we have the inequality $ops.rank(Omega_(L\/k), over: op("Lop")) >= ops.rank(Omega_(K\/k), over: op("Kop"))$ by (iii).
+  Therefore, we have the inequality $ops.rank(Omega_(L\/k), over: L) >= ops.rank(Omega_(K\/k), over: K)$ by (iii).
 ]
 #proposition(number: "8.C")[
   Let $k subset K subset L$ be finitely generated field extensions. Then
   $
-    ops.rank(Omega_(L\/k), over: op("Lop")) >= ops.rank(Omega_(K\/k), over: op("Kop"))+ ops.trdeg_op("KL"),
+    ops.rank(Omega_(L\/k), over: L) >= ops.rank(Omega_(K\/k), over: K)+ ops.trdeg_K L,
   $
   and the equality holds if $L$ is separably generated over $K$.
 ]
 #proof[
-  First, we write $L=K(t_1, dots.c ,t_n)$ such that $t_i_i=1^r$ is a transcendence basis for $L\/K$. Write $E=K(t_1, dots.c ,t_r)$ so that $E\/K$ is purely transcendental and $L\/E$ is algebraic. From _(6.Bi)_, we have $ops.rank(Omega_(E\/k), over: op("Eop"))= ops.rank(Omega_(K\/k), over: op("Kop"))+r$, so we may now reduce to the case where $L\/K$ is algebraic.
-  Let $K_s$ denote the set of all separable elements of $L$ over $K$. Since $L\/K$ is algebraic, now $K_s\/K$ is finite separable, and $L\/K_s$ is finitely generated and purely inseparable. It follows from _(8.Bii)_ that $ops.rank(Omega_(K_s\/k), over: K_op("sop"))= ops.rank(Omega_(K\/k), over: op("Kop"))$, so we reduce to the case (iv) of _(6.B)_. Therefore, we obtain the inequality.
-  Now, suppose $L\/K$ is separably generated, there exists a transcendence basis $t_i_i=1^r$ of $K\/k$ for which $E=K(t_1, dots.c ,t_r)\/K$ is purely transcendental and $L\/E$ is separable algebraic. Therefore,
+  First, we write $L=K(t_1, dots.c ,t_n)$ such that ${t_i}_(i=1)^r$ is a transcendence basis for $L\/K$. Write $E=K(t_1, dots.c ,t_r)$ so that $E\/K$ is purely transcendental and $L\/E$ is algebraic. From _(6.Bi)_, we have $ops.rank(Omega_(E\/k), over: E)= ops.rank(Omega_(K\/k), over: K)+r$, so we may now reduce to the case where $L\/K$ is algebraic.
+  Let $K_s$ denote the set of all separable elements of $L$ over $K$. Since $L\/K$ is algebraic, now $K_s\/K$ is finite separable, and $L\/K_s$ is finitely generated and purely inseparable. It follows from _(8.Bii)_ that $ops.rank(Omega_(K_s\/k), over: K_s)= ops.rank(Omega_(K\/k), over: K)$, so we reduce to the case (iv) of _(6.B)_. Therefore, we obtain the inequality.
+  Now, suppose $L\/K$ is separably generated, there exists a transcendence basis ${t_i}_(i=1)^r$ of $K\/k$ for which $E=K(t_1, dots.c ,t_r)\/K$ is purely transcendental and $L\/E$ is separable algebraic. Therefore,
   $
-    ops.rank(Omega_(L\/k), over: op("Lop"))attach(=, b: "text(\"(6.Bii)\")") ops.rank(Omega_(E\/k), over: op("Eop"))attach(=, b: "text(\"(6.Bi)\")") ops.rank(Omega_(K\/k), over: op("Kop"))+r
+    ops.rank(Omega_(L\/k), over: L)eqBy("(6.Bii)") ops.rank(Omega_(E\/k), over: E)eqBy("(6.Bi)") ops.rank(Omega_(K\/k), over: K)+r
   $
   as required.
 ]
 // Hartshorne II.8, Theorem 8.6A
 #theorem(number: "8.6A")[
   Let $K\/k$ be a finitely generated field extension. Then,
-  + *(i).* $ops.rank(Omega_(K\/k), over: op("Kop")) >= ops.trdeg_op("kK")$.
-  + *(ii).* The equality holds $arrow.l.r.double.long \ K\/k$ is separably generated.
-  + *(iii).* Moreover, if $K\/k$ is algebraic, then $Omega_(K\/k)=0\ arrow.l.r.double.long \ K\/k$ is separable.
+  #set enum(numbering: "(i)")
+  + $ops.rank(Omega_(K\/k), over: K) >= ops.trdeg_k K$.
+  + The equality holds $arrow.l.r.double.long   K\/k$ is separably generated.
+  + Moreover, if $K\/k$ is algebraic, then $Omega_(K\/k)=0  arrow.l.r.double.long   K\/k$ is separable.
 ]
 #proof[
-  Now, (i) and the direction ($op("Leftarrow")$) of (ii) are just the special case of _(8.C)_. Further, we have shown the direction ($op("Leftarrow")$) of (iii) in _(8.Bii)_. It remains to show the direction ($op("Rightarrow")$) of both (ii) and (iii).
-  (iii) Suppose $Omega_(K\/k)=0$, i.e. $ops.rank(Omega_(K\/k), over: op("kop"))=0$, so $ops.trdeg_op("kK")=0$. Now, for any intermediate field $k subset E subset K$, we have $ops.rank(Omega_(E\/k), over: op("kop"))=0$. One can show that the cases (i), (iii) and (iv) in _(6.B)_ cannot happen, i.e. $K\/k$ is separable and algebraic. (For example, the case (iii), since $Omega_(E\/k)=0$, we can only have $d_(E\/k)a=0$, whence $ops.rank(Omega_(K\/k), over: op("Kop"))=1>0$, a contradiction).
-  (ii) Now, assume that $ops.rank(Omega_(K\/k), over: op("Kop"))= ops.trdeg_op("kK")=r >= 1$. Let $op("dx")_i_i=1^r$ be a $K$-basis for $Omega_(K\/k)$, then $op("dx")_i times.o 1_i=1^r$ forms a $K$-basis for $Omega_(k(x_1, dots.c ,x_r)\/k) times.o_k (x_1, dots.c ,x_r)K$. By _(8.3)_, this gives $Omega_(K\/k(x_1, dots.c ,x_r))=0$, whence $K\/k(x_1, dots.c ,x_r)$ is separable and algebraic by (iii). Further, as $ops.trdeg_op("kK")=r$, the set $x_i_i=1^r$ must form a transcendence basis for $K\/k$, and hence, a separating transcendence basis. Therefore, $K\/k$ is separably generated.
+  Now, (i) and the direction ($Leftarrow$) of (ii) are just the special case of _(8.C)_. Further, we have shown the direction ($Leftarrow$) of (iii) in _(8.Bii)_. It remains to show the direction ($Rightarrow$) of both (ii) and (iii).
+
+
+  (iii) Suppose $Omega_(K\/k)=0$, i.e. $ops.rank(Omega_(K\/k), over: k)=0$, so $ops.trdeg_k K=0$. Now, for any intermediate field $k subset E subset K$, we have $ops.rank(Omega_(E\/k), over: k)=0$. One can show that the cases (i), (iii) and (iv) in _(6.B)_ cannot happen, i.e. $K\/k$ is separable and algebraic. (For example, the case (iii), since $Omega_(E\/k)=0$, we can only have $d_(E\/k)a=0$, whence $ops.rank(Omega_(K\/k), over: K)=1>0$, a contradiction).
+
+  (ii) Now, assume that $ops.rank(Omega_(K\/k), over: K)= ops.trdeg_k K=r >= 1$. Let ${d x_i}_(i=1)^r$ be a $K$-basis for $Omega_(K\/k)$, then ${d x_i times.o 1}_(i=1)^r$ forms a $K$-basis for $Omega_(k(x_1, dots.c ,x_r)\/k) times.o_(k(x_1, dots.c ,x_r)) K$. By _(8.3)_, this gives $Omega_(K\/k(x_1, dots.c ,x_r))=0$, whence $K\/k(x_1, dots.c ,x_r)$ is separable and algebraic by (iii). Further, as $ops.trdeg_k K=r$, the set ${x_i}_(i=1)^r$ must form a transcendence basis for $K\/k$, and hence, a separating transcendence basis. Therefore, $K\/k$ is separably generated.
 ]
 // Hartshorne II.8, Proposition 8.7
 #proposition(number: "8.7")[
-  Let $B$ be a local ring containing its residue field $k=B\/ idl.m$. Then, the map\ $delta : idl.m \/ idl.m^2 arrow.r.long Omega_(B\/k) times.o_op("Bk")$ defined in _(8.4)_ is an isomorphism.
+  Let $B$ be a local ring containing its residue field $k=B\/ idl.m$. Then, the map\ $delta : idl.m \/ idl.m^2 morph(#none, cat.mod(k)) tensor(Omega_(B\/k), k, over: B)$ defined in _(8.4)_ is an isomorphism.
 ]
 #proof[
   Note that $Omega_(k\/k)=0$, so _(8.4)_ implies that $delta$ is surjective. We have only to show that $delta$ is injective.
-  - Recall that the dual functor $( dot )^ast =op("Hom")_(D) (-,D)$ over a division ring $D$ is a contravariant exact functor, and thus, it suffices to show that the map
+  - Recall that the dual functor $( dot )^ast =ops.hom(-,D, over: D)$ over a division ring $D$ is a contravariant exact functor, and thus, it suffices to show that the map
   $
-    delta ':op("Hom")_(k) (Omega_(B\/k) times.o_op("Bk"),k) arrow.r.long op("Hom")_(k) ( idl.m \/ idl.m^2,k)
+    delta ':ops.hom(tensor(Omega_(B\/k), k, over: B),k, over: k) morph(- compose delta, cat.ab) ops.hom( idl.m \/ idl.m^2,k, over: k)
   $
   is surjective.
   - We note that
   $
-    op("Hom")_(k) (Omega_(B\/k) times.o_op("Bk"),k) simeq op("Hom")_(B) (Omega_(B\/k),k)= ops.der_k (B,k).
+    ops.hom(tensor(Omega_(B\/k), k, over: B),k, over: k) simeq ops.hom(Omega_(B\/k),k, over: B)= ops.der_k (B,k).
   $
   It follows that if $d in ops.der_k (B,k)$, then $delta '(d)$ is obtained by restricting to $idl.m$, and that $d( idl.m^2)=0$.
   - We have a short exact sequence $0 to idl.m to B to k to 0$ of $B$-modules, but the fact that our $k subset B$ implies that such exact sequence splits, and hence, $B simeq idl.m plus.o k$.
-  - Now, given any $h in op("Hom")_(k) ( idl.m \/ idl.m^2,k)$, we define the $k$-deriviation
+  - Now, given any $h in ops.hom( idl.m \/ idl.m^2,k, over: k)$, we define the $k$-deriviation
   $
-    d:B arrow.r.long k,op("quad") b := c+op("lambda") mapsto h(c+ idl.m^2)=h(op("bar")c).
+    d:B arrow.r.long k,quad b := c+lambda mapsto h(c+ idl.m^2)=h(overline(c)).
   $
   It is clear that $delta '(d)=h$. Further, we see that
   $
-    d(b b') &=d((c+op("lambda"))(c'+op("lambda")'))=d(op("cc")'+op("cop")("lambda")'+c' op("op")("lambda")+op("underbrace")op("lambda")op("lambda")'_in k)=h(op("underbrace")op("overl in e")op("cc")'_in idl.m^2+op("lambda")'op("bar")c+op("lambda")op("bar")c')\ &=h(op("bar")op("cop")("bar")c'+op("bar")c' op("op")("bar")c+op("lambda")'op("bar")c+op("lambda")op("bar")c') attach(=, b: "op(\"ktext\")(\"-l in ear\")")(c'+op("lambda")')h(op("bar")c)+(c+op("lambda"))h(op("bar")c')=b' op("db")+op("bdb")',
+    d(b b') &=d((c+lambda)(c'+lambda')) \
+      &=d(c c'+c lambda'+c' lambda+underbrace(lambda lambda', in k)) \
+      &=h(underbrace(overline(c c)', in idl.m^2)+lambda' overline(c)+lambda overline(c)') \
+      &=h(overline(c) overline(c)'+overline(c)' overline(c)+lambda' overline(c)+lambda overline(c)') \
+      &eqBy(k text("-linear")) (c'+lambda')h(overline(c))+(c+lambda)h(overline(c)') \
+      &=b' d b+b d b',
   $
-  for any $b=c+op("lambda"),b'=c'+op("lambda")' in B$. Thus, $d in ops.der_k (B,k)$, and therefore, $delta '$ is surjective.
+  for any $b=c+lambda,b'=c'+lambda' in B$. Thus, $d in ops.der_k (B,k)$, and therefore, $delta '$ is surjective.
 ]
 // Hartshorne II.8, Theorem 8.8
 #theorem(number: "8.8")[
-  Let $B$ be a local ring containing its residue field $k=B\/ idl.m$. Assume further that $k$ is perfect, and that $B=S^(-1)R$ for some $R in fg cat.alg_k$. Then,
+  Let $B$ be a local ring containing its residue field $k=B\/ idl.m$. Assume further that $k$ is perfect, and that $B=S^(-1)R$ for some $R in fg(cat.alg_k)$. Then,
   $
-    Omega_(B\/k) in cat.mod(B)\ text("is a free module with")\ ops.rank(Omega_(B\/k), over: op("Bop"))=ops.dim(B)\ arrow.l.r.double.long \ B\ text("is a regular local r in g").
+    &Omega_(B\/k) in cat.mod(B) text(" is a free module with ") ops.rank(Omega_(B\/k), over: B)=ops.dim(B) \
+    &arrow.l.r.double.long B text(" is a regular local ring").
   $
 ]
 #proof[
-  ($op("Rightarrow")$) Note that such $B$ is a Noetherian ring from our assumption. Suppose that $Omega_(B\/k)$ is a free $B$-module of rank $ops.dim(B)$. Then
+  ($Rightarrow$) Note that such $B$ is a Noetherian ring from our assumption. Suppose that $Omega_(B\/k)$ is a free $B$-module of rank $ops.dim(B)$. Then
   $
-    ops.dim(idl.m, over: k) \/ idl.m^2attach(=, b: "text(\"(8.7)\")")ops.dim((Omega_(B\/k) times.o_op("Bk")), over: k)= ops.rank(Omega_(B\/k), over: op("kop"))=ops.dim(B.)
+    ops.dim(idl.m \/ idl.m^2, over: k)
+      &eqBy("(8.7)") ops.dim((tensor(Omega_(B\/k), k, over: B)), over: k) \
+      &= ops.rank(Omega_(B\/k), over: k)=ops.dim(B).
   $
   Therefore, $B$ is a regular local ring. In particular, this implies that $B$ is an integral domain.
-  ($op("Leftarrow")$) Suppose that $B$ is a regular local ring with $ops.dim(B)=r$. Then,
+
+  ($Leftarrow$) Suppose that $B$ is a regular local ring with $ops.dim(B)=r$. Then,
   $
-    ops.dim((Omega_(B\/k) times.o_op("Bk")), over: k)attach(=, b: "text(\"(8.7)\")")ops.dim(idl.m, over: k) \/ idl.m^2attach(=, b: "B:\\ text(\"regular\")")ops.dim(B)=r.
+    ops.dim((tensor(Omega_(B\/k), k, over: B)), over: k)
+      &eqBy("(8.7)") ops.dim(idl.m \/ idl.m^2, over: k) \
+      &eqBy(B colon text("regular")) ops.dim(B)=r.
   $
-  On the other hand, let $K= ops.frac B$, then $Omega_(B\/k) times.o_op("BK")= ops.frac Omega_(B\/k)attach(=, b: "_(8.2)_")Omega_(K\/k)$. Now that $k$ is perfect, it follows from _(I, 4.8)_ that $K\/k$ is separably generated, and thus,
+  On the other hand, let $K= ops.frac B$, then $Omega_(B\/k) times.o_B K= ops.frac Omega_(B\/k)eqBy("(8.2)")Omega_(K\/k)$. Now that $k$ is perfect, it follows from _(I, 4.8)_ that $K\/k$ is separably generated, and thus,
   $
-    r=ops.dim(op("Battach")(=, b: "text(\"(I, 1.8)\")"))ops.dim(Omega_(K\/k), over: op("Kop"))attach(=, b: "text(\"(8.6)\")") ops.trdeg_op("kK").
+    r=ops.dim(B) eqBy("(I, 1.8)") ops.dim(Omega_(K\/k), over: K) eqBy("(8.6)") ops.trdeg_k K.
   $
-  Finally, our assumption of $B$ gives that $Omega_(B\/k) in fg cat.mod(B)$. We conclude that $Omega_(B\/k)$ is a free module of rank $r$ by using the following lemma _(8.9)_.
+  Finally, our assumption of $B$ gives that $Omega_(B\/k) in fg(cat.mod(B))$. We conclude that $Omega_(B\/k)$ is a free module of rank $r$ by using the following lemma _(8.9)_.
 ]
 // Hartshorne II.8, Lemma 8.9
 #lemma(number: "8.9")[
-  Let $A$ be a Noetherian local domain, with residue field $k$ and $K= ops.frac A$. Suppose that $M in fg cat.mod(A)$ satisfies $ops.dim((M times.o_op("Ak")), over: k)=ops.dim((M times.o_op("AK")), over: K)=r$, then $M$ is free of rank $r$.
+  Let $A$ be a Noetherian local domain, with residue field $k$ and $K= ops.frac A$. Suppose that $M in fg(cat.mod(A))$ satisfies $ops.dim((tensor(M, k, over: A)), over: k)=ops.dim((tensor(M, K, over: A)), over: K)=r$, then $M$ is free of rank $r$.
 ]
 #proof[
-  Since $ops.dim((M times.o_op("Ak")), over: k)=r$, the _Nakayama Lemma_ states that $M$ can be generated by $r$ elements, i.e. $exists$ surjective map $A^(plus.o r) arrow.r.long M$. Put $I := ops.ker op("phi")$. Note that $K$ is a flat $A$-module (as it is a field), i.e. $- times.o_op("AK")$ is an exact functor, we have an exact sequence
+  Since $ops.dim((tensor(M, k, over: A)), over: k)=r$, the _Nakayama Lemma_ states that $M$ can be generated by $r$ elements, i.e. $exists$ surjective map $A^(plus.o r) morph(phi, cat.mod(A)) M$. Put $I := ops.ker phi$. Note that $K$ is a flat $A$-module (as it is a field), i.e. $- times.o_A K$ is an exact functor, we have an exact sequence
   $
-    0 arrow.r.long I times.o_op("AK") arrow.r.long K^(plus.o r) arrow.r.long op("phi") times.o op("mathds")1M times.o_op("AK") arrow.r.long 0
+    0 arrow.r.long I times.o_A K arrow.r.long K^(plus.o r) arrow.r.long^(phi times.o ops.one) tensor(M, K, over: A) arrow.r.long 0
   $
-  of $A$-modules. Further, we have $ops.dim((M times.o_op("AK")), over: K)=r$, i.e. $M times.o_op("AK") simeq K^(plus.o r)$, so $S^(-1)I=I times.o_op("AK")=0$ where $S=op("Aop")("setm in us")0$. Thus, $exists \ s in S$ for which $op("sI")=0$. But $I$ is torsion-free (as it is a submodule of a free module), so $I=0$, and thus, $M simeq A^(plus.o r)$ is free of rank $r$.
+  of $A$-modules. Further, we have $ops.dim((tensor(M, K, over: A)), over: K)=r$, i.e. $tensor(M, K, over: A) simeq K^(plus.o r)$, so $S^(-1)I=I times.o_A K=0$ where $S=A without {0}$. Thus, $exists   s in S$ for which $s I=0$. But $I$ is torsion-free (as it is a submodule of a free module), so $I=0$, and thus, $M simeq A^(plus.o r)$ is free of rank $r$.
 ]

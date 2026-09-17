@@ -7,7 +7,7 @@
   "scripts": {
     "build": "mkdir -p dist && typst compile src/main.typ dist/alg-geo.pdf",
     "dev": "typst watch src/main.typ dist/alg-geo.pdf",
-    "lean": "cd ../.. && for file in books/alg-geo/src/sec-*/lean/*.lean; do lake env lean \"$file\" || exit 1; done",
+    "lean": "cd ../.. && for file in books/alg-geo/src/*/lean/*.lean; do lake env lean \"$file\" || exit 1; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

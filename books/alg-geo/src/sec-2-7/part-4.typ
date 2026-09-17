@@ -3,6 +3,7 @@
 #import cosmos.clouds: *
 #show: show-theorion
 #import "../defs.typ": *
+#set enum(numbering: n => [])
 
 === The Relative Proj & Projective Space Bundles
 #emph-box()[
@@ -15,12 +16,22 @@
   *The Relative $sch.proj$ Construction.*
   Fix a scheme $X$, and a quasi-coherent algebra $shf.s in cat.gr cat.alg_(shf.o_X)$.
   - For any open affine $U=ops.spec A$ of $X$, we have $shf.s (U) in cat.gr cat.alg_(shf.o_X (U))$. Consider $ops.proj shf.s (U)$ with the natural morphism
-  $ops.proj shf.s (U) arrow.r.long^(pi_U) ops.spec shf.o_X (U) simeq U.$
+  $ ops.proj shf.s (U) arrow.r.long^(pi_U) ops.spec shf.o_X (U) simeq U. $
   Checking through the _glueing data_, we may glue these ${pi_U}$ along such open affine cover ${U}$ to obtain a scheme, denoted by $sch.proj shf.s$, together with a morphism $sch.proj shf.s arrow.r.long^(pi)X$ and open immersions $ops.proj shf.s (U) arrow.r.long^(psi_U) sch.proj shf.s$, such that ${ops.im psi_U}$ covers $sch.proj shf.s$, and is compatible on the intersections.
   - Such $pi$ is unique with the property that for any open affine $U=ops.spec A$ of $X$, the square
-  #remark[Diagram.]
+  #align(center)[
+    #diagram(
+      cell-size: (28mm, 18mm),
+      $
+        ops.proj shf.s (U) edge("r", psi_U, "hook->") edge("d", pi_U, ->)
+        & sch.proj shf.s edge("d", pi, ->) \
+        U edge("r", iota_U, "hook->") & X
+      $,
+      edge((0, 0), "dr", $⌟$, stroke: none, label-pos: 0.2, label-side: center, label-fill: false),
+    )
+  ]
   is a fibre square, which is compatible with all open affine subsets $V subset U$. Further, we have
-  $pi^(-1) (U)=ops.im psi_U simeq ops.proj shf.s (U).$
+  $ pi^(-1) (U)=ops.im psi_U simeq ops.proj shf.s (U). $
   - From _(5.12c)_, the invertible sheaves $shf.o (1)$ on each $ops.proj shf.s (U)$ are compatible under this construction, so they glue together to give an invertible sheaf $shf.o (1)$ on $sch.proj shf.s$ canonically.
 ]
 
@@ -36,47 +47,66 @@
 ]
 
 #example(title: "7.8.7")[
-  If $shf.s=shf.o_X[T_0, ... ,T_n]$ is the polynomial algebra, then $sch.proj shf.s=sch.p_X^n$ with its twisting sheaf $shf.o (1)$ defined earlier.
+  If $shf.s=shf.o_(X)[T_0, ... ,T_n]$ is the polynomial algebra, then $sch.proj shf.s=sch.p_X^n$ with its twisting sheaf $shf.o (1)$ defined earlier.
 ]
 
 // Hartshorne II.7, Lemma 7.9
 #lemma(number: 7.9)[
   Let $X$ and $shf.s$ satisfy ($dagger$), and let $shf.l in cat.mod(shf.o_X)$ be an invertible sheaf. We define a new sheaf
-  $shf.s ast shf.l := plus.o.big_(d >= 0) (shf.s_d times.o_(shf.o_X) shf.l^( times.o d)) in cat.gr cat.alg_(shf.o_X).$
+  $ shf.s ast shf.l := plus.o.big_(d >= 0) (shf.s_d times.o_(shf.o_X) shf.l^( times.o d)) in cat.gr cat.alg_(shf.o_X). $
   Then $shf.s ast shf.l$ also satisfies ($dagger$), and there is a canonical isomorphism
-  $phi:Y'=sch.proj (shf.s ast shf.l) arrow.r.long^(tilde.op)Y=sch.proj shf.s,$
+  $ phi:Y'=sch.proj (shf.s ast shf.l) arrow.r.long^(tilde.op)Y=sch.proj shf.s, $
   commuting with the projections $Y arrow.r.long^(pi)X$ and $Y' arrow.r.long^(pi')X$, and having the property that
-  $shf.o_(Y') (1) simeq phi^ast shf.o_Y (1) times.o_{shf.o_(Y')}(pi')^ast shf.l.$
+  $ shf.o_(Y') (1) simeq phi^ast shf.o_Y (1) times.o_(shf.o_(Y'))(pi')^ast shf.l. $
 ]
 #proof[
   We divide into the following steps.\
 
   (I) For any open affine $U subset X$ satisfying $shf.l|_U simeq shf.o_X|_U, exists$ canonical $U$-isomorphism
-  $phi_U:ops.proj (shf.s ast shf.l)(U) arrow.r.long^(tilde.op) ops.proj shf.s (U),$
+  $ phi_U:ops.proj (shf.s ast shf.l)(U) arrow.r.long^(tilde.op) ops.proj shf.s (U), $
   compatible with all open affine subsets $V subset U$.
 
   *proof.* Clearly, we have $shf.s ast shf.l in cat.qcoh (X)$. Given an $shf.o_X (U)$-basis ${eta}$ of $shf.l (U)$. Define a map
-  $alpha_U:shf.s (U) arrow.r.long (shf.s ast shf.l)(U), quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)s_d times.o eta^( times.o d).$
+  $ alpha_U:shf.s (U) arrow.r.long (shf.s ast shf.l)(U), quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)s_d times.o eta^( times.o d). $
   This is a graded $shf.o_X (U)$-algebra isomorphism since for each $d >= 0$, the map $shf.s_d (U) -> (shf.s ast shf.l)_d, s mapsto s times.o eta^( times.o d)$ comes from the isomorphism $(shf.s_d times.o shf.l^( times.o d))|_U simeq shf.s_d|_U times.o shf.l|_U^( times.o d) simeq shf.s_d|_U times.o shf.o_X|_U^( times.o d) simeq shf.s_d|_U$. Thus, $alpha_U$ induces an isomorphism $phi_U:ops.proj (shf.s ast shf.l)(U) arrow.r.long^(tilde.op) ops.proj shf.s (U)$.
 
   _Check._ The isomorphism $phi_U$ is independent of the choice of the basis $eta$.
   - Suppose ${eta'}$ is another $shf.o_X (U)$-basis of $shf.l (U)$, then $exists f in shf.o_X (U)^times$ for which $eta'=f dot eta$. We also have a graded $shf.o_X (U)$-algebra isomorphism
-  $alpha'_U:shf.s (U) arrow.r.long^(tilde.op) (shf.s ast shf.l)(U), quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)s_d times.o eta'^( times.o d).$
+  $ alpha'_U:shf.s (U) arrow.r.long^(tilde.op) (shf.s ast shf.l)(U), quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)s_d times.o eta'^( times.o d). $
   It follows that $alpha'_U (s)=sum_(d >= 0)f^d (s_d times.o eta^( times d))=sum_(d >= 0) alpha_U (s_d)$.
   - _Fact._ For any homomorphism $S arrow.r.long^(alpha)T$, set $G(psi) := {idl.p in ops.proj T:idl.p in.not supset alpha(S_+)}$ (as in _[2.14]_). Suppose $f in T_0$ is a unit, we consider the graded homomorphism
-  $alpha':S arrow.r.long T, quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)f^d alpha(s_d).$
+  $ alpha':S arrow.r.long T, quad s=sum_(d >= 0)s_d mapsto sum_(d >= 0)f^d alpha(s_d). $
   Then, $G(alpha)=G(alpha')$, and the induced morphisms $G(alpha) arrow.r.long^() ops.proj S$ are the same.
   - Now, the question reduces to prove the fact above. Consider the graded homomorphism
-  $theta:T arrow.r.long T, quad t=sum_(d >= 0)t_d mapsto sum_(d >= 0)f^d t_d.$
+  $ theta:T arrow.r.long T, quad t=sum_(d >= 0)t_d mapsto sum_(d >= 0)f^d t_d. $
   As $f in T_0$ is a unit, $theta$ has an inverse homomorphism given by $sum_(d >= 0)t_d mapsto sum_(d >= 0)f^(-d) t_d$. Thus, $theta$ is an automorphism. Now, $alpha'=theta alpha$, so the result clearly follows.
   Finally, for the _compatibility_, note that if $V subset U$ is affine, ${eta|_V}$ is an $shf.o_X (V)$-basis for $shf.l (V)$.\
 
   (II) The isomorphisms $phi_U$ glue to give an isomorphism $phi:sch.proj (shf.s ast shf.l) arrow.r.long^(tilde.op) sch.proj shf.s$ commuting with the projections, i.e. the following diagram commutes
-  #remark[Diagram.]
+  #align(center)[
+    #diagram(
+      cell-size: (23mm, 18mm),
+      $
+        sch.proj (shf.s ast shf.l) edge("rr", phi, ->) edge("dr", pi', ->)
+        & & sch.proj shf.s edge("dl", pi, ->, label-side: #right) \
+        & X
+      $,
+    )
+  ]
   *proof.* Cover $X$ with open affines $U$ satisfying $shf.l|_U simeq shf.o_X|_U$. For each such $U$, we have the composition
-  $ops.proj (shf.s ast shf.l)(U) arrow.r.long^(phi_U) ops.proj shf.s (U) arrow.r.long^(pi_U)U.$
+  $ ops.proj (shf.s ast shf.l)(U) arrow.r.long^(phi_U) ops.proj shf.s (U) arrow.r.long^(pi_U)U. $
   Since $phi_U$ is compatible with every open affine subset $V subset U$ by (I), they agree on the intersections, which implies that these $phi_U$ can be glued. Thus, $exists$ isomorphism $sch.proj (shf.s ast shf.l) arrow.r.long^(phi) sch.proj shf.s$ such that
-  #remark[Diagram.]
+  #align(center)[
+    #diagram(
+      cell-size: (30mm, 18mm),
+      $
+        sch.proj (shf.s ast shf.l) edge("r", phi, ->) edge("r", tilde.op, label-side: #right)
+        & sch.proj shf.s \
+        ops.proj (shf.s ast shf.l)(U) edge("r", phi_U, ->) edge("r", tilde.op, label-side: #right) edge("u", psi'_U, ->)
+        & ops.proj shf.s (U) edge("u", psi_U, ->)
+      $,
+    )
+  ]
   which is in fact a fibre square, where $psi_U,psi_U'$ are defined in the construction. Now, $pi phi$ is another morphism $ops.proj (shf.s ast shf.l) arrow.r.long^()X$ satisfying $(pi phi) psi'_U=pi psi_U phi_U=iota_U (pi_U phi_U)$. From the _uniqueness_ of the relative construction $sch.proj$, we have $pi'=pi phi$.\
 
   (III) _Check._ $shf.s ast shf.l in cat.gr cat.alg_(shf.o_X)$ is locally generated by $(shf.s ast shf.l)_1=shf.s_1 times.o shf.l$ over $shf.o_X$, and thus, $shf.s ast shf.l$ satisfies ($dagger$).\
@@ -84,11 +114,30 @@
   (IV) Show the isomorphism of sheaves.
 
   *proof.* Cover $X$ with open affines $U$ satisfying $shf.l|_U simeq shf.o_X|_U$. For each such $U$, consider the following commutative diagram
-  #remark[Diagram.]
+  #align(center)[
+    #diagram(
+      cell-size: (27mm, 16mm),
+      $
+        ops.proj (shf.s ast shf.l)(U) edge("rr", phi_U, ->) edge("rr", tilde.op, label-side: #right)
+          edge("dr", pi'_U, ->) edge("dd", psi'_U, "hook->")
+        & & ops.proj shf.s (U) edge("dl", pi_U, ->, label-side: #right) edge("dd", psi_U, "hook->") \
+        & U \
+        sch.proj (shf.s ast shf.l) edge("rr", phi, ->, label-pos: #0.25) edge("rr", tilde.op, label-side: #right, label-pos: #0.25) edge("dr", pi', ->)
+        & & sch.proj shf.s edge("dl", pi, ->, label-side: #right) \
+        & X
+      $,
+      edge((1, 1), (1, 3), $iota_U$, "hook->", "crossing", label-pos: 0.8),
+    )
+  ]
   Write $Y=sch.proj shf.s, Y'=sch.proj (shf.s ast shf.l)$ and $Y_U=ops.proj shf.s (U), Y'_U=ops.proj (shf.s ast shf.l)(U)$. Then we have the following two isomorphisms:
-  $(phi^ast shf.o_Y (1))|_(Y'_U) & simeq phi^ast (shf.o_Y (1)|_(Y_U)) simeq phi^ast (phi_U)_ast shf.o_(Y_U) (1) simeq (phi_U')_ast phi_U^ast shf.o_(Y_U) (1) & simeq (phi'_U)_ast shf.o_(Y_U') (1) simeq shf.o_(Y') (1)|_(Y_U')quad text("(i)") (pi'^ast shf.l)|_(Y'_U) & simeq (pi_U')^ast (shf.l|_U) isolongto (pi'_U)^ast (shf.o_X|_U) simeq shf.o_(Y')|_(Y_U')quad text("(ii)")$
+  $ (phi^ast shf.o_Y (1))|_(Y'_U) & simeq phi^ast (shf.o_Y (1)|_(Y_U)) simeq phi^ast (phi_U)_ast shf.o_(Y_U) (1) \
+    & simeq (phi_U')_ast phi_U^ast shf.o_(Y_U) (1) \
+    & simeq (phi'_U)_ast shf.o_(Y_U') (1) simeq shf.o_(Y') (1)|_(Y_U')quad text("(i)") \
+    (pi'^ast shf.l)|_(Y'_U) & simeq (pi_U')^ast (shf.l|_U) isolongto (pi'_U)^ast (shf.o_X|_U) simeq shf.o_(Y')|_(Y_U')quad text("(ii)") $
   Thus, the following isomorphism:
-  $alpha_U:(phi^ast shf.o_Y (1) times.o pi'^ast shf.l)|_(Y'_U) simeq (phi^ast shf.o_Y (1))|_(Y'_U) times.o (pi'^ast shf.l)|_(Y'_U) isolongto shf.o_(Y') (1)|_(Y_U') times.o shf.o_(Y')|_(Y_U') simeq shf.o_(Y') (1)$
+  $ alpha_U:(phi^ast shf.o_Y (1) times.o pi'^ast shf.l)|_(Y'_U) \
+    & simeq (phi^ast shf.o_Y (1))|_(Y'_U) times.o (pi'^ast shf.l)|_(Y'_U) \
+    & isolongto shf.o_(Y') (1)|_(Y_U') times.o shf.o_(Y')|_(Y_U') simeq shf.o_(Y') (1) $
   for each such $U$. Further, this is independent of the chosen $shf.o_X (U)$-basis for $shf.l (U)$ (similar to the proof of (I)), and is compatible with all open affine subsets $V subset U$. Thus, these ${alpha_U}$ can be glued along such cover ${U}$ of $X$ and obtain an isomorphism $alpha:phi^ast shf.o_Y (1) times.o pi'^ast shf.l arrow.r.long^(tilde.op) shf.o_(Y') (1)$.
 ]
 
@@ -97,12 +146,12 @@
 ]
 #proof[
   From assumption, $exists$ surjective morphism $shf.o_X^( plus.o I) arrow.r.long^(phi) shf.f$. As $X$ is Noetherian, it can be covered by finitely many open affines $U_j=ops.spec A_j$ ($1 <= j <= n$) where each $A_j$ is Noetherian. Now, for each $1 <= j <= n$, $phi$ restricts to the surjective morphism
-  $tildeOf(A)_j^( plus.o I)=shf.o_X^( plus.o I)|_(U_j) arrow.r.twohead shf.f|_(U_j) = tildeOf(M)_j$
-  where $M_j in fg cat.mod(A_j)$. From _(5.2)_, the homomorphism $A_j^( plus.o I) arrow.r.long^()M_j$ is also surjective. Since $M_j$ is finitely generated over the Noetherian ring $A_j$, it follows that $M_j$ is a Noetherain $A_j$-module, and thus, any $A_j$-submodule of $M_j$ is finitely generated. Thus, $exists$ finite subset $J_j subset I$ such that ${s_i|_j}_(i in J_j)$ generates $M_j$, so $shf.f_P=shf.o_(X,P) spn {[s_i|_j]_P:i in J_j}$ for all $P in U_j$. Finally, take $J := union.big_(j=1)^n J_j$, then $shf.f$ is globally generated by finitely many sections ${s_i}_(i in J)$.
+  $ tildeOf(A)_j^( plus.o I)=shf.o_X^( plus.o I)|_(U_j) arrow.r.twohead shf.f|_(U_j) = tildeOf(M)_j $
+  where $M_j in fg(cat.mod(A_j))$. From _(5.2)_, the homomorphism $A_j^( plus.o I) arrow.r.long^()M_j$ is also surjective. Since $M_j$ is finitely generated over the Noetherian ring $A_j$, it follows that $M_j$ is a Noetherain $A_j$-module, and thus, any $A_j$-submodule of $M_j$ is finitely generated. Thus, $exists$ finite subset $J_j subset I$ such that ${s_i|_j}_(i in J_j)$ generates $M_j$, so $shf.f_P=shf.o_(X,P) spn {[s_i|_j]_P:i in J_j}$ for all $P in U_j$. Finally, take $J := union.big_(j=1)^n J_j$, then $shf.f$ is globally generated by finitely many sections ${s_i}_(i in J)$.
 ]
 
 // Hartshorne II.7, Proposition 7.10
-#proposition(number: 7.10)[
+#proposition(number: "7.10")[
   Let $X, shf.s$ satisfy ($dagger$), with $Y=sch.proj shf.s arrow.r.long^(pi)X$ and $shf.o_Y (1)$ constructed as above. Then:
   + *(a).* $pi$ is proper, and thus, separated of finite type.
   + *(b).* If $X$ admits an ample invertible sheaf $shf.l$, then $pi$ is projective, and $shf.o_Y (1) times.o pi^ast (shf.l^( times.o n)) in cat.mod(shf.o_Y)$ is very ample over $X$ for suitable $n>0$.
@@ -111,13 +160,16 @@
   (a) For any open affine subset $U subset X$, note that $ops.proj shf.s (U) arrow.r.long^(pi_U)U$ is projective _(4.8.1)_, and thus, proper _(4.9)_. But, _proper is local on the base (4.8f)_, so $pi$ is proper.\
 
   (b) Suppose $shf.l in cat.mod(shf.o_X)$ is an ample invertible sheaf. Since $shf.s_1 in cat.coh (X), exists n>0$ such that $shf.s_1 times.o shf.l^( times.o n)$ is globally generated. Further, as $X$ is Noetherian, $shf.s_1 times.o shf.l^( times.o n)$ can be generated by finitely many global sections, i.e. $exists$ surjective morphism $shf.o_X^( plus.o (N+1)) arrow.r.long^() shf.s_1 times.o shf.l^( times.o n)$ for some $N>0$. This allows us to define a surjective morphism
-  $shf.o_X[T_0, ... ,T_N] arrow.r.long^() plus.o.big_(d >= 0) shf.s_d times.o shf.l^( times.o n d)=shf.s ast shf.l^( times.o n),$
+  $ shf.o_(X)[T_0, ... ,T_N] arrow.r.long^() plus.o.big_(d >= 0) shf.s_d times.o shf.l^( times.o n d)=shf.s ast shf.l^( times.o n), $
   which gives rise to a closed immersion (as closed immersion is local on the base) defined by
-  $i:Y=sch.proj shf.s arrow.r.long^(phi^(-1) tilde.op) sch.proj (shf.s ast shf.l^( times.o n)) arrow.r.hook sch.proj shf.o_X[T_0, ... ,T_N] = sch.p_X^N.$
-  Therefore, $pi:Y arrow.r.hook {i} sch.p_X^N -> X$ is projective.
+  $ i:Y=sch.proj shf.s arrow.r.long^(phi^(-1) tilde.op) sch.proj (shf.s ast shf.l^( times.o n)) arrow.r.hook sch.proj shf.o_(X)[T_0, ... ,T_N] = sch.p_X^N. $
+  Therefore, $pi:Y arrow.r.hook^i sch.p_X^N -> X$ is projective.
 
   Now, using the notations in _(7.9)_ with $Y'=sch.proj (shf.s ast shf.l^( times.o n))$, then $i$ is an immersion satisfying
-  $i^ast shf.o_(sch.p_X^N) (1) & simeq (phi^(-1))^ast shf.o_(Y') (1) simeq (phi^(-1))^ast (phi^ast shf.o_Y (1) times.o pi'^ast shf.l^( times.o n)) & simeq (phi^(-1))^ast phi^ast (shf.o_Y (1) times.o pi^ast shf.l^( times.o n)) simeq shf.o_Y (1) times.o pi^ast shf.l^( times.o n).$
+  $ i^ast shf.o_(sch.p_X^N) (1) & simeq (phi^(-1))^ast shf.o_(Y') (1) \
+    & simeq (phi^(-1))^ast (phi^ast shf.o_Y (1) times.o pi'^ast shf.l^( times.o n)) \
+    & simeq (phi^(-1))^ast phi^ast (shf.o_Y (1) times.o pi^ast shf.l^( times.o n)) \
+    & simeq shf.o_Y (1) times.o pi^ast shf.l^( times.o n). $
   Thus, $shf.o_Y (1) times.o pi^ast shf.l^( times.o n)$ is very ample over $X$.
 ]
 
@@ -128,20 +180,24 @@
 
 #remark[
   If $shf.e in cat.mod(shf.o_X)$ is a free sheaf of rank $n+1$ over some open set $U subset X$, then we have
-  $pi^(-1) (U) simeq ops.proj S(shf.e)(U) simeq ops.proj shf.o_X (U)[x_0, ... ,x_n] simeq sch.p_U^n.$
+  $ pi^(-1) (U) simeq ops.proj S(shf.e)(U) simeq ops.proj shf.o_X (U)[x_0, ... ,x_n] simeq sch.p_U^n. $
 ]
 
 // Hartshorne II.7, Proposition 7.11
 #proposition(number: 7.11)[
   Let $tildeOf(X)=sch.p (shf.e) arrow.r.long^(pi)X$ be a projective space bundle. Then
-  + *(a).* If $ops.rank(shf.e, over: (shf.o_X)) >= 2$, there is a canonical isomorphism $shf.s arrow.r.long^(tilde.op) plus.o.big_(l in ZZ) pi_ast (shf.o_(tildeOf(X)) (l))$.
+  + *(a).* If $ops.rank(shf.e, over: shf.o_X) >= 2$, there is a canonical isomorphism $shf.s arrow.r.long^(tilde.op) plus.o.big_(l in ZZ) pi_ast (shf.o_(tildeOf(X)) (l))$.
   + *(b).* There is a natural surjective morphism $pi^ast shf.e arrow.r.long^(phi) shf.o_Y (1)$.
 ]
 #proof[
-  (a) Say $ops.rank(shf.e, over: (shf.o_X))=r+1$. Cover $X$ with open affines $U=ops.spec A$ on which $shf.e|_U simeq shf.o_X|_U^( plus.o r)$. For each such $U$, write $S=A[x_0, ... ,x_r]$, then $pi^(-1) (U) simeq ops.proj S$, so that the isomorphism
-  $S arrow.r.long^(tilde.op) Gamma_ast (shf.o_{pi^(-1) (U)})= plus.o.big_(l in ZZ) Gamma(pi^(-1) (U), shf.o_(tildeOf(X)) (l))= plus.o.big_(l in ZZ) Gamma(U, pi_ast shf.o_(tildeOf(X)) (l))$
+  (a) Say $ops.rank(shf.e, over: shf.o_X)=r+1$. Cover $X$ with open affines $U=ops.spec A$ on which $shf.e|_U simeq shf.o_X|_U^( plus.o r)$. For each such $U$, write $S=A[x_0, ... ,x_r]$, then $pi^(-1) (U) simeq ops.proj S$, so that the isomorphism
+  $ S & arrow.r.long^(tilde.op) Gamma_ast (shf.o_(pi^(-1) (U)))\
+    &= plus.o.big_(l in ZZ) Gamma(pi^(-1) (U), shf.o_(tildeOf(X)) (l))\
+    &= plus.o.big_(l in ZZ) Gamma(U, pi_ast shf.o_(tildeOf(X)) (l)) $
   of graded $S$-algebras induces the isomorphism
-  $shf.s|_U simeq S(shf.e|_U) simeq A[x_0, ... ,x_r]tilde.op arrow.r.long^(tilde.op) ( plus.o.big_(l in ZZ) Gamma(U, pi_ast shf.o_(tildeOf(X)) (l)))tilde.op simeq ( plus.o.big_(l in ZZ) pi_ast shf.o_(tildeOf(X)) (l)))|_U.$
+  $ shf.s|_U & simeq S(shf.e|_U) simeq tildeOf(A[x_0, ... ,x_r]) \
+    & arrow.r.long^(tilde.op) tildeOf(plus.o.big_(l in ZZ) Gamma(U, pi_ast shf.o_(tildeOf(X)) (l))) \
+    & simeq (plus.o.big_(l in ZZ) pi_ast shf.o_(tildeOf(X)) (l))|_U. $
   Thus, these glue to give an isomorphism $shf.s arrow.r.long^(tilde.op) plus.o.big_(l in ZZ) pi_ast (shf.o_(tildeOf(X)) (l))$.\
 
   (b) This is just the relative version of _(5.16.2)_, i.e. the twisting sheaf $shf.o (1)$ on $sch.p^n$ is globally generated by ${x_i}_(i=0)^n$.
@@ -153,11 +209,11 @@
 ]
 #proof[
   ($Rightarrow$) Given a morphism $Y arrow.r.long^(f) sch.p (shf.e)$. By _(7.11b)_, $exists$ surjective morphism $pi^ast shf.e arrow.r.long^(phi) shf.o_(tildeOf(X)) (1)$. Applying the exact functor $f^ast (-)$ to the morphism gives a surjective map
-  $g^ast (shf.e)=f^ast pi^ast shf.e arrow.r.long^(f^ast phi)f^ast shf.o_(tildeOf(X)) (1).$
+  $ g^ast (shf.e)=f^ast pi^ast shf.e arrow.r.long^(f^ast phi)f^ast shf.o_(tildeOf(X)) (1). $
   Thus, we take $psi=f^ast phi$ and $shf.l=f^ast shf.o_(tildeOf(X)) (1) in cat.mod(shf.o_Y)$.\
 
   ($Leftarrow$) Given an invertible sheaf $shf.l in cat.mod(shf.o_Y)$ with a surjective morphism $g^ast shf.e arrow.r.long^(psi) shf.l$. I claim that there is a unique morphism $Y arrow.r.long^(f) sch.p (shf.e)=tildeOf(X)$ such that $shf.l simeq f^ast shf.o_(tildeOf(X)) (1)$, and that $psi$ is obtained by applying $f^ast$ to $psi$.
-  - _Note._ This is in fact a local question on $X$, so taking an open affine cover ${U:shf.e|_U text("is free")}$ of $X$ reduces the statement to _(7.1)_.
+  - _Note._ This is in fact a local question on $X$, so taking an open affine cover ${U:shf.e|_U text(" is free")}$ of $X$ reduces the statement to _(7.1)_.
   - If $X=ops.spec A$ and $shf.e simeq shf.o_X^( plus.o (n+1))$, then $tildeOf(X)=sch.p_A^n$. Now that $g^ast shf.e in cat.mod(shf.o_Y)$ is free and $psi$ is surjective, so $psi$ is uniquely determined by $n+1$ global sections generating $shf.l$, say $s_i in Gamma(Y, shf.l)$ ($0 <= i <= n$). From _(7.1)_, these sections ${s_i}_(i=0)^n$ uniquely determine a morphism $Y arrow.r.long^(f) sch.p_A^n=tildeOf(X)$ satisfying $shf.l simeq f^ast shf.o_(tildeOf(X)) (1)$ and $s_i=f^ast (x_i)$.
   - Further, there is a natural surjective morphism $pi^ast shf.e arrow.r.long^(phi) shf.o_Y (1)$ by _(7.11b)_. It follows that $f^ast phi$ is another surjective morphism $g^ast shf.e arrow.r.long^()f^ast shf.o_(tildeOf(X)) (1) simeq shf.l$ determined by the global sections ${s_i}_(i=0)^n$ generating $shf.l$. Thus, we have $psi=f^ast phi$ by _uniqueness_.
   - Finally, the uniqueness of such morphism $f$ follows from _(7.1)_.
