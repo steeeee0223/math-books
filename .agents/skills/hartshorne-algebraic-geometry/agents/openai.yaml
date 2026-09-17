@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hartshorne Algebraic Geometry"
+  short_description: "Study Hartshorne and check geometric proofs"
+  default_prompt: "Use $hartshorne-algebraic-geometry to explain this topic or check this proof, preserving Hartshorne's conventions and theorem hypotheses."
