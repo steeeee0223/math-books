@@ -5,11 +5,11 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== RV — Relative Spec and vector bundles <sup-rv>
+== RV — Relative Spec and vector bundles <sup-rv>
 
 This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #book-link(<sup-qc>)[QC] for quasi-coherent modules, and
-#book-link(<sup-al-5>)[AL-5] and #book-link(<sup-sc-7>)[SC-7] for symmetric algebras.
+#book-link(<sup-al-6>)[AL-6] and #book-link(<sup-sc-7>)[SC-7] for symmetric algebras.
 
 #metadata(none) <sup-rv-1>
 #definition(number: "RV-1", title: "Relative spectrum")[
@@ -188,14 +188,14 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
   - Conversely,
     linear bundle trivializations and their transition maps give a finite
-    locally free module, with the dual convention in RV-7.
+    locally free module, with the dual convention in RV-8.
 ]
 
 #proof[
   #set enum(numbering: "1.")
 
   + *Identify each trivial bundle.* On a trivializing open $U$, the symmetric algebra of
-    $shf.o_U^r$ is $shf.o_U[t_1,dots,t_r]$ by AL-5's universal property,
+    $shf.o_U^r$ is $shf.o_U[t_1,dots,t_r]$ by AL-6's universal property,
     sending basis sections to polynomial variables. RV-1 therefore gives
     relative affine $r$-space there.
 
@@ -213,7 +213,8 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     convention.
 ]
 
-#remark(number: "RV-6.1", title: "Transition matrices and fiber coordinates")[
+#metadata(none) <sup-rv-7>
+#remark(number: "RV-7", title: "Transition matrices and fiber coordinates")[
   More explicitly, if ordered bases, written as rows, satisfy $e_j=e_i G_(i j)$, then coordinate
   columns of a linear functional satisfy $z_j=G_(i j)^t z_i$; these are the
   fiber coordinates for the convention below.
@@ -228,11 +229,12 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
   + *Check the cocycle.* If $G_(i k)=G_(i j)G_(j k)$, transposition gives
     $G_(i k)^t=G_(j k)^t G_(i j)^t$, the composition law for these
-    coordinate changes. This also verifies their agreement on triple overlaps.
+    coordinate changes. Check this matrix-transpose identity (Check!).
+    It verifies agreement on triple overlaps.
 ]
 
-#metadata(none) <sup-rv-7>
-#corollary(number: "RV-7", title: "Sections and the dual convention")[
+#metadata(none) <sup-rv-8>
+#corollary(number: "RV-8", title: "Sections and the dual convention")[
   We use $V(shf.e)=op("Spec")_X op("Sym")(shf.e)$.
 
   - Its sections over an open $U$ correspond to linear maps
@@ -252,13 +254,14 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     in $U$, so the section sheaf is the dual sheaf.
 
   + *Apply double-dual evaluation.* Finite local freeness
-    makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-7:
+    makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-11:
     on each trivialization it is the usual finite free double-dual map.
     Applying the first assertion to $shf.e^or$ gives the final convention.
 ]
 
 #metadata(none) <sup-rv-examples>
-#example(number: "RV-E1", title: "Examples")[
+#metadata(none) <sup-rv-9>
+#example(number: "RV-9", title: "Examples")[
   - The algebra $shf.o_Y[t_1,dots,t_n]$ gives relative affine $n$-space.
 
   - For a quasi-coherent ideal, $shf.o_Y\/shf.i$ gives the closed subscheme

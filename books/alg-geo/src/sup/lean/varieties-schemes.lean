@@ -34,7 +34,7 @@ abbrev chartRestrictions := @Proj.awayι_preimage_basicOpen
 def glueMorphisms := @Scheme.Cover.glueMorphisms
 abbrev glueUnique := @Scheme.Cover.hom_ext
 
-/-- VS-1/CS-4: radical affine equations are exactly the equations on classical points. -/
+/-- VS-1/CS-6: radical affine equations are exactly the equations on classical points. -/
 theorem equations_from_points {k : Type*} [Field k] [IsAlgClosed k]
     {ι : Type*} [Finite ι] (I : Ideal (MvPolynomial ι k)) (hI : I.IsRadical) :
     MvPolynomial.vanishingIdeal k (MvPolynomial.zeroLocus k I) = I := by
@@ -51,3 +51,7 @@ theorem reciprocal_transition {k : Type*} [Field k] (t : k) (ht : t ≠ 0) :
     t * t⁻¹ = 1 ∧ (t⁻¹)⁻¹ = t := by
   exact ⟨mul_inv_cancel₀ ht, inv_inv t⟩
 end Supplements.VS
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

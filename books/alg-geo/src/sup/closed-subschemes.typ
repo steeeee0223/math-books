@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== CS — Closed subschemes and ideal sheaves <sup-cs>
+== CS — Closed subschemes and ideal sheaves <sup-cs>
 
 The definitions are in #book-link(<text-ii-3>)[II.3, D7–D8]. The ideal-sheaf
 correspondence remains in #book-link(<text-ii-5>)[II.5, Proposition 5.9 and
@@ -87,7 +87,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     so the image is simply $shf.i|_(X')$.
 ]
 
-#example(number: "CS-E1", title: "Pullback of an ideal need not be an ideal")[
+#metadata(none) <sup-cs-3>
+#example(number: "CS-3", title: "Pullback of an ideal need not be an ideal")[
   For $A=k[t]$, $I=(t)$, and $B=A\/(t)$, the map
   $tensor(I, B, over: A)->B$ is zero although its source is nonzero.
 ]
@@ -100,8 +101,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
   in $B$, hence is zero.
 ]
 
-#metadata(none) <sup-cs-3>
-#proposition(number: "CS-3", title: "Reduced induced structures")[
+#metadata(none) <sup-cs-4>
+#proposition(number: "CS-4", title: "Reduced induced structures")[
   - For a closed subset $Z$ of a scheme, there is a unique reduced closed
     subscheme with that underlying subset. On an affine chart, it is cut out by
     the radical ideal corresponding to $Z$; the restriction identifications
@@ -112,7 +113,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     $V(shf.j) subset.eq V(shf.i)$ as closed subschemes.
 
   - For reduction of the whole scheme and its reduced-source universal
-    property use #book-link(<sup-xp-3>)[XP-3].
+    property use #book-link(<sup-xp-9>)[XP-9].
 ]
 
 #proof[
@@ -122,13 +123,13 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     determined by $Z inter U$. The affine closed-set dictionary gives its
     existence and uniqueness. On a principal open $D(f) subset U$,
     the ideal $I_U A_f$ is radical and cuts out $Z inter D(f)$: this uses
-    $sqrt(I)A_f=sqrt(I A_f)$.
+    $sqrt(I)A_f=sqrt(I A_f)$, a localization identity left to the reader (Check!).
 
   + *Glue the reduced closed structure.* Consequently, the ideals from any two charts
     agree after refinement of their intersection by affine principal opens.
     They glue to a quasi-coherent ideal sheaf, and CS-1 constructs its closed
     subscheme. Its affine rings $A\/I_U$ are reduced, so the scheme is
-    reduced by #book-link(<sup-xp-3>)[XP-3].
+    reduced by #book-link(<sup-xp-9>)[XP-9].
 
   + *Prove uniqueness.* Conversely, every reduced closed subscheme has radical quotient kernels
     on these charts, forcing the same $I_U$ and hence the same ideal sheaf.
@@ -138,7 +139,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     inclusion of closed subschemes. This also proves the reversal of order.
 ]
 
-#example(number: "CS-E2", title: "Distinct structures on the same closed subset")[
+#metadata(none) <sup-cs-5>
+#example(number: "CS-5", title: "Distinct structures on the same closed subset")[
   The ideals $(t)$ and $(t^2)$ on $sch.a^1_k$ give the same point set
   but distinct closed subschemes; only the first is reduced.
 ]
@@ -151,8 +153,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
   give distinct closed subschemes by CS-1.
 ]
 
-#metadata(none) <sup-cs-4>
-#corollary(number: "CS-4", title: "Classical vanishing ideals")[
+#metadata(none) <sup-cs-6>
+#corollary(number: "CS-6", title: "Classical vanishing ideals")[
   - For a variety over an algebraically closed field and a closed subvariety,
     use #book-link(<sup-vs>)[VS] to pass to the associated schemes $i:Y->X$.
     The sheaf of regular functions vanishing on $Y$ identifies with its ideal
@@ -164,7 +166,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     #book-link(<sup-sc-4>)[SC-4].
 
   - Surjectivity on every open is not implied.
-    The two-point global-sections example is in #book-link(<sup-sc-examples>)[SC-E3].
+    The two-point global-sections example is in #book-link(<sup-sc-examples>)[SC-14].
 ]
 
 #proof[
@@ -174,6 +176,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     variety with coordinate ring $A$. Its intersection with $Y$ is cut out
     by a radical ideal $I$. The Nullstellensatz identifies $I$ with the
     functions in $A$ vanishing at all classical points of this intersection.
+    The algebraic Nullstellensatz is the reader check in this reduction (Check!).
 
   + *Identify and glue the vanishing sheaf.* The same assertion on each principal open uses the coordinate ring
     $A_f$ and the radical ideal $I A_f$. These principal opens form a basis,

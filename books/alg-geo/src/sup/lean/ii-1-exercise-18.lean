@@ -48,3 +48,6 @@ theorem right_triangle (F : TopCat.Sheaf Ab X) :
   (adjunction f).right_triangle_components F
 
 end Exercise1_18
+
+/- The II.1.18 construction is now the proof of SC-6. The unit, counit,
+Hom equivalence, and triangle identities below verify the same maps. -/

@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== SL — Sheaf locality and gluing <sup-sl>
+== SL — Sheaf locality and gluing <sup-sl>
 
 Use the definitions and stalkwise isomorphism criterion of
 #book-link(<text-ii-1>)[II.1, D1–D4 and Proposition 1.1]. Throughout this section, sheaves take values in sets, abelian groups, rings, or modules over a fixed sheaf of rings $shf.o$. No assertion about arbitrary category-valued sheaves is intended.
@@ -15,6 +15,12 @@ Use the definitions and stalkwise isomorphism criterion of
   Let $shf.f,shf.g$ be sheaves on $X$.
 
   #set enum(numbering: "(i)", spacing: 0.8em)
+
+  - For $s in shf.f (U)$, $t in shf.f (V)$, and $x in U inter V$,
+    $s_x=t_x$ if and only if their restrictions agree on some open
+    neighborhood of $x$ contained in $U inter V$. Finitely many equalities
+    of germs at $x$ can be realized on one neighborhood; infinitely many
+    need not admit such a common neighborhood.
 
   - For an open subset $U subset.eq X$, an open cover $U=union_i U_i$,
     and sections $s,t in shf.f (U)$, the following conditions are equivalent:
@@ -37,6 +43,15 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
   #set enum(numbering: "1.")
+
+  + *Realize equalities of germs.* The first equivalence is the defining
+    relation on germs. For finitely many equalities, intersect their witness
+    neighborhoods. A finite intersection of open neighborhoods of $x$ is
+    again an open neighborhood of $x$ (Check!). The finite hypothesis is
+    necessary: in the sheaf of continuous real functions, the sections
+    $s_n(t)=max(0, abs(t)-1/n)$ all have zero germ at $0$, but no neighborhood
+    of $0$ makes every $s_n$ zero. Check the continuity and this last
+    topological assertion.
 
   + *Compare sections.* Equality on an open cover implies equality by the uniqueness clause of the
     sheaf axiom. If two sections have equal germs at each $x$, the definition
@@ -70,9 +85,8 @@ Use the definitions and stalkwise isomorphism criterion of
   $(s_B)_(B in cal(B), B subset.eq U)$, where $s_B in F(B)$.
   For open subsets $V subset.eq U$, the restriction map is
   $
-    rho_(U V): F^e (U) &-> F^e (V), \
-    (s_B)_(B in cal(B), B subset.eq U)
-      &mapsto (s_B)_(B in cal(B), B subset.eq V).
+                    rho_(U V): F^e (U) & -> F^e (V), \
+    (s_B)_(B in cal(B), B subset.eq U) & mapsto (s_B)_(B in cal(B), B subset.eq V).
   $
 
   Every family of maps between two such sets of basis data that commutes
@@ -143,6 +157,7 @@ Use the definitions and stalkwise isomorphism criterion of
     on $V inter U_i$ for every $V$, so is equal to $u$.
 ]
 
+#metadata(none) <sup-proof-1-22>
 #metadata(none) <sup-sl-4>
 #proposition(number: "SL-4", title: "Gluing sheaves")[
   Let $X=union_i U_i$ be an open cover. Suppose sheaves $shf.f_i$ on $U_i$
@@ -162,63 +177,61 @@ Use the definitions and stalkwise isomorphism criterion of
   obtained by gluing, assume instead that the module transitions respect
   the specified ring transitions and scalar actions.
 
-  The abelian-group construction is proved in #book-link(<sup-proof-1-22>)[II.1.22 below].
+  This proves #book-link(<exercise-1-22>)[Exercise II.1.22].
 ]
 
 #proof[
   #set enum(numbering: "1.")
 
-  + *Use compatible families.* Use the compatible-family construction in #book-link(<sup-proof-1-22>)[II.1.22].
-    In sets, it uses the same families and restrictions, with no operations.
+  + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f (V)$ to be the set
+    of compatible families
+    $
+      (s_i)_i,
+      quad s_i in shf.f_i(V inter U_i),
+    $
+    satisfying, on $V inter U_i inter U_j$,
+    $
+      phi_(i j)(s_i)=s_j.
+    $
+    The restriction maps are componentwise.  The identity and cocycle
+    conditions imply that compatibility is preserved by restriction. For
+    groups and rings, use componentwise operations. For modules, use the
+    specified scalar action; if the rings are glued, their compatible
+    families act componentwise. The algebraic operations preserve the
+    compatibility equations (Check!). Thus these are presheaves in each
+    of the stated categories.
 
-  + *Define ring operations.* For rings, define addition, multiplication, and identity componentwise;
-    the ring transition isomorphisms preserve the compatibility equations.
+  + *Verify the sheaf axiom.* To verify the sheaf axiom, cover $V$ by opens $V_a$ and take compatible
+    sections $s^a=(s_i^a)_i$.  For each fixed $i$, the sections $s_i^a$ glue in
+    the sheaf $shf.f_i$ to a unique
+    $s_i in shf.f_i(V inter U_i)$.  On a pairwise overlap, the equality
+    $phi_(i j)(s_i)=s_j$ holds after restriction to every $V_a$; separatedness
+    of $shf.f_j$ makes it hold globally.  Hence $(s_i)_i$ is a section of
+    $shf.f (V)$, and componentwise uniqueness proves uniqueness in $shf.f$.
 
-  + *Define module operations.* For modules over a fixed ring sheaf, multiply a compatible family by
-    the restrictions of a ring section. If the rings themselves are glued,
-    a compatible family of ring sections acts componentwise on a compatible
-    family of module sections; compatibility follows from the prescribed
-    semilinearity of the transitions.
+  + *Identify the local pieces.* The construction also handles empty intersections, whose section objects
+    are terminal.  Fix $i$.  Projection to the $i$-th component gives
+    $rho_i:shf.f|_(U_i)->shf.f_i$.  It is an isomorphism.  Indeed, if
+    $t in shf.f_i(V)$ for $V subset.eq U_i$, its inverse image has $j$-th
+    component
+    $
+      phi_(i j)(t|_(V inter U_j)).
+    $
+    The cocycle condition makes these components compatible, and the identity
+    condition makes the $i$-th component equal to $t$.  The same computation
+    shows that on $U_i inter U_j$ one has
+    $rho_j=phi_(i j) compose rho_i$.
 
-  + *Recover the local sheaves and uniqueness.* The projections to each local sheaf
-    and their inverses in that construction preserve these operations.
-    Gluing sections and gluing the comparison maps therefore prove existence
-    and uniqueness in all four categories, with the prescribed overlap maps.
+  + *Prove uniqueness of the glued sheaf.* Finally, suppose $shf.g$ has another compatible family of isomorphisms
+    $sigma_i:shf.g|_(U_i) simeq shf.f_i$.  The local maps
+    $rho_i^(-1) compose sigma_i:shf.g|_(U_i)->shf.f|_(U_i)$ agree on overlaps,
+    so SL-3 glues them to an isomorphism
+    $shf.g simeq shf.f$.  Its restrictions are prescribed, hence the same
+    separatedness argument makes it unique.
 ]
 
 #metadata(none) <sup-sl-5>
-#lemma(number: "SL-5", title: "Germs and neighborhoods")[
-  - Let $s in shf.f (U)$ and $t in shf.f (V)$, with $x in U inter V$.
-    Then $s_x=t_x$ if and only if there is an open neighborhood
-    $W subset.eq U inter V$ of $x$ such that $s|_W=t|_W$.
-
-  - For finitely many equalities of germs at the same point $x$, there
-    is one neighborhood of $x$ on which all the corresponding restrictions
-    agree. Take the intersection of the finitely many neighborhoods above.
-
-  - For infinitely many equalities of germs at $x$, such a common
-    neighborhood need not exist.
-]
-
-#proof[
-  #set enum(numbering: "1.")
-
-  + *Realize one equality.* The germ relation on pairs $(U,s)$ identifies $(U,s)$ and $(V,t)$ exactly
-    when their restrictions are equal on some neighborhood $W subset.eq U inter V$
-    of $x$.
-
-  + *Realize finitely many equalities.* For finitely many equalities, intersect the finitely many witnesses;
-    the intersection is still an open neighborhood of $x$, and restriction
-    preserves each equality.
-
-  + *Exhibit the infinite obstruction.* Infinite intersections need not be neighborhoods:
-    in the sheaf of continuous real functions near $0$, take
-    $s_n(t)=max(0, abs(t)-1/n)$. Each has zero germ at $0$, but no neighborhood
-    of $0$ makes every $s_n$ identically zero.
-]
-
-#metadata(none) <sup-sl-6>
-#proposition(number: "SL-6", title: "Local representatives in sheafification")[
+#proposition(number: "SL-5", title: "Local representatives in sheafification")[
   Let $F$ be a presheaf, and let $eta:F->F^+$ be the canonical map of
   #book-link(<text-ii-1>)[II.1, Proposition 1.2].
 
@@ -256,62 +269,4 @@ Use the definitions and stalkwise isomorphism criterion of
     the original germs equal. This proves injectivity. The construction respects
     the original operations, and the bijection is consequently an isomorphism
     in each of the stated categories.
-]
-
-#block(sticky: true)[#strong[Application: II.1.22]] <sup-proof-1-22>
-
-#exercise(title: "Exercise 1.22 (Glueing Sheaves)")[
-  Let $X=union_i U_i$. Suppose sheaves $shf.f_i$ on $U_i$ are equipped with
-  isomorphisms
-  $phi_(i j):shf.f_i|_(U_i inter U_j) simeq shf.f_j|_(U_i inter U_j)$ satisfying
-  $phi_(i i)=ops.id$ and the cocycle condition
-  $phi_(i k)=phi_(j k) compose phi_(i j)$ on triple intersections. Show
-  there is a sheaf $shf.f$ on $X$, unique up to unique isomorphism, with
-  isomorphisms $shf.f|_(U_i) simeq shf.f_i$ compatible with the $phi_(i j)$.
-]
-
-#proof[
-  #set enum(numbering: "1.")
-
-  + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f (V)$ to be the abelian group
-    of compatible families
-    $
-      (s_i)_i,
-      quad s_i in shf.f_i(V inter U_i),
-    $
-    satisfying, on $V inter U_i inter U_j$,
-    $
-      phi_(i j)(s_i)=s_j.
-    $
-    The restriction maps are componentwise.  The identity and cocycle
-    conditions imply that compatibility is preserved by restriction, addition,
-    and inverses, so this defines a presheaf of abelian groups.
-
-  + *Verify the sheaf axiom.* To verify the sheaf axiom, cover $V$ by opens $V_a$ and take compatible
-    sections $s^a=(s_i^a)_i$.  For each fixed $i$, the sections $s_i^a$ glue in
-    the sheaf $shf.f_i$ to a unique
-    $s_i in shf.f_i(V inter U_i)$.  On a pairwise overlap, the equality
-    $phi_(i j)(s_i)=s_j$ holds after restriction to every $V_a$; separatedness
-    of $shf.f_j$ makes it hold globally.  Hence $(s_i)_i$ is a section of
-    $shf.f (V)$, and componentwise uniqueness proves uniqueness in $shf.f$.
-
-  + *Identify the local pieces.* The construction also handles empty intersections, whose section groups
-    are zero.  Fix $i$.  Projection to the $i$-th component gives
-    $rho_i:shf.f|_(U_i)->shf.f_i$.  It is an isomorphism.  Indeed, if
-    $t in shf.f_i(V)$ for $V subset.eq U_i$, its inverse image has $j$-th
-    component
-    $
-      phi_(i j)(t|_(V inter U_j)).
-    $
-    The cocycle condition makes these components compatible, and the identity
-    condition makes the $i$-th component equal to $t$.  The same computation
-    shows that on $U_i inter U_j$ one has
-    $rho_j=phi_(i j) compose rho_i$.
-
-  + *Prove uniqueness of the glued sheaf.* Finally, suppose $shf.g$ has another compatible family of isomorphisms
-    $sigma_i:shf.g|_(U_i) simeq shf.f_i$.  The local maps
-    $rho_i^(-1) compose sigma_i:shf.g|_(U_i)->shf.f|_(U_i)$ agree on overlaps,
-    so the construction in Exercise 1.15 glues them to an isomorphism
-    $shf.g simeq shf.f$.  Its restrictions are prescribed, hence the same
-    separatedness argument makes it unique.
 ]

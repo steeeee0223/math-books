@@ -49,7 +49,7 @@ theorem equalizer_as_kernel {R M N : Type*} [Ring R]
     (u v : M →ₗ[R] N) (x : M) : x ∈ LinearMap.ker (u-v) ↔ u x = v x := by
   simp [sub_eq_zero]
 
-/-- QC-E3: every integral linear map from Z/2 to Z vanishes. -/
+/-- QC-12: every integral linear map from Z/2 to Z vanishes. -/
 theorem hom_mod_two_zero (f : ZMod 2 →ₗ[ℤ] ℤ) : f = 0 := by
   ext x
   have h : (2 : ℤ) • x = 0 := by
@@ -61,13 +61,13 @@ theorem hom_mod_two_zero (f : ZMod 2 →ₗ[ℤ] ℤ) : f = 0 := by
   change f x = 0
   omega
 
-/-- The target in QC-E3 is nonzero (the identity survives base change). -/
+/-- The target in QC-12 is nonzero (the identity survives base change). -/
 theorem hom_mod_two_nonzero : (LinearMap.id : ZMod 2 →ₗ[ZMod 2] ZMod 2) ≠ 0 := by
   intro h
   have := congrArg (fun f : ZMod 2 →ₗ[ZMod 2] ZMod 2 => f 1) h
   norm_num at this
 
-/-- QC-E1: no common power of two represents the proposed tuple. -/
+/-- QC-10: no common power of two represents the proposed tuple. -/
 theorem no_uniform_denominator (r : ℕ) :
     ¬ ∃ a : ℤ, (a : ℚ) / 2^r = 1 / 2^(r+1) := by
   rintro ⟨a, ha⟩
@@ -78,3 +78,13 @@ theorem no_uniform_denominator (r : ℕ) :
   have he' : a * 2 = 1 := by exact_mod_cast he
   omega
 end Supplements.QC
+
+/- Editorial map: QC-1 contains the II.5.3 adjunction proof; QC-7 contains
+II.5.4; the DVR proposition contains II.5.2. QC-5/6 and the affine-line
+example together prove II.5.5, removing the duplicate punctured-line example.
+The corresponding interfaces remain in ii-5-exe.lean, including its explicit
+gaps between local algebra checks and full global sheaf statements. -/
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

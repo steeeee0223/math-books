@@ -30,6 +30,7 @@
 #let colim = $op("colim")$
 
 #let hom(from, to, over: "") = $op("Hom")_#over paren.l #from, #to paren.r$
+#let ass(body, over: "") = $op("Ass")_#over paren.l #body paren.r$
 #let dim(body, over: "") = $op("dim")_#over #body$
 #let rank(body, over: "") = $op("rank")_#over #body$
 #let codim(body, ambient) = $op("codim") paren.l #body, #ambient paren.r$

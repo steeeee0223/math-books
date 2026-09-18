@@ -6,13 +6,16 @@ import Mathlib.CategoryTheory.Sites.DenseSubsite.SheafEquiv
 import Mathlib.Geometry.RingedSpace.PresheafedSpace.Gluing
 
 /-!
-SL-1--SL-6. These interfaces retain the concrete-category hypotheses of
+SL-1–SL-5. SL-1 combines local equality with finite common neighborhoods.
+These interfaces retain the concrete-category hypotheses of
 mathlib's stalk results, rather than claiming arbitrary category-valued
 sheaves have underlying germs. `basisExtension` verifies morphism extension
 and `basisIso` its uniqueness/isomorphism test; the compatible-family object
 construction in SL-2 is verified separately below by unique gluing.
 The ring/module versions use the same operations on compatible families.
-SL-4's unchanged application is checked by ii-1-exercise-15-22.lean.
+SL-4 now contains the compatible-family proof formerly placed in the
+II.1.22 application. It is checked by ii-1-exercise-15-22.lean, whose final
+comment records the remaining fixed-base gluing interface gap.
 -/
 open CategoryTheory CategoryTheory.Limits TopologicalSpace
 noncomputable section
@@ -112,7 +115,7 @@ theorem restrictBasisFamily_comp {U V W : Set ι} (hVU : V ⊆ U) (hWV : W ⊆ V
 
 end BasisRestriction
 
-/-- The finite-intersection reduction in SL-5. -/
+/-- The finite-intersection reduction in SL-1's germ criterion. -/
 theorem finite_common_neighborhood {X : Type*} [TopologicalSpace X]
     {ι : Type*} [Fintype ι] (U : ι → Set X) (x : X)
     (ho : ∀ i, IsOpen (U i)) (hx : ∀ i, x ∈ U i) :

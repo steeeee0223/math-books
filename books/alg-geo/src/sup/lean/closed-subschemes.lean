@@ -8,13 +8,13 @@ import Mathlib.RingTheory.Polynomial.Quotient
 import Mathlib.Tactic
 
 /-!
-CS-1--4, with Hartshorne's closed immersion and quasi-coherent ideal convention.
+CS-1–CS-6, with Hartshorne's closed immersion and quasi-coherent ideal convention.
 IdealSheafData records ideals on every affine chart with localization compatibility;
 closedDictionary is the actual anti-equivalence for closed subschemes, not a
 point-set correspondence. baseChange compares actual scheme pullbacks. The
 image of the pulled-back module ideal is computed by tensorQuotient; the
 identification of this algebra equivalence with the sheaf-module image functor
-is not packaged here. CS-4 uses the Nullstellensatz and quotient kernel on all
+is not packaged here. CS-6 uses the Nullstellensatz and quotient kernel on all
 affine charts; the classical variety functor and its comparison to ring sheaves
 remain an interface gap. Examples: the zero multiplication after quotient and
 the square-zero prime calculation and the actual nonzero class of t modulo t²
@@ -49,7 +49,7 @@ abbrev inclusionComposition := @Scheme.IdealSheafData.inclusion_comp
 abbrev idealGluingUniqueness := @Scheme.IdealSheafData.ext_of_iSup_eq_top
 abbrev classicalVanishing := @MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
 
-/-- CS-3: the affine reduced closed structure is uniquely determined by its point set. -/
+/-- CS-4: the affine reduced closed structure is uniquely determined by its point set. -/
 theorem radical_ideal_unique {R : Type*} [CommRing R] (I J : Ideal R)
     (hI : I.IsRadical) (hJ : J.IsRadical)
     (h : PrimeSpectrum.zeroLocus (I : Set R) = PrimeSpectrum.zeroLocus (J : Set R)) :
@@ -63,7 +63,7 @@ theorem quotient_multiplication_zero {R : Type*} [CommRing R] (I : Ideal R)
     (t : R) (ht : t ∈ I) (b : R ⧸ I) : Ideal.Quotient.mk I t * b = 0 := by
   rw [Ideal.Quotient.eq_zero_iff_mem.mpr ht, zero_mul]
 
-/-- CS-3 example: primes cannot distinguish t from t². -/
+/-- CS-4 example: primes cannot distinguish t from t². -/
 theorem square_in_prime_iff {R : Type*} [CommRing R] (p : Ideal R)
     [p.IsPrime] (t : R) : t ^ 2 ∈ p ↔ t ∈ p := by
   constructor
@@ -71,7 +71,7 @@ theorem square_in_prime_iff {R : Type*} [CommRing R] (p : Ideal R)
   · intro h
     exact p.pow_mem_of_mem h 2 (by omega)
 
-/-- CS-3's actual nonzero square-zero class, over every field. -/
+/-- CS-4's actual nonzero square-zero class, over every field. -/
 theorem polynomial_thickening {k : Type*} [Field k] :
     let I : Ideal k[X] := Ideal.span {Polynomial.X ^ 2}
     let e := Ideal.Quotient.mk I Polynomial.X
@@ -86,3 +86,7 @@ theorem polynomial_thickening {k : Type*} [Field k] :
   · rw [← map_pow, Ideal.Quotient.eq_zero_iff_mem]
     exact Ideal.subset_span (Set.mem_singleton _)
 end Supplements.CS
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

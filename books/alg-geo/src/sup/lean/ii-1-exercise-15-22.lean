@@ -7,7 +7,7 @@ import Mathlib.Topology.Sheaves.AddCommGrpCat
 # Hartshorne II.1, Exercises 1.15 and 1.22
 
 The declarations below connect the accompanying human-readable proofs in
-the supplement applications indexed by the original exercise numbers to mathlib's internal-Hom sheaf and sheafed-space gluing APIs.
+SL-4 and SC-5, retaining the original exercise anchors, to mathlib's internal-Hom sheaf and sheafed-space gluing APIs.
 -/
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace

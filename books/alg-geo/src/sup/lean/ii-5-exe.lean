@@ -13,7 +13,7 @@ import Mathlib.RingTheory.Spectrum.Prime.FreeLocus
 # Hartshorne II.5, Exercises
 
 Kernel-checked interfaces to the mathlib results used in the human-readable
-proofs in the supplement applications indexed by the original exercise numbers.  These declarations check the algebraic or categorical
+proofs in the supplement properties retaining the original exercise anchors.  These declarations check the algebraic or categorical
 reductions of the prose; they should not be read as formalizations of every
 full sheaf statement. For Exercise 5.1(d), tensorFiniteFree checks the
 finite-free calculation on the target cover. projectionFormulaAffine is an
@@ -229,3 +229,8 @@ theorem free_stalk_spreads (R M : Type*) [CommRing R]
     (Localization.AtPrime p.asIdeal)
 
 end HartshorneII5
+
+/- The II.5.1 proof is split between SC-7 (tensor-Hom) and SC-11 (finite
+locally free duality and projection). II.5.2-5 are incorporated into QC,
+and II.5.7 into SE-10/10. The exercise-based declaration names and the
+local-to-global verification boundaries recorded above are unchanged. -/

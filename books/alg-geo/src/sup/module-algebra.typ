@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== AL — Algebraic tools for modules <sup-al>
+== AL — Algebraic tools for modules <sup-al>
 
 This section contains the
 algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
@@ -21,7 +21,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   - finite projective if it is a direct summand of such a finite free module.
 ]
 
-#proposition(number: "AL-1.1", title: "Relations among finiteness conditions")[
+#metadata(none) <sup-al-2>
+#proposition(number: "AL-2", title: "Relations among finiteness conditions")[
   Let $M$ be an $A$-module.
 
   - If $M$ is finite projective, then $M$ is finitely presented.
@@ -39,12 +40,13 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     of $M$.
 
   + *Finite modules over a Noetherian ring.* If $A$ is Noetherian and $M$ finite, take a surjection $A^n->M$.
-    Its kernel is a submodule of the Noetherian module $A^n$, so is finite;
+    Its kernel is a submodule of the Noetherian module $A^n$, so is finite
+    (Check! the Noetherian module criterion);
     its finite generating set likewise gives the required presentation.
 ]
 
-#metadata(none) <sup-al-2>
-#proposition(number: "AL-2", title: "Localization")[
+#metadata(none) <sup-al-3>
+#proposition(number: "AL-3", title: "Localization")[
   Let $S subset.eq A$ be a multiplicative subset.
 
   - Localization is exact.
@@ -72,18 +74,18 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   + *Tensor products.* The inverse of the tensor comparison sends
     $tensor(m/s, n/t)$ to $tensor(m, n)/(s t)$. Changing either fraction does
     not change this value, by the fraction relation. The map is balanced over
-    $S^(-1)A$; composing the two maps fixes pure tensors, which generate both
-    modules.
+    $S^(-1)A$; check the fraction relations and balancing explicitly (Check!).
+    Composing the two maps fixes pure tensors, which generate both modules.
 
   + *Colimits.* For colimits, an $A$-linear map $M->P$ to an $S^(-1)A$-module
     extends uniquely by $m/s mapsto s^(-1)u(m)$. Thus localization is left
-    adjoint to restriction of scalars and preserves colimits by CAT-6. Under
+    adjoint to restriction of scalars and preserves colimits by CAT-9. Under
     this adjunction the comparison is the one induced by the original colimit
     injections, so it is exactly the displayed canonical map.
 ]
 
-#metadata(none) <sup-al-3>
-#lemma(number: "AL-3", title: "Localizing Hom")[
+#metadata(none) <sup-al-4>
+#lemma(number: "AL-4", title: "Localizing Hom")[
   For finitely presented $M$ and arbitrary $N$, the canonical map
   $S^(-1)ops.hom(M, N, over: A) ->
   ops.hom(S^(-1)M, S^(-1)N, over: S^(-1)A)$ is an isomorphism.
@@ -98,7 +100,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     identifies $ops.hom(M, N)$ with the kernel of $N^n->N^m$ given by
     precomposition with $d$.
 
-  + *Localize the presentation.* Localization preserves this kernel by AL-2 and
+  + *Localize the presentation.* Localization preserves this kernel by AL-3 and
     commutes with these finite powers. Localizing the presentation and applying
     Hom into $S^(-1)N$ produces the very same kernel between
     $(S^(-1)N)^n$ and $(S^(-1)N)^m$.
@@ -109,8 +111,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     not merely for a finite list of generators of $M$.
 ]
 
-#metadata(none) <sup-al-4>
-#proposition(number: "AL-4", title: "Tensor, Hom, and duality")[
+#metadata(none) <sup-al-5>
+#proposition(number: "AL-5", title: "Tensor, Hom, and duality")[
   Put $M^or=ops.hom(M, A, over: A)$.
 
   - The tensor product represents balanced bilinear maps, with natural adjunction
@@ -124,7 +126,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     sending $tensor(lambda, n)$ to $(m mapsto lambda(m)n)$ is an isomorphism.
 
   The sheaf versions of these duality isomorphisms, obtained on trivializing
-  covers, are proved in #book-link(<sup-proof-5-1>)[II.5.1(a)–(b)].
+  covers, are proved in #book-link(<sup-sc-11>)[SC-11], which solves II.5.1(a)–(b).
 ]
 
 #proof[
@@ -149,8 +151,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     on the chosen splitting.
 ]
 
-#metadata(none) <sup-al-5>
-#definition(number: "AL-5", title: "Tensor, symmetric, and exterior algebras")[
+#metadata(none) <sup-al-6>
+#definition(number: "AL-6", title: "Tensor, symmetric, and exterior algebras")[
   - The tensor algebra of $M$ is the direct sum of all tensor powers, with
     zeroth power $A$ and multiplication by concatenation. It is universal for
     $A$-linear maps from $M$ to associative unital $A$-algebras.
@@ -186,7 +188,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     division by $2$ or any factorial.
 ]
 
-#proposition(number: "AL-5.1", title: "Scalar extension of tensor, symmetric, and exterior algebras")[
+#metadata(none) <sup-al-7>
+#proposition(number: "AL-7", title: "Scalar extension of tensor, symmetric, and exterior algebras")[
   For any $A$-algebra $B$, the canonical graded maps from scalar extension
   of each of these algebras to the corresponding algebra of
   $tensor(B, M, over: A)$ are isomorphisms. The same holds degree by degree.
@@ -218,8 +221,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     the resulting graded isomorphisms restrict to each homogeneous degree.
 ]
 
-#metadata(none) <sup-al-6>
-#proposition(number: "AL-6", title: "Ranks and determinant pairing")[
+#metadata(none) <sup-al-8>
+#proposition(number: "AL-8", title: "Ranks and determinant pairing")[
   - For $M$ free of rank $r$, its $n$-th tensor, symmetric, and exterior powers
     have ranks $r^n$, $binom(r+n-1, n)$, and $binom(r, n)$, respectively, for
     $r>=1$. Degree zero is $A$; for $M=0$, every positive-degree power is zero.
@@ -252,16 +255,16 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   + *The finite projective case.* For finite projective $M$, its localization at each prime is finite free:
     choose a basis modulo the maximal ideal, lift a surjection onto the local
     module by Nakayama, split it by projectivity, and apply Nakayama to its
-    finite kernel. AL-8 then spreads this basis to a principal neighborhood.
-    On these neighborhoods, AL-3 and AL-5 identify the localization of the
+    finite kernel. AL-10 then spreads this basis to a principal neighborhood.
+    On these neighborhoods, AL-4 and AL-6 identify the localization of the
     specified pairing with the free pairing just computed. Its kernel and
     cokernel vanish at every prime and hence vanish: a nonzero element has a
     proper annihilator contained in a maximal ideal and stays nonzero there.
     Thus the canonical pairing is perfect globally.
 ]
 
-#metadata(none) <sup-al-7>
-#proposition(number: "AL-7", title: "Filtrations of powers")[
+#metadata(none) <sup-al-9>
+#proposition(number: "AL-9", title: "Filtrations of powers")[
   For $0->M'->M->M''->0$ with finite projective quotient, filter a power
   of $M$ by the number of factors from $M'$. Use the decreasing filtration
   by at least $p$ such factors; no splitting is chosen in the filtration itself.
@@ -299,8 +302,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     inverses, giving the same assertion for sheaves.
 ]
 
-#metadata(none) <sup-al-8>
-#lemma(number: "AL-8", title: "Nakayama and spreading finite data")[
+#metadata(none) <sup-al-10>
+#lemma(number: "AL-10", title: "Nakayama and spreading finite data")[
   - For a finite module $M$ over a local ring $(A,idl.m)$, generators of
     $M\/idl.m M$ lift to generators of $M$; in particular, $M=idl.m M$
     implies $M=0$.
@@ -309,7 +312,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     is $f in.not idl.p$ such that $M_f$ is free of that same finite rank.
     Finite presentations allow matrices, inverse maps, and their finitely many
     relations at a prime to be realized after one localization. The Noetherian
-    application is proved in #book-link(<sup-proof-5-7>)[II.5.7(a)].
+    application is #book-link(<sup-se-10>)[SE-10], which solves II.5.7(a).
 ]
 
 #proof[
@@ -318,7 +321,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   + *Nakayama’s lemma.* First suppose a finite module $Q$ satisfies $Q=idl.m Q$. For generators
     $q_1,dots,q_n$, write $q_i=sum_j a_(i j)q_j$ with all $a_(i j) in idl.m$.
     The adjugate identity shows that $det(I-(a_(i j)))$ kills every generator.
-    Its residue modulo $idl.m$ is $1$, so it is a unit in the local ring and
+    The adjugate identity and the local-ring unit criterion are algebraic
+    checks (Check!). Its residue modulo $idl.m$ is $1$, so it is a unit and
     $Q=0$. For proposed lifts of residue generators, apply this conclusion
     to the finite quotient by their span. This is Nakayama's assertion.
 
@@ -342,12 +346,12 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     identities on one such principal neighborhood.
 ]
 
-#metadata(none) <sup-al-9>
-#corollary(number: "AL-9", title: "Tensor-invertible finite modules")[
+#metadata(none) <sup-al-11>
+#corollary(number: "AL-11", title: "Tensor-invertible finite modules")[
   Over a Noetherian local ring $A$, if finite modules $M,N$ satisfy
   $tensor(M, N, over: A) simeq A$, then both are free of rank one.
-  The residue-field and Nakayama calculation appears in
-  #book-link(<sup-proof-5-7>)[II.5.7(c)] and yields #book-link(<sup-se-10>)[SE-10].
+  The following residue-field and Nakayama calculation yields
+  #book-link(<sup-se-12>)[SE-12], which solves II.5.7(c).
 ]
 
 #proof[
@@ -366,7 +370,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
 ]
 
 #metadata(none) <sup-al-examples>
-#example(number: "AL-E1")[
+#metadata(none) <sup-al-12>
+#example(number: "AL-12")[
   Tensoring the injection $ZZ ->^2 ZZ$ with $ZZ\/2ZZ$ gives a
   zero map between nonzero modules.
 ]
@@ -378,7 +383,8 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   contains the nonzero class of $1$.
 ]
 
-#example(number: "AL-E2")[
+#metadata(none) <sup-al-13>
+#example(number: "AL-13")[
   The map $(product_(n>=0) ZZ)[1/2] -> product_(n>=0) ZZ[1/2]$
   is not surjective: $(2^(-n))_n$ has no common bounded denominator.
 ]
@@ -390,21 +396,23 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   well-defined because each of its coordinates belongs to $ZZ[1/2]$.
 ]
 
-#example(number: "AL-E3")[
+#metadata(none) <sup-al-14>
+#example(number: "AL-14")[
   Take $M=bigOPlus(ZZ, n>=0)$, $N=ZZ$, and invert $2$.
   Then $ops.hom(M, N)=product_(n>=0) ZZ$, so the Hom localization comparison
-  fails by AL-E2.
+  fails by AL-13.
 ]
 
 #proof[
   A homomorphism from a direct sum is uniquely determined by its value on
   each standard basis vector, with no finiteness constraint on that family.
   The same statement holds after localization, since localization preserves
-  direct sums by AL-2. In these coordinates, the Hom comparison is exactly
-  the map in AL-E2, so its demonstrated failure of surjectivity applies.
+  direct sums by AL-3. In these coordinates, the Hom comparison is exactly
+  the map in AL-13, so its demonstrated failure of surjectivity applies.
 ]
 
-#example(number: "AL-E4")[
+#metadata(none) <sup-al-15>
+#example(number: "AL-15")[
   The $ZZ$-dual of $ZZ\/2ZZ$ is zero; its evaluation into its
   double dual is not an isomorphism.
 ]

@@ -49,11 +49,14 @@
 ]
 
 // Hartshorne II.3, Exercise 3.7
+#metadata(none) <exercise-ii-3-7>
 #exercise(title: "Exercise 3.7")[
   Let $f:X->Y$ be dominant, generically finite, and of finite type between
   integral schemes. Show there is a dense open $U subset.eq Y$ such that
   $f^(-1) (U)->U$ is finite. First show $K(X)\/K(Y)$ is finite.
 ]
+
+#book-link(<sup-rm-5>)[RM-5] treats the separated finite-type integral k-scheme version; it does not replace the full generality of this exercise.
 
 // Hartshorne II.3, Exercise 3.8
 #exercise(title: "Exercise 3.8 (Normalization)")[

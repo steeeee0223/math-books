@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== SE — Support, extension and local freeness <sup-se>
+== SE — Support, extension and local freeness <sup-se>
 
 Use #book-link(<sup-sc>)[SC] for exactness and restriction,
 #book-link(<sup-al>)[AL] for finite presentation and Nakayama, and
@@ -30,7 +30,7 @@ for powers of an invertible-sheaf section remains in
     the zero-germ locus of $s$ is open in $U$, and its complement is closed.
 
   + *Sheaf support.* For sheaf support, there is no single section or finite list of sections
-    to which this argument applies. Example SE-E1 below shows the
+    to which this argument applies. Example SE-13 below shows the
     failure of closedness; SL-1 proves the last assertion.
 ]
 
@@ -66,7 +66,8 @@ for powers of an invertible-sheaf section remains in
   be the subsheaf of sections whose support is contained in $Z$.
 ]
 
-#proposition(number: "SE-3.1", title: "The restriction sequence for sections with support")[
+#metadata(none) <sup-se-4>
+#proposition(number: "SE-4", title: "The restriction sequence for sections with support")[
   - There is a left-exact sequence
     $0->shf.h_Z(shf.f)->shf.f->j_*(shf.f|_U)$,
     with the last map given by restriction. Equivalently, the support subsheaf
@@ -90,8 +91,8 @@ for powers of an invertible-sheaf section remains in
     complement need not extend across $Z$, so no surjectivity follows.
 ]
 
-#metadata(none) <sup-se-4>
-#definition(number: "SE-4", title: "Extension by zero")[
+#metadata(none) <sup-se-5>
+#definition(number: "SE-5", title: "Extension by zero")[
   - For an open inclusion $j:U->X$ and an abelian-group sheaf $shf.g$ on $U$,
     $j_!shf.g$ has, on an open $V$, sections of $shf.g (V inter U)$ whose
     support is closed in $V$. It has stalk $shf.g_x$ on $U$ and zero off $U$.
@@ -118,7 +119,8 @@ for powers of an invertible-sheaf section remains in
     formula there; outside the closed subset choose a disjoint neighborhood.
 ]
 
-#proposition(number: "SE-4.1", title: "The open-closed exact sequence")[
+#metadata(none) <sup-se-6>
+#proposition(number: "SE-6", title: "The open-closed exact sequence")[
   - For any abelian-group sheaf $shf.f$ on $X$, there is an exact sequence
     $0->j_!(shf.f|_U)->shf.f->i_*(i^(-1)shf.f)->0$.
     The maps are extension by zero and restriction to the closed subspace.
@@ -139,7 +141,7 @@ for powers of an invertible-sheaf section remains in
   + *Check exactness on stalks.* On a stalk in $U$, the sequence
     is $0->shf.f_x ->^(ops.id) shf.f_x->0->0$; on a stalk in $Z$ it is
     $0->0->shf.f_x ->^(ops.id) shf.f_x->0$. The inverse-image stalk formula
-    and SE-4 justify these identifications. Stalkwise exactness in SC
+    and SE-5 justify these identifications. Stalkwise exactness in SC
     proves the sequence.
 
   + *Retain the module structures.* Restricted ring actions preserve all maps, giving
@@ -147,8 +149,8 @@ for powers of an invertible-sheaf section remains in
     identity at the excluded stalks, which explains the stated limitation.
 ]
 
-#metadata(none) <sup-se-5>
-#proposition(number: "SE-5", title: "Support torsion")[
+#metadata(none) <sup-se-7>
+#proposition(number: "SE-7", title: "Support torsion")[
   - On $X=ops.spec A$ with $A$ Noetherian and $Z=V(I)$, the support
     subsheaf of $tildeOf(M)$ corresponds to
     ${m in M:I^n m=0 " for some " n>=0}$.
@@ -180,8 +182,8 @@ for powers of an invertible-sheaf section remains in
     ring, its submodule $T$ is finite, giving coherence.
 ]
 
-#metadata(none) <sup-se-6>
-#proposition(number: "SE-6", title: "Coherent extension")[
+#metadata(none) <sup-se-8>
+#proposition(number: "SE-8", title: "Coherent extension")[
   - Let $X$ be Noetherian and $U$ open. A coherent module on $U$ extends
     to a coherent module on $X$.
 
@@ -216,11 +218,11 @@ for powers of an invertible-sheaf section remains in
     $shf.g=j_*shf.f$ on $X$. QC-5 makes it quasi-coherent, and the
     restriction $shf.g|_U=shf.f$ gives the required inclusion. The case
     just proved supplies a coherent extension. Choices of numerators make
-    the procedure noncanonical; Example SE-E4 proves nonuniqueness.
+    the procedure noncanonical; Example SE-16 proves nonuniqueness.
 ]
 
-#metadata(none) <sup-se-7>
-#corollary(number: "SE-7", title: "Coherent approximation")[
+#metadata(none) <sup-se-9>
+#corollary(number: "SE-9", title: "Coherent approximation")[
   On a Noetherian scheme, every quasi-coherent module is the directed union
   of its coherent subsheaves. The ordering is inclusion; the sum of two
   coherent subsheaves is another coherent subsheaf. This is the approximation
@@ -237,7 +239,7 @@ for powers of an invertible-sheaf section remains in
     directed union is all of $shf.g$, represent a germ at $x$ on an affine
     neighborhood $V=ops.spec A$ by a fraction in the module defining
     $shf.g|_V$. Its numerator generates a finite submodule, whose associated
-    sheaf contains the germ. SE-6 extends this coherent subsheaf of
+    sheaf contains the germ. SE-8 extends this coherent subsheaf of
     $shf.g|_V$ to a coherent subsheaf of $shf.g$ on $X$. Thus every germ
     lies in the union.
 
@@ -245,14 +247,17 @@ for powers of an invertible-sheaf section remains in
     so SL-1 identifies the union with $shf.g$.
 ]
 
-#metadata(none) <sup-se-8>
-#lemma(number: "SE-8", title: "Free stalks and neighborhoods")[
-  If a module sheaf is finitely presented and its stalk at $x$ is free,
+#metadata(none) <sup-proof-5-7>
+#metadata(none) <sup-se-10>
+#lemma(number: "SE-10", title: "Free stalks and neighborhoods")[
+  If a module sheaf on a scheme is finitely presented and its stalk at $x$ is free,
   it is free of the same finite rank on a neighborhood of $x$.
-  The Noetherian coherent case, and the criterion that all stalks be free,
-  are proved in #book-link(<sup-proof-5-7>)[II.5.7(a)–(b)].
+  Consequently, a finitely presented module sheaf is locally free if and
+  only if all its stalks are free. The Noetherian coherent case proves
+  #book-link(<exercise-5-7>)[Exercise II.5.7(a)–(b)]. For the tensor-inverse
+  criterion in part (c), see SE-12.
   Finite presentation provides the finite relations needed to pass from a
-  stalk isomorphism to a neighborhood isomorphism; see #book-link(<sup-al-8>)[AL-8].
+  stalk isomorphism to a neighborhood isomorphism; see #book-link(<sup-al-10>)[AL-10].
 ]
 
 #proof[
@@ -263,15 +268,20 @@ for powers of an invertible-sheaf section remains in
     $shf.f|_V=tildeOf(M)$ with $M$ finitely presented. If $idl.p$ represents
     $x$, its stalk is $M_idl.p$, free of some finite rank $r$.
 
-  + *Spread the stalk isomorphism.* AL-8 spreads a basis and its finite relations to one localization:
+  + *Spread the stalk isomorphism.* AL-10 spreads a basis and its finite relations to one localization:
     there is $a in.not idl.p$ and an isomorphism $A_a^r->M_a$ whose
     further localization is the chosen stalk isomorphism. Associated
     sheaves give $shf.o_(D(a))^r simeq shf.f|_(D(a))$. The open $D(a)$
     contains $x$, which proves the precise rank assertion.
+
+  + *Apply the criterion at every point.* A locally free sheaf has free
+    stalks. Conversely, the neighborhoods just constructed cover the scheme
+    when every stalk is free. On a Noetherian scheme a coherent sheaf is
+    finitely presented by QC-7, so the assertion applies to it.
 ]
 
-#metadata(none) <sup-se-9>
-#proposition(number: "SE-9", title: "Fiber rank")[
+#metadata(none) <sup-se-11>
+#proposition(number: "SE-11", title: "Fiber rank")[
   Let $shf.f$ be a coherent module on a Noetherian scheme $X$. Define
   $r(x)=ops.dim(tensor(shf.f_x, kappa(x), over: shf.o_(X,x)), over: kappa(x))$.
 
@@ -308,27 +318,53 @@ for powers of an invertible-sheaf section remains in
     spaces has equal dimensions and is an isomorphism. Therefore every
     vector of $K subset.eq A^r$ has all its coordinates in every prime:
     its residue vector is zero. The intersection of the primes is zero
-    in the reduced ring, so $K=0$. The surjection is an isomorphism and
+    in the reduced ring (Check! the intersection of all prime ideals
+    is the nilradical), so $K=0$. The surjection is an isomorphism and
     $shf.f$ is free on this neighborhood.
 
   + *Read rank from a local basis.* Conversely, a local basis of size $r$ remains a basis after passage to
     every residue field in its domain, so a finite locally free sheaf has
     locally constant rank on any scheme. A locally constant integer-valued
     function on a connected space is constant, since each level set and its
-    complement are open.
+    complement are open. This last assertion is a topological check (Check!).
 ]
 
-#metadata(none) <sup-se-10>
-#corollary(number: "SE-10", title: "Invertible modules")[
+#metadata(none) <sup-se-12>
+#corollary(number: "SE-12", title: "Invertible modules")[
   On a Noetherian scheme, a coherent module $shf.f$ is invertible exactly
   when there is a coherent $shf.g$ with
   $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
-  An inverse is its dual. See #book-link(<sup-proof-5-7>)[II.5.7(c)] and
-  #book-link(<sup-al-9>)[AL-9] for the local algebra.
+  An inverse is its dual. This proves
+  #book-link(<exercise-5-7>)[Exercise II.5.7(c)].
+]
+
+#proof[
+  #set enum(numbering: "1.")
+
+  + *Use the dual of a line bundle.* If $shf.f$ is invertible, its dual
+    is locally free of rank one and coherent. Evaluation
+    $tensor(shf.f, shf.f^or, over: shf.o_X)->shf.o_X$ is an isomorphism on
+    every trivializing open by SC-11, hence globally by SL-1.
+
+  + *Compute a stalk of a tensor inverse.* Conversely, an isomorphism
+    $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$ gives, at each $x$,
+    $tensor(M, N, over: R) simeq R$, where
+    $R=shf.o_(X,x)$, $M=shf.f_x$, and $N=shf.g_x$. The stalk formula
+    follows from the finite-representative tensor construction in SC-8.
+    Both modules are finite over the local ring $R$. AL-11 therefore
+    makes $M$ free of rank one. Its purely algebraic ingredients are
+    Nakayama's lemma and the dimension formula for tensor products of
+    finite-dimensional vector spaces (Check!).
+
+  + *Spread rank one.* SE-10 gives a neighborhood of each $x$ on which
+    $shf.f$ is free of rank one. These neighborhoods cover $X$, so
+    $shf.f$ is invertible, and the first step identifies its inverse
+    with its dual.
 ]
 
 #metadata(none) <sup-se-examples>
-#example(number: "SE-E1", title: "Counterexamples")[
+#metadata(none) <sup-se-13>
+#example(number: "SE-13", title: "Counterexamples")[
   On $ops.spec ZZ$, let $M$ be the direct sum of $ZZ\/p ZZ$ over all
   positive primes $p$. Its sheaf has support all closed points and not the
   generic point, a nonclosed subset. Yet $ops.ann(M)=0$. In contrast,
@@ -340,7 +376,8 @@ for powers of an invertible-sheaf section remains in
   Localization commutes with direct sums. At $(p)$, only the summand $ZZ\/p ZZ$ survives, whereas at $(0)$, every summand vanishes. The closed points are dense: an integer divisible by every prime is zero. The same fact gives the zero annihilator of $M$. Every nonzero integer already acts invertibly on $QQ$, so all its localizations remain $QQ$.
 ]
 
-#example(number: "SE-E2", title: "Counterexamples")[
+#metadata(none) <sup-se-14>
+#example(number: "SE-14", title: "Counterexamples")[
   On $ops.spec(k[epsilon]\/(epsilon^2))$, the module $tildeOf(k)$ has
   constant fiber rank one but is not locally free.
 ]
@@ -349,16 +386,18 @@ for powers of an invertible-sheaf section remains in
   There is one prime, with residue field $k$, and the fiber of the module $k$ is $k$. A free module with this fiber would have rank one and be isomorphic to $k[epsilon]\/(epsilon^2)$. But $epsilon$ annihilates $k$ and does not annihilate that ring, ruling out such an isomorphism.
 ]
 
-#example(number: "SE-E3", title: "Counterexamples")[
+#metadata(none) <sup-se-15>
+#example(number: "SE-15", title: "Counterexamples")[
   For $j:(0,1)->RR$ and the constant $ZZ$ sheaf on $(0,1)$, $j_*$ has
   nonzero stalks at the endpoints, while $j_!$ has zero stalks there.
 ]
 
 #proof[
-  Sufficiently small neighborhoods of either endpoint intersect $(0,1)$ in a nonempty interval. Sections of the constant sheaf there are $ZZ$, and the restriction maps are identities. Their colimit is $ZZ$, the direct-image stalk. Extension by zero has zero stalk outside the open by SE-4.
+  Sufficiently small neighborhoods of either endpoint intersect $(0,1)$ in a nonempty interval. Sections of the constant sheaf there are $ZZ$, and the restriction maps are identities. Their colimit is $ZZ$, the direct-image stalk. Extension by zero has zero stalk outside the open by SE-5.
 ]
 
-#example(number: "SE-E4", title: "Counterexamples")[
+#metadata(none) <sup-se-16>
+#example(number: "SE-16", title: "Counterexamples")[
   The sheaves $shf.o (n)$ on $sch.p^1_k$ all restrict to the trivial
   invertible sheaf on a standard affine line but are not mutually isomorphic
   on the projective line. Coherent extensions need not be unique.
@@ -366,91 +405,4 @@ for powers of an invertible-sheaf section remains in
 
 #proof[
   The standard trivialization of each twisting sheaf gives the claimed affine restriction. If $shf.o (n) simeq shf.o (m)$, tensoring by $shf.o (-m)$ gives $shf.o (n-m) simeq shf.o$. The standard projective-line section calculation gives zero global sections in negative degree and dimension $d+1$ in degree $d>=0$; only degree zero can be trivial. Thus $n=m$.
-]
-
-#block(sticky: true)[#strong[Application: II.5.7]] <sup-proof-5-7>
-
-#exercise(title: "Exercise 5.7")[
-  Let $X$ be noetherian and $shf.f$ coherent.
-
-  + If $shf.f_x$ is free, show $shf.f$ is free on a neighborhood of $x$.
-  + Deduce $shf.f$ is locally free iff all stalks are free.
-  + Show $shf.f$ is invertible iff some coherent $shf.g$ satisfies
-    $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
-]
-
-#proof[
-  #set enum(numbering: "a)", spacing: 1em)
-
-  + *Spread a free stalk to a neighborhood.*
-
-    - *Choose an affine chart.* Choose an affine neighborhood $U=ops.spec A$ of $x$.  Since $X$ is
-      noetherian and $shf.f$ is coherent, we may write
-      $shf.f|_U simeq tildeOf(M)$ with $A$ noetherian and $M$ finite.  Let
-      $idl.p$ correspond to $x$.  By Proposition 5.1(b), the hypothesis says
-      that $M_idl.p$ is a finite free $A_idl.p$-module, say of rank $r$.
-
-    - *Spread the basis and surjectivity.* Represent a basis of $M_idl.p$ by fractions $m_i/s_i$ with
-      $s_i in.not idl.p$.  Multiplying each basis vector by the unit $s_i$
-      shows that the images of $m_1,dots.c,m_r in M$ still form a basis.  Let
-      $
-        phi:A^r -> M, quad (a_i) mapsto sum_i a_i m_i.
-      $
-      The localization of $C=ops.coker(phi)$ at $idl.p$ is zero.  The module
-      $C$ is finite, so a single element $a in.not idl.p$ annihilates all of a
-      finite set of generators of $C$.  Hence $C_a=0$ and $phi_a$ is
-      surjective.
-
-    - *Kill the kernel.* Put $K=ops.ker(phi)$.  Since $A$ is noetherian, $K subset.eq A^r$ is
-      finite.  Also $K_idl.p=0$, because $phi_idl.p$ is an isomorphism.  Thus
-      some $b in.not idl.p$ kills a finite set of generators of $K$, so
-      $K_b=0$.  For $h=a b in.not idl.p$, the map
-      $
-        phi_h:A_h^r simeq M_h
-      $
-      is an isomorphism.  Consequently,
-      $shf.f|_(D(h)) simeq shf.o_(D(h))^r$, and $D(h)$ is the desired
-      neighborhood of $x$.
-
-  + If $shf.f$ is locally free, every stalk is the corresponding free module
-    over the local ring.  Conversely, if every stalk is free, part (a)
-    supplies, for every $x$, a neighborhood on which $shf.f$ is free.  These
-    neighborhoods cover $X$, so $shf.f$ is locally free.
-
-  + *Characterize invertibility by a tensor inverse.*
-
-    - *Use the dual of an invertible sheaf.* Suppose first that $shf.f$ is invertible.  It is locally free of rank
-      one, hence coherent, and its dual $shf.g=shf.f^ast$ is also locally free
-      of rank one and coherent.  The evaluation map
-      $
-        tensor(shf.f, shf.f^ast, over: shf.o_X) -> shf.o_X
-      $
-      is an isomorphism locally on every trivializing open, and hence globally.
-
-    - *Reduce to cyclic modules at a stalk.* Conversely, suppose a coherent $shf.g$ satisfies
-      $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.  At a point $x$, put
-      $
-        R=shf.o_(X,x), quad M=shf.f_x, quad N=shf.g_x.
-      $
-      Then $R$ is local, $M,N$ are finite, and
-      $tensor(M, N, over: R) simeq R$.  After tensoring with the residue field $k(x)$,
-      $
-        tensor(M/frak(m)M, N/frak(m)N, over: k(x)) simeq k(x).
-      $
-      Both factors are nonzero finite-dimensional vector spaces, and the
-      product of their dimensions is $1$; each therefore has dimension $1$.
-      Choose $m in M$ and $n in N$ lifting bases.  Nakayama's lemma shows that
-      $m$ and $n$ generate $M$ and $N$.
-
-    - *Prove that the cyclic module is free.* The map $R->tensor(M, N, over: R)$ sending $1$ to $tensor(m, n)$ is
-      surjective by Nakayama.  Composing with an isomorphism
-      $tensor(M, N, over: R) simeq R$ gives a
-      surjective endomorphism of the rank-one free module $R$, hence
-      multiplication by a unit; it is injective.  If $a m=0$, then
-      $a tensor(m, n)=0$, so $a=0$.  Thus $R->M$, $a mapsto a m$, is also
-      injective, and it is already surjective.  Hence $M simeq R$.
-
-    - *Spread rank one to neighborhoods.* We have proved that every stalk $shf.f_x$ is free of rank one.  Part (a)
-      applied with rank $1$ gives a neighborhood of each point on which
-      $shf.f$ is free of rank $1$.  Therefore $shf.f$ is invertible.
 ]

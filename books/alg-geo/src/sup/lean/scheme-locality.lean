@@ -21,7 +21,7 @@ abbrev sourceCoverEquality := @Scheme.Cover.hom_ext
 
 abbrev injectiveLocalization := @LocalizedModule.map_injective
 
-/-- Abstract gluing of the local inverse, used in XL-5 and in the existing application. -/
+/-- Abstract gluing of the local inverse, used in XL-5 and in the affine criterion. -/
 theorem inverse_unique {C : Type*} [Category C] {X Y : C}
     (f : X ⟶ Y) (g h : Y ⟶ X) (hg : g ≫ f = 𝟙 Y) (hh : f ≫ h = 𝟙 X) : g = h := by
   calc
@@ -29,3 +29,8 @@ theorem inverse_unique {C : Type*} [Category C] {X Y : C}
     _ = (g ≫ f) ≫ h := (Category.assoc _ _ _).symm
     _ = h := by rw [hg, Category.id_comp]
 end Supplements.XL
+
+/- XL-1,2,4,5,6,7 now contain the former II.2.1,2,4,12,16,17
+proofs directly. The scheme-gluing proof delegates ring-sheaf gluing to SL-4;
+the quotient-topology and localization assertions are explicitly reader checks.
+The ii-2-exe.lean declarations retain their original exercise-based names. -/

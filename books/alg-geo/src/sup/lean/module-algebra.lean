@@ -16,7 +16,7 @@ import Mathlib.Data.ZMod.Basic
 
 /-!
 AL companion. The following declarations expose the exact algebraic interfaces
-used in AL-1--AL-9: no field hypothesis is substituted for a commutative ring,
+used in AL-1–AL-11: no field hypothesis is substituted for a commutative ring,
 and no invertibility of 2 is assumed for exterior powers. The latter is why
 CliffordAlgebra.BaseChange is not used (its present interface requires 2⁻¹).
 The dual-tensor argument is checked for an explicitly given finite dual basis
@@ -93,7 +93,7 @@ variable (m : ι → M) (l : ι → Module.Dual R M)
 
 include h
 
-/-- Finite dual basis reconstruction of any linear map (AL-4). -/
+/-- Finite dual basis reconstruction of any linear map (AL-5). -/
 theorem dualBasis_hom (u : M →ₗ[R] N) (x : M) :
     ∑ i, l i x • u (m i) = u x := by
   calc
@@ -133,29 +133,29 @@ example [Module.Finite R M] [Module.Projective R M] :
     M ≃ₗ[R] Module.Dual R (Module.Dual R M) := Module.evalEquiv R M
 end DualBasis
 
-/-- The polarized square relation: no division by two (AL-5). -/
+/-- The polarized square relation: no division by two (AL-6). -/
 theorem square_relation {A : Type*} [Ring A] (x y : A)
     (hx : x * x = 0) (hy : y * y = 0) (hxy : (x+y)*(x+y)=0) :
     x*y+y*x=0 := by
   simpa [add_mul, mul_add, hx, hy, add_assoc, add_comm] using hxy
 
-/-- AL-7: changing a lift by a filtration element leaves its quotient class unchanged. -/
+/-- AL-9: changing a lift by a filtration element leaves its quotient class unchanged. -/
 theorem quotient_lift_independent {R M : Type*} [Ring R] [AddCommGroup M]
     [Module R M] (F : Submodule R M) (x y : M) (h : x-y ∈ F) :
     F.mkQ x = F.mkQ y := by
   exact (Submodule.Quotient.eq F).mpr h
 
-/-- AL-7's terminal quotient calculation after a splitting of consecutive degrees. -/
+/-- AL-9's terminal quotient calculation after a splitting of consecutive degrees. -/
 def splitFiltrationQuotient (R P Q : Type*) [Ring R] [AddCommGroup P]
     [AddCommGroup Q] [Module R P] [Module R Q] :
     ((P × Q) ⧸ LinearMap.ker (LinearMap.fst R P Q)) ≃ₗ[R] P :=
   (LinearMap.fst R P Q).quotKerEquivOfSurjective (fun p ↦ ⟨(p,0), rfl⟩)
 
-/-- AL-E1 and SC-E5: the actual residue-field multiplication map is zero. -/
+/-- AL-12 and SC-16: the actual residue-field multiplication map is zero. -/
 theorem multiplication_two_mod_two (x : ZMod 2) : (2 : ZMod 2) * x = 0 := by
   rw [show (2 : ZMod 2) = 0 from ZMod.natCast_self 2, zero_mul]
 
-/-- AL-E2: the coordinate r+1 cannot have an integer numerator with denominator 2^r. -/
+/-- AL-13: the coordinate r+1 cannot have an integer numerator with denominator 2^r. -/
 theorem unbounded_denominator (r : ℕ) :
     ¬ ∃ a : ℤ, (a : ℚ) / 2^r = 1 / 2^(r+1) := by
   rintro ⟨a, ha⟩
@@ -167,7 +167,7 @@ theorem unbounded_denominator (r : ℕ) :
   have he' : a * 2 = 1 := by exact_mod_cast he
   omega
 
-/-- AL-E4: the vanishing of the dual, including all linear maps. -/
+/-- AL-15: the vanishing of the dual, including all linear maps. -/
 theorem dual_zmod_two_zero (f : ZMod 2 →ₗ[ℤ] ℤ) : f = 0 := by
   ext x
   have h : (2 : ℤ) • x = 0 := by
@@ -177,7 +177,7 @@ theorem dual_zmod_two_zero (f : ZMod 2 →ₗ[ℤ] ℤ) : f = 0 := by
   simp only [map_smul, map_zero, smul_eq_mul] at hf
   change f x = 0
   omega
-/-- AL-9, both tensor factors, over the stated local base ring. -/
+/-- AL-11, both tensor factors, over the stated local base ring. -/
 theorem tensor_inverse_rank_one (R M N : Type*) [CommRing R] [IsLocalRing R]
     [AddCommGroup M] [AddCommGroup N] [Module R M] [Module R N]
     (e : N ⊗[R] M ≃ₗ[R] R) :
@@ -188,3 +188,7 @@ theorem tensor_inverse_rank_one (R M N : Type*) [CommRing R] [IsLocalRing R]
     Module.Invertible.free_iff_linearEquiv.mp inferInstance⟩
 
 end Supplements.AL
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

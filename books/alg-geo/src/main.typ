@@ -45,10 +45,15 @@
 #include "sec-2-7/sec-2-7.typ"
 #include "sec-2-8/sec-2-8.typ"
 #include "sec-2-9/sec-2-9.typ"
-#include "sup/sup.typ"
 
 = Cohomology
 
 #include "sec-3-1/sec-3-1.typ"
+
+// Supplement codes identify each article; nested headings use indentation
+// instead of the book's numeric prefixes in both the text and the outline.
+#set heading(numbering: none)
+
+#include "sup/sup.typ"
 
 = Appendices

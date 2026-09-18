@@ -72,3 +72,7 @@ def coproductUniversal (T : Type u) {ι : Type u} (X : ι → Type u) :
   left_inv _ := rfl
   right_inv _ := rfl
 end Supplements.CAT
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

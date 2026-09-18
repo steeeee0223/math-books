@@ -1,34 +1,35 @@
 # 後續範圍
 
-以下題群尚未納入核心教材範圍。
+本檔只列尚未納入補充教材的內容。已寫入的結果見 [教材索引](README.md)，逐題涵蓋界限見 [習題對照](exercise-coverage.md)。Lean 尚缺的約化與全域組裝集中於 [形式驗證狀態](verification-status.md)。
 
-- [ ] Flasque sheaves、sections 的非正合性與 cohomology 的準備：II.1.16、1.20(b) 的 flasque 強化、1.21(d)–(e)。II.1.21(a)–(c) 已由 CS／SC 安排。
+## 尚未完整納入的題群
+
+- [ ] Flasque sheaves 與 sections 的正合性：II.1.16、II.1.20(b) 的 flasque 強化，以及 II.1.21(d)–(e) 的 rational functions／principal parts。II.1.21(a)–(c) 已在 CS、SC。
 - [ ] Espace étalé 與 sheaves 的幾何模型：II.1.13。
-- [ ] Tangent vectors 與具體 residue-field 計算：II.2.8、2.10–2.11。II.2.7、2.15 已分別由 MG-7、VS 及正文引用安排，不再整題列為後續。
-- [ ] Generically finite maps、normalization：II.3.7 的主要結論、II.3.8。II.3.6 與 dominance／function-field inclusion 已在 XP。
-- [ ] Geometric reducedness／irreducibility 與 field extensions：II.3.15。
-- [ ] Constructibility、Chevalley、dimension 與 fibre dimension：II.3.18–3.23。
-- [ ] II.3.17(e) 的 t(X) 比較；II.3.23 的 varieties product comparison 與上項分開追蹤，VS 暫不新增 product 比較，MG 只提供先備。
-- [ ] II.3.11(d) 的任意 morphism 之 scheme-theoretic image：MG 先安排 quasi-compact 版本，不能將 kernel 的 quasi-coherence 與 open restriction 相容性無條件套用。
-- [ ] II.5.9(c) 的完整 equivalence formulation：PJ 先保留具體 high-degree comparisons，不新增 quotient-category 工具。
-- [ ] Valuation rings、valuative criteria 與 properness：II.4.5–4.6、4.11–4.12。
-- [ ] Real forms 與 field descent：II.4.7；不混入 open-cover gluing。
+- [ ] 非代數閉域與有限域的 spectrum 計算：II.2.10–II.2.11。DF-3、DF-9 提供 residue-field 比較，但未整理這兩題的點集、拓撲與計數；II.2.8 的 tangent-vector 對應已在 DF-1。
+- [ ] Generically finite maps 的一般版本：II.3.7。RM-5 已處理 integral separated finite-type k-schemes，尚未涵蓋原題的一般 integral schemes。
+- [ ] 一般 normalization：II.3.8。BU-10–BU-11 已計算 cusp、node 的 normalization，尚未建立一般建構與性質。
+- [ ] 任意 morphism 的 scheme-theoretic image：II.3.11(d)。MG-12 限於 quasi-compact morphism；其 kernel 與 open-restriction 計算不可無條件套用。
+- [ ] Geometric reducedness、irreducibility 與 field extensions：II.3.15。
+- [ ] II.3.17(e) 的 t(X) 比較。
+- [ ] Constructibility、Chevalley、dimension 與 fiber dimension：II.3.18–II.3.22。
+- [ ] Varieties product 與 scheme fiber product 的完整比較：II.3.23；MG 與 VS 目前提供先備。
+- [ ] Valuation rings、valuative criteria 與 properness：II.4.5–II.4.6、II.4.11–II.4.12；MG-11 的 finite implies proper 不涵蓋 II.4.6 的逆向命題。
+- [ ] Real forms 與 field descent：II.4.7，須與 open-cover gluing 區分。
 - [ ] Chow's lemma：II.4.10。
-- [ ] Relative Proj 與 blow-ups：作為 Proj、relative Spec 之後的專題另行評估。
+- [ ] II.5.9(c) 的完整 equivalence formulation：PJ-6 已有具體 natural maps 與 high-degree comparisons，尚未建立完整 equivalence。
 
-- [ ] CS 的進階內容：ideal sums／intersections 與 scheme-theoretic unions／intersections；核心教材只涵蓋 CS-1–CS-4。既有 MG-9 的 quasi-compact image 內容保持原位。
-- [ ] VS 的一般 open／closed subvariety correspondence 完整整理；核心版僅保留 CS-4 所需的識別，II.3.23 的 product 比較依前項追蹤。
+II.6–II.8 已有內容及各題尚缺部分直接記於 [習題對照](exercise-coverage.md)。該表只收已涉及的題目，不是其餘習題的開發清單。
 
+## 尚未納入的整理
 
-擴充或進一步整併時，逐小題核對內容與假設並維護雙向引用，保留尚有獨立內容的習題證明。
+- [ ] CS：ideal sums、ideal intersections 與 scheme-theoretic unions／intersections；現行範圍為 CS-1–CS-6。
+- [ ] VS：一般 open／closed subvariety correspondence；現行 CS-6 只使用其中的特定識別。
 
-## 形式化工作
+擴充時逐小題核對內容與假設，保留尚有獨立內容的習題證明，並維護雙向引用。
 
-Lean companions 的局部結果不等於教材命題已端到端形式化。後續核對以 [companion 原始碼](../../src/sup/lean/)的宣告與缺口註記為準。
+## 範圍之外
 
-- [ ] CAT、SL、SC、AL、XL：完成範疇、sheaf 與 scheme 層的全域組裝，核對各 companion 的覆蓋界限。
-- [ ] XP、MG：global idempotents、components、reduced factorization 與具體反例 scheme 的完整形式化。
-- [ ] QC、SE：qcqs pushforward、Hom/pullback、support、extension 與 local freeness 的全域 sheaf 比較。
-- [ ] RV：relative Spec functor、universal property、module equivalence 與 vector-bundle gluing。
-- [ ] PJ：radical-domain graded maps、high-degree localization、graded adjunction／reconstruction／Čech exactness，以及 saturation、Veronese、Segre、twists 與 normality 的完整比較；包含尚未完成的代數步驟。
-- [ ] CS、VS：ideal sheaf 與 base change 的全域比較，以及 classical variety category、associated scheme functor 與 full faithfulness。
+補充不以 Chapter III 的 cohomology、vanishing 或 Riemann–Roch 為先備。因此一般 relative section-algebra reconstruction、fiberwise ampleness、依賴 Riemann–Roch 的 curve ampleness，以及 genus-drop normalization 證明不列入待辦。LP2-12 處理的是整個 local base 上固定 line bundle 的 spreading，不能改稱單一 fiber 的 ampleness theorem。
+
+General Picard schemes、完整 reflexive-sheaf theory、singular lci dualizing theory、cotangent complex、一般 deformation theory、intersection theory、general resolution 與 descent 也不在現行補充範圍。CAT 不另擴充 equalizers／coequalizers、Yoneda、Kan extensions 或 quotient categories。

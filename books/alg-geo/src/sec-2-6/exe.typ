@@ -4,10 +4,13 @@
 === Exercises
 
 // Hartshorne II.6, Exercise 6.1
+#metadata(none) <exercise-ii-6-1>
 #exercise(title: "Exercise 6.1")[
   If $X$ satisfies $(star)$, show $X times sch.p^n$ does also and
   $ops.cl (X times sch.p^n) simeq ops.cl (X) times ZZ$.
 ]
+
+#book-link(<sup-dv-16>)[DV-16] proves the product calculation for two projective lines; the general base remains part of this exercise.
 
 // Hartshorne II.6, Exercise 6.2
 #exercise(title: "Exercise 6.2 (Varieties in Projective Space)")[
@@ -46,6 +49,7 @@
 ]
 
 // Hartshorne II.6, Exercise 6.5
+#metadata(none) <exercise-ii-6-5>
 #exercise(title: "Exercise 6.5 (Quadric Hypersurfaces)")[
   For the affine quadric $X:sum x_i^2=0$ in characteristic not two:
 
@@ -57,6 +61,8 @@
   + prove Klein's theorem that in dimension at least four every prime divisor
     on the projective quadric is a hypersurface section.
 ]
+
+#book-link(<sup-dv-15>)[DV-15] computes the affine surface cone, and DV-16 computes the projective quadric surface. The higher-dimensional cases remain separate.
 
 // Hartshorne II.6, Exercise 6.6
 #exercise(title: "Exercise 6.6 (Plane Cubic Group Law)")[

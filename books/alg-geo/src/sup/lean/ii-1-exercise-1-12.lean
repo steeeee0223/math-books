@@ -10,7 +10,7 @@ import Mathlib.Topology.Sheaves.LocallySurjective
 # Hartshorne II.1, Exercises 1.1--1.12
 
 The declarations below are small, kernel-checked interfaces to the mathlib
-results used by the accompanying human-readable proofs in the supplement applications indexed by the original exercise numbers.
+results used by the accompanying human-readable proofs in the supplement properties retaining the original exercise anchors.
 
 Mathlib formulates injective and surjective sheaf morphisms categorically as
 monomorphisms and epimorphisms. For sheaves of abelian groups these are the
@@ -146,7 +146,7 @@ theorem pointwise_limit_is_sheaf {I : Type} [SmallCategory I]
 /- Exercise 1.11 uses these two formal ingredients: every open subset of a
 Noetherian space is compact, and filtered colimits of abelian groups are
 computed on underlying types. The finite-subcover gluing argument is written
-out in the supplement applications indexed by the original exercise numbers. -/
+out in the supplement properties retaining the original exercise anchors. -/
 theorem open_isCompact [TopologicalSpace.NoetherianSpace X]
     (U : TopologicalSpace.Opens X) :
     IsCompact (U : Set X) :=
@@ -175,3 +175,8 @@ sections on omitted members of a cover, is not yet assembled as a sheaf theorem.
 -/
 
 end HartshorneII1
+
+/- The II.1.1-12 proofs now occur beside their SC properties, with their
+original exercise anchors retained. SC-1 covers limits, SC-3 direct sums,
+SC-4 exactness, SC-6 left exactness, SC-9 filtered sections, and SC-10 constant
+sheaves. The SC-14 diagonal example supplies II.1.3(b). -/

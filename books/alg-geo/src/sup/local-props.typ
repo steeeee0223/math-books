@@ -4,7 +4,7 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 
-=== LP — A Locality Calculus for Morphisms <sup-lp>
+== LP — A Locality Calculus for Morphisms <sup-lp>
 
 Many definitions in algebraic geometry begin with a property of a ring map
 $A -> B$ and then pass to affine charts.  The passage rests on three standard
@@ -14,7 +14,7 @@ The letters below abbreviate the restriction and gluing operations used in
 these arguments.
 
 *Reading route.* After #book-link(<text-ii-2>)[II.2], read
-#book-link(<sup-xl>)[XL-1–7] and then LP-1–15 for the locality framework.
+#book-link(<sup-xl>)[XL-1–XL-7] and then LP-1–LP-15 for the locality framework.
 The whole-inverse-image argument uses the affineness criterion of
 #book-link(<sup-proof-2-17>)[II.2.17(b)]. Ring-level BC is a tensor-product
 condition; the scheme-level BC conclusions require the fiber products of
@@ -27,7 +27,7 @@ closed. The affine closed-immersion dictionary is proved in
 require their stated module-theoretic criteria. See the
 #book-link(<sup-roadmap>)[reading roadmap] for these separate dependencies.
 
-==== Ring-local conditions
+=== Ring-local conditions
 
 The zero ring and empty schemes are allowed.  In the counterexamples, $k$ is
 a field.  Fix a property $cal(P)(A -> B)$ invariant under isomorphisms of ring
@@ -78,11 +78,18 @@ $ops.spec B -> ops.spec A$, not to the ring map.
 
 #metadata(none) <sup-lp-5>
 #proposition(number: "LP-5", title: "Base Change Contains Target Localization")[
-  - Every property satisfying BC satisfies T, since $B_f simeq tensor(B, A_f, over: A)$.
+  - Every property satisfying BC satisfies T.
   - Source localization is different: $B_g$ is obtained by localizing the codomain ring $B$, and need not be a base change from $A$.
 ]
 
-==== From rings to affine charts
+#proof[
+  For $f in A$, the canonical localization map identifies
+  $tensor(B, A_f, over: A)$ with $B_f$ (Check!). Applying BC to $A->A_f$
+  gives T. A source element $g in B$ need not come from $A$; the
+  counterexample LP-24 shows that a BC-stable property can fail S.
+]
+
+=== From rings to affine charts
 
 Let $f:X -> Y$ be a morphism.  An *affine pair for* $f$ means affine opens
 $U=ops.spec B subset.eq X$ and $V=ops.spec A subset.eq Y$ such that
@@ -282,8 +289,7 @@ $A -> B$.
     image $X_i$ is affine and has $cal(P)$.  The pullbacks of the $a_i$ are global
     sections of $X$, generate the unit ideal in $Gamma(X, shf.o_X)$, and
     have affine nonvanishing loci $X_i$.  The unit-ideal criterion of
-    #book-link(<sup-xl-7>)[XL-7], proved in
-    #book-link(<sup-proof-2-17>)[II.2.17(b)], therefore makes $X$ affine.
+    #book-link(<sup-xl-7>)[XL-7] therefore makes $X$ affine.
     Writing $X=ops.spec B$, the restricted coordinate
     maps are $A_(a_i) -> B_(a_i)$, and GT gives $cal(P)(A -> B)$.  Since an affine
     target is quasi-compact, an arbitrary target cover admits a finite
@@ -297,7 +303,7 @@ $A -> B$.
     these affine calculations, so $cal(Q)$ is stable under arbitrary base change.
 ]
 
-==== Locality directly on schemes
+=== Locality directly on schemes
 
 Ring-local conditions describe affine charts.  For a property $cal(Q)(f)$ of
 scheme morphisms, locality on an arbitrary open cover is expressed directly at
@@ -339,9 +345,9 @@ scheme level.
     $cal(Q)(f^(-1)(V_i) -> V_i)$ from $cal(Q)(f)$, while GTT gives the converse.
     Hence RT and GTT give locality on the target.
 ]
-==== Ring-property case studies
+=== Ring-property case studies
 
-===== Finite type
+==== Finite type
 
 #metadata(none) <sup-lp-16>
 #definition(number: "LP-16", title: "Finite Type Ring Map")[
@@ -409,7 +415,7 @@ scheme level.
     finite atlas required in the definition of a finite-type morphism.
 ]
 
-===== Finite presentation
+==== Finite presentation
 
 #metadata(none) <sup-lp-19>
 #definition(number: "LP-19", title: "Finite Presentation Ring Map")[
@@ -447,7 +453,6 @@ scheme level.
 
   + *Target gluing.* As in the finite-type case, GS and PL imply GT.
 
-  Strong Affine Locality and BC now give the assertions of the corollary.
 ]
 
 #metadata(none) <sup-lp-21>
@@ -457,7 +462,16 @@ scheme level.
   stable under base change.
 ]
 
-===== Finite
+#proof[
+  Apply LP-9 to the ring property in LP-20: its BC, T, S, GS, and GT
+  conditions give independence of the affine atlas and locality on both
+  source and target. On affine pairs, a base change replaces the coordinate
+  algebra by its tensor product, so LP-20's BC condition applies. The
+  affine-cover comparison then gives stability for arbitrary scheme base
+  changes, exactly as in LP-18.
+]
+
+==== Finite
 
 #metadata(none) <sup-lp-22>
 #definition(number: "LP-22", title: "Finite Ring Map")[
@@ -482,7 +496,8 @@ scheme level.
     the unit-ideal condition then puts $b$ itself in that span.
 
   + *Source gluing.* GS follows from integral GS proved below and finite-type GS, using
-    the equivalence of module-finiteness with integrality plus finite type.
+    the equivalence of module-finiteness with integrality plus finite type
+    (Check!).
 
   + *Failure of source localization.* The example proves failure of S.
 ]
@@ -522,7 +537,7 @@ scheme level.
     source restriction, and hence source locality, fails.
 ]
 
-===== Integral
+==== Integral
 
 #metadata(none) <sup-lp-26>
 #definition(number: "LP-26", title: "Integral Ring Map")[
@@ -591,7 +606,7 @@ scheme level.
     integral, so source locality fails.
 ]
 
-===== Surjective
+==== Surjective
 
 #metadata(none) <sup-lp-30>
 #definition(number: "LP-30", title: "Surjective Ring Map")[
@@ -672,7 +687,7 @@ scheme level.
     morphism is not; hence source locality fails.
 ]
 
-===== Flat
+==== Flat
 
 #metadata(none) <sup-lp-34>
 #definition(number: "LP-34", title: "Flat Ring Map")[
@@ -689,7 +704,8 @@ scheme level.
   #set enum(numbering: "1.")
 
   + *BC, T, S, and PL.* Module flatness is stable under tensor-product base change and composition,
-    and every localization is flat.  These facts give BC, T, S, and PL.
+    and every localization is flat. These algebraic flatness facts are left
+    to the reader (Check!). They give BC, T, S, and PL.
 
   + *Source gluing.* To prove GS, use the criterion that $B$ is flat over $A$ exactly when, for
     every injection $M' -> M$ of $A$-modules, the induced map
@@ -736,14 +752,15 @@ scheme level.
   + *Recover flatness from stalks.* Conversely, if every $A_p -> B_q$ is flat, then for each
     prime $cal(Q)$ the localization $B_q$ is flat over $A$ by composition with the
     flat map $A -> A_p$; flatness of $B$ over $A$ follows because it may be
-    checked after localization at all primes of $B$.  Thus the affine and stalk
+    checked after localization at all primes of $B$ (Check! a module whose
+    localizations at every prime vanish is zero). Thus the affine and stalk
     criteria agree.
 
   + *Base change.* BC for rings, followed by affine locality, gives BC for
     morphisms.
 ]
 
-===== Faithfully flat
+==== Faithfully flat
 
 #metadata(none) <sup-lp-37>
 #definition(number: "LP-37", title: "Faithfully Flat Ring Map")[
@@ -840,12 +857,12 @@ scheme level.
     demanding that every restriction be surjective are different tests.
 ]
 
-==== Geometric-property case studies
+=== Geometric-property case studies
 
 The next properties are not properties of one arbitrary ring map.  They are
 best tested using RS, GSS, RT, and GTT directly.
 
-===== Quasi-compact
+==== Quasi-compact
 
 #metadata(none) <sup-lp-42>
 #definition(number: "LP-42", title: "Quasi-compact Morphism")[
@@ -895,22 +912,16 @@ best tested using RS, GSS, RT, and GTT directly.
     is not quasi-compact. Thus GSS fails.
 ]
 
+==== Affine
+
 #metadata(none) <sup-lp-45>
-#corollary(number: "LP-45", title: "Target Criterion for Quasi-compactness")[
-  Quasi-compactness is affine local and Zariski local on the target, and it is
-  stable under base change.  It is not local on the source.
-]
-
-===== Affine
-
-#metadata(none) <sup-lp-46>
-#definition(number: "LP-46", title: "Affine Morphism")[
+#definition(number: "LP-45", title: "Affine Morphism")[
   A morphism $f:X -> Y$ is *affine* if $f^(-1)(V)$ is affine for every affine
   open $V subset.eq Y$.
 ]
 
-#metadata(none) <sup-lp-47>
-#proposition(number: "LP-47", title: "Locality Profile: Affine")[
+#metadata(none) <sup-lp-46>
+#proposition(number: "LP-46", title: "Locality Profile: Affine")[
   Affineness satisfies RT and GTT and is stable under base change.  It
   satisfies neither RS nor GSS.
 ]
@@ -926,32 +937,26 @@ best tested using RS, GSS, RT, and GTT directly.
   + *Check the source failures.* The following examples disprove RS and GSS.
 ]
 
-#metadata(none) <sup-lp-48>
-#example(number: "LP-48", title: "Source failures for affineness")[
+#metadata(none) <sup-lp-47>
+#example(number: "LP-47", title: "Source failures for affineness")[
   - *Failure of RS.* The morphism $sch.a^2_k -> ops.spec k$ is affine, while the restriction
     $(sch.a^2_k minus {0}) -> ops.spec k$ is not affine; the nonaffineness
-    calculation is in #book-link(<sup-mg-5>)[MG-5]. Hence RS fails.
+    calculation is in #book-link(<sup-mg-8>)[MG-8]. Hence RS fails.
 
   - *Failure of GSS.* The two standard affine lines cover $sch.p^1_k$, but
     $sch.p^1_k -> ops.spec k$ is not affine.  Hence GSS fails.
 ]
 
-#metadata(none) <sup-lp-49>
-#corollary(number: "LP-49", title: "Target Criterion for Affineness")[
-  Affineness is affine local and Zariski local on the target and is stable
-  under base change.  It is not local on the source.
-]
+==== Separated
 
-===== Separated
-
-#metadata(none) <sup-lp-50>
-#definition(number: "LP-50", title: "Separated Morphism")[
+#metadata(none) <sup-lp-48>
+#definition(number: "LP-48", title: "Separated Morphism")[
   A morphism $f:X -> Y$ is *separated* if its diagonal
   $Delta_f:X -> fiber(X, X, base: Y)$ is a closed immersion.
 ]
 
-#metadata(none) <sup-lp-51>
-#proposition(number: "LP-51", title: "Locality Profile: Separated")[
+#metadata(none) <sup-lp-49>
+#proposition(number: "LP-49", title: "Locality Profile: Separated")[
   Separatedness satisfies RS, RT, and GTT and is stable under base change.  It
   does not satisfy GSS.
 ]
@@ -978,31 +983,24 @@ best tested using RS, GSS, RT, and GTT directly.
     counterexample to GSS.
 ]
 
-#metadata(none) <sup-lp-52>
-#example(number: "LP-52", title: "Failure of source gluing for separatedness")[
-  Use the doubled-origin line of #book-link(<sup-xp-5>)[XP-5], where its
+#metadata(none) <sup-lp-50>
+#example(number: "LP-50", title: "Failure of source gluing for separatedness")[
+  Use the doubled-origin line of #book-link(<sup-xp-11>)[XP-11], where its
   nonclosed diagonal is computed. Its two standard affine charts are
   separated over $ops.spec k$, while the whole scheme is not. Thus GSS fails.
 ]
 
-#metadata(none) <sup-lp-53>
-#corollary(number: "LP-53", title: "Target Criterion for Separatedness")[
-  Separatedness is affine local and Zariski local on the target and is stable
-  under base change.  It is preserved by restriction to an open source, but
-  it is not local on the source because source gluing fails.
-]
+==== Universally closed
 
-===== Universally closed
-
-#metadata(none) <sup-lp-54>
-#definition(number: "LP-54", title: "Universally Closed Morphism")[
+#metadata(none) <sup-lp-51>
+#definition(number: "LP-51", title: "Universally Closed Morphism")[
   A morphism $f:X -> Y$ is *universally closed* if every base change
   $f':fiber(X, Y', base: Y) -> Y'$ is a closed map on underlying topological
   spaces.
 ]
 
-#metadata(none) <sup-lp-55>
-#proposition(number: "LP-55", title: "Locality Profile: Universally Closed")[
+#metadata(none) <sup-lp-52>
+#proposition(number: "LP-52", title: "Locality Profile: Universally Closed")[
   Universal closedness satisfies RT and GTT and is stable under base change.
   It satisfies neither RS nor GSS.
 ]
@@ -1022,8 +1020,8 @@ best tested using RS, GSS, RT, and GTT directly.
     failures.
 ]
 
-#metadata(none) <sup-lp-56>
-#example(number: "LP-56", title: "Source failures for universal closedness")[
+#metadata(none) <sup-lp-53>
+#example(number: "LP-53", title: "Source failures for universal closedness")[
   - *Failure of RS.* The morphism $sch.p^1_k -> ops.spec k$ is universally closed, but its open
     restriction $sch.a^1_k -> ops.spec k$ is not; hence RS fails.
 
@@ -1039,13 +1037,302 @@ best tested using RS, GSS, RT, and GTT directly.
     points, which is not closed.  Thus GSS fails.
 ]
 
-#metadata(none) <sup-lp-57>
-#corollary(number: "LP-57", title: "Target Criterion for Universal Closedness")[
-  Universal closedness is affine local and Zariski local on the target and is
-  stable under base change.  It is not local on the source.
+=== Projectivity and global polarizations
+
+#metadata(none) <sup-lp-54>
+#definition(number: "LP-54", title: "Three projective conditions")[
+  A morphism $f:X->Y$ is *projective* in Hartshorne's sense if it factors
+  through a closed immersion $X->sch.p^n_Y$ for a finite integer $n$.
+  It is *locally projective* if such factorizations exist over an open
+  cover of $Y$. A specified invertible sheaf is *very ample relative to*
+  $Y$ if it is the pullback of $shf.o (1)$ under an immersion into some
+  $sch.p^n_Y$; if $f$ is proper this immersion is closed.
+
+  An embedding into $sch.p (shf.e)$ for a finite-type quasi-coherent module
+  is a different convention for projectivity. A quotient
+  $shf.o_Y^(N+1)->shf.e$ supplies the missing embedding into $sch.p^N_Y$;
+  without such global data the conventions must not be identified.
+  Compare Hartshorne II.4, II.7 and
+  #link("https://stacks.math.columbia.edu/tag/01W7")[Stacks, Projective morphisms].
 ]
 
-==== Summary tables
+#metadata(none) <sup-lp-55>
+#proposition(number: "LP-55", title: "Stability of projective morphisms")[
+  Projectivity is preserved by arbitrary base change, target open
+  restriction, composition, and products over a base.
+]
+#proof[
+  Base change pulls the specified closed immersion back to
+  $fiber(X, Y', base: Y)->sch.p^n_(Y')$; the latter identification sends
+  homogeneous coordinates to the same coordinates after scalar extension.
+  Target restriction is the case of an open immersion $Y'->Y$.
+  For composition and products use the closed immersions and the Segre
+  construction in #book-link(<sup-pj-11>)[PJ-11]. Its coordinates are the
+  products of the two sets of homogeneous coordinates, so the construction
+  commutes with restrictions and gives a single global embedding.
+]
+
+#metadata(none) <sup-lp-56>
+#example(number: "LP-56", title: "Source and principal-target failures")[
+  Restrict $sch.p^1_k->ops.spec k$ to $sch.a^1_k$. The restriction is not
+  proper: after base change to $sch.a^1_k$, the closed hyperbola
+  $V(x y-1)$ projects onto the nonclosed subset $D(x)$, as in LP-53.
+  Hence projectivity does not survive arbitrary source restriction.
+
+  Glue two copies of $sch.p^1_k$ along their common $sch.a^1_k$, using the
+  identity. Both members of this open source cover are projective over
+  $k$. The resulting scheme is not separated: on the product of the two
+  charts its diagonal has closure containing the pair of distinct points
+  at infinity. Equivalently, the two maps from $ops.spec k[s]_(s)$ near
+  infinity agree on $ops.spec k(s)$ but have different closed points.
+  Thus source open-cover gluing fails.
+
+  The identity $D(t)->D(t)$ is projective, whereas its composite with
+  $D(t)->sch.a^1_k$ is not closed and hence not proper. This is the
+  failure of extension from a principal target open. These examples concern
+  whole schemes; affine charts of a projective source need not be
+  projective over the original target.
+]
+
+#metadata(none) <sup-lp-57>
+#example(number: "LP-57", title: "A proper, locally projective morphism which is not projective")[
+  Let $k$ be algebraically closed with $ops.char k != 2$, and let
+  $C=V(y^2z-x^3-x^2z) subset sch.p^2_k$. Write $q$ for its node.
+  Identify $C minus {q}$ with $op("G")_m$, with coordinate $w$ on its
+  normalization $sch.p^1$, whose points $0,infinity$ map to $q$.
+  Explicitly, the affine normalization parameter $a$ gives
+  $x=a^2-1$, $y=a(a^2-1)$ and $w=(a-1)/(a+1)$; the two branches
+  $a=1,-1$ become $w=0,infinity$.
+  Multiplication $w mapsto u w$ extends to an automorphism of $C$ over
+  $k[u,u^(-1)]$: on the normalization it preserves the two branches and
+  their identification. Glue $C times ops.spec k[u]$ to
+  $C times ops.spec k[v]$ on $v=u^(-1)$ using this automorphism. The
+  resulting morphism $pi:X->sch.p^1_k$ is proper and locally projective,
+  but is not projective. Every invertible sheaf on $X$ has degree zero
+  on every fiber. This is #book-link(<exercise-ii-7-13>)[Hartshorne Exercise II.7.13].
+]
+#proof[
+  *The scheme and its properness.* The overlap isomorphism and its inverse
+  are specified by $w mapsto u w$ and $w mapsto u^(-1)w$; scheme gluing in
+  #book-link(<sup-xl>)[XL] constructs $X$ and $pi$. Each restriction of
+  $pi$ is the projective projection $C times sch.a^1->sch.a^1$.
+  Finite type, separatedness and universal closedness are target local by
+  LP, so $pi$ is proper. Its composite with $sch.p^1_k->ops.spec k$ is
+  proper as well.
+
+  *Line bundles on each normalization.* Put $R=k[u]$ or
+  $R=k[u,u^(-1)]$. The normalization of $C_R$ is $sch.p^1_R$ and the
+  conductor identifies the two disjoint sections $0,infinity$ with
+  $q_R$. Both charts $ops.spec R[w]$ and $ops.spec R[w^(-1)]$ are
+  factorial, so their Picard groups vanish by the divisor dictionary in
+  II.6. Every line bundle on $sch.p^1_R$ is therefore specified by a unit
+  on their overlap. The algebraic assertions that these rings are
+  factorial and that
+  $R[w,w^(-1)]^times=R^times w^ZZ$ are left to the reader.
+  Changing the two frames removes the factor in $R^times$, leaving
+  precisely $shf.o (n)$, $n in ZZ$.
+
+  *Descent across the node.* An invertible sheaf on $C_R$ is an invertible
+  sheaf on $sch.p^1_R$ together with an identification of its fibers at
+  $0$ and $infinity$. Here is the affine check, rather than a use of a
+  cohomology sequence. The conductor square of rings writes a nodal
+  affine chart as $B times_(R times R) R$, where $B$ is its normalization,
+  the first map evaluates at the two branches, and $R->R times R$ is
+  diagonal. Patch a rank-one module on $B$ and a rank-one module on $R$
+  by their two fiber identifications. The assertion that this fiber-product
+  module is invertible and that extension of scalars recovers the two
+  modules is a purely algebraic patching lemma; its proof is left to the
+  reader. The construction commutes with localization. It therefore
+  glues with the unchanged line bundle away from the node, by SL.
+  Conversely, restriction of an invertible sheaf gives exactly these
+  data. Since $ops.pic R=0$, the remaining datum for $shf.o (n)$ is a
+  unit $lambda in R^times$. An automorphism of $shf.o (n)$ multiplies
+  both branch fibers by the same unit, and cannot change $lambda$.
+  Consequently
+  $
+    ops.pic (C_(k[u])) simeq k^times times ZZ, quad
+    ops.pic (C_(k[u,u^(-1)])) simeq k^times times ZZ times ZZ.
+  $
+  In the second expression write $lambda=a u^d$ and list the coordinates
+  as $(a,d,n)$.
+
+  *The change on the overlap.* Choose the direction of the branch
+  identification so that a frame at $0$ maps to $lambda$ times the frame
+  at $infinity$. For $shf.o (n)$ choose frames with
+  $e_infinity=w^n e_0$ on the overlap. Under $w mapsto u w$, identify the
+  pulled-back frame at $0$ with $e_0$; the frame at infinity then becomes
+  $u^n e_infinity$. Thus pullback sends
+  $(a,d,n)$ to $(a,d+n,n)$. Restriction from either polynomial base chart
+  has middle coordinate zero: its units are constants. An invertible
+  sheaf on $X$ must therefore satisfy $0=0+n$ on the overlap, and $n=0$.
+  Normalization pulls its restriction on every fiber back to
+  $shf.o_(sch.p^1)(n)$. This also computes its Cartier degree on the
+  singular fiber; the normal-curve formula alone would not justify this.
+  Indeed, at the node let $A$ be its local ring and $B$ its finite
+  semilocal normalization. The module $B\/A$ has finite length. For a
+  regular local equation $a$, multiplication by $a$ in
+  $0->A->B->B\/A->0$ gives
+  $0->(B\/A)[a]->A\/a A->B\/a B->(B\/A)\/a(B\/A)->0$.
+  The kernel and cokernel of multiplication by $a$ on the finite-length
+  module $B\/A$ have equal lengths. Thus the lengths of $A\/a A$ and
+  $B\/a B$ agree. This exact-sequence and length computation is purely
+  algebraic and is left to the reader. Away from the node normalization
+  is an isomorphism; summing these lengths, and taking differences for
+  meromorphic equations, proves equality of the two degrees.
+
+  *The obstruction.* If $pi$ were projective, the pullback of the ambient
+  $shf.o (1)$ would restrict to a very ample line bundle on $C$. Its
+  pullback to the normalization has positive degree: a nonconstant map
+  from $sch.p^1$ defined by sections of $shf.o (n)$ requires $n>0$,
+  since for $n<0$ there are no sections and for $n=0$ all sections are
+  constant. This contradicts $n=0$. The same argument rules out a
+  projective embedding of $X$ over $k$.
+]
+
+#metadata(none) <sup-lp-58>
+#remark(number: "LP-58", title: "The extra global datum")[
+  If $Y$ is Noetherian with an ample invertible sheaf and $f:X->Y$ is
+  proper, a *single* $f$-ample invertible sheaf on $X$ implies that $f$
+  is projective; see #book-link(<sup-pm-2>)[PM-2]. In LP-57 the individual
+  polarizations on the two charts cannot be restrictions of such a
+  sheaf. Local projective embeddings alone do not supply it.
+]
+
+=== Dominance and information on dense opens
+
+#metadata(none) <sup-lp-59>
+#proposition(number: "LP-59", title: "Target locality and composition of dominance")[
+  A morphism is dominant if its image is dense. For an open cover
+  $Y=union_i V_i$, $f:X->Y$ is dominant if and only if all maps
+  $f^(-1)(V_i)->V_i$ are dominant. Composites of dominant morphisms are
+  dominant. On integral schemes the generic-point and injective-ring-map
+  criteria are those of #book-link(<sup-xp-generic-points>)[XP-1–XP-7].
+]
+#proof[
+  The precise terminal topological assertions are: a subset is dense if
+  and only if it meets every nonempty open; its intersection with each
+  member of an open cover is dense there if and only if it is dense;
+  and a continuous map sends the closure of a set into the closure of
+  its image. Their proofs are left to the reader. Apply the first two to
+  $f(X) inter V_i=f(f^(-1)(V_i))$. For $X->Y->Z$, apply the third to
+  the dense image in $Y$, then use density of the image of $Y$ in $Z$.
+  These are statements about the underlying continuous maps, so no
+  affine refinement or sheaf gluing is needed.
+]
+
+#metadata(none) <sup-lp-60>
+#proposition(number: "LP-60", title: "Restriction of the source")[
+  If $X$ is integral and $f:X->Y$ is dominant, its restriction to every
+  nonempty open $U subset X$ is dominant. This need not hold for a
+  reducible source.
+]
+#proof[
+  The generic point $eta$ of $X$ belongs to $U$, and
+  $overline({f(eta)})=overline(f(X))=Y$ by continuity and
+  $overline({eta})=X$. Hence $f(U)$ is dense. The generic-point and
+  closure facts are the topological facts of XP-1–XP-7, whose purely
+  topological proofs are left to the reader. For failure, restrict the
+  identity of two disjoint points to just one point; its image is closed
+  and proper.
+]
+
+#metadata(none) <sup-lp-61>
+#proposition(number: "LP-61", title: "Flat base change of a quasi-compact dominant map")[
+  Let $f:X->Y$ be quasi-compact and dominant, and let $g:Y'->Y$ be flat.
+  Then $fiber(X, Y', base: Y)->Y'$ is dominant. Arbitrary base change does
+  not suffice: pulling $D(t)->ops.spec k[t]$ back to $t=0$ gives the
+  empty scheme over a nonempty point.
+]
+#proof[
+  By LP-59 it suffices to work over an affine $V'=ops.spec A'$ of $Y'$
+  mapping into an affine $V=ops.spec A$ of $Y$. Quasi-compactness gives
+  a finite affine cover $U_i=ops.spec B_i$ of $f^(-1)(V)$. Let
+  $B=product_i B_i$ and $I=ops.ker (A->B)$. The affine spectrum criterion
+  says that the density of $union_i f(U_i)$ is equivalent to every
+  element of $I$ being nilpotent. This uses the finite product, whose
+  spectrum is the finite disjoint union of the $U_i$.
+
+  The map $A->A'$ is flat by LP's affine flatness criterion. Flatness
+  identifies the kernel of $A'->tensor(B, A', over: A)$ with $I A'$;
+  a finite sum of multiples of nilpotent elements is nilpotent. Thus
+  this kernel is a nil ideal. The spectrum criterion, exactness of flat
+  tensor product, its commutation with finite products, and the assertion
+  about nil ideals are the terminal algebraic facts; their proofs are
+  left to the reader. By #book-link(<sup-mg-1>)[MG-1], the spectra of
+  $tensor(B_i, A', over: A)$ cover the base-changed inverse image of $V'$.
+  Their union has dense image in $V'$, as required. The affine target
+  cover now gives dominance globally by LP-59.
+  Compare #link("https://stacks.math.columbia.edu/tag/01RI")[Stacks, Dominant morphisms].
+]
+
+#metadata(none) <sup-lp-62>
+#proposition(number: "LP-62", title: "Associated points and restriction injectivity")[
+  Let $X$ be locally Noetherian, $shf.f$ coherent, and $j:U->X$ an open
+  immersion. The map $shf.f->j_*(shf.f|_U)$ is injective if and only if
+  $U$ contains every point of $ops.ass(shf.f)$. In particular,
+  $shf.o_X->j_*shf.o_U$ is injective exactly when
+  $ops.ass(shf.o_X) subset U$; such an open is called
+  *schematically dense*.
+]
+#proof[
+  Sheaf injectivity is checked on an affine open cover by SL. On
+  $V=ops.spec A$, write $shf.f|_V=tildeOf(M)$ with $M$ finite.
+  The open $U inter V$ is quasi-compact since $A$ is Noetherian; choose
+  a finite principal cover $union_(i=1)^r D(a_i)$. Restriction on $V$
+  is injective precisely when
+  $M->product_i M_(a_i)$ is injective; the sheaf condition identifies
+  its kernel with the kernel of restriction to $U inter V$.
+  The associated-prime criterion in #book-link(<sup-al2>)[AL2] says that
+  this happens exactly when every associated prime of $M$ avoids at
+  least one $a_i$. Its purely algebraic proof is left to the reader.
+  Associated primes localize, so these are exactly the associated
+  points of $shf.f$ in $V$. Applying the same statement to every
+  principal subopen checks injectivity of the sheaf map, and the
+  affine cover proves both implications globally.
+]
+
+#metadata(none) <sup-lp-63>
+#corollary(number: "LP-63", title: "Equality on a schematically dense open")[
+  Let $j:U->X$ be an open immersion for which
+  $shf.o_X->j_*shf.o_U$ is injective. If $Y/S$ is separated, two
+  $S$-morphisms $X->Y$ agreeing on $U$ are equal.
+
+  The reduced-source, topologically dense case is MG-6. For the distinction
+  between topological and schematic density, see the counterexample
+  in MG-7 and its associated-prime calculation in AL2-4.
+]
+#proof[
+  As in MG-6, pull back the closed diagonal of $Y/S$ to obtain the
+  equalizer $E->X$ with ideal sheaf $shf.i$. Agreement on $U$ says
+  $shf.i|_U=0$. The inclusion $shf.i->shf.o_X$ therefore has zero composite
+  with $shf.o_X->j_*shf.o_U$. Injectivity forces $shf.i=0$, so $E=X$
+  and the two morphisms are equal. LP-62 supplies the associated-point
+  criterion for the hypothesis when $X$ is locally Noetherian.
+]
+
+#metadata(none) <sup-lp-64>
+#proposition(number: "LP-64", title: "Hartogs extension on a normal scheme")[
+  Let $X$ be integral, normal and Noetherian. If $Z subset X$ is closed
+  and every point of $Z$ has codimension at least two, restriction
+  gives an isomorphism $shf.o_X -> j_*shf.o_(X minus Z)$.
+]
+#proof[
+  Construct the comparison by restriction. On any affine
+  $V=ops.spec A$, $A$ is a Noetherian normal domain with fraction field
+  $K=k(X)$. A section on $V minus Z$ determines an element of $K$
+  because it restricts to the generic stalk; injectivity follows from
+  integrality, or LP-62. Every height-one prime of $A$ lies outside $Z$,
+  so that rational function lies in all $A_idl.p$ of height one.
+  The algebraic theorem
+  $ A=inter.big_(ops.ht idl.p=1) A_idl.p subset K $
+  for Noetherian normal domains (II.6 and AL2) gives membership in $A$;
+  its proof is left to the reader. This proves surjectivity on each
+  affine $V$. The inverse is unique inside $K$, hence agrees on affine
+  refinements of overlaps. SL gives the sheaf isomorphism. In particular,
+  global regular functions extend uniquely.
+]
+
+=== Summary tables
 
 #figure(
   table(
@@ -1078,12 +1365,13 @@ convention, this entry alone would be yes.
     [affine], [no], [no], [yes], [yes], [yes],
     [separated], [yes], [no], [yes], [yes], [yes],
     [universally closed], [no], [no], [yes], [yes], [yes],
+    [projective], [no], [no], [yes], [no], [yes],
   ),
   caption: [Scheme-level locality profiles.],
 )
 
-#metadata(none) <sup-lp-58>
-#remark(number: "LP-58", title: "A Procedure for Checking Locality")[
+#metadata(none) <sup-lp-65>
+#remark(number: "LP-65", title: "A Procedure for Checking Locality")[
   When studying a new property, proceed in the following order.
 
   + Distinguish the all-affine-pairs route from the affine-whole-inverse-image

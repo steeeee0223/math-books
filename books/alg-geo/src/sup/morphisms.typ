@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== MG — Morphisms, diagonals and graphs <sup-mg>
+== MG — Morphisms, diagonals and graphs <sup-mg>
 
 Use the fiber product of #book-link(<text-ii-3>)[II.3, D10 and Theorem 3.3],
 the diagonal and separatedness criteria of
@@ -29,13 +29,15 @@ the diagonal and separatedness criteria of
   + *Apply the tensor-product universal property.* The tensor-product universal property identifies
     these with pairs of maps from $B,C$ agreeing on $A$, hence with pairs
     $T->ops.spec B$, $T->ops.spec C$ agreeing over $ops.spec A$.
+    Check the tensor-product universal property for commutative algebras (Check!).
 
   + *Identify the projections and conclude.* This correspondence is natural in $T$ and sends the two specified
     algebra inclusions to the projections. It proves the fiber-product
     universal property, including uniqueness.
 ]
 
-#example(number: "MG-E1", title: "Points of a fiber product")[
+#metadata(none) <sup-mg-2>
+#example(number: "MG-2", title: "Points of a fiber product")[
   - For example, $tensor(k(s), k(t), over: k)$ is the localization of $k[s,t]$
     by all nonzero polynomials in $s$ and all nonzero polynomials in $t$.
 
@@ -62,8 +64,8 @@ the diagonal and separatedness criteria of
     points of the two field spectra, although they are distinct.
 ]
 
-#metadata(none) <sup-mg-2>
-#proposition(number: "MG-2", title: "Fibers")[
+#metadata(none) <sup-mg-3>
+#proposition(number: "MG-3", title: "Fibers")[
   - For $f:X->Y$ and $y in Y$, use the fiber definition in
     #book-link(<text-ii-3>)[II.3, D11]. On affine charts $A->B$, its ring is
     $tensor(B, kappa(y), over: A)$.
@@ -92,7 +94,8 @@ the diagonal and separatedness criteria of
     the global assertion.
 ]
 
-#example(number: "MG-E2", title: "Fibers of a quadratic map")[
+#metadata(none) <sup-mg-4>
+#example(number: "MG-4", title: "Fibers of a quadratic map")[
   For algebraically closed $k$ of characteristic different from $2$ and
   $s mapsto t^2$,
 
@@ -121,8 +124,8 @@ the diagonal and separatedness criteria of
     $q(t)q(-t)$ lies in $k[t^2]$. The resulting ring is therefore $k(t)$.
 ]
 
-#metadata(none) <sup-mg-3>
-#corollary(number: "MG-3", title: "Graphs")[
+#metadata(none) <sup-mg-5>
+#corollary(number: "MG-5", title: "Graphs")[
   - For an $S$-morphism $h:X->Y$, its graph
     $Gamma_h:X->fiber(X, Y, base: S)$ is the base change of the diagonal of
     $Y/S$ along the map $(h compose p_1,p_2)$.
@@ -145,8 +148,8 @@ the diagonal and separatedness criteria of
     base-change stability of closed immersions proves the conclusion.
 ]
 
-#metadata(none) <sup-mg-4>
-#lemma(number: "MG-4", title: "Uniqueness on a dense open")[
+#metadata(none) <sup-mg-6>
+#lemma(number: "MG-6", title: "Uniqueness on a dense open")[
   If $X$ is reduced and $Y/S$ is separated, two $S$-morphisms $X->Y$
   which agree as morphisms on a dense open of $X$ are equal.
 ]
@@ -170,7 +173,8 @@ the diagonal and separatedness criteria of
   Its defining equality gives $a=b$.
 ]
 
-#example(number: "MG-E3", title: "Hypotheses for uniqueness on a dense open")[
+#metadata(none) <sup-mg-7>
+#example(number: "MG-7", title: "Hypotheses for uniqueness on a dense open")[
   - The doubled origin shows that separatedness of the target matters.
 
   - For failure without reducedness, take
@@ -200,8 +204,8 @@ the diagonal and separatedness criteria of
     it to the origin; they still differ on the coordinate function.
 ]
 
-#metadata(none) <sup-mg-5>
-#corollary(number: "MG-5", title: "Affine intersections")[
+#metadata(none) <sup-mg-8>
+#corollary(number: "MG-8", title: "Affine intersections")[
   - If $X$ is separated over an affine scheme $S$, the intersection of any
     two affine opens of $X$ is affine.
 
@@ -233,8 +237,8 @@ the diagonal and separatedness criteria of
     the overlap is the distinguished affine open $D(t)$.
 ]
 
-#metadata(none) <sup-mg-6>
-#proposition(number: "MG-6", title: "Calculus of morphism properties")[
+#metadata(none) <sup-mg-9>
+#proposition(number: "MG-9", title: "Calculus of morphism properties")[
   Let $P$ contain all closed immersions and be stable under composition
   and base change.
 
@@ -259,7 +263,7 @@ the diagonal and separatedness criteria of
     if $f$ is quasi-compact and $g compose f$ is finite type, then $f$ is
     finite type, without assuming $g$ separated. Use the affine
     finite-generation criterion of #book-link(<sup-lp>)[the locality calculus].
-    The Noetherian conclusion is #book-link(<sup-xp-7>)[XP-7].
+    The Noetherian conclusion is #book-link(<sup-xp-13>)[XP-13].
 ]
 
 #proof[
@@ -296,8 +300,8 @@ the diagonal and separatedness criteria of
     finite type. Its assumed quasi-compactness completes the definition.
 ]
 
-#metadata(none) <sup-mg-7>
-#proposition(number: "MG-7", title: "Field-valued points")[
+#metadata(none) <sup-mg-10>
+#proposition(number: "MG-10", title: "Field-valued points")[
   - For a field $K$, morphisms $ops.spec K->X$ correspond to pairs
     $(x,kappa(x)->K)$, where the field map is an inclusion.
 
@@ -305,7 +309,7 @@ the diagonal and separatedness criteria of
     preserves $k$-rational points.
 
   - The closed-point hypotheses and classical
-    variety interpretation are in #book-link(<sup-xp-1f>)[XP-1f] and
+    variety interpretation are in #book-link(<sup-xp-7>)[XP-7] and
     #book-link(<sup-vs>)[VS].
 ]
 
@@ -330,8 +334,8 @@ the diagonal and separatedness criteria of
     $kappa(f(x))=k$ as a $k$-field.
 ]
 
-#metadata(none) <sup-mg-8>
-#proposition(number: "MG-8", title: "Finite morphisms")[
+#metadata(none) <sup-mg-11>
+#proposition(number: "MG-11", title: "Finite morphisms")[
   - Finite morphisms have finite fibers, are closed, and are proper.
     Their composition, base-change, and affine criteria are in
     #book-link(<sup-lp>)[the locality calculus]; properness uses the definition in
@@ -350,13 +354,14 @@ the diagonal and separatedness criteria of
   #set enum(numbering: "1.")
 
   + *Prove finiteness of fibers.* Over $V=ops.spec A$ write the inverse image as $ops.spec B$ with $B$
-    finite over $A$, using LP. MG-2 makes a fiber the spectrum of a
+    finite over $A$, using LP. MG-3 makes a fiber the spectrum of a
     finite-dimensional algebra over $kappa(y)$. Such an algebra is Artinian
-    and has only finitely many prime ideals.
+    and has only finitely many prime ideals (Check!).
 
   + *Prove closedness.* A finite algebra is integral;
     lying over applied also to $B/J$ shows that the image of $V(J)$ is
-    $V(u^(-1)(J))$. Thus the affine restriction is closed. Target locality
+    $V(u^(-1)(J))$. Integrality of finite algebras and lying over are
+    the algebraic facts left to the reader here (Check!). Thus the affine restriction is closed. Target locality
     of closedness proves that $f$ is closed.
 
   + *Prove properness.* Every base change is again
@@ -370,8 +375,8 @@ the diagonal and separatedness criteria of
     not closed and therefore cannot be finite.
 ]
 
-#metadata(none) <sup-mg-9>
-#proposition(number: "MG-9", title: "Quasi-compact scheme-theoretic images")[
+#metadata(none) <sup-mg-12>
+#proposition(number: "MG-12", title: "Quasi-compact scheme-theoretic images")[
   - For a quasi-compact $f:X->Y$, the ideal
     $shf.i=ops.ker(shf.o_Y->f_*shf.o_X)$ is quasi-coherent.
 
@@ -409,28 +414,28 @@ the diagonal and separatedness criteria of
 
   + *Compute the underlying closed subset.* Finally, the closure of the finite union of the
     images of $W_i$ is the union of their closures, namely
-    $union_i V(ops.ker(A->B_i))=V(I)$ by XP-1e's closure formula.
+    $union_i V(ops.ker(A->B_i))=V(I)$ by XP-6's closure formula.
     This proves the underlying-space assertion on a cover and hence globally.
 ]
 
-#metadata(none) <sup-mg-10>
-#corollary(number: "MG-10", title: "Images of proper subschemes")[
+#metadata(none) <sup-mg-13>
+#corollary(number: "MG-13", title: "Images of proper subschemes")[
   Let $X,Y$ be separated finite-type schemes over a Noetherian scheme $S$,
   let $f:X->Y$ be an $S$-morphism, and let $Z$ be a closed subscheme of
   $X$ proper over $S$. The scheme-theoretic image of $Z->Y$ is proper
   over $S$. This is the image statement associated to II.4.4; its image is
-  the one of MG-9, and the graph is the closed immersion of MG-3.
+  the one of MG-12, and the graph is the closed immersion of MG-5.
 ]
 
 #proof[
   #set enum(numbering: "1.")
 
-  + *Prove the map from the proper subscheme is proper.* Put $q:Z->Y$. Its graph is closed by MG-3, and projection
+  + *Prove the map from the proper subscheme is proper.* Put $q:Z->Y$. Its graph is closed by MG-5, and projection
     $fiber(Z, Y, base: S)->Y$ is proper by base change from $Z->S$.
     Thus $q$ is proper.
 
   + *Construct a proper surjection onto the image.* Let $W$ be its scheme-theoretic image, which exists
-    by MG-9 since a proper map is quasi-compact. Its underlying subset is
+    by MG-12 since a proper map is quasi-compact. Its underlying subset is
     the image of $q$, since that image is closed. The factor $Z->W$ is
     surjective. It is also proper: it identifies with the base change of
     $q$ along the closed immersion $W->Y$, using that this immersion is
@@ -440,7 +445,7 @@ the diagonal and separatedness criteria of
     $Y$. To prove universal closedness, make any base change $S'->S$.
     Surjectivity of $Z->W$ survives this base change: each fiber remains
     nonempty after a field extension, as tensoring a nonzero algebra with
-    a field extension is faithfully flat.
+    a field extension is faithfully flat (Check!).
 
   + *Descend closedness and conclude.* For a closed subset $C$ of
     $W_(S')$, its inverse image in $Z_(S')$ is closed and has closed image

@@ -5,7 +5,7 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== VS — Varieties and schemes <sup-vs>
+== VS — Varieties and schemes <sup-vs>
 
 Fix an algebraically closed field $k$ and use the Chapter I convention
 for varieties. The construction and full faithfulness of $t$ remain in
@@ -19,8 +19,8 @@ from those varieties, and the definition of abstract varieties, remain in
     which are exactly its points with residue field $k$.
 
   - The other scheme points include generic points of positive-dimensional
-    irreducible closed subsets; see #book-link(<sup-xp-1>)[XP-1].
-    The general description of field-valued points is #book-link(<sup-mg-7>)[MG-7].
+    irreducible closed subsets; see #book-link(<sup-xp-generic-points>)[XP-1–XP-7].
+    The general description of field-valued points is #book-link(<sup-mg-10>)[MG-10].
 
   - For example, on $sch.a^1_k$, the classical point $a$ corresponds to
     $(t-a)$ in $ops.spec k[t]$, while $(0)$ is the generic point and is not
@@ -34,6 +34,7 @@ from those varieties, and the definition of abstract varieties, remain in
     $k$-algebra. In its spectrum, the closed points are the maximal ideals.
     The Nullstellensatz identifies these with the classical points, and
     identifies each residue field with $k$ through its structural map.
+    The algebraic Nullstellensatz is left to the reader (Check!).
 
   + *Prove the residue-field converse.* Conversely, if a prime $idl.p$ has residue field $k$ as a $k$-algebra,
     then $A\/idl.p$ embeds into $k$ and contains the image of $k$, so it
@@ -41,9 +42,9 @@ from those varieties, and the definition of abstract varieties, remain in
 
   + *Pass from affine charts to the scheme.* These identifications commute with
     localization. The closed-point comparison for finite type schemes in
-    #book-link(<sup-xp-1f>)[XP-1f] ensures that closedness on these affine charts
+    #book-link(<sup-xp-7>)[XP-7] ensures that closedness on these affine charts
     is closedness in the whole scheme. They therefore glue to the claimed
-    identification. The description of generic points follows from XP-1.
+    identification. The description of generic points follows from XP-1–XP-7.
 
   + *Compute the affine-line example.* For $k[t]$, the maximal ideals are $(t-a)$; the residue field at $(0)$
     is $k(t)$, in which $t$ is transcendental over $k$, so it is not $k$.
@@ -103,14 +104,14 @@ from those varieties, and the definition of abstract varieties, remain in
     II.2.6 has the same pullback on regular functions on the affine charts.
 
   - Conversely, a $k$-scheme morphism between associated schemes preserves
-    their $k$-rational points by #book-link(<sup-mg-7>)[MG-7]. Under VS-1, these
+    their $k$-rational points by #book-link(<sup-mg-10>)[MG-10]. Under VS-1, these
     are the classical points; its structure-sheaf map gives the corresponding
     regular map.
 
   - The natural Hom bijection is the one already proved in
     II.2.6, providing the entry for II.2.15(a)–(c).
 
-  - The vanishing-ideal and quotient application is in #book-link(<sup-cs-4>)[CS-4].
+  - The vanishing-ideal and quotient application is in #book-link(<sup-cs-6>)[CS-6].
 
   - The variety-product comparison of II.3.23 and computations over fields
     which are not algebraically closed are separate topics.

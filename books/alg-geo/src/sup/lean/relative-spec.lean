@@ -12,10 +12,10 @@ The relative gluing interfaces below are actual scheme constructions over a
 base, with cartesian chart squares; they are not an assumption that arbitrary
 ring-sheaf spectra exist. The quasi-coherent localization data must still be
 fed into this gluing object. affineTargetAdjunction, affineModules, and
-baseChangeSpectrum check the local universal properties used by RV-1--5.
+baseChangeSpectrum check the local universal properties used by RV-1–RV-5.
 Their assembly into a single functor on quasi-coherent algebra sheaves, and
 the action-retaining module equivalence over a general base, are not yet
-packaged in this file. RV-6--7 check the symmetric algebra's actual universal
+packaged in this file. RV-6–RV-8 check the symmetric algebra's actual universal
 map, its basis identification, the coordinate formula and double dual.
 The gluing of linear transition data and the two fibers of the final
 A[z]/(tz) example are described in the prose, not as full bundle objects here.
@@ -49,7 +49,7 @@ abbrev symmetricUniqueness := @SymmetricAlgebra.algHom_ext
 def symmetricPolynomial := @SymmetricAlgebra.equivMvPolynomial
 def doubleDual := @Module.evalEquiv
 
-/-- RV-7's affine Hom bijection, in the same direction as the textbook's convention. -/
+/-- RV-8's affine Hom bijection, in the same direction as the textbook's convention. -/
 def sectionsAsDual (R M : Type*) [CommRing R] [AddCommGroup M] [Module R M] :
     (SymmetricAlgebra R M →ₐ[R] R) ≃ Module.Dual R M :=
   (SymmetricAlgebra.lift : (M →ₗ[R] R) ≃ (SymmetricAlgebra R M →ₐ[R] R)).symm
@@ -66,3 +66,7 @@ theorem transpose_cocycle {R : Type*} [CommRing R] {ι : Type*} [Fintype ι]
     (G H : Matrix ι ι R) : (G * H).transpose = H.transpose * G.transpose :=
   Matrix.transpose_mul G H
 end Supplements.RV
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/

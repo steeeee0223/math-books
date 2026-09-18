@@ -5,6 +5,7 @@
 === Exercises
 
 // Hartshorne II.8, Exercise 8.1
+#metadata(none) <exercise-ii-8-1>
 #exercise(title: "Exercise 8.1")[
   Strengthen the differential criteria to arbitrary points.
 
@@ -18,6 +19,8 @@
   + Deduce that the regular locus of a variety over an algebraically closed
     field is open dense.
 ]
+
+#book-link(<sup-df-3>)[DF-3] isolates the residue-field term and the finite separable closed-point case; LP2 gives the relative smoothness criteria. The arbitrary-point rank assertions require their own hypotheses.
 
 // Hartshorne II.8, Exercise 8.2
 #exercise(title: "Exercise 8.2")[
@@ -38,6 +41,7 @@
 ]
 
 // Hartshorne II.8, Exercise 8.4
+#metadata(none) <exercise-ii-8-4>
 #exercise(title: "Exercise 8.4 (Complete Intersections in Projective Space)")[
   Let $Y subset.eq sch.p^n$ have codimension $r$.
 
@@ -53,7 +57,10 @@
     a curve in $sch.p^3$ cut out by surfaces of degrees $d,e$.
 ]
 
+#book-link(<sup-df-13>)[DF-13] gives determinant adjunction, with the smooth hypersurface calculation in DF-14. The projective-normality, Bertini and genus assertions are not included in these supplements.
+
 // Hartshorne II.8, Exercise 8.5
+#metadata(none) <exercise-ii-8-5>
 #exercise(title: "Exercise 8.5 (Blowing Up a Nonsingular Subvariety)")[
   In Theorem 8.24 assume $ops.codim(Y, X)=r>=2$.
 
@@ -62,7 +69,10 @@
   + Prove $omega_(tilde(X)) simeq pi^*omega_X times.o shf.o_((r-1) Y')$.
 ]
 
+#book-link(<sup-bu-8>)[BU-8] computes the exceptional projective bundle and its normal bundle; it does not prove the two global formulas requested here.
+
 // Hartshorne II.8, Exercise 8.6
+#metadata(none) <exercise-ii-8-6>
 #exercise(title: "Exercise 8.6 (Infinitesimal Lifting)")[
   Let $A$ be a finite-type $k$-algebra with $ops.spec A$ nonsingular, let
   $0->shf.i->B'->B->0$ have $shf.i^2=0$, and let $f:A->B$.
@@ -74,6 +84,8 @@
   + Use the conormal exact sequence and its dual to alter the lift so that it
     kills $J$, proving that $f$ lifts to $A->B'$.
 ]
+
+#book-link(<sup-lp2-2>)[LP2-2] and LP2-3 state the precise affine lifting criterion and pass between affine diagrams and schemes; the purely algebraic assertions are assigned to the reader.
 
 // Hartshorne II.8, Exercise 8.7
 #exercise(title: "Exercise 8.7")[

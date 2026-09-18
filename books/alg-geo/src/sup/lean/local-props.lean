@@ -28,8 +28,8 @@ below.
 The shared proof locations are now XL-7 / II.2.17(b) for the global
 principal-open affineness criterion and CS-1 for the affine closed-immersion
 dictionary. The declarations below check those inputs, the trivial-property
-specialization in LP-47, and the surjectivity specialization in LP-33.
-LP-44, LP-48 and LP-52 now refer to the existing XP/MG examples; those
+specialization in LP-46, and the surjectivity specialization in LP-33.
+LP-44, LP-47 and LP-50 now refer to the existing XP/MG examples; those
 explicit counterexample schemes are still not assembled in this file.
 -/
 
@@ -65,7 +65,7 @@ theorem affine_of_global_principal_cover {X : Scheme.{u}}
     (hAffine : ∀ a ∈ s, IsAffineOpen (X.basicOpen a)) : IsAffine X :=
   isAffine_of_isAffineOpen_basicOpen s hs hAffine
 
-/-- LP-47: on an affine target the whole-inverse-image property for the
+/-- LP-46: on an affine target the whole-inverse-image property for the
 always-true ring property is exactly affineness of the source. -/
 theorem affineAnd_true_iff {X Y : Scheme.{u}} (f : X ⟶ Y) [IsAffine Y] :
     affineAnd (fun _ ↦ True) f ↔ IsAffine X := by
@@ -311,3 +311,12 @@ theorem universallyClosed_targetLocal_and_baseChange :
 end SchemeProfiles
 
 end HartshorneII3LocalProperties
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/
+
+/- The target-locality criteria are contained in the proved profiles
+LP-43, LP-46, LP-49, and LP-52. LP-21 now cites the ring-local
+criterion and affine-chart theorem explicitly; LP-5 isolates its localization
+base-change argument. All use the existing locality and tensor interfaces. -/

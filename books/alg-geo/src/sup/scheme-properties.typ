@@ -5,16 +5,16 @@
 #show: show-theorion
 #set enum(numbering: "(a)", indent: 1em)
 
-=== XP — Topology and intrinsic properties of schemes <sup-xp>
+== XP — Topology and intrinsic properties of schemes <sup-xp>
 
 The definitions of connected, irreducible, reduced, integral, and
 (locally) Noetherian schemes, and their initial criteria, remain in
 #book-link(<text-ii-3>)[II.3, Propositions 3.1–3.2 and surrounding definitions].
 
-==== Generic points and specialization <sup-xp-1>
+=== Generic points and specialization <sup-xp-generic-points>
 
-#metadata(none) <sup-xp-1a>
-#proposition(number: "XP-1a", title: "Existence and uniqueness")[
+#metadata(none) <sup-xp-1>
+#proposition(number: "XP-1", title: "Existence and uniqueness")[
   Every nonempty irreducible closed subset of a scheme has a unique generic
   point, without a Noetherian hypothesis. On $ops.spec A$, the generic point
   of $V(idl.p)$ is $idl.p$ for each prime $idl.p$ (II.2.9).
@@ -39,13 +39,14 @@ The definitions of connected, irreducible, reduced, integral, and
     mean equal prime ideals, so the two points coincide.
 ]
 
-#metadata(none) <sup-xp-1b>
-#definition(number: "XP-1b", title: "Specialization and components")[
+#metadata(none) <sup-xp-2>
+#definition(number: "XP-2", title: "Specialization and components")[
   A point $y$ is a specialization of $x$ if $y in overline({x})$; $x$ is
   then a generization of $y$.
 ]
 
-#proposition(number: "XP-1b.1", title: "Specialization in an affine scheme")[
+#metadata(none) <sup-xp-3>
+#proposition(number: "XP-3", title: "Specialization in an affine scheme")[
   - For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
     $idl.p_x subset.eq idl.p_y$.
 
@@ -73,12 +74,12 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Identify closed points.* The closure is a singleton exactly for a maximal prime.
 
-  + *Identify irreducible components.* By XP-1a, every irreducible closed set is $V(idl.p)$, and maximality of
+  + *Identify irreducible components.* By XP-1, every irreducible closed set is $V(idl.p)$, and maximality of
     that closed set is exactly minimality of $idl.p$ among prime ideals.
 ]
 
-#metadata(none) <sup-xp-1c>
-#lemma(number: "XP-1c", title: "Restriction to opens")[
+#metadata(none) <sup-xp-4>
+#lemma(number: "XP-4", title: "Restriction to opens")[
   - Every nonempty open of an irreducible scheme contains its generic point
     and is irreducible with the same generic point.
 
@@ -107,13 +108,13 @@ The definitions of connected, irreducible, reduced, integral, and
     components.
 ]
 
-#metadata(none) <sup-xp-1d>
-#proposition(number: "XP-1d", title: "Function fields")[
+#metadata(none) <sup-xp-5>
+#proposition(number: "XP-5", title: "Function fields")[
   - For an integral scheme $X$ with generic point $eta$, there are canonical
     identifications $K(X)=shf.o_(X,eta)=kappa(eta)$ and
     $ops.frac(A) simeq K(X)$ for every nonempty affine open $ops.spec A$.
 
-  - Restriction to the generic stalk embeds $Gamma(U,shf.o_X)$ into $K(X)$
+  - Restriction to the generic stalk embeds $Gamma(U, shf.o_X)$ into $K(X)$
     for every nonempty open $U$.
 
   - These are the function-field identifications
@@ -130,13 +131,13 @@ The definitions of connected, irreducible, reduced, integral, and
     use the same germ map and consequently agree on smaller affine opens.
     They give the claimed canonical identifications with $K(X)$.
 
-  + *Embed sections into the function field.* For $s in Gamma(U,shf.o_X)$ with zero generic germ, restrict to every
+  + *Embed sections into the function field.* For $s in Gamma(U, shf.o_X)$ with zero generic germ, restrict to every
     affine open $V=ops.spec B subset.eq U$. The map $B->ops.frac(B)$ is
     injective, so $s|_V=0$. These affines cover $U$, and SL-1 gives $s=0$.
 ]
 
-#metadata(none) <sup-xp-1e>
-#proposition(number: "XP-1e", title: "Dominance")[
+#metadata(none) <sup-xp-6>
+#proposition(number: "XP-6", title: "Dominance")[
   - For integral schemes $X,Y$, a morphism $f:X->Y$ is dominant if and only
     if $f(eta_X)=eta_Y$; its local map gives an inclusion $K(Y)->K(X)$.
 
@@ -158,7 +159,7 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Test dominance at generic points.* Continuity gives $f(X) subset.eq overline({f(eta_X)})$; since the
     right side is closed and contains a point of $f(X)$, the two closures
-    coincide. XP-1a now proves the dominance criterion. The local map
+    coincide. XP-1 now proves the dominance criterion. The local map
     at the generic points is a map of fields and is therefore injective.
 
   + *Compute the closure of an affine image.* For a ring map $u:A->B$, the primes containing every contraction from
@@ -171,8 +172,8 @@ The definitions of connected, irreducible, reduced, integral, and
     quotient gives the last example.
 ]
 
-#metadata(none) <sup-xp-1f>
-#remark(number: "XP-1f", title: "Noetherian and closed-point phenomena")[
+#metadata(none) <sup-xp-7>
+#remark(number: "XP-7", title: "Noetherian and closed-point phenomena")[
   - A Noetherian scheme has a Noetherian underlying space and unique generic
     points for nonempty irreducible closed subsets; in the terminology of
     II.3.17 it is a Zariski space.
@@ -184,7 +185,7 @@ The definitions of connected, irreducible, reduced, integral, and
     type over a field, closed points have residue fields finite over that field.
     Over an algebraically closed field, these residue fields equal the base.
 
-  - Neither Noetherianity nor density of closed points is needed for XP-1a.
+  - Neither Noetherianity nor density of closed points is needed for XP-1.
 ]
 
 #proof[
@@ -192,11 +193,12 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Prove Noetherianity of the underlying space.* A finite cover by spectra of Noetherian rings gives a finite cover by
     Noetherian spaces: ascending chains of opens stabilize on each member,
-    hence simultaneously. Generic points are supplied by XP-1a.
+    hence simultaneously. Generic points are supplied by XP-1.
 
   + *Apply the Nullstellensatz.* For the closed-point assertion, use the algebraic form of the
     Nullstellensatz: a finitely generated algebra over a field is Jacobson,
     and its maximal-ideal residue fields are finite over that field.
+    These are algebraic inputs left to the reader (Check!).
 
   + *Find a point with finite residue field.* Given a
     nonempty relatively open part of a closed subset, choose an affine
@@ -215,9 +217,9 @@ The definitions of connected, irreducible, reduced, integral, and
     field extension is the field itself.
 ]
 
-#metadata(none) <sup-xp-2>
-#proposition(number: "XP-2", title: "Clopen sets and idempotents")[
-  - Global idempotents $e in Gamma(X,shf.o_X)$ correspond to clopen subsets
+#metadata(none) <sup-xp-8>
+#proposition(number: "XP-8", title: "Clopen sets and idempotents")[
+  - Global idempotents $e in Gamma(X, shf.o_X)$ correspond to clopen subsets
     by $e mapsto X_e$, with $e$ equal to $1$ on $X_e$ and $0$ on its
     complement.
 
@@ -231,7 +233,7 @@ The definitions of connected, irreducible, reduced, integral, and
   #set enum(numbering: "1.")
 
   + *Construct a clopen set from an idempotent.* In a local ring, $e(1-e)=0$ implies $e=0$ or $e=1$, since one of
-    $e,1-e$ is a unit. For a global idempotent, the loci of these two germ
+    $e,1-e$ is a unit (Check!). For a global idempotent, the loci of these two germ
     equalities are open, disjoint, and exhaustive. They therefore form a
     clopen decomposition, and SL-1 identifies the restrictions with $1,0$.
 
@@ -245,17 +247,97 @@ The definitions of connected, irreducible, reduced, integral, and
     Neither factor vanishes precisely for a nontrivial decomposition.
 ]
 
-#metadata(none) <sup-xp-3>
-#proposition(number: "XP-3", title: "Reduction")[
-  The construction of $X_(red)$ and its universal property for morphisms
-  from reduced schemes are proved in #book-link(<sup-proof-2-3>)[II.2.3 below].
-  The ideal being killed consists of locally nilpotent sections; a common
-  nilpotence exponent on every open is not required. Reduced induced
-  structures on other closed subsets are treated in #book-link(<sup-cs-3>)[CS-3].
+#metadata(none) <sup-proof-2-3>
+#metadata(none) <sup-xp-9>
+#proposition(number: "XP-9", title: "Reduction")[
+  + A scheme $X$ is reduced if and only if every local ring $shf.o_(X,x)$
+    is reduced; equivalently, every ring $shf.o_X (U)$ has no nonzero nilpotents.
+  + Let $cal(N)$ be the sheaf of locally nilpotent sections of $shf.o_X$.
+    Then $X_(red)=(X,shf.o_X\/cal(N))$ is a reduced scheme, and the quotient
+    map defines a closed immersion $i:X_(red)->X$ that is a homeomorphism
+    on underlying spaces. Its structure sheaf is the sheafification of
+    $U mapsto shf.o_X (U)_(red)$.
+  + Every morphism from a reduced scheme $T$ to $X$ factors uniquely
+    through $i:X_(red)->X$.
+
+  A common nilpotence exponent on an arbitrary open is not required.
+  Reduced induced structures on other closed subsets are treated in CS-4.
+  This proves #book-link(<exercise-2-3>)[Exercise II.2.3].
 ]
 
-#metadata(none) <sup-xp-4>
-#lemma(number: "XP-4", title: "Quasi-compactness and Noetherian induction")[
+#proof[
+  + *Compare reduced sections and reduced stalks.*
+
+    - *Pass from stalks to sections.* Suppose first that every $shf.o_(X,x)$ is reduced.  If
+      $s in shf.o_X (U)$ is nilpotent, then every germ $s_x$ is nilpotent and
+      hence zero.  A section whose germs are all zero is zero, so
+      $shf.o_X (U)$ is reduced.
+
+    - *Pass from sections to stalks.* Conversely, assume every $shf.o_X (U)$ is reduced.  Let a germ
+      $a in shf.o_(X,x)$ be nilpotent.  Represent it by
+      $s in shf.o_X (U)$.  The equality $a^n=0$ means that after shrinking to
+      some neighborhood $V$ of $x$, one has $(s|_V)^n=0$.  Reducedness of
+      $shf.o_X (V)$ gives $s|_V=0$, hence $a=0$.  Thus every local ring is
+      reduced.
+
+  + *Construct the reduction.*
+
+    - *Form the nilradical quotient sheaf.* Let $cal(N)$ be the sheafification of the ideal presheaf
+      $U mapsto sqrt((0)) subset.eq shf.o_X(U)$.  Its inclusion into
+      $shf.o_X$ is injective by SC-4.  Thus $cal(N)(U)$ consists
+      of locally nilpotent sections; a uniform nilpotence exponent on an
+      arbitrary open $U$ is not required.  Define
+      $
+        X_(red)=(X,shf.o_X\/cal(N)).
+      $
+      Equivalently, this quotient sheaf is the sheafification of
+      $U mapsto shf.o_X (U)_(red)$.
+
+    - *Identify its affine charts.* On an affine open
+      $V=ops.spec A$, its restriction is the structure sheaf of
+      $ops.spec(A\/sqrt((0)))$.  To see this, on every $D(a) subset.eq V$
+      a locally nilpotent section is nilpotent because $D(a)$ is
+      quasi-compact: choose a finite cover with nilpotence exponents and take
+      their maximum.  The nilradical of $A_a$ is $sqrt((0))A_a$, and
+      $A_a\/sqrt((0))A_a simeq (A\/sqrt((0)))_(bar(a))$. These nilradical
+      and quotient-localization identities are algebraic checks (Check!). Localization
+      commutes with these quotient maps, so these identifications respect all
+      restrictions on the distinguished basis.  They identify the quotient
+      sheaf with the indicated affine structure sheaf.  Hence these affine reductions
+      glue and make $X_(red)$ a scheme.  The quotient maps define a closed immersion
+      $i:X_(red)->X$.
+
+    - *Compare the underlying spaces.* Every prime ideal of $A$ contains $sqrt((0))$, so contraction gives a
+      homeomorphism
+      $ops.spec(A\/sqrt((0))) simeq ops.spec A$.  These local homeomorphisms
+      agree, and therefore $i$ is a homeomorphism on underlying spaces.
+
+    - *Verify reducedness.* Finally, $A\/sqrt((0))$ is reduced on every affine chart, so part (a)
+      shows that $X_(red)$ is reduced.
+
+  + *Prove the reduced-source universal property.*
+
+    - *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
+      pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus
+      $f^sharp$ kills the nilradical ideal sheaf of $Y$ and factors through
+      $shf.o_Y\/cal(N)_Y$.  This gives a morphism
+      $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.
+
+    - *Check locality on stalks.* At $x in X$,
+      the induced map is the factor of the local homomorphism
+      $shf.o_(Y,f(x))->shf.o_(X,x)$ through its nilradical quotient.  It is
+      local because the maximal ideal of that quotient is the image of the
+      original maximal ideal.  Thus this is a morphism of locally ringed
+      spaces.
+
+    - *Prove uniqueness.* The underlying map is forced by the homeomorphism $i$, and
+      the sheaf map is forced by the epimorphism to the quotient, proving
+      uniqueness.
+
+]
+
+#metadata(none) <sup-xp-10>
+#lemma(number: "XP-10", title: "Quasi-compactness and Noetherian induction")[
   - Every affine scheme is quasi-compact.
 
   - A topological space is Noetherian
@@ -276,7 +358,8 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Prove affine quasi-compactness.* Refine an open cover of $ops.spec A$ by distinguished opens $D(a_i)$.
     Their covering condition says that the ideal generated by all $a_i$ is
-    the unit ideal. An expression for $1$ uses finitely many generators,
+    the unit ideal (Check! a proper ideal lies in a maximal ideal).
+    An expression for $1$ uses finitely many generators,
     giving a finite subcover.
 
   + *Characterize Noetherian spaces.* In a Noetherian space, the finite unions from
@@ -295,9 +378,9 @@ The definitions of connected, irreducible, reduced, integral, and
     this counterexample, including the possibility that it is empty.
 ]
 
-#metadata(none) <sup-xp-5>
-#definition(number: "XP-5", title: "Quasi-separatedness")[
-  Let $Delta_X:X->fiber(X,X,base:ops.spec ZZ)$ be the diagonal.
+#metadata(none) <sup-xp-11>
+#definition(number: "XP-11", title: "Quasi-separatedness")[
+  Let $Delta_X:X->fiber(X, X, base: ops.spec ZZ)$ be the diagonal.
   A scheme $X$ is quasi-separated if $Delta_X$ is quasi-compact.
   The following conditions are equivalent:
 
@@ -314,7 +397,7 @@ The definitions of connected, irreducible, reduced, integral, and
 #proof[
   #set enum(numbering: "1.")
 
-  + *Compute the inverse images of the diagonal.* Cover $fiber(X,X,base:ops.spec ZZ)$ by products $U times V$ of affine
+  + *Compute the inverse images of the diagonal.* Cover $fiber(X, X, base: ops.spec ZZ)$ by products $U times V$ of affine
     opens. These products are affine by MG-1, and the inverse image under
     the diagonal is $U inter V$. The target criterion for quasi-compactness
     in LP gives the equivalence.
@@ -329,8 +412,8 @@ The definitions of connected, irreducible, reduced, integral, and
     It is therefore not a closed immersion.
 ]
 
-#metadata(none) <sup-xp-6>
-#proposition(number: "XP-6", title: "Normality")[
+#metadata(none) <sup-xp-12>
+#proposition(number: "XP-12", title: "Normality")[
   - A scheme $X$ is normal if and only if $shf.o_(X,x)$ is an integrally
     closed domain for every $x in X$.
 
@@ -372,8 +455,8 @@ The definitions of connected, irreducible, reduced, integral, and
     reducedness and irreducibility give integrality.
 ]
 
-#metadata(none) <sup-xp-7>
-#corollary(number: "XP-7", title: "Finite type and Noetherianity")[
+#metadata(none) <sup-xp-13>
+#corollary(number: "XP-13", title: "Finite type and Noetherianity")[
   A finite-type scheme over a Noetherian scheme is Noetherian.
   Local finite type supplies Noetherian affine charts by the Hilbert basis
   theorem; quasi-compactness supplies a finite affine cover. The distinction
@@ -391,24 +474,34 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Choose a finite cover.* Quasi-compactness of $f$ makes each inverse image quasi-compact, so
     finitely many such charts suffice for each $i$. They give a finite
-    Noetherian affine cover of the source, as required by XP-4.
+    Noetherian affine cover of the source, as required by XP-10.
 ]
 
-==== Locality of intrinsic properties <sup-xp-locality>
+=== Locality of intrinsic properties <sup-xp-locality>
 
-#table(columns: (1fr,1fr,1fr,1.5fr), inset: 5pt,
+#table(
+  columns: (1fr, 1fr, 1fr, 1.5fr),
+  inset: 5pt,
   [Property], [Open restriction], [Open-cover test], [Stalk / affine test],
   [Reduced], [Yes], [Yes], [Reduced stalks / reduced rings],
-  [Normal], [Yes], [Yes], [Normal local rings / XP-6],
+  [Normal], [Yes], [Yes], [Normal local rings / XP-12],
   [Locally Noetherian], [Yes], [Yes], [Noetherian affine rings; Noetherian stalks alone do not suffice],
   [Quasi-compact], [Not in general], [Finite cover by quasi-compact opens], [No stalk test],
-  [Irreducible], [Nonempty opens], [Irreducible nonempty cover members with pairwise nonempty intersections], [No stalk test],
+  [Irreducible],
+  [Nonempty opens],
+  [Irreducible nonempty cover members with pairwise nonempty intersections],
+  [No stalk test],
+
   [Connected], [Not in general], [Connected nonempty cover members with connected intersection graph], [No stalk test],
-  [Integral], [Nonempty opens], [Reduced plus the irreducibility condition above], [Domains on every nonempty affine open],
+  [Integral],
+  [Nonempty opens],
+  [Reduced plus the irreducibility condition above],
+  [Domains on every nonempty affine open],
 )
 
 #metadata(none) <sup-xp-examples>
-#example(number: "XP-E1", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-14>
+#example(number: "XP-14", title: "Calculations and counterexamples")[
   In $ops.spec(k[x,y]\/(x y))$, the generic primes are $(x)$ and $(y)$,
   with closures the two axes. Only the component $V(y)$ meets $D(x)$;
   only $V(x)$ meets $D(y)$. Deleting the origin gives a disconnected open
@@ -416,58 +509,64 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-A prime containing $x y$ contains $x$ or $y$, giving precisely the two minimal primes. On $D(x)$ the relation forces $y=0$, and on $D(y)$ it forces $x=0$. The two axes are connected and meet at the origin, so their union is connected; deleting that point leaves two disjoint nonempty opens.
+  A prime containing $x y$ contains $x$ or $y$, giving precisely the two minimal primes. On $D(x)$ the relation forces $y=0$, and on $D(y)$ it forces $x=0$. The two axes are connected and meet at the origin, so their union is connected; deleting that point leaves two disjoint nonempty opens.
 ]
 
-#example(number: "XP-E2", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-15>
+#example(number: "XP-15", title: "Calculations and counterexamples")[
   $ops.spec(k[epsilon]\/(epsilon^2))$ has one point, both closed and
   generic, but its local ring is not a field.
 ]
 
 #proof[
-Every prime contains $epsilon$, and the quotient by $(epsilon)$ is $k$. Thus there is just one prime. The element $epsilon$ is nonzero with square zero in the local ring, so this ring is not a field.
+  Every prime contains $epsilon$, and the quotient by $(epsilon)$ is $k$. Thus there is just one prime. The element $epsilon$ is nonzero with square zero in the local ring, so this ring is not a field.
 ]
 
-#example(number: "XP-E3", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-16>
+#example(number: "XP-16", title: "Calculations and counterexamples")[
   The closed points of $sch.a^1_k$ for algebraically closed $k$ are dense
   and omit its generic point. In contrast, a nonfield DVR has one closed
   point and one generic point, and its closed points are not dense.
 ]
 
 #proof[
-A nonzero polynomial in one variable has only finitely many roots, whereas an algebraically closed field is infinite. Thus no proper closed subset contains all $k$-points. In a nonfield DVR the only nonzero prime is its maximal ideal, whose singleton is closed and proper.
+  A nonzero polynomial in one variable has only finitely many roots, whereas an algebraically closed field is infinite. Thus no proper closed subset contains all $k$-points. In a nonfield DVR the only nonzero prime is its maximal ideal, whose singleton is closed and proper.
 ]
 
-#example(number: "XP-E4", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-17>
+#example(number: "XP-17", title: "Calculations and counterexamples")[
   For $k[s]->k[t]$, $s mapsto t^2$, the generic map is $k(s)->k(t)$
-  with the same substitution. See #book-link(<sup-mg-2>)[MG-2] for the fibers.
+  with the same substitution. See #book-link(<sup-mg-3>)[MG-3] for the fibers.
 ]
 
 #proof[
-The substitution is injective on polynomials, since distinct powers of $s$ become distinct even powers of $t$. It extends uniquely to fractions, giving the claimed generic field inclusion by XP-1d.
+  The substitution is injective on polynomials, since distinct powers of $s$ become distinct even powers of $t$. It extends uniquely to fractions, giving the claimed generic field inclusion by XP-5.
 ]
 
 #metadata(none) <sup-xp-disjoint-points>
-#example(number: "XP-E5", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-18>
+#example(number: "XP-18", title: "Calculations and counterexamples")[
   An infinite disjoint union of copies of $ops.spec k$ is locally
   Noetherian but not quasi-compact. Two copies already have an integral
   affine cover without being connected or irreducible.
 ]
 
 #proof[
-The components themselves form an open cover with no finite subcover. Each component is a Noetherian affine open. Two components form a disjoint clopen decomposition, which prevents connectedness and irreducibility.
+  The components themselves form an open cover with no finite subcover. Each component is a Noetherian affine open. Two components form a disjoint clopen decomposition, which prevents connectedness and irreducibility.
 ]
 
-#example(number: "XP-E6", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-19>
+#example(number: "XP-19", title: "Calculations and counterexamples")[
   The square-zero ring $k plus.o V$, with $V$ infinite-dimensional and
   $V^2=0$, is not Noetherian, though its spectrum has one point.
 ]
 
 #proof[
-Every prime contains the square-zero ideal $V$ and the quotient is $k$, giving one prime. A generating set for $V$ as an ideal must span it over $k$, since $V$ acts on itself by zero. Thus $V$ is not finitely generated.
+  Every prime contains the square-zero ideal $V$ and the quotient is $k$, giving one prime. A generating set for $V$ as an ideal must span it over $k$, since $V$ acts on itself by zero. Thus $V$ is not finitely generated.
 ]
 
-#example(number: "XP-E7", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-20>
+#example(number: "XP-20", title: "Calculations and counterexamples")[
   For $A=product_(n>=0) bb(F)_2$, every local ring is a field but $A$ is
   not Noetherian. Noetherian stalks do not imply local Noetherianity.
 ]
@@ -482,92 +581,11 @@ Every prime contains the square-zero ideal $V$ and the quotient is $k$, giving o
   + *Exclude local Noetherianity.* If the scheme were locally Noetherian, its affine quasi-compactness would give a finite Noetherian affine cover and force $A$ Noetherian, a contradiction.
 ]
 
-#example(number: "XP-E8", title: "Calculations and counterexamples")[
+#metadata(none) <sup-xp-21>
+#example(number: "XP-21", title: "Calculations and counterexamples")[
   $ops.spec(k times k)$ is normal and is not integral.
 ]
 
 #proof[
-Its two local rings are $k$, hence are integrally closed domains, whereas the spectrum has two disjoint nonempty components and the ring has nonzero zero divisors.
-]
-
-#block(sticky: true)[#strong[Application: II.2.3]] <sup-proof-2-3>
-
-#exercise(title: "Exercise 2.3 (Reduced Schemes)")[
-  A scheme is reduced if every $shf.o_X (U)$ has no nonzero nilpotents.
-
-  + Show this is equivalent to every local ring $shf.o_(X,P)$ being reduced.
-  + Sheafify $U mapsto shf.o_X (U)_(red)$; show the result defines a scheme
-    $X_(red)$ and a morphism $X_(red)->X$ that is a homeomorphism on spaces.
-  + If $X$ is reduced, show every $X->Y$ factors uniquely through
-    $Y_(red)->Y$.
-]
-
-#proof[
-  + *Compare reduced sections and reduced stalks.*
-
-    - *Pass from stalks to sections.* Suppose first that every $shf.o_(X,x)$ is reduced.  If
-      $s in shf.o_X (U)$ is nilpotent, then every germ $s_x$ is nilpotent and
-      hence zero.  A section whose germs are all zero is zero, so
-      $shf.o_X (U)$ is reduced.
-
-    - *Pass from sections to stalks.* Conversely, assume every $shf.o_X (U)$ is reduced.  Let a germ
-      $a in shf.o_(X,x)$ be nilpotent.  Represent it by
-      $s in shf.o_X (U)$.  The equality $a^n=0$ means that after shrinking to
-      some neighborhood $V$ of $x$, one has $(s|_V)^n=0$.  Reducedness of
-      $shf.o_X (V)$ gives $s|_V=0$, hence $a=0$.  Thus every local ring is
-      reduced.
-
-  + *Construct the reduction.*
-
-    - *Form the nilradical quotient sheaf.* Let $cal(N)$ be the sheafification of the ideal presheaf
-      $U mapsto sqrt((0)) subset.eq shf.o_X(U)$.  Its inclusion into
-      $shf.o_X$ is injective by Exercise 1.4.  Thus $cal(N)(U)$ consists
-      of locally nilpotent sections; a uniform nilpotence exponent on an
-      arbitrary open $U$ is not required.  Define
-      $
-        X_(red)=(X,shf.o_X\/cal(N)).
-      $
-      Equivalently, this quotient sheaf is the sheafification of
-      $U mapsto shf.o_X (U)_(red)$.
-
-    - *Identify its affine charts.* On an affine open
-      $V=ops.spec A$, its restriction is the structure sheaf of
-      $ops.spec(A\/sqrt((0)))$.  To see this, on every $D(a) subset.eq V$
-      a locally nilpotent section is nilpotent because $D(a)$ is
-      quasi-compact: choose a finite cover with nilpotence exponents and take
-      their maximum.  The nilradical of $A_a$ is $sqrt((0))A_a$, and
-      $A_a\/sqrt((0))A_a simeq (A\/sqrt((0)))_(bar(a))$.  Localization
-      commutes with these quotient maps, so these identifications respect all
-      restrictions on the distinguished basis.  They identify the quotient
-      sheaf with the indicated affine structure sheaf.  Hence these affine reductions
-      glue and make $X_(red)$ a scheme.  The quotient maps define a closed immersion
-      $i:X_(red)->X$.
-
-    - *Compare the underlying spaces.* Every prime ideal of $A$ contains $sqrt((0))$, so contraction gives a
-      homeomorphism
-      $ops.spec(A\/sqrt((0))) simeq ops.spec A$.  These local homeomorphisms
-      agree, and therefore $i$ is a homeomorphism on underlying spaces.
-
-    - *Verify reducedness.* Finally, $A\/sqrt((0))$ is reduced on every affine chart, so part (a)
-      shows that $X_(red)$ is reduced.
-
-  + *Prove the reduced-source universal property.*
-
-    - *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
-      pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus
-      $f^sharp$ kills the nilradical ideal sheaf of $Y$ and factors through
-      $shf.o_Y\/cal(N)_Y$.  This gives a morphism
-      $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.
-
-    - *Check locality on stalks.* At $x in X$,
-      the induced map is the factor of the local homomorphism
-      $shf.o_(Y,f(x))->shf.o_(X,x)$ through its nilradical quotient.  It is
-      local because the maximal ideal of that quotient is the image of the
-      original maximal ideal.  Thus this is a morphism of locally ringed
-      spaces.
-
-    - *Prove uniqueness.* The underlying map is forced by the homeomorphism $i$, and
-      the sheaf map is forced by the epimorphism to the quotient, proving
-      uniqueness.
-
+  Its two local rings are $k$, hence are integrally closed domains, whereas the spectrum has two disjoint nonempty components and the ring has nonzero zero divisors.
 ]

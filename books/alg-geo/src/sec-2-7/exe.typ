@@ -41,6 +41,7 @@
 ]
 
 // Hartshorne II.7, Exercise 7.5
+#metadata(none) <exercise-ii-7-5>
 #exercise(title: "Exercise 7.5")[
   Let $X$ be noetherian and $shf.l,shf.m$ invertible. Prove:
 
@@ -53,6 +54,8 @@
   + under the same finiteness hypothesis, if $shf.l$ is ample, then $shf.l^n$ is
     very ample for every sufficiently large $n$.
 ]
+
+#book-link(<sup-pm-4>)[PM-4] uses the very-ample tensor construction for a difference of very ample bundles; it is an application, not a solution of all five assertions.
 
 // Hartshorne II.7, Exercise 7.6
 #exercise(title: "Exercise 7.6 (The Riemann–Roch Problem)")[
@@ -96,6 +99,7 @@
 ]
 
 // Hartshorne II.7, Exercise 7.10
+#metadata(none) <exercise-ii-7-10>
 #exercise(title: "Exercise 7.10 ($PP^n$-Bundles)")[
   + Define a projective $n$-space bundle over a noetherian scheme $X$ using
     local products $U times sch.p^n$ and linear transition automorphisms.
@@ -107,7 +111,10 @@
     locally free sheaves modulo $shf.e equiv shf.e times.o shf.l$ with $shf.l$ invertible.
 ]
 
+#book-link(<sup-pj2-6>)[PJ2-6] explains twisting and the specified quotient convention; PJ2-7 supplies the ruled-surface transitions. The converse classification of all projective-space bundles is not asserted there.
+
 // Hartshorne II.7, Exercise 7.11
+#metadata(none) <exercise-ii-7-11>
 #exercise(title: "Exercise 7.11")[
   Let $X$ be noetherian.
 
@@ -118,6 +125,8 @@
     which $f$ is an isomorphism, choose the center with support $X-U$.
 ]
 
+#book-link(<sup-bu-2>)[BU-2] provides the saturated Rees charts, with Veronese and twisting tools in PJ2. These are inputs to this exercise, not a proof of its final assertion.
+
 // Hartshorne II.7, Exercise 7.12
 #exercise(title: "Exercise 7.12")[
   Let $Y,Z$ be closed subschemes of a noetherian scheme $X$, neither
@@ -126,6 +135,7 @@
 ]
 
 // Hartshorne II.7, Exercise 7.13
+#metadata(none) <exercise-ii-7-13>
 #exercise(title: "Exercise 7.13 (A Complete Nonprojective Variety)")[
   Let $k$ be algebraically closed of characteristic not $2$, and let
   $C subset.eq sch.p_k^2$ be the nodal cubic $y^2 z=x^3+x^2z$. Glue two copies
@@ -142,6 +152,8 @@
     degree zero. Conclude that $X$ is not projective and $pi$ is not
     projective.
 ]
+
+#book-link(<sup-lp-57>)[LP-57] gives the nodal gluing construction, both Picard computations, and the degree obstruction.
 
 // Hartshorne II.7, Exercise 7.14
 #exercise(title: "Exercise 7.14")[

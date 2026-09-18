@@ -74,7 +74,7 @@ theorem radical_le_prime {R : Type*} [CommRing R] (I p : Ideal R)
   obtain ⟨n, hn⟩ := hx
   exact (inferInstance : p.IsPrime).mem_of_pow_mem n (h hn)
 
-/-- PJ-6: finite generation converts separate powers into an irrelevant ideal power.
+/-- PJ-7: finite generation converts separate powers into an irrelevant ideal power.
 The ideal J is (I:s), so this is exactly J_irr^n s ⊆ I. -/
 theorem saturation_power {R : Type*} [CommRing R] (I B : Ideal R)
     (hB : B.FG) (s : R)
@@ -88,7 +88,7 @@ theorem saturation_power {R : Type*} [CommRing R] (I B : Ideal R)
   obtain ⟨n, hn⟩ := Ideal.exists_pow_le_of_le_radical_of_fg hBJ hB
   exact ⟨n, fun x hx => Submodule.mem_colon_singleton.mp (hn hx)⟩
 
-/-- PJ-6: a denominator power killing a quotient class makes it belong to the
+/-- PJ-7: a denominator power killing a quotient class makes it belong to the
 extended ideal. This is the precise chart test for saturation. -/
 theorem saturation_localizes {R A : Type*} [CommRing R] [CommRing A]
     [Algebra R A] (I : Ideal R) (x s : R)
@@ -98,13 +98,13 @@ theorem saturation_localizes {R A : Type*} [CommRing R] [CommRing A]
   rw [map_mul, map_pow] at hh
   exact ((I.map (algebraMap R A)).smul_mem_iff_of_isUnit (hx.pow n)).mp hh
 
-/-- PJ-3/4: numerator degree can be made arbitrarily high. -/
+/-- PJ-4/4: numerator degree can be made arbitrarily high. -/
 theorem raise_degree (e m N : ℕ) (he : 0 < e) : ∃ l, N ≤ (m + l) * e := by
   refine ⟨N, ?_⟩
   have : m + N ≤ (m + N) * e := Nat.le_mul_of_pos_right _ he
   omega
 
-/-- PJ-7: a denominator exponent can be raised to a multiple of d. -/
+/-- PJ-9: a denominator exponent can be raised to a multiple of d. -/
 theorem veronese_exponent (m d : ℕ) (hd : 0 < d) :
     ∃ l n : ℕ, m + l = n * d := by
   refine ⟨m * (d - 1), m, ?_⟩
@@ -112,15 +112,15 @@ theorem veronese_exponent (m d : ℕ) (hd : 0 < d) :
   conv_rhs => rw [hh]
   ring
 
-/-- PJ-8: both exponents may be raised to the same exponent. -/
+/-- PJ-10: both exponents may be raised to the same exponent. -/
 theorem common_exponent (a b : ℕ) : ∃ n, a ≤ n ∧ b ≤ n :=
   ⟨max a b, le_max_left _ _, le_max_right _ _⟩
 
-/-- PJ-8: the Segre determinant vanishes, over any commutative ring. -/
+/-- PJ-10: the Segre determinant vanishes, over any commutative ring. -/
 theorem segre_equation {R : Type*} [CommRing R] (a b c d : R) :
     (a * c) * (b * d) - (a * d) * (b * c) = 0 := by ring
 
-/-- PJ-9's closed case retains the actual scheme morphisms. -/
+/-- PJ-11's closed case retains the actual scheme morphisms. -/
 theorem closed_composition {X Y Z : Scheme} (i : X ⟶ Y) (j : Y ⟶ Z)
     [IsClosedImmersion i] [IsClosedImmersion j] : IsClosedImmersion (i ≫ j) := by
   infer_instance
@@ -152,10 +152,14 @@ theorem homogeneous_chart_empty_iff {R : Type*} [CommRing R]
   · rintro ⟨n, hn⟩
     exact HomogeneousLocalization.subsingleton 𝒜 ⟨n, hn⟩
 
-/-- PJ-5/6's exact monomial bound, with no assertion of a uniform exponent
+/-- PJ-6/6's exact monomial bound, with no assertion of a uniform exponent
 when the set of variables is infinite. -/
 theorem monomial_bound {ι : Type*} (s : Finset ι) (a n : ι → ℕ)
     (h : (∑ i ∈ s, n i) < ∑ i ∈ s, a i) : ∃ i ∈ s, n i < a i := by
   by_contra! H
   exact (not_lt_of_ge (Finset.sum_le_sum H)) h
 end Supplements.PJ
+
+/- Reader-check annotations now identify the terminal algebraic/topological
+inputs in the prose. The mathematical reductions and the verification coverage
+of the declarations in this companion are unchanged. -/
