@@ -10,7 +10,7 @@
   $ops.cl (X times sch.p^n) simeq ops.cl (X) times ZZ$.
 ]
 
-#book-link(<sup-dv-16>)[DV-16] proves the product calculation for two projective lines; the general base remains part of this exercise.
+See #book-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
 
 // Hartshorne II.6, Exercise 6.2
 #exercise(title: "Exercise 6.2 (Varieties in Projective Space)")[
@@ -62,7 +62,7 @@
     on the projective quadric is a hypersurface section.
 ]
 
-#book-link(<sup-dv-15>)[DV-15] computes the affine surface cone, and DV-16 computes the projective quadric surface. The higher-dimensional cases remain separate.
+For the surface cases, see #book-link(<sup-dv-15>)[DV-15] (affine cone) and #book-link(<sup-dv-16>)[DV-16] (projective quadric).
 
 // Hartshorne II.6, Exercise 6.6
 #exercise(title: "Exercise 6.6 (Plane Cubic Group Law)")[

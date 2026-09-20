@@ -60,6 +60,7 @@ to the reader to prove.
     A[I/f] simeq P/(J:f^infinity), quad
     (J:f^infinity)=union.big_(n>=0)(J:f^n).
   $
+  (Ex. II.7.11, Rees-chart tool)
 ]
 #proof[
   In the Rees algebra, a degree-zero fraction with denominator
@@ -228,6 +229,7 @@ to the reader to prove.
   $shf.n_(E/B) simeq shf.o_E(-1)$.
   If $X$ and $Y$ are smooth varieties, the exceptional fiber over a
   point is $sch.p^(r-1)$ over its residue field, and $dim B=dim X$.
+  (Ex. II.8.5, exceptional geometry)
 ]
 #proof[
   By LP2's regular-immersion criterion, at every point of $Y$ its ideal
@@ -412,5 +414,3 @@ The chart computations correspond to Liu 8.1.2–8.1.5; flat base change
 and exceptional geometry correspond to 8.1.12 and 8.1.19–8.1.20.
 The construction and universal property remain those of
 #book-link(<text-ii-7>)[Hartshorne II.7.13–II.7.17].
-
-Related exercises: #book-link(<exercise-ii-7-11>)[II.7.11] uses the Rees and grading tools, and #book-link(<exercise-ii-8-5>)[II.8.5] asks for additional global Picard and canonical formulas beyond BU-8.

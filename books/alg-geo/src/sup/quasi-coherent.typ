@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == QC — Quasi-coherent and coherent operations <sup-qc>
 
@@ -22,18 +21,16 @@ When applying the affine dictionary, specify the canonical map and check
 its restrictions on principal opens before using SL-1. Abstractly isomorphic
 stalks do not show that a specified morphism is an isomorphism.
 
-#metadata(none) <sup-proof-5-3>
 #metadata(none) <sup-qc-1>
 #proposition(number: "QC-1", title: "Associated sheaf and global sections")[
   For $X=ops.spec A$, an $A$-module $M$, and any $shf.o_X$-module $shf.f$,
   there is a natural adjunction
   $ops.hom(tildeOf(M), shf.f, over: shf.o_X) simeq
   ops.hom(M, Gamma(X, shf.f), over: A)$.
-  This proves #book-link(<exercise-5-3>)[Exercise II.5.3].
+  (Ex. II.5.3)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the sheaf morphism.* Given $u:M->Gamma(X, shf.f)$, define a morphism
     $tildeOf(u):tildeOf(M)->shf.f$ as follows.  On a distinguished open
@@ -74,7 +71,6 @@ stalks do not show that a specified morphism is an isomorphism.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Restrict the diagram to an affine open.* Restrict the given diagram to an affine $U=ops.spec A$. Restriction
     commutes with sheaf colimits, since it commutes with their presheaf
@@ -96,18 +92,17 @@ stalks do not show that a specified morphism is an isomorphism.
 
 #metadata(none) <sup-qc-3>
 #proposition(number: "QC-3", title: "Hom and finite presentation")[
-  - For $M$ finitely presented over $A$ and $N$ arbitrary, the canonical map
+  + For $M$ finitely presented over $A$ and $N$ arbitrary, the canonical map
     $tildeOf(ops.hom(M, N, over: A))->shf.hom_(shf.o)(tildeOf(M),tildeOf(N))$
     is an isomorphism on $ops.spec A$. Its principal-open comparisons are
     #book-link(<sup-al-4>)[AL-4].
 
-  - Consequently, on a scheme, if $shf.f$ is a
+  + Consequently, on a scheme, if $shf.f$ is a
     finitely presented module sheaf and $shf.g$ is quasi-coherent, then
     $shf.hom (shf.f,shf.g)$ is quasi-coherent.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute on principal opens.* Evaluation defines the comparison by QC-1. On a distinguished open
     $D(a)$ its source has sections $ops.hom(M, N, over: A)_a$, while its
@@ -136,7 +131,6 @@ stalks do not show that a specified morphism is an isomorphism.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the comparison.* Pull evaluation back and use the tensor--Hom adjunction to form the
     canonical map.
@@ -156,19 +150,17 @@ stalks do not show that a specified morphism is an isomorphism.
 
 #metadata(none) <sup-qc-5>
 #proposition(number: "QC-5", title: "Pushforward under a qcqs morphism")[
-  - For a quasi-compact, quasi-separated morphism of schemes $f:X->Y$,
+  + For a quasi-compact, quasi-separated morphism of schemes $f:X->Y$,
     the direct image of a quasi-coherent module is quasi-coherent. This is the
     qcqs version of #book-link(<text-ii-5>)[II.5, Proposition 5.8(c)]; see also
     #link("https://stacks.math.columbia.edu/tag/01LA")[Stacks, Section 26.24].
 
-  - For an affine morphism, use the affine pushforward formula of Proposition
+  + For an affine morphism, use the affine pushforward formula of Proposition
     5.2. A closed immersion is finite by #book-link(<sup-cs-1>)[CS-1] and the
-    finite ring-map criterion. This also proves
-    #book-link(<exercise-5-5>)[Exercise II.5.5(b)].
+    finite ring-map criterion. (Ex. II.5.5(b))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Choose finite affine covers and the section kernel.* Fix $V=ops.spec A$ in $Y$ and a finite affine cover $U_i$ of
     $f^(-1)(V)$, supplied by quasi-compactness. Quasi-separatedness gives
@@ -200,27 +192,24 @@ stalks do not show that a specified morphism is an isomorphism.
     Target locality of finite morphisms, LP-25, therefore proves finiteness.
 ]
 
-#metadata(none) <sup-proof-5-5>
 #metadata(none) <sup-qc-6>
 #corollary(number: "QC-6", title: "Coherence and finiteness")[
   Here coherence is used on Noetherian schemes, as in Hartshorne.
 
-  - Finite direct sums, kernels, cokernels, images, extensions, tensor products,
+  + Finite direct sums, kernels, cokernels, images, extensions, tensor products,
     and sheaf Hom of coherent modules remain coherent by the main-text results
     above and QC-3. Infinite sums need not remain coherent.
 
-  - If $f:X->Y$ is finite between Noetherian schemes, $f_*$ preserves
+  + If $f:X->Y$ is finite between Noetherian schemes, $f_*$ preserves
     coherence: the affine dictionary uses restriction of scalars from a finite
     $A$-algebra $B$, under which a finite $B$-module is finite over $A$.
-    This proves #book-link(<exercise-5-5>)[Exercise II.5.5(c)].
-    QC-13 gives the failure requested in II.5.5(a); QC-5 proves part (b).
+    (Ex. II.5.5(c))
 
   The projection formula has its more general ringed-space form in
   #book-link(<sup-sc-11>)[SC-11].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Check finiteness of the module operations.* On a Noetherian affine chart, coherent sheaves correspond to finite
     modules. Submodules and quotients of finite modules are finite; a
@@ -238,14 +227,14 @@ stalks do not show that a specified morphism is an isomorphism.
 
   + *Finite pushforward preserves coherence.*
 
-    - *Choose affine charts and a finite module.* Let $V=ops.spec A subset.eq Y$ be affine.  Because $f$ is finite,
+    + *Choose affine charts and a finite module.* Let $V=ops.spec A subset.eq Y$ be affine.  Because $f$ is finite,
       $f^(-1)(V)=ops.spec B$ is affine and $B$ is a finite $A$-module.  Write
       $
         shf.f|_(f^(-1)(V)) simeq tildeOf(M),
       $
       where $M$ is a finite $B$-module.
 
-    - *Identify the direct-image sheaf.* Proposition 5.2(d) identifies
+    + *Identify the direct-image sheaf.* Proposition 5.2(d) identifies
       $
         (f_*shf.f)|_V simeq tildeOf(attach(M, bl: A)).
       $
@@ -255,32 +244,30 @@ stalks do not show that a specified morphism is an isomorphism.
       through $A->B$.  These localization identifications commute with
       restriction and hence identify the sheaves on the entire basis.
 
-    - *Check finiteness over the base ring.* If $b_1,dots.c,b_r$ generate $B$ over $A$ and
+    + *Check finiteness over the base ring.* If $b_1,dots.c,b_r$ generate $B$ over $A$ and
       $m_1,dots.c,m_s$ generate $M$ over $B$, then the finitely many elements
       $b_i m_j$ generate $M$ over $A$ (Check!).  Thus $M$ is finite as an $A$-module,
       so $(f_*shf.f)|_V$ is coherent.  The affine opens $V$ cover $Y$;
       therefore $f_*shf.f$ is coherent.
 ]
 
-#metadata(none) <sup-proof-5-4>
 #metadata(none) <sup-qc-7>
 #proposition(number: "QC-7", title: "Local presentations")[
   Let $shf.f$ be an $shf.o_X$-module on a scheme $X$.
 
-  - The sheaf $shf.f$ is quasi-coherent if and only if every $x in X$
+  + The sheaf $shf.f$ is quasi-coherent if and only if every $x in X$
     has an open neighborhood $U$ on which there is an exact sequence
     $
       shf.l_1 -> shf.l_0 -> shf.f|_U -> 0,
     $
     with $shf.l_0,shf.l_1$ free $shf.o_U$-modules, possibly of infinite rank.
 
-  - If $X$ is Noetherian, then $shf.f$ is coherent if and only if such
+  + If $X$ is Noetherian, then $shf.f$ is coherent if and only if such
     presentations exist around every point with both free modules of
-    finite rank. This proves #book-link(<exercise-5-4>)[Exercise II.5.4].
+    finite rank. (Ex. II.5.4)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Reduce to affine presentation neighborhoods.* Restriction to an open set preserves sheaf cokernels, since these are
     sheafified presheaf cokernels, and preserves direct sums by the same
@@ -340,20 +327,18 @@ stalks do not show that a specified morphism is an isomorphism.
   of a classical variety with its scheme is in #book-link(<sup-vs>)[VS].
 ]
 
-#metadata(none) <sup-proof-5-2>
 #metadata(none) <sup-qc-9>
 #proposition(number: "QC-9", title: "The two-point DVR model")[
-  - Let $R$ be a DVR with fraction field $K$. A module sheaf on
+  + Let $R$ be a DVR with fraction field $K$. A module sheaf on
     $ops.spec R$ is specified by an $R$-module $M$, a $K$-vector space $L$,
     and a $K$-linear map $tensor(M, K, over: R)->L$, which determines the only
     nontrivial restriction.
 
-  - It is quasi-coherent exactly when this map is an
-    isomorphism. This proves #book-link(<exercise-5-2>)[Exercise II.5.2].
+  + It is quasi-coherent exactly when this map is an
+    isomorphism. (Ex. II.5.2)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Describe the space and its rings.* Let $eta=(0)$ be the generic point and let $x=(pi)$ be the closed point,
     where $pi$ is a uniformizer.  The only open subsets of $X$ are
@@ -431,8 +416,7 @@ stalks do not show that a specified morphism is an isomorphism.
 #metadata(none) <sup-qc-13>
 #example(number: "QC-13")[
   The structure-sheaf pushforward along $sch.a^1_k->ops.spec k$
-  corresponds to $k[t]$ and is not coherent. This solves
-  #book-link(<exercise-5-5>)[Exercise II.5.5(a)].
+  corresponds to $k[t]$ and is not coherent. (Ex. II.5.5(a))
 ]
 
 #proof[

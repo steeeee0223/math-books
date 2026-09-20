@@ -132,6 +132,7 @@ extension and generation results of II.5–II.7.
   If $X$ is quasi-projective over a Noetherian affine scheme, every
   invertible $shf.l$ has the form $shf.l_1 times.o shf.l_2^(-1)$ with
   $shf.l_1,shf.l_2$ very ample over that affine scheme.
+  (Ex. II.7.5(d), application)
 ]
 #proof[
   Choose a very ample $shf.h$. It is ample by II.7.6. For sufficiently
@@ -308,5 +309,3 @@ PM-4 is the second-chapter form of Liu, Proposition 7.1.31; PM-2–PM-3
 refine the use of II.7.10. For convention comparisons see
 #link("https://stacks.math.columbia.edu/tag/0B44")[Stacks, projective schemes],
 where H-projective corresponds to the convention used here.
-
-Related exercise: #book-link(<exercise-ii-7-5>)[II.7.5]. PM-4 applies the very-ample tensor construction; it does not replace all five ampleness assertions.

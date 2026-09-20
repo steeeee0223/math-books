@@ -19,7 +19,7 @@
     simeq tensor(f_*shf.f, shf.e, over: shf.o_Y)$.
 ] <exercise-5-1>
 
-See #book-link(<sup-proof-5-1>)[SC: proof of II.5.1].
+For (a), (b), and (d), see #book-link(<sup-sc-11>)[SC-11]. For (c), see #book-link(<sup-sc-7>)[SC-7].
 
 // Hartshorne II.5, Exercise 5.2
 #exercise(title: "Exercise 5.2")[
@@ -30,7 +30,7 @@ See #book-link(<sup-proof-5-1>)[SC: proof of II.5.1].
   + show it is quasi-coherent exactly when that map is an isomorphism.
 ] <exercise-5-2>
 
-See #book-link(<sup-proof-5-2>)[QC: proof of II.5.2].
+See #book-link(<sup-qc-9>)[QC-9].
 
 // Hartshorne II.5, Exercise 5.3
 #exercise(title: "Exercise 5.3")[
@@ -41,7 +41,7 @@ See #book-link(<sup-proof-5-2>)[QC: proof of II.5.2].
   $
 ] <exercise-5-3>
 
-See #book-link(<sup-proof-5-3>)[QC: proof of II.5.3].
+See #book-link(<sup-qc-1>)[QC-1].
 
 // Hartshorne II.5, Exercise 5.4
 #exercise(title: "Exercise 5.4")[
@@ -51,7 +51,7 @@ See #book-link(<sup-proof-5-3>)[QC: proof of II.5.3].
   of finite rank.
 ] <exercise-5-4>
 
-See #book-link(<sup-proof-5-4>)[QC: proof of II.5.4].
+See #book-link(<sup-qc-7>)[QC-7].
 
 // Hartshorne II.5, Exercise 5.5
 #exercise(title: "Exercise 5.5")[
@@ -64,7 +64,7 @@ See #book-link(<sup-proof-5-4>)[QC: proof of II.5.4].
     coherent sheaves.
 ] <exercise-5-5>
 
-See #book-link(<sup-proof-5-5>)[QC: proof of II.5.5].
+For (a), see #book-link(<sup-qc-13>)[QC-13]. For (b), see #book-link(<sup-qc-5>)[QC-5]. For (c), see #book-link(<sup-qc-6>)[QC-6].
 
 // Hartshorne II.5, Exercise 5.6
 #exercise(title: "Exercise 5.6 (Support)")[
@@ -90,7 +90,7 @@ See #book-link(<sup-proof-5-5>)[QC: proof of II.5.5].
     $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
 ] <exercise-5-7>
 
-See #book-link(<sup-proof-5-7>)[SE: proof of II.5.7].
+For (a)~(b), see #book-link(<sup-se-10>)[SE-10]. For (c), see #book-link(<sup-se-12>)[SE-12].
 
 // Hartshorne II.5, Exercise 5.8
 #exercise(title: "Exercise 5.8")[

@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == SC — Sheaf constructions and exactness <sup-sc>
 
@@ -13,29 +12,24 @@ constructions refer to abelian groups, rings, or modules
 over a fixed sheaf of rings. Kernel, image, quotient, and
 sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
-#metadata(none) <sup-proof-1-10>
-#metadata(none) <sup-proof-1-12>
 #metadata(none) <sup-sc-1>
 #proposition(number: "SC-1", title: "Small limits and colimits")[
-  - For a small diagram $shf.f_i$, its limit has sections
-    $U mapsto lim_i shf.f_i (U)$, with restriction induced by the restrictions
+  + For a small diagram $shf.f_i$, its limit has sections
+    $U mapsto lim_i shf.f_i\(U)$, with restriction induced by the restrictions
     of all $shf.f_i$. Its projections are the sectionwise projections.
 
-  - Its colimit is the sheafification of $U mapsto ops.colim_i shf.f_i(U)$;
+  + Its colimit is the sheafification of $U mapsto ops.colim_i shf.f_i\(U)$;
     the canonical maps are the presheaf structure maps followed by
     sheafification. These objects satisfy the cone and cocone properties in
     #book-link(<sup-cat-6>)[CAT-6].
 
-  - For rings, take limits and colimits in rings;
+  + For rings, take limits and colimits in rings;
     for modules, take them in $shf.o\(U)$-modules. Restriction in the latter case
     is semilinear for $shf.o\(U)->shf.o\(V)$.
-
-  This proves #book-link(<exercise-1-10>)[Exercise II.1.10] and
-  #book-link(<exercise-1-12>)[Exercise II.1.12].
+  (Ex. II.1.10, II.1.12)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct limits sectionwise.* For limits, a compatible family of sections on a cover glues separately in
     each $shf.f_i$. Every diagram relation holds after restriction to that cover,
@@ -57,10 +51,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #metadata(none) <sup-sc-2>
 #proposition(number: "SC-2", title: "Stalk comparisons")[
-  - In these concrete categories, the canonical maps
+  + In these concrete categories, the canonical maps
     $ops.colim_i (shf.f_i)_x -> (ops.colim_i shf.f_i)_x$ are isomorphisms.
 
-  - For finite diagrams, the map
+  + For finite diagrams, the map
     $(lim_i shf.f_i)_x -> lim_i (shf.f_i)_x$ is also an isomorphism.
     The latter assertion does not hold for arbitrary limits. Finite-limit
     compatibility uses the filtered system of neighborhoods and the finite
@@ -71,7 +65,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compare colimits with stalks.* Sheafification leaves stalks unchanged by SL-5. For abelian groups, rings,
     and sets, a stalk of the colimit presheaf is an iterated colimit: first over
@@ -94,22 +87,20 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The counterexamples below exhibit the failure for infinite limits.
 ]
 
-#metadata(none) <sup-proof-1-9>
 #metadata(none) <sup-sc-3>
 #proposition(number: "SC-3", title: "Direct sums of abelian-group sheaves")[
-  - A finite direct sum is a biproduct, with its usual injections and projections;
-    this proves #book-link(<exercise-1-9>)[Exercise II.1.9].
+  + A finite direct sum is a biproduct, with its usual injections and projections.
+    (Ex. II.1.9)
 
-  - An arbitrary direct sum is the
+  + An arbitrary direct sum is the
     sheafification of the presheaf direct sum. A section is a family of sections
     which, locally on the space, has only finitely many nonzero components.
 
-  - For $shf.o$-modules, use the same construction with componentwise scalar
+  + For $shf.o$-modules, use the same construction with componentwise scalar
     multiplication.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the sheaf.* Put $shf.h (U)=shf.f (U) times shf.g (U)$, with restrictions taken componentwise.
     Suppose $(s_i,t_i) in shf.h (U_i)$ are compatible on a cover of $U$.  The
@@ -117,7 +108,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     to $t in shf.g (U)$.  Then $(s,t)$ is the unique section of $shf.h (U)$ which
     restricts to every $(s_i,t_i)$.  Hence $shf.h$ is a sheaf.
 
-  + *Verify the product property.* Let $i_f(s)=(s,0)$ and $i_g(t)=(0,t)$ be the inclusions, and let $p_f,p_g$
+  + *Verify the product property.* Let $i_f\(s)=(s,0)$ and $i_g\(t)=(0,t)$ be the inclusions, and let $p_f,p_g$
     be the two projections.  For every sheaf $shf.k$, composition with the
     projections gives a natural bijection
     $
@@ -149,41 +140,30 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     modules, all these constructions respect the scalar action componentwise.
 ]
 
-#metadata(none) <sup-proof-1-2>
-#metadata(none) <sup-proof-1-3>
-#metadata(none) <sup-proof-1-4>
-#metadata(none) <sup-proof-1-5>
-#metadata(none) <sup-proof-1-6>
-#metadata(none) <sup-proof-1-7>
 #metadata(none) <sup-sc-4>
 #proposition(number: "SC-4", title: "Exactness calculus")[
-  - For abelian groups and modules, kernels and images commute with stalks.
+  + For abelian groups and modules, kernels and images commute with stalks.
     Injectivity, surjectivity, and exactness are detected on stalks.
     In particular, a morphism is an isomorphism if and only if it is both
     injective and surjective.
 
-  - Sheafification preserves sectionwise injections of presheaves. Hence
+  + Sheafification preserves sectionwise injections of presheaves. Hence
     the sheafified presheaf image is a subsheaf of the target.
 
-  - For sheaves of abelian groups or modules, a morphism $u:shf.f->shf.g$
+  + For sheaves of abelian groups or modules, a morphism $u:shf.f->shf.g$
     is surjective if and only if, for every open $U$ and $s in shf.g (U)$,
     there are an open cover $U=union_i U_i$ and sections $t_i in shf.f (U_i)$
     such that $u(t_i)=s|_(U_i)$ for every $i$. A lift over $U$ itself
     need not exist.
 
-  - There is a canonical isomorphism
+  + There is a canonical isomorphism
     $shf.f\/ops.ker(u) -> ops.im(u)$, and
     $ops.coker(u) simeq shf.g\/ops.im(u)$.
 
-  - Thus $0->shf.f'->shf.f->shf.f''->0$ is exact exactly when the first map
-    identifies a subsheaf and the second identifies its quotient with $shf.f''$.
-    These assertions prove #book-link(<exercise-1-2>)[Exercise II.1.2],
-    #book-link(<exercise-1-3>)[II.1.3(a)],
-    #book-link(<exercise-1-4>)[II.1.4], #book-link(<exercise-1-5>)[II.1.5],
-    #book-link(<exercise-1-6>)[II.1.6], and #book-link(<exercise-1-7>)[II.1.7].
-    The counterexample in SC-14 solves II.1.3(b).
+  + Thus $0->shf.f'->shf.f->shf.f''->0$ is exact exactly when the first map
+    identifies a subsheaf and the second identifies its quotient with $shf.f''$. (Ex. II.1.2\~7)
 
-  - For a ring morphism, the image is a subring sheaf, and the kernel is an
+  + For a ring morphism, the image is a subring sheaf, and the kernel is an
     ideal sheaf, not a subring. Quotients by ideal sheaves are obtained
     by sheafifying sectionwise ring quotients. Here a surjective ring-sheaf
     map means surjective on underlying stalks, not an arbitrary categorical
@@ -191,7 +171,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute kernels and images.* A germ in $ops.ker(u_x)$ has a
     representative whose image vanishes after shrinking, by SL-1. Thus
@@ -243,26 +222,24 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     comparison. No assertion about arbitrary ring epimorphisms is used.
 ]
 
-#metadata(none) <sup-proof-1-15>
 #metadata(none) <sup-sc-5>
 #proposition(number: "SC-5", title: "Sheaf Hom")[
-  - The assignment $U mapsto ops.hom(shf.f|_U, shf.g|_U)$, with restriction of
+  + The assignment $U mapsto ops.hom(shf.f|_U, shf.g|_U)$, with restriction of
     morphisms, is a sheaf.
 
-  - It is abelian-group-valued for abelian groups,
+  + It is abelian-group-valued for abelian groups,
     set-valued for ring homomorphisms, and $shf.o$-module-valued for
     $shf.o$-linear maps.
 
-  - Its global sections are precisely the morphisms
+  + Its global sections are precisely the morphisms
     $shf.f->shf.g$ and its restriction to an open is the Hom sheaf of the
-    restrictions. This proves #book-link(<exercise-1-15>)[Exercise II.1.15].
+    restrictions. (Ex. II.1.15)
 
-  - The natural map from its stalk to the Hom of stalks need not be an
+  + The natural map from its stalk to the Hom of stalks need not be an
     isomorphism; the finite-presentation comparison is in #book-link(<sup-qc-3>)[QC-3].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Glue morphisms and operations.* Apply SL-3 on every open $U$ to compatible local morphisms: it gives the
     existence and uniqueness clause of the sheaf axiom for Hom. Restriction
@@ -287,26 +264,23 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     Thus this stalk map has no local representative.
 ]
 
-#metadata(none) <sup-proof-1-8>
-#metadata(none) <sup-proof-1-18>
 #metadata(none) <sup-sc-6>
 #proposition(number: "SC-6", title: "Direct and inverse image")[
   For a continuous map $f:X->Y$, use the definitions in
   #book-link(<text-ii-1>)[II.1, D7].
 
-  - The adjunction
+  + The adjunction
     $ops.hom(f^(-1)shf.g, shf.f) simeq ops.hom(shf.g, f_*shf.f)$ has unit
-    $shf.g->f_*f^(-1)shf.g$ and counit $f^(-1)f_*shf.f->shf.f$;
-    this proves #book-link(<exercise-1-18>)[Exercise II.1.18].
+    $shf.g->f_*f^(-1)shf.g$ and counit $f^(-1)f_*shf.f->shf.f$.
+    (Ex. II.1.18)
 
-  - For $g:Y->Z$, the canonical identifications are
+  + For $g:Y->Z$, the canonical identifications are
     $(g compose f)_* simeq g_*f_*$ and
     $(g compose f)^(-1) simeq f^(-1)g^(-1)$, compatible with these adjunctions.
 
-  - For abelian groups, inverse image is exact and direct image is left exact.
+  + For abelian groups, inverse image is exact and direct image is left exact.
 
-  - Sections over an open are left exact, solving
-    #book-link(<exercise-1-8>)[Exercise II.1.8]. They need not be right
+  + Sections over an open are left exact. (Ex. II.1.8) They need not be right
     exact, as SC-14 shows.
 ]
 
@@ -315,7 +289,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
   $P_f shf.g (U)=ops.colim_(f(U) subset.eq V) shf.g (V)$.
   By definition, $f^(-1)shf.g$ is the sheafification of $P_f shf.g$.
 
-  #set enum(numbering: "1.")
 
   + *Construct the counit.* First let $shf.f$ be a sheaf on $X$. For every $V$ occurring in
     $P_f (f_*shf.f)(U)$, the inclusion $U subset.eq f^(-1)(V)$ gives a restriction
@@ -403,19 +376,17 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #metadata(none) <sup-sc-7>
 #proposition(number: "SC-7", title: "Tensor sheaves and the tensor–Hom adjunction")[
-  - The tensor sheaf is the sheafification of
+  + The tensor sheaf is the sheafification of
     $U mapsto tensor(shf.f (U), shf.g (U), over: shf.o (U))$; its canonical balanced
     map represents compatible bilinear maps into sheaves.
 
-  - For modules,
+  + For modules,
     $ops.hom(tensor(shf.e, shf.f), shf.g) simeq
     ops.hom(shf.f, shf.hom (shf.e,shf.g))$ naturally.
-
-  This proves #book-link(<exercise-5-1>)[Exercise II.5.1(c)].
+  (Ex. II.5.1(c))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Apply the tensor universal property.* The sectionwise tensor universal property sends a balanced bilinear family
     to a presheaf map from the tensor presheaf. Sheafification extends it
@@ -431,16 +402,16 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #metadata(none) <sup-sc-8>
 #proposition(number: "SC-8", title: "Module pullback and scalar extension")[
-  - For a morphism of ringed spaces, the module pullback of
+  + For a morphism of ringed spaces, the module pullback of
     #book-link(<text-ii-5>)[II.5, D1] uses extension of scalars:
     $f^*shf.g=tensor(shf.o_X, f^(-1)shf.g, over: f^(-1)shf.o_Y)$.
 
-  - It is left adjoint to module direct image, and is right exact.
+  + It is left adjoint to module direct image, and is right exact.
 
-  - If $shf.o_(X,x)$ is flat over $shf.o_(Y,f(x))$ for every $x in X$,
+  + If $shf.o_(X,x)$ is flat over $shf.o_(Y,f(x))$ for every $x in X$,
     then the pullback functor $f^*$ is exact.
 
-  - The canonical maps comparing pullback of tensor, symmetric, and exterior
+  + The canonical maps comparing pullback of tensor, symmetric, and exterior
     operations with the corresponding operations on pullbacks are isomorphisms.
     The operations are those of #book-link(<sup-al-6>)[AL-6], applied sectionwise
     and then sheafified.
@@ -449,13 +420,12 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the module adjunction.* A linear map $tensor(shf.o_X, f^(-1)shf.g, over: f^(-1)shf.o_Y)->shf.f$
     is equivalent, by extension of scalars, to an $f^(-1)shf.o_Y$-linear map
     $f^(-1)shf.g->shf.f$. The inverse-image adjunction identifies these with
     $shf.o_Y$-linear maps $shf.g->f_*shf.f$. These identifications send a
-    pure tensor $a tensor s$ to $a$ times the image of $s$, so are the desired
+    pure tensor $tensor(a, s)$ to $a$ times the image of $s$, so are the desired
     module pullback adjunction. A left adjoint preserves cokernels and direct
     sums, hence is right exact.
 
@@ -475,20 +445,18 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     the sheaf comparisons are isomorphisms.
 ]
 
-#metadata(none) <sup-proof-1-11>
 #metadata(none) <sup-sc-9>
 #proposition(number: "SC-9", title: "Sections and filtered colimits")[
   On a Noetherian topological space, for a directed system of abelian-group
   sheaves and every open $U$, the canonical map
   $ops.colim_i shf.f_i(U) -> (ops.colim_i shf.f_i)(U)$ is an isomorphism.
-  This proves #book-link(<exercise-1-11>)[Exercise II.1.11]. Every open, including intersections of
+  (Ex. II.1.11) Every open, including intersections of
   members of a finite cover, is quasi-compact; these finiteness conditions
   permit choosing common indices for representatives and their relations.
   No assertion of this kind is made for an arbitrary space.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Reduce the sheaf axiom to a finite cover.* Write $cal(P)(U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
     every open subset of $X$ is quasi-compact (Check!).  We check the sheaf axiom for an
@@ -522,25 +490,22 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     $
 ]
 
-#metadata(none) <sup-proof-1-1>
 #metadata(none) <sup-sc-10>
 #proposition(number: "SC-10", title: "Constant and skyscraper sheaves")[
-  - For an abelian group $A$, the sheafification of the constant presheaf is
-    the sheaf of locally constant $A$-valued functions; see
-    #book-link(<exercise-1-1>)[Exercise II.1.1], which this proves.
+  + For an abelian group $A$, the sheafification of the constant presheaf is
+    the sheaf of locally constant $A$-valued functions. (Ex. II.1.1)
 
-  - For $i_P:{P}->X$, the skyscraper
+  + For $i_P:{P}->X$, the skyscraper
     $i_(P*)A$ has sections $A$ on opens containing $P$ and zero otherwise.
 
-  - Its stalk at $x$ is $A$ if $x in overline({P})$, and zero otherwise.
+  + Its stalk at $x$ is $A$ if $x in overline({P})$, and zero otherwise.
 
-  - It is also the direct image of the constant sheaf on $overline({P})$.
+  + It is also the direct image of the constant sheaf on $overline({P})$.
 
   For a nonclosed $P$, its support is not just ${P}$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the canonical morphism.* Let $shf.a^-$ denote the given presheaf and let $shf.a$ be the sheaf
     of locally constant $A$-valued functions.  There is a presheaf morphism
@@ -582,28 +547,29 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The identifications commute with restriction and give the claimed isomorphism.
 ]
 
-#metadata(none) <sup-proof-5-1>
 #metadata(none) <sup-sc-11>
 #proposition(number: "SC-11", title: "Finite locally free duality and projection formula")[
   Let $shf.e$ be a finite locally free module on a ringed space $X$,
   and put $shf.e^or=shf.hom_(shf.o_X)(shf.e,shf.o_X)$.
 
-  - Evaluation gives $shf.e simeq (shf.e^or)^or$.
-  - For every module $shf.f$, the canonical map
-    $tensor(shf.e^or, shf.f, over: shf.o_X)->shf.hom_(shf.o_X)(shf.e,shf.f)$,
-    sending $tensor(lambda, s)$ to $(e mapsto lambda(e)s)$, is an isomorphism.
-  - For a morphism of ringed spaces $f:X->Y$, an $shf.o_X$-module $shf.f$,
+  + Evaluation gives $shf.e simeq (shf.e^or)^or$.
+  + For every module $shf.f$, the canonical map
+    $
+      tensor(shf.e^or, shf.f, over: shf.o_X) & ->shf.hom_(shf.o_X)(shf.e,shf.f), \
+                           tensor(lambda, s) & mapsto (e mapsto lambda(e)s)
+    $
+    is an isomorphism.
+  + For a morphism of ringed spaces $f:X->Y$, an $shf.o_X$-module $shf.f$,
     and finite locally free $shf.e$ on $Y$, the canonical map
-    $tensor(f_*shf.f, shf.e, over: shf.o_Y)->
-    f_*tensor(shf.f, f^*shf.e, over: shf.o_X)$ is an isomorphism.
-    It sends $tensor(s, e)$ to $tensor(s, f^*e)$ locally.
+    $
+      tensor(f_*shf.f, shf.e, over: shf.o_Y)->f_*(tensor(shf.f, f^*shf.e, over: shf.o_X)),
+    $
+    sending $tensor(s, e) & mapsto tensor(s, f^*e)$ locally, is an isomorphism.
 
-  No properness or quasi-coherence is required. Together with SC-7,
-  this proves #book-link(<exercise-5-1>)[Exercise II.5.1].
+  No properness or quasi-coherence is required. (Ex. II.5.1)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Restrict the canonical maps.* The evaluation and dual-tensor maps
     in the statement commute with restriction. Tensor sheaves and sheaf
@@ -651,7 +617,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the component stalks.* An isolated point $n$ has a neighborhood disjoint from a sufficiently small
     tail neighborhood of $infinity$, so $(shf.f_n)_infinity=0$.
@@ -670,7 +635,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the inverse limit.* Sectionwise, the inverse limit of the finite products with truncation maps
     is the full product: a compatible sequence of finite tuples is uniquely
@@ -685,12 +649,11 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 #example(number: "SC-14")[
   For two distinct $k$-points on $sch.p^1_k$, the restriction
   of the structure sheaf onto their structure sheaf is surjective, but its
-  map on global sections is the diagonal $k->k times k$. This solves
-  #book-link(<exercise-1-3>)[Exercise II.1.3(b)]; see also II.1.21(c).
+  map on global sections is the diagonal $k->k times k$.
+  (Ex. II.1.3(b), II.1.21(c))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Check sheaf surjectivity.* At either of the two points, the stalk map is the residue-field quotient,
     and away from them its target is zero. It is therefore surjective as a
@@ -707,7 +670,6 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Check the epimorphism property.* Two ring maps out of $QQ$ agreeing on $ZZ$ agree on every fraction,
     since the image of $a/b$ must be the image of $a$ times the inverse of

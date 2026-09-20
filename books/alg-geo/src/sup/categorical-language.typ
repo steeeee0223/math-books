@@ -4,7 +4,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == CAT — Categorical language <sup-cat>
 
@@ -12,7 +11,7 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-1>
 #definition(number: "CAT-1", title: "Natural transformations")[
-  - For functors $F,G:C->D$, a natural transformation $alpha:F->G$ is a family
+  + For functors $F,G:C->D$, a natural transformation $alpha:F->G$ is a family
     $alpha_X:F(X)->G(X)$ satisfying
     $G(u) compose alpha_X=alpha_Y compose F(u)$ for every $u:X->Y$.
 
@@ -26,11 +25,11 @@ The constructions below use categories and functors in their usual sense. Only s
         $,
       )
     ]
-  - A natural transformation $alpha$ is a natural isomorphism if and only if
+  + A natural transformation $alpha$ is a natural isomorphism if and only if
     every component $alpha_X$ is an isomorphism.
-  - A diagram commutes when composites along paths with the same endpoints
+  + A diagram commutes when composites along paths with the same endpoints
     agree.
-  - For presheaves, naturality is compatibility with restriction maps.
+  + For presheaves, naturality is compatibility with restriction maps.
 ]
 
 #metadata(none) <sup-cat-2>
@@ -52,12 +51,11 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-3>
 #proposition(number: "CAT-3", title: "Uniqueness of universal objects")[
-  - Two solutions of the same universal problem have a unique isomorphism preserving those maps. This does not assert that the underlying object has no other automorphisms.
-  - For a multiplicative subset $S$ of a ring $A$, the map $A->S^(-1)A$ is initial among ring maps from $A$ sending every element of $S$ to a unit: any such $A->B$ factors uniquely through $S^(-1)A$.
+  + Two solutions of the same universal problem have a unique isomorphism preserving those maps. This does not assert that the underlying object has no other automorphisms.
+  + For a multiplicative subset $S$ of a ring $A$, the map $A->S^(-1)A$ is initial among ring maps from $A$ sending every element of $S$ to a unit: any such $A->B$ factors uniquely through $S^(-1)A$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compare universal solutions.* Regard the universal problem as a category of objects with their prescribed structure maps. If $P,Q$ are initial solutions, let $u:P->Q$ and $v:Q->P$ be their unique structure-preserving maps. Both $v compose u$ and $ops.id_P$ are endomorphisms in this category, so they are equal; likewise $u compose v=ops.id_Q$. Any structure-preserving isomorphism must equal $u$. For terminal solutions, reverse the arrows.
 
@@ -67,12 +65,12 @@ The constructions below use categories and functors in their usual sense. Only s
 #metadata(none) <sup-cat-4>
 #definition(number: "CAT-4", title: "Objects, products, and coproducts")[
 
-  - An initial object has exactly one morphism to each object.
-  - A terminal object has exactly one morphism from each object.
-  - A product $P$ of objects $X_i$ has projections $P->X_i$ and natural bijections $ ops.hom(T, P) simeq product_i ops.hom(T, X_i). $
-  - A coproduct $Q$ has injections $X_i->Q$ and natural bijections $ ops.hom(Q, T) simeq product_i ops.hom(X_i, T). $
-  - The empty product is terminal, and the empty coproduct is initial.
-  - For a binary product, maps $a:T->X$ and $b:T->Y$ determine $u:T->P$ by $p_X compose u=a$ and $p_Y compose u=b$: #align(center)[
+  + An initial object has exactly one morphism to each object.
+  + A terminal object has exactly one morphism from each object.
+  + A product $P$ of objects $X_i$ has projections $P->X_i$ and natural bijections $ ops.hom(T, P) simeq product_i ops.hom(T, X_i). $
+  + A coproduct $Q$ has injections $X_i->Q$ and natural bijections $ ops.hom(Q, T) simeq product_i ops.hom(X_i, T). $
+  + The empty product is terminal, and the empty coproduct is initial.
+  + For a binary product, maps $a:T->X$ and $b:T->Y$ determine $u:T->P$ by $p_X compose u=a$ and $p_Y compose u=b$: #align(center)[
       #diagram(
         cell-size: 18mm,
         $   & T edge("dl", a, ->) edge("d", u, ->, stroke: #(dash: "dashed")) edge("dr", b, ->) \
@@ -83,18 +81,17 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-5>
 #example(number: "CAT-5", title: "Products and coproducts in familiar categories")[
-  - In sets, these constructions are cartesian product and disjoint union.
+  + In sets, these constructions are cartesian product and disjoint union.
 
-  - For $cat.ab$, finite direct sums are both products and coproducts;
+  + For $cat.ab$, finite direct sums are both products and coproducts;
     an infinite direct sum consists of finite-support families, whereas a product allows all families.
 
-  - For $cat.ring$, the product is the componentwise ring and the binary coproduct is $tensor(A, B, over: ZZ)$.
+  + For $cat.ring$, the product is the componentwise ring and the binary coproduct is $tensor(A, B, over: ZZ)$.
 
-  - In $cat.sch$, the empty scheme is initial and $ops.spec ZZ$ is terminal; see #book-link(<sup-xl-2>)[XL-2].
+  + In $cat.sch$, the empty scheme is initial and $ops.spec ZZ$ is terminal; see #book-link(<sup-xl-2>)[XL-2].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Sets.* A map into a cartesian product is uniquely its tuple of component maps; a map out of a disjoint union is uniquely its restrictions to the summands.
 
@@ -107,15 +104,15 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-6>
 #definition(number: "CAT-6", title: "Limits and colimits")[
-  - For a diagram $D:I->C$, a cone with vertex $T$ consists of maps $T->D(i)$ compatible with every arrow of $I$. A limit is a cone through which every cone factors uniquely.
+  + For a diagram $D:I->C$, a cone with vertex $T$ consists of maps $T->D(i)$ compatible with every arrow of $I$. A limit is a cone through which every cone factors uniquely.
 
-  - A cocone consists of maps $D(i)->T$; a colimit is a cocone with the dual unique factorization property.
+  + A cocone consists of maps $D(i)->T$; a colimit is a cocone with the dual unique factorization property.
 
-  - A map of diagrams induces a map of their limits, or of their colimits, by composing the structure maps and applying these properties.
+  + A map of diagrams induces a map of their limits, or of their colimits, by composing the structure maps and applying these properties.
 
-  - The fiber product of #book-link(<text-ii-3>)[II.3, D10] is a limit of two maps with common target; its definition and existence theorem remain there.
+  + The fiber product of #book-link(<text-ii-3>)[II.3, D10] is a limit of two maps with common target; its definition and existence theorem remain there.
 
-  - A cone to an arrow $a:i->j$ satisfies the triangular equation below; a map of limiting cones is specified by the square on the right.
+  + A cone to an arrow $a:i->j$ satisfies the triangular equation below; a map of limiting cones is specified by the square on the right.
     #align(center)[
       #diagram(
         cell-size: 18mm,
@@ -131,7 +128,6 @@ The constructions below use categories and functors in their usual sense. Only s
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the limit comparison.* For a natural transformation $alpha:D->E$ and a limiting cone $lambda_i:L_D->D(i)$, the maps $alpha_i compose lambda_i$ form a cone to $E$: for $a:i->j$, naturality gives $E(a) compose alpha_i compose lambda_i=alpha_j compose lambda_j$. The universal property of $L_E$ therefore gives a unique map $L_D->L_E$ with these composites.
 
@@ -142,11 +138,11 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-7>
 #definition(number: "CAT-7", title: "Directed and inverse systems")[
-  - A directed poset is nonempty, and every finite subset has an upper bound.
+  + A directed poset is nonempty, and every finite subset has an upper bound.
 
-  - A direct system has maps $M_i->M_j$ for $i<=j$, with identity and composition compatibility; an inverse system has maps $M_j->M_i$. Their direct and inverse limits mean the corresponding colimit and limit.
+  + A direct system has maps $M_i->M_j$ for $i<=j$, with identity and composition compatibility; an inverse system has maps $M_j->M_i$. Their direct and inverse limits mean the corresponding colimit and limit.
 
-  - A category is filtered when it is nonempty, any two objects map to a common object, and any two parallel arrows become equal after a further arrow.
+  + A category is filtered when it is nonempty, any two objects map to a common object, and any two parallel arrows become equal after a further arrow.
 ]
 
 #metadata(none) <sup-cat-8>
@@ -157,7 +153,6 @@ The constructions below use categories and functors in their usual sense. Only s
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Define the comparison relation.* Take the disjoint union of the underlying sets $D(i)$. Put $(i,x) tilde.op (j,y)$ when some arrows $a:i->k$, $b:j->k$ have $D(a)(x)=D(b)(y)$.
 
@@ -175,10 +170,10 @@ The constructions below use categories and functors in their usual sense. Only s
 
 #metadata(none) <sup-cat-10>
 #proposition(number: "CAT-10", title: "Unit, counit, and preservation of limits")[
-  - The identity maps give the unit $eta_X:X->R(L(X))$ and counit
+  + The identity maps give the unit $eta_X:X->R(L(X))$ and counit
     $epsilon_Y:L(R(Y))->Y$.
 
-  - They satisfy $epsilon_(L(X)) compose L(eta_X)=ops.id_(L(X))$ and $R(epsilon_Y) compose eta_(R(Y))=ops.id_(R(Y))$.
+  + They satisfy $epsilon_(L(X)) compose L(eta_X)=ops.id_(L(X))$ and $R(epsilon_Y) compose eta_(R(Y))=ops.id_(R(Y))$.
 
     The triangle identities express the commutativity of
     #align(center)[
@@ -201,15 +196,14 @@ The constructions below use categories and functors in their usual sense. Only s
       )
     ]
 
-  - The bijection sends $u$ to $R(u) compose eta_X$; its inverse sends $v$ to $epsilon_Y compose L(v)$.
+  + The bijection sends $u$ to $R(u) compose eta_X$; its inverse sends $v$ to $epsilon_Y compose L(v)$.
 
-  - Left adjoints preserve existing colimits and right adjoints preserve existing limits.
+  + Left adjoints preserve existing colimits and right adjoints preserve existing limits.
 
   Sheafification is the left adjoint specified in #book-link(<text-ii-1>)[II.1, Proposition 1.2]. Direct and inverse images are defined in II.1, D7; their adjunction, and the distinction between inverse image and module pullback, are treated in #book-link(<sup-sc-6>)[SC-6~SC-8].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the unit and counit.* Write $Phi_(X,Y)$ for the adjunction bijection and set $eta_X=Phi_(X,L(X))(ops.id_(L(X)))$ and $epsilon_Y=Phi_(R(Y),Y)^(-1)(ops.id_(R(Y)))$. Naturality in $Y$ gives $Phi(u)=R(u) compose eta_X$; naturality in $X$ gives $Phi^(-1)(v)=epsilon_Y compose L(v)$. Applying these inverse bijections to the two identity maps proves the two triangle identities. Applying naturality to a map $X->X'$ or $Y->Y'$ also proves that $eta$ and $epsilon$ are natural transformations.
 

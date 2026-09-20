@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == CS — Closed subschemes and ideal sheaves <sup-cs>
 
@@ -14,23 +13,22 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
 #metadata(none) <sup-cs-1>
 #proposition(number: "CS-1", title: "Affine quotient dictionary")[
-  - For $X=ops.spec A$ and $I subset.eq A$, the above results identify the
+  + For $X=ops.spec A$ and $I subset.eq A$, the above results identify the
     ideal sheaf $tildeOf(I)$, the quotient structure sheaf, and the closed
     immersion $ops.spec(A\/I)->X$. On each $D(f)$, the comparison is the
     canonical quotient $A_f\/I A_f simeq (A\/I)_(bar(f))$.
 
-  - In particular, the affine map induced by $A->B$ is a closed immersion
+  + In particular, the affine map induced by $A->B$ is a closed immersion
     exactly when this ring map is surjective.
 
-  - Use this as the common entry for II.2.18(c)–(d), II.3.11(b), and
+  + Use this as the common entry for II.2.18(c)–(d), II.3.11(b), and
     II.5.5(b), the last of which also uses that a quotient is a finite module.
 
-  - For the ideal of an arbitrary closed subscheme, use the main-text
+  + For the ideal of an arbitrary closed subscheme, use the main-text
     correspondence, rather than a new construction of associated sheaves.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the closed subset.* Write $q:A->A\/I$ for the quotient map. Its prime contraction identifies
     $ops.spec(A\/I)$ with $V(I)$.
@@ -55,18 +53,17 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
 #metadata(none) <sup-cs-2>
 #proposition(number: "CS-2", title: "Restriction and base change")[
-  - If $i:Z->X$ has ideal $shf.i$ and $g:X'->X$, the base-changed closed
+  + If $i:Z->X$ has ideal $shf.i$ and $g:X'->X$, the base-changed closed
     subscheme has ideal
     $ops.im(g^*shf.i -> shf.o_(X'))$, denoted $shf.i shf.o_(X')$.
 
-  - For open restriction, this is $shf.i|_(X')$.
+  + For open restriction, this is $shf.i|_(X')$.
 
-  - In general, $g^*shf.i$ itself
+  + In general, $g^*shf.i$ itself
     need not embed into $shf.o_(X')$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the affine base change.* Cover $X$ by affine opens $U=ops.spec A$, and cover $g^(-1)U$ by affine
     opens $U'=ops.spec B$. If $Z inter U=ops.spec(A\/I)$, the fiber-product
@@ -103,21 +100,20 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
 #metadata(none) <sup-cs-4>
 #proposition(number: "CS-4", title: "Reduced induced structures")[
-  - For a closed subset $Z$ of a scheme, there is a unique reduced closed
+  + For a closed subset $Z$ of a scheme, there is a unique reduced closed
     subscheme with that underlying subset. On an affine chart, it is cut out by
     the radical ideal corresponding to $Z$; the restriction identifications
     are the ones of CS-1–CS-2.
 
-  - The ideals and closed subschemes are ordered
+  + The ideals and closed subschemes are ordered
     in opposite directions: $shf.i subset.eq shf.j$ gives
     $V(shf.j) subset.eq V(shf.i)$ as closed subschemes.
 
-  - For reduction of the whole scheme and its reduced-source universal
+  + For reduction of the whole scheme and its reduced-source universal
     property use #book-link(<sup-xp-9>)[XP-9].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Choose compatible radical ideals.* For each affine open $U=ops.spec A$, choose the radical ideal $I_U$
     determined by $Z inter U$. The affine closed-set dictionary gives its
@@ -155,22 +151,21 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
 #metadata(none) <sup-cs-6>
 #corollary(number: "CS-6", title: "Classical vanishing ideals")[
-  - For a variety over an algebraically closed field and a closed subvariety,
+  + For a variety over an algebraically closed field and a closed subvariety,
     use #book-link(<sup-vs>)[VS] to pass to the associated schemes $i:Y->X$.
     The sheaf of regular functions vanishing on $Y$ identifies with its ideal
     sheaf $shf.i_Y$, and the canonical map gives
     $shf.o_X\/shf.i_Y simeq i_*shf.o_Y$ as sheaves of rings on $X$.
 
-  - This is the application of II.5.9–II.5.10 to II.1.21(a)–(b); quotient
+  + This is the application of II.5.9–II.5.10 to II.1.21(a)–(b); quotient
     sheaves and stalkwise surjectivity have the meaning of
     #book-link(<sup-sc-4>)[SC-4].
 
-  - Surjectivity on every open is not implied.
+  + Surjectivity on every open is not implied.
     The two-point global-sections example is in #book-link(<sup-sc-examples>)[SC-14].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the affine vanishing ideal.* Take an affine chart of $X$ corresponding under VS-2 to an affine
     variety with coordinate ring $A$. Its intersection with $Y$ is cut out

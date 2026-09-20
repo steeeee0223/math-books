@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == SE — Support, extension and local freeness <sup-se>
 
@@ -15,16 +14,15 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-1>
 #definition(number: "SE-1", title: "Two notions of support")[
-  - For an abelian-group or module sheaf $shf.f$ and $s in shf.f (U)$, its
+  + For an abelian-group or module sheaf $shf.f$ and $s in shf.f (U)$, its
     support is ${x in U:s_x!=0}$; this is closed in $U$.
 
-  - The support of the sheaf is ${x in X:shf.f_x!=0}$ and need not be closed.
+  + The support of the sheaf is ${x in X:shf.f_x!=0}$ and need not be closed.
 
-  - A section with zero germs everywhere is zero by #book-link(<sup-sl-1>)[SL-1].
+  + A section with zero germs everywhere is zero by #book-link(<sup-sl-1>)[SL-1].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Section support.* A zero germ has a representative that is zero on a neighborhood. Hence
     the zero-germ locus of $s$ is open in $U$, and its complement is closed.
@@ -36,16 +34,15 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-2>
 #proposition(number: "SE-2", title: "Annihilators")[
-  - On $ops.spec A$, a section corresponding to $m in M$ has support
+  + On $ops.spec A$, a section corresponding to $m in M$ has support
     $V(ops.ann(m))$, without a finiteness hypothesis on $M$.
 
-  - If $M$ is finite, $ops.supp(tildeOf(M))=V(ops.ann(M))$.
+  + If $M$ is finite, $ops.supp(tildeOf(M))=V(ops.ann(M))$.
     The assertion for the entire module need not hold without finite generation.
-    These give the affine forms of II.5.6(a)–(c).
+    (Ex. II.5.6(a)~(c))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *The support of a section.* At the prime $idl.p$, the germ $m/1$ is zero exactly when some
     $a in.not idl.p$ kills $m$, by the localization zero criterion.
@@ -68,17 +65,16 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-4>
 #proposition(number: "SE-4", title: "The restriction sequence for sections with support")[
-  - There is a left-exact sequence
+  + There is a left-exact sequence
     $0->shf.h_Z(shf.f)->shf.f->j_*(shf.f|_U)$,
     with the last map given by restriction. Equivalently, the support subsheaf
     is its kernel.
 
-  - Taking global sections gives the corresponding left-exact
+  + Taking global sections gives the corresponding left-exact
     sequence of groups; there is no general surjectivity assertion at the end.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the kernel sheaf.* For an open $V$, the kernel of
     $shf.f (V)->shf.f (V inter U)$ consists exactly of the sections whose
@@ -93,16 +89,15 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-5>
 #definition(number: "SE-5", title: "Extension by zero")[
-  - For an open inclusion $j:U->X$ and an abelian-group sheaf $shf.g$ on $U$,
+  + For an open inclusion $j:U->X$ and an abelian-group sheaf $shf.g$ on $U$,
     $j_!shf.g$ has, on an open $V$, sections of $shf.g (V inter U)$ whose
     support is closed in $V$. It has stalk $shf.g_x$ on $U$ and zero off $U$.
 
-  - For $i:Z=X minus U->X$, the closed-inclusion direct image $i_*shf.h$
+  + For $i:Z=X minus U->X$, the closed-inclusion direct image $i_*shf.h$
     has stalk $shf.h_x$ on $Z$ and zero off $Z$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Verify the sheaf construction.* The displayed assignments satisfy the sheaf axiom: compatible sections
     glue on $V inter U$, and the condition that their support be closed in
@@ -121,17 +116,16 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-6>
 #proposition(number: "SE-6", title: "The open-closed exact sequence")[
-  - For any abelian-group sheaf $shf.f$ on $X$, there is an exact sequence
+  + For any abelian-group sheaf $shf.f$ on $X$, there is an exact sequence
     $0->j_!(shf.f|_U)->shf.f->i_*(i^(-1)shf.f)->0$.
     The maps are extension by zero and restriction to the closed subspace.
 
-  - For modules, equip $U,Z$ with the restricted sheaf of rings; the same
+  + For modules, equip $U,Z$ with the restricted sheaf of rings; the same
     constructions and sequence are linear. This is not a construction for
     ring sheaves, and $j_!$ is not $j_*$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the maps.* A section on $V inter U$ with support closed in $V$ glues with zero
     on the complement of its support to give a section on $V$. These
@@ -151,18 +145,16 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-7>
 #proposition(number: "SE-7", title: "Support torsion")[
-  - On $X=ops.spec A$ with $A$ Noetherian and $Z=V(I)$, the support
+  + On $X=ops.spec A$ with $A$ Noetherian and $Z=V(I)$, the support
     subsheaf of $tildeOf(M)$ corresponds to
     ${m in M:I^n m=0 " for some " n>=0}$.
 
-  - Consequently, on a Noetherian scheme, sections supported in a fixed closed
+  + Consequently, on a Noetherian scheme, sections supported in a fixed closed
     subset form a quasi-coherent subsheaf of any quasi-coherent module, and a
-    coherent subsheaf of any coherent module. These are the support-torsion
-    statements of II.5.6(d)–(e).
+    coherent subsheaf of any coherent module. (Ex. II.5.6(d)~(e))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify support with ideal-power torsion.* By SE-2, the support of $m$ lies in $V(I)$ exactly when
     $I subset.eq sqrt(ops.ann(m))$. Choose finite generators
@@ -184,17 +176,16 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-8>
 #proposition(number: "SE-8", title: "Coherent extension")[
-  - Let $X$ be Noetherian and $U$ open. A coherent module on $U$ extends
+  + Let $X$ be Noetherian and $U$ open. A coherent module on $U$ extends
     to a coherent module on $X$.
 
-  - More precisely, if it is a subsheaf of
+  + More precisely, if it is a subsheaf of
     $shf.g|_U$ for a quasi-coherent $shf.g$ on $X$, it is the restriction
     of a coherent subsheaf of $shf.g$. The extension is neither canonical
-    nor unique (II.5.15).
+    nor unique (Ex. II.5.15).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct a quasi-coherent enlargement.* First suppose $shf.f subset.eq shf.g|_U$ is coherent. We extend across
     one affine open $V=ops.spec A$ at a time. Work on $U union V$ and let
@@ -225,12 +216,10 @@ for powers of an invertible-sheaf section remains in
 #corollary(number: "SE-9", title: "Coherent approximation")[
   On a Noetherian scheme, every quasi-coherent module is the directed union
   of its coherent subsheaves. The ordering is inclusion; the sum of two
-  coherent subsheaves is another coherent subsheaf. This is the approximation
-  part of II.5.15, using the extension statement above.
+  coherent subsheaves is another coherent subsheaf. (Ex. II.5.15)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Check directedness.* The sum of two coherent subsheaves is the image of their finite direct
     sum, so it is coherent by QC-6 and contains both.
@@ -247,21 +236,17 @@ for powers of an invertible-sheaf section remains in
     so SL-1 identifies the union with $shf.g$.
 ]
 
-#metadata(none) <sup-proof-5-7>
 #metadata(none) <sup-se-10>
 #lemma(number: "SE-10", title: "Free stalks and neighborhoods")[
   If a module sheaf on a scheme is finitely presented and its stalk at $x$ is free,
   it is free of the same finite rank on a neighborhood of $x$.
   Consequently, a finitely presented module sheaf is locally free if and
-  only if all its stalks are free. The Noetherian coherent case proves
-  #book-link(<exercise-5-7>)[Exercise II.5.7(a)–(b)]. For the tensor-inverse
-  criterion in part (c), see SE-12.
+  only if all its stalks are free. (Ex. II.5.7(a)~(b))
   Finite presentation provides the finite relations needed to pass from a
   stalk isomorphism to a neighborhood isomorphism; see #book-link(<sup-al-10>)[AL-10].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Pass to a finitely presented affine module.* Restrict a finite-presentation neighborhood to an affine
     $V=ops.spec A$ containing $x$. QC-7 and the affine correspondence write
@@ -285,17 +270,16 @@ for powers of an invertible-sheaf section remains in
   Let $shf.f$ be a coherent module on a Noetherian scheme $X$. Define
   $r(x)=ops.dim(tensor(shf.f_x, kappa(x), over: shf.o_(X,x)), over: kappa(x))$.
 
-  - The function is upper semicontinuous: the loci $r(x)>=n$ are closed.
+  + The function is upper semicontinuous: the loci $r(x)>=n$ are closed.
 
-  - If $X$ is reduced, then $shf.f$ is locally free if and only if
+  + If $X$ is reduced, then $shf.f$ is locally free if and only if
     $r$ is locally constant.
 
-  - A finite locally free sheaf has locally constant rank on any
-    scheme, and constant rank if the scheme is connected (II.5.8).
+  + A finite locally free sheaf has locally constant rank on any
+    scheme, and constant rank if the scheme is connected (Ex. II.5.8).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Prove upper semicontinuity.* On an affine Noetherian chart, write $shf.f=tildeOf(M)$ with $M$
     finite. At a prime $idl.p$ with $r(idl.p)<=q$, lift a residue-field
@@ -334,12 +318,10 @@ for powers of an invertible-sheaf section remains in
   On a Noetherian scheme, a coherent module $shf.f$ is invertible exactly
   when there is a coherent $shf.g$ with
   $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
-  An inverse is its dual. This proves
-  #book-link(<exercise-5-7>)[Exercise II.5.7(c)].
+  An inverse is its dual. (Ex. II.5.7(c))
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Use the dual of a line bundle.* If $shf.f$ is invertible, its dual
     is locally free of rank one and coherent. Evaluation

@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == AL2 — Associated points and regular sequences <sup-al2>
 

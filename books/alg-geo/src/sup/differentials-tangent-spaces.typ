@@ -87,6 +87,7 @@ the reader; the geometric reductions explain exactly where they are used.
   If $x$ is closed in a scheme locally of finite type over $k$ and $K\/k$
   is separable, the first map is an isomorphism. Without this hypothesis
   neither its injectivity nor the vanishing of the last term is automatic.
+  (Ex. II.8.1(a), separable closed-point case)
 ]
 #proof[
   Restrict $X$ to $ops.spec B$ about $x$ and localize at its prime ideal.
@@ -356,6 +357,7 @@ the reader; the geometric reductions explain exactly where they are used.
     omega_X=op("det") Omega_(X\/k)
     simeq shf.o_X(sum_i d_i-n-1).
   $
+  (Ex. II.8.4(d))
 ]
 #proof[
   Taking the determinant in DF-12 gives
@@ -390,6 +392,7 @@ the reader; the geometric reductions explain exactly where they are used.
     quad quad eta_Z=-(d y)/F_x quad "on" D(F_x).
   $
   These glue, and their projective transitions give $omega_C simeq shf.o_C(d-3)$.
+  (Ex. II.8.4(d), plane-curve case)
 ]
 #proof[
   Smoothness implies that $D(F_x)$ and $D(F_y)$ cover this affine part of
@@ -457,5 +460,3 @@ the reader; the geometric reductions explain exactly where they are used.
 sequence, and smooth adjunction; Liu, §6.2, Exercises 2.4–2.5 and
 Proposition 6.3.13, with the smooth case of §6.4. The relative morphism
 criteria used here are established in #book-link(<sup-lp2>)[LP2].
-
-Related exercises: #book-link(<exercise-ii-8-1>)[II.8.1] extends the residue-field and rank criteria to arbitrary points; #book-link(<exercise-ii-8-4>)[II.8.4] contains the complete-intersection application of adjunction and further assertions not proved here.

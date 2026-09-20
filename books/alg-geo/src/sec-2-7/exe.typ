@@ -55,7 +55,7 @@
     very ample for every sufficiently large $n$.
 ]
 
-#book-link(<sup-pm-4>)[PM-4] uses the very-ample tensor construction for a difference of very ample bundles; it is an application, not a solution of all five assertions.
+For an application of (d), see #book-link(<sup-pm-4>)[PM-4].
 
 // Hartshorne II.7, Exercise 7.6
 #exercise(title: "Exercise 7.6 (The Riemann–Roch Problem)")[
@@ -111,7 +111,7 @@
     locally free sheaves modulo $shf.e equiv shf.e times.o shf.l$ with $shf.l$ invertible.
 ]
 
-#book-link(<sup-pj2-6>)[PJ2-6] explains twisting and the specified quotient convention; PJ2-7 supplies the ruled-surface transitions. The converse classification of all projective-space bundles is not asserted there.
+See #book-link(<sup-pj2-6>)[PJ2-6] (twisting) and #book-link(<sup-pj2-7>)[PJ2-7] (ruled-surface transitions).
 
 // Hartshorne II.7, Exercise 7.11
 #metadata(none) <exercise-ii-7-11>
@@ -125,7 +125,7 @@
     which $f$ is an isomorphism, choose the center with support $X-U$.
 ]
 
-#book-link(<sup-bu-2>)[BU-2] provides the saturated Rees charts, with Veronese and twisting tools in PJ2. These are inputs to this exercise, not a proof of its final assertion.
+For the Rees charts, see #book-link(<sup-bu-2>)[BU-2]; for Veronese and twisting tools, see #book-link(<sup-pj2-9>)[PJ2-9] and #book-link(<sup-pj2-6>)[PJ2-6].
 
 // Hartshorne II.7, Exercise 7.12
 #exercise(title: "Exercise 7.12")[
@@ -153,7 +153,7 @@
     projective.
 ]
 
-#book-link(<sup-lp-57>)[LP-57] gives the nodal gluing construction, both Picard computations, and the degree obstruction.
+See #book-link(<sup-lp-57>)[LP-57].
 
 // Hartshorne II.7, Exercise 7.14
 #exercise(title: "Exercise 7.14")[

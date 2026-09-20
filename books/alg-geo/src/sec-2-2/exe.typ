@@ -9,7 +9,7 @@
   $(D(f),shf.o_X|_(D(f))) simeq ops.spec A_f$.
 ] <exercise-2-1>
 
-See #book-link(<sup-proof-2-1>)[XL: proof of II.2.1].
+See #book-link(<sup-xl-1>)[XL-1].
 
 // Hartshorne II.2, Exercise 2.2
 #exercise(title: "Exercise 2.2")[
@@ -17,7 +17,7 @@ See #book-link(<sup-proof-2-1>)[XL: proof of II.2.1].
   It is the *open subscheme* induced on $U$.
 ] <exercise-2-2>
 
-See #book-link(<sup-proof-2-2>)[XL: proof of II.2.2].
+See #book-link(<sup-xl-1>)[XL-1].
 
 // Hartshorne II.2, Exercise 2.3
 #exercise(title: "Exercise 2.3 (Reduced Schemes)")[
@@ -30,7 +30,7 @@ See #book-link(<sup-proof-2-2>)[XL: proof of II.2.2].
     $Y_(red)->Y$.
 ] <exercise-2-3>
 
-See #book-link(<sup-proof-2-3>)[XP: proof of II.2.3].
+See #book-link(<sup-xp-9>)[XP-9].
 
 // Hartshorne II.2, Exercise 2.4
 #exercise(title: "Exercise 2.4")[
@@ -39,7 +39,7 @@ See #book-link(<sup-proof-2-3>)[XP: proof of II.2.3].
   ops.hom(A, Gamma(X, shf.o_X), over: cat.ring)$.
 ] <exercise-2-4>
 
-See #book-link(<sup-proof-2-4>)[XL: proof of II.2.4].
+See #book-link(<sup-xl-2>)[XL-2].
 
 // Hartshorne II.2, Exercise 2.5
 #exercise(title: "Exercise 2.5")[
@@ -96,7 +96,7 @@ See #book-link(<sup-proof-2-4>)[XL: proof of II.2.4].
   are identified. Include the special case of the disjoint union.
 ] <exercise-2-12>
 
-See #book-link(<sup-proof-2-12>)[XL: proof of II.2.12].
+See #book-link(<sup-xl-4>)[XL-4].
 
 // Hartshorne II.2, Exercise 2.13
 #exercise(title: "Exercise 2.13 (Quasi-compactness)")[
@@ -141,7 +141,7 @@ See #book-link(<sup-proof-2-12>)[XL: proof of II.2.12].
   + Under this hypothesis, conclude $Gamma(X_f, shf.o) simeq Gamma(X, shf.o_X)_f$.
 ] <exercise-2-16>
 
-See #book-link(<sup-proof-2-16>)[XL: proof of II.2.16].
+See #book-link(<sup-xl-6>)[XL-6].
 
 // Hartshorne II.2, Exercise 2.17
 #exercise(title: "Exercise 2.17 (A Criterion for Affineness)")[
@@ -151,7 +151,7 @@ See #book-link(<sup-proof-2-16>)[XL: proof of II.2.16].
     the unit ideal and every $X_(f_i)$ is affine.
 ] <exercise-2-17>
 
-See #book-link(<sup-proof-2-17>)[XL: proof of II.2.17].
+For (a), see #book-link(<sup-xl-5>)[XL-5]. For (b), see #book-link(<sup-xl-7>)[XL-7].
 
 // Hartshorne II.2, Exercise 2.18
 #exercise(title: "Exercise 2.18")[

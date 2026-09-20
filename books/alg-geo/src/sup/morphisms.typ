@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == MG — Morphisms, diagonals and graphs <sup-mg>
 
@@ -20,7 +19,6 @@ the diagonal and separatedness criteria of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Apply the affine-target correspondence.* Put $D=tensor(B, C, over: A)$. For any scheme $T$, maps from $T$ to
     $ops.spec D$ correspond to ring maps $D->Gamma(T, shf.o_T)$ by II.2's
@@ -38,18 +36,17 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-2>
 #example(number: "MG-2", title: "Points of a fiber product")[
-  - For example, $tensor(k(s), k(t), over: k)$ is the localization of $k[s,t]$
+  + For example, $tensor(k(s), k(t), over: k)$ is the localization of $k[s,t]$
     by all nonzero polynomials in $s$ and all nonzero polynomials in $t$.
 
-  - Its primes are exactly the primes of $k[s,t]$ disjoint from this
+  + Its primes are exactly the primes of $k[s,t]$ disjoint from this
     multiplicative set. Both $(0)$ and $(s-t)$ occur.
 
-  - Thus points of a fiber
+  + Thus points of a fiber
     product are not the ordinary product of the point sets, even over $k$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the localization and its primes.* First localize $k[s,t]$ by the nonzero elements of $k[s]$, and then by
     those of $k[t]$. Successive localization and tensor-product universal
@@ -66,17 +63,16 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-3>
 #proposition(number: "MG-3", title: "Fibers")[
-  - For $f:X->Y$ and $y in Y$, use the fiber definition in
+  + For $f:X->Y$ and $y in Y$, use the fiber definition in
     #book-link(<text-ii-3>)[II.3, D11]. On affine charts $A->B$, its ring is
     $tensor(B, kappa(y), over: A)$.
 
-  - Projection identifies its underlying space
+  + Projection identifies its underlying space
     with $f^(-1)({y})$ with the subspace topology; the scheme structure also
     records residue fields and nilpotents.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the affine fiber charts.* Choose $V=ops.spec A$ containing $y$, with prime $idl.p$, and cover
     $f^(-1)(V)$ by affines $W=ops.spec B$. Base change of these open
@@ -99,16 +95,15 @@ the diagonal and separatedness criteria of
   For algebraically closed $k$ of characteristic different from $2$ and
   $s mapsto t^2$,
 
-  - The fiber at $s=a!=0$ is two reduced $k$-points.
+  + The fiber at $s=a!=0$ is two reduced $k$-points.
 
-  - The fiber at $0$ is $ops.spec(k[t]\/(t^2))$.
+  + The fiber at $0$ is $ops.spec(k[t]\/(t^2))$.
 
-  - The generic fiber is
+  + The generic fiber is
     $ops.spec(k(s)[t]\/(t^2-s))=ops.spec k(t)$, with its specified $k(s)$-map.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the closed-fiber ring.* Tensoring over $k[s]$ with $k[s]\/(s-a)$ gives $k[t]\/(t^2-a)$.
 
@@ -126,16 +121,15 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-5>
 #corollary(number: "MG-5", title: "Graphs")[
-  - For an $S$-morphism $h:X->Y$, its graph
+  + For an $S$-morphism $h:X->Y$, its graph
     $Gamma_h:X->fiber(X, Y, base: S)$ is the base change of the diagonal of
     $Y/S$ along the map $(h compose p_1,p_2)$.
 
-  - Consequently, it is a closed immersion if $Y/S$ is separated.
+  + Consequently, it is a closed immersion if $Y/S$ is separated.
     This factorization uses the given morphism, not just its point map.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Describe the pullback of the diagonal.* Write $P=fiber(X, Y, base: S)$ and map it to $fiber(Y, Y, base: S)$ by
     $(h p_1,p_2)$. A map $T->P$ together with a lift to the diagonal is
@@ -155,7 +149,6 @@ the diagonal and separatedness criteria of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the closed equalizer.* Let the morphisms be $a,b$ and pull the closed diagonal of $Y/S$ back
     along $(a,b):X->fiber(Y, Y, base: S)$. This gives a closed subscheme
@@ -175,20 +168,19 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-7>
 #example(number: "MG-7", title: "Hypotheses for uniqueness on a dense open")[
-  - The doubled origin shows that separatedness of the target matters.
+  + The doubled origin shows that separatedness of the target matters.
 
-  - For failure without reducedness, take
+  + For failure without reducedness, take
     $X=ops.spec(k[t,epsilon]\/(epsilon^2,t epsilon))$ and the two maps to
     $sch.a^1_k$ given by the sections $0$ and $epsilon$. They agree on the
     dense open $D(t)$ and differ globally.
 
-  - On the one-point dual-number scheme,
+  + On the one-point dual-number scheme,
     these same two sections give distinct maps with identical underlying point
     maps, so setwise equality is weaker still.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Remove separatedness of the target.* The two inclusions of an affine line into the doubled line agree on
     the punctured line and send the origin to different points.
@@ -206,19 +198,18 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-8>
 #corollary(number: "MG-8", title: "Affine intersections")[
-  - If $X$ is separated over an affine scheme $S$, the intersection of any
+  + If $X$ is separated over an affine scheme $S$, the intersection of any
     two affine opens of $X$ is affine.
 
-  - Without separatedness, this may fail:
+  + Without separatedness, this may fail:
     glue two affine planes over $k$ along the punctured plane. Their overlap
     is $sch.a^2_k$ minus the origin, which is not affine.
 
-  - The overlap in the doubled affine line is $sch.a^1_k$ minus the origin,
+  + The overlap in the doubled affine line is $sch.a^1_k$ minus the origin,
     which is affine, so that example does not demonstrate this failure.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Use the closed diagonal.* For affine opens $U,V subset.eq X$, the pullback of the diagonal
     $X->fiber(X, X, base: S)$ to $fiber(U, V, base: S)$ is $U inter V$.
@@ -242,24 +233,24 @@ the diagonal and separatedness criteria of
   Let $P$ contain all closed immersions and be stable under composition
   and base change.
 
-  - Products over a common base of two $P$-morphisms have
+  + Products over a common base of two $P$-morphisms have
     $P$.
 
-  - If $X ->^f Y ->^g Z$, $g compose f$ has $P$, and $g$ is
+  + If $X ->^f Y ->^g Z$, $g compose f$ has $P$, and $g$ is
     separated, then $f$ has $P$ by its graph factorization.
 
-  - If $f$ has $P$,
+  + If $f$ has $P$,
     then $f_(red):X_(red)->Y_(red)$ has $P$, using the closed immersion of
     $X_(red)$ into $fiber(X, Y_(red), base: Y)$.
 
-  - For separated and proper morphisms, compare
+  + For separated and proper morphisms, compare
     #book-link(<text-ii-4>)[II.4, Corollaries 4.6 and 4.8].
 
-  - For finite type (II.3.13), closed immersions and quasi-compact open
+  + For finite type (II.3.13), closed immersions and quasi-compact open
     immersions are finite type; compositions, base changes, and products
     preserve finite type.
 
-  - The additional cancellation statement is:
+  + The additional cancellation statement is:
     if $f$ is quasi-compact and $g compose f$ is finite type, then $f$ is
     finite type, without assuming $g$ separated. Use the affine
     finite-generation criterion of #book-link(<sup-lp>)[the locality calculus].
@@ -267,7 +258,6 @@ the diagonal and separatedness criteria of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Form products by base change.* The product map factors as two successive base changes of the given
     maps, so composition proves the first assertion.
@@ -302,19 +292,18 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-10>
 #proposition(number: "MG-10", title: "Field-valued points")[
-  - For a field $K$, morphisms $ops.spec K->X$ correspond to pairs
+  + For a field $K$, morphisms $ops.spec K->X$ correspond to pairs
     $(x,kappa(x)->K)$, where the field map is an inclusion.
 
-  - A morphism $f:X->Y$ induces $kappa(f(x))->kappa(x)$, so a $k$-morphism
+  + A morphism $f:X->Y$ induces $kappa(f(x))->kappa(x)$, so a $k$-morphism
     preserves $k$-rational points.
 
-  - The closed-point hypotheses and classical
+  + The closed-point hypotheses and classical
     variety interpretation are in #book-link(<sup-xp-7>)[XP-7] and
     #book-link(<sup-vs>)[VS].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Recover the residue-field inclusion.* A map from the one-point scheme has image $x$ and gives a local map
     $shf.o_(X,x)->K$. Its kernel is the maximal ideal, so it factors uniquely
@@ -336,22 +325,21 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-11>
 #proposition(number: "MG-11", title: "Finite morphisms")[
-  - Finite morphisms have finite fibers, are closed, and are proper.
+  + Finite morphisms have finite fibers, are closed, and are proper.
     Their composition, base-change, and affine criteria are in
     #book-link(<sup-lp>)[the locality calculus]; properness uses the definition in
     #book-link(<text-ii-4>)[II.4].
 
-  - A quasi-finite morphism means a finite-type
+  + A quasi-finite morphism means a finite-type
     morphism with finite fibers in this discussion.
 
-  - The map
+  + The map
     $coprod(X_i, i=1, top: 2)->sch.a^1_k$ where $X_1=sch.a^1_k$ and $X_2=sch.a^1_k minus {0}$, given by
     identity and inclusion is surjective and quasi-finite but not finite.
     Thus finite fibers, even with surjectivity, do not imply finiteness.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Prove finiteness of fibers.* Over $V=ops.spec A$ write the inverse image as $ops.spec B$ with $B$
     finite over $A$, using LP. MG-3 makes a fiber the spectrum of a
@@ -377,26 +365,25 @@ the diagonal and separatedness criteria of
 
 #metadata(none) <sup-mg-12>
 #proposition(number: "MG-12", title: "Quasi-compact scheme-theoretic images")[
-  - For a quasi-compact $f:X->Y$, the ideal
+  + For a quasi-compact $f:X->Y$, the ideal
     $shf.i=ops.ker(shf.o_Y->f_*shf.o_X)$ is quasi-coherent.
 
-  - The closed
+  + The closed
     subscheme it defines is the smallest closed subscheme of $Y$ through
     which $f$ factors, and its formation commutes with open restriction on $Y$.
 
-  - Its underlying closed subset is $overline(f(X))$.
+  + Its underlying closed subset is $overline(f(X))$.
 
-  - These assertions concern
+  + These assertions concern
     the kernel even when pushforward itself is not known to be quasi-coherent.
 
-  - For the quasi-compact hypothesis, see
+  + For the quasi-compact hypothesis, see
     #link("https://stacks.math.columbia.edu/tag/01R5")[Stacks, Lemma 29.6.3].
     The arbitrary-morphism version is not included here. The closed-subscheme
     criteria of II.3.11(a)–(c) are indexed in #book-link(<sup-cs>)[CS].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the kernel on affine charts.* Restrict to $V=ops.spec A subset.eq Y$ and choose a finite affine cover
     $W_i=ops.spec B_i$ of $f^(-1)(V)$. Put
@@ -428,7 +415,6 @@ the diagonal and separatedness criteria of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Prove the map from the proper subscheme is proper.* Put $q:Z->Y$. Its graph is closed by MG-5, and projection
     $fiber(Z, Y, base: S)->Y$ is proper by base change from $Z->S$.

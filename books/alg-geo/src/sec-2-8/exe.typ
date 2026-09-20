@@ -20,7 +20,7 @@
     field is open dense.
 ]
 
-#book-link(<sup-df-3>)[DF-3] isolates the residue-field term and the finite separable closed-point case; LP2 gives the relative smoothness criteria. The arbitrary-point rank assertions require their own hypotheses.
+See #book-link(<sup-df-3>)[DF-3] (residue-field sequence and separable closed-point case); for relative smoothness, see #book-link(<sup-lp2-3>)[LP2-3].
 
 // Hartshorne II.8, Exercise 8.2
 #exercise(title: "Exercise 8.2")[
@@ -57,7 +57,7 @@
     a curve in $sch.p^3$ cut out by surfaces of degrees $d,e$.
 ]
 
-#book-link(<sup-df-13>)[DF-13] gives determinant adjunction, with the smooth hypersurface calculation in DF-14. The projective-normality, Bertini and genus assertions are not included in these supplements.
+For (d), see #book-link(<sup-df-13>)[DF-13]; for the plane-curve case, see #book-link(<sup-df-14>)[DF-14].
 
 // Hartshorne II.8, Exercise 8.5
 #metadata(none) <exercise-ii-8-5>
@@ -69,7 +69,7 @@
   + Prove $omega_(tilde(X)) simeq pi^*omega_X times.o shf.o_((r-1) Y')$.
 ]
 
-#book-link(<sup-bu-8>)[BU-8] computes the exceptional projective bundle and its normal bundle; it does not prove the two global formulas requested here.
+For the exceptional divisor and its normal bundle, see #book-link(<sup-bu-8>)[BU-8].
 
 // Hartshorne II.8, Exercise 8.6
 #metadata(none) <exercise-ii-8-6>
@@ -85,7 +85,7 @@
     kills $J$, proving that $f$ lifts to $A->B'$.
 ]
 
-#book-link(<sup-lp2-2>)[LP2-2] and LP2-3 state the precise affine lifting criterion and pass between affine diagrams and schemes; the purely algebraic assertions are assigned to the reader.
+See #book-link(<sup-lp2-2>)[LP2-2] and #book-link(<sup-lp2-3>)[LP2-3] (lifting criteria; algebraic proofs left to the reader).
 
 // Hartshorne II.8, Exercise 8.7
 #exercise(title: "Exercise 8.7")[

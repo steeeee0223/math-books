@@ -58,6 +58,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
     presentations with $r=n$; the lifts then exist uniquely.
   + Over a perfect field, a finitely generated algebra is geometrically
     regular if and only if it is regular.
+  (Ex. II.8.6, algebraic lifting criterion)
 ]
 #remark(title: "Reader proof: the algebraic criterion")[
   All assertions in LP2-2 are purely commutative-algebraic theorems, and their
@@ -80,6 +81,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   differentials, whose rank is their relative dimension. The three morphism
   classes have respectively the uniqueness, local existence, and unique
   existence lifting properties of LP2-1, with their stated finiteness hypotheses.
+  (Ex. II.8.6, scheme lifting criteria)
 ]
 #proof[
   Cover $Y$ by $V=ops.spec A$ and each $f^(-1)V$ by $U=ops.spec B$.
@@ -492,5 +494,3 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 immersions, and Proposition 5.1.37 for spreading from a local base. The
 projectivity convention remains Hartshorne's, as in
 #book-link(<sup-lp>)[LP] and #book-link(<sup-pm>)[PM].
-
-Related exercise: #book-link(<exercise-ii-8-6>)[II.8.6] spells out the affine lifting construction behind LP2-2–LP2-3.

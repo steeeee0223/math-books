@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == SL — Sheaf locality and gluing <sup-sl>
 
@@ -14,35 +13,34 @@ Use the definitions and stalkwise isomorphism criterion of
 #lemma(number: "SL-1", title: "Local equality")[
   Let $shf.f,shf.g$ be sheaves on $X$.
 
-  #set enum(numbering: "(i)", spacing: 0.8em)
+  #set enum(spacing: 0.8em)
 
-  - For $s in shf.f (U)$, $t in shf.f (V)$, and $x in U inter V$,
+  + For $s in shf.f (U)$, $t in shf.f (V)$, and $x in U inter V$,
     $s_x=t_x$ if and only if their restrictions agree on some open
     neighborhood of $x$ contained in $U inter V$. Finitely many equalities
     of germs at $x$ can be realized on one neighborhood; infinitely many
     need not admit such a common neighborhood.
 
-  - For an open subset $U subset.eq X$, an open cover $U=union_i U_i$,
+  + For an open subset $U subset.eq X$, an open cover $U=union_i U_i$,
     and sections $s,t in shf.f (U)$, the following conditions are equivalent:
 
     + $s=t$.
     + $s|_(U_i)=t|_(U_i)$ for every $i$.
     + $s_x=t_x$ for every $x in U$.
 
-  - For morphisms $u,v:shf.f->shf.g$ and an open cover $X=union_i U_i$,
+  + For morphisms $u,v:shf.f->shf.g$ and an open cover $X=union_i U_i$,
     the following conditions are equivalent:
 
     + $u=v$.
     + $u|_(U_i)=v|_(U_i)$ for every $i$.
     + $u_x=v_x$ for every $x in X$.
 
-  - Let $u:shf.f->shf.g$ be a morphism, and let $X=union_i U_i$ be an
+  + Let $u:shf.f->shf.g$ be a morphism, and let $X=union_i U_i$ be an
     open cover. Then $u$ is an isomorphism if and only if
     $u|_(U_i)$ is an isomorphism for every $i$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Realize equalities of germs.* The first equivalence is the defining
     relation on germs. For finitely many equalities, intersect their witness
@@ -94,7 +92,6 @@ Use the definitions and stalkwise isomorphism criterion of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the extension.* For an open $U$, let $F^e (U)$ consist of families $(s_B)_(B subset.eq U)$,
     where $s_B in F(B)$ and restriction sends $s_B$ to $s_C$ whenever
@@ -129,23 +126,22 @@ Use the definitions and stalkwise isomorphism criterion of
   Let $U_i$ cover $X$ and let $u_i:shf.f|_(U_i)->shf.g|_(U_i)$ agree on
   every overlap.
 
-  - There is a unique $u:shf.f->shf.g$ restricting to $u_i$.
+  + There is a unique $u:shf.f->shf.g$ restricting to $u_i$.
 
-  - It preserves the given group, ring, or module structure when each $u_i$
+  + It preserves the given group, ring, or module structure when each $u_i$
     does.
 
   See also #book-link(<sup-sc-5>)[SC-5] for the sheaf of these morphisms.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Glue the images of sections.* For $s in shf.f (V)$, the sections
-    $u_i(s|_(V inter U_i))$ agree on the overlaps $V inter U_i inter U_j$.
-    Glue them in $shf.g$ and call the result $u_V(s)$.
+    $u_i\(s|_(V inter U_i))$ agree on the overlaps $V inter U_i inter U_j$.
+    Glue them in $shf.g$ and call the result $u_V\(s)$.
 
   + *Check restriction compatibility.* To compare restriction
-    to $W subset.eq V$ with $u_W(s|_W)$, restrict both to $W inter U_i$;
+    to $W subset.eq V$ with $u_W\(s|_W)$, restrict both to $W inter U_i$;
     they are equal there by the naturality of $u_i$, hence equal on $W$.
     Thus the $u_V$ define a sheaf morphism.
 
@@ -157,7 +153,6 @@ Use the definitions and stalkwise isomorphism criterion of
     on $V inter U_i$ for every $V$, so is equal to $u$.
 ]
 
-#metadata(none) <sup-proof-1-22>
 #metadata(none) <sup-sl-4>
 #proposition(number: "SL-4", title: "Gluing sheaves")[
   Let $X=union_i U_i$ be an open cover. Suppose sheaves $shf.f_i$ on $U_i$
@@ -176,18 +171,16 @@ Use the definitions and stalkwise isomorphism criterion of
   linear over $shf.o|_(U_i inter U_j)$. If the sheaf of rings is also
   obtained by gluing, assume instead that the module transitions respect
   the specified ring transitions and scalar actions.
-
-  This proves #book-link(<exercise-1-22>)[Exercise II.1.22].
+  (Ex. II.1.22)
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f (V)$ to be the set
     of compatible families
     $
       (s_i)_i,
-      quad s_i in shf.f_i(V inter U_i),
+      quad s_i in shf.f_i\(V inter U_i),
     $
     satisfying, on $V inter U_i inter U_j$,
     $
@@ -204,10 +197,10 @@ Use the definitions and stalkwise isomorphism criterion of
   + *Verify the sheaf axiom.* To verify the sheaf axiom, cover $V$ by opens $V_a$ and take compatible
     sections $s^a=(s_i^a)_i$.  For each fixed $i$, the sections $s_i^a$ glue in
     the sheaf $shf.f_i$ to a unique
-    $s_i in shf.f_i(V inter U_i)$.  On a pairwise overlap, the equality
+    $s_i in shf.f_i\(V inter U_i)$.  On a pairwise overlap, the equality
     $phi_(i j)(s_i)=s_j$ holds after restriction to every $V_a$; separatedness
     of $shf.f_j$ makes it hold globally.  Hence $(s_i)_i$ is a section of
-    $shf.f (V)$, and componentwise uniqueness proves uniqueness in $shf.f$.
+    $shf.f\(V)$, and componentwise uniqueness proves uniqueness in $shf.f$.
 
   + *Identify the local pieces.* The construction also handles empty intersections, whose section objects
     are terminal.  Fix $i$.  Projection to the $i$-th component gives
@@ -232,18 +225,18 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #metadata(none) <sup-sl-5>
 #proposition(number: "SL-5", title: "Local representatives in sheafification")[
-  Let $F$ be a presheaf, and let $eta:F->F^+$ be the canonical map of
+  Let $shf.f$ be a presheaf, and let $eta:shf.f->shf.f^+$ be the canonical map of
   #book-link(<text-ii-1>)[II.1, Proposition 1.2].
 
-  - For every open $U$ and $sigma in F^+(U)$, there are an open cover
-    $U=union_i U_i$ and sections $s_i in F(U_i)$ such that
+  + For every open $U$ and $sigma in shf.f^+(U)$, there are an open cover
+    $U=union_i U_i$ and sections $s_i in shf.f\(U_i)$ such that
     $eta_(U_i)(s_i)=sigma|_(U_i)$ for every $i$.
 
-  - For $s,t in F(U)$, the equality $eta_U(s)=eta_U(t)$ holds if and only
+  + For $s,t in shf.f\(U)$, the equality $eta_U\(s)=eta_U\(t)$ holds if and only
     if there is an open cover $U=union_i U_i$ such that
     $s|_(U_i)=t|_(U_i)$ for every $i$.
 
-  - For every $x in X$, the canonical map $F_x->(F^+)_x$ is an isomorphism.
+  + For every $x in X$, the canonical map $shf.f_x->(shf.f^+)_x$ is an isomorphism.
 
   These assertions apply to each of the algebraic structures specified
   above. Exactness and local lifting are treated in
@@ -251,19 +244,18 @@ Use the definitions and stalkwise isomorphism criterion of
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
-  + *Find local representatives.* Use the construction in II.1, Proposition 1.2: a section of $F^+$ is a
-    family of germs locally induced by a section of $F$. This immediately gives
+  + *Find local representatives.* Use the construction in II.1, Proposition 1.2: a section of $shf.f^+$ is a
+    family of germs locally induced by a section of $shf.f$. This immediately gives
     local representatives.
 
-  + *Detect equality locally.* The images of $s,t in F(U)$ agree if and only if
+  + *Detect equality locally.* The images of $s,t in shf.f\(U)$ agree if and only if
     their germs agree at every point. By the germ relation, each point then has
     a neighborhood on which $s,t$ restrict equally, which proves the local
     equality criterion.
 
-  + *Compare stalks.* Every germ of $F^+$ is represented near its point by
-    an original section, so $F_x->(F^+)_x$ is surjective. If two original
+  + *Compare stalks.* Every germ of $shf.f^+$ is represented near its point by
+    an original section, so $shf.f_x->(shf.f^+)_x$ is surjective. If two original
     germs have the same image, choose a common neighborhood on which their
     images agree; the local equality criterion, at the specified point, makes
     the original germs equal. This proves injectivity. The construction respects

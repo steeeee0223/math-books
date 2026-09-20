@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == PJ — Proj and graded modules <sup-pj>
 
@@ -24,7 +23,6 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Test emptiness on homogeneous affine charts.* The opens $D_+(f)$ for homogeneous $f$ of positive degree cover
     $ops.proj S$. By II.2.5, such an open is the spectrum of $(S_f)_0$.
@@ -40,16 +38,15 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-2>
 #proposition(number: "PJ-2", title: "Domain of a graded map")[
-  - A degree-preserving homomorphism $phi:S->T$ induces a morphism
+  + A degree-preserving homomorphism $phi:S->T$ induces a morphism
     $U=ops.proj T minus V(phi(S_+)T)->ops.proj S$ by homogeneous-prime
     contraction and the degree-zero localization maps.
 
-  - This morphism is defined on all of $ops.proj T$ if and only if
+  + This morphism is defined on all of $ops.proj T$ if and only if
     $T_+ subset.eq sqrt(phi(S_+)T)$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Determine the domain by prime contraction.* For a homogeneous prime $idl.q$ of $T$, its contraction is homogeneous
     and prime. It belongs to $ops.proj S$ precisely when some homogeneous
@@ -90,7 +87,6 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Verify that the morphism is defined everywhere.* Choose $N$ such that $S_n->T_n$ is an isomorphism for all $n>=N$.
     Each homogeneous $t in T_e$, $e>0$, has a sufficiently high power in
@@ -116,23 +112,22 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-5>
 #proposition(number: "PJ-5", title: "Homogeneous quotients")[
-  - A surjective graded map $S->S\/I$ gives a closed immersion
+  + A surjective graded map $S->S\/I$ gives a closed immersion
     $ops.proj(S\/I)->ops.proj S$.
 
-  - Its ideal on $D_+(f)$ is the degree-zero
+  + Its ideal on $D_+(f)$ is the degree-zero
     part of the localized ideal $I_f$, under the affine quotient identification
     of #book-link(<sup-cs-1>)[CS-1].
 
-  - For any nonnegative cutoff $n$, replacing
+  + For any nonnegative cutoff $n$, replacing
     $I$ by its high-degree ideal $bigOPlus(I_d, d>=n)$ gives the same closed
     subscheme (II.3.12).
 
-  - Its geometric structure depends on the ideal sheaf,
+  + Its geometric structure depends on the ideal sheaf,
     not just on the underlying closed subset.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Verify that the morphism is defined everywhere.* The image of $S_+$ generates the irrelevant ideal of $S\/I$, so PJ-2
     gives a morphism everywhere.
@@ -158,28 +153,27 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
   degree-one elements over $S_0$, let $X=ops.proj S$, and let $M$ be a
   graded $S$-module.
 
-  - The canonical graded map $alpha:M->Gamma_*(tildeOf(M))$ sends a
+  + The canonical graded map $alpha:M->Gamma_*(tildeOf(M))$ sends a
     homogeneous element to the section represented by it on each standard
     chart, with the corresponding twist.
 
-  - If $S$ is Noetherian and $M$ is finite, then there is an integer $n_0$
+  + If $S$ is Noetherian and $M$ is finite, then there is an integer $n_0$
     such that $alpha_n$ is an isomorphism for every $n>=n_0$.
 
-  - The canonical sheaf comparison
+  + The canonical sheaf comparison
     $tildeOf(Gamma_*(tildeOf(M)))->tildeOf(M)$ is an isomorphism by
     #book-link(<text-ii-5>)[II.5, Proposition 5.15].
 
-  - If $S$ is Noetherian and $M$ is finite, then $tildeOf(M)=0$ if and
+  + If $S$ is Noetherian and $M$ is finite, then $tildeOf(M)=0$ if and
     only if there is an integer $n_0$ such that $M_n=0$ for every $n>=n_0$.
 
-  - For every $shf.o_X$-module $shf.f$, II.5.3\* gives the natural adjunction
+  + For every $shf.o_X$-module $shf.f$, II.5.3\* gives the natural adjunction
     $ops.hom(tildeOf(M), shf.f, over: shf.o_X) simeq
     ops.hom(M, Gamma_*shf.f, over: S)$,
     where module maps on the right preserve degree.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the canonical graded map.* Write $x_0,dots,x_r$ for the degree-one generators. On
     $U_i=D_+(x_i)$, the twist $shf.o (n)$ is trivialized by $x_i^n$ and
@@ -241,20 +235,19 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-8>
 #proposition(number: "PJ-8", title: "Saturation and ideal sheaves")[
-  - The ideals $I$ and $I^op("sat")$ give the same ideal sheaf.
+  + The ideals $I$ and $I^op("sat")$ give the same ideal sheaf.
 
-  - Homogeneous ideals define the same closed subscheme exactly when their
+  + Homogeneous ideals define the same closed subscheme exactly when their
     saturations agree.
 
-  - Saturated homogeneous ideals correspond to the
+  + Saturated homogeneous ideals correspond to the
     quasi-coherent ideal sheaves of closed subschemes of $ops.proj S$.
 
-  - For $I=(x_0)$ and $J=(x_0^2,x_0 x_1)$ in $k[x_0,x_1]$,
+  + For $I=(x_0)$ and $J=(x_0^2,x_0 x_1)$ in $k[x_0,x_1]$,
     $I!=J$ but $I^op("sat")=J^op("sat")=(x_0)$.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Test saturation by localization.* For homogeneous $s$, membership in $I^op("sat")$ is equivalent to
     membership of $s/1$ in $I S_(x_i)$ for every $i$.
@@ -290,20 +283,19 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-9>
 #proposition(number: "PJ-9", title: "Veronese")[
-  - For standard graded $S$ and $d>0$, put
+  + For standard graded $S$ and $d>0$, put
     $S^((d))=bigOPlus(S_(n d), n>=0)$, with $S_(n d)$ placed in degree $n$.
 
-  - There is a canonical isomorphism $ops.proj S^((d)) simeq ops.proj S$,
+  + There is a canonical isomorphism $ops.proj S^((d)) simeq ops.proj S$,
     under which $shf.o_(ops.proj S^((d)))(1)$ corresponds to
     $shf.o_(ops.proj S)(d)$.
 
-  - For $S=k[x_0,x_1]$, its monomials of degree
+  + For $S=k[x_0,x_1]$, its monomials of degree
     $d$ give the rational normal curve and the $d$-uple embedding of
     $sch.p^1_k$ (II.5.13).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Choose corresponding affine covers.* Choose degree-one generators $x_i$ of $S$. The charts $D_+(x_i)$
     cover $ops.proj S$, and the charts $D_+(x_i^d)$ cover
@@ -331,22 +323,21 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-10>
 #proposition(number: "PJ-10", title: "Segre")[
-  - For standard graded $A$-algebras $S,T$, let
+  + For standard graded $A$-algebras $S,T$, let
     $R=bigOPlus(tensor(S_n, T_n, over: A), n>=0)$ with componentwise multiplication.
 
-  - There is a canonical isomorphism
+  + There is a canonical isomorphism
     $ops.proj R simeq fiber(ops.proj S, ops.proj T, base: ops.spec A)$.
 
-  - Under it, $shf.o_(ops.proj R)(1)$ corresponds to
+  + Under it, $shf.o_(ops.proj R)(1)$ corresponds to
     $tensor(p_1^*shf.o (1), p_2^*shf.o (1))$.
 
-  - For two polynomial rings in two variables over $k$, this gives the quadric
+  + For two polynomial rings in two variables over $k$, this gives the quadric
     embedding of $sch.p^1_k times_k sch.p^1_k$ in $sch.p^3_k$ with equation
     $z_(0 0)z_(1 1)-z_(0 1)z_(1 0)=0$ (II.5.11).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Choose degree-one generators.* Choose degree-one generators $s_i$ and $t_j$. The tensors
     $tensor(s_i, t_j)$
@@ -383,23 +374,22 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
   Use the definition of relative very ampleness in
   #book-link(<text-ii-5>)[II.5].
 
-  - If two invertible sheaves on $X$ are very ample
+  + If two invertible sheaves on $X$ are very ample
     over a common base $Y$, their tensor product is very ample over $Y$,
     using the product of their immersions followed by Segre.
 
-  - For $X ->^f Y ->^g Z$, if $shf.l$ on $X$ is very ample over $Y$ and
+  + For $X ->^f Y ->^g Z$, if $shf.l$ on $X$ is very ample over $Y$ and
     $shf.m$ on $Y$ is very ample over $Z$, then
     $tensor(shf.l, f^*shf.m)$ is very ample over $Z$.
 
-  - These use immersions into finite-dimensional relative projective spaces;
+  + These use immersions into finite-dimensional relative projective spaces;
     when the immersions are closed, the resulting immersion is closed.
 
-  - In particular, compositions, base changes, and products of projective
+  + In particular, compositions, base changes, and products of projective
     morphisms remain projective (II.4.9 and II.5.12).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Realize the tensor product by Segre.* Let $i:X->sch.p^r_Y$ and $j:X->sch.p^s_Y$ realize the two sheaves.
     The map $(i,j)$ to their product is an immersion: factor it as the
@@ -430,24 +420,23 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
   Let $k$ be algebraically closed and $X$ a normal integral closed subscheme
   of $sch.p^r_k$, with homogeneous coordinate ring $S$.
 
-  - Then $S$ is a domain, and
+  + Then $S$ is a domain, and
     $S'=bigOPlus(Gamma(X, shf.o_X(n)), n>=0)$ identifies with its integral
     closure in its fraction field.
 
-  - The canonical inclusion $S->S'$ is an
+  + The canonical inclusion $S->S'$ is an
     isomorphism in sufficiently high degrees. Thus a sufficiently high Veronese
     embedding of $X$ is projectively normal.
 
-  - More generally for an integral projective closed subscheme, projective
+  + More generally for an integral projective closed subscheme, projective
     normality is equivalent to normality together with surjectivity of
     $Gamma(sch.p^r_k, shf.o (n))->Gamma(X, shf.o_X(n))$ for every $n>=0$.
 
-  - The nonempty connected normal formulation of II.5.14 is integral by
+  + The nonempty connected normal formulation of II.5.14 is integral by
     #book-link(<sup-xp-12>)[XP-12], since these schemes are Noetherian.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the normal affine coordinate rings.* The homogeneous ideal of an integral closed subscheme is prime, so its
     coordinate ring $S$ is a domain. Discard any coordinate whose image is
@@ -497,17 +486,16 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 #metadata(none) <sup-pj-examples>
 #metadata(none) <sup-pj-13>
 #example(number: "PJ-13", title: "Lost low degrees and failure of exactness")[
-  - The graded modules $S$ and $S plus.o S\/S_+$ have identical associated
+  + The graded modules $S$ and $S plus.o S\/S_+$ have identical associated
     sheaves: the extra summand is irrelevant torsion.
 
-  - On $sch.p^1_k$, the ideal
+  + On $sch.p^1_k$, the ideal
     sequence of two distinct points gives in degree zero the diagonal map
     $k->k times k$. Hence $Gamma_*$ does not in general preserve the
     surjectivity of short exact sequences; compare #book-link(<sup-sc-examples>)[SC-14].
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Remove the irrelevant-torsion summand.* Every positive-degree homogeneous $f$ annihilates $S\/S_+$, so
     localization at $f$ kills this summand. The graded associated-sheaf construction on the standard

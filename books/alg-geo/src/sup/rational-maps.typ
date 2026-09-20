@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == RM — Rational maps of schemes <sup-rm>
 
@@ -128,6 +127,7 @@ normal local rings and the valuative criterion of II.4.
   Let $f:X->Y$ be a dominant morphism of integral separated finite-type
   $k$-schemes. The extension $k(X)\/k(Y)$ is finite if and only if some
   nonempty open $V subset Y$ has $f^(-1)(V)->V$ finite.
+  (Ex. II.3.7, integral separated finite-type $k$-schemes)
 ]
 #proof[
   Start with an affine $ops.spec A subset Y$ and a nonempty affine
@@ -305,5 +305,3 @@ normal local rings and the valuative criterion of II.4.
   largest open on which normalization is an isomorphism. Explain why
   equality of function fields does not recover the missing local ring.
 ]
-
-Related exercise: #book-link(<exercise-ii-3-7>)[II.3.7]. RM-5 establishes the stated separated finite-type k-scheme version; it does not silently remove those extra hypotheses.

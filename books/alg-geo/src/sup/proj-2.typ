@@ -155,6 +155,7 @@ exercises: their proofs are left to the reader.
   If $shf.e$ is locally free and
   $0->shf.k->shf.e->shf.l->0$ is an invertible quotient, its section $s$
   has normal bundle $shf.hom (shf.k,shf.l)$.
+  (Ex. II.7.10, II.7.11(b), twisting tool)
 ]
 #proof[
   Tensoring a quotient $g^*shf.e->shf.n$ by $g^*shf.m$ and tensoring
@@ -190,6 +191,7 @@ exercises: their proofs are left to the reader.
   Hence its conormal bundle is $shf.o (n)$ and its normal bundle is
   $shf.o (-n)$, in agreement with PJ2-6. This computation fixes the sign
   dictated by the quotient convention.
+  (Ex. II.7.10(b), ruled-surface case)
 ]
 
 #metadata(none) <sup-pj2-8>
@@ -220,6 +222,7 @@ exercises: their proofs are left to the reader.
   $shf.o_(ops.proj S^((d)))(m)$ with $shf.o_(ops.proj S)(d m)$.
   In particular, for sufficiently divisible $d$, the latter twists are
   invertible and satisfy the usual tensor-product formulas.
+  (Ex. II.7.11(a), Veronese tool)
 ]
 #proof[
   The existence of $d$ is the graded-algebra assertion that, for finitely
@@ -292,5 +295,3 @@ example explains the hypotheses in II.5.12 and II.7.9. Further source
 comparisons are #link("https://stacks.math.columbia.edu/tag/01NS")[Stacks,
   relative Proj as a functor] and
 #link("https://stacks.math.columbia.edu/tag/01MM")[invertible twists on Proj].
-
-Related exercise: #book-link(<exercise-ii-7-10>)[II.7.10]. The quotient construction and twist comparison here provide its forward direction; the converse classification is a separate assertion.

@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == XP — Topology and intrinsic properties of schemes <sup-xp>
 
@@ -21,7 +20,6 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Find a prime on an affine chart.* Let $C$ be the closed irreducible subset and choose an affine open
     $U=ops.spec A$ meeting it. The nonempty open $C inter U$ of $C$ is
@@ -47,21 +45,20 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-3>
 #proposition(number: "XP-3", title: "Specialization in an affine scheme")[
-  - For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
+  + For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
     $idl.p_x subset.eq idl.p_y$.
 
-  - Schemes are $T_0$: distinct points have
+  + Schemes are $T_0$: distinct points have
     distinct closures.
 
-  - Closed points of an affine scheme are the maximal
+  + Closed points of an affine scheme are the maximal
     ideals.
 
-  - Its irreducible components correspond to minimal primes, with those
+  + Its irreducible components correspond to minimal primes, with those
     primes as their generic points.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute specialization on an affine chart.* A closed set $V(I)$ contains $idl.p$ precisely when $I subset.eq idl.p$;
     intersecting these sets gives $overline({idl.p})=V(idl.p)$.
@@ -80,17 +77,16 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-4>
 #lemma(number: "XP-4", title: "Restriction to opens")[
-  - Every nonempty open of an irreducible scheme contains its generic point
+  + Every nonempty open of an irreducible scheme contains its generic point
     and is irreducible with the same generic point.
 
-  - For any scheme $X$ and
+  + For any scheme $X$ and
     open $U$, the components of $U$ are exactly the nonempty intersections
     $C inter U$ for components $C$ of $X$. No finiteness of the component set
     is assumed.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Restrict the generic point.* A nonempty open in an irreducible space is dense and irreducible.
     Since its points specialize from the generic point, it contains that
@@ -110,19 +106,18 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-5>
 #proposition(number: "XP-5", title: "Function fields")[
-  - For an integral scheme $X$ with generic point $eta$, there are canonical
+  + For an integral scheme $X$ with generic point $eta$, there are canonical
     identifications $K(X)=shf.o_(X,eta)=kappa(eta)$ and
     $ops.frac(A) simeq K(X)$ for every nonempty affine open $ops.spec A$.
 
-  - Restriction to the generic stalk embeds $Gamma(U, shf.o_X)$ into $K(X)$
+  + Restriction to the generic stalk embeds $Gamma(U, shf.o_X)$ into $K(X)$
     for every nonempty open $U$.
 
-  - These are the function-field identifications
+  + These are the function-field identifications
     of II.3.6; a generic local ring on a nonintegral scheme need not be a field.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the generic local ring.* On a nonempty affine open $ops.spec A$, integrality makes $A$ a domain
     and identifies $eta$ with $(0)$. Proposition 5.1's stalk formula for the
@@ -138,24 +133,23 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-6>
 #proposition(number: "XP-6", title: "Dominance")[
-  - For integral schemes $X,Y$, a morphism $f:X->Y$ is dominant if and only
+  + For integral schemes $X,Y$, a morphism $f:X->Y$ is dominant if and only
     if $f(eta_X)=eta_Y$; its local map gives an inclusion $K(Y)->K(X)$.
 
-  - For a ring map $phi:A->B$ inducing $f:ops.spec B->ops.spec A$,
+  + For a ring map $phi:A->B$ inducing $f:ops.spec B->ops.spec A$,
     $f$ is dominant if and only if $ops.ker(phi) subset.eq sqrt((0))$.
     Here $sqrt((0))$ is the nilradical of $A$.
 
-  - If $A$ is reduced, then $f$ is dominant if and only if $phi$ is injective.
+  + If $A$ is reduced, then $f$ is dominant if and only if $phi$ is injective.
 
-  - The quotient $A->A_(red)$ is dominant
+  + The quotient $A->A_(red)$ is dominant
     on spectra but is not injective when $A$ has a nonzero nilpotent.
 
-  - These statements supply the function-field part of II.3.7, not its
+  + These statements supply the function-field part of II.3.7, not its
     finite-extension or dense-open finiteness conclusions.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Test dominance at generic points.* Continuity gives $f(X) subset.eq overline({f(eta_X)})$; since the
     right side is closed and contains a point of $f(X)$, the two closures
@@ -174,22 +168,21 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-7>
 #remark(number: "XP-7", title: "Noetherian and closed-point phenomena")[
-  - A Noetherian scheme has a Noetherian underlying space and unique generic
+  + A Noetherian scheme has a Noetherian underlying space and unique generic
     points for nonempty irreducible closed subsets; in the terminology of
     II.3.17 it is a Zariski space.
 
-  - A scheme locally of finite type over a field
+  + A scheme locally of finite type over a field
     has closed points dense in every closed subset.
 
-  - For a scheme of finite
+  + For a scheme of finite
     type over a field, closed points have residue fields finite over that field.
     Over an algebraically closed field, these residue fields equal the base.
 
-  - Neither Noetherianity nor density of closed points is needed for XP-1.
+  + Neither Noetherianity nor density of closed points is needed for XP-1.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Prove Noetherianity of the underlying space.* A finite cover by spectra of Noetherian rings gives a finite cover by
     Noetherian spaces: ascending chains of opens stabilize on each member,
@@ -219,18 +212,17 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-8>
 #proposition(number: "XP-8", title: "Clopen sets and idempotents")[
-  - Global idempotents $e in Gamma(X, shf.o_X)$ correspond to clopen subsets
+  + Global idempotents $e in Gamma(X, shf.o_X)$ correspond to clopen subsets
     by $e mapsto X_e$, with $e$ equal to $1$ on $X_e$ and $0$ on its
     complement.
 
-  - On $ops.spec A$, a nontrivial decomposition is equivalent to
+  + On $ops.spec A$, a nontrivial decomposition is equivalent to
     $A simeq A_1 times A_2$ with both factors nonzero, or to orthogonal
     nonzero idempotents $e_1+e_2=1$. The factors are $A e_1,A e_2$ with
     identities $e_1,e_2$ (II.2.19).
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct a clopen set from an idempotent.* In a local ring, $e(1-e)=0$ implies $e=0$ or $e=1$, since one of
     $e,1-e$ is a unit (Check!). For a global idempotent, the loci of these two germ
@@ -247,7 +239,6 @@ The definitions of connected, irreducible, reduced, integral, and
     Neither factor vanishes precisely for a nontrivial decomposition.
 ]
 
-#metadata(none) <sup-proof-2-3>
 #metadata(none) <sup-xp-9>
 #proposition(number: "XP-9", title: "Reduction")[
   + A scheme $X$ is reduced if and only if every local ring $shf.o_(X,x)$
@@ -262,18 +253,18 @@ The definitions of connected, irreducible, reduced, integral, and
 
   A common nilpotence exponent on an arbitrary open is not required.
   Reduced induced structures on other closed subsets are treated in CS-4.
-  This proves #book-link(<exercise-2-3>)[Exercise II.2.3].
+  (Ex. II.2.3)
 ]
 
 #proof[
   + *Compare reduced sections and reduced stalks.*
 
-    - *Pass from stalks to sections.* Suppose first that every $shf.o_(X,x)$ is reduced.  If
+    + *Pass from stalks to sections.* Suppose first that every $shf.o_(X,x)$ is reduced.  If
       $s in shf.o_X (U)$ is nilpotent, then every germ $s_x$ is nilpotent and
       hence zero.  A section whose germs are all zero is zero, so
       $shf.o_X (U)$ is reduced.
 
-    - *Pass from sections to stalks.* Conversely, assume every $shf.o_X (U)$ is reduced.  Let a germ
+    + *Pass from sections to stalks.* Conversely, assume every $shf.o_X (U)$ is reduced.  Let a germ
       $a in shf.o_(X,x)$ be nilpotent.  Represent it by
       $s in shf.o_X (U)$.  The equality $a^n=0$ means that after shrinking to
       some neighborhood $V$ of $x$, one has $(s|_V)^n=0$.  Reducedness of
@@ -282,7 +273,7 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Construct the reduction.*
 
-    - *Form the nilradical quotient sheaf.* Let $cal(N)$ be the sheafification of the ideal presheaf
+    + *Form the nilradical quotient sheaf.* Let $cal(N)$ be the sheafification of the ideal presheaf
       $U mapsto sqrt((0)) subset.eq shf.o_X(U)$.  Its inclusion into
       $shf.o_X$ is injective by SC-4.  Thus $cal(N)(U)$ consists
       of locally nilpotent sections; a uniform nilpotence exponent on an
@@ -293,7 +284,7 @@ The definitions of connected, irreducible, reduced, integral, and
       Equivalently, this quotient sheaf is the sheafification of
       $U mapsto shf.o_X (U)_(red)$.
 
-    - *Identify its affine charts.* On an affine open
+    + *Identify its affine charts.* On an affine open
       $V=ops.spec A$, its restriction is the structure sheaf of
       $ops.spec(A\/sqrt((0)))$.  To see this, on every $D(a) subset.eq V$
       a locally nilpotent section is nilpotent because $D(a)$ is
@@ -307,30 +298,30 @@ The definitions of connected, irreducible, reduced, integral, and
       glue and make $X_(red)$ a scheme.  The quotient maps define a closed immersion
       $i:X_(red)->X$.
 
-    - *Compare the underlying spaces.* Every prime ideal of $A$ contains $sqrt((0))$, so contraction gives a
+    + *Compare the underlying spaces.* Every prime ideal of $A$ contains $sqrt((0))$, so contraction gives a
       homeomorphism
       $ops.spec(A\/sqrt((0))) simeq ops.spec A$.  These local homeomorphisms
       agree, and therefore $i$ is a homeomorphism on underlying spaces.
 
-    - *Verify reducedness.* Finally, $A\/sqrt((0))$ is reduced on every affine chart, so part (a)
+    + *Verify reducedness.* Finally, $A\/sqrt((0))$ is reduced on every affine chart, so part (a)
       shows that $X_(red)$ is reduced.
 
   + *Prove the reduced-source universal property.*
 
-    - *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
+    + *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
       pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus
       $f^sharp$ kills the nilradical ideal sheaf of $Y$ and factors through
       $shf.o_Y\/cal(N)_Y$.  This gives a morphism
       $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.
 
-    - *Check locality on stalks.* At $x in X$,
+    + *Check locality on stalks.* At $x in X$,
       the induced map is the factor of the local homomorphism
       $shf.o_(Y,f(x))->shf.o_(X,x)$ through its nilradical quotient.  It is
       local because the maximal ideal of that quotient is the image of the
       original maximal ideal.  Thus this is a morphism of locally ringed
       spaces.
 
-    - *Prove uniqueness.* The underlying map is forced by the homeomorphism $i$, and
+    + *Prove uniqueness.* The underlying map is forced by the homeomorphism $i$, and
       the sheaf map is forced by the epimorphism to the quotient, proving
       uniqueness.
 
@@ -338,15 +329,15 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-10>
 #lemma(number: "XP-10", title: "Quasi-compactness and Noetherian induction")[
-  - Every affine scheme is quasi-compact.
+  + Every affine scheme is quasi-compact.
 
-  - A topological space is Noetherian
+  + A topological space is Noetherian
     exactly when every open is quasi-compact.
 
-  - A locally Noetherian scheme is
+  + A locally Noetherian scheme is
     Noetherian exactly when it is quasi-compact.
 
-  - On a Noetherian space,
+  + On a Noetherian space,
     Noetherian induction proves a property for all closed subsets if, for each
     closed subset, its validity on every proper closed subset implies its
     validity there. This includes the empty subset as the initial case
@@ -354,7 +345,6 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Prove affine quasi-compactness.* Refine an open cover of $ops.spec A$ by distinguished opens $D(a_i)$.
     Their covering condition says that the ideal generated by all $a_i$ is
@@ -384,7 +374,7 @@ The definitions of connected, irreducible, reduced, integral, and
   A scheme $X$ is quasi-separated if $Delta_X$ is quasi-compact.
   The following conditions are equivalent:
 
-  #set enum(numbering: "(i)", spacing: 0.8em)
+  #set enum(spacing: 0.8em)
 
   + $X$ is quasi-separated.
   + $U inter V$ is quasi-compact for every pair of affine open subsets
@@ -395,7 +385,6 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the inverse images of the diagonal.* Cover $fiber(X, X, base: ops.spec ZZ)$ by products $U times V$ of affine
     opens. These products are affine by MG-1, and the inverse image under
@@ -414,24 +403,23 @@ The definitions of connected, irreducible, reduced, integral, and
 
 #metadata(none) <sup-xp-12>
 #proposition(number: "XP-12", title: "Normality")[
-  - A scheme $X$ is normal if and only if $shf.o_(X,x)$ is an integrally
+  + A scheme $X$ is normal if and only if $shf.o_(X,x)$ is an integrally
     closed domain for every $x in X$.
 
-  - For any open cover $X=union_i U_i$, $X$ is normal if and only if
+  + For any open cover $X=union_i U_i$, $X$ is normal if and only if
     $U_i$ is normal for every $i$.
 
-  - For a ring $A$, $ops.spec A$ is normal if and only if $A_idl.p$ is
+  + For a ring $A$, $ops.spec A$ is normal if and only if $A_idl.p$ is
     an integrally closed domain for every prime ideal $idl.p subset.eq A$.
     If $A$ is a domain, this is also equivalent to $A$ being integrally
     closed in $ops.frac(A)$.
 
-  - Normality does not imply connectedness or irreducibility.
+  + Normality does not imply connectedness or irreducibility.
 
-  - If $X$ is nonempty, connected, normal, and Noetherian, then $X$ is integral.
+  + If $X$ is nonempty, connected, normal, and Noetherian, then $X$ is integral.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Check normality on an open cover.* Restricting a scheme to an open preserves its local rings, which proves
     both open restriction and the cover criterion.
@@ -465,7 +453,6 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Obtain Noetherian affine charts.* Choose a finite Noetherian affine cover $V_i=ops.spec A_i$ of the
     target. LP's local finite-type criterion gives an affine cover of
@@ -572,7 +559,6 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Compute the local rings.* Every element of $A$ is idempotent. In any local ring of $A$, every element is therefore $0$ or $1$, so that ring is a field.
 

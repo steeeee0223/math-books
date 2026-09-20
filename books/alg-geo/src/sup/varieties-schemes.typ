@@ -3,7 +3,6 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 #show: show-theorion
-#set enum(numbering: "(a)", indent: 1em)
 
 == VS — Varieties and schemes <sup-vs>
 
@@ -15,20 +14,19 @@ from those varieties, and the definition of abstract varieties, remain in
 
 #metadata(none) <sup-vs-1>
 #proposition(number: "VS-1", title: "Classical points and residue fields")[
-  - The points of a variety $V$ identify with the closed points of $t(V)$,
+  + The points of a variety $V$ identify with the closed points of $t(V)$,
     which are exactly its points with residue field $k$.
 
-  - The other scheme points include generic points of positive-dimensional
+  + The other scheme points include generic points of positive-dimensional
     irreducible closed subsets; see #book-link(<sup-xp-generic-points>)[XP-1–XP-7].
     The general description of field-valued points is #book-link(<sup-mg-10>)[MG-10].
 
-  - For example, on $sch.a^1_k$, the classical point $a$ corresponds to
+  + For example, on $sch.a^1_k$, the classical point $a$ corresponds to
     $(t-a)$ in $ops.spec k[t]$, while $(0)$ is the generic point and is not
     $k$-rational.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify classical points on affine charts.* Choose an affine open subvariety with coordinate ring $A$, a finite type
     $k$-algebra. In its spectrum, the closed points are the maximal ideals.
@@ -52,23 +50,22 @@ from those varieties, and the definition of abstract varieties, remain in
 
 #metadata(none) <sup-vs-2>
 #proposition(number: "VS-2", title: "Affine and projective identifications")[
-  - For an affine variety $V$, the canonical identification is
+  + For an affine variety $V$, the canonical identification is
     $t(V) simeq ops.spec A(V)$.
 
-  - For a projective variety, it is
+  + For a projective variety, it is
     $t(V) simeq ops.proj S(V)$, with its homogeneous coordinate ring.
 
-  - Use the affine chart and structure-sheaf formulas of
+  + Use the affine chart and structure-sheaf formulas of
     #book-link(<text-ii-2>)[II.2, Propositions 2.2 and 2.5]: on standard charts
     regular functions identify with degree-zero localizations, compatibly
     with restriction. This is the comparison in II.2.14(d).
 
-  - For the projective line, the charts have coordinates $t$ and $u$, with
+  + For the projective line, the charts have coordinates $t$ and $u$, with
     $u=1/t$ on the common punctured affine line.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Identify the affine points and topology.* In the affine construction of II.2.6, the points added to $V$ are
     the generic points of its nonempty irreducible closed subsets $W$.
@@ -100,25 +97,24 @@ from those varieties, and the definition of abstract varieties, remain in
 
 #metadata(none) <sup-vs-3>
 #remark(number: "VS-3", title: "Maps in both languages")[
-  - For regular maps, the scheme map under the fully faithful functor of
+  + For regular maps, the scheme map under the fully faithful functor of
     II.2.6 has the same pullback on regular functions on the affine charts.
 
-  - Conversely, a $k$-scheme morphism between associated schemes preserves
+  + Conversely, a $k$-scheme morphism between associated schemes preserves
     their $k$-rational points by #book-link(<sup-mg-10>)[MG-10]. Under VS-1, these
     are the classical points; its structure-sheaf map gives the corresponding
     regular map.
 
-  - The natural Hom bijection is the one already proved in
+  + The natural Hom bijection is the one already proved in
     II.2.6, providing the entry for II.2.15(a)–(c).
 
-  - The vanishing-ideal and quotient application is in #book-link(<sup-cs-6>)[CS-6].
+  + The vanishing-ideal and quotient application is in #book-link(<sup-cs-6>)[CS-6].
 
-  - The variety-product comparison of II.3.23 and computations over fields
+  + The variety-product comparison of II.3.23 and computations over fields
     which are not algebraically closed are separate topics.
 ]
 
 #proof[
-  #set enum(numbering: "1.")
 
   + *Construct the scheme morphism from a regular map.* For a regular map, choose affine opens in its target and affine opens in
     their inverse images. The pullback of regular functions is a $k$-algebra
