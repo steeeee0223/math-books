@@ -115,17 +115,17 @@ See #book-link(<sup-sc-9>)[SC-9].
 
 // Hartshorne II.1, Exercise 1.12
 #exercise(title: "Exercise 1.12 (Inverse Limit)")[
-  For an inverse system $shf.f_i$, show that $U mapsto op("lim") shf.f_i (U)$ is a sheaf
-  and has the universal property of $op("lim") shf.f_i$ in the category of sheaves.
+  For an inverse system $shf.f_i$, show that $U mapsto ops.lim shf.f_i (U)$ is a sheaf
+  and has the universal property of $ops.lim shf.f_i$ in the category of sheaves.
 ] <exercise-1-12>
 
 See #book-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.13
 #exercise(title: "Exercise 1.13 (Espace Étale of a Presheaf)")[
-  Given a presheaf $shf.f$, set $op("Spe")(shf.f)=union_(P in X) shf.f_P$ and project
+  Given a presheaf $shf.f$, set $ops.spe (shf.f)=union_(P in X) shf.f_P$ and project
   it to $X$. Give it the strongest topology making every germ map
-  $s:U->op("Spe")(shf.f)$, for $s in shf.f (U)$, continuous. Show that $shf.f^+(U)$
+  $s:U->ops.spe (shf.f)$, for $s in shf.f (U)$, continuous. Show that $shf.f^+(U)$
   is the set of continuous sections over $U$. Hence $shf.f$ is a sheaf if and
   only if its sections are all continuous sections of this espace étale.
 ]

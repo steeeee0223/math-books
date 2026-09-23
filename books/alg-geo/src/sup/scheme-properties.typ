@@ -244,8 +244,8 @@ The definitions of connected, irreducible, reduced, integral, and
 #proposition(number: "XP-9", title: "Reduction")[
   + A scheme $X$ is reduced if and only if every local ring $shf.o_(X,x)$
     is reduced; equivalently, every ring $shf.o_X (U)$ has no nonzero nilpotents.
-  + Let $cal(N)$ be the sheaf of locally nilpotent sections of $shf.o_X$.
-    Then $X_(red)=(X,shf.o_X\/cal(N))$ is a reduced scheme, and the quotient
+  + Let $shf.n$ be the sheaf of locally nilpotent sections of $shf.o_X$.
+    Then $X_(red)=(X,shf.o_X\/shf.n)$ is a reduced scheme, and the quotient
     map defines a closed immersion $i:X_(red)->X$ that is a homeomorphism
     on underlying spaces. Its structure sheaf is the sheafification of
     $U mapsto shf.o_X (U)_(red)$.
@@ -274,13 +274,13 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Construct the reduction.*
 
-    + *Form the nilradical quotient sheaf.* Let $cal(N)$ be the sheafification of the ideal presheaf
+    + *Form the nilradical quotient sheaf.* Let $shf.n$ be the sheafification of the ideal presheaf
       $U mapsto sqrt((0)) subset.eq shf.o_X(U)$.  Its inclusion into
-      $shf.o_X$ is injective by SC-4.  Thus $cal(N)(U)$ consists
+      $shf.o_X$ is injective by SC-4.  Thus $shf.n (U)$ consists
       of locally nilpotent sections; a uniform nilpotence exponent on an
       arbitrary open $U$ is not required.  Define
       $
-        X_(red)=(X,shf.o_X\/cal(N)).
+        X_(red)=(X,shf.o_X\/shf.n).
       $
       Equivalently, this quotient sheaf is the sheafification of
       $U mapsto shf.o_X (U)_(red)$.
@@ -312,7 +312,7 @@ The definitions of connected, irreducible, reduced, integral, and
     + *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
       pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus
       $f^sharp$ kills the nilradical ideal sheaf of $Y$ and factors through
-      $shf.o_Y\/cal(N)_Y$.  This gives a morphism
+      $shf.o_Y\/shf.n_Y$.  This gives a morphism
       $tilde(f):X->Y_(red)$ with $i compose tilde(f)=f$.
 
     + *Check locality on stalks.* At $x in X$,

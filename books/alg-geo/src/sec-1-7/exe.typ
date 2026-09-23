@@ -39,7 +39,7 @@
   Regard lines in $sch.p^2$ as the dual plane $(sch.p^2)^ast$. For a nonsingular
   $P$ on a curve $Y$, show there is a unique line $T_P (Y)$ with
   $i(Y,T_P (Y);P)>1$. Show $P mapsto T_P (Y)$ is a morphism
-  $op("Reg")(Y)->(sch.p^2)^ast$. The closure of its image is the *dual curve* $Y^ast$.
+  $ops.reg (Y)->(sch.p^2)^ast$. The closure of its image is the *dual curve* $Y^ast$.
 ]
 
 // Hartshorne I.7, Exercise 7.4

@@ -58,7 +58,7 @@ exercises: their proofs are left to the reader.
 #metadata(none) <sup-pj2-2>
 #proposition(number: "PJ2-2", title: "Relations are part of the point")[
   Let $shf.j$ be the homogeneous kernel of
-  $op("Sym") shf.s_1 -> shf.s$. There is a canonical closed immersion
+  $ops.sym shf.s_1 -> shf.s$. There is a canonical closed immersion
   $P->sch.p (shf.s_1)$. An invertible quotient
   $g^*shf.s_1 -> shf.l$ defines a morphism into $P$ precisely when the
   induced symmetric-algebra map annihilates the image of $g^*shf.j$.

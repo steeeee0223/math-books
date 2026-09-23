@@ -1075,7 +1075,7 @@ best tested using RS, GSS, RT, and GTT directly.
 #example(number: "LP-57", title: "A proper, locally projective morphism which is not projective")[
   Let $k$ be algebraically closed with $ops.char k != 2$, and let
   $C=V(y^2z-x^3-x^2z) subset sch.p^2_k$. Write $q$ for its node.
-  Identify $C minus {q}$ with $op("G")_m$, with coordinate $w$ on its
+  Identify $C minus {q}$ with $shf.g_m$, with coordinate $w$ on its
   normalization $sch.p^1$, whose points $0,infinity$ map to $q$.
   Explicitly, the affine normalization parameter $a$ gives
   $x=a^2-1$, $y=a(a^2-1)$ and $w=(a-1)/(a+1)$; the two branches

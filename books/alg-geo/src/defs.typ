@@ -69,6 +69,9 @@
 // coproduct of `val` under index set from `bottom` to `top`
 #let coprod(val, bottom, top: none) = $attach(product.co, tr: #top, br: #bottom) #val$
 
+// indexed family of covering sets
+#let cov(val, bottom, top: none) = $attach({#val}, br: #bottom, tr: #top)$
+
 // --- symbols ---
 #let simeq = $tilde.equiv$
 #let eqBy(x) = $attach(=, b: #x)$

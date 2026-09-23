@@ -230,12 +230,12 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 #metadata(none) <sup-pj-7>
 #definition(number: "PJ-7", title: "Saturation")[
   Let $S=A[x_0,dots,x_r]$ with $A$ Noetherian. For a homogeneous ideal $I$,
-  define $I^op("sat")={s in S:S_+^n s subset.eq I " for some " n>=0}$.
+  define $I^ops.sat={s in S:S_+^n s subset.eq I " for some " n>=0}$.
 ]
 
 #metadata(none) <sup-pj-8>
 #proposition(number: "PJ-8", title: "Saturation and ideal sheaves")[
-  + The ideals $I$ and $I^op("sat")$ give the same ideal sheaf.
+  + The ideals $I$ and $I^ops.sat$ give the same ideal sheaf.
 
   + Homogeneous ideals define the same closed subscheme if and only if their
     saturations agree.
@@ -244,12 +244,12 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     quasi-coherent ideal sheaves of closed subschemes of $ops.proj S$.
 
   + For $I=(x_0)$ and $J=(x_0^2,x_0 x_1)$ in $k[x_0,x_1]$,
-    $I!=J$ but $I^op("sat")=J^op("sat")=(x_0)$.
+    $I!=J$ but $I^ops.sat=J^ops.sat=(x_0)$.
 ]
 
 #proof[
 
-  + *Test saturation by localization.* For homogeneous $s$, membership in $I^op("sat")$ is equivalent to
+  + *Test saturation by localization.* For homogeneous $s$, membership in $I^ops.sat$ is equivalent to
     membership of $s/1$ in $I S_(x_i)$ for every $i$.
     One direction follows since $x_i$ is invertible there. Conversely, choose
     $n_i$ with $x_i^(n_i)s in I$. Taking all $n_i$ positive, every

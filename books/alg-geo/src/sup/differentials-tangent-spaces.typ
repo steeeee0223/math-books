@@ -354,14 +354,14 @@ the reader; the geometric reductions explain exactly where they are used.
   intersection $X subset sch.p_k^n$ is cut out by a homogeneous regular
   sequence of degrees $d_1,dots,d_r$, then
   $
-    omega_X=op("det") Omega_(X\/k)
+    omega_X=ops.det Omega_(X\/k)
     simeq shf.o_X(sum_i d_i-n-1).
   $
   (Ex. II.8.4(d))
 ]
 #proof[
   Taking the determinant in DF-12 gives
-  $op("det") Omega_((sch.p^n)\/k)=shf.o_((sch.p)^n)(-n-1)$.
+  $ops.det Omega_((sch.p^n)\/k)=shf.o_((sch.p)^n)(-n-1)$.
   In the hypersurface case apply the determinant rule of
   #book-link(<sup-al-9>)[AL-9, in top exterior degree] to DF-10 and use DF-11.
   For the complete intersection, the classes of the equations form a basis
@@ -369,8 +369,8 @@ the reader; the geometric reductions explain exactly where they are used.
   #book-link(<sup-al2>)[AL2]. Their homogeneous transitions identify this
   sheaf with $bigOPlus(shf.o_X(-d_i), i=1, top: r)$. Therefore
   $
-    op("det") i^*Omega_((sch.p^n)\/k)
-    simeq tensor(op("det")(shf.i\/shf.i^2), omega_X),
+    ops.det i^*Omega_((sch.p^n)\/k)
+    simeq tensor(ops.det (shf.i\/shf.i^2), omega_X),
   $
   where the right side denotes the tensor product of the two line bundles.
   Cancel $shf.o_X(-sum_i d_i)$ to obtain the formula. All determinant

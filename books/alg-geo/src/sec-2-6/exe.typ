@@ -128,5 +128,5 @@ For the surface cases, see #book-link(<sup-dv-15>)[DV-15] (affine cone) and #boo
 #exercise(title: "Exercise 6.12 (Degree of a Coherent Sheaf)")[
   On a complete nonsingular curve, prove there is a unique additive degree on
   coherent sheaves such that $deg shf.l (D)=deg D$ and a torsion sheaf has degree
-  $sum_P op("length")(shf.f_P)$.
+  $sum_P ops.length (shf.f_P)$.
 ]

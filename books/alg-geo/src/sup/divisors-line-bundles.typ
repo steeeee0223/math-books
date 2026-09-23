@@ -291,11 +291,11 @@ of the generic points. The second accommodates the embedded point in AL2-4.
   $
     0 -> A\/(b) ->^(times a) A\/(a b) -> A\/(a) -> 0,
     quad
-    op("length")(A\/(a b))=op("length")(A\/(a))+op("length")(A\/(b)).
+    ops.length (A\/(a b))=ops.length (A\/(a))+ops.length (A\/(b)).
   $
   Consequently
   $
-    op("mult")_A(a/b)=op("length")_A(A\/(a))-op("length")_A(A\/(b))
+    ops.mult_A(a/b)=ops.length_A(A\/(a))-ops.length_A(A\/(b))
   $
   is a well-defined homomorphism $Q(A)^times\/A^times->ZZ$. If $A$ is a DVR,
   it is the usual valuation.
@@ -307,7 +307,7 @@ one-dimensional spectrum consist only of the closed point. This gives
 finite length. Verify the displayed sequence, use length additivity,
 and compare two fraction presentations by cross multiplication. In a DVR
 the filtration by powers of a uniformizer has one-dimensional residue-field
-quotients, giving $op("length")(A\/(pi^n))=n$.
+quotients, giving $ops.length (A\/(pi^n))=n$.
 
 For a Cartier divisor on a Noetherian scheme, apply this calculation to the
 one-dimensional local rings at codimension-one points. Unit ratios preserve
@@ -321,7 +321,7 @@ construction uses lengths even when those local rings are not DVRs.
   Let $C$ be a proper integral curve over a field $k$. For a Cartier divisor
   $D$, define
   $
-    deg_k(D)=sum_(x in C text(" closed"))op("mult")_x(D)[k(x):k].
+    deg_k(D)=sum_(x in C text(" closed"))ops.mult_x(D)[k(x):k].
   $
   For an effective Cartier divisor $E$ this is
   $deg_k(E)=dim_k Gamma(E, shf.o_E)$. Every Cartier divisor is a difference
@@ -338,7 +338,7 @@ construction uses lengths even when those local rings are not DVRs.
   $B=Gamma(E, shf.o_E)$. Its decomposition into its local factors gives
   $B=product_(x in E) shf.o_(E,x)$. Each composition factor over
   $shf.o_(C,x)$ is $k(x)$, hence
-  $dim_k shf.o_(E,x)=[k(x):k]op("length")_(shf.o_(C,x))(shf.o_(E,x))$.
+  $dim_k shf.o_(E,x)=[k(x):k]ops.length_(shf.o_(C,x))(shf.o_(E,x))$.
   The product decomposition and dimension formula are *left to the reader
   (commutative algebra)*. Summing gives the assertion.
 

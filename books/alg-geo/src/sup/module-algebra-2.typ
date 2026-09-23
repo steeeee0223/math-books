@@ -120,7 +120,7 @@ nonzero module with zero-dimensional support.
   + If $P$ is an invertible $A$-module, a basis of $S^(-1)P$ spreads to a basis
     of $P_s$ for some $s in S$.
   + If $A$ has no embedded associated primes, then
-    $Q(A) simeq product_(idl.p in op("Min")(A)) A_idl.p$;
+    $Q(A) simeq product_(idl.p in ops.min (A)) A_idl.p$;
     the factors are Artinian local rings. If $A$ is also reduced they are
     the fraction fields of $A\/idl.p$.
 ]
@@ -158,10 +158,10 @@ Artinian decomposition of a zero-dimensional Noetherian ring.
 #proposition(number: "AL2-7", title: "Rules for using depth")[
   With these hypotheses:
 
-  + $0<=op("depth")_A(M)<=dim(ops.supp (M))$;
-  + $op("depth")_A(M)=0$ if and only if $idl.m in ops.ass(M, over: A)$;
+  + $0<=ops.depth_A(M)<=dim(ops.supp (M))$;
+  + $ops.depth_A(M)=0$ if and only if $idl.m in ops.ass(M, over: A)$;
   + for an $M$-regular $f in idl.m$,
-    $op("depth")_(A\/(f))(M\/f M)=op("depth")_A(M)-1$;
+    $ops.depth_(A\/(f))(M\/f M)=ops.depth_A(M)-1$;
   + any permutation of an $M$-regular sequence is $M$-regular;
   + after localization, an $M$-regular sequence remains regular wherever
     every element belongs to the prime and the localized module is nonzero.
@@ -184,11 +184,11 @@ stated hypotheses exclude a vanishing quotient or a unit in the sequence.
   $
   and
   $
-    op("Sym")_(A\/I)(I\/I^2) -> op("gr")_I A
+    ops.sym_(A\/I)(I\/I^2) -> ops.gr_I A
     := bigOPlus(I^n\/I^(n+1), n>=0)
   $
   are isomorphisms. The second map multiplies representatives. In coordinates
-  it is the graded map $(A\/I)[T_1,dots,T_r]->op("gr")_I A$ sending
+  it is the graded map $(A\/I)[T_1,dots,T_r]->ops.gr_I A$ sending
   $T_i$ to the initial form of $f_i$. Consequently the degree-$n$ component
   is free over $A\/I$ on monomials of total degree $n$ in these initial forms.
 ]
@@ -203,7 +203,7 @@ Hartshorne II.8.21A; this formulation specifies the canonical maps.
 
 In geometry the degree-one map identifies the conormal module of
 $ops.spec (A\/I) subset ops.spec A$. The second map is exactly what changes
-the exceptional scheme $ops.proj (op("gr")_I A)$ of a blowup into
+the exceptional scheme $ops.proj (ops.gr_I A)$ of a blowup into
 $sch.p (I\/I^2)$. The convention is that projectivization parametrizes
 invertible quotients.
 
@@ -239,7 +239,7 @@ This proof uses complexes and elementary exactness, without derived functors.
   For $A=k[x,y]$ and $I=(x,y)$, the sequence $x,y$ is regular and
   $
     I\/I^2=k overline(x) plus.o k overline(y), quad
-    op("gr")_I A=k[X,Y].
+    ops.gr_I A=k[X,Y].
   $
   The Koszul maps are
   $
@@ -277,7 +277,7 @@ This proof uses complexes and elementary exactness, without derived functors.
     a regular local ambient ring modulo a regular sequence has this property.
   + A Noetherian ring is normal if and only if it satisfies $R_1$ and $S_2$:
     its local rings at primes of height at most one are regular, and
-    $op("depth") A_idl.p>=min(2, dim A_idl.p)$ for every prime $idl.p$.
+    $ops.depth A_idl.p>=min(2, dim A_idl.p)$ for every prime $idl.p$.
 ]
 
 *Proof left to the reader (commutative algebra; the theorems are stated in

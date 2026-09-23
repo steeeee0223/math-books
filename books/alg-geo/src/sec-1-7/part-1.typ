@@ -50,14 +50,14 @@
   + A homogeneous prime contains $ops.ann (M)$ if and only if it contains some
     $idl.p_i$; hence the minimal $idl.p_i$ are the minimal primes of $M$.
   + For a minimal prime $idl.p$ of $M$, its number of occurrences among the
-    $idl.p_i$ is $op("length")_(S_idl.p) (M_idl.p)$ and is independent of the filtration.
+    $idl.p_i$ is $ops.length_(S_idl.p) (M_idl.p)$ and is independent of the filtration.
 ]
 
 
 // Hartshorne I.7, Definition D2
 #definition(number: none, title: "Multiplicity at a Minimal Prime")[
   If $idl.p$ is a minimal prime of a graded $S$-module $M$, define
-  $mu_idl.p (M)=op("length")_(S_idl.p) (M_idl.p)$.
+  $mu_idl.p (M)=ops.length_(S_idl.p) (M_idl.p)$.
 ]
 
 // Hartshorne I.7, Theorem 7.5

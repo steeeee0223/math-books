@@ -64,7 +64,7 @@
   + If $X in cat.top$ is irreducible, then the constant presheaf
     $shf.f: U mapsto A$, where $A in cat.ab, cat.ring$ or $cat.mod("")$, is already a sheaf.
 
-  + Suppose $X in cat.top$ is irreducible and has an open cover ${U_i}_(i in I)$.
+  + Suppose $X in cat.top$ is irreducible and has an open cover $cov(U_i, i in I)$.
     If $shf.g in cat.ab_X$ (or $cat.ring_X, cat.mod(X)$ is such that each $shf.g|_(U_i)$ is a
     constant sheaf, then so is $shf.g$.
 
@@ -244,7 +244,7 @@
   - In fact, the space $T_x = inter.big { U_x : U_x in shf.n_x (X) }$, so we may
     replace $T_x$ by some open neighborhood $U_x$ so that $D$ and $ops.dv (f_x)$
     have the same restriction to $U_x$, e.g. the open affine $U$ chosen above.
-    Cover $X$ by these open sets ${U_x}_(x in X)$. Since each
+    Cover $X$ by these open sets $cov(U_x, x in X)$. Since each
     $f_x in K^times = shf.k^times (U_x)$, we claim that
     ${ (U_x, f_x) }_(x in X)$ gives a well-defined Cartier divisor.
 

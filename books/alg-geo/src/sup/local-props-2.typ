@@ -121,7 +121,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 #metadata(none) <sup-lp2-4>
 #proposition(number: "LP2-4", title: "Standard smooth charts and étale coordinates")[
   Put $B=(A[t_1,dots,t_n]\/ideal(f_1 "," dots "," f_r))_g$ and suppose
-  $Delta=op("det")((partial f_i)/(partial t_j))_(1<=i,j<=r)$ is a unit
+  $Delta=ops.det ((partial f_i)/(partial t_j))_(1<=i,j<=r)$ is a unit
   in $B$. Then $ops.spec B -> ops.spec A$ is smooth of relative dimension
   $n-r$. The coordinate map
   $ops.spec B -> sch.a_A^(n-r)$ given by $t_(r+1),dots,t_n$ is étale.

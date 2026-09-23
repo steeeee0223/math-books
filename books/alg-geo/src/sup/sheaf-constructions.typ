@@ -458,15 +458,15 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #proof[
 
-  + *Reduce the sheaf axiom to a finite cover.* Write $cal(P)(U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
+  + *Reduce the sheaf axiom to a finite cover.* Write $shf.g (U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
     every open subset of $X$ is quasi-compact (Check!).  We check the sheaf axiom for an
-    open cover $(U_a)$ of $U$.  Only finitely many members are needed, so replace
-    the cover by $U_1,dots,U_n$ for the finite gluing argument below.
+    open cover $cov(U_a, a in I)$ of $U$.  Only finitely many members are needed, so replace
+    the cover by $cov(U_i, i=1, top: n)$ for the finite gluing argument below.
     Once a section on $U$ is obtained, it has the prescribed restriction on
     any omitted $U_a$: apply separatedness to the finite cover
-    $(U_a inter U_i)_(i=1)^n$.  The empty open has zero colimit group.
+    $cov(U_a inter U_i, i=1, top: n)$.  The empty open has zero colimit group.
 
-  + *Choose one stage for representatives and relations.* Let $s_a in cal(P)(U_a)$ be compatible.  Choose a representative of each
+  + *Choose one stage for representatives and relations.* Let $s_a in shf.g (U_a)$ be compatible.  Choose a representative of each
     $s_a$ in some $shf.f_(i_a) (U_a)$.  Since the index category is filtered and
     only finitely many indices occur, there is a common later index $j$ to which
     all these representatives map.  Their images may not yet be equal on every
@@ -475,12 +475,12 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     again gives one index $k$ at which all overlap equalities hold simultaneously.
 
   + *Glue and prove uniqueness.* The resulting compatible sections in $shf.f_k (U_a)$ glue uniquely to a
-    section $t in shf.f_k (U)$.  Its image in $cal(P)(U)$ restricts to every
-    $s_a$, proving existence.  For uniqueness, if two elements of $cal(P)(U)$
+    section $t in shf.f_k (U)$.  Its image in $shf.g (U)$ restricts to every
+    $s_a$, proving existence.  For uniqueness, if two elements of $shf.g (U)$
     have equal restrictions, represent them at a common stage.  Their
     restrictions become equal at finitely many later stages, hence at one common
     stage; uniqueness in that sheaf then makes the two elements equal in the
-    colimit.  Thus $cal(P)$ is already a sheaf.
+    colimit.  Thus $shf.g$ is already a sheaf.
 
   + *Identify the sections of the colimit sheaf.* SC-1 therefore requires no further sheafification.  Taking $U=X$
     in its pointwise definition gives

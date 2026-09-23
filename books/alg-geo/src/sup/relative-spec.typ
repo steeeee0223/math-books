@@ -13,7 +13,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-1>
 #definition(number: "RV-1", title: "Relative spectrum")[
   + Let $shf.a$ be a quasi-coherent $shf.o_Y$-algebra. The relative spectrum
-    $op("Spec")_Y shf.a$ is obtained from $ops.spec Gamma(U, shf.a)$ over
+    $ops.spec_Y shf.a$ is obtained from $ops.spec Gamma(U, shf.a)$ over
     affine opens $U$ of $Y$.
 
   + The canonical localization identifications over
@@ -53,12 +53,12 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-2>
 #proposition(number: "RV-2", title: "Universal property")[
   + For $g:T->Y$, there is a natural bijection
-    $ops.hom(T, op("Spec")_Y shf.a, over: Y) simeq
+    $ops.hom(T, ops.spec_Y shf.a, over: Y) simeq
     ops.hom(shf.a, g_*shf.o_T, over: shf.o_Y)$,
     where the right side consists of algebra homomorphisms.
     It sends a morphism to the induced map on the algebra of functions.
 
-  + The structural map $shf.a->f_*shf.o_(op("Spec")_Y shf.a)$ is an
+  + The structural map $shf.a->f_*shf.o_(ops.spec_Y shf.a)$ is an
     isomorphism.
 ]
 
@@ -84,10 +84,10 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
 #metadata(none) <sup-rv-3>
 #corollary(number: "RV-3", title: "Affine morphisms and algebras")[
-  + The assignments $shf.a mapsto op("Spec")_Y shf.a$ and
+  + The assignments $shf.a mapsto ops.spec_Y shf.a$ and
     $(f:X->Y) mapsto f_*shf.o_X$ give a contravariant equivalence between
     quasi-coherent $shf.o_Y$-algebras and affine schemes over $Y$.
-  + The comparison $X->op("Spec")_Y f_*shf.o_X$ is the canonical
+  + The comparison $X->ops.spec_Y f_*shf.o_X$ is the canonical
     isomorphism for affine $f$.
 
   Affine locality, quasi-compactness, and separatedness are in
@@ -148,8 +148,8 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-5>
 #corollary(number: "RV-5", title: "Base change")[
   For $g:Y'->Y$, the canonical map identifies
-  $fiber(op("Spec")_Y shf.a, Y', base: Y)$ with
-  $op("Spec")_(Y') g^*shf.a$ over $Y'$.
+  $fiber(ops.spec_Y shf.a, Y', base: Y)$ with
+  $ops.spec_(Y') g^*shf.a$ over $Y'$.
   On affine charts, this is the tensor-product comparison of
   #book-link(<sup-mg-1>)[MG-1], with its specified algebra maps.
 ]
@@ -227,7 +227,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
 #metadata(none) <sup-rv-8>
 #corollary(number: "RV-8", title: "Sections and the dual convention")[
-  We use $V(shf.e)=op("Spec")_X op("Sym")(shf.e)$.
+  We use $V(shf.e)=ops.spec_X ops.sym (shf.e)$.
 
   + Its sections over an open $U$ correspond to linear maps
     $shf.e|_U->shf.o_U$, so its sheaf of sections is $shf.e^or$.
@@ -239,7 +239,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #proof[
 
   + *Identify the section sheaf.* Apply RV-2 to the inclusion $U->X$. Algebra maps from
-    $op("Sym")(shf.e|_U)$ to $shf.o_U$ correspond by the symmetric-algebra
+    $ops.sym (shf.e|_U)$ to $shf.o_U$ correspond by the symmetric-algebra
     universal property to linear maps $shf.e|_U->shf.o_U$; the bijection
     restricts an algebra map to degree one. It commutes with restrictions
     in $U$, so the section sheaf is the dual sheaf.

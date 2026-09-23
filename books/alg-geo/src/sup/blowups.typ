@@ -98,7 +98,7 @@ to the reader to prove.
   $
     E simeq ops.proj_(V(shf.i))
     bigOPlus(shf.i^n/shf.i^(n+1), n>=0), quad
-    shf.o_B(-E)=shf.i shf.o_B simeq shf.o_B(1).
+    shf.o_B\(-E)=shf.i shf.o_B simeq shf.o_B\(1).
   $
   If $Z subset.eq X$ is closed, its strict transform is the
   scheme-theoretic closure of $pi^(-1)(Z minus V(shf.i))$ in $B$.
@@ -128,9 +128,9 @@ to the reader to prove.
 #metadata(none) <sup-bu-5>
 #proposition(number: "BU-5", title: "Flat base change")[
   If $g:X'->X$ is flat, then
-  $op("Bl")_(shf.i shf.o_(X')) X' simeq B times_X X'$ canonically.
+  $ops.bl_(shf.i shf.o_(X')) X' simeq B times_X X'$ canonically.
   An arbitrary base change still gives a canonical closed immersion
-  $op("Bl")_(shf.i shf.o_(X')) X' -> B times_X X'$,
+  $ops.bl_(shf.i shf.o_(X')) X' -> B times_X X'$,
   which need not be an isomorphism.
 ]
 #proof[
@@ -160,8 +160,8 @@ to the reader to prove.
 #proposition(number: "BU-6", title: "The base ideal and graph closure")[
   Let $shf.l$ be invertible on integral Noetherian $X$, and let
   $s_0,dots,s_r$ be sections with at least one nonzero. Define $shf.i$
-  by $op("im")(shf.o_X^(r+1)->shf.l)=shf.i shf.l$.
-  On $B=op("Bl")_(shf.i)X$ the transformed sections generate
+  by $ops.image (shf.o_X^(r+1)->shf.l)=shf.i shf.l$.
+  On $B=ops.bl_(shf.i)X$ the transformed sections generate
   $pi^*shf.l times.o shf.o_B(-E)$ and define a morphism
   $h:B->sch.p^r$. The map $(pi,h)$ identifies $B$ with the
   scheme-theoretic graph closure of the original rational map.
@@ -202,7 +202,7 @@ to the reader to prove.
   $x^m G$ in the chart ring. On $E$ the residue of $G$ is the
   degree-$m$ initial form of $F$ evaluated at $(1,u)$; it is a
   nonzero polynomial because $F in.not (x,y)^(m+1)$ and
-  $op("gr")_(idl.m) shf.o_(X,p) simeq k[x,y]$.
+  $ops.gr_(idl.m) shf.o_(X,p) simeq k[x,y]$.
   This associated-graded assertion and the conclusion that $(G)$
   is saturated with respect to $x$ are local algebra exercises:
   if $x H=G Q$, reduction modulo $x$ in the domain $k[u]$ forces
@@ -238,7 +238,7 @@ to the reader to prove.
   Shrink to an affine neighborhood where these generators exist and
   generate the ideal. AL2's associated-graded result gives the
   canonical isomorphism
-  $op("Sym")_(shf.o_Y)(shf.i/shf.i^2) simeq op("gr")_(shf.i)shf.o_X$.
+  $ops.sym_(shf.o_Y)(shf.i/shf.i^2) simeq ops.gr_(shf.i)shf.o_X$.
   This map sends the class of each $f_i$ to its degree-one initial
   form, so it is independent of chosen generators and agrees on
   overlaps. BU-4 proves the projective-bundle description of $E$.
@@ -291,7 +291,7 @@ to the reader to prove.
 #metadata(none) <sup-bu-10>
 #example(number: "BU-10", title: "The cusp and its normalization")[
   Let $C: y^2=x^3$ over an algebraically closed field of characteristic
-  zero. In the $x$ chart of $op("Bl")_0 sch.a^2$, its total transform
+  zero. In the $x$ chart of $ops.bl_0 sch.a^2$, its total transform
   is $x^2(u^2-x)=0$ and its strict transform is $u^2=x$.
   Thus this chart of the strict transform is $ops.spec k[u]$, with
   $x=u^2$, $y=u^3$. In the $y$ chart, substitution $x=v y$ gives

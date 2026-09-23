@@ -113,7 +113,7 @@ exercises are left to the reader.
   *Question.* What does replacing the base point of a pencil accomplish?
   For $[x:y:z] mapsto [x:y]$, RM-9 gives the incidence surface
   $H=V(x v-y u) subset sch.p^2 times sch.p^1$. BU identifies its first
-  projection with $op("Bl")_p sch.p^2$, $p=[0:0:1]$.
+  projection with $ops.bl_p sch.p^2$, $p=[0:0:1]$.
   Its second projection identifies $H$ with
   $F_1=sch.p_(sch.p^1)(shf.o plus.o shf.o (1))$ in the quotient convention.
 ]

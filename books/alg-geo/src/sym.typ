@@ -1,6 +1,7 @@
 #let scr(it) = text(features: ("ss01",), box($cal(it)$))
 #let bf(x) = math.bold(math.upright(x))
 
+// Notation: sheaves
 #let shf = (
   a: $scr("A")$,
   e: $scr("E")$,
@@ -18,6 +19,7 @@
   s: $scr("S")$,
   t: $cal("T")$,
 )
+// Notation: ideals
 #let idl = (
   a: $frak("a")$,
   b: $frak("b")$,
@@ -27,9 +29,12 @@
   n: $frak("n")$,
   m: $frak("m")$,
 )
+// Notation: special schemes
 #let sch = (
   a: $bb("A")$,
   p: $bb("P")$,
   spec: $bf("Spec")$,
   proj: $bf("Proj")$,
 )
+// Linear system
+#let linsys = $frak("d")$

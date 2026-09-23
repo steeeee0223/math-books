@@ -13,7 +13,7 @@
     $0 -> idl.m\/idl.m^2 -> Omega_(B\/k) times.o k(B) -> Omega_(k(B)\/k) -> 0$ is exact.
   + If moreover $k$ is perfect and $B$ is a localization of a finite-type
     $k$-algebra, show that $B$ is regular iff $Omega_(B\/k)$ is free of rank
-    $dim B+op("trdeg")_k k(B)$.
+    $dim B+ops.trdeg_k k(B)$.
   + For irreducible finite-type $X\/k$, with $k$ perfect and $dim X=n$, show
     that $shf.o_(X,x)$ is regular iff $Omega_(X\/k),x$ is free of rank $n$.
   + Deduce that the regular locus of a variety over an algebraically closed
@@ -100,7 +100,7 @@ See #book-link(<sup-lp2-2>)[LP2-2] and #book-link(<sup-lp2-3>)[LP2-3] (lifting c
 #exercise(title: "Exercise 8.8")[
   For a nonsingular projective variety define
   $P_n=dim_k Gamma(X, omega_X^n)$ and
-  $h^(q,0)=dim_k Gamma(X, op("wedge")^q Omega_(X\/k))$. Generalize the proof of 8.19
+  $h^(q,0)=dim_k Gamma(X, ops.wedge^q Omega_(X\/k))$. Generalize the proof of 8.19
   to show that all plurigenera $P_n$ and Hodge numbers $h^(q,0)$ are
   birational invariants.
 ]

@@ -111,7 +111,7 @@
 // Hartshorne II.4, Proposition 4.10
 #proposition(number: "4.10")[
   For algebraically closed $k$, the image of
-  $t:op("Var")(k)->op("Sch")(k)$ is exactly the quasi-projective integral
+  $t:ops.var (k)->ops.sch (k)$ is exactly the quasi-projective integral
   $k$-schemes; projective varieties correspond exactly to projective
   integral $k$-schemes. Thus every variety gives an integral separated
   finite-type $k$-scheme.

@@ -11,7 +11,7 @@
   Let $X$ be noetherian and $Y subset.eq X$ closed with ideal sheaf $shf.i$. The
   *formal completion of $X$ along $Y$* is the ringed space
   $hat(X)=(Y,hat(shf.o)_X)$, where
-  $hat(shf.o)_X=op("lim") shf.o_X\/shf.i^n$.
+  $hat(shf.o)_X=ops.lim shf.o_X\/shf.i^n$.
 ]
 
 // Hartshorne II.9, Remark 9.3.1
@@ -24,7 +24,7 @@
 // Hartshorne II.9, Definition D2
 #definition(number: none, title: "Completion of a Coherent Sheaf")[
   For coherent $shf.f$ on $X$, its completion along $Y$ is
-  $hat(shf.f)=op("lim") shf.f\/shf.i^n shf.f$, naturally an $hat(shf.o)_X$-module.
+  $hat(shf.f)=ops.lim shf.f\/shf.i^n shf.f$, naturally an $hat(shf.o)_X$-module.
 ]
 
 // Hartshorne II.9, Definition D3
@@ -79,7 +79,7 @@
   $Y_n=(hat(X),shf.o_(hat(X))\/shf.j^n)$.
 
   + For coherent $shf.f$, each $shf.f_n=shf.f\/shf.j^n shf.f$ is coherent on $Y_n$, and
-    $shf.f simeq op("lim") shf.f_n$.
+    $shf.f simeq ops.lim shf.f_n$.
   + Conversely, a system of coherent $shf.f_n$ with surjective transitions and
     kernels $shf.j^n shf.f_(n')$ has coherent limit $shf.f$, with
     $shf.f_n simeq shf.f\/shf.j^n shf.f$.
