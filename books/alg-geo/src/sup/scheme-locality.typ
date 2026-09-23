@@ -24,7 +24,7 @@ with the affine pushforward formula of II.5.2.
   For every open subset $U$ of a scheme $X$, the restricted locally ringed
   space $(U,shf.o_X|_U)$ is a scheme, called the *open subscheme* on $U$.
   Its stalks are the corresponding local rings of $X$.
-  (Ex. II.2.1~2)
+  (Ex. II.2.1\~2)
 ]
 
 #proof[
@@ -75,7 +75,7 @@ with the affine pushforward formula of II.5.2.
 #proposition(number: "XL-2", title: "Morphisms into an affine scheme")[
   + For any scheme $X$ and ring $A$, taking global sections gives the natural
     bijection $ ops.hom(X, ops.spec A, over: cat.sch) simeq
-    ops.hom(A, Gamma(X, shf.o_X), over: cat.ring) $.
+    ops.hom(A, Gamma(X, shf.o_X), over: cat.ring). $
     (Ex. II.2.4)
 
   + In particular, $ops.spec ZZ$ is terminal.
@@ -95,27 +95,11 @@ with the affine pushforward formula of II.5.2.
     $
     This defines the map from left to right.
 
-  + *Construct and glue affine morphisms.* Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open
-    $U=ops.spec B subset.eq X$, restriction gives a ring map
-    $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism
-    $U->ops.spec A$.  Cover each overlap $U inter U'$ by affine opens
-    $W=ops.spec C$.  Both restricted morphisms $W->ops.spec A$ correspond
-    to the same ring map $A->Gamma(X, shf.o_X)->C$.  The affine
-    correspondence therefore makes them equal on $W$, and hence on the
-    overlap.  The gluing lemma for scheme morphisms now glues them
-    to a morphism $X->ops.spec A$.
+  + *Construct and glue affine morphisms.* Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open $U=ops.spec B subset.eq X$, restriction gives a ring map $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism $U->ops.spec A$. Cover each overlap $U inter U'$ by affine opens $W=ops.spec C$. Both restricted morphisms $W->ops.spec A$ correspond to the same ring map $A->Gamma(X, shf.o_X)->C$. The affine correspondence therefore makes them equal on $W$, and hence on the overlap. The gluing lemma for scheme morphisms now glues them to a morphism $X->ops.spec A$.
 
-  + *Check inverse constructions and naturality.* On an affine open, the two constructions are inverse by the contravariant
-    equivalence between rings and affine schemes.  Since affine opens cover
-    $X$, they are inverse globally.  Every step commutes with precomposition in
-    $X$ and with ring maps in $A$, so the bijection is natural.
+  + *Check inverse constructions and naturality.* On an affine open, the two constructions are inverse by the contravariant equivalence between rings and affine schemes.  Since affine opens cover $X$, they are inverse globally.  Every step commutes with precomposition in $X$ and with ring maps in $A$, so the bijection is natural.
 
-  + *Identify the terminal and initial schemes.* There is a unique unital
-    ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$
-    terminal. Its primes and their inclusions are the elementary arithmetic
-    description of $ops.spec ZZ$ (Check!). The zero ring has no prime
-    ideals, and the empty locally ringed space has exactly one morphism to
-    every scheme, including itself (Check!). Thus its spectrum is initial.
+  + *Identify the terminal and initial schemes.* There is a unique unital ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$ terminal. Its primes and their inclusions are the elementary arithmetic description of $ops.spec ZZ$ (Check!). The zero ring has no prime ideals, and the empty locally ringed space has exactly one morphism to every scheme, including itself (Check!). Thus its spectrum is initial.
 ]
 
 #metadata(none) <sup-xl-3>
@@ -253,7 +237,10 @@ with the affine pushforward formula of II.5.2.
     every $b in Gamma(X_f, shf.o_X)$ satisfies $f^n b=a|_(X_f)$ for some
     $n$ and some $a in A$.
   + Under this last hypothesis, restriction induces the isomorphism
-    $A_f simeq Gamma(X_f, shf.o_X)$, with $a/f^n mapsto a|_(X_f)/f^n$.
+    $
+         A_f & -> Gamma(X_f, shf.o_X), \
+      a\/f^n & mapsto (a|_(X_f)\/f^n).
+    $
 
   The finite-cover hypothesis is equivalent to $X$ being quasi-compact
   and quasi-separated; see XP-11. A function on just one chart does not

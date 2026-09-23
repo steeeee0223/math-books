@@ -48,7 +48,7 @@ The definitions of connected, irreducible, reduced, integral, and
   + For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
     $idl.p_x subset.eq idl.p_y$.
 
-  + Schemes are $T_0$: distinct points have
+  + Schemes are $cal(T)_0$: distinct points have
     distinct closures.
 
   + Closed points of an affine scheme are the maximal
@@ -67,7 +67,7 @@ The definitions of connected, irreducible, reduced, integral, and
   + *Separate distinct points by their closures.* If two points of a scheme
     have equal closures, an affine neighborhood of either contains both,
     and the criterion gives both inclusions of their primes. Thus the
-    scheme is $T_0$.
+    scheme is $cal(T)_0$.
 
   + *Identify closed points.* The closure is a singleton exactly for a maximal prime.
 
@@ -145,8 +145,7 @@ The definitions of connected, irreducible, reduced, integral, and
   + The quotient $A->A_(red)$ is dominant
     on spectra but is not injective when $A$ has a nonzero nilpotent.
 
-  + These statements supply the function-field part of II.3.7, not its
-    finite-extension or dense-open finiteness conclusions.
+  (Ex. II.3.7)
 ]
 
 #proof[
@@ -219,7 +218,9 @@ The definitions of connected, irreducible, reduced, integral, and
   + On $ops.spec A$, a nontrivial decomposition is equivalent to
     $A simeq A_1 times A_2$ with both factors nonzero, or to orthogonal
     nonzero idempotents $e_1+e_2=1$. The factors are $A e_1,A e_2$ with
-    identities $e_1,e_2$ (II.2.19).
+    identities $e_1,e_2$.
+
+  (II.2.19)
 ]
 
 #proof[
@@ -469,7 +470,9 @@ The definitions of connected, irreducible, reduced, integral, and
 #table(
   columns: (1fr, 1fr, 1fr, 1.5fr),
   inset: 5pt,
-  [Property], [Open restriction], [Open-cover test], [Stalk / affine test],
+  fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
+  stroke: none,
+  table.header([Property], [Open restriction], [Open-cover test], [Stalk / affine test]),
   [Reduced], [Yes], [Yes], [Reduced stalks / reduced rings],
   [Normal], [Yes], [Yes], [Normal local rings / XP-12],
   [Locally Noetherian], [Yes], [Yes], [Noetherian affine rings; Noetherian stalks alone do not suffice],
