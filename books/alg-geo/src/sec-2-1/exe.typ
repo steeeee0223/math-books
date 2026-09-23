@@ -20,9 +20,9 @@ See #book-link(<sup-sc-10>)[SC-10].
   Let $phi:shf.f->shf.g$ be a morphism of sheaves.
 
   + Show $(ops.ker phi)_P=ops.ker (phi_P)$ and $(ops.im phi)_P=ops.im (phi_P)$.
-  + Show that $phi$ is injective, respectively surjective, exactly when all
-    $phi_P$ are so.
-  + Show that a sequence of sheaves is exact exactly when every induced
+  + Show that $phi$ is injective if and only if every $phi_P$ is injective,
+    and similarly for surjectivity.
+  + Show that a sequence of sheaves is exact if and only if every induced
     sequence of stalks is exact.
 ] <exercise-1-2>
 
@@ -30,7 +30,7 @@ See #book-link(<sup-sc-4>)[SC-4].
 
 // Hartshorne II.1, Exercise 1.3
 #exercise(title: "Exercise 1.3")[
-  + Show that $phi:shf.f->shf.g$ is surjective exactly when every section
+  + Show that $phi:shf.f->shf.g$ is surjective if and only if every section
     $s in shf.g (U)$ locally lifts: some cover $U=union U_i$ admits
     $t_i in shf.f (U_i)$ with $phi(t_i)=s|_(U_i)$.
   + Give a surjective sheaf morphism whose map on sections over some open
@@ -126,8 +126,8 @@ See #book-link(<sup-sc-1>)[SC-1].
   Given a presheaf $shf.f$, set $op("Spe")(shf.f)=union_(P in X) shf.f_P$ and project
   it to $X$. Give it the strongest topology making every germ map
   $s:U->op("Spe")(shf.f)$, for $s in shf.f (U)$, continuous. Show that $shf.f^+(U)$
-  is the set of continuous sections over $U$. Hence $shf.f$ is a sheaf exactly
-  when its sections are all continuous sections of this espace étale.
+  is the set of continuous sections over $U$. Hence $shf.f$ is a sheaf if and
+  only if its sections are all continuous sections of this espace étale.
 ]
 
 // Hartshorne II.1, Exercise 1.14

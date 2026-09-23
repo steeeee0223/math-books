@@ -26,9 +26,9 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
   + *Test emptiness on homogeneous affine charts.* The opens $D_+(f)$ for homogeneous $f$ of positive degree cover
     $ops.proj S$. By II.2.5, such an open is the spectrum of $(S_f)_0$.
-    This spectrum is empty exactly when its ring is zero, equivalently
-    $1=0$ in $S_f$, or $f^m=0$ for some $m$. Thus Proj is empty exactly
-    when every positive-degree homogeneous element is nilpotent.
+    This spectrum is empty if and only if its ring is zero, equivalently
+    $1=0$ in $S_f$, or $f^m=0$ for some $m$. Thus Proj is empty if and only
+    if every positive-degree homogeneous element is nilpotent.
 
   + *Pass from homogeneous elements to the irrelevant ideal.* Each element of $S_+$ is a finite sum of such elements, and a finite
     sum of commuting nilpotents is nilpotent (Check!). This proves the assertion
@@ -61,7 +61,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
   + *Test when the domain is all of Proj.* The excluded locus is the underlying Proj of the homogeneous quotient
     $T\/phi(S_+)T$, by homogeneous-prime correspondence for a quotient.
-    Applying PJ-1 to this quotient shows that it is empty exactly when
+    Applying PJ-1 to this quotient shows that it is empty if and only if
     every element of $T_+$ has some power in $phi(S_+)T$.
 ]
 
@@ -205,7 +205,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     This proves the high-degree comparison.
 
   + *Characterize the zero associated sheaf.* For the zero-sheaf assertion, triviality of $shf.o (1)$ on $U_i$ implies
-    that $tildeOf(M)=0$ exactly when all graded localizations $M_(x_i)$
+    that $tildeOf(M)=0$ if and only if all graded localizations $M_(x_i)$
     vanish. Choose finitely many homogeneous generators of $M$. If the
     localizations vanish, powers of each $x_i$ kill all these generators.
     The elementary monomial bound then gives $S_+^q M=0$ for some $q$,
@@ -237,7 +237,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 #proposition(number: "PJ-8", title: "Saturation and ideal sheaves")[
   + The ideals $I$ and $I^op("sat")$ give the same ideal sheaf.
 
-  + Homogeneous ideals define the same closed subscheme exactly when their
+  + Homogeneous ideals define the same closed subscheme if and only if their
     saturations agree.
 
   + Saturated homogeneous ideals correspond to the

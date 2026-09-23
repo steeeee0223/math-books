@@ -183,8 +183,8 @@ extension and generation results of II.5–II.7.
   Its global sections are bihomogeneous polynomials of bidegree $(a,b)$;
   they are zero if either degree is negative and otherwise have basis
   $X_0^(a-i)X_1^i Y_0^(b-j)Y_1^j$ for $0<=i<=a$, $0<=j<=b$.
-  It is globally generated exactly when $a,b>=0$, and ample, equivalently
-  very ample, exactly when $a,b>0$.
+  It is globally generated if and only if $a,b>=0$. It is ample, equivalently
+  very ample, if and only if $a,b>0$.
 ]
 #proof[
   Use the four products of standard affine charts. Their section

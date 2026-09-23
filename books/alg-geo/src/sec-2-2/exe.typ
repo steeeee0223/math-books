@@ -177,9 +177,9 @@ For (a), see #book-link(<sup-xl-5>)[XL-5]. For (b), see #book-link(<sup-xl-7>)[X
 #exercise(title: "Exercise 2.A (Supplementary)")[
   For $X=ops.spec A$ and $f in A$, verify:
 
-  + $D(f)$ is empty exactly when $f$ is nilpotent
-  + $D(f)=X$ exactly when $f$ is a unit
-  + $X$ is empty exactly when $A$ is the zero ring
+  + $D(f)$ is empty if and only if $f$ is nilpotent
+  + $D(f)=X$ if and only if $f$ is a unit
+  + $X$ is empty if and only if $A$ is the zero ring
   + closed subsets correspond contravariantly to radical ideals
   + every $D(f)$ is quasi-compact
   + the closed points of $X$ are precisely the maximal ideals.

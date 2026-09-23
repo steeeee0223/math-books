@@ -94,7 +94,7 @@
 // Hartshorne II.7, Remark 7.8.2
 #remark(title: "7.8.2")[
   The morphism defined by a base-point-free linear system is a closed
-  immersion exactly when the system separates closed points and tangent
+  immersion if and only if the system separates closed points and tangent
   vectors.
 ]
 

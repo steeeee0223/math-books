@@ -387,8 +387,8 @@ the diagonal and separatedness criteria of
 
   + *Identify the kernel on affine charts.* Restrict to $V=ops.spec A subset.eq Y$ and choose a finite affine cover
     $W_i=ops.spec B_i$ of $f^(-1)(V)$. Put
-    $I=ops.ker(A->product_i B_i)$. A function pulls back to zero exactly
-    when it does so on this cover. Over $D(a)$ the cover becomes
+    $I=ops.ker(A->product_i B_i)$. A function pulls back to zero if and only
+    if it does so on this cover. Over $D(a)$ the cover becomes
     $ops.spec (B_i)_a$; exact localization and its commutation with finite
     products give kernel $I_a$. Thus the actual kernel sheaf on $V$ is
     $tildeOf(I)$. These descriptions prove quasi-coherence and agree under

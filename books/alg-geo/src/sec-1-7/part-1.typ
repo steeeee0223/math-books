@@ -47,7 +47,7 @@
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + A homogeneous prime contains $ops.ann (M)$ exactly when it contains some
+  + A homogeneous prime contains $ops.ann (M)$ if and only if it contains some
     $idl.p_i$; hence the minimal $idl.p_i$ are the minimal primes of $M$.
   + For a minimal prime $idl.p$ of $M$, its number of occurrences among the
     $idl.p_i$ is $op("length")_(S_idl.p) (M_idl.p)$ and is independent of the filtration.

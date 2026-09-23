@@ -334,7 +334,7 @@ stalks do not show that a specified morphism is an isomorphism.
     and a $K$-linear map $tensor(M, K, over: R)->L$, which determines the only
     nontrivial restriction.
 
-  + It is quasi-coherent exactly when this map is an
+  + It is quasi-coherent if and only if this map is an
     isomorphism. (Ex. II.5.2)
 ]
 

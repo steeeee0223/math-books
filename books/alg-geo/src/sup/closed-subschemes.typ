@@ -19,7 +19,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     canonical quotient $A_f\/I A_f simeq (A\/I)_(bar(f))$.
 
   + In particular, the affine map induced by $A->B$ is a closed immersion
-    exactly when this ring map is surjective.
+    if and only if this ring map is surjective.
 
   + Use this as the common entry for II.2.18(c)–(d), II.3.11(b), and
     II.5.5(b), the last of which also uses that a quotient is a finite module.
@@ -142,7 +142,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 ]
 
 #proof[
-  A prime contains $t^2$ exactly when it contains $t$, so the two vanishing
+  A prime contains $t^2$ if and only if it contains $t$, so the two vanishing
   sets agree. The image of $t$ in $k[t]\/(t^2)$ is nonzero, by comparison
   of polynomial degrees, and has square zero. Thus this quotient is not
   reduced, whereas $k[t]\/(t) simeq k$ is reduced. Their distinct ideals

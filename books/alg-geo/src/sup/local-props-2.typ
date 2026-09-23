@@ -86,7 +86,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 #proof[
   Cover $Y$ by $V=ops.spec A$ and each $f^(-1)V$ by $U=ops.spec B$.
   The restriction of $Omega_(X\/Y)$ to $U$ is
-  $tildeOf(Omega_(B\/A))$; it is zero exactly when its module of sections
+  $tildeOf(Omega_(B\/A))$; it is zero if and only if its module of sections
   is zero. On $U times_V U$ the diagonal is induced by multiplication
   $tensor(B, B, over: A) -> B$. LP2-2 identifies vanishing of differentials
   with an idempotent diagonal ideal, so this diagonal is an open and closed
@@ -484,7 +484,8 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   + Give a closed immersion with locally free conormal sheaf which is not
     regular, and explain why LP2-9 does not apply.
   + Apply LP2-7 to a flat family and to its inclusion of a special fiber.
-    Determine exactly when a fixed effective Cartier divisor remains Cartier.
+    Determine the conditions under which a fixed effective Cartier divisor
+    remains Cartier.
   + In LP2-12 identify each use of Noetherianity, finite presentation,
     separatedness, and properness. State which denominator-clearing step
     cannot be replaced by an argument only on the closed fiber.

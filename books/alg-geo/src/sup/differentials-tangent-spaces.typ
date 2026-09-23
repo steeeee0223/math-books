@@ -198,8 +198,8 @@ the reader; the geometric reductions explain exactly where they are used.
   This last ring-theoretic criterion is left to the reader.
 
   The kernel computation can be checked without guessing generators.
-  For the cusp, write $A=k[t^2,t^3]$. A pair $(a,b)$ maps to zero exactly
-  when $(a,b)=(-3t h,2h)$, with $h in (t^2,t^3)A$; the defining
+  For the cusp, write $A=k[t^2,t^3]$. A pair $(a,b)$ maps to zero if and only
+  if $(a,b)=(-3t h,2h)$, with $h in (t^2,t^3)A$; the defining
   differential relation corresponds to $h=t^3$. Thus the kernel is
   $(t^2,t^3)A\/t^3 A$, with basis represented by $t^2,t^4$.
   For the node use

@@ -116,7 +116,7 @@
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + Show that $dim T_P (X)>=dim X$, with equality exactly when $P$ is
+  + Show that $dim T_P (X)>=dim X$, with equality if and only if $P$ is
     nonsingular.
   + Show that a morphism $phi:X->Y$ induces a natural linear map
     $T_P (phi):T_P (X)->T_(phi(P)) (Y)$.
@@ -144,8 +144,8 @@
     $x_0^2+dots+x_r^2$ for some $0<=r<=n$.
   + Show that $f$ is irreducible if and only if $r>=2$.
   + For $r>=2$, let $Q=Z(f) subset.eq sch.p^n$. Show that $ops.sing Q$ is a linear
-    variety of dimension $n-r-1$; in particular $Q$ is nonsingular exactly
-    when $r=n$.
+    variety of dimension $n-r-1$; in particular $Q$ is nonsingular if and
+    only if $r=n$.
   + If $r<n$, show that $Q$ is a cone, with axis $ops.sing Q$, over a
     nonsingular quadric in $sch.p^r$.
 ]

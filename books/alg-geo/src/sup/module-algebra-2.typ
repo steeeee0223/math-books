@@ -40,7 +40,7 @@ presentations are available in #book-link(<sup-al-10>)[AL-10].
     = union.big_(idl.p in ops.ass(M, over: A)) idl.p.
   $
   In particular, a local equation $a$ defines an effective Cartier divisor on
-  $ops.spec A$ exactly when $a$ avoids $ops.ass(A, over: A)$. The empty divisor is
+  $ops.spec A$ if and only if $a$ avoids $ops.ass(A, over: A)$. The empty divisor is
   allowed, so a unit is also an admissible equation.
 ]
 
@@ -159,7 +159,7 @@ Artinian decomposition of a zero-dimensional Noetherian ring.
   With these hypotheses:
 
   + $0<=op("depth")_A(M)<=dim(ops.supp (M))$;
-  + $op("depth")_A(M)=0$ exactly when $idl.m in ops.ass(M, over: A)$;
+  + $op("depth")_A(M)=0$ if and only if $idl.m in ops.ass(M, over: A)$;
   + for an $M$-regular $f in idl.m$,
     $op("depth")_(A\/(f))(M\/f M)=op("depth")_A(M)-1$;
   + any permutation of an $M$-regular sequence is $M$-regular;

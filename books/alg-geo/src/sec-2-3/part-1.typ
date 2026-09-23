@@ -38,7 +38,7 @@
 #proposition(number: "3.2")[
   A scheme $X$ is locally noetherian if and only if every open affine
   $U=ops.spec A subset.eq X$ has $A$ noetherian. In particular, an affine scheme
-  $ops.spec A$ is noetherian exactly when $A$ is noetherian.
+  $ops.spec A$ is noetherian if and only if $A$ is noetherian.
 ]
 
 

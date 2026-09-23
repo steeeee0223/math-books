@@ -27,7 +27,7 @@ For (a), (b), and (d), see #book-link(<sup-sc-11>)[SC-11]. For (c), see #book-li
 
   + show an $shf.o_X$-module is equivalent to an $R$-module $M$, a $K$-vector
     space $L$, and a map $tensor(M, K, over: R)->L$;
-  + show it is quasi-coherent exactly when that map is an isomorphism.
+  + show it is quasi-coherent if and only if that map is an isomorphism.
 ] <exercise-5-2>
 
 See #book-link(<sup-qc-9>)[QC-9].
@@ -45,9 +45,9 @@ See #book-link(<sup-qc-1>)[QC-1].
 
 // Hartshorne II.5, Exercise 5.4
 #exercise(title: "Exercise 5.4")[
-  Show an $shf.o_X$-module is quasi-coherent exactly when locally it is a
+  Show an $shf.o_X$-module is quasi-coherent if and only if locally it is a
   cokernel of a morphism of free sheaves. If $X$ is noetherian, show it is
-  coherent exactly when locally it is such a cokernel with both free sheaves
+  coherent if and only if locally it is such a cokernel with both free sheaves
   of finite rank.
 ] <exercise-5-4>
 

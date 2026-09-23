@@ -79,7 +79,7 @@ geometric constructions specify the restriction and gluing maps.
     0 -> shf.o_X(-D) -> shf.o_X -> shf.o_D -> 0.
   $
   More generally, a section of an invertible sheaf defines an effective
-  Cartier zero scheme exactly when its coefficients in local frames are
+  Cartier zero scheme if and only if its coefficients in local frames are
   non-zero-divisors.
 ]
 
@@ -120,7 +120,7 @@ must still pass the non-zero-divisor test.
   Choose an equation $a$ on an affine $V=ops.spec A subset Y$ and affine
   opens $U=ops.spec B$ in $f^(-1)V$, with ring map $phi:A->B$. The
   inverse-image ideal is $(phi(a))$; it is free on its proposed generator
-  exactly when $phi(a)$ is regular. The stalk and cover criterion, and
+  if and only if $phi(a)$ is regular. The stalk and cover criterion, and
   preservation under flat maps, are the Cartier-divisor criteria in
   #book-link(<sup-lp2>)[LP2]. Concretely flatness preserves the injection
   $A ->^a A$ after tensoring with $B$. For a dominant map of integral

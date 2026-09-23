@@ -61,7 +61,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
 
 #proof[
 
-  + *Exactness.* A fraction $m/s$ is zero exactly when some $t in S$ kills $m$.
+  + *Exactness.* A fraction $m/s$ is zero if and only if some $t in S$ kills $m$.
     For an exact pair $M' ->^u M ->^v M''$, a fraction $m/s$ in the kernel
     of the localized $v$ has $t v(m)=0$ for some $t in S$. Write $t m=u(m')$;
     then $m/s=u(m')/(t s)$ is in the image. The reverse inclusion follows

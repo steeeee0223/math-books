@@ -571,7 +571,7 @@ scheme level.
 
 #metadata(none) <sup-lp-29>
 #corollary(number: "LP-29", title: "Integral Morphisms")[
-  + *Affine criterion.* A morphism is integral exactly when inverse images of affine targets are
+  + *Affine criterion.* A morphism is integral if and only if inverse images of affine targets are
     affine and induce integral ring maps.
 
   + *Target locality and base change.* Integral morphisms are affine local
@@ -691,7 +691,7 @@ scheme level.
     and every localization is flat. These algebraic flatness facts are left
     to the reader (Check!). They give BC, T, S, and PL.
 
-  + *Source gluing.* To prove GS, use the criterion that $B$ is flat over $A$ exactly when, for
+  + *Source gluing.* To prove GS, use the criterion that $B$ is flat over $A$ if and only if, for
     every injection $M' -> M$ of $A$-modules, the induced map
     $tensor(M', B, over: A) -> tensor(M, B, over: A)$ is injective.  After localizing at every
     $g_i$, this map is injective by hypothesis.  Its kernel localizes to zero
@@ -1247,7 +1247,7 @@ best tested using RS, GSS, RT, and GTT directly.
   Let $X$ be locally Noetherian, $shf.f$ coherent, and $j:U->X$ an open
   immersion. The map $shf.f->j_*(shf.f|_U)$ is injective if and only if
   $U$ contains every point of $ops.ass(shf.f)$. In particular,
-  $shf.o_X->j_*shf.o_U$ is injective exactly when
+  $shf.o_X->j_*shf.o_U$ is injective if and only if
   $ops.ass(shf.o_X) subset U$; such an open is called
   *schematically dense*.
 ]
@@ -1260,7 +1260,7 @@ best tested using RS, GSS, RT, and GTT directly.
   $M->product_i M_(a_i)$ is injective; the sheaf condition identifies
   its kernel with the kernel of restriction to $U inter V$.
   The associated-prime criterion in #book-link(<sup-al2>)[AL2] says that
-  this happens exactly when every associated prime of $M$ avoids at
+  this happens if and only if every associated prime of $M$ avoids at
   least one $a_i$. Its purely algebraic proof is left to the reader.
   Associated primes localize, so these are exactly the associated
   points of $shf.f$ in $V$. Applying the same statement to every

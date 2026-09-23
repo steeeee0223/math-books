@@ -253,9 +253,9 @@ with the affine pushforward formula of II.5.2.
   Write $A=Gamma(X, shf.o_X)$.
 
   + Let $U=ops.spec B subset.eq X$ and write $f_U in B$ for the restriction of
-    $f$.  A point $p in U$ belongs to $X_f$ exactly when the germ of $f_U$ in
-    $B_p$ is a unit.  The local-ring unit criterion gives $f_U in.not p$ (Check!), hence exactly
-    when $p in D(f_U)$.  Therefore
+    $f$.  A point $p in U$ belongs to $X_f$ if and only if the germ of $f_U$ in
+    $B_p$ is a unit. By the local-ring unit criterion, the germ is a unit if
+    and only if $f_U in.not p$ (Check!), which means $p in D(f_U)$. Therefore
     $X_f inter U=D(f_U)$.  The right side is open for every affine $U$, so
     $X_f$ is open.
 
@@ -359,7 +359,11 @@ with the affine pushforward formula of II.5.2.
 #metadata(none) <sup-xl-8>
 #remark(number: "XL-8", title: "Affine ring maps and principal-open index")[
   For $phi:A->B$ and $f:ops.spec B->ops.spec A$, the map $phi$ is
-  injective exactly when $shf.o_(ops.spec A)->f_*shf.o_(ops.spec B)$ is injective. The canonical identification uses the affine pushforward formula of #book-link(<text-ii-5>)[II.5, Proposition 5.2]. Surjectivity and closed immersions are indexed in #book-link(<sup-cs-1>)[CS-1]; dominance is distinguished from injectivity in #book-link(<sup-xp-6>)[XP-6].
+  injective if and only if $shf.o_(ops.spec A)->f_*shf.o_(ops.spec B)$ is
+  injective. The canonical identification uses the affine pushforward formula
+  of #book-link(<text-ii-5>)[II.5, Proposition 5.2]. Surjectivity and closed
+  immersions are indexed in #book-link(<sup-cs-1>)[CS-1]; dominance is
+  distinguished from injectivity in #book-link(<sup-xp-6>)[XP-6].
 
   For II.2.A and II.2.18(a), the following is a lookup index:
 

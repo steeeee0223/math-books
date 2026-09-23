@@ -160,7 +160,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     $shf.f\/ops.ker(u) -> ops.im(u)$, and
     $ops.coker(u) simeq shf.g\/ops.im(u)$.
 
-  + Thus $0->shf.f'->shf.f->shf.f''->0$ is exact exactly when the first map
+  + Thus $0->shf.f'->shf.f->shf.f''->0$ is exact if and only if the first map
     identifies a subsheaf and the second identifies its quotient with $shf.f''$. (Ex. II.1.2\~7)
 
   + For a ring morphism, the image is a subring sheaf, and the kernel is an

@@ -157,9 +157,9 @@ The definitions of connected, irreducible, reduced, integral, and
 
   + *Compute the closure of an affine image.* For a ring map $u:A->B$, the primes containing every contraction from
     $ops.spec B$ form $V(u^(-1)(sqrt((0))))=V(ops.ker(u))$:
-    $u(a)$ is nilpotent exactly when some power of $a$ belongs to the kernel.
+    $u(a)$ is nilpotent if and only if some power of $a$ belongs to the kernel.
     This is the closure of the image, by the formula for closed sets in a
-    spectrum. It is the whole spectrum exactly when the kernel lies in
+    spectrum. It is the whole spectrum if and only if the kernel lies in
     the intersection of all primes, the nilradical. Reducedness then makes
     this equivalent to a zero kernel. Applying this to the nilradical
     quotient gives the last example.
@@ -333,10 +333,10 @@ The definitions of connected, irreducible, reduced, integral, and
   + Every affine scheme is quasi-compact.
 
   + A topological space is Noetherian
-    exactly when every open is quasi-compact.
+    if and only if every open is quasi-compact.
 
   + A locally Noetherian scheme is
-    Noetherian exactly when it is quasi-compact.
+    Noetherian if and only if it is quasi-compact.
 
   + On a Noetherian space,
     Noetherian induction proves a property for all closed subsets if, for each

@@ -44,7 +44,7 @@ for powers of an invertible-sheaf section remains in
 
 #proof[
 
-  + *The support of a section.* At the prime $idl.p$, the germ $m/1$ is zero exactly when some
+  + *The support of a section.* At the prime $idl.p$, the germ $m/1$ is zero if and only if some
     $a in.not idl.p$ kills $m$, by the localization zero criterion.
     Negating this says $ops.ann(m) subset.eq idl.p$, proving the first
     formula.
@@ -156,7 +156,7 @@ for powers of an invertible-sheaf section remains in
 
 #proof[
 
-  + *Identify support with ideal-power torsion.* By SE-2, the support of $m$ lies in $V(I)$ exactly when
+  + *Identify support with ideal-power torsion.* By SE-2, the support of $m$ lies in $V(I)$ if and only if
     $I subset.eq sqrt(ops.ann(m))$. Choose finite generators
     $a_1,dots,a_r$ of $I$. If $a_i^(n_i)m=0$, every monomial of degree
     greater than $sum_i(n_i-1)$ contains one of these powers; hence some
@@ -315,8 +315,8 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-12>
 #corollary(number: "SE-12", title: "Invertible modules")[
-  On a Noetherian scheme, a coherent module $shf.f$ is invertible exactly
-  when there is a coherent $shf.g$ with
+  On a Noetherian scheme, a coherent module $shf.f$ is invertible if and only
+  if there is a coherent $shf.g$ with
   $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
   An inverse is its dual. (Ex. II.5.7(c))
 ]
