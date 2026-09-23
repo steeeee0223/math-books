@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == SC — Sheaf constructions and exactness <sup-sc>
@@ -38,15 +39,23 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     this limit, compatible with restriction and uniquely determined by its
     projections. For modules, these maps are linear over the ring of sections;
     for rings, they preserve both multiplication and identity.
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $shf.g edge("r", ->, stroke: #(dash: "dashed")) edge("dr", ->) & lim_i shf.f_i edge("d", ->) \ & shf.f_i$,
+    )]
 
-  + *Sheafify sectionwise colimits.* Form the sectionwise colimit presheaf $P$. Restriction is induced by the
+  + *Sheafify sectionwise colimits.* Form the sectionwise colimit presheaf $shf.h$. Restriction is induced by the
     structure maps of the diagram; for modules, it is semilinear along the
-    restriction of the ring of sections. A compatible cocone to a sheaf $G$
-    gives a unique presheaf map $P->G$. The sheafification property gives a
-    unique map $P^+->G$ with the original cocone. This proves the claimed
-    colimit in each category. Local representatives also give $P^+$ its module
+    restriction of the ring of sections. A compatible cocone to a sheaf $shf.g$
+    gives a unique presheaf map $shf.h->shf.g$. The sheafification property gives a
+    unique map $shf.h^+->shf.g$ with the original cocone. This proves the claimed
+    colimit in each category. Local representatives also give $shf.h^+$ its module
     or ring operations, since the corresponding finite identities can be
     checked locally.
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $shf.h edge("r", ->) edge("dr", ->) & shf.h^+ edge("d", ->, stroke: #(dash: "dashed")) \ & shf.g$,
+    )]
 ]
 
 #metadata(none) <sup-sc-2>
@@ -76,6 +85,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     scalar, and diagram relations. Every element and relation uses finitely
     many sections and scalars, all representable on a common neighborhood.
     This gives both surjectivity and injectivity of the stalk comparison.
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $(shf.f_i)_x edge("r", ->) edge("dr", ->) & ops.colim_i (shf.f_i)_x edge("d", ->) \ & (ops.colim_i shf.f_i)_x$,
+    )]
 
   + *Compare finite limits with stalks.* For a finite limit, represent its finitely many component germs on one
     neighborhood. Its finitely many arrow equations hold as germs and hence,
@@ -301,6 +314,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     extends it uniquely to a sheaf morphism
     $epsilon_(shf.f): f^(-1)f_*shf.f->shf.f$.
     The construction uses only restriction maps, so it is natural in $shf.f$.
+    #align(center)[#diagram(
+      cell-size: 22mm,
+      $P_f(f_*shf.f) edge("r", ->) edge("dr", ->) & f^(-1)f_*shf.f edge("d", epsilon_(shf.f), ->, stroke: #(dash: "dashed")) \ & shf.f$,
+    )]
 
   + *Construct the unit.* Now let $shf.g$ be a sheaf on $Y$. If $V subset.eq Y$ is open, then
     $f(f^(-1)(V)) subset.eq V$. Thus $V$ is one of the indices in
@@ -388,10 +405,14 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #proof[
 
-  + *Apply the tensor universal property.* The sectionwise tensor universal property sends a balanced bilinear family
+  + *Apply the tensor universal property.* For a target sheaf $shf.h$ and a balanced bilinear family $b$, the sectionwise tensor universal property sends the family
     to a presheaf map from the tensor presheaf. Sheafification extends it
     uniquely to a sheaf map. Conversely, composition with the canonical pure-tensor
     map recovers that family.
+    #align(center)[#diagram(
+      cell-size: 22mm,
+      $shf.f times shf.g edge("r", ->) edge("dr", b, ->) & tensor(shf.f, shf.g) edge("d", tilde(b), ->, stroke: #(dash: "dashed")) \ & shf.h$,
+    )]
 
   + *Construct the tensor–Hom adjunction.* Currying the family on each open gives
     $shf.f->shf.hom (shf.e,shf.g)$; restriction commutes with currying, so
@@ -428,6 +449,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     pure tensor $tensor(a, s)$ to $a$ times the image of $s$, so are the desired
     module pullback adjunction. A left adjoint preserves cokernels and direct
     sums, hence is right exact.
+    #align(center)[#diagram(
+      cell-size: 22mm,
+      $f^(-1)shf.g edge("r", ->) edge("dr", ->) & f^*shf.g edge("d", ->, stroke: #(dash: "dashed")) \ & shf.f$,
+    )]
 
   + *Compute pullback stalks.* On the stalk at $x$, the pullback is
     $tensor(shf.o_(X,x), shf.g_(f(x)), over: shf.o_(Y,f(x)))$.
@@ -532,6 +557,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     sections are locally in the image of $theta$, uniqueness follows from the
     uniqueness part of the sheaf axiom.  Hence $(shf.a,theta)$ is the associated
     sheaf of $shf.a^-$.
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $shf.a^- edge("r", theta, ->) edge("dr", u, ->) & shf.a edge("d", tilde(u), ->, stroke: #(dash: "dashed")) \ & shf.g$,
+    )]
 
   For a skyscraper, the definition of direct image from ${P}$ gives
   the stated sections.

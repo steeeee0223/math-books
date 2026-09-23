@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == RM — Rational maps of schemes <sup-rm>
@@ -193,6 +194,7 @@ normal local rings and the valuative criterion of II.4.
   the structural map $ops.spec R->S$ give a valuative diagram. The
   properness criterion of II.4 supplies its unique lift
   $h:ops.spec R->Y$.
+  #align(center)[#diagram(cell-size: 23mm, $ops.spec K edge("r", ->) edge("d", ->) & Y edge("d", ->) \ ops.spec R edge("r", ->) edge("ur", h, ->, stroke: #(dash: "dashed")) & S$)]
 
   Choose an affine neighborhood $ops.spec A$ of $x$ mapping into an
   affine open $ops.spec R_0$ of $S$. An affine open $ops.spec B$ of
@@ -238,6 +240,7 @@ normal local rings and the valuative criterion of II.4.
   recovers the given ring map, and injectivity of restriction proves
   uniqueness. This proof requires an affine target; a proper target
   alone does not give extension across codimension two.
+  #align(center)[#diagram(cell-size: 23mm, $X minus Z edge("r", ->) edge("dr", ->) & X edge("d", ->, stroke: #(dash: "dashed")) \ & ops.spec B$)]
 ]
 
 === Examples that distinguish the hypotheses

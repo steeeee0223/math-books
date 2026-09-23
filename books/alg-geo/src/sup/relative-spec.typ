@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == RV — Relative Spec and vector bundles <sup-rv>
@@ -69,6 +70,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     $B_U->Gamma(g^(-1)(U), shf.o_T)$. The affine-target adjunction of II.2
     gives a unique morphism $g^(-1)(U)->ops.spec B_U$. It is over $U$
     because the algebra map respects the structural map from $Gamma(U, shf.o_Y)$.
+    #align(center)[#diagram(cell-size: 21mm, $T edge("r", ->, stroke: #(dash: "dashed")) edge("dr", g, ->) & ops.spec_Y shf.a edge("d", f, ->) \ & Y$)]
 
   + *Glue the local morphisms.* Over a principal open these maps coincide by localization; refining
     overlaps as in RV-1 gives equality there. XL glues them to a $Y$-map.
@@ -191,6 +193,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     $shf.o_U^r$ is $shf.o_U[t_1,dots,t_r]$ by AL-6's universal property,
     $e_i mapsto t_i$ for the standard basis. RV-1 therefore gives
     relative affine $r$-space there.
+    #align(center)[#diagram(cell-size: 21mm, $shf.o_U^r edge("r", ->) edge("dr", e_i mapsto t_i, ->) & ops.sym(shf.o_U^r) edge("d", ->, stroke: #(dash: "dashed")) \ & shf.o_U[t_1,dots,t_r]$)]
 
   + *Transport the transition cocycle.* A basis change acts on degree one,
     extends uniquely to a symmetric-algebra isomorphism, and hence induces
@@ -243,6 +246,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     universal property to linear maps $shf.e|_U->shf.o_U$; the bijection
     restricts an algebra map to degree one. It commutes with restrictions
     in $U$, so the section sheaf is the dual sheaf.
+    #align(center)[#diagram(cell-size: 21mm, $shf.e|_U edge("r", ->) edge("dr", u, ->) & ops.sym(shf.e|_U) edge("d", tilde(u), ->, stroke: #(dash: "dashed")) \ & shf.o_U$)]
 
   + *Apply double-dual evaluation.* Finite local freeness
     makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-11:

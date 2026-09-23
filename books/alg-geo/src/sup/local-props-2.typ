@@ -3,6 +3,7 @@
 #show: show-theorion
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 
 == LP2 — Further Locality Criteria <sup-lp2>
 
@@ -145,6 +146,10 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   smooth point, proving openness. The differential map to affine space
   identifies the free basis $d t_(r+1),dots d t_n$, and its compatibility
   on overlaps follows from the universal derivation, as in DF-4.
+  #align(center)[#diagram(cell-size: 26mm, $
+    A' edge("r", ->) edge("d", d, ->) & B edge("d", d, ->) \
+    Omega_(A'\/A) edge("r", ->) & Omega_(B\/A)
+  $)]
 ]
 
 #metadata(none) <sup-lp2-5>

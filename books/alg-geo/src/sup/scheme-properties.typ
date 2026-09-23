@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == XP — Topology and intrinsic properties of schemes <sup-xp>
@@ -308,6 +309,8 @@ The definitions of connected, irreducible, reduced, integral, and
       shows that $X_(red)$ is reduced.
 
   + *Prove the reduced-source universal property.*
+
+    #align(center)[#diagram(cell-size: 20mm, $X edge("r", tilde(f), ->, stroke: #(dash: "dashed")) edge("dr", f, ->) & Y_(red) edge("d", i, ->) \ & Y$)]
 
     + *Factor the structure-sheaf map.* Let $f:X->Y$ with $X$ reduced.  Nilpotent local sections of $shf.o_Y$
       pull back to nilpotent sections of $shf.o_X$, hence to zero.  Thus

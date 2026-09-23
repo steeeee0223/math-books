@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == AL — Algebraic tools for modules <sup-al>
@@ -79,6 +80,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     adjoint to restriction of scalars and preserves colimits by CAT-9. Under
     this adjunction the comparison is the one induced by the original colimit
     injections, so it is exactly the displayed canonical map.
+    #align(center)[#diagram(cell-size: 20mm, $M edge("r", ->) edge("dr", u, ->) & S^(-1)M edge("d", bar(u), ->, stroke: #(dash: "dashed")) \ & P$)]
 ]
 
 #metadata(none) <sup-al-4>
@@ -134,6 +136,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     $n mapsto (m mapsto v(tensor(m, n)))$; the inverse evaluates this formula
     on pure tensors. Balanced bilinearity proves that both assignments are
     well-defined and linear, and equality on pure tensors proves they are inverse.
+    #align(center)[#diagram(cell-size: 20mm, $M times N edge("r", ->) edge("dr", ->) & tensor(M, N) edge("d", v, ->) \ & P$)]
 
   + *The dual–tensor comparison.* Choose a splitting $M arrow.r.hook A^r -> M$ of the identity. Images
     $m_i$ of the standard basis and restrictions $lambda_i$ of its coordinate
@@ -172,17 +175,20 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     Multilinearity defines this on each tensor power. Multiplication by
     concatenation makes the extension an algebra homomorphism, and generation
     by degree one proves uniqueness.
+    #align(center)[#diagram(cell-size: 20mm, $M edge("r", ->) edge("dr", u, ->) & T(M) edge("d", tilde(u), ->, stroke: #(dash: "dashed")) \ & B$)]
 
   + *The symmetric algebra.* If $B$ is commutative, the commutator
     relations vanish, yielding the symmetric-algebra property.
+    #align(center)[#diagram(cell-size: 20mm, $T(M) edge("r", ->) edge("dr", tilde(u), ->) & ops.sym(M) edge("d", ->, stroke: #(dash: "dashed")) \ & B$)]
 
   + *Exterior powers.* In degree $r$,
-    an alternating multilinear map on $M^r$ factors through the tensor power
+    an alternating multilinear map $b:M^r->N$ factors through the tensor power
     and kills every tensor having repeated arguments. The relations
     $m times.o m=0$, together with their polarized consequences
     $m times.o n+n times.o m=0$, generate exactly these relations in degree $r$.
     The resulting quotient therefore represents alternating maps, with no
     division by $2$ or any factorial.
+    #align(center)[#diagram(cell-size: 20mm, $M^r edge("r", ->) edge("dr", b, ->) & Lambda^r M edge("d", tilde(b), ->, stroke: #(dash: "dashed")) \ & N$)]
 ]
 
 #metadata(none) <sup-al-7>
@@ -243,6 +249,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     repetitions zero. Independence follows by applying the alternating
     coordinate determinants indexed by these subsets. Counting these three
     index sets gives the stated ranks, with the indicated degree-zero cases.
+    #align(center)[#diagram(cell-size: 21mm, $A^r edge("r", ->) edge("dr", e_i mapsto t_i, ->) & ops.sym(A^r) edge("d", ->, stroke: #(dash: "dashed")) \ & A[t_1,dots,t_r]$)]
 
   + *The free determinant pairing.* For $0<=p<=r$, pair an increasing $p$-subset with its complementary
     $(r-p)$-subset. Their and is the top basis vector with sign $+1$ or
@@ -279,6 +286,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     Choose a splitting $M=M' plus.o M''$, possible because $M''$ is projective.
     The universal properties give
     $ops.sym (M' plus.o M'') simeq tensor(ops.sym (M'), ops.sym (M''))$.
+    #align(center)[#diagram(cell-size: 23mm, $M' plus.o M'' edge("r", ->) edge("dr", ->) & ops.sym (M' plus.o M'') edge("d", ->, stroke: #(dash: "dashed")) \ & tensor(ops.sym(M'), ops.sym(M''))$)]
     For exterior algebras, use the graded tensor product, whose interchange
     sign is $(-1)^(a b)$ on factors of degrees $a,b$; the same generator
     and relation argument gives the analogous isomorphism. In degree $n$,

@@ -58,8 +58,10 @@ The constructions below use categories and functors in their usual sense. Only s
 #proof[
 
   + *Compare universal solutions.* Regard the universal problem as a category of objects with their prescribed structure maps. If $P,Q$ are initial solutions, let $u:P->Q$ and $v:Q->P$ be their unique structure-preserving maps. Both $v compose u$ and $ops.id_P$ are endomorphisms in this category, so they are equal; likewise $u compose v=ops.id_Q$. Any structure-preserving isomorphism must equal $u$. For terminal solutions, reverse the arrows.
+    #align(center)[#diagram(cell-size: 19mm, $P edge("r", u, ->) edge("dr", ops.id_P, ->) & Q edge("d", v, ->) \ & P$)]
 
   + *Verify the localization property.* For localization, let $phi:A->B$ map $S$ to units. Define
+    #align(center)[#diagram(cell-size: 20mm, $A edge("r", iota, ->) edge("dr", phi, ->) & S^(-1)A edge("d", overline(phi), ->, stroke: #(dash: "dashed")) \ & B$)]
     $
       overline(phi):S^(-1)A & -> B, \
       a/s & mapsto phi(a)phi(s)^(-1).
@@ -99,6 +101,7 @@ The constructions below use categories and functors in their usual sense. Only s
 #proof[
 
   + *Sets.* A map into a cartesian product is uniquely its tuple of component maps; a map out of a disjoint union is uniquely its restrictions to the summands.
+    #align(center)[#diagram(cell-size: 19mm, $ & T edge("dl", a, ->) edge("d", (a,b), ->, stroke: #(dash: "dashed")) edge("dr", b, ->) \ X & X times Y edge("l", ->) edge("r", ->) & Y$)]
 
   + *Abelian groups.* For abelian groups, the map from a direct sum is $(a_i) mapsto sum_i u_i(a_i)$ for finite-support tuples, and this formula gives the unique map with restrictions $u_i$. For finitely many indices, the direct sum and product have identical underlying groups.
 
@@ -135,6 +138,7 @@ The constructions below use categories and functors in their usual sense. Only s
 #proof[
 
   + *Construct the limit comparison.* For a natural transformation $alpha:D->E$ and a limiting cone $lambda_i:L_D->D(i)$, the maps $alpha_i compose lambda_i$ form a cone to $E$: for $a:i->j$, naturality gives $E(a) compose alpha_i compose lambda_i=alpha_j compose lambda_j$. The universal property of $L_E$ therefore gives a unique map $L_D->L_E$ with these composites.
+    #align(center)[#diagram(cell-size: 20mm, $L_D edge("r", ->, stroke: #(dash: "dashed")) edge("d", lambda_i, ->) & L_E edge("d", mu_i, ->) \ D(i) edge("r", alpha_i, ->) & E(i)$)]
 
   + *Check functoriality.* Identity transformations induce identities, and composite transformations induce composite maps, since their projections agree and the limit property detects equality.
 
@@ -164,6 +168,7 @@ The constructions below use categories and functors in their usual sense. Only s
   + *Check equivalence.* This relation is reflexive and symmetric. For transitivity, map the two witness objects to a common object and then equalize the two resulting arrows from the middle object. The two witnessed equalities now hold in one object and imply the required third equality. Thus $tilde.op$ is an equivalence relation.
 
   + *Identify the set colimit.* Every diagram arrow identifies an element with its image. Conversely, every witnessed equality follows from such identifications. The quotient consequently has the universal property of the colimit of sets.
+    #align(center)[#diagram(cell-size: 20mm, $D(i) edge("r", iota_i, ->) edge("dr", u_i, ->) & ops.colim D edge("d", u, ->, stroke: #(dash: "dashed")) \ & T$)]
 
   + *Add the module structure.* For modules, define addition by sending two representatives to a common object and adding there; define scalar multiplication in any representative. To compare two choices, send their objects to a common object and equalize the finitely many parallel arrows. This proves independence of choices and all module identities (Check!). Compatible linear maps descend uniquely to the quotient, so this is also the module colimit, with exactly the asserted equality relation. For a directed poset, all parallel arrows are already equal.
 ]
@@ -214,6 +219,8 @@ The constructions below use categories and functors in their usual sense. Only s
 
   + *Preserve colimits.* Let $K:I->C$ have colimit $Q$, with injections $iota_i$. A cocone $L(K(i))->Y$ corresponds under $Phi$ to maps $K(i)->R(Y)$.
     Naturality says precisely that these maps are a cocone. They factor uniquely through $Q->R(Y)$, hence uniquely through $L(Q)->Y$. This correspondence sends the factorization equations to the equations for $L(iota_i)$, so $L(Q)$ with these injections is the required colimit.
+    #align(center)[#diagram(cell-size: 21mm, $L(K(i)) edge("r", L(iota_i), ->) edge("dr", ->) & L(Q) edge("d", ->, stroke: #(dash: "dashed")) \ & Y$)]
 
   + *Preserve limits.* Applying the same argument to cones, using $ops.hom(X, R(K(i))) simeq ops.hom(L(X), K(i))$, shows that $R$ preserves limits. Every comparison is natural because each map is characterized by its composites with the specified structure maps.
+    #align(center)[#diagram(cell-size: 21mm, $X edge("r", ->, stroke: #(dash: "dashed")) edge("dr", ->) & R(lim_i K(i)) edge("d", ->) \ & R(K(i))$)]
 ]

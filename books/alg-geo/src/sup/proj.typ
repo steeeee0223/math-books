@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == PJ — Proj and graded modules <sup-pj>
@@ -223,6 +224,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     division formula proves agreement. Conversely, twist a sheaf map and
     apply it to the canonical sections of every degree. These constructions
     are inverse on each $U_i$, and hence globally, and are natural.
+    #align(center)[#diagram(cell-size: 21mm, $M edge("r", ->) edge("dr", u, ->) & Gamma_*(tildeOf(M)) edge("d", Gamma_*(tildeOf(u)), ->, stroke: #(dash: "dashed")) \ & Gamma_*shf.f$)]
     The reconstruction statement is exactly II.5.15, whose comparison on
     $U_i$ uses this same fraction formula.
 ]

@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == QC — Quasi-coherent and coherent operations <sup-qc>
@@ -39,9 +40,14 @@ stalks do not show that a specified morphism is an isomorphism.
       tildeOf(u)_(D(a))(m/a^n)
       = a^(-n) u(m)|_(D(a)).
     $
-    The section $a$ is a unit in $shf.o_X(D(a))$, so it acts invertibly
+    The section $a$ is a unit in $shf.o_X\(D(a))$, so it acts invertibly
     on $shf.f\(D(a))$; the universal property of $M_a$ makes the formula
-    well-defined.  For $D(b) subset.eq D(a)$, restricting the formula to
+    well-defined. The dashed arrow is this unique localized map:
+    #align(center)[#diagram(
+      cell-size: 23mm,
+      $M edge("r", ->) edge("dr", u_a, ->) & M_a edge("d", ->, stroke: #(dash: "dashed")) \ & shf.f\(D(a))$,
+    )]
+    Here $u_a(m)=u(m)|_(D(a))$. For $D(b) subset.eq D(a)$, restricting the formula to
     $D(b)$ gives the unique localized linear map extending
     $m mapsto u(m)|_(D(b))$.  Thus the formulas commute with restrictions
     and agree on $D(a) inter D(b)=D(a b)$.  They define a sheaf morphism
@@ -84,6 +90,10 @@ stalks do not show that a specified morphism is an isomorphism.
     $ops.colim_i (M_i)_idl.p -> (ops.colim_i M_i)_idl.p$;
     localization, a left adjoint on modules, makes this an isomorphism.
     SL-1 applies to this specified map.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $tildeOf(M_i) edge("r", ->) edge("dr", ->) & ops.colim_i tildeOf(M_i) edge("d", ->) \ & tildeOf(ops.colim_i M_i)$,
+    )]
 
   + *Return to the scheme.* Quasi-coherence on the affine cover
     proves the global assertion; all comparisons are induced by the same
@@ -134,6 +144,13 @@ stalks do not show that a specified morphism is an isomorphism.
 
   + *Construct the comparison.* Pull evaluation back and use the tensor--Hom adjunction to form the
     canonical map.
+    #align(center)[#diagram(
+      cell-size: 36mm,
+      $
+        f^*shf.hom (shf.e,shf.g) times.o f^*shf.e edge("r", ->) edge("d", ->, stroke: #(dash: "dashed")) & f^*shf.g edge("d", ops.id, ->) \
+        shf.hom (f^*shf.e,f^*shf.g) times.o f^*shf.e edge("r", ->) & f^*shf.g
+      $,
+    )]
 
   + *Compute on a trivializing cover.* Cover $Y$ by opens $V$ trivializing $shf.e$ with finite
     rank $r$, and restrict to $f^(-1)(V)$. On these opens, both Hom sheaves
@@ -356,6 +373,10 @@ stalks do not show that a specified morphism is an isomorphism.
     where $M$ is an $R$-module, $L$ is a $K$-vector space, and restriction is
     an $R$-linear map $rho:M->L$.  By the universal property of localization,
     $rho$ is equivalently a $K$-linear map
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $M edge("r", ->) edge("dr", rho, ->) & tensor(M, K, over: R) edge("d", bar(rho), ->, stroke: #(dash: "dashed")) \ & L$,
+    )]
     $
       bar(rho):tensor(M, K, over: R) -> L,
       quad tensor(m, a) mapsto a rho(m).

@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == MG — Morphisms, diagonals and graphs <sup-mg>
@@ -27,6 +28,11 @@ the diagonal and separatedness criteria of
   + *Apply the tensor-product universal property.* The tensor-product universal property identifies
     these with pairs of maps from $B,C$ agreeing on $A$, hence with pairs
     $T->ops.spec B$, $T->ops.spec C$ agreeing over $ops.spec A$.
+    #align(center)[#diagram(cell-size: 21mm, $
+      & T edge("dl", ->) edge("d", ->, stroke: #(dash: "dashed")) edge("dr", ->) \
+      ops.spec B edge("dr", ->) & ops.spec tensor(B, C, over: A) edge("l", ->) edge("r", ->) & ops.spec C edge("dl", ->) \
+      & ops.spec A
+    $)]
     Check the tensor-product universal property for commutative algebras (Check!).
 
   + *Identify the projections and conclude.* This correspondence is natural in $T$ and sends the two specified
@@ -52,6 +58,7 @@ the diagonal and separatedness criteria of
     those of $k[t]$. Successive localization and tensor-product universal
     properties give the displayed tensor ring. The localization prime
     correspondence identifies its primes with the primes avoiding both sets.
+    #align(center)[#diagram(cell-size: 23mm, $k[s,t] edge("r", ->) edge("dr", ->) & k(s)[t] edge("d", ->) \ & tensor(k(s), k(t), over: k)$)]
 
   + *Exhibit two distinct primes.* The zero prime avoids them since $k[s,t]$ is a domain. The prime $(s-t)$
     also avoids them, since substitution $s=t$ is injective on each of the
@@ -308,6 +315,7 @@ the diagonal and separatedness criteria of
   + *Recover the residue-field inclusion.* A map from the one-point scheme has image $x$ and gives a local map
     $shf.o_(X,x)->K$. Its kernel is the maximal ideal, so it factors uniquely
     through an inclusion $kappa(x)->K$.
+    #align(center)[#diagram(cell-size: 20mm, $shf.o_(X,x) edge("r", ->) edge("dr", ->) & kappa(x) edge("d", ->, stroke: #(dash: "dashed")) \ & K$)]
 
   + *Construct a morphism from the pair.* Conversely, choose an affine
     neighborhood $ops.spec A$ of $x$, with prime $idl.p$. Compose
