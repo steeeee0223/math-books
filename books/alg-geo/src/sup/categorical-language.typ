@@ -59,7 +59,12 @@ The constructions below use categories and functors in their usual sense. Only s
 
   + *Compare universal solutions.* Regard the universal problem as a category of objects with their prescribed structure maps. If $P,Q$ are initial solutions, let $u:P->Q$ and $v:Q->P$ be their unique structure-preserving maps. Both $v compose u$ and $ops.id_P$ are endomorphisms in this category, so they are equal; likewise $u compose v=ops.id_Q$. Any structure-preserving isomorphism must equal $u$. For terminal solutions, reverse the arrows.
 
-  + *Verify the localization property.* For localization, let $phi:A->B$ send $S$ to units. Define $overline(phi)(a/s)=phi(a)phi(s)^(-1)$. If $a/s=a'/s'$, some $t in S$ satisfies $t(s' a-s a')=0$. Applying $phi$ and cancelling its unit factors proves that the displayed values agree. The fraction formulas for addition and multiplication make $overline(phi)$ a ring map. It extends $phi$, and every extension must send $a/s$ to that value. This proves existence and uniqueness, including the case where the localization is the zero ring.
+  + *Verify the localization property.* For localization, let $phi:A->B$ map $S$ to units. Define
+    $
+      overline(phi):S^(-1)A & -> B, \
+      a/s & mapsto phi(a)phi(s)^(-1).
+    $
+    If $a/s=a'/s'$, some $t in S$ satisfies $t(s' a-s a')=0$. Applying $phi$ and cancelling its unit factors proves that the displayed values agree. The fraction formulas for addition and multiplication make $overline(phi)$ a ring map. It extends $phi$, and every extension must map $a/s$ to that value. This proves existence and uniqueness, including the case where the localization is the zero ring.
 ]
 
 #metadata(none) <sup-cat-4>
@@ -95,7 +100,7 @@ The constructions below use categories and functors in their usual sense. Only s
 
   + *Sets.* A map into a cartesian product is uniquely its tuple of component maps; a map out of a disjoint union is uniquely its restrictions to the summands.
 
-  + *Abelian groups.* For abelian groups, a homomorphism from a direct sum sends a finite-support tuple $(a_i)$ to $sum_i u_i(a_i)$, and this formula gives the unique map with restrictions $u_i$. For finitely many indices, the direct sum and product have identical underlying groups.
+  + *Abelian groups.* For abelian groups, the map from a direct sum is $(a_i) mapsto sum_i u_i(a_i)$ for finite-support tuples, and this formula gives the unique map with restrictions $u_i$. For finitely many indices, the direct sum and product have identical underlying groups.
 
   + *Rings.* A map into a product of rings is similarly a tuple of ring maps. Given ring maps $u:A->R$ and $v:B->R$ into a ring, the balanced map $(a,b) mapsto u(a)v(b)$ induces $tensor(A, B, over: ZZ)->R$; pure tensors generate it and their products show that this is the unique ring map extending both.
 
@@ -196,7 +201,7 @@ The constructions below use categories and functors in their usual sense. Only s
       )
     ]
 
-  + The bijection sends $u$ to $R(u) compose eta_X$; its inverse sends $v$ to $epsilon_Y compose L(v)$.
+  + The bijection is $u mapsto R(u) compose eta_X$; its inverse is $v mapsto epsilon_Y compose L(v)$.
 
   + Left adjoints preserve existing colimits and right adjoints preserve existing limits.
 

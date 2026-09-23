@@ -15,14 +15,14 @@ Use the definitions and stalkwise isomorphism criterion of
 
   #set enum(spacing: 0.8em)
 
-  + For $s in shf.f (U)$, $t in shf.f (V)$, and $x in U inter V$,
+  + For $s in shf.f\(U)$, $t in shf.f\(V)$, and $x in U inter V$,
     $s_x=t_x$ if and only if their restrictions agree on some open
     neighborhood of $x$ contained in $U inter V$. Finitely many equalities
     of germs at $x$ can be realized on one neighborhood; infinitely many
     need not admit such a common neighborhood.
 
   + For an open subset $U subset.eq X$, an open cover $U=union_i U_i$,
-    and sections $s,t in shf.f (U)$, the following conditions are equivalent:
+    and sections $s,t in shf.f\(U)$, the following conditions are equivalent:
 
     + $s=t$.
     + $s|_(U_i)=t|_(U_i)$ for every $i$.
@@ -136,7 +136,7 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
 
-  + *Glue the images of sections.* For $s in shf.f (V)$, the sections
+  + *Glue the images of sections.* For $s in shf.f\(V)$, the sections
     $u_i\(s|_(V inter U_i))$ agree on the overlaps $V inter U_i inter U_j$.
     Glue them in $shf.g$ and call the result $u_V\(s)$.
 
@@ -176,7 +176,7 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
 
-  + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f (V)$ to be the set
+  + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f\(V)$ to be the set
     of compatible families
     $
       (s_i)_i,

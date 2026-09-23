@@ -189,7 +189,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
   + *Identify each trivial bundle.* On a trivializing open $U$, the symmetric algebra of
     $shf.o_U^r$ is $shf.o_U[t_1,dots,t_r]$ by AL-6's universal property,
-    sending basis sections to polynomial variables. RV-1 therefore gives
+    $e_i mapsto t_i$ for the standard basis. RV-1 therefore gives
     relative affine $r$-space there.
 
   + *Transport the transition cocycle.* A basis change acts on degree one,

@@ -67,7 +67,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
 #metadata(none) <sup-pj-3>
 #example(number: "PJ-3", title: "A graded map with empty domain on Proj")[
-  For $k[x_0,x_1]->k[t]$ sending both $x_i$ to zero, the target Proj of
+  For $k[x_0,x_1]->k[t]$, $x_i mapsto 0$ for $i=0,1$, the target Proj of
   the ring map, $ops.proj k[t]$, is nonempty but $U$ is empty.
 ]
 
@@ -263,11 +263,11 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
   + *Recover every closed-subscheme ideal sheaf.* For completeness, an ideal sheaf $shf.j subset.eq shf.o_X$ yields the
     homogeneous ideal whose degree $n>=0$ part consists of those
-    $s in S_n$ whose canonical section belongs to $shf.j (n)$.
+    $s in S_n$ whose canonical section belongs to $shf.j\(n)$.
     It recovers $shf.j$ on every $U_i$. Indeed, for a section of $shf.j$
     on $U_i$, clearing powers of $x_i$ in a finite affine cover and then
     clearing the differences on the pairwise intersections extends it to
-    a section of $shf.j (n)$ for some $n$. This is the extension argument
+    a section of $shf.j\(n)$ for some $n$. This is the extension argument
     of II.5.14 used in II.5.15. Increasing $n$ further makes its image in
     $Gamma(X, shf.o (n))$ come from $S_n$ by PJ-6.
     Dividing by $x_i^n$ recovers the original section. Hence the resulting

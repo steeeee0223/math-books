@@ -34,9 +34,12 @@ geometric constructions specify the restriction and gluing maps.
   with $shf.o_(U_i)$. The displayed frame identity shows that the subsheaves
   agree on overlaps. The transition units satisfy
   $(f_j/f_i)(f_l/f_j)=f_l/f_i$, so the sheaf gluing result
-  #book-link(<sup-sl-3>)[SL-3] applies. The multiplication map
-  $tensor(shf.o (D), shf.o (E), over: shf.o_X)->shf.o (D+E)$ sends
-  $f_i^(-1) times.o g_i^(-1)$ to $(f_i g_i)^(-1)$ on a common refinement.
+  #book-link(<sup-sl-3>)[SL-3] applies. On a common refinement, the
+  multiplication map is
+  $
+    tensor(shf.o (D), shf.o (E), over: shf.o_X) & -> shf.o (D+E), \
+    f_i^(-1) times.o g_i^(-1) & mapsto (f_i g_i)^(-1).
+  $
   It is an isomorphism in each frame; the multiplication description is
   unchanged by restriction, hence glues. Setting $E=-D$ gives the dual
   identification. These are the constructions of II.6.13 with the frame
@@ -62,7 +65,7 @@ geometric constructions specify the restriction and gluing maps.
   $a_i in K(X)^times$. On an overlap with $e_i=u_(i j)e_j$,
   equality of the two expressions for $s$ gives $a_j=u_(i j)a_i$.
   Consequently $a_i/a_j$ is a regular unit, as required for a Cartier
-  divisor. The displayed map sends the frame $a_i^(-1)$ to $e_i$,
+  divisor. The displayed map is $a_i^(-1) mapsto e_i$ on frames,
   and these maps agree on overlaps because they all multiply by the same
   rational section. SL-3 glues them and their inverses. If $s$ is regular,
   each coefficient belongs to $shf.o_X(U_i)$; every stalk coefficient is

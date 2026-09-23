@@ -46,8 +46,8 @@ exercises: their proofs are left to the reader.
   a principal affine open gives exactly the same formula with the
   coefficient ring localized, so the construction also glues over $Y$.
 
-  Conversely, pull back the universal quotient: on $D_+(s_i)$ it sends
-  $a in S_d$ to $(a/s_i^d)s_i^d$, and $s_i$ generates $shf.o_P(1)$.
+  Conversely, pull back the universal quotient: on $D_+(s_i)$ it is
+  $a mapsto (a/s_i^d)s_i^d$ for $a in S_d$, and $s_i$ generates $shf.o_P(1)$.
   These descriptions show that the two constructions are inverse.
   They also prove naturality under pullback. An isomorphism of quotient
   pairs is unique when it exists, since its effect on the surjective
@@ -271,8 +271,8 @@ exercises: their proofs are left to the reader.
   invertible at the vertex. Away from the vertex, one of $a,c$ is
   invertible and the relations express $M$ with one free generator.
 
-  The module of $shf.o (2)$ is $R z$. Multiplication sends
-  $e^2$ to $a z$, $e f$ to $b z$, and $f^2$ to $c z$.
+  The module of $shf.o (2)$ is $R z$. Multiplication is given by
+  $e^2 mapsto a z$, $e f mapsto b z$, and $f^2 mapsto c z$.
   Its image is $idl.m z$, strictly smaller than $R z$ at the vertex.
   Thus $shf.o (1) times.o shf.o (1)->shf.o (2)$ is not surjective there.
   The failure is in the sheaf multiplication itself, although the

@@ -35,7 +35,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
   + *Identify the quotient structure sheaf.* On $D(f)$, localization of the exact sequence
     $I->A->A\/I->0$ gives the quotient $A_f\/I A_f$.
-    The maps sending $a/f^n$ to $bar(a)/bar(f)^n$ give its canonical
+    The maps $a/f^n mapsto bar(a)/bar(f)^n$ give its canonical
     identification with $(A\/I)_(bar(f))$. These identifications commute with
     further localization and therefore identify the quotient sheaf and the
     structure sheaf on the closed subset. This is precisely the ideal-sheaf

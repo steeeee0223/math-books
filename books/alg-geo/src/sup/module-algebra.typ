@@ -68,7 +68,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     from $v u=0$. The same zero criterion preserves injections, and lifting a
     numerator preserves surjections. Hence localization is exact.
 
-  + *Tensor products.* The inverse of the tensor comparison sends
+  + *Tensor products.* The inverse of the tensor comparison is
     $tensor(m/s, n/t) mapsto tensor(m, n)/(s t)$. Changing either fraction does
     not change this value, by the fraction relation. The map is balanced over
     $S^(-1)A$; check the fraction relations and balancing explicitly (Check!).
@@ -138,12 +138,12 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   + *The dual–tensor comparison.* Choose a splitting $M arrow.r.hook A^r -> M$ of the identity. Images
     $m_i$ of the standard basis and restrictions $lambda_i$ of its coordinate
     functionals satisfy $m=sum_i lambda_i(m)m_i$. The inverse of
-    $tensor(M^or, N)->ops.hom(M, N)$ sends $u$ to
-    $sum_i tensor(lambda_i, u(m_i))$. One composite fixes $u$ by this identity;
+    $tensor(M^or, N)->ops.hom(M, N)$ is
+    $u mapsto sum_i tensor(lambda_i, u(m_i))$. One composite fixes $u$ by this identity;
     for the other use $lambda=sum_i lambda(m_i)lambda_i$.
 
-  + *Double-dual evaluation.* The inverse to double-dual evaluation sends $Psi$ to
-    $sum_i Psi(lambda_i)m_i$. Evaluating any $lambda$ on this element gives
+  + *Double-dual evaluation.* The inverse to double-dual evaluation is
+    $Psi mapsto sum_i Psi(lambda_i)m_i$. Evaluating any $lambda$ on this element gives
     $Psi(lambda)$, and the other composite is the same dual-basis identity.
     Thus these inverses belong to the specified canonical maps and do not depend
     on the chosen splitting.
@@ -195,9 +195,11 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
 
 #proof[
 
-  + *Tensor powers.* In tensor degree $r$, the comparison sends
-    $b times.o (m_1 times.o dots times.o m_r)$ to
-    $(b times.o m_1) times.o (1 times.o m_2) times.o dots times.o (1 times.o m_r)$.
+  + *Tensor powers.* In tensor degree $r$, the comparison is
+    $
+      b times.o (m_1 times.o dots times.o m_r)
+      & mapsto (b times.o m_1) times.o (1 times.o m_2) times.o dots times.o (1 times.o m_r).
+    $
     The inverse on pure tensors multiplies all the coefficients in $B$.
     The balancing relations show that these are inverse $B$-linear maps,
     compatible with multiplication and degree zero.

@@ -120,10 +120,10 @@
   $U_i = ops.spec A_i$ with $A_i$ an integral domain. Since $X$ is integral,
   $shf.o_(X, x)$ is an integral domain for every $x in X$, whence
   $shf.o_reg (U_i) = A_i - {0}$. It follows that the presheaf total quotient ring
-  has value $shf.k (U_i) = ops.frac A_i isoBy("[3.6]") K$ as rings. Now, for any
+  has value $shf.k\(U_i) = ops.frac A_i isoBy("[3.6]") K$ as rings. Now, for any
   $x in U_i$, we have
   $
-    K = shf.k (U_i) -> shf.k_x = ops.frac shf.o_(X, x)
+    K = shf.k\(U_i) -> shf.k_x = ops.frac shf.o_(X, x)
     arrow.r.hook_(text("(4.A)")) ops.frac shf.o_(X, eta) = K,
   $
   where the first map is also injective since $K$ is a field. Hence,
@@ -171,11 +171,11 @@
         spacing: 2em,
         $
           ops.spec (tensor(A_idl.p, A slash idl.q_i, over: A)) edge("r", ->) edge("d", text("(v)"), ->)
-            edge("dr", square, stroke: #none, label-side: #center)
+          edge("dr", square, stroke: #none, label-side: #center)
           & ops.spec (A slash idl.q_i) edge("r", text("(iii)"), "=") edge("d", ->)
           & U inter Y_i edge("r", text("(3.3)"), "=")
           & U times_X Y_i edge("r", ->) edge("d", text("(ii)"), ->)
-            edge("dr", square, stroke: #none, label-side: #center)
+          edge("dr", square, stroke: #none, label-side: #center)
           & Y_i edge("d", text("closed"), arrow.r.hook, label-side: #left) \
           T_x = ops.spec shf.o_x edge("r", text("(iv)"), ->, label-side: #right)
           & ops.spec A edge("rr", text("(i)"), "=", label-side: #right)
@@ -265,7 +265,7 @@
       $(f \/ f')|_i in shf.o (V_i)$ for each $i$. Further, for each $i, j$, their
       restrictions to $shf.o (V_i inter V_j)$ agree, so we may glue
       ${(f \/ f')|_i}$ to obtain $s in shf.o (U)$. In fact, $s = f \/ f'$ since
-      each $(f \/ f')|_i in ops.frac shf.o (V_i) = shf.k (V_i) = K$. Thus
+      each $(f \/ f')|_i in ops.frac shf.o (V_i) = shf.k\(V_i) = K$. Thus
       $f \/ f' in shf.o (U)$. Similarly, $f' / f in shf.o (U)$, so
       $f \/ f' in shf.o (U)^times = shf.o^times (U)$.
 

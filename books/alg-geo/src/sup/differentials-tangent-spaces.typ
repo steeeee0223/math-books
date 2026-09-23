@@ -68,8 +68,8 @@ the reader; the geometric reductions explain exactly where they are used.
 #proof[
   Put $P=A[x_1,dots,x_n]$ and $I=ideal(f_1 "," dots "," f_r)$. Apply II.8.4A to
   $P -> B$. The free basis $d x_j$ of $Omega_(P\/A)$ identifies its tensor
-  product with $B^n$. The surjection $B^r -> I\/I^2$ sends $e_i$ to
-  $f_i$ modulo $I^2$, so its composite with the conormal map is exactly $J$.
+  product with $B^n$. The surjection $B^r -> I\/I^2$,
+  $e_i mapsto f_i+I^2$, has composite with the conormal map equal to $J$.
   The derivative formula and right exactness of tensor products are the
   purely algebraic checks left to the reader. This also gives the stated
   presentation after base change. For instance, the relation $d(x^2)=2x d x$
@@ -93,8 +93,8 @@ the reader; the geometric reductions explain exactly where they are used.
   Restrict $X$ to $ops.spec B$ about $x$ and localize at its prime ideal.
   The localization formula of II.8.2A identifies the stalk of
   $Omega_(X\/k)$ with $Omega_(B_idl.p\/k)$. Apply II.8.4A to the
-  quotient $R -> K$; the first map sends $a$ modulo $idl.m_x^2$ to
-  $d a times.o 1$.
+  quotient $R -> K$; the first map is
+  $a+idl.m_x^2 mapsto d a times.o 1$.
   Thus this sequence concerns the actual stalk and not the differentials of
   an arbitrarily chosen rational point.
 
@@ -164,8 +164,8 @@ the reader; the geometric reductions explain exactly where they are used.
   $
   At the origin the tangent space has dimension two, the curve has local
   dimension one, and the tangent cone is the doubled line $y^2=0$.
-  Its normalization $k[x,y]\/ideal(y^2-x^3) -> k[t]$ sends
-  $x mapsto t^2$, $y mapsto t^3$. The differential map sends
+  Its normalization $k[x,y]\/ideal(y^2-x^3) -> k[t]$ is given by
+  $x mapsto t^2$, $y mapsto t^3$. The differential map is given by
   $d x mapsto 2t d t$, $d y mapsto 3t^2 d t$, and has kernel
   $
     A\/ideal(x^2 "," y) dot tau, quad tau=2x d y-3y d x.

@@ -1138,8 +1138,8 @@ best tested using RS, GSS, RT, and GTT directly.
   at $infinity$. For $shf.o (n)$ choose frames with
   $e_infinity=w^n e_0$ on the overlap. Under $w mapsto u w$, identify the
   pulled-back frame at $0$ with $e_0$; the frame at infinity then becomes
-  $u^n e_infinity$. Thus pullback sends
-  $(a,d,n)$ to $(a,d+n,n)$. Restriction from either polynomial base chart
+  $u^n e_infinity$. Thus pullback is
+  $(a,d,n) mapsto (a,d+n,n)$. Restriction from either polynomial base chart
   has middle coordinate zero: its units are constants. An invertible
   sheaf on $X$ must therefore satisfy $0=0+n$ on the overlap, and $n=0$.
   Normalization pulls its restriction on every fiber back to

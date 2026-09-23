@@ -40,7 +40,7 @@ stalks do not show that a specified morphism is an isomorphism.
       = a^(-n) u(m)|_(D(a)).
     $
     The section $a$ is a unit in $shf.o_X(D(a))$, so it acts invertibly
-    on $shf.f (D(a))$; the universal property of $M_a$ makes the formula
+    on $shf.f\(D(a))$; the universal property of $M_a$ makes the formula
     well-defined.  For $D(b) subset.eq D(a)$, restricting the formula to
     $D(b)$ gives the unique localized linear map extending
     $m mapsto u(m)|_(D(b))$.  Thus the formulas commute with restrictions
@@ -107,8 +107,8 @@ stalks do not show that a specified morphism is an isomorphism.
   + *Compute on principal opens.* Evaluation defines the comparison by QC-1. On a distinguished open
     $D(a)$ its source has sections $ops.hom(M, N, over: A)_a$, while its
     target has sections $ops.hom(M_a, N_a, over: A_a)$ by affine full
-    faithfulness. The map sends $u/a^n$ to the localized linear map
-    $m/a^q mapsto u(m)/a^(n+q)$. AL-4 proves that this map is an
+    faithfulness. The map is
+    $u/a^n mapsto (m/a^q mapsto u(m)/a^(n+q))$. AL-4 proves that this map is an
     isomorphism when $M$ is finitely presented. These formulas commute
     with further localization, so SL-1 gives the sheaf isomorphism.
 
@@ -177,8 +177,8 @@ stalks do not show that a specified morphism is an isomorphism.
     rings. Quasi-coherence identifies their sections with $(M_i)_a$ and
     $(N_(i j l))_a$. All products are finite, so exact localization of
     the preceding kernel gives the canonical isomorphism
-    $M_a -> Gamma(f^(-1)(D(a)), shf.f)$. It sends a fraction to the
-    restricted section divided by the invertible pullback of $a$; hence
+    $M_a -> Gamma(f^(-1)(D(a)), shf.f)$,
+    $m/a^n mapsto m|_(f^(-1)(D(a)))/(f^*a)^n$; hence
     it respects every further restriction.
 
   + *Identify the direct image.* SL-1 on the distinguished basis
@@ -239,7 +239,7 @@ stalks do not show that a specified morphism is an isomorphism.
         (f_*shf.f)|_V simeq tildeOf(attach(M, bl: A)).
       $
       Indeed, restriction of pushforward is pushforward by $f|_(f^(-1)(V))$:
-      both evaluate on $W subset.eq V$ as $shf.f (f^(-1)(W))$.  On a
+      both evaluate on $W subset.eq V$ as $shf.f\(f^(-1)(W))$.  On a
       distinguished $D(a) subset.eq V$, this is $M_a$, with $A$ acting
       through $A->B$.  These localization identifications commute with
       restriction and hence identify the sheaves on the entire basis.
@@ -351,7 +351,7 @@ stalks do not show that a specified morphism is an isomorphism.
 
   + *Extract the module data.* An $shf.o_X$-module $shf.f$ therefore gives
     $
-      M=shf.f (X), quad L=shf.f ({eta}),
+      M=shf.f\(X), quad L=shf.f\({eta}),
     $
     where $M$ is an $R$-module, $L$ is a $K$-vector space, and restriction is
     an $R$-linear map $rho:M->L$.  By the universal property of localization,

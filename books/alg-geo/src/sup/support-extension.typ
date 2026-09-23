@@ -14,7 +14,7 @@ for powers of an invertible-sheaf section remains in
 
 #metadata(none) <sup-se-1>
 #definition(number: "SE-1", title: "Two notions of support")[
-  + For an abelian-group or module sheaf $shf.f$ and $s in shf.f (U)$, its
+  + For an abelian-group or module sheaf $shf.f$ and $s in shf.f\(U)$, its
     support is ${x in U:s_x!=0}$; this is closed in $U$.
 
   + The support of the sheaf is ${x in X:shf.f_x!=0}$ and need not be closed.
@@ -77,7 +77,7 @@ for powers of an invertible-sheaf section remains in
 #proof[
 
   + *Identify the kernel sheaf.* For an open $V$, the kernel of
-    $shf.f (V)->shf.f (V inter U)$ consists exactly of the sections whose
+    $shf.f\(V)->shf.f\(V inter U)$ consists exactly of the sections whose
     germs vanish on $V inter U$, by SL-1. This is precisely support in
     $V inter Z$. These identifications commute with restriction, so the
     support subsheaf is the kernel sheaf.
@@ -90,7 +90,7 @@ for powers of an invertible-sheaf section remains in
 #metadata(none) <sup-se-5>
 #definition(number: "SE-5", title: "Extension by zero")[
   + For an open inclusion $j:U->X$ and an abelian-group sheaf $shf.g$ on $U$,
-    $j_!shf.g$ has, on an open $V$, sections of $shf.g (V inter U)$ whose
+    $j_!shf.g$ has, on an open $V$, sections of $shf.g\(V inter U)$ whose
     support is closed in $V$. It has stalk $shf.g_x$ on $U$ and zero off $U$.
 
   + For $i:Z=X minus U->X$, the closed-inclusion direct image $i_*shf.h$

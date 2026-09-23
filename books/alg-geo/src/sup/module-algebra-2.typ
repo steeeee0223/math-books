@@ -188,8 +188,12 @@ stated hypotheses exclude a vanishing quotient or a unit in the sequence.
     := bigOPlus(I^n\/I^(n+1), n>=0)
   $
   are isomorphisms. The second map multiplies representatives. In coordinates
-  it is the graded map $(A\/I)[T_1,dots,T_r]->ops.gr_I A$ sending
-  $T_i$ to the initial form of $f_i$. Consequently the degree-$n$ component
+  it is the graded map
+  $
+    (A\/I)[T_1,dots,T_r] & -> ops.gr_I A, \
+    T_i & mapsto overline(f_i).
+  $
+  Consequently the degree-$n$ component
   is free over $A\/I$ on monomials of total degree $n$ in these initial forms.
 ]
 

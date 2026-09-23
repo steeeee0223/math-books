@@ -102,10 +102,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #proof[
 
-  + *Construct the sheaf.* Put $shf.h (U)=shf.f (U) times shf.g (U)$, with restrictions taken componentwise.
-    Suppose $(s_i,t_i) in shf.h (U_i)$ are compatible on a cover of $U$.  The
-    sections $s_i$ glue uniquely to $s in shf.f (U)$, and the $t_i$ glue uniquely
-    to $t in shf.g (U)$.  Then $(s,t)$ is the unique section of $shf.h (U)$ which
+  + *Construct the sheaf.* Put $shf.h\(U)=shf.f\(U) times shf.g\(U)$, with restrictions taken componentwise.
+    Suppose $(s_i,t_i) in shf.h\(U_i)$ are compatible on a cover of $U$.  The
+    sections $s_i$ glue uniquely to $s in shf.f\(U)$, and the $t_i$ glue uniquely
+    to $t in shf.g\(U)$.  Then $(s,t)$ is the unique section of $shf.h\(U)$ which
     restricts to every $(s_i,t_i)$.  Hence $shf.h$ is a sheaf.
 
   + *Verify the product property.* Let $i_f\(s)=(s,0)$ and $i_g\(t)=(0,t)$ be the inclusions, and let $p_f,p_g$
@@ -123,7 +123,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
       ops.hom(shf.h, shf.k)
       simeq ops.hom(shf.f, shf.k) times ops.hom(shf.g, shf.k).
     $
-    The inverse sends $(a,b)$ to the morphism $(s,t) mapsto a(s)+b(t)$.  Thus
+    The inverse is $(a,b) mapsto ((s,t) mapsto a(s)+b(t))$. Thus
     $shf.h$ is also the direct sum.
 
   + *Construct arbitrary direct sums.* For an arbitrary index set, sheafify
@@ -151,8 +151,8 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     the sheafified presheaf image is a subsheaf of the target.
 
   + For sheaves of abelian groups or modules, a morphism $u:shf.f->shf.g$
-    is surjective if and only if, for every open $U$ and $s in shf.g (U)$,
-    there are an open cover $U=union_i U_i$ and sections $t_i in shf.f (U_i)$
+    is surjective if and only if, for every open $U$ and $s in shf.g\(U)$,
+    there are an open cover $U=union_i U_i$ and sections $t_i in shf.f\(U_i)$
     such that $u(t_i)=s|_(U_i)$ for every $i$. A lift over $U$ itself
     need not exist.
 
@@ -256,7 +256,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     all its section maps are defined; a map between two stalks need not have
     such a representative. For example, on $ops.spec ZZ$ take
     $shf.f=bigOPlus(shf.o, n>=0)$ and $shf.g=shf.o$. At the generic point,
-    send the $n$-th basis vector to $1/p_n$, where the $p_n$ enumerate
+    use the map $e_n mapsto 1/p_n$, where the $p_n$ enumerate
     the positive primes. A local sheaf morphism would be defined on some
     $D(a)$ with $a!=0$ and would require every $1/p_n$ to lie in
     $ZZ[1/a]$. But a prime not dividing $a$ has no inverse in that ring
@@ -286,16 +286,16 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #proof[
   Write $P_f shf.g$ for the presheaf on $X$ given by
-  $P_f shf.g (U)=ops.colim_(f(U) subset.eq V) shf.g (V)$.
+  $P_f shf.g\(U)=ops.colim_(f(U) subset.eq V) shf.g\(V)$.
   By definition, $f^(-1)shf.g$ is the sheafification of $P_f shf.g$.
 
 
   + *Construct the counit.* First let $shf.f$ be a sheaf on $X$. For every $V$ occurring in
     $P_f (f_*shf.f)(U)$, the inclusion $U subset.eq f^(-1)(V)$ gives a restriction
     homomorphism
-    $shf.f (f^(-1)(V))->shf.f (U)$.
+    $shf.f\(f^(-1)(V))->shf.f\(U)$.
     These homomorphisms are compatible as $V$ varies, so the universal property
-    of the colimit gives $P_f (f_*shf.f)(U)->shf.f (U)$. They commute with restriction
+    of the colimit gives $P_f (f_*shf.f)(U)->shf.f\(U)$. They commute with restriction
     in $U$ and hence form a presheaf morphism $P_f (f_*shf.f)->shf.f$.
     Since $shf.f$ is already a sheaf, the universal property of sheafification
     extends it uniquely to a sheaf morphism
@@ -304,9 +304,9 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
   + *Construct the unit.* Now let $shf.g$ be a sheaf on $Y$. If $V subset.eq Y$ is open, then
     $f(f^(-1)(V)) subset.eq V$. Thus $V$ is one of the indices in
-    $P_f shf.g (f^(-1)(V))$, and the corresponding colimit map followed by
+    $P_f shf.g\(f^(-1)(V))$, and the corresponding colimit map followed by
     sheafification is
-    $shf.g (V)->P_f shf.g (f^(-1)(V))->f^(-1)shf.g (f^(-1)(V))$.
+    $shf.g\(V)->P_f shf.g\(f^(-1)(V))->f^(-1)shf.g\(f^(-1)(V))$.
     These maps commute with restrictions in $V$, giving a natural sheaf morphism
     $eta_(shf.g):shf.g->f_*f^(-1)shf.g$.
 
@@ -458,7 +458,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
 #proof[
 
-  + *Reduce the sheaf axiom to a finite cover.* Write $shf.g (U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
+  + *Reduce the sheaf axiom to a finite cover.* Write $shf.g\(U)=ops.colim_i shf.f_i (U)$.  Because $X$ is noetherian,
     every open subset of $X$ is quasi-compact (Check!).  We check the sheaf axiom for an
     open cover $cov(U_a, a in I)$ of $U$.  Only finitely many members are needed, so replace
     the cover by $cov(U_i, i=1, top: n)$ for the finite gluing argument below.
@@ -466,7 +466,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     any omitted $U_a$: apply separatedness to the finite cover
     $cov(U_a inter U_i, i=1, top: n)$.  The empty open has zero colimit group.
 
-  + *Choose one stage for representatives and relations.* Let $s_a in shf.g (U_a)$ be compatible.  Choose a representative of each
+  + *Choose one stage for representatives and relations.* Let $s_a in shf.g\(U_a)$ be compatible.  Choose a representative of each
     $s_a$ in some $shf.f_(i_a) (U_a)$.  Since the index category is filtered and
     only finitely many indices occur, there is a common later index $j$ to which
     all these representatives map.  Their images may not yet be equal on every
@@ -475,8 +475,8 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     again gives one index $k$ at which all overlap equalities hold simultaneously.
 
   + *Glue and prove uniqueness.* The resulting compatible sections in $shf.f_k (U_a)$ glue uniquely to a
-    section $t in shf.f_k (U)$.  Its image in $shf.g (U)$ restricts to every
-    $s_a$, proving existence.  For uniqueness, if two elements of $shf.g (U)$
+    section $t in shf.f_k (U)$.  Its image in $shf.g\(U)$ restricts to every
+    $s_a$, proving existence.  For uniqueness, if two elements of $shf.g\(U)$
     have equal restrictions, represent them at a common stage.  Their
     restrictions become equal at finitely many later stages, hence at one common
     stage; uniqueness in that sheaf then makes the two elements equal in the
@@ -508,9 +508,12 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 #proof[
 
   + *Construct the canonical morphism.* Let $shf.a^-$ denote the given presheaf and let $shf.a$ be the sheaf
-    of locally constant $A$-valued functions.  There is a presheaf morphism
-    $theta:shf.a^- ->shf.a$ which sends $a in A$ to the constant function
-    with value $a$.  At the empty open set, take the zero group; its unique
+    of locally constant $A$-valued functions. There is a presheaf morphism
+    $
+      theta:shf.a^- & -> shf.a, \
+                  a & mapsto (x mapsto a).
+    $
+    At the empty open set, take the zero group; its unique
     section maps to the empty function.  Pointwise operations make $shf.a$ a
     sheaf of abelian groups, since compatible functions glue uniquely and
     local constancy can be tested on an open cover.
@@ -521,7 +524,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     constant, say with value $a_i$.  The sections $u_(U_i)(a_i)$ agree on every
     overlap: on a nonempty overlap the constants $a_i$ and $a_j$ are equal,
     while on an empty overlap there is nothing to check.  They therefore glue
-    uniquely to a section $tilde(u)_U(s) in shf.g (U)$.
+    uniquely to a section $tilde(u)_U(s) in shf.g\(U)$.
 
   + *Check naturality and uniqueness.* Refining the cover does not change the glued section, so the maps
     $tilde(u)_U$ commute with restrictions.  Thus $tilde(u):shf.a->shf.g$ is a
@@ -562,9 +565,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
   + For a morphism of ringed spaces $f:X->Y$, an $shf.o_X$-module $shf.f$,
     and finite locally free $shf.e$ on $Y$, the canonical map
     $
-      tensor(f_*shf.f, shf.e, over: shf.o_Y)->f_*(tensor(shf.f, f^*shf.e, over: shf.o_X)),
+      tensor(f_*shf.f, shf.e, over: shf.o_Y) & ->f_*(tensor(shf.f, f^*shf.e, over: shf.o_X)), \
+                                tensor(s, e) & mapsto tensor(s, f^*e)
     $
-    sending $tensor(s, e) & mapsto tensor(s, f^*e)$ locally, is an isomorphism.
+    is an isomorphism; the formula on pure tensors is local.
 
   No properness or quasi-coherence is required. (Ex. II.5.1)
 ]
@@ -582,7 +586,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     evaluation is the sheaf version of finite-free evaluation. Its inverse
     is $Phi mapsto sum_(i=1)^r Phi(e_i^or)e_i$ in a basis and its dual.
     The dual-tensor map identifies both sides with $(shf.f|_U)^r$;
-    its inverse sends $v$ to $sum_(i=1)^r tensor(e_i^or, v(e_i))$.
+    its inverse is $v mapsto sum_(i=1)^r tensor(e_i^or, v(e_i))$.
     Over each $W subset.eq U$, these are finite-free identities over
     $shf.o_X(W)$, as in AL-5 (Check!). They commute with restriction,
     so give sheaf inverses. Uniqueness makes them agree on overlaps.
@@ -600,7 +604,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     Tensoring with a finite free module is a finite direct sum (Check!),
     so both sides of $theta|_V$ identify with $((f_V)_*shf.f_V)^r$.
     The direct-image comparison is checked on every $W subset.eq V$:
-    both sides have sections $shf.f (f^(-1)(W))^r$.
+    both sides have sections $shf.f\(f^(-1)(W))^r$.
     Under these identifications $theta|_V$ is the identity. The opens $V$
     cover the target, and their local inverses agree because they invert
     the same map. SL-1 proves that $theta$ is an isomorphism.
