@@ -5,6 +5,9 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("SC")
+
 == SC — Sheaf constructions and exactness <sup-sc>
 
 Read #book-link(<sup-cat>)[CAT] and #book-link(<sup-sl>)[SL] first. Module statements
@@ -13,8 +16,7 @@ constructions refer to abelian groups, rings, or modules
 over a fixed sheaf of rings. Kernel, image, quotient, and
 sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
-#metadata(none) <sup-sc-1>
-#proposition(number: "SC-1", title: "Small limits and colimits")[
+#proposition(key: "sup-sc-1", title: "Small limits and colimits")[
   + For a small diagram $shf.f_i$, its limit has sections
     $U mapsto lim_i shf.f_i\(U)$, with restriction induced by the restrictions
     of all $shf.f_i$. Its projections are the sectionwise projections.
@@ -22,7 +24,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
   + Its colimit is the sheafification of $U mapsto ops.colim_i shf.f_i\(U)$;
     the canonical maps are the presheaf structure maps followed by
     sheafification. These objects satisfy the cone and cocone properties in
-    #book-link(<sup-cat-6>)[CAT-6].
+    #supplement-link(<sup-cat-6>)[CAT-6].
 
   + For rings, take limits and colimits in rings;
     for modules, take them in $shf.o\(U)$-modules. Restriction in the latter case
@@ -58,8 +60,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     )]
 ]
 
-#metadata(none) <sup-sc-2>
-#proposition(number: "SC-2", title: "Stalk comparisons")[
+#proposition(key: "sup-sc-2", title: "Stalk comparisons")[
   + In these concrete categories, the canonical maps
     $ops.colim_i (shf.f_i)_x -> (ops.colim_i shf.f_i)_x$ are isomorphisms.
 
@@ -68,7 +69,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The latter assertion does not hold for arbitrary limits. Finite-limit
     compatibility uses the filtered system of neighborhoods and the finite
     number of representatives and equalities involved; see
-    #book-link(<sup-sl-1>)[SL-1].
+    #supplement-link(<sup-sl-1>)[SL-1].
 
   Kernel and image comparisons are included in SC-4.
 ]
@@ -100,8 +101,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The counterexamples below exhibit the failure for infinite limits.
 ]
 
-#metadata(none) <sup-sc-3>
-#proposition(number: "SC-3", title: "Direct sums of abelian-group sheaves")[
+#proposition(key: "sup-sc-3", title: "Direct sums of abelian-group sheaves")[
   + A finite direct sum is a biproduct, with its usual injections and projections.
     (Ex. II.1.9)
 
@@ -153,8 +153,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     modules, all these constructions respect the scalar action componentwise.
 ]
 
-#metadata(none) <sup-sc-4>
-#proposition(number: "SC-4", title: "Exactness calculus")[
+#proposition(key: "sup-sc-4", title: "Exactness calculus")[
   + For abelian groups and modules, kernels and images commute with stalks.
     Injectivity, surjectivity, and exactness are detected on stalks.
     In particular, a morphism is an isomorphism if and only if it is both
@@ -235,8 +234,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     comparison. No assertion about arbitrary ring epimorphisms is used.
 ]
 
-#metadata(none) <sup-sc-5>
-#proposition(number: "SC-5", title: "Sheaf Hom")[
+#proposition(key: "sup-sc-5", title: "Sheaf Hom")[
   + The assignment $U mapsto ops.hom(shf.f|_U, shf.g|_U)$, with restriction of
     morphisms, is a sheaf.
 
@@ -249,7 +247,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     restrictions. (Ex. II.1.15)
 
   + The natural map from its stalk to the Hom of stalks need not be an
-    isomorphism; the finite-presentation comparison is in #book-link(<sup-qc-3>)[QC-3].
+    isomorphism; the finite-presentation comparison is in #supplement-link(<sup-qc-3>)[QC-3].
 ]
 
 #proof[
@@ -277,8 +275,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     Thus this stalk map has no local representative.
 ]
 
-#metadata(none) <sup-sc-6>
-#proposition(number: "SC-6", title: "Direct and inverse image")[
+#proposition(key: "sup-sc-6", title: "Direct and inverse image")[
   For a continuous map $f:X->Y$, use the definitions in
   #book-link(<text-ii-1>)[II.1, D7].
 
@@ -391,8 +388,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     of sections on every open.
 ]
 
-#metadata(none) <sup-sc-7>
-#proposition(number: "SC-7", title: "Tensor sheaves and the tensor–Hom adjunction")[
+#proposition(key: "sup-sc-7", title: "Tensor sheaves and the tensor–Hom adjunction")[
   + The tensor sheaf is the sheafification of
     $U mapsto tensor(shf.f (U), shf.g (U), over: shf.o (U))$; its canonical balanced
     map represents compatible bilinear maps into sheaves.
@@ -421,8 +417,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     algebraic tensor universal property (Check!).
 ]
 
-#metadata(none) <sup-sc-8>
-#proposition(number: "SC-8", title: "Module pullback and scalar extension")[
+#proposition(key: "sup-sc-8", title: "Module pullback and scalar extension")[
   + For a morphism of ringed spaces, the module pullback of
     #book-link(<text-ii-5>)[II.5, D1] uses extension of scalars:
     $f^*shf.g=tensor(shf.o_X, f^(-1)shf.g, over: f^(-1)shf.o_Y)$.
@@ -434,7 +429,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 
   + The canonical maps comparing pullback of tensor, symmetric, and exterior
     operations with the corresponding operations on pullbacks are isomorphisms.
-    The operations are those of #book-link(<sup-al-6>)[AL-6], applied sectionwise
+    The operations are those of #supplement-link(<sup-al-6>)[AL-6], applied sectionwise
     and then sheafified.
 
   Inverse image alone does not extend scalars.
@@ -470,8 +465,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     the sheaf comparisons are isomorphisms.
 ]
 
-#metadata(none) <sup-sc-9>
-#proposition(number: "SC-9", title: "Sections and filtered colimits")[
+#proposition(key: "sup-sc-9", title: "Sections and filtered colimits")[
   On a Noetherian topological space, for a directed system of abelian-group
   sheaves and every open $U$, the canonical map
   $ops.colim_i shf.f_i(U) -> (ops.colim_i shf.f_i)(U)$ is an isomorphism.
@@ -515,8 +509,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     $
 ]
 
-#metadata(none) <sup-sc-10>
-#proposition(number: "SC-10", title: "Constant and skyscraper sheaves")[
+#proposition(key: "sup-sc-10", title: "Constant and skyscraper sheaves")[
   + For an abelian group $A$, the sheafification of the constant presheaf is
     the sheaf of locally constant $A$-valued functions. (Ex. II.1.1)
 
@@ -579,8 +572,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The identifications commute with restriction and give the claimed isomorphism.
 ]
 
-#metadata(none) <sup-sc-11>
-#proposition(number: "SC-11", title: "Finite locally free duality and projection formula")[
+#proposition(key: "sup-sc-11", title: "Finite locally free duality and projection formula")[
   Let $shf.e$ be a finite locally free module on a ringed space $X$,
   and put $shf.e^or=shf.hom_(shf.o_X)(shf.e,shf.o_X)$.
 
@@ -640,8 +632,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
 ]
 
 #metadata(none) <sup-sc-examples>
-#metadata(none) <sup-sc-12>
-#example(number: "SC-12")[
+#example(key: "sup-sc-12")[
   Let $X=NN union {infinity}$, with isolated natural numbers and
   tail neighborhoods at $infinity$. Let $shf.f_n$ be the skyscraper with
   coefficient $ZZ$ at $n$. Every $(shf.f_n)_infinity$ is zero, but the germ
@@ -660,8 +651,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     although every component germ is zero.
 ]
 
-#metadata(none) <sup-sc-13>
-#example(number: "SC-13")[
+#example(key: "sup-sc-13")[
   Put $shf.g_m=product_(n<=m) shf.f_n$ with truncation maps.
   The same germ shows that $(lim_m shf.g_m)_infinity ->
   lim_m (shf.g_m)_infinity$ is not injective.
@@ -678,8 +668,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     whereas its inverse-limit sheaf has the nonzero germ from SC-12.
 ]
 
-#metadata(none) <sup-sc-14>
-#example(number: "SC-14")[
+#example(key: "sup-sc-14")[
   For two distinct $k$-points on $sch.p^1_k$, the restriction
   of the structure sheaf onto their structure sheaf is surjective, but its
   map on global sections is the diagonal $k->k times k$.
@@ -697,8 +686,7 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     The pair $(1,0)$ is not in its image.
 ]
 
-#metadata(none) <sup-sc-15>
-#example(number: "SC-15")[
+#example(key: "sup-sc-15")[
   On a one-point space, $ZZ->QQ$ is an epimorphism of rings but not an underlying surjection.
 ]
 
@@ -713,11 +701,10 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
     sheaves and their morphisms are simply the corresponding algebraic objects.
 ]
 
-#metadata(none) <sup-sc-16>
-#example(number: "SC-16")[
+#example(key: "sup-sc-16")[
   Pullback along the one-point ringed-space map corresponding to
   $ZZ->ZZ\/2ZZ$ sends multiplication by $2$ on $ZZ$ to the zero map;
-  see #book-link(<sup-al-examples>)[AL-12].
+  see #supplement-link(<sup-al-12>)[AL-12].
 ]
 
 #proof[

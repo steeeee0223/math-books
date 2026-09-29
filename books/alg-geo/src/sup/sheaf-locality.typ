@@ -4,13 +4,15 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("SL")
+
 == SL — Sheaf locality and gluing <sup-sl>
 
 Use the definitions and stalkwise isomorphism criterion of
 #book-link(<text-ii-1>)[II.1, D1–D4 and Proposition 1.1]. Throughout this section, sheaves take values in sets, abelian groups, rings, or modules over a fixed sheaf of rings $shf.o$. No assertion about arbitrary category-valued sheaves is intended.
 
-#metadata(none) <sup-sl-1>
-#lemma(number: "SL-1", title: "Local equality")[
+#lemma(key: "sup-sl-1", title: "Local equality")[
   Let $shf.f,shf.g$ be sheaves on $X$.
 
   #set enum(spacing: 0.8em)
@@ -66,8 +68,7 @@ Use the definitions and stalkwise isomorphism criterion of
     globally. The proof of SL-3 uses only the sectionwise equality just proved.
 ]
 
-#metadata(none) <sup-sl-2>
-#proposition(number: "SL-2", title: "Sheaves on a basis")[
+#proposition(key: "sup-sl-2", title: "Sheaves on a basis")[
   Let $cal(B)$ be an open basis of $X$. Suppose objects $F(B)$ and
   restriction maps are given for inclusions of basis opens, and satisfy
   the identity and composition laws. Assume that every compatible family
@@ -121,8 +122,7 @@ Use the definitions and stalkwise isomorphism criterion of
     the stated algebraic categories as well as sets.
 ]
 
-#metadata(none) <sup-sl-3>
-#lemma(number: "SL-3", title: "Gluing morphisms")[
+#lemma(key: "sup-sl-3", title: "Gluing morphisms")[
   Let $U_i$ cover $X$ and let $u_i:shf.f|_(U_i)->shf.g|_(U_i)$ agree on
   every overlap.
 
@@ -131,7 +131,7 @@ Use the definitions and stalkwise isomorphism criterion of
   + It preserves the given group, ring, or module structure when each $u_i$
     does.
 
-  See also #book-link(<sup-sc-5>)[SC-5] for the sheaf of these morphisms.
+  See also #supplement-link(<sup-sc-5>)[SC-5] for the sheaf of these morphisms.
 ]
 
 #proof[
@@ -153,8 +153,7 @@ Use the definitions and stalkwise isomorphism criterion of
     on $V inter U_i$ for every $V$, so is equal to $u$.
 ]
 
-#metadata(none) <sup-sl-4>
-#proposition(number: "SL-4", title: "Gluing sheaves")[
+#proposition(key: "sup-sl-4", title: "Gluing sheaves")[
   Let $X=union_i U_i$ be an open cover. Suppose sheaves $shf.f_i$ on $U_i$
   are equipped with isomorphisms
   $phi_(i j):shf.f_i|_(U_i inter U_j)->shf.f_j|_(U_i inter U_j)$ such that
@@ -223,8 +222,7 @@ Use the definitions and stalkwise isomorphism criterion of
     separatedness argument makes it unique.
 ]
 
-#metadata(none) <sup-sl-5>
-#proposition(number: "SL-5", title: "Local representatives in sheafification")[
+#proposition(key: "sup-sl-5", title: "Local representatives in sheafification")[
   Let $shf.f$ be a presheaf, and let $eta:shf.f->shf.f^+$ be the canonical map of
   #book-link(<text-ii-1>)[II.1, Proposition 1.2].
 
@@ -240,7 +238,7 @@ Use the definitions and stalkwise isomorphism criterion of
 
   These assertions apply to each of the algebraic structures specified
   above. Exactness and local lifting are treated in
-  #book-link(<sup-sc-4>)[SC-4].
+  #supplement-link(<sup-sc-4>)[SC-4].
 ]
 
 #proof[

@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("BU")
+
 == BU — Blowups and birational constructions <sup-bu>
 
 The initial setting is a Noetherian integral scheme $X$ and a nonzero
@@ -18,8 +21,7 @@ to the reader to prove.
 
 === Rees algebras and the equations of a chart
 
-#metadata(none) <sup-bu-1>
-#proposition(number: "BU-1", title: "An invertible ideal, not just a quotient")[
+#proposition(key: "sup-bu-1", title: "An invertible ideal, not just a quotient")[
   For a morphism $g:T->X$ such that $shf.i shf.o_T$ is an invertible
   ideal, II.7.14 gives a unique factorization through $B$.
   On $B$, the ideal $shf.i shf.o_B$ is canonically $shf.o_B(1)$, and
@@ -48,8 +50,7 @@ to the reader to prove.
   property and describes different data, as in PJ2-1.
 ]
 
-#metadata(none) <sup-bu-2>
-#proposition(number: "BU-2", title: "Charts and saturation")[
+#proposition(key: "sup-bu-2", title: "Charts and saturation")[
   Let $A$ be a domain, $I=(f,f_1,dots,f_r)$, and $f!=0$. Then
   $
     D_+(f t)=ops.spec A[I/f], quad
@@ -85,8 +86,7 @@ to the reader to prove.
   maps as subrings of the same fraction field.
 ]
 
-#metadata(none) <sup-bu-3>
-#example(number: "BU-3", title: "A component that must be removed")[
+#example(key: "sup-bu-3", title: "A component that must be removed")[
   In $A=k[x,y]$, take $I=(x^2,x y)$ and the $x^2$ chart.
   The naive equation is $x^2 T-x y=x(x T-y)=0$.
   It includes the extra plane $x=0$. Saturating by $x^2$ gives
@@ -97,8 +97,7 @@ to the reader to prove.
   justify the scheme structure of the chart.
 ]
 
-#metadata(none) <sup-bu-4>
-#proposition(number: "BU-4", title: "Exceptional scheme and strict transform")[
+#proposition(key: "sup-bu-4", title: "Exceptional scheme and strict transform")[
   The inverse-image closed subscheme $E=V(shf.i shf.o_B)$ satisfies
   $
     E simeq ops.proj_(V(shf.i))
@@ -130,8 +129,7 @@ to the reader to prove.
   the center and retains scheme structure on its complement.
 ]
 
-#metadata(none) <sup-bu-5>
-#proposition(number: "BU-5", title: "Flat base change")[
+#proposition(key: "sup-bu-5", title: "Flat base change")[
   If $g:X'->X$ is flat, then
   $ops.bl_(shf.i shf.o_(X')) X' simeq B times_X X'$ canonically.
   An arbitrary base change still gives a canonical closed immersion
@@ -161,8 +159,7 @@ to the reader to prove.
 
 === Resolving sections and recording multiplicity
 
-#metadata(none) <sup-bu-6>
-#proposition(number: "BU-6", title: "The base ideal and graph closure")[
+#proposition(key: "sup-bu-6", title: "The base ideal and graph closure")[
   Let $shf.l$ be invertible on integral Noetherian $X$, and let
   $s_0,dots,s_r$ be sections with at least one nonzero. Define $shf.i$
   by $ops.image (shf.o_X^(r+1)->shf.l)=shf.i shf.l$.
@@ -197,8 +194,7 @@ to the reader to prove.
   #book-link(<sup-rm-6>)[RM's graph construction].
 ]
 
-#metadata(none) <sup-bu-7>
-#proposition(number: "BU-7", title: "Multiplicity in a surface chart")[
+#proposition(key: "sup-bu-7", title: "Multiplicity in a surface chart")[
   Let $C$ be an effective Cartier curve on a smooth surface over an
   algebraically closed field, and blow up a closed point $p$. If a local
   equation $F$ of $C$ has order $m$ in the regular maximal ideal at $p$,
@@ -228,8 +224,7 @@ to the reader to prove.
 
 === Regular centers
 
-#metadata(none) <sup-bu-8>
-#theorem(number: "BU-8", title: "Exceptional geometry of a regular center")[
+#theorem(key: "sup-bu-8", title: "Exceptional geometry of a regular center")[
   Let $X$ be a Noetherian regular scheme and let $Y$ be a regular closed
   subscheme of $X$, with $Y$
   containing no irreducible component of $X$. The blowup $B$ is regular.
@@ -281,8 +276,7 @@ to the reader to prove.
 
 === Four computations
 
-#metadata(none) <sup-bu-9>
-#example(number: "BU-9", title: "The origin of the affine plane")[
+#example(key: "sup-bu-9", title: "The origin of the affine plane")[
   For $I=(x,y) subset k[x,y]$, the blowup has charts
   $U_x=ops.spec k[x,u]$, $y=x u$, and
   $U_y=ops.spec k[v,y]$, $x=v y$.
@@ -297,8 +291,7 @@ to the reader to prove.
   polynomial presentation checks are left to the reader.
 ]
 
-#metadata(none) <sup-bu-10>
-#example(number: "BU-10", title: "The cusp and its normalization")[
+#example(key: "sup-bu-10", title: "The cusp and its normalization")[
   Let $C: y^2=x^3$ over an algebraically closed field of characteristic
   zero. In the $x$ chart of $ops.bl_0 sch.a^2$, its total transform
   is $x^2(u^2-x)=0$ and its strict transform is $u^2=x$.
@@ -327,8 +320,7 @@ to the reader to prove.
   does not yet give a transverse total transform.
 ]
 
-#metadata(none) <sup-bu-11>
-#example(number: "BU-11", title: "The node and its two branches")[
+#example(key: "sup-bu-11", title: "The node and its two branches")[
   For the node $y^2=x^2(x+1)$ in characteristic zero, the $x$ chart
   with $y=x t$ has total equation $x^2(t^2-x-1)=0$. Saturation by
   $x$ gives $x=t^2-1$, $y=t(t^2-1)$, a copy of $sch.a^1_t$.
@@ -345,8 +337,7 @@ to the reader to prove.
   BU-10 has only one point above its singularity.
 ]
 
-#metadata(none) <sup-bu-12>
-#example(number: "BU-12", title: "Blowing up the quadric cone")[
+#example(key: "sup-bu-12", title: "Blowing up the quadric cone")[
   Let $X: x y=z^2$ in $sch.a^3$ over an algebraically closed field of
   characteristic zero. Blow up $I=(x,y,z)$. Its $x$ chart has
   $y=x v$, $z=x u$ and, after saturation, $v=u^2$; thus its ring is
@@ -376,8 +367,7 @@ to the reader to prove.
   conclusion follows from these charts, not from BU-8.
 ]
 
-#metadata(none) <sup-bu-13>
-#example(number: "BU-13", title: "A pencil of lines")[
+#example(key: "sup-bu-13", title: "A pencil of lines")[
   Consider the rational map
   $sch.p^2 arrow.r.dashed sch.p^1$, $[x:y:z] mapsto [x:y]$.
   Its base point is $p=[0:0:1]$. The blowup is the incidence surface

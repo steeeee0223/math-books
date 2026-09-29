@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("VS")
+
 == VS — Varieties and schemes <sup-vs>
 
 Fix an algebraically closed field $k$ and use the Chapter I convention
@@ -12,14 +15,13 @@ for varieties. The construction and full faithfulness of $t$ remain in
 from those varieties, and the definition of abstract varieties, remain in
 #book-link(<text-ii-4>)[II.4, Proposition 4.10 and D4].
 
-#metadata(none) <sup-vs-1>
-#proposition(number: "VS-1", title: "Classical points and residue fields")[
+#proposition(key: "sup-vs-1", title: "Classical points and residue fields")[
   + The points of a variety $V$ identify with the closed points of $t(V)$,
     which are exactly its points with residue field $k$.
 
   + The other scheme points include generic points of positive-dimensional
     irreducible closed subsets; see #book-link(<sup-xp-generic-points>)[XP-1–XP-7].
-    The general description of field-valued points is #book-link(<sup-mg-10>)[MG-10].
+    The general description of field-valued points is #supplement-link(<sup-mg-10>)[MG-10].
 
   + For example, on $sch.a^1_k$, the classical point $a$ corresponds to
     $(t-a)$ in $ops.spec k[t]$, while $(0)$ is the generic point and is not
@@ -40,7 +42,7 @@ from those varieties, and the definition of abstract varieties, remain in
 
   + *Pass from affine charts to the scheme.* These identifications commute with
     localization. The closed-point comparison for finite type schemes in
-    #book-link(<sup-xp-7>)[XP-7] ensures that closedness on these affine charts
+    #supplement-link(<sup-xp-7>)[XP-7] ensures that closedness on these affine charts
     is closedness in the whole scheme. They therefore glue to the claimed
     identification. The description of generic points follows from XP-1–XP-7.
 
@@ -48,8 +50,7 @@ from those varieties, and the definition of abstract varieties, remain in
     is $k(t)$, in which $t$ is transcendental over $k$, so it is not $k$.
 ]
 
-#metadata(none) <sup-vs-2>
-#proposition(number: "VS-2", title: "Affine and projective identifications")[
+#proposition(key: "sup-vs-2", title: "Affine and projective identifications")[
   + For an affine variety $V$, the canonical identification is
     $t(V) simeq ops.spec A(V)$.
 
@@ -95,20 +96,19 @@ from those varieties, and the definition of abstract varieties, remain in
     $u=x_0/x_1$, hence $u=t^(-1)$ on the overlap.
 ]
 
-#metadata(none) <sup-vs-3>
-#remark(number: "VS-3", title: "Maps in both languages")[
+#remark(key: "sup-vs-3", title: "Maps in both languages")[
   + For regular maps, the scheme map under the fully faithful functor of
     II.2.6 has the same pullback on regular functions on the affine charts.
 
   + Conversely, a $k$-scheme morphism between associated schemes preserves
-    their $k$-rational points by #book-link(<sup-mg-10>)[MG-10]. Under VS-1, these
+    their $k$-rational points by #supplement-link(<sup-mg-10>)[MG-10]. Under VS-1, these
     are the classical points; its structure-sheaf map gives the corresponding
     regular map.
 
   + The natural Hom bijection is the one already proved in
     II.2.6, providing the entry for II.2.15(a)–(c).
 
-  + The vanishing-ideal and quotient application is in #book-link(<sup-cs-6>)[CS-6].
+  + The vanishing-ideal and quotient application is in #supplement-link(<sup-cs-6>)[CS-6].
 
   + The variety-product comparison of II.3.23 and computations over fields
     which are not algebraically closed are separate topics.

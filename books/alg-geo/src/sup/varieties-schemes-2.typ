@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("VS2")
+
 == VS2 — Calculations on varieties <sup-vs2>
 
 Throughout these cases $k$ is algebraically closed of characteristic zero,
@@ -16,10 +19,9 @@ exercises are left to the reader.
 
 === Divisors, sections and singular points
 
-#metadata(none) <sup-vs2-1>
-#example(number: "VS2-1", title: "The projective line")[
+#example(key: "sup-vs2-1", title: "The projective line")[
   *Question.* How does the equation of a divisor determine sections and
-  differentials? #book-link(<sup-dv-14>)[DV-14] computes the frames of
+  differentials? #supplement-link(<sup-dv-14>)[DV-14] computes the frames of
   $shf.o (d[infinity]) simeq shf.o (d)$ and its global sections on the two
   standard charts of $sch.p^1$. Use that calculation as the divisor input.
 
@@ -34,8 +36,7 @@ exercises are left to the reader.
   compare DV's residue-field weights rather than counting closed points.
 ]
 
-#metadata(none) <sup-vs2-2>
-#example(number: "VS2-2", title: "Two rulings on a product")[
+#example(key: "sup-vs2-2", title: "Two rulings on a product")[
   *Question.* Which part of a divisor determines a map?
   On $sch.p^1 times sch.p^1$, a bihomogeneous polynomial $F$ of
   bidegree $(a,b)$ is a section of $shf.o (a,b)$. Dividing by the
@@ -47,7 +48,7 @@ exercises are left to the reader.
   With a negative index there are no nonzero global sections, by
   restriction to the corresponding ruling fibers and VS2-1.
 
-  *Comparison.* #book-link(<sup-dv-16>)[DV-16] computes the two divisor
+  *Comparison.* #supplement-link(<sup-dv-16>)[DV-16] computes the two divisor
   classes and their transitions. #book-link(<sup-pm>)[PM] shows that
   $shf.o (a,b)$ is globally generated exactly for $a,b>=0$, and is
   ample, equivalently very ample in this example, exactly for $a,b>0$.
@@ -60,13 +61,12 @@ exercises are left to the reader.
   and locate the ruling which it contracts.
 ]
 
-#metadata(none) <sup-vs2-3>
-#example(number: "VS2-3", title: "Three views of the quadric vertex")[
+#example(key: "sup-vs2-3", title: "Three views of the quadric vertex")[
   *Question.* What fails at the vertex of
   $Q=ops.spec k[x,y,z]\/(x y-z^2)$? For $D=V(x,z)$,
-  #book-link(<sup-dv-15>)[DV-15] computes
+  #supplement-link(<sup-dv-15>)[DV-15] computes
   $ops.dv(x)=2D$ and $ops.cl Q=ZZ\/2ZZ$, with $D$ non-Cartier at the
-  vertex. In #book-link(<sup-df-7>)[DF-7],
+  vertex. In #supplement-link(<sup-df-7>)[DF-7],
   $
     Omega_(Q\/k)=(shf.o_Q d x plus.o shf.o_Q d y plus.o shf.o_Q d z)
     \/ (y d x+x d y-2z d z).
@@ -90,10 +90,9 @@ exercises are left to the reader.
 
 === Projective models and birational modifications
 
-#metadata(none) <sup-vs2-4>
-#example(number: "VS2-4", title: "A weighted twist that is not a line bundle")[
+#example(key: "sup-vs2-4", title: "A weighted twist that is not a line bundle")[
   *Question.* Does $shf.o (1)$ always name a line bundle? Apply
-  #book-link(<sup-pj2-10>)[PJ2-10] to $S=k[x,y,z]$ with degrees $1,1,2$.
+  #supplement-link(<sup-pj2-10>)[PJ2-10] to $S=k[x,y,z]$ with degrees $1,1,2$.
   That calculation identifies $ops.proj S$ with the quadric cone, makes
   $shf.o (2)$ its hyperplane bundle, and shows that $shf.o (1)$ is not
   locally free at the vertex.
@@ -108,8 +107,7 @@ exercises are left to the reader.
   identify exactly where those trivializations fail to cover.
 ]
 
-#metadata(none) <sup-vs2-5>
-#example(number: "VS2-5", title: "A pencil, a blowup, and a ruled surface")[
+#example(key: "sup-vs2-5", title: "A pencil, a blowup, and a ruled surface")[
   *Question.* What does replacing the base point of a pencil accomplish?
   For $[x:y:z] mapsto [x:y]$, RM-9 gives the incidence surface
   $H=V(x v-y u) subset sch.p^2 times sch.p^1$. BU identifies its first
@@ -118,7 +116,7 @@ exercises are left to the reader.
   $F_1=sch.p_(sch.p^1)(shf.o plus.o shf.o (1))$ in the quotient convention.
 ]
 #proof[
-  The full chart identification is #book-link(<sup-bu-13>)[BU-13]:
+  The full chart identification is #supplement-link(<sup-bu-13>)[BU-13]:
   its transition $[y:z]=[a x:z]$, $a=v/u$, is precisely the quotient
   transition of $shf.o plus.o shf.o (1)$ with quotient coordinates
   $[z:x]$. The exceptional section is the quotient onto $shf.o$ and
@@ -139,8 +137,7 @@ exercises are left to the reader.
   intersection with the exceptional curve from its lowest-degree form.
 ]
 
-#metadata(none) <sup-vs2-6>
-#example(number: "VS2-6", title: "Relative and absolute positivity")[
+#example(key: "sup-vs2-6", title: "Relative and absolute positivity")[
   *Question.* Why can a relatively ample bundle fail to be ample?
   On $F_n=sch.p_(sch.p^1)(shf.o plus.o shf.o (n))$, $n>=0$, let $E$
   be the section from the quotient onto $shf.o$. PJ2 computes
@@ -162,8 +159,7 @@ exercises are left to the reader.
   $shf.o (1,m)$ on a product of projective lines and compare VS2-2.
 ]
 
-#metadata(none) <sup-vs2-7>
-#example(number: "VS2-7", title: "A cusp and a node")[
+#example(key: "sup-vs2-7", title: "A cusp and a node")[
   *Question.* Can tangent dimension distinguish two curve singularities?
   The cusp $y^2=x^3$ and the node $y^2=x^2(x+1)$ both have a
   two-dimensional tangent space at the origin. Their tangent cones
@@ -187,8 +183,7 @@ exercises are left to the reader.
 
 === Differentials and varying fibers
 
-#metadata(none) <sup-vs2-8>
-#example(number: "VS2-8", title: "Canonical forms on plane curves")[
+#example(key: "sup-vs2-8", title: "Canonical forms on plane curves")[
   *Question.* How much canonical geometry is visible in one equation?
   Let $C=V(F) subset sch.p^2$ be a smooth degree-$d$ curve. Its
   conormal bundle is $shf.o_C(-d)$ and its normal bundle is
@@ -210,11 +205,10 @@ exercises are left to the reader.
   not apply the smooth canonical-bundle formula to its differential sheaf.
 ]
 
-#metadata(none) <sup-vs2-9>
-#example(number: "VS2-9", title: "The power map and Frobenius")[
+#example(key: "sup-vs2-9", title: "The power map and Frobenius")[
   *Question.* Which finite flat maps are étale? For
   $k[s]->k[t]$, $s mapsto t^m$, $m>=1$, use the differential computation
-  in #book-link(<sup-df-8>)[DF-8] and the étale criterion in LP2-3.
+  in #supplement-link(<sup-df-8>)[DF-8] and the étale criterion in LP2-3.
   The algebra is free over $k[s]$ with basis $1,t,dots,t^(m-1)$ (Check!).
   If $m>1$ is invertible in $k$, the étale locus is $D(t)$; for $m=1$
   it is the whole affine line.
@@ -231,8 +225,7 @@ exercises are left to the reader.
   the number of geometric points and the multiplicity of each fiber.
 ]
 
-#metadata(none) <sup-vs2-10>
-#example(number: "VS2-10", title: "A flat family with a singular fiber")[
+#example(key: "sup-vs2-10", title: "A flat family with a singular fiber")[
   *Question.* Can the total space be smooth while its projection is not?
   Let $T=ops.spec k[t]$ and
   $ X=V(X_0 X_1-t X_2^2) subset sch.p^2_T. $

@@ -5,6 +5,9 @@
 #import "proof-layout.typ": proof
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 
+#import "environments.typ": supplement-numbering, supplement-exercise, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("DF")
+
 == DF — Differentials and Tangent Geometry <sup-df>
 
 Differentials turn equations into linear relations. The resulting module records
@@ -14,7 +17,7 @@ which a tangent-space dimension alone cannot see.
 *Reading route.* Read DF-1–DF-9 after #book-link(<text-ii-8>)[II.8, the fundamental
   sequences]. Then read #book-link(<sup-lp2-1>)[LP2-1–LP2-6] for relative smoothness.
 DF-10–DF-14 use the regular-immersion criterion in
-#book-link(<sup-lp2-9>)[LP2-9] and the determinant rules in
+#supplement-link(<sup-lp2-9>)[LP2-9] and the determinant rules in
 #book-link(<sup-al>)[AL]. The complete-intersection case also uses
 #book-link(<sup-al2>)[AL2]. All the explicit singular curves below are over an
 algebraically closed field of characteristic zero. Other fields are named
@@ -23,8 +26,7 @@ the reader; the geometric reductions explain exactly where they are used.
 
 === Equations, infinitesimal directions, and residue fields
 
-#metadata(none) <sup-df-1>
-#proposition(number: "DF-1", title: "A tangent vector with its base point fixed")[
+#proposition(key: "sup-df-1", title: "A tangent vector with its base point fixed")[
   Let $X$ be a scheme over a field $k$, and let $x in X(k)$. Morphisms
   $ops.spec(k[epsilon]\/ideal(epsilon^2)) -> X$ over $k$ whose restriction to
   $ops.spec k$ is $x$ are naturally in bijection with
@@ -56,8 +58,7 @@ the reader; the geometric reductions explain exactly where they are used.
   #align(center)[#diagram(cell-size: 23mm, $shf.o_(X,x) edge("r", d, ->) edge("dr", D, ->) & Omega_(shf.o_(X,x)\/k) edge("d", ->, stroke: #(dash: "dashed")) \ & k$)]
 ]
 
-#metadata(none) <sup-df-2>
-#proposition(number: "DF-2", title: "The Jacobian presentation")[
+#proposition(key: "sup-df-2", title: "The Jacobian presentation")[
   For $B=A[x_1,dots,x_n]\/ideal(f_1 "," dots "," f_r)$ there is an exact sequence
   $
     B^r arrow.r.long^J B^n -> Omega_(B\/A) -> 0,
@@ -78,8 +79,7 @@ the reader; the geometric reductions explain exactly where they are used.
   in $k[x]\/ideal(x^2)$ has a nonzero kernel when $ops.char k != 2$.
 ]
 
-#metadata(none) <sup-df-3>
-#proposition(number: "DF-3", title: "The residue-field term")[
+#proposition(key: "sup-df-3", title: "The residue-field term")[
   For any point $x$ of a $k$-scheme $X$, put $R=shf.o_(X,x)$ and
   $K=kappa(x)$. There is a canonical exact sequence
   $
@@ -113,8 +113,7 @@ the reader; the geometric reductions explain exactly where they are used.
   universal derivation shows that all identifications are canonical.
 ]
 
-#metadata(none) <sup-df-4>
-#proposition(number: "DF-4", title: "Relative differentials on fibers")[
+#proposition(key: "sup-df-4", title: "Relative differentials on fibers")[
   In a cartesian square $X'=fiber(X, Y', base: Y)$ with projection $g:X' -> X$,
   there is a canonical isomorphism
   $g^*Omega_(X\/Y) simeq Omega_(X'\/Y')$. In particular,
@@ -141,8 +140,7 @@ the reader; the geometric reductions explain exactly where they are used.
   applies to extension of the ground field.
 ]
 
-#metadata(none) <sup-df-5>
-#proposition(number: "DF-5", title: "Tangent maps and tangent cones")[
+#proposition(key: "sup-df-5", title: "Tangent maps and tangent cones")[
   For a morphism $f:X -> Y$ over $k$ and a rational point $x$, the tangent map
   $d f_x:T_x X -> T_(f(x))Y$ is dual to the cotangent map induced by
   $f^*Omega_(Y\/k) -> Omega_(X\/k)$. If $f$ is given by coordinate
@@ -166,8 +164,7 @@ the reader; the geometric reductions explain exactly where they are used.
 
 === Computations that distinguish geometric phenomena
 
-#metadata(none) <sup-df-6>
-#example(number: "DF-6", title: "A cusp and a node")[
+#example(key: "sup-df-6", title: "A cusp and a node")[
   For the cusp $C=ops.spec A$, $A=k[x,y]\/ideal(y^2-x^3)$,
   $
     Omega_(A\/k)=(A d x plus.o A d y)\/ideal(2y d y-3x^2 d x).
@@ -224,8 +221,7 @@ the reader; the geometric reductions explain exactly where they are used.
   points distinguish the singularities despite their equal tangent dimensions.
 ]
 
-#metadata(none) <sup-df-7>
-#example(number: "DF-7", title: "The affine quadric cone")[
+#example(key: "sup-df-7", title: "The affine quadric cone")[
   For $A=k[x,y,z]\/ideal(x y-z^2)$,
   $
     Omega_(A\/k)=A^3\/ideal(y d x+x d y-2z d z).
@@ -233,7 +229,7 @@ the reader; the geometric reductions explain exactly where they are used.
   The vertex has tangent dimension three and local dimension two. At every
   other closed point one Jacobian coefficient is nonzero, so a differential
   can be eliminated on a principal neighborhood. The resulting module is
-  free of rank two there, and #book-link(<sup-lp2-4>)[LP2-4] proves smoothness.
+  free of rank two there, and #supplement-link(<sup-lp2-4>)[LP2-4] proves smoothness.
   This is the same cone whose Weil divisors are studied in
   #book-link(<sup-dv>)[DV] and whose vertex blowup appears in
   #book-link(<sup-bu>)[BU].
@@ -246,8 +242,7 @@ the reader; the geometric reductions explain exactly where they are used.
   coefficient gives the asserted elimination and the standard smooth chart.
 ]
 
-#metadata(none) <sup-df-8>
-#example(number: "DF-8", title: "Separable powers and Frobenius")[
+#example(key: "sup-df-8", title: "Separable powers and Frobenius")[
   Let $f:sch.a_k^1 -> sch.a_k^1$ be $s=t^m$ with $m>=1$. Its algebra is
   $k[s] -> k[t]=k[s,T]\/ideal(T^m-s)$, and
   $
@@ -263,7 +258,7 @@ the reader; the geometric reductions explain exactly where they are used.
   DF-2 differentiates the single relation over $k[s]$. Division by the monic
   polynomial gives the basis $1,t,dots,t^(m-1)$ over $k[s]$; this algebraic
   calculation is left to the reader. It proves finite flatness. Apply
-  #book-link(<sup-lp2-3>)[LP2-3] to the displayed module and flatness.
+  #supplement-link(<sup-lp2-3>)[LP2-3] to the displayed module and flatness.
   In the Frobenius case every geometric fiber is
   $overline(kappa(s))[u]\/ideal(u^p)$ after translating its unique root.
   It is nonreduced and hence not regular. Thus local freeness of differentials
@@ -271,8 +266,7 @@ the reader; the geometric reductions explain exactly where they are used.
   #book-link(<sup-mg>)[MG].
 ]
 
-#metadata(none) <sup-df-9>
-#example(number: "DF-9", title: "An inseparable closed point")[
+#example(key: "sup-df-9", title: "An inseparable closed point")[
   Suppose $ops.char k=p>0$ and $a in.not k^p$. In $sch.a_k^1$ let $x$ be the
   closed point with ideal $ideal(t^p-a)$, and put $K=k[t]\/ideal(t^p-a)$.
   The sequence of DF-3 is
@@ -297,13 +291,12 @@ the reader; the geometric reductions explain exactly where they are used.
 
 === Conormal sequences and canonical forms
 
-#metadata(none) <sup-df-10>
-#corollary(number: "DF-10", title: "Normal directions and the tangent sequence")[
+#corollary(key: "sup-df-10", title: "Normal directions and the tangent sequence")[
   Let $i:X arrow.r.hook Y$ be a closed immersion of smooth schemes of finite
   type over a field $k$, with ideal sheaf $shf.i$. Define
   $shf.n_(X/Y)=(shf.i/shf.i^2)^ast$.
   Dualizing the locally split conormal sequence of
-  #book-link(<sup-lp2-9>)[LP2-9] gives the locally split exact sequence
+  #supplement-link(<sup-lp2-9>)[LP2-9] gives the locally split exact sequence
   $
     0 -> shf.t_X -> i^*shf.t_Y -> shf.n_(X/Y) -> 0.
   $
@@ -323,8 +316,7 @@ the reader; the geometric reductions explain exactly where they are used.
   chosen local splittings.
 ]
 
-#metadata(none) <sup-df-11>
-#proposition(number: "DF-11", title: "The normal bundle of a hypersurface")[
+#proposition(key: "sup-df-11", title: "The normal bundle of a hypersurface")[
   A smooth degree-$d$ hypersurface $X subset sch.p_k^n$ has
   $shf.i\/shf.i^2 simeq shf.o_X(-d)$ and
   $shf.n_(X\/sch.p^n) simeq shf.o_X(d)$.
@@ -340,8 +332,7 @@ the reader; the geometric reductions explain exactly where they are used.
   identifies the second with normal first-order directions.
 ]
 
-#metadata(none) <sup-df-12>
-#remark(number: "DF-12", title: "The scaling relation in the Euler sequence")[
+#remark(key: "sup-df-12", title: "The scaling relation in the Euler sequence")[
   The Euler sequence of II.8 is
   $
     0 -> Omega_((sch.p^n)\/k) -> shf.o_((sch.p)^n)(-1)^(n+1)
@@ -357,8 +348,7 @@ the reader; the geometric reductions explain exactly where they are used.
   already proved in the main text rather than adding another abstract proof.
 ]
 
-#metadata(none) <sup-df-13>
-#proposition(number: "DF-13", title: "Smooth adjunction by determinants")[
+#proposition(key: "sup-df-13", title: "Smooth adjunction by determinants")[
   A smooth degree-$d$ hypersurface $X subset sch.p_k^n$ satisfies
   $omega_X simeq shf.o_X(d-n-1)$. More generally, if a smooth complete
   intersection $X subset sch.p_k^n$ is cut out by a homogeneous regular
@@ -392,8 +382,7 @@ the reader; the geometric reductions explain exactly where they are used.
   invertible.
 ]
 
-#metadata(none) <sup-df-14>
-#proposition(number: "DF-14", title: "Plane curves: the actual local form")[
+#proposition(key: "sup-df-14", title: "Plane curves: the actual local form")[
   Let $C=V(H) subset sch.p_k^2$ be a smooth plane curve of degree $d$.
   On $Z!=0$ put $x=X/Z$, $y=Y/Z$, $F=H(x,y,1)$. Its canonical bundle has
   local generators
@@ -406,7 +395,7 @@ the reader; the geometric reductions explain exactly where they are used.
 ]
 #proof[
   Smoothness implies that $D(F_x)$ and $D(F_y)$ cover this affine part of
-  $C$, by #book-link(<sup-lp2-4>)[LP2-4]. The relation
+  $C$, by #supplement-link(<sup-lp2-4>)[LP2-4]. The relation
   $F_x d x+F_y d y=0$ shows equality on their intersection; elimination of
   one differential shows that each displayed form is a basis where its
   denominator is invertible.
@@ -425,8 +414,7 @@ the reader; the geometric reductions explain exactly where they are used.
   canonical line bundle and agree with DF-13.
 ]
 
-#metadata(none) <sup-df-15>
-#example(number: "DF-15", title: "A conic, a cubic, and a relative equation")[
+#example(key: "sup-df-15", title: "A conic, a cubic, and a relative equation")[
   The smooth conic $X Z-Y^2=0$ has $omega_C=shf.o_C(-1)$. On $Z!=0$,
   $F=x-y^2$ gives $eta=-d y$. Since a line meets a conic in degree two,
   $deg omega_C=-2$; equivalently use the parametrization
@@ -448,8 +436,7 @@ the reader; the geometric reductions explain exactly where they are used.
   #book-link(<sup-vs2>)[VS2].
 ]
 
-#metadata(none) <sup-df-16>
-#exercise(title: "DF-16 — Calculations and hypothesis checks")[
+#supplement-exercise(key: "sup-df-16", title: "Calculations and hypothesis checks")[
   + Compute the tangent map of $t mapsto (t^2,t^3)$ at zero and away from
     zero. Explain why a zero tangent map at zero does not imply a constant
     morphism.

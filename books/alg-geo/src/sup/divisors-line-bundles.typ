@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("DV")
+
 == DV — Divisors and line bundles <sup-dv>
 
 This section makes the dictionary of II.6 explicit. An invertible sheaf is
@@ -15,8 +18,7 @@ geometric constructions specify the restriction and gluing maps.
 
 === Local equations and rational sections
 
-#metadata(none) <sup-dv-1>
-#proposition(number: "DV-1", title: "The transition convention")[
+#proposition(key: "sup-dv-1", title: "The transition convention")[
   Let a Cartier divisor $D$ be represented by equations $f_i$ on an open cover
   $U_i$ of $X$, with $f_i/f_j$ a regular unit on $U_i inter U_j$. Regard
   $shf.o_X(D)$ as the invertible subsheaf of the meromorphic sheaf generated
@@ -34,7 +36,7 @@ geometric constructions specify the restriction and gluing maps.
   with $shf.o_(U_i)$. The displayed frame identity shows that the subsheaves
   agree on overlaps. The transition units satisfy
   $(f_j/f_i)(f_l/f_j)=f_l/f_i$, so the sheaf gluing result
-  #book-link(<sup-sl-3>)[SL-3] applies. On a common refinement, the
+  #supplement-link(<sup-sl-3>)[SL-3] applies. On a common refinement, the
   multiplication map is
   $
     tensor(shf.o (D), shf.o (E), over: shf.o_X) & -> shf.o (D+E), \
@@ -46,8 +48,7 @@ geometric constructions specify the restriction and gluing maps.
   convention fixed explicitly.
 ]
 
-#metadata(none) <sup-dv-2>
-#proposition(number: "DV-2", title: "A rational section determines its divisor")[
+#proposition(key: "sup-dv-2", title: "A rational section determines its divisor")[
   Let $X$ be integral and $shf.l$ invertible. Choose a nonzero rational section
   $s$ and frames $e_i$ of $shf.l$ on $U_i$. Write $s=a_i e_i$. Then
   $ops.dv (s)$ is the Cartier divisor with equations $a_i$, and there is a
@@ -74,8 +75,7 @@ geometric constructions specify the restriction and gluing maps.
   coefficients of $q s$ are $q a_i$, proving the principal-divisor formula.
 ]
 
-#metadata(none) <sup-dv-3>
-#proposition(number: "DV-3", title: "Effective divisors and their ideals")[
+#proposition(key: "sup-dv-3", title: "Effective divisors and their ideals")[
   If $D$ is effective Cartier, its ideal sheaf is $shf.i_D=shf.o_X(-D)$ and
   there is a canonical exact sequence
   $
@@ -94,7 +94,7 @@ geometric constructions specify the restriction and gluing maps.
   Its cokernel is $A\/(a)$. Multiplication is injective precisely when $a$
   is regular. This is the terminal algebraic assertion; *proof left to
   the reader*. Sheafification and restriction preserve this sequence
-  (#book-link(<sup-al-3>)[AL-3]); exactness may also be checked on stalks.
+  (#supplement-link(<sup-al-3>)[AL-3]); exactness may also be checked on stalks.
   On overlaps the equations differ by units, so their ideals and quotient
   maps agree. This glues the closed subscheme and the exact sequence.
 ]
@@ -104,8 +104,7 @@ but $u v=0$ and $v!=0$. It is not an effective Cartier divisor. The algebraic
 check is *left to the reader*. A hypersurface described by one equation
 must still pass the non-zero-divisor test.
 
-#metadata(none) <sup-dv-4>
-#proposition(number: "DV-4", title: "When pullback is a divisor")[
+#proposition(key: "sup-dv-4", title: "When pullback is a divisor")[
   Let $f:X->Y$ and let $D$ be effective Cartier on $Y$. Its inverse-image
   closed subscheme is effective Cartier if the pulled-back equation is
   regular at every point of $X$. In this case denote the divisor by $f^*D$;
@@ -143,8 +142,7 @@ so the inverse image is the entire point, not an effective Cartier divisor.
 The pullback of $shf.o_(sch.a^1)([0])$, which is a free line bundle, is still
 the free line bundle on $ops.spec k$.
 
-#metadata(none) <sup-dv-5>
-#proposition(number: "DV-5", title: "Codimension-one multiplicities")[
+#proposition(key: "sup-dv-5", title: "Codimension-one multiplicities")[
   Let $X$ be normal, Noetherian, integral, and separated. For a codimension-one
   point $xi$, its local ring is a DVR. A Cartier divisor with equation $f_i$
   near $xi$ has Weil coefficient $nu_xi(f_i)$. This gives an injective map
@@ -170,12 +168,11 @@ the free line bundle on $ops.spec k$.
 
 === Meromorphic data beyond integral schemes
 
-#metadata(none) <sup-dv-6>
-#definition(number: "DV-6", title: "The total quotient sheaf")[
+#definition(key: "sup-dv-6", title: "The total quotient sheaf")[
   On a Noetherian scheme $X$, let $shf.k_X$ be the sheaf obtained by inverting
   regular sections of $shf.o_X$ locally. On an affine open $ops.spec A$,
   its sections are $Q(A)$, the total quotient ring of
-  #book-link(<sup-al2-5>)[AL2-5]. A Cartier divisor is a global section of
+  #supplement-link(<sup-al2-5>)[AL2-5]. A Cartier divisor is a global section of
   $shf.k_X^times\/shf.o_X^times$. Its equations are therefore units in the
   total quotient sheaf, with regular-unit ratios.
 ]
@@ -183,8 +180,7 @@ the free line bundle on $ops.spec k$.
 The affine description and its compatibility with restriction are
 localization facts for Noetherian rings: *proof left to the reader*.
 
-#metadata(none) <sup-dv-7>
-#proposition(number: "DV-7", title: "Meromorphic extension across an associated-point open")[
+#proposition(key: "sup-dv-7", title: "Meromorphic extension across an associated-point open")[
   If $X$ is Noetherian and $j:U arrow.r.hook X$ is an open subscheme containing
   every associated point of $X$, then
   $
@@ -212,8 +208,7 @@ localization facts for Noetherian rings: *proof left to the reader*.
   alone cannot replace associated points here.
 ]
 
-#metadata(none) <sup-dv-8>
-#lemma(number: "DV-8", title: "A common affine neighborhood")[
+#lemma(key: "sup-dv-8", title: "A common affine neighborhood")[
   If $X$ is quasi-projective over a Noetherian affine scheme and $F$ is a finite
   set of points of $X$, there is an affine open of $X$ containing $F$.
 ]
@@ -234,8 +229,7 @@ localization facts for Noetherian rings: *proof left to the reader*.
   affine. It is open in $X$ and gives the required neighborhood.
 ]
 
-#metadata(none) <sup-dv-9>
-#theorem(number: "DV-9", title: "Two Cartier-class surjectivity theorems")[
+#theorem(key: "sup-dv-9", title: "Two Cartier-class surjectivity theorems")[
   The injective map $ops.cacl (X)->ops.pic (X)$ of II.6.14 is an isomorphism
   in either of the following cases:
 
@@ -286,8 +280,7 @@ of the generic points. The second accommodates the embedded point in AL2-4.
 
 === Length, residue fields, and degree
 
-#metadata(none) <sup-dv-10>
-#proposition(number: "DV-10", title: "Multiplicity in dimension one")[
+#proposition(key: "sup-dv-10", title: "Multiplicity in dimension one")[
   Let $(A,idl.m)$ be a one-dimensional Noetherian local ring. For regular
   $a,b in A$, the quotients by $(a)$, $(b)$, and $(a b)$ have finite length,
   with length zero when the element is a unit, and
@@ -319,8 +312,7 @@ minimal primes over its numerator or denominator can contribute. Thus the
 local cycles agree on overlaps and define its codimension-one cycle. This
 construction uses lengths even when those local rings are not DVRs.
 
-#metadata(none) <sup-dv-11>
-#proposition(number: "DV-11", title: "Degree over an arbitrary field")[
+#proposition(key: "sup-dv-11", title: "Degree over an arbitrary field")[
   Let $C$ be a proper integral curve over a field $k$. For a Cartier divisor
   $D$, define
   $
@@ -357,8 +349,7 @@ construction uses lengths even when those local rings are not DVRs.
   in DV-10 gives $deg(D)=deg(E)-deg(F)$, independently of the choices.
 ]
 
-#metadata(none) <sup-dv-12>
-#proposition(number: "DV-12", title: "Finite maps of normal curves")[
+#proposition(key: "sup-dv-12", title: "Finite maps of normal curves")[
   Let $f:C->B$ be a finite dominant morphism of normal proper integral curves
   over $k$, and put $n=[K(C):K(B)]$. For a closed point $y in B$,
   $
@@ -384,8 +375,7 @@ construction uses lengths even when those local rings are not DVRs.
   tower law for residue fields. Additivity gives the divisor formula.
 ]
 
-#metadata(none) <sup-dv-13>
-#proposition(number: "DV-13", title: "Extension of the ground field")[
+#proposition(key: "sup-dv-13", title: "Extension of the ground field")[
   Let $C$ and $D$ be as in DV-11, let $K/k$ be any field extension, and let
   $p:C_K->C$ be the projection. The flat pullback $D_K$ is Cartier, and
   $deg_K(D_K)=deg_k(D)$. On $C_K$ the degree uses the length multiplicities
@@ -419,8 +409,7 @@ points without their lengths gives the wrong degree.
 
 === Three calculations to use again
 
-#metadata(none) <sup-dv-14>
-#example(number: "DV-14", title: "The projective line")[
+#example(key: "sup-dv-14", title: "The projective line")[
   Write $U_0=ops.spec k[t]$ and $U_infinity=ops.spec k[u]$, with $u=t^(-1)$.
   The function $t$ has divisor $[0]-[infinity]$, since its orders in the
   two discrete valuation rings are $1$ and $-1$. For $D=d[infinity]$,
@@ -445,11 +434,10 @@ points without their lengths gives the wrong degree.
   No Riemann–Roch theorem enters the calculation.
 ]
 
-#metadata(none) <sup-dv-15>
-#example(number: "DV-15", title: "A non-Cartier Weil divisor on the cone")[
+#example(key: "sup-dv-15", title: "A non-Cartier Weil divisor on the cone")[
   Let $k$ be algebraically closed of characteristic zero and
   $A=k[x,y,z]\/(x y-z^2)$, $X=ops.spec A$. By
-  #book-link(<sup-al2-13>)[AL2-13], $X$ is normal and has its unique singular
+  #supplement-link(<sup-al2-13>)[AL2-13], $X$ is normal and has its unique singular
   point at $idl.m=(x,y,z)$. Let $D=V(x,z)$ with its reduced structure.
 
   At its generic point, $y$ is a unit and $x=z^2/y$. The chart
@@ -482,8 +470,7 @@ points without their lengths gives the wrong degree.
   (Ex. II.6.5(a)~(b), affine surface case)
 ]
 
-#metadata(none) <sup-dv-16>
-#example(number: "DV-16", title: "Two degrees on the product of projective lines")[
+#example(key: "sup-dv-16", title: "Two degrees on the product of projective lines")[
   Let $X=sch.p_k^1 times sch.p_k^1$, let $p_1,p_2$ be the projections, and put
   $
     shf.o_X(a,b)=tensor(p_1^*shf.o (a), p_2^*shf.o (b), over: shf.o_X).

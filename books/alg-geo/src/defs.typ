@@ -2,7 +2,7 @@
 // Custom Math Definitions
 // ==============================
 
-#import "@preview/theorion:0.6.0": note-block
+#import "@preview/theorion:0.6.0": note-block, theorion-display-number
 #import "ops.typ"
 #import "cat.typ"
 #import "sym.typ"
@@ -14,6 +14,28 @@
     link(target, body)
   } else {
     body
+  }
+}
+
+// Link to a numbered supplement item using its live Theorion number.
+// The fallback keeps standalone article previews readable when the target
+// belongs to a different included file.
+#let supplement-link(target, body) = context {
+  let targets = query(target)
+  if targets.len() == 0 {
+    body
+  } else {
+    let target-element = targets.first()
+    let frame = if target-element.func() == figure {
+      target-element
+    } else {
+      query(selector(figure).after(target-element.location())).first(default: none)
+    }
+    if frame == none {
+      body
+    } else {
+      link(target, theorion-display-number(frame))
+    }
   }
 }
 

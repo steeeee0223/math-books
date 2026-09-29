@@ -5,14 +5,16 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("RV")
+
 == RV — Relative Spec and vector bundles <sup-rv>
 
 This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #book-link(<sup-qc>)[QC] for quasi-coherent modules, and
-#book-link(<sup-al-6>)[AL-6] and #book-link(<sup-sc-7>)[SC-7] for symmetric algebras.
+#supplement-link(<sup-al-6>)[AL-6] and #supplement-link(<sup-sc-7>)[SC-7] for symmetric algebras.
 
-#metadata(none) <sup-rv-1>
-#definition(number: "RV-1", title: "Relative spectrum")[
+#definition(key: "sup-rv-1", title: "Relative spectrum")[
   + Let $shf.a$ be a quasi-coherent $shf.o_Y$-algebra. The relative spectrum
     $ops.spec_Y shf.a$ is obtained from $ops.spec Gamma(U, shf.a)$ over
     affine opens $U$ of $Y$.
@@ -51,8 +53,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     its canonical algebra map by restriction to these charts.
 ]
 
-#metadata(none) <sup-rv-2>
-#proposition(number: "RV-2", title: "Universal property")[
+#proposition(key: "sup-rv-2", title: "Universal property")[
   + For $g:T->Y$, there is a natural bijection
     $ops.hom(T, ops.spec_Y shf.a, over: Y) simeq
     ops.hom(shf.a, g_*shf.o_T, over: shf.o_Y)$,
@@ -87,8 +88,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     an isomorphism of sheaves of algebras.
 ]
 
-#metadata(none) <sup-rv-3>
-#corollary(number: "RV-3", title: "Affine morphisms and algebras")[
+#corollary(key: "sup-rv-3", title: "Affine morphisms and algebras")[
   + The assignments $shf.a mapsto ops.spec_Y shf.a$ and
     $(f:X->Y) mapsto f_*shf.o_X$ give a contravariant equivalence between
     quasi-coherent $shf.o_Y$-algebras and affine schemes over $Y$.
@@ -117,8 +117,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     its action on arrows.
 ]
 
-#metadata(none) <sup-rv-4>
-#proposition(number: "RV-4", title: "Modules over an affine morphism")[
+#proposition(key: "sup-rv-4", title: "Modules over an affine morphism")[
   + For affine $f:X->Y$, pushforward gives an equivalence between
     quasi-coherent modules on $X$ and modules over $f_*shf.o_X$ whose
     underlying $shf.o_Y$-modules are quasi-coherent.
@@ -150,13 +149,12 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     needed for this inverse.
 ]
 
-#metadata(none) <sup-rv-5>
-#corollary(number: "RV-5", title: "Base change")[
+#corollary(key: "sup-rv-5", title: "Base change")[
   For $g:Y'->Y$, the canonical map identifies
   $fiber(ops.spec_Y shf.a, Y', base: Y)$ with
   $ops.spec_(Y') g^*shf.a$ over $Y'$.
   On affine charts, this is the tensor-product comparison of
-  #book-link(<sup-mg-1>)[MG-1], with its specified algebra maps.
+  #supplement-link(<sup-mg-1>)[MG-1], with its specified algebra maps.
 ]
 
 #proof[
@@ -176,8 +174,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     structural map ensures compatibility on overlaps and naturality.
 ]
 
-#metadata(none) <sup-rv-6>
-#definition(number: "RV-6", title: "Vector bundles")[
+#definition(key: "sup-rv-6", title: "Vector bundles")[
   + A finite locally free module $shf.e$ determines a vector bundle by the
     relative spectrum of its symmetric algebra.
 
@@ -215,8 +212,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     convention.
 ]
 
-#metadata(none) <sup-rv-7>
-#remark(number: "RV-7", title: "Transition matrices and fiber coordinates")[
+#remark(key: "sup-rv-7", title: "Transition matrices and fiber coordinates")[
   More explicitly, if ordered bases, written as rows, satisfy $e_j=e_i G_(i j)$, then coordinate
   columns of a linear functional satisfy $z_j=G_(i j)^t z_i$; these are the
   fiber coordinates for the convention below.
@@ -234,8 +230,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     It verifies agreement on triple overlaps.
 ]
 
-#metadata(none) <sup-rv-8>
-#corollary(number: "RV-8", title: "Sections and the dual convention")[
+#corollary(key: "sup-rv-8", title: "Sections and the dual convention")[
   We use $V(shf.e)=ops.spec_X ops.sym (shf.e)$.
 
   + Its sections over an open $U$ correspond to linear maps
@@ -264,12 +259,11 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 ]
 
 #metadata(none) <sup-rv-examples>
-#metadata(none) <sup-rv-9>
-#example(number: "RV-9", title: "Examples")[
+#example(key: "sup-rv-9", title: "Examples")[
   + The algebra $shf.o_Y[t_1,dots,t_n]$ gives relative affine $n$-space.
 
   + For a quasi-coherent ideal, $shf.o_Y\/shf.i$ gives the closed subscheme
-    of #book-link(<sup-cs-1>)[CS-1].
+    of #supplement-link(<sup-cs-1>)[CS-1].
 
   + Over $ops.spec k[t]$, the module
     $tildeOf(k[t]\/(t))$ has a symmetric-algebra spectrum, but its fibers

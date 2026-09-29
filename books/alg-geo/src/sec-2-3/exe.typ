@@ -3,9 +3,9 @@
 #show: show-theorion
 #import "../defs.typ": *
 
-For Exercises II.3.1\~II.3.4, use #book-link(<sup-lp-18>)[LP-18] for local
-finite type, #book-link(<sup-lp-24>)[LP-24] for finite morphisms, and
-#book-link(<sup-lp-41>)[LP-41] for quasi-compactness.
+For Exercises II.3.1\~II.3.4, use #supplement-link(<sup-lp-18>)[LP-18] for local
+finite type, #supplement-link(<sup-lp-24>)[LP-24] for finite morphisms, and
+#supplement-link(<sup-lp-41>)[LP-41] for quasi-compactness.
 
 // Hartshorne II.3, Exercise 3.1
 #exercise(title: "Exercise 3.1")[
@@ -60,7 +60,7 @@ finite type, #book-link(<sup-lp-24>)[LP-24] for finite morphisms, and
   $f^(-1) (U)->U$ is finite. First show $K(X)\/K(Y)$ is finite.
 ]
 
-See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
+See #supplement-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 
 // Hartshorne II.3, Exercise 3.8
 #exercise(title: "Exercise 3.8 (Normalization)")[

@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("SE")
+
 == SE — Support, extension and local freeness <sup-se>
 
 Use #book-link(<sup-sc>)[SC] for exactness and restriction,
@@ -12,14 +15,13 @@ Use #book-link(<sup-sc>)[SC] for exactness and restriction,
 for powers of an invertible-sheaf section remains in
 #book-link(<text-ii-5>)[II.5, Lemma 5.14 and Remark 5.14.1].
 
-#metadata(none) <sup-se-1>
-#definition(number: "SE-1", title: "Two notions of support")[
+#definition(key: "sup-se-1", title: "Two notions of support")[
   + For an abelian-group or module sheaf $shf.f$ and $s in shf.f\(U)$, its
     support is ${x in U:s_x!=0}$; this is closed in $U$.
 
   + The support of the sheaf is ${x in X:shf.f_x!=0}$ and need not be closed.
 
-  + A section with zero germs everywhere is zero by #book-link(<sup-sl-1>)[SL-1].
+  + A section with zero germs everywhere is zero by #supplement-link(<sup-sl-1>)[SL-1].
 ]
 
 #proof[
@@ -32,8 +34,7 @@ for powers of an invertible-sheaf section remains in
     failure of closedness; SL-1 proves the last assertion.
 ]
 
-#metadata(none) <sup-se-2>
-#proposition(number: "SE-2", title: "Annihilators")[
+#proposition(key: "sup-se-2", title: "Annihilators")[
   + On $ops.spec A$, a section corresponding to $m in M$ has support
     $V(ops.ann(m))$, without a finiteness hypothesis on $M$.
 
@@ -57,14 +58,12 @@ for powers of an invertible-sheaf section remains in
     and identifies exactly where finite generation is needed.
 ]
 
-#metadata(none) <sup-se-3>
-#definition(number: "SE-3", title: "Sections with support")[
+#definition(key: "sup-se-3", title: "Sections with support")[
   For a closed subset $Z$ and $j:U=X minus Z->X$, let $shf.h_Z(shf.f)$
   be the subsheaf of sections whose support is contained in $Z$.
 ]
 
-#metadata(none) <sup-se-4>
-#proposition(number: "SE-4", title: "The restriction sequence for sections with support")[
+#proposition(key: "sup-se-4", title: "The restriction sequence for sections with support")[
   + There is a left-exact sequence
     $0->shf.h_Z(shf.f)->shf.f->j_*(shf.f|_U)$,
     with the last map given by restriction. Equivalently, the support subsheaf
@@ -87,8 +86,7 @@ for powers of an invertible-sheaf section remains in
     complement need not extend across $Z$, so no surjectivity follows.
 ]
 
-#metadata(none) <sup-se-5>
-#definition(number: "SE-5", title: "Extension by zero")[
+#definition(key: "sup-se-5", title: "Extension by zero")[
   + For an open inclusion $j:U->X$ and an abelian-group sheaf $shf.g$ on $U$,
     $j_!shf.g$ has, on an open $V$, sections of $shf.g\(V inter U)$ whose
     support is closed in $V$. It has stalk $shf.g_x$ on $U$ and zero off $U$.
@@ -114,8 +112,7 @@ for powers of an invertible-sheaf section remains in
     formula there; outside the closed subset choose a disjoint neighborhood.
 ]
 
-#metadata(none) <sup-se-6>
-#proposition(number: "SE-6", title: "The open-closed exact sequence")[
+#proposition(key: "sup-se-6", title: "The open-closed exact sequence")[
   + For any abelian-group sheaf $shf.f$ on $X$, there is an exact sequence
     $0->j_!(shf.f|_U)->shf.f->i_*(i^(-1)shf.f)->0$.
     The maps are extension by zero and restriction to the closed subspace.
@@ -143,8 +140,7 @@ for powers of an invertible-sheaf section remains in
     identity at the excluded stalks, which explains the stated limitation.
 ]
 
-#metadata(none) <sup-se-7>
-#proposition(number: "SE-7", title: "Support torsion")[
+#proposition(key: "sup-se-7", title: "Support torsion")[
   + On $X=ops.spec A$ with $A$ Noetherian and $Z=V(I)$, the support
     subsheaf of $tildeOf(M)$ corresponds to
     ${m in M:I^n m=0 " for some " n>=0}$.
@@ -174,8 +170,7 @@ for powers of an invertible-sheaf section remains in
     ring, its submodule $T$ is finite, giving coherence.
 ]
 
-#metadata(none) <sup-se-8>
-#proposition(number: "SE-8", title: "Coherent extension")[
+#proposition(key: "sup-se-8", title: "Coherent extension")[
   + Let $X$ be Noetherian and $U$ open. A coherent module on $U$ extends
     to a coherent module on $X$.
 
@@ -212,8 +207,7 @@ for powers of an invertible-sheaf section remains in
     the procedure noncanonical; Example SE-16 proves nonuniqueness.
 ]
 
-#metadata(none) <sup-se-9>
-#corollary(number: "SE-9", title: "Coherent approximation")[
+#corollary(key: "sup-se-9", title: "Coherent approximation")[
   On a Noetherian scheme, every quasi-coherent module is the directed union
   of its coherent subsheaves. The ordering is inclusion; the sum of two
   coherent subsheaves is another coherent subsheaf. (Ex. II.5.15)
@@ -236,14 +230,13 @@ for powers of an invertible-sheaf section remains in
     so SL-1 identifies the union with $shf.g$.
 ]
 
-#metadata(none) <sup-se-10>
-#lemma(number: "SE-10", title: "Free stalks and neighborhoods")[
+#lemma(key: "sup-se-10", title: "Free stalks and neighborhoods")[
   If a module sheaf on a scheme is finitely presented and its stalk at $x$ is free,
   it is free of the same finite rank on a neighborhood of $x$.
   Consequently, a finitely presented module sheaf is locally free if and
   only if all its stalks are free. (Ex. II.5.7(a)~(b))
   Finite presentation provides the finite relations needed to pass from a
-  stalk isomorphism to a neighborhood isomorphism; see #book-link(<sup-al-10>)[AL-10].
+  stalk isomorphism to a neighborhood isomorphism; see #supplement-link(<sup-al-10>)[AL-10].
 ]
 
 #proof[
@@ -265,8 +258,7 @@ for powers of an invertible-sheaf section remains in
     finitely presented by QC-7, so the assertion applies to it.
 ]
 
-#metadata(none) <sup-se-11>
-#proposition(number: "SE-11", title: "Fiber rank")[
+#proposition(key: "sup-se-11", title: "Fiber rank")[
   Let $shf.f$ be a coherent module on a Noetherian scheme $X$. Define
   $r(x)=ops.dim(tensor(shf.f_x, kappa(x), over: shf.o_(X,x)), over: kappa(x))$.
 
@@ -313,8 +305,7 @@ for powers of an invertible-sheaf section remains in
     complement are open. This last assertion is a topological check (Check!).
 ]
 
-#metadata(none) <sup-se-12>
-#corollary(number: "SE-12", title: "Invertible modules")[
+#corollary(key: "sup-se-12", title: "Invertible modules")[
   On a Noetherian scheme, a coherent module $shf.f$ is invertible if and only
   if there is a coherent $shf.g$ with
   $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$.
@@ -345,8 +336,7 @@ for powers of an invertible-sheaf section remains in
 ]
 
 #metadata(none) <sup-se-examples>
-#metadata(none) <sup-se-13>
-#example(number: "SE-13", title: "Counterexamples")[
+#example(key: "sup-se-13", title: "Counterexamples")[
   On $ops.spec ZZ$, let $M$ be the direct sum of $ZZ\/p ZZ$ over all
   positive primes $p$. Its sheaf has support all closed points and not the
   generic point, a nonclosed subset. Yet $ops.ann(M)=0$. In contrast,
@@ -358,8 +348,7 @@ for powers of an invertible-sheaf section remains in
   Localization commutes with direct sums. At $(p)$, only the summand $ZZ\/p ZZ$ survives, whereas at $(0)$, every summand vanishes. The closed points are dense: an integer divisible by every prime is zero. The same fact gives the zero annihilator of $M$. Every nonzero integer already acts invertibly on $QQ$, so all its localizations remain $QQ$.
 ]
 
-#metadata(none) <sup-se-14>
-#example(number: "SE-14", title: "Counterexamples")[
+#example(key: "sup-se-14", title: "Counterexamples")[
   On $ops.spec(k[epsilon]\/(epsilon^2))$, the module $tildeOf(k)$ has
   constant fiber rank one but is not locally free.
 ]
@@ -368,8 +357,7 @@ for powers of an invertible-sheaf section remains in
   There is one prime, with residue field $k$, and the fiber of the module $k$ is $k$. A free module with this fiber would have rank one and be isomorphic to $k[epsilon]\/(epsilon^2)$. But $epsilon$ annihilates $k$ and does not annihilate that ring, ruling out such an isomorphism.
 ]
 
-#metadata(none) <sup-se-15>
-#example(number: "SE-15", title: "Counterexamples")[
+#example(key: "sup-se-15", title: "Counterexamples")[
   For $j:(0,1)->RR$ and the constant $ZZ$ sheaf on $(0,1)$, $j_*$ has
   nonzero stalks at the endpoints, while $j_!$ has zero stalks there.
 ]
@@ -378,8 +366,7 @@ for powers of an invertible-sheaf section remains in
   Sufficiently small neighborhoods of either endpoint intersect $(0,1)$ in a nonempty interval. Sections of the constant sheaf there are $ZZ$, and the restriction maps are identities. Their colimit is $ZZ$, the direct-image stalk. Extension by zero has zero stalk outside the open by SE-5.
 ]
 
-#metadata(none) <sup-se-16>
-#example(number: "SE-16", title: "Counterexamples")[
+#example(key: "sup-se-16", title: "Counterexamples")[
   The sheaves $shf.o (n)$ on $sch.p^1_k$ all restrict to the trivial
   invertible sheaf on a standard affine line but are not mutually isomorphic
   on the projective line. Coherent extensions need not be unique.

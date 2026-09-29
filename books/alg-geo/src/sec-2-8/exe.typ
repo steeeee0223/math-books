@@ -20,7 +20,7 @@
     field is open dense.
 ]
 
-See #book-link(<sup-df-3>)[DF-3] (residue-field sequence and separable closed-point case); for relative smoothness, see #book-link(<sup-lp2-3>)[LP2-3].
+See #supplement-link(<sup-df-3>)[DF-3] (residue-field sequence and separable closed-point case); for relative smoothness, see #supplement-link(<sup-lp2-3>)[LP2-3].
 
 // Hartshorne II.8, Exercise 8.2
 #exercise(title: "Exercise 8.2")[
@@ -57,7 +57,7 @@ See #book-link(<sup-df-3>)[DF-3] (residue-field sequence and separable closed-po
     a curve in $sch.p^3$ cut out by surfaces of degrees $d,e$.
 ]
 
-For (d), see #book-link(<sup-df-13>)[DF-13]; for the plane-curve case, see #book-link(<sup-df-14>)[DF-14].
+For (d), see #supplement-link(<sup-df-13>)[DF-13]; for the plane-curve case, see #supplement-link(<sup-df-14>)[DF-14].
 
 // Hartshorne II.8, Exercise 8.5
 #metadata(none) <exercise-ii-8-5>
@@ -69,7 +69,7 @@ For (d), see #book-link(<sup-df-13>)[DF-13]; for the plane-curve case, see #book
   + Prove $omega_(tilde(X)) simeq pi^*omega_X times.o shf.o_((r-1) Y')$.
 ]
 
-For the exceptional divisor and its normal bundle, see #book-link(<sup-bu-8>)[BU-8].
+For the exceptional divisor and its normal bundle, see #supplement-link(<sup-bu-8>)[BU-8].
 
 // Hartshorne II.8, Exercise 8.6
 #metadata(none) <exercise-ii-8-6>
@@ -85,7 +85,7 @@ For the exceptional divisor and its normal bundle, see #book-link(<sup-bu-8>)[BU
     kills $J$, proving that $f$ lifts to $A->B'$.
 ]
 
-See #book-link(<sup-lp2-2>)[LP2-2] and #book-link(<sup-lp2-3>)[LP2-3] (lifting criteria; algebraic proofs left to the reader).
+See #supplement-link(<sup-lp2-2>)[LP2-2] and #supplement-link(<sup-lp2-3>)[LP2-3] (lifting criteria; algebraic proofs left to the reader).
 
 // Hartshorne II.8, Exercise 8.7
 #exercise(title: "Exercise 8.7")[

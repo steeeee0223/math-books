@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("PM")
+
 == PM — Projective morphisms and positivity <sup-pm>
 
 Projective has Hartshorne's meaning: a factorization through a closed
@@ -17,8 +20,7 @@ extension and generation results of II.5–II.7.
 
 === From one line bundle to a global embedding
 
-#metadata(none) <sup-pm-1>
-#definition(number: "PM-1", title: "Relative ampleness")[
+#definition(key: "sup-pm-1", title: "Relative ampleness")[
   For a finite-type morphism $f:X->Y$ of Noetherian schemes, an invertible
   sheaf $shf.l$ is $f$-*ample* if $Y$ has an affine open cover $U_i$ on
   which $shf.l|_(f^(-1)U_i)$ is ample. Equivalently, this holds on every
@@ -28,8 +30,7 @@ extension and generation results of II.5–II.7.
   defining a closed immersion $X->sch.p_Y^N$.
 ]
 
-#metadata(none) <sup-pm-2>
-#theorem(number: "PM-2", title: "Global projectivity over a positive base")[
+#theorem(key: "sup-pm-2", title: "Global projectivity over a positive base")[
   Suppose $Y$ is Noetherian with an ample invertible sheaf $shf.a$, and
   $f:X->Y$ is proper. The following conditions are equivalent:
   + $f$ is projective in Hartshorne's sense.
@@ -106,8 +107,7 @@ extension and generation results of II.5–II.7.
   $sch.p_Y^N$.
 ]
 
-#metadata(none) <sup-pm-3>
-#proposition(number: "PM-3", title: "The purpose of the base twist")[
+#proposition(key: "sup-pm-3", title: "The purpose of the base twist")[
   Let $shf.e$ be coherent on a Noetherian $Y$ with ample $shf.a$.
   For some $m>=0$ there is a finite surjection
   $shf.o_Y^(N+1)->shf.e times.o shf.a^m$. Consequently
@@ -127,8 +127,7 @@ extension and generation results of II.5–II.7.
   in PM-2 that first makes a bundle very ample over affine base opens.
 ]
 
-#metadata(none) <sup-pm-4>
-#proposition(number: "PM-4", title: "A difference of very ample bundles")[
+#proposition(key: "sup-pm-4", title: "A difference of very ample bundles")[
   If $X$ is quasi-projective over a Noetherian affine scheme, every
   invertible $shf.l$ has the form $shf.l_1 times.o shf.l_2^(-1)$ with
   $shf.l_1,shf.l_2$ very ample over that affine scheme.
@@ -148,8 +147,7 @@ extension and generation results of II.5–II.7.
   immersions and remains valid when $X$ is not proper.
 ]
 
-#metadata(none) <sup-pm-5>
-#proposition(number: "PM-5", title: "Finite maps")[
+#proposition(key: "sup-pm-5", title: "Finite maps")[
   A finite morphism to a Noetherian scheme possessing an ample
   invertible sheaf is projective in Hartshorne's sense.
 ]
@@ -176,8 +174,7 @@ extension and generation results of II.5–II.7.
 
 === Explicit positivity calculations
 
-#metadata(none) <sup-pm-6>
-#example(number: "PM-6", title: "The two directions on a quadric surface")[
+#example(key: "sup-pm-6", title: "The two directions on a quadric surface")[
   On $sch.p^1_k times sch.p^1_k$, put
   $shf.o (a,b)=p_1^*shf.o (a) times.o p_2^*shf.o (b)$.
   Its global sections are bihomogeneous polynomials of bidegree $(a,b)$;
@@ -203,8 +200,7 @@ extension and generation results of II.5–II.7.
   $shf.o (a,b)$. They give a closed immersion, proving sufficiency.
 ]
 
-#metadata(none) <sup-pm-7>
-#example(number: "PM-7", title: "Relative positivity on a ruled surface")[
+#example(key: "sup-pm-7", title: "Relative positivity on a ruled surface")[
   On $F_n=sch.p_(sch.p^1)(shf.o plus.o shf.o (n))$, $n>=0$, the bundle
   $shf.o (1)$ is relatively ample but is not ample on $F_n$.
   For every $m>=1$,
@@ -241,8 +237,7 @@ extension and generation results of II.5–II.7.
   by coordinate-ring generation, without a numerical ampleness criterion.
 ]
 
-#metadata(none) <sup-pm-8>
-#theorem(number: "PM-8", title: "Finite linear projection")[
+#theorem(key: "sup-pm-8", title: "Finite linear projection")[
   Let $X subset sch.p_k^N$ be an integral projective variety of
   dimension $d$ over an algebraically closed field. There are linear
   forms $l_0,dots,l_d$ whose common center misses $X$ and whose
@@ -281,13 +276,12 @@ extension and generation results of II.5–II.7.
   extensions, rather than from properness alone.
 ]
 
-#metadata(none) <sup-pm-9>
-#example(number: "PM-9", title: "The image does not determine the modification")[
+#example(key: "sup-pm-9", title: "The image does not determine the modification")[
   The pencil $[x:y:z] mapsto [x:y]$ on $sch.p^2$ has base ideal
   $(x,y)$ and image all of $sch.p^1$, whose homogeneous ideal is zero.
   Its graph closure in $sch.p^2 times sch.p^1$ has equation $x v=y u$.
   This is the blowup at $[0:0:1]$, as computed in
-  #book-link(<sup-bu-13>)[BU-13]. The projection to $sch.p^2$ is a
+  #supplement-link(<sup-bu-13>)[BU-13]. The projection to $sch.p^2$ is a
   projective modification, and the other projection is the morphism
   defined by the transformed pencil. Thus the homogeneous equations
   of the image, the base ideal, the graph in a product, and the

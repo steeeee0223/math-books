@@ -5,6 +5,9 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("RM")
+
 == RM — Rational maps of schemes <sup-rm>
 
 This supplement translates Chapter I's rational maps into scheme language.
@@ -16,8 +19,7 @@ normal local rings and the valuative criterion of II.4.
 
 === Domains, composition and function fields
 
-#metadata(none) <sup-rm-1>
-#definition(number: "RM-1", title: "A rational map and its representatives")[
+#definition(key: "sup-rm-1", title: "A rational map and its representatives")[
   A representative of a rational map $X$ to $Y$ is a morphism $f:U->Y$
   on a dense open subscheme $U$ of $X$. Two representatives are equivalent
   if their restrictions agree on a common dense open of $X$ contained
@@ -34,8 +36,7 @@ normal local rings and the valuative criterion of II.4.
   Compare #link("https://stacks.math.columbia.edu/tag/01RR")[Stacks, Rational maps].
 ]
 
-#metadata(none) <sup-rm-2>
-#proposition(number: "RM-2", title: "The maximal representative")[
+#proposition(key: "sup-rm-2", title: "The maximal representative")[
   If $X$ is reduced and $Y\/S$ is separated, every $S$-rational map has a
   unique representative on its domain of definition.
 ]
@@ -43,7 +44,7 @@ normal local rings and the valuative criterion of II.4.
   Take the union $D$ of the domains of its $S$-representatives. Given
   representatives on $U,V$, their common dense agreement open remains
   dense in $U inter V$. The latter is reduced. By
-  #book-link(<sup-lp-59>)[LP-59], their restrictions agree as morphisms on
+  #supplement-link(<sup-lp-59>)[LP-59], their restrictions agree as morphisms on
   all of $U inter V$. The gluing theorem of XL therefore gives a unique
   map $D->Y$. Its structural composite to $S$ equals the structural map
   on the cover by representative domains, hence globally. Any other
@@ -52,8 +53,7 @@ normal local rings and the valuative criterion of II.4.
   $S=ops.spec ZZ$.
 ]
 
-#metadata(none) <sup-rm-3>
-#proposition(number: "RM-3", title: "When composition is defined")[
+#proposition(key: "sup-rm-3", title: "When composition is defined")[
   Suppose $X,Y$ are integral and $f:X arrow.r.dashed Y$ is dominant,
   meaning that a representative has dense image. For any rational map
   $g:Y arrow.r.dashed Z$, there is a well-defined composite
@@ -80,8 +80,7 @@ normal local rings and the valuative criterion of II.4.
   the identity laws follow there and hence for the rational maps.
 ]
 
-#metadata(none) <sup-rm-4>
-#theorem(number: "RM-4", title: "The function-field dictionary")[
+#theorem(key: "sup-rm-4", title: "The function-field dictionary")[
   Let $X,Y$ be integral separated schemes of finite type over a field
   $k$. Pullback gives a bijection between dominant $k$-rational maps
   $X arrow.r.dashed Y$ and $k$-embeddings $k(Y)->k(X)$, with composition
@@ -123,8 +122,7 @@ normal local rings and the valuative criterion of II.4.
   generic map using finitely many algebra generators.
 ]
 
-#metadata(none) <sup-rm-5>
-#proposition(number: "RM-5", title: "Generically finite morphisms")[
+#proposition(key: "sup-rm-5", title: "Generically finite morphisms")[
   Let $f:X->Y$ be a dominant morphism of integral separated finite-type
   $k$-schemes. The extension $k(X)\/k(Y)$ is finite if and only if some
   nonempty open $V subset Y$ has $f^(-1)(V)->V$ finite.
@@ -155,8 +153,7 @@ normal local rings and the valuative criterion of II.4.
 
 === Graphs and extension
 
-#metadata(none) <sup-rm-6>
-#proposition(number: "RM-6", title: "The closure of a graph")[
+#proposition(key: "sup-rm-6", title: "The closure of a graph")[
   Let $S$ be Noetherian, let $X$ be an integral Noetherian $S$-scheme,
   and let $Y\/S$ be separated and of finite type. For an $S$-rational map
   $f:X arrow.r.dashed Y$, take the reduced closure $Gamma_f$ of the graph
@@ -179,8 +176,7 @@ normal local rings and the valuative criterion of II.4.
   finiteness follows merely from this properness.
 ]
 
-#metadata(none) <sup-rm-7>
-#theorem(number: "RM-7", title: "Extension at codimension one")[
+#theorem(key: "sup-rm-7", title: "Extension at codimension one")[
   Let $S$ be locally Noetherian, let $X$ be integral and normal of finite
   type over $S$, and let $Y$ be proper over $S$. An $S$-rational map
   $X arrow.r.dashed Y$ extends to a neighborhood of every codimension-one
@@ -216,8 +212,7 @@ normal local rings and the valuative criterion of II.4.
   This constructs the requested extension, and RM-2 gives its uniqueness.
 ]
 
-#metadata(none) <sup-rm-8>
-#corollary(number: "RM-8", title: "Curves and affine targets")[
+#corollary(key: "sup-rm-8", title: "Curves and affine targets")[
   In the setting of RM-7, if $ops.dim X=1$, every rational map in question
   extends everywhere. In particular, a birational map between normal
   proper integral $k$-curves is an isomorphism.
@@ -245,8 +240,7 @@ normal local rings and the valuative criterion of II.4.
 
 === Examples that distinguish the hypotheses
 
-#metadata(none) <sup-rm-9>
-#example(number: "RM-9", title: "A pencil with a base point")[
+#example(key: "sup-rm-9", title: "A pencil with a base point")[
   Over an algebraically closed field $k$, consider
   $f:sch.p^2_k arrow.r.dashed sch.p^1_k$ given by
   $[x:y:z] mapsto [x:y]$. Its maximal domain is
@@ -274,8 +268,7 @@ normal local rings and the valuative criterion of II.4.
   with the blowup of the ideal $(x,y)$ near $p$.
 ]
 
-#metadata(none) <sup-rm-10>
-#example(number: "RM-10", title: "Birational is not everywhere invertible")[
+#example(key: "sup-rm-10", title: "Birational is not everywhere invertible")[
   In characteristic zero, $t mapsto (t^2,t^3)$ gives a finite
   birational morphism $sch.a^1_k->V(y^2-x^3)$. Its rational inverse is
   $t=y/x$; it is not regular at the cusp, since

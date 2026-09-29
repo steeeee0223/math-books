@@ -10,7 +10,7 @@
   $ops.cl (X times sch.p^n) simeq ops.cl (X) times ZZ$.
 ]
 
-See #book-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
+See #supplement-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
 
 // Hartshorne II.6, Exercise 6.2
 #exercise(title: "Exercise 6.2 (Varieties in Projective Space)")[
@@ -62,7 +62,7 @@ See #book-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
     on the projective quadric is a hypersurface section.
 ]
 
-For the surface cases, see #book-link(<sup-dv-15>)[DV-15] (affine cone) and #book-link(<sup-dv-16>)[DV-16] (projective quadric).
+For the surface cases, see #supplement-link(<sup-dv-15>)[DV-15] (affine cone) and #supplement-link(<sup-dv-16>)[DV-16] (projective quadric).
 
 // Hartshorne II.6, Exercise 6.6
 #exercise(title: "Exercise 6.6 (Plane Cubic Group Law)")[

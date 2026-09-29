@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("AL2")
+
 == AL2 — Associated points and regular sequences <sup-al2>
 
 The algebra in this section supplies the hypotheses needed for divisors,
@@ -12,12 +15,11 @@ regular element on a module means an element acting injectively; it need not
 be a unit. Every purely algebraic result below is an exercise: *Proof left to
 the reader.* The indicated routes identify the assertions that subsequent
 geometric arguments use. Nakayama's lemma and localization of finite
-presentations are available in #book-link(<sup-al-10>)[AL-10].
+presentations are available in #supplement-link(<sup-al-10>)[AL-10].
 
 === Associated primes and embedded structure
 
-#metadata(none) <sup-al2-1>
-#definition(number: "AL2-1", title: "Associated primes")[
+#definition(key: "sup-al2-1", title: "Associated primes")[
   For an $A$-module $M$, put
   $
     ops.ass(M, over: A)=
@@ -30,8 +32,7 @@ presentations are available in #book-link(<sup-al-10>)[AL-10].
   this independence.
 ]
 
-#metadata(none) <sup-al2-2>
-#proposition(number: "AL2-2", title: "Finiteness and zero divisors")[
+#proposition(key: "sup-al2-2", title: "Finiteness and zero divisors")[
   If $A$ is Noetherian and $M$ is finite, then $ops.ass(M, over: A)$ is finite,
   is nonempty when $M!=0$, and its minimal members are precisely the minimal
   elements of $ops.supp (M)=V(ops.ann (M))$. Moreover,
@@ -52,8 +53,7 @@ $ops.ass(M) subset ops.ass(M') union ops.ass(M'')$
 for a short exact sequence. To prove the displayed equality, apply the
 maximal-annihilator argument to the submodule killed by $a$.
 
-#metadata(none) <sup-al2-3>
-#proposition(number: "AL2-3", title: "Localization of associated primes")[
+#proposition(key: "sup-al2-3", title: "Localization of associated primes")[
   Let $S$ be a multiplicative subset of a Noetherian ring $A$, and let $M$ be
   finite. Under the prime correspondence for localization,
   $
@@ -74,8 +74,7 @@ The minimal primes of $ops.supp (M)$ are associated: localize at such a
 prime and apply the nonempty-associated-prime assertion to the resulting
 nonzero module with zero-dimensional support.
 
-#metadata(none) <sup-al2-4>
-#example(number: "AL2-4", title: "A section supported at an embedded point")[
+#example(key: "sup-al2-4", title: "A section supported at an embedded point")[
   Let $A=k[u,v]\/(u^2,u v)$. Each element has a unique expression
   $p(v)+c u$, with $p in k[v]$ and $c in k$, and multiplication is
   $
@@ -106,8 +105,7 @@ nonzero module with zero-dimensional support.
   structure are distinct phenomena.
 ]
 
-#metadata(none) <sup-al2-5>
-#proposition(number: "AL2-5", title: "Total quotients and meromorphic frames")[
+#proposition(key: "sup-al2-5", title: "Total quotients and meromorphic frames")[
   Let $A$ be Noetherian, $S=A - union.big_(idl.p in ops.ass(A, over: A))idl.p$,
   and $Q(A)=S^(-1)A$.
 
@@ -135,7 +133,11 @@ For the third assertion clear the finitely many coefficients and inverse
 identities in a finite presentation (AL-10). For the fourth assertion use the
 Artinian decomposition of a zero-dimensional Noetherian ring.
 
-#remark(title: "Why embedded points affect meromorphic functions")[
+#remark(
+  numbering: none,
+  outlined: false,
+  full-title: [Why embedded points affect meromorphic functions],
+)[
   For AL2-4, $v$ becomes a unit at the generic point but is a zero divisor in
   $A$. Thus it is not a permitted denominator in $Q(A)$. In fact $Q(A)$ is
   $A_(u,v)$, while the map to the generic local ring $A_(u)=k(v)$ kills $u$.
@@ -145,8 +147,7 @@ Artinian decomposition of a zero-dimensional Noetherian ring.
 
 === Regular sequences, conormal modules, and equations
 
-#metadata(none) <sup-al2-6>
-#definition(number: "AL2-6", title: "Regular sequences and depth")[
+#definition(key: "sup-al2-6", title: "Regular sequences and depth")[
   Let $(A,idl.m)$ be Noetherian local and $M$ a finite nonzero module. A sequence
   $f_1,dots,f_r in idl.m$ is $M$-regular if multiplication by $f_i$ is injective
   on $M\/(f_1,dots,f_(i-1))M$ for every $i$. The final quotient is nonzero by
@@ -154,8 +155,7 @@ Artinian decomposition of a zero-dimensional Noetherian ring.
   empty sequence has length zero. The depth of the zero module is not used.
 ]
 
-#metadata(none) <sup-al2-7>
-#proposition(number: "AL2-7", title: "Rules for using depth")[
+#proposition(key: "sup-al2-7", title: "Rules for using depth")[
   With these hypotheses:
 
   + $0<=ops.depth_A(M)<=dim(ops.supp (M))$;
@@ -175,8 +175,7 @@ an intersection of powers of an ideal contained in the maximal ideal is
 zero. Localization preserves injections and the quotient modules; the
 stated hypotheses exclude a vanishing quotient or a unit in the sequence.
 
-#metadata(none) <sup-al2-8>
-#proposition(number: "AL2-8", title: "The conormal and associated graded maps")[
+#proposition(key: "sup-al2-8", title: "The conormal and associated graded maps")[
   Let $A$ be a Noetherian ring, let $f_1,dots,f_r$ be an $A$-regular sequence,
   and put $I=(f_1,dots,f_r)$, assumed proper. Then the canonical maps
   $
@@ -211,8 +210,7 @@ the exceptional scheme $ops.proj (ops.gr_I A)$ of a blowup into
 $sch.p (I\/I^2)$. The convention is that projectivization parametrizes
 invertible quotients.
 
-#metadata(none) <sup-al2-9>
-#proposition(number: "AL2-9", title: "The Koszul complex needed here")[
+#proposition(key: "sup-al2-9", title: "The Koszul complex needed here")[
   For $f=(f_1,dots,f_r)$, let $F=A^r$ with basis $e_1,dots,e_r$ and set
   $K_i=Lambda^i F$. Define
   $
@@ -238,8 +236,7 @@ by $f_r$. Induction reduces positive-degree exactness to injectivity of
 $f_r$ on $A\/(f_1,dots,f_(r-1))$; the remaining cokernel is $A\/I$.
 This proof uses complexes and elementary exactness, without derived functors.
 
-#metadata(none) <sup-al2-10>
-#example(number: "AL2-10", title: "A regular ideal and a nonregular pair")[
+#example(key: "sup-al2-10", title: "A regular ideal and a nonregular pair")[
   For $A=k[x,y]$ and $I=(x,y)$, the sequence $x,y$ is regular and
   $
     I\/I^2=k overline(x) plus.o k overline(y), quad
@@ -267,8 +264,7 @@ This proof uses complexes and elementary exactness, without derived functors.
 
 === Depth, codimension, and singularities
 
-#metadata(none) <sup-al2-11>
-#proposition(number: "AL2-11", title: "Using the local-algebra theorems of II.8")[
+#proposition(key: "sup-al2-11", title: "Using the local-algebra theorems of II.8")[
   A Noetherian local ring is Cohen–Macaulay if its depth equals its dimension.
   The following are the forms of Hartshorne II.8.21A–8.23 used below.
 
@@ -291,8 +287,7 @@ ring and the displayed dimension equality. The condition $S_2$ controls
 depth at higher-codimension points; $R_1$ controls codimension-one
 singularities. Neither condition replaces the other.
 
-#metadata(none) <sup-al2-12>
-#lemma(number: "AL2-12", title: "A regular quotient of a regular local ring")[
+#lemma(key: "sup-al2-12", title: "A regular quotient of a regular local ring")[
   Let $(A,idl.m)$ be a Noetherian regular local ring and $I subset idl.m$
   an ideal such that $A\/I$ is regular local. Put $d=dim A$ and
   $r=d-dim(A\/I)$. There is a regular system of parameters
@@ -311,8 +306,7 @@ lowers its dimension. This specifies the algebra needed when both a closed
 subscheme and its ambient scheme are regular; smoothness of a morphism is
 not one of the hypotheses of this ring statement.
 
-#metadata(none) <sup-al2-13>
-#example(number: "AL2-13", title: "The cone and the cusp")[
+#example(key: "sup-al2-13", title: "The cone and the cusp")[
   Let $k$ be algebraically closed of characteristic zero. The following
   coordinate-ring calculations are *left to the reader (commutative
   algebra)*.

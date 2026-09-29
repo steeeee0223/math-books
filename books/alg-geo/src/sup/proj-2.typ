@@ -5,6 +5,9 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("PJ2")
+
 == PJ2 — Relative Proj and projectivization <sup-pj2>
 
 Unless otherwise specified, $Y$ is Noetherian and $shf.s$ is a
@@ -18,8 +21,7 @@ exercises: their proofs are left to the reader.
 
 === Quotients, relations, and change of base
 
-#metadata(none) <sup-pj2-1>
-#proposition(number: "PJ2-1", title: "The quotient description")[
+#proposition(key: "sup-pj2-1", title: "The quotient description")[
   For $g:T->Y$, morphisms $h:T->P$ over $Y$ correspond naturally to
   isomorphism classes of pairs $(shf.l,alpha)$, where $shf.l$ is invertible
   and
@@ -57,8 +59,7 @@ exercises: their proofs are left to the reader.
   gluing choice hidden in passage to isomorphism classes.
 ]
 
-#metadata(none) <sup-pj2-2>
-#proposition(number: "PJ2-2", title: "Relations are part of the point")[
+#proposition(key: "sup-pj2-2", title: "Relations are part of the point")[
   Let $shf.j$ be the homogeneous kernel of
   $ops.sym shf.s_1 -> shf.s$. There is a canonical closed immersion
   $P->sch.p (shf.s_1)$. An invertible quotient
@@ -77,8 +78,7 @@ exercises: their proofs are left to the reader.
   symmetric algebra is used.
 ]
 
-#metadata(none) <sup-pj2-3>
-#example(number: "PJ2-3", title: "A quotient failing a relation")[
+#example(key: "sup-pj2-3", title: "A quotient failing a relation")[
   For $S=k[u,v,w]/(u w-v^2)$, a point is a nonzero triple $(a,b,c)$ up to
   common scaling satisfying $a c=b^2$. The quotient with values $(1,1,0)$
   defines a point of $sch.p^2$ but fails the relation and defines no point
@@ -86,8 +86,7 @@ exercises: their proofs are left to the reader.
   the equation is an equality in $shf.l^2$, independently of a frame.
 ]
 
-#metadata(none) <sup-pj2-4>
-#proposition(number: "PJ2-4", title: "Arbitrary base change and fibers")[
+#proposition(key: "sup-pj2-4", title: "Arbitrary base change and fibers")[
   For every $g:Y'->Y$ there is a canonical isomorphism
   $ ops.proj_(Y')(g^*shf.s) simeq P times_Y Y'. $
   Under this isomorphism the new $shf.o (1)$ is the pullback of the old
@@ -120,8 +119,7 @@ exercises: their proofs are left to the reader.
   comparison for every twist. Take $Y'=ops.spec kappa(y)$ for the fiber.
 ]
 
-#metadata(none) <sup-pj2-5>
-#proposition(number: "PJ2-5", title: "Associated modules and their comparisons")[
+#proposition(key: "sup-pj2-5", title: "Associated modules and their comparisons")[
   Let $shf.m$ be a quasi-coherent graded $shf.s$-module. On an affine
   base $V$, its associated sheaf has module $(shf.m (V)_s)_0$ on
   $D_+(s)$. Sheafification is exact, and in the degree-one setting
@@ -152,8 +150,7 @@ exercises: their proofs are left to the reader.
 
 === Projective bundles and their sections
 
-#metadata(none) <sup-pj2-6>
-#proposition(number: "PJ2-6", title: "Twisting and the normal bundle of a section")[
+#proposition(key: "sup-pj2-6", title: "Twisting and the normal bundle of a section")[
   For a coherent $shf.e$ and an invertible $shf.m$ on $Y$,
   $sch.p (shf.e times.o shf.m) simeq sch.p (shf.e)$ canonically over $Y$.
   The tautological bundle on the left corresponds to
@@ -187,8 +184,7 @@ exercises: their proofs are left to the reader.
   normal bundle.
 ]
 
-#metadata(none) <sup-pj2-7>
-#example(number: "PJ2-7", title: "The distinguished section of a ruled surface")[
+#example(key: "sup-pj2-7", title: "The distinguished section of a ruled surface")[
   Let $F_n=sch.p_(sch.p^1)(shf.o plus.o shf.o (n))$, $n>=0$.
   On $U_0$ with coordinate $t=T_1/T_0$, use the frame $e_0=T_0^n$ of
   $shf.o (n)$; on $U_1$ use $e_1=T_1^n=t^n e_0$.
@@ -201,8 +197,7 @@ exercises: their proofs are left to the reader.
   (Ex. II.7.10(b), ruled-surface case)
 ]
 
-#metadata(none) <sup-pj2-8>
-#example(number: "PJ2-8", title: "Projectivization with a jumping fiber")[
+#example(key: "sup-pj2-8", title: "Projectivization with a jumping fiber")[
   On $Y=ops.spec k[t]$ take $shf.e=shf.o_Y plus.o shf.o_Y/(t)$.
   Its symmetric algebra is $k[t,u,v]/(t v)$ with $u,v$ of degree one.
   On $D_+(u)$ the coordinate ring is $k[t,w]/(t w)$, $w=v/u$;
@@ -219,8 +214,7 @@ exercises: their proofs are left to the reader.
 
 === Grading and the tautological sheaf
 
-#metadata(none) <sup-pj2-9>
-#proposition(number: "PJ2-9", title: "A sufficiently divisible Veronese")[
+#proposition(key: "sup-pj2-9", title: "A sufficiently divisible Veronese")[
   Let $S$ be a finitely generated nonnegative graded algebra over $S_0$.
   For some positive $d$, its Veronese algebra
   $S^((d))=bigOPlus(S_(n d), n>=0)$ is generated in degree one.
@@ -251,8 +245,7 @@ exercises: their proofs are left to the reader.
   Proj, and gives no such conclusion about $shf.o (1)$.
 ]
 
-#metadata(none) <sup-pj2-10>
-#example(number: "PJ2-10", title: "The weighted plane and its odd module")[
+#example(key: "sup-pj2-10", title: "The weighted plane and its odd module")[
   Let $k$ be algebraically closed of characteristic zero and
   $S=k[x,y,z]$ with degrees $1,1,2$. On $D_+(z)$ put
   $a=x^2/z$, $b=x y/z$, $c=y^2/z$. The ring is

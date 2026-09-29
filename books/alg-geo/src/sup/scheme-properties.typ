@@ -5,6 +5,9 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("XP")
+
 == XP — Topology and intrinsic properties of schemes <sup-xp>
 
 The definitions of connected, irreducible, reduced, integral, and
@@ -13,8 +16,7 @@ The definitions of connected, irreducible, reduced, integral, and
 
 === Generic points and specialization <sup-xp-generic-points>
 
-#metadata(none) <sup-xp-1>
-#proposition(number: "XP-1", title: "Existence and uniqueness")[
+#proposition(key: "sup-xp-1", title: "Existence and uniqueness")[
   Every nonempty irreducible closed subset of a scheme has a unique generic
   point, without a Noetherian hypothesis. On $ops.spec A$, the generic point
   of $V(idl.p)$ is $idl.p$ for each prime $idl.p$ (II.2.9).
@@ -38,14 +40,12 @@ The definitions of connected, irreducible, reduced, integral, and
     mean equal prime ideals, so the two points coincide.
 ]
 
-#metadata(none) <sup-xp-2>
-#definition(number: "XP-2", title: "Specialization and components")[
+#definition(key: "sup-xp-2", title: "Specialization and components")[
   A point $y$ is a specialization of $x$ if $y in overline({x})$; $x$ is
   then a generization of $y$.
 ]
 
-#metadata(none) <sup-xp-3>
-#proposition(number: "XP-3", title: "Specialization in an affine scheme")[
+#proposition(key: "sup-xp-3", title: "Specialization in an affine scheme")[
   + For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
     $idl.p_x subset idl.p_y$.
 
@@ -76,8 +76,7 @@ The definitions of connected, irreducible, reduced, integral, and
     that closed set is exactly minimality of $idl.p$ among prime ideals.
 ]
 
-#metadata(none) <sup-xp-4>
-#lemma(number: "XP-4", title: "Restriction to opens")[
+#lemma(key: "sup-xp-4", title: "Restriction to opens")[
   + Every nonempty open of an irreducible scheme contains its generic point
     and is irreducible with the same generic point.
 
@@ -105,8 +104,7 @@ The definitions of connected, irreducible, reduced, integral, and
     components.
 ]
 
-#metadata(none) <sup-xp-5>
-#proposition(number: "XP-5", title: "Function fields")[
+#proposition(key: "sup-xp-5", title: "Function fields")[
   + For an integral scheme $X$ with generic point $eta$, there are canonical
     identifications $K(X)=shf.o_(X,eta)=kappa(eta)$ and
     $ops.frac(A) simeq K(X)$ for every nonempty affine open $ops.spec A$.
@@ -132,8 +130,7 @@ The definitions of connected, irreducible, reduced, integral, and
     injective, so $s|_V=0$. These affines cover $U$, and SL-1 gives $s=0$.
 ]
 
-#metadata(none) <sup-xp-6>
-#proposition(number: "XP-6", title: "Dominance")[
+#proposition(key: "sup-xp-6", title: "Dominance")[
   + For integral schemes $X,Y$, a morphism $f:X->Y$ is dominant if and only
     if $f(eta_X)=eta_Y$; its local map gives an inclusion $K(Y)->K(X)$.
 
@@ -166,8 +163,7 @@ The definitions of connected, irreducible, reduced, integral, and
     quotient gives the last example.
 ]
 
-#metadata(none) <sup-xp-7>
-#remark(number: "XP-7", title: "Noetherian and closed-point phenomena")[
+#remark(key: "sup-xp-7", title: "Noetherian and closed-point phenomena")[
   + A Noetherian scheme has a Noetherian underlying space and unique generic
     points for nonempty irreducible closed subsets; in the terminology of
     II.3.17 it is a Zariski space.
@@ -210,8 +206,7 @@ The definitions of connected, irreducible, reduced, integral, and
     field extension is the field itself.
 ]
 
-#metadata(none) <sup-xp-8>
-#proposition(number: "XP-8", title: "Clopen sets and idempotents")[
+#proposition(key: "sup-xp-8", title: "Clopen sets and idempotents")[
   + Global idempotents $e in Gamma(X, shf.o_X)$ correspond to clopen subsets
     by $e mapsto X_e$, with $e$ equal to $1$ on $X_e$ and $0$ on its
     complement.
@@ -241,8 +236,7 @@ The definitions of connected, irreducible, reduced, integral, and
     Neither factor vanishes precisely for a nontrivial decomposition.
 ]
 
-#metadata(none) <sup-xp-9>
-#proposition(number: "XP-9", title: "Reduction")[
+#proposition(key: "sup-xp-9", title: "Reduction")[
   + A scheme $X$ is reduced if and only if every local ring $shf.o_(X,x)$
     is reduced; equivalently, every ring $shf.o_X (U)$ has no nonzero nilpotents.
   + Let $shf.n$ be the sheaf of locally nilpotent sections of $shf.o_X$.
@@ -334,8 +328,7 @@ The definitions of connected, irreducible, reduced, integral, and
 
 ]
 
-#metadata(none) <sup-xp-10>
-#lemma(number: "XP-10", title: "Quasi-compactness and Noetherian induction")[
+#lemma(key: "sup-xp-10", title: "Quasi-compactness and Noetherian induction")[
   + Every affine scheme is quasi-compact.
 
   + A topological space is Noetherian
@@ -375,8 +368,7 @@ The definitions of connected, irreducible, reduced, integral, and
     this counterexample, including the possibility that it is empty.
 ]
 
-#metadata(none) <sup-xp-11>
-#definition(number: "XP-11", title: "Quasi-separatedness")[
+#definition(key: "sup-xp-11", title: "Quasi-separatedness")[
   Let $Delta_X:X->fiber(X, X, base: ops.spec ZZ)$ be the diagonal.
   A scheme $X$ is quasi-separated if $Delta_X$ is quasi-compact.
   The following conditions are equivalent:
@@ -408,8 +400,7 @@ The definitions of connected, irreducible, reduced, integral, and
     It is therefore not a closed immersion.
 ]
 
-#metadata(none) <sup-xp-12>
-#proposition(number: "XP-12", title: "Normality")[
+#proposition(key: "sup-xp-12", title: "Normality")[
   + A scheme $X$ is normal if and only if $shf.o_(X,x)$ is an integrally
     closed domain for every $x in X$.
 
@@ -450,8 +441,7 @@ The definitions of connected, irreducible, reduced, integral, and
     reducedness and irreducibility give integrality.
 ]
 
-#metadata(none) <sup-xp-13>
-#corollary(number: "XP-13", title: "Finite type and Noetherianity")[
+#corollary(key: "sup-xp-13", title: "Finite type and Noetherianity")[
   A finite-type scheme over a Noetherian scheme is Noetherian.
   Local finite type supplies Noetherian affine charts by the Hilbert basis
   theorem; quasi-compactness supplies a finite affine cover. The distinction
@@ -496,8 +486,7 @@ The definitions of connected, irreducible, reduced, integral, and
 )
 
 #metadata(none) <sup-xp-examples>
-#metadata(none) <sup-xp-14>
-#example(number: "XP-14", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-14", title: "Calculations and counterexamples")[
   In $ops.spec(k[x,y]\/(x y))$, the generic primes are $(x)$ and $(y)$,
   with closures the two axes. Only the component $V(y)$ meets $D(x)$;
   only $V(x)$ meets $D(y)$. Deleting the origin gives a disconnected open
@@ -508,8 +497,7 @@ The definitions of connected, irreducible, reduced, integral, and
   A prime containing $x y$ contains $x$ or $y$, giving precisely the two minimal primes. On $D(x)$ the relation forces $y=0$, and on $D(y)$ it forces $x=0$. The two axes are connected and meet at the origin, so their union is connected; deleting that point leaves two disjoint nonempty opens.
 ]
 
-#metadata(none) <sup-xp-15>
-#example(number: "XP-15", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-15", title: "Calculations and counterexamples")[
   $ops.spec(k[epsilon]\/(epsilon^2))$ has one point, both closed and
   generic, but its local ring is not a field.
 ]
@@ -518,8 +506,7 @@ The definitions of connected, irreducible, reduced, integral, and
   Every prime contains $epsilon$, and the quotient by $(epsilon)$ is $k$. Thus there is just one prime. The element $epsilon$ is nonzero with square zero in the local ring, so this ring is not a field.
 ]
 
-#metadata(none) <sup-xp-16>
-#example(number: "XP-16", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-16", title: "Calculations and counterexamples")[
   The closed points of $sch.a^1_k$ for algebraically closed $k$ are dense
   and omit its generic point. In contrast, a nonfield DVR has one closed
   point and one generic point, and its closed points are not dense.
@@ -529,10 +516,9 @@ The definitions of connected, irreducible, reduced, integral, and
   A nonzero polynomial in one variable has only finitely many roots, whereas an algebraically closed field is infinite. Thus no proper closed subset contains all $k$-points. In a nonfield DVR the only nonzero prime is its maximal ideal, whose singleton is closed and proper.
 ]
 
-#metadata(none) <sup-xp-17>
-#example(number: "XP-17", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-17", title: "Calculations and counterexamples")[
   For $k[s]->k[t]$, $s mapsto t^2$, the generic map is $k(s)->k(t)$
-  with the same substitution. See #book-link(<sup-mg-3>)[MG-3] for the fibers.
+  with the same substitution. See #supplement-link(<sup-mg-3>)[MG-3] for the fibers.
 ]
 
 #proof[
@@ -540,8 +526,7 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #metadata(none) <sup-xp-disjoint-points>
-#metadata(none) <sup-xp-18>
-#example(number: "XP-18", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-18", title: "Calculations and counterexamples")[
   An infinite disjoint union of copies of $ops.spec k$ is locally
   Noetherian but not quasi-compact. Two copies already have an integral
   affine cover without being connected or irreducible.
@@ -551,8 +536,7 @@ The definitions of connected, irreducible, reduced, integral, and
   The components themselves form an open cover with no finite subcover. Each component is a Noetherian affine open. Two components form a disjoint clopen decomposition, which prevents connectedness and irreducibility.
 ]
 
-#metadata(none) <sup-xp-19>
-#example(number: "XP-19", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-19", title: "Calculations and counterexamples")[
   The square-zero ring $k plus.o V$, with $V$ infinite-dimensional and
   $V^2=0$, is not Noetherian, though its spectrum has one point.
 ]
@@ -561,8 +545,7 @@ The definitions of connected, irreducible, reduced, integral, and
   Every prime contains the square-zero ideal $V$ and the quotient is $k$, giving one prime. A generating set for $V$ as an ideal must span it over $k$, since $V$ acts on itself by zero. Thus $V$ is not finitely generated.
 ]
 
-#metadata(none) <sup-xp-20>
-#example(number: "XP-20", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-20", title: "Calculations and counterexamples")[
   For $A=product_(n>=0) bb(F)_2$, every local ring is a field but $A$ is
   not Noetherian. Noetherian stalks do not imply local Noetherianity.
 ]
@@ -576,8 +559,7 @@ The definitions of connected, irreducible, reduced, integral, and
   + *Exclude local Noetherianity.* If the scheme were locally Noetherian, its affine quasi-compactness would give a finite Noetherian affine cover and force $A$ Noetherian, a contradiction.
 ]
 
-#metadata(none) <sup-xp-21>
-#example(number: "XP-21", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-21", title: "Calculations and counterexamples")[
   $ops.spec(k times k)$ is normal and is not integral.
 ]
 

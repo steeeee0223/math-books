@@ -5,14 +5,16 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("AL")
+
 == AL — Algebraic tools for modules <sup-al>
 
 This section contains the
 algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
 #book-link(<sup-se>)[SE], and #book-link(<sup-rv>)[RV].
 
-#metadata(none) <sup-al-1>
-#definition(number: "AL-1", title: "Finiteness conditions")[
+#definition(key: "sup-al-1", title: "Finiteness conditions")[
   An $A$-module is:
 
   + finite if it has finitely many generators;
@@ -21,8 +23,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   + finite projective if it is a direct summand of such a finite free module.
 ]
 
-#metadata(none) <sup-al-2>
-#proposition(number: "AL-2", title: "Relations among finiteness conditions")[
+#proposition(key: "sup-al-2", title: "Relations among finiteness conditions")[
   Let $M$ be an $A$-module.
 
   + If $M$ is finite projective, then $M$ is finitely presented.
@@ -44,8 +45,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     its finite generating set likewise gives the required presentation.
 ]
 
-#metadata(none) <sup-al-3>
-#proposition(number: "AL-3", title: "Localization")[
+#proposition(key: "sup-al-3", title: "Localization")[
   Let $S subset A$ be a multiplicative subset.
 
   + Localization is exact.
@@ -86,8 +86,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     )]
 ]
 
-#metadata(none) <sup-al-4>
-#lemma(number: "AL-4", title: "Localizing Hom")[
+#lemma(key: "sup-al-4", title: "Localizing Hom")[
   For finitely presented $M$ and arbitrary $N$, the canonical map
   $ S^(-1)ops.hom(M, N, over: A) & ->
                                  ops.hom(S^(-1)M, S^(-1)N, over: S^(-1)A), \
@@ -112,8 +111,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     not merely for a finite list of generators of $M$.
 ]
 
-#metadata(none) <sup-al-5>
-#proposition(number: "AL-5", title: "Tensor, Hom, and duality")[
+#proposition(key: "sup-al-5", title: "Tensor, Hom, and duality")[
   Put $M^or=ops.hom(M, A, over: A)$.
 
   + The tensor product represents balanced bilinear maps, with natural adjunction
@@ -130,7 +128,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     is an isomorphism.
 
   The sheaf versions of these duality isomorphisms, obtained on trivializing
-  covers, are proved in #book-link(<sup-sc-11>)[SC-11]. (Ex. II.5.1(a)~(b))
+  covers, are proved in #supplement-link(<sup-sc-11>)[SC-11]. (Ex. II.5.1(a)~(b))
 ]
 
 #proof[
@@ -158,8 +156,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     on the chosen splitting.
 ]
 
-#metadata(none) <sup-al-6>
-#definition(number: "AL-6", title: "Tensor, symmetric, and exterior algebras")[
+#definition(key: "sup-al-6", title: "Tensor, symmetric, and exterior algebras")[
   + The tensor algebra of $M$ is the direct sum of all tensor powers, with
     zeroth power $A$ and multiplication by concatenation. It is universal for
     $A$-linear maps from $M$ to associative unital $A$-algebras.
@@ -206,8 +203,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     )]
 ]
 
-#metadata(none) <sup-al-7>
-#proposition(number: "AL-7", title: "Scalar extension of tensor, symmetric, and exterior algebras")[
+#proposition(key: "sup-al-7", title: "Scalar extension of tensor, symmetric, and exterior algebras")[
   For any $A$-algebra $B$, the canonical graded maps from scalar extension
   of each of these algebras to the corresponding algebra of
   $tensor(B, M, over: A)$ are isomorphisms. The same holds degree by degree.
@@ -240,8 +236,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     the resulting graded isomorphisms restrict to each homogeneous degree.
 ]
 
-#metadata(none) <sup-al-8>
-#proposition(number: "AL-8", title: "Ranks and determinant pairing")[
+#proposition(key: "sup-al-8", title: "Ranks and determinant pairing")[
   + For $M$ free of rank $r$, its $n$-th tensor, symmetric, and exterior powers
     have ranks $r^n$, $binom(r+n-1, n)$, and $binom(r, n)$, respectively, for
     $r>=1$. Degree zero is $A$; for $M=0$, every positive-degree power is zero.
@@ -285,8 +280,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     Thus the canonical pairing is perfect globally.
 ]
 
-#metadata(none) <sup-al-9>
-#proposition(number: "AL-9", title: "Filtrations of powers")[
+#proposition(key: "sup-al-9", title: "Filtrations of powers")[
   For $0->M'->M->M''->0$ with finite projective quotient, filter a power
   of $M$ by the number of factors from $M'$. Use the decreasing filtration
   by at least $p$ such factors; no splitting is chosen in the filtration itself.
@@ -327,8 +321,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     inverses, giving the same assertion for sheaves.
 ]
 
-#metadata(none) <sup-al-10>
-#lemma(number: "AL-10", title: "Nakayama and spreading finite data")[
+#lemma(key: "sup-al-10", title: "Nakayama and spreading finite data")[
   + For a finite module $M$ over a local ring $(A,idl.m)$, generators of
     $M\/idl.m M$ lift to generators of $M$; in particular, $M=idl.m M$
     implies $M=0$.
@@ -337,7 +330,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     is $f in.not idl.p$ such that $M_f$ is free of that same finite rank.
     Finite presentations allow matrices, inverse maps, and their finitely many
     relations at a prime to be realized after one localization. The Noetherian
-    application is #book-link(<sup-se-10>)[SE-10], which solves II.5.7(a).
+    application is #supplement-link(<sup-se-10>)[SE-10], which solves II.5.7(a).
 ]
 
 #proof[
@@ -370,12 +363,11 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     identities on one such principal neighborhood.
 ]
 
-#metadata(none) <sup-al-11>
-#corollary(number: "AL-11", title: "Tensor-invertible finite modules")[
+#corollary(key: "sup-al-11", title: "Tensor-invertible finite modules")[
   Over a Noetherian local ring $A$, if finite modules $M,N$ satisfy
   $tensor(M, N, over: A) simeq A$, then both are free of rank one.
   The following residue-field and Nakayama calculation yields
-  #book-link(<sup-se-12>)[SE-12], which solves II.5.7(c).
+  #supplement-link(<sup-se-12>)[SE-12], which solves II.5.7(c).
 ]
 
 #proof[
@@ -393,8 +385,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
 ]
 
 #metadata(none) <sup-al-examples>
-#metadata(none) <sup-al-12>
-#example(number: "AL-12")[
+#example(key: "sup-al-12")[
   Tensoring the injection $ZZ ->^2 ZZ$ with $ZZ\/2ZZ$ gives a
   zero map between nonzero modules.
 ]
@@ -406,8 +397,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   contains the nonzero class of $1$.
 ]
 
-#metadata(none) <sup-al-13>
-#example(number: "AL-13")[
+#example(key: "sup-al-13")[
   The map $(product_(n>=0) ZZ)[1/2] -> product_(n>=0) ZZ[1/2]$
   is not surjective: $(2^(-n))_n$ has no common bounded denominator.
 ]
@@ -419,8 +409,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   well-defined because each of its coordinates belongs to $ZZ[1/2]$.
 ]
 
-#metadata(none) <sup-al-14>
-#example(number: "AL-14")[
+#example(key: "sup-al-14")[
   Take $M=bigOPlus(ZZ, n>=0)$, $N=ZZ$, and invert $2$.
   Then $ops.hom(M, N)=product_(n>=0) ZZ$, so the Hom localization comparison
   fails by AL-13.
@@ -434,8 +423,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
   the map in AL-13, so its demonstrated failure of surjectivity applies.
 ]
 
-#metadata(none) <sup-al-15>
-#example(number: "AL-15")[
+#example(key: "sup-al-15")[
   The $ZZ$-dual of $ZZ\/2ZZ$ is zero; its evaluation into its
   double dual is not an isomorphism.
 ]

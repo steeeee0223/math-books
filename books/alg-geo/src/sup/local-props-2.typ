@@ -5,6 +5,9 @@
 #import "proof-layout.typ": proof
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("LP2")
+
 == LP2 — Further Locality Criteria <sup-lp2>
 
 This supplement collects the local criteria needed for differentials, regular
@@ -18,13 +21,12 @@ where they occur below; finite type alone does not replace them.
 #book-link(<sup-lp>)[LP's flatness and affine-locality calculus]. LP2-7–LP2-9 use
 #book-link(<sup-al2>)[AL2's regular-sequence algebra] and
 #book-link(<sup-cs-1>)[CS-1's closed-immersion dictionary]. LP2-11–LP2-12 start
-from the definition of relative ampleness in #book-link(<sup-pm-1>)[PM-1];
+from the definition of relative ampleness in #supplement-link(<sup-pm-1>)[PM-1];
 they can be read independently of LP2-1–LP2-9. No argument below uses cohomology.
 
 === Relative smoothness and infinitesimal lifting
 
-#metadata(none) <sup-lp2-1>
-#definition(number: "LP2-1", title: "The three morphism classes")[
+#definition(key: "sup-lp2-1", title: "The three morphism classes")[
   A morphism $f:X -> Y$ is *unramified* if it is locally of finite type and
   its diagonal $X -> fiber(X, X, base: Y)$ is an open immersion. It is *smooth*
   if it is flat, locally of finite presentation, and has geometrically regular
@@ -40,8 +42,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   Smoothness does not assert the existence of a global lift for every $T$.
 ]
 
-#metadata(none) <sup-lp2-2>
-#lemma(number: "LP2-2", title: "The affine algebra used in the criteria")[
+#lemma(key: "sup-lp2-2", title: "The affine algebra used in the criteria")[
   Let $A -> B$ be a finitely presented ring map.
   + The following are equivalent: $B$ is flat over $A$ with geometrically
     regular fibers; every algebra map $B -> C/J$, for an $A$-algebra $C$
@@ -61,7 +62,11 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
     regular if and only if it is regular.
   (Ex. II.8.6, algebraic lifting criterion)
 ]
-#remark(title: "Reader proof: the algebraic criterion")[
+#remark(
+  numbering: none,
+  outlined: false,
+  full-title: [Reader proof: the algebraic criterion],
+)[
   All assertions in LP2-2 are purely commutative-algebraic theorems, and their
   proofs are left to the reader. The existence argument uses the Jacobian
   matrix to correct chosen lifts modulo $J$: Taylor expansion has no terms
@@ -74,8 +79,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   algebraic forms of the criteria.
 ]
 
-#metadata(none) <sup-lp2-3>
-#proposition(number: "LP2-3", title: "Differentials and lifting on schemes")[
+#proposition(key: "sup-lp2-3", title: "Differentials and lifting on schemes")[
   A locally finite type morphism is unramified if and only if
   $Omega_(X\/Y)=0$. A locally finitely presented morphism is étale if and
   only if it is flat and unramified. Smooth morphisms have locally free
@@ -119,8 +123,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   module gluing assertion is left to the reader.
 ]
 
-#metadata(none) <sup-lp2-4>
-#proposition(number: "LP2-4", title: "Standard smooth charts and étale coordinates")[
+#proposition(key: "sup-lp2-4", title: "Standard smooth charts and étale coordinates")[
   Put $B=(A[t_1,dots,t_n]\/ideal(f_1 "," dots "," f_r))_g$ and suppose
   $Delta=ops.det ((partial f_i)/(partial t_j))_(1<=i,j<=r)$ is a unit
   in $B$. Then $ops.spec B -> ops.spec A$ is smooth of relative dimension
@@ -152,8 +155,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   $)]
 ]
 
-#metadata(none) <sup-lp2-5>
-#proposition(number: "LP2-5", title: "Locality, composition, and base change")[
+#proposition(key: "sup-lp2-5", title: "Locality, composition, and base change")[
   Smooth, étale, and unramified morphisms are local on both source and target
   for open covers, and are preserved by composition and arbitrary base change.
 ]
@@ -165,8 +167,8 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   $ops.spec B$ gives local lifts after pulling back that cover to the test
   scheme. Uniqueness glues when required, and local existence requires no
   chosen global gluing. The source and target affine refinements are exactly
-  those of #book-link(<sup-lp-6>)[LP-6];
-  #book-link(<sup-lp-7>)[LP-7] and #book-link(<sup-lp-9>)[LP's affine
+  those of #supplement-link(<sup-lp-6>)[LP-6];
+  #supplement-link(<sup-lp-7>)[LP-7] and #book-link(<sup-lp-9>)[LP's affine
     communication] therefore pass from these covers to arbitrary affine pairs.
   Flatness and finite presentation have the required locality by LP, and
   LP2-2 identifies the resulting class with the geometric definitions.
@@ -189,16 +191,15 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   the reader.
 ]
 
-#metadata(none) <sup-lp2-6>
-#example(number: "LP2-6", title: "What the differential criterion requires")[
+#example(key: "sup-lp2-6", title: "What the differential criterion requires")[
   A finite type scheme over a perfect field is smooth if and only if it is
   regular: field-flatness and finite presentation are automatic, and LP2-2
   identifies regularity with geometric regularity. Over an imperfect field
   this fails. The field $K=k[t]\/ideal(t^p-a)$ of
-  #book-link(<sup-df-9>)[DF-9] is regular, but
+  #supplement-link(<sup-df-9>)[DF-9] is regular, but
   $tensor(K, K, over: k)=K[u]\/ideal(u^p)$ is not regular.
 
-  The power map of #book-link(<sup-df-8>)[DF-8] is étale exactly where its
+  The power map of #supplement-link(<sup-df-8>)[DF-8] is étale exactly where its
   derivative is a unit, with the identity case included. Frobenius is finite
   flat of relative dimension zero with free differentials of rank one;
   LP2-3 therefore rules out smoothness. A useful converse to local freeness
@@ -211,8 +212,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 
 === Local equations and regular immersions
 
-#metadata(none) <sup-lp2-7>
-#proposition(number: "LP2-7", title: "Effective Cartier divisors")[
+#proposition(key: "sup-lp2-7", title: "Effective Cartier divisors")[
   A closed subscheme $D subset X$ is an effective Cartier divisor if and only
   if, on an open cover of $X$, its ideal is generated by one non-zero-divisor.
   This condition is local on $X$, is preserved under open restriction, and
@@ -220,7 +220,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   criterion is that the pulled-back local equation remain a non-zero-divisor.
 ]
 #proof[
-  Use #book-link(<sup-cs-1>)[CS-1] to write the closed immersion on
+  Use #supplement-link(<sup-cs-1>)[CS-1] to write the closed immersion on
   $U=ops.spec A$ as $ops.spec(A/I) -> ops.spec A$. An identification
   $I simeq A$ whose image in $A$ is multiplication by $a$ is equivalent to
   $I=ideal(a)$ and injectivity of multiplication by $a$. This is precisely
@@ -239,8 +239,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   pulling $V(t) subset ops.spec k[t]$ back to itself makes its equation zero.
 ]
 
-#metadata(none) <sup-lp2-8>
-#proposition(number: "LP2-8", title: "Regular immersions")[
+#proposition(key: "sup-lp2-8", title: "Regular immersions")[
   A closed immersion $i:Z arrow.r.hook X$ is *regular* if its ideal is locally
   generated by a regular sequence. This property is local on the ambient
   scheme near $Z$ and local on $Z$ by neighborhoods in $X$. It is preserved
@@ -273,8 +272,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   this closed immersion is not regular.
 ]
 
-#metadata(none) <sup-lp2-9>
-#proposition(number: "LP2-9", title: "Regular closed subschemes and conormal injectivity")[
+#proposition(key: "sup-lp2-9", title: "Regular closed subschemes and conormal injectivity")[
   A closed immersion of a regular locally Noetherian scheme into a regular
   locally Noetherian scheme is regular. In particular a closed immersion
   $i:X arrow.r.hook Y$ of smooth schemes of finite type over a field is
@@ -287,7 +285,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   Both are regular local rings. The local algebra assertion used here is:
   if a Noetherian regular local ring has a regular quotient, its kernel
   is generated by a regular sequence of length $dim R-dim S$.
-  This is #book-link(<sup-al2-12>)[AL2-12], whose purely algebraic proof
+  This is #supplement-link(<sup-al2-12>)[AL2-12], whose purely algebraic proof
   is left to the reader. Choose representatives of the resulting
   generators on an affine neighborhood of $x$. The cokernel of their map
   onto the ideal is finite, and the kernels of the successive multiplication
@@ -314,8 +312,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   cover yields the global sequence. The splitting need not be canonical.
 ]
 
-#metadata(none) <sup-lp2-10>
-#remark(number: "LP2-10", title: "Where the construction comparisons belong")[
+#remark(key: "sup-lp2-10", title: "Where the construction comparisons belong")[
   #book-link(<sup-pj2>)[PJ2] constructs the affine charts and base-change
   isomorphism for relative Proj. Over a Noetherian base, a finitely generated
   graded algebra generated in degree one has standard charts finitely
@@ -334,8 +331,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 
 === A fixed line bundle and relative positivity
 
-#metadata(none) <sup-lp2-11>
-#proposition(number: "LP2-11", title: "Locality of relative ampleness")[
+#proposition(key: "sup-lp2-11", title: "Locality of relative ampleness")[
   Let $f:X -> Y$ be of finite type between Noetherian schemes, and fix one
   invertible sheaf $shf.l$ on $X$. Relative ampleness of $shf.l$ is local
   on the target. Positive powers and open restrictions
@@ -344,7 +340,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   the definition may be checked on an affine open cover of the target.
 ]
 #proof[
-  Use the affine-cover definition of #book-link(<sup-pm-1>)[PM-1].
+  Use the affine-cover definition of #supplement-link(<sup-pm-1>)[PM-1].
   Restricting an ample sheaf to an open subscheme preserves ampleness by
   II.5. Refining target covers by affine opens therefore proves target
   locality. We must additionally show that the fixed $shf.l$ is ample over
@@ -389,8 +385,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   #book-link(<sup-pm>)[PM] and #book-link(<sup-lp>)[LP].
 ]
 
-#metadata(none) <sup-lp2-12>
-#proposition(number: "LP2-12", title: "Spreading from the entire local base")[
+#proposition(key: "sup-lp2-12", title: "Spreading from the entire local base")[
   Let $f:X -> Y$ be proper with $Y$ Noetherian, let $y in Y$, and let
   $shf.l$ be an invertible sheaf on $X$. Write
   $X_y^"loc"=fiber(X, ops.spec shf.o_(Y,y), base: Y)$.
@@ -430,7 +425,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   its graph is closed because projective space is separated, and projection
   from the graph is proper by base change of $X_y^"loc" -> ops.spec A_idl.p$.
   A proper immersion is a closed immersion, by the immersion criterion in
-  #book-link(<sup-lp-50>)[LP-50]. Spread these sections as just above; after
+  #supplement-link(<sup-lp-50>)[LP-50]. Spread these sections as just above; after
   shrinking they generate and give
   $h:X_V -> sch.p_V^N$ with $h^*shf.o (1)=shf.l^n$.
 
@@ -471,7 +466,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   both its denominator and the equality asserting it is a preimage.
   Surjectivity then holds before localization on a further common target
   neighborhood. This finite-presentation calculation is also left to the
-  reader. By #book-link(<sup-cs-1>)[CS-1], each chart map is a closed
+  reader. By #supplement-link(<sup-cs-1>)[CS-1], each chart map is a closed
   immersion. They all restrict from the same $h$, hence agree on overlaps,
   and target locality for closed immersions proves that $h$ is a closed
   immersion. Properness was used to remove the support of the evaluation

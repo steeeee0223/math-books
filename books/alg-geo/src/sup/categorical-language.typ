@@ -5,12 +5,14 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("CAT")
+
 == CAT — Categorical language <sup-cat>
 
 The constructions below use categories and functors in their usual sense. Only small diagrams are considered. The existence of a limit or colimit must be checked in the category in use.
 
-#metadata(none) <sup-cat-1>
-#definition(number: "CAT-1", title: "Natural transformations")[
+#definition(key: "sup-cat-1", title: "Natural transformations")[
   + For functors $F,G:C->D$, a natural transformation $alpha:F->G$ is a family
     $alpha_X:F(X)->G(X)$ satisfying
     $G(u) compose alpha_X=alpha_Y compose F(u)$ for every $u:X->Y$.
@@ -32,8 +34,7 @@ The constructions below use categories and functors in their usual sense. Only s
   + For presheaves, naturality is compatibility with restriction maps.
 ]
 
-#metadata(none) <sup-cat-2>
-#definition(number: "CAT-2", title: "Universal properties")[
+#definition(key: "sup-cat-2", title: "Universal properties")[
   A universal object is specified together with its structure maps and a unique factorization property.
 
   For localization, the unique factorization has the form
@@ -49,8 +50,7 @@ The constructions below use categories and functors in their usual sense. Only s
   The dashed arrow denotes the map whose existence and uniqueness are asserted.
 ]
 
-#metadata(none) <sup-cat-3>
-#proposition(number: "CAT-3", title: "Uniqueness of universal objects")[
+#proposition(key: "sup-cat-3", title: "Uniqueness of universal objects")[
   + Two solutions of the same universal problem have a unique isomorphism preserving those maps. This does not assert that the underlying object has no other automorphisms.
   + For a multiplicative subset $S$ of a ring $A$, the map $A->S^(-1)A$ is initial among ring maps from $A$ sending every element of $S$ to a unit: any such $A->B$ factors uniquely through $S^(-1)A$.
 ]
@@ -69,8 +69,7 @@ The constructions below use categories and functors in their usual sense. Only s
     If $a/s=a'/s'$, some $t in S$ satisfies $t(s' a-s a')=0$. Applying $phi$ and cancelling its unit factors proves that the displayed values agree. The fraction formulas for addition and multiplication make $overline(phi)$ a ring map. It extends $phi$, and every extension must map $a/s$ to that value. This proves existence and uniqueness, including the case where the localization is the zero ring.
 ]
 
-#metadata(none) <sup-cat-4>
-#definition(number: "CAT-4", title: "Objects, products, and coproducts")[
+#definition(key: "sup-cat-4", title: "Objects, products, and coproducts")[
 
   + An initial object has exactly one morphism to each object.
   + A terminal object has exactly one morphism from each object.
@@ -86,8 +85,7 @@ The constructions below use categories and functors in their usual sense. Only s
     ] Reversing the arrows gives the coproduct property.
 ]
 
-#metadata(none) <sup-cat-5>
-#example(number: "CAT-5", title: "Products and coproducts in familiar categories")[
+#example(key: "sup-cat-5", title: "Products and coproducts in familiar categories")[
   + In sets, these constructions are cartesian product and disjoint union.
 
   + For $cat.ab$, finite direct sums are both products and coproducts;
@@ -95,7 +93,7 @@ The constructions below use categories and functors in their usual sense. Only s
 
   + For $cat.ring$, the product is the componentwise ring and the binary coproduct is $tensor(A, B, over: ZZ)$.
 
-  + In $cat.sch$, the empty scheme is initial and $ops.spec ZZ$ is terminal; see #book-link(<sup-xl-2>)[XL-2].
+  + In $cat.sch$, the empty scheme is initial and $ops.spec ZZ$ is terminal; see #supplement-link(<sup-xl-2>)[XL-2].
 ]
 
 #proof[
@@ -107,11 +105,10 @@ The constructions below use categories and functors in their usual sense. Only s
 
   + *Rings.* A map into a product of rings is similarly a tuple of ring maps. Given ring maps $u:A->R$ and $v:B->R$ into a ring, the balanced map $(a,b) mapsto u(a)v(b)$ induces $tensor(A, B, over: ZZ)->R$; pure tensors generate it and their products show that this is the unique ring map extending both.
 
-  + *Schemes.* The assertions for schemes follow from the global-sections bijection in #book-link(<sup-xl-2>)[XL-2] and its unique map $ZZ->Gamma(X, shf.o_X)$; there is a unique morphism from the empty scheme because both its point map and sheaf map are forced.
+  + *Schemes.* The assertions for schemes follow from the global-sections bijection in #supplement-link(<sup-xl-2>)[XL-2] and its unique map $ZZ->Gamma(X, shf.o_X)$; there is a unique morphism from the empty scheme because both its point map and sheaf map are forced.
 ]
 
-#metadata(none) <sup-cat-6>
-#definition(number: "CAT-6", title: "Limits and colimits")[
+#definition(key: "sup-cat-6", title: "Limits and colimits")[
   + For a diagram $D:I->C$, a cone with vertex $T$ consists of maps $T->D(i)$ compatible with every arrow of $I$. A limit is a cone through which every cone factors uniquely.
 
   + A cocone consists of maps $D(i)->T$; a colimit is a cocone with the dual unique factorization property.
@@ -145,8 +142,7 @@ The constructions below use categories and functors in their usual sense. Only s
   + *Dualize to colimits.* For colimits, compose $D(i)->E(i)$ with the colimit injections of $E$ and apply the dual argument.
 ]
 
-#metadata(none) <sup-cat-7>
-#definition(number: "CAT-7", title: "Directed and inverse systems")[
+#definition(key: "sup-cat-7", title: "Directed and inverse systems")[
   + A directed poset is nonempty, and every finite subset has an upper bound.
 
   + A direct system has maps $M_i->M_j$ for $i<=j$, with identity and composition compatibility; an inverse system has maps $M_j->M_i$. Their direct and inverse limits mean the corresponding colimit and limit.
@@ -154,8 +150,7 @@ The constructions below use categories and functors in their usual sense. Only s
   + A category is filtered when it is nonempty, any two objects map to a common object, and any two parallel arrows become equal after a further arrow.
 ]
 
-#metadata(none) <sup-cat-8>
-#lemma(number: "CAT-8", title: "Equality in a filtered colimit")[
+#lemma(key: "sup-cat-8", title: "Equality in a filtered colimit")[
   Let $D:I->C$ be a filtered diagram of sets or modules, with colimit maps $iota_i:D(i)->ops.colim D$. For $x in D(i)$ and $y in D(j)$, the equality $iota_i(x)=iota_j(y)$ holds if and only if there are an object $k$ and arrows $a:i->k$, $b:j->k$ such that $D(a)(x)=D(b)(y)$.
 
   For a directed poset, this means that the two representatives become equal at some stage $k>=i,j$. The criterion does not apply to arbitrary colimits.
@@ -173,13 +168,11 @@ The constructions below use categories and functors in their usual sense. Only s
   + *Add the module structure.* For modules, define addition by sending two representatives to a common object and adding there; define scalar multiplication in any representative. To compare two choices, send their objects to a common object and equalize the finitely many parallel arrows. This proves independence of choices and all module identities (Check!). Compatible linear maps descend uniquely to the quotient, so this is also the module colimit, with exactly the asserted equality relation. For a directed poset, all parallel arrows are already equal.
 ]
 
-#metadata(none) <sup-cat-9>
-#definition(number: "CAT-9", title: "Adjunctions")[
+#definition(key: "sup-cat-9", title: "Adjunctions")[
   An adjunction $L:C->D$, $R:D->C$ is a bijection $ ops.hom(L(X), Y) simeq ops.hom(X, R(Y)), $ natural in $X,Y$.
 ]
 
-#metadata(none) <sup-cat-10>
-#proposition(number: "CAT-10", title: "Unit, counit, and preservation of limits")[
+#proposition(key: "sup-cat-10", title: "Unit, counit, and preservation of limits")[
   + The identity maps give the unit $eta_X:X->R(L(X))$ and counit
     $epsilon_Y:L(R(Y))->Y$.
 

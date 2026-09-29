@@ -55,7 +55,7 @@
     very ample for every sufficiently large $n$.
 ]
 
-For an application of (d), see #book-link(<sup-pm-4>)[PM-4].
+For an application of (d), see #supplement-link(<sup-pm-4>)[PM-4].
 
 // Hartshorne II.7, Exercise 7.6
 #exercise(title: "Exercise 7.6 (The Riemann–Roch Problem)")[
@@ -111,7 +111,7 @@ For an application of (d), see #book-link(<sup-pm-4>)[PM-4].
     locally free sheaves modulo $shf.e equiv shf.e times.o shf.l$ with $shf.l$ invertible.
 ]
 
-See #book-link(<sup-pj2-6>)[PJ2-6] (twisting) and #book-link(<sup-pj2-7>)[PJ2-7] (ruled-surface transitions).
+See #supplement-link(<sup-pj2-6>)[PJ2-6] (twisting) and #supplement-link(<sup-pj2-7>)[PJ2-7] (ruled-surface transitions).
 
 // Hartshorne II.7, Exercise 7.11
 #metadata(none) <exercise-ii-7-11>
@@ -125,7 +125,7 @@ See #book-link(<sup-pj2-6>)[PJ2-6] (twisting) and #book-link(<sup-pj2-7>)[PJ2-7]
     which $f$ is an isomorphism, choose the center with support $X-U$.
 ]
 
-For the Rees charts, see #book-link(<sup-bu-2>)[BU-2]; for Veronese and twisting tools, see #book-link(<sup-pj2-9>)[PJ2-9] and #book-link(<sup-pj2-6>)[PJ2-6].
+For the Rees charts, see #supplement-link(<sup-bu-2>)[BU-2]; for Veronese and twisting tools, see #supplement-link(<sup-pj2-9>)[PJ2-9] and #supplement-link(<sup-pj2-6>)[PJ2-6].
 
 // Hartshorne II.7, Exercise 7.12
 #exercise(title: "Exercise 7.12")[
@@ -153,7 +153,7 @@ For the Rees charts, see #book-link(<sup-bu-2>)[BU-2]; for Veronese and twisting
     projective.
 ]
 
-See #book-link(<sup-lp-53>)[LP-53].
+See #supplement-link(<sup-lp-53>)[LP-53].
 
 // Hartshorne II.7, Exercise 7.14
 #exercise(title: "Exercise 7.14")[

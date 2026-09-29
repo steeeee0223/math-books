@@ -4,6 +4,9 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
+#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#supplement-numbering("XL")
+
 == XL — Scheme locality and gluing <sup-xl>
 
 Use the affine structure sheaf and functoriality of spectrum in
@@ -17,8 +20,7 @@ II.2.16 using a finite affine cover with quasi-compact overlaps is enough
 for this first reading; no diagonal criterion is needed. Return to XL-8
 with the affine pushforward formula of II.5.2.
 
-#metadata(none) <sup-xl-1>
-#proposition(number: "XL-1", title: "Open subschemes")[
+#proposition(key: "sup-xl-1", title: "Open subschemes")[
   For $X=ops.spec A$ and $f in A$, localization induces an isomorphism
   $(D(f),shf.o_X|_(D(f))) simeq ops.spec A_f$.
   For every open subset $U$ of a scheme $X$, the restricted locally ringed
@@ -71,8 +73,7 @@ with the affine pushforward formula of II.5.2.
   In particular, its stalks are the same local rings as those of $X$.
 ]
 
-#metadata(none) <sup-xl-2>
-#proposition(number: "XL-2", title: "Morphisms into an affine scheme")[
+#proposition(key: "sup-xl-2", title: "Morphisms into an affine scheme")[
   + For any scheme $X$ and ring $A$, taking global sections gives the natural
     bijection $ ops.hom(X, ops.spec A, over: cat.sch) simeq
     ops.hom(A, Gamma(X, shf.o_X), over: cat.ring). $
@@ -102,13 +103,12 @@ with the affine pushforward formula of II.5.2.
   + *Identify the terminal and initial schemes.* There is a unique unital ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$ terminal. Its primes and their inclusions are the elementary arithmetic description of $ops.spec ZZ$ (Check!). The zero ring has no prime ideals, and the empty locally ringed space has exactly one morphism to every scheme, including itself (Check!). Thus its spectrum is initial.
 ]
 
-#metadata(none) <sup-xl-3>
-#lemma(number: "XL-3", title: "Gluing scheme morphisms")[
+#lemma(key: "sup-xl-3", title: "Gluing scheme morphisms")[
   + For an open cover $X=union_i U_i$, morphisms $U_i->Y$ agreeing on the
     open subschemes $U_i inter U_j$ glue to a unique scheme morphism $X->Y$.
 
   + The gluing data consist of continuous maps and compatible maps of structure
-    sheaves. The latter glue by #book-link(<sup-sl-3>)[SL-3], and their induced
+    sheaves. The latter glue by #supplement-link(<sup-sl-3>)[SL-3], and their induced
     stalk maps are local homomorphisms.
 
   + Equality of scheme morphisms may thus
@@ -135,8 +135,7 @@ with the affine pushforward formula of II.5.2.
     uniqueness. In particular, no affineness assumption on the overlaps is needed.
 ]
 
-#metadata(none) <sup-xl-4>
-#proposition(number: "XL-4", title: "Gluing schemes")[
+#proposition(key: "sup-xl-4", title: "Gluing schemes")[
   Let $X_i$ be schemes, let $U_(i j)$ be open subschemes of $X_i$ with
   $U_(i i)=X_i$, and let $phi_(i j):U_(i j)->U_(j i)$ be isomorphisms.
   Assume $phi_(i i)=ops.id$, $phi_(j i)=phi_(i j)^(-1)$, and
@@ -192,8 +191,7 @@ with the affine pushforward formula of II.5.2.
     componentwise structure sheaf.
 ]
 
-#metadata(none) <sup-xl-5>
-#lemma(number: "XL-5", title: "Target-cover criterion for isomorphisms")[
+#lemma(key: "sup-xl-5", title: "Target-cover criterion for isomorphisms")[
   + For a fixed $f:X->Y$ and an open cover $V_i$ of $Y$, if every restricted
     map $f^(-1)(V_i)->V_i$ is an isomorphism, then $f$ is an isomorphism.
     (Ex. II.2.17(a))
@@ -225,8 +223,7 @@ with the affine pushforward formula of II.5.2.
   although each source component maps isomorphically.
 ]
 
-#metadata(none) <sup-xl-6>
-#proposition(number: "XL-6", title: "Global principal opens")[
+#proposition(key: "sup-xl-6", title: "Global principal opens")[
   For $f in A=Gamma(X, shf.o_X)$, write $X_f$ for the locus where $f_x$
   is a unit.
 
@@ -313,8 +310,7 @@ with the affine pushforward formula of II.5.2.
 
 ]
 
-#metadata(none) <sup-xl-7>
-#proposition(number: "XL-7", title: "Recognizing affine schemes")[
+#proposition(key: "sup-xl-7", title: "Recognizing affine schemes")[
   A scheme $X$ is affine if and only if there are finitely many
   $f_i in A=Gamma(X, shf.o_X)$ generating the unit ideal such that every
   $X_(f_i)$ is affine. Under these conditions, the canonical morphism
@@ -356,23 +352,22 @@ with the affine pushforward formula of II.5.2.
 
 ]
 
-#metadata(none) <sup-xl-8>
-#remark(number: "XL-8", title: "Affine ring maps and principal-open index")[
+#remark(key: "sup-xl-8", title: "Affine ring maps and principal-open index")[
   For $phi:A->B$ and $f:ops.spec B->ops.spec A$, the map $phi$ is
   injective if and only if $shf.o_(ops.spec A)->f_*shf.o_(ops.spec B)$ is
   injective. The canonical identification uses the affine pushforward formula
   of #book-link(<text-ii-5>)[II.5, Proposition 5.2]. Surjectivity and closed
-  immersions are indexed in #book-link(<sup-cs-1>)[CS-1]; dominance is
-  distinguished from injectivity in #book-link(<sup-xp-6>)[XP-6].
+  immersions are indexed in #supplement-link(<sup-cs-1>)[CS-1]; dominance is
+  distinguished from injectivity in #supplement-link(<sup-xp-6>)[XP-6].
 
   For II.2.A and II.2.18(a), the following is a lookup index:
 
   + Empty $D(f)$, units, and the empty spectrum: the spectrum and localization formulas of #book-link(<text-ii-2>)[II.2, Lemma 2.1 and Proposition 2.2].
-  + Radical ideals and closed subsets: II.2, Lemma 2.1; see also #book-link(<sup-cs-4>)[CS-4] for their reduced structures.
-  + Quasi-compact distinguished opens: #book-link(<sup-xl-1>)[XL-1] and #book-link(<sup-xp-10>)[XP-10].
-  + Closed points and maximal ideals: #book-link(<sup-xp-3>)[XP-3].
+  + Radical ideals and closed subsets: II.2, Lemma 2.1; see also #supplement-link(<sup-cs-4>)[CS-4] for their reduced structures.
+  + Quasi-compact distinguished opens: #supplement-link(<sup-xl-1>)[XL-1] and #supplement-link(<sup-xp-10>)[XP-10].
+  + Closed points and maximal ideals: #supplement-link(<sup-xp-3>)[XP-3].
 
-  For II.3.1–II.3.4, use #book-link(<sup-lp>)[the locality calculus]. Intersections of affine charts need not be affine; #book-link(<sup-mg-8>)[MG-8] gives a separatedness hypothesis and an example where it fails.
+  For II.3.1–II.3.4, use #book-link(<sup-lp>)[the locality calculus]. Intersections of affine charts need not be affine; #supplement-link(<sup-mg-8>)[MG-8] gives a separatedness hypothesis and an example where it fails.
 ]
 
 #proof[
