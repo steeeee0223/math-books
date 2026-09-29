@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 #import cosmos.clouds: *
 #show: show-theorion
@@ -12,7 +12,7 @@
   ring $shf.o_(X,x)$ is regular.
 ]
 
-#emph-box()[
+#emph-block()[
   *Axiom $(star)$.* Throughout this section, $X$ is a Noetherian, integral,
   separated scheme, which is regular in codimension $1$, i.e. every local ring
   $shf.o_x$ of dimension $1$ is regular.
@@ -255,7 +255,7 @@
   $
 ]
 
-#lemma-box(title: "Fact 6.A")[
+#lemma-box(outlined: false, full-title: "Fact 6.A")[
   Let $X$ be a scheme satisfying $(star)$, and let $x in X$. Then
   $
     x text(" is not in any prime divisor ") Y text(" of ") X \

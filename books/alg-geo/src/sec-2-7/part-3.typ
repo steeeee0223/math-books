@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 #import cosmos.clouds: *
 #show: show-theorion
@@ -6,7 +6,7 @@
 #set enum(numbering: n => [])
 
 === Linear Systems
-#emph-box()[
+#emph-block()[
   Throughout this subsection, we always assume $X$ is a _nonsingular_ (all local rings are regular) projective variety over an algebraically closed field $k$. Then,
   - Recall that _regular_ $Rightarrow$ UFD, so $X$ is nonsingular implies that $X$ is locally factorial. By _(6.11)_, we have $ops.div (X) simeq ops.cdiv (X)$, and $ops.cl (X) simeq ops.cacl (X)$.
   - As $X$ is integral, $ops.cl (X) simeq ops.pic (X)$ by _(6.15)_.
@@ -61,7 +61,7 @@
   A point $P in X$ is a _base point_ of a linear system $idl.d$ if $P in ops.supp D$ for every $D in idl.d$. Here, $ops.supp D$ denotes the set $ops.supp D=union.big{Y subset X:text(" prime divisor of ") D}$.
 ]
 
-#lemma-box(title: "Fact 7.C")[
+#lemma-box(outlined: false, full-title: "Fact 7.C")[
   For any nonzero $s in Gamma(X, shf.l)$, the support $ops.supp (s)_0=X without X_s$, where $X_s$ denotes the open subset $X_s={P in X:s_P in.not idl.m_P shf.l_P}$.
 ]
 #proof[

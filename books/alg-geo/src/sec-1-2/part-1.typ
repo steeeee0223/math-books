@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import cosmos.clouds: *
 #show: show-theorion
 #import "../defs.typ": *
@@ -49,7 +49,7 @@
   homeomorphic under $phi_i$ to affine (respectively quasi-affine) varieties.
 ]
 
-#note-box(title: "Notations (Localizations of Graded Rings)")[
+#note-block(title: "Notations (Localizations of Graded Rings)")[
   Let $S$ be any graded ring, $f in S$ a homogeneous element, and
   $idl.p lt.closed S$ a homogeneous prime ideal.
 
@@ -63,7 +63,7 @@
     We denote $S_((idl.p)) := (S_idl.p)_0$.
 ]
 
-#lemma-box(title: "Fact 2.A")[
+#lemma-box(outlined: false, full-title: "Fact 2.A")[
   For any graded ring $S$ and any homogeneous element $f in S^h$,
   we have a natural isomorphism:
   $ S_f simeq S_((f))[f,f^(-1)]. $

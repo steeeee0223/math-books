@@ -1,10 +1,10 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import cosmos.clouds: *
 #show: show-theorion
 #import "../defs.typ": *
 
 // --- Summary block ---
-#emph-box()[
+#emph-block()[
   *Reference.*
 
   - _Introduction to Commutative Algebra_ – Atiyah & MacDonald
@@ -68,7 +68,7 @@
 
 
 // Hartshorne I.1, Theorem 1.3A
-#theorem-box(title: "Theorem 1.3A (Hilbert’s Nullstellensatz).")[
+#theorem-box(outlined: false, full-title: "Theorem 1.3A (Hilbert’s Nullstellensatz).")[
   Let $k$ be an algebraically closed field, and let $idl.a$ be an ideal in
   $A = k[x_1, ..., x_n]$, and let $f in A$ be a polynomial which vanishes at all points
   of $Z(idl.a)$, i.e. $f in I(Z(idl.a))$. Then $f^r in idl.a$ for some integer $r > 0$.
@@ -198,7 +198,8 @@
 
 // Hartshorne I.1, Theorem 1.11A
 #theorem-box(
-  title: "Theorem 1.11A (Krull’s Hauptidealsatz).",
+  outlined: false,
+  full-title: "Theorem 1.11A (Krull’s Hauptidealsatz).",
 )[
   Let $A$ be a Noetherian ring, and $f in A$ be an element which is neither a zero divisor nor a unit. Then every minimal prime ideal $idl.p lt.closed A$ containing $f$ has height $1$.
 ]

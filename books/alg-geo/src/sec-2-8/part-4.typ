@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 #import cosmos.clouds: *
 #show: show-theorion

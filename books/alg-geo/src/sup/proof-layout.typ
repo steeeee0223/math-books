@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": proof as theorion-proof
+#import "@preview/theorion:0.6.0": proof as theorion-proof
 
 #let paragraph-text(it) = {
   if it.has("text") { it.text }

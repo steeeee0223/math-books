@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 #import cosmos.clouds: *
 #show: show-theorion
@@ -108,7 +108,7 @@
   ($Leftarrow$) Suppose (1) and (2) are satisfied. Then the morphism $phi:X_i -> U_i$ is a closed immersion by _[2.18c]_ (since $phi_i$ is induced by $f_i$). Note that $X_i=phi^(-1) (U_i)$ covers $X$ and that _closed immersions are local on the base_, so $phi:X -> sch.p_A^n$ is a closed immersion.
 ]
 
-#lemma-box(title: "Fact 7.A")[
+#lemma-box(outlined: false, full-title: "Fact 7.A")[
   Let $X arrow.r.long^(f)Y$ be a closed morphism of schemes of finite type over any field $k$. Then,
   $ f text(" is injective ") arrow.l.r.double.long f text(" is injective on closed points"). $
 ]

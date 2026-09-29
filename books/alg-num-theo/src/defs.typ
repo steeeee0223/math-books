@@ -1,7 +1,7 @@
 // Shared math definitions for Arithmetic Curves & Algebraic Number Theory.
 
-#import "@preview/theorion:0.4.0": note-box
-#import "@preview/theorion:0.4.0" as theorion
+#import "@preview/theorion:0.6.0": note-block
+#import "@preview/theorion:0.6.0" as theorion
 
 #let environment-title(kind, number: none, title: none) = {
   if title != none and number != none {
@@ -15,41 +15,43 @@
   }
 }
 
-#let example(body, number: none, title: none) = theorion.example(
-  title: environment-title([Example], number: number, title: title),
+#let example(body, number: none, title: none) = theorion.example-box(
+  outlined: false,
+  full-title: environment-title([Example], number: number, title: title),
   body,
 )
 
-#let exercise(body, number: none, title: none) = theorion.exercise(
-  title: environment-title([Exercise], number: number, title: title),
+#let exercise(body, number: none, title: none) = theorion.exercise-box(
+  outlined: false,
+  full-title: environment-title([Exercise], number: number, title: title),
   body,
 )
 
-#let remark(body, number: none, title: none) = theorion.remark(
+#let remark(body, number: none, title: none) = theorion.remark-block(
   title: environment-title([Remark], number: number, title: title),
   body,
 )
 
 #let notation(body, number: none, title: none) = {
   let label = if title != none { title } else if number != none { [Notation #number] } else { [Notation] }
-  note-box(title: label, body)
+  note-block(title: label, body)
 }
 
 #let note(body, number: none, title: none) = {
   let label = if title != none { title } else if number != none { [Note #number] } else { [Note] }
-  note-box(title: label, body)
+  note-block(title: label, body)
 }
 
 #let motivation(body, number: none, title: none) = {
-  note-box(title: environment-title([Motivation], number: number, title: title), body)
+  note-block(title: environment-title([Motivation], number: number, title: title), body)
 }
 
 #let proofthm(body, number: none, title: none) = {
-  note-box(title: environment-title([Proof], number: number, title: title), body)
+  note-block(title: environment-title([Proof], number: number, title: title), body)
 }
 
 #let summary-box(body, title: none) = {
-  note-box(title: if title == none { [Summary] } else { title }, body)
+  note-block(title: if title == none { [Summary] } else { title }, body)
 }
 
 #let ideal(x) = $lr(chevron.l #x chevron.r)$

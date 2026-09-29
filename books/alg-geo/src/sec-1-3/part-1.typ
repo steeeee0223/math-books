@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.4.0": *
+#import "@preview/theorion:0.6.0": *
 #import cosmos.clouds: *
 #show: show-theorion
 #import "../defs.typ": *
@@ -137,7 +137,7 @@
 ]
 
 
-#lemma-box(title: "Fact 3.A")[
+#lemma-box(outlined: false, full-title: "Fact 3.A")[
   Let $A$ be an integral domain with $K = ops.frac A$.
   Then, for any prime ideal $idl.p lt.closed A$, $A_idl.p$ can be viewed as a subring of $K$, and
   $ A = { A_idl.p : idl.p lt.closed A text("prime ideal") } = { A_idl.m : idl.m lt.closed A text("maximal ideal") }. $
@@ -146,7 +146,7 @@
 #proof[ (Matsumura, Lemma 2, p.8).
   The containment $subset$ is clear, as $A$ is an integral domain. ]
 
-#lemma-box(title: "Fact 3.B")[
+#lemma-box(outlined: false, full-title: "Fact 3.B")[
   Fix a graded ring $S$. Recall that for any homogeneous prime ideal $idl.p lt.closed S$,
   the localization $S_idl.p$ is a graded $S$-module, which is also a local ring with maximal ideal $idl.p S_idl.p$.
 
