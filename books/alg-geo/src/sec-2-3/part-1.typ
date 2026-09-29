@@ -18,7 +18,7 @@
 // Hartshorne II.3, Definition D3
 #definition(number: none, title: "Integral Scheme")[
   A scheme $X$ is *integral* when $shf.o_X (U)$ is an integral domain for every
-  open $U subset.eq X$.
+  open $U subset X$.
 ]
 
 // Hartshorne II.3, Proposition 3.1
@@ -37,8 +37,8 @@
 // Hartshorne II.3, Proposition 3.2
 #proposition(number: "3.2")[
   A scheme $X$ is locally noetherian if and only if every open affine
-  $U=ops.spec A subset.eq X$ has $A$ noetherian. In particular, an affine scheme
-  $ops.spec A$ is noetherian exactly when $A$ is noetherian.
+  $U=ops.spec A subset X$ has $A$ noetherian. In particular, an affine scheme
+  $ops.spec A$ is noetherian if and only if $A$ is noetherian.
 ]
 
 

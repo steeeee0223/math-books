@@ -15,14 +15,14 @@ Use the definitions and stalkwise isomorphism criterion of
 
   #set enum(spacing: 0.8em)
 
-  + For $s in shf.f (U)$, $t in shf.f (V)$, and $x in U inter V$,
+  + For $s in shf.f\(U)$, $t in shf.f\(V)$, and $x in U inter V$,
     $s_x=t_x$ if and only if their restrictions agree on some open
     neighborhood of $x$ contained in $U inter V$. Finitely many equalities
     of germs at $x$ can be realized on one neighborhood; infinitely many
     need not admit such a common neighborhood.
 
-  + For an open subset $U subset.eq X$, an open cover $U=union_i U_i$,
-    and sections $s,t in shf.f (U)$, the following conditions are equivalent:
+  + For an open subset $U subset X$, an open cover $U=union_i U_i$,
+    and sections $s,t in shf.f\(U)$, the following conditions are equivalent:
 
     + $s=t$.
     + $s|_(U_i)=t|_(U_i)$ for every $i$.
@@ -79,12 +79,12 @@ Use the definitions and stalkwise isomorphism criterion of
 
   Then these data extend to a sheaf $F^e$ on $X$, unique up to the unique
   isomorphism preserving the specified basis data. For each open subset
-  $U subset.eq X$, $F^e (U)$ consists of the compatible families
-  $(s_B)_(B in cal(B), B subset.eq U)$, where $s_B in F(B)$.
-  For open subsets $V subset.eq U$, the restriction map is
+  $U subset X$, $F^e (U)$ consists of the compatible families
+  $(s_B)_(B in cal(B), B subset U)$, where $s_B in F(B)$.
+  For open subsets $V subset U$, the restriction map is
   $
-                    rho_(U V): F^e (U) & -> F^e (V), \
-    (s_B)_(B in cal(B), B subset.eq U) & mapsto (s_B)_(B in cal(B), B subset.eq V).
+                 rho_(U V): F^e (U) & -> F^e (V), \
+    (s_B)_(B in cal(B), B subset U) & mapsto (s_B)_(B in cal(B), B subset V).
   $
 
   Every family of maps between two such sets of basis data that commutes
@@ -93,20 +93,20 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
 
-  + *Construct the extension.* For an open $U$, let $F^e (U)$ consist of families $(s_B)_(B subset.eq U)$,
+  + *Construct the extension.* For an open $U$, let $F^e (U)$ consist of families $(s_B)_(B subset U)$,
     where $s_B in F(B)$ and restriction sends $s_B$ to $s_C$ whenever
-    $C subset.eq B$. For $V subset.eq U$, define $rho_(U V)$ by the formula
+    $C subset B$. For $V subset U$, define $rho_(U V)$ by the formula
     above. The resulting family is compatible because every basis open
     contained in $V$ is also contained in $U$. Moreover,
     $rho_(U U)=ops.id$ and
     $rho_(U W)=rho_(V W) compose rho_(U V)$ whenever
-    $W subset.eq V subset.eq U$. Thus $F^e$ is a presheaf.
+    $W subset V subset U$. Thus $F^e$ is a presheaf.
 
   + *Verify the sheaf axiom.* Given compatible such
-    families on a cover $U_i$ of $U$, cover each basis open $B subset.eq U$
-    by basis opens $C subset.eq B inter U_i$. Their specified sections agree
+    families on a cover $U_i$ of $U$, cover each basis open $B subset U$
+    by basis opens $C subset B inter U_i$. Their specified sections agree
     on every basis open in an overlap. Basis gluing gives a unique $s_B$.
-    For $B' subset.eq B$, uniqueness on a basis cover of $B'$ identifies the
+    For $B' subset B$, uniqueness on a basis cover of $B'$ identifies the
     restriction of $s_B$ with $s_(B')$. Thus the $s_B$ form the desired family,
     and the same uniqueness proves the sheaf axiom for $F^e$.
 
@@ -136,12 +136,12 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
 
-  + *Glue the images of sections.* For $s in shf.f (V)$, the sections
+  + *Glue the images of sections.* For $s in shf.f\(V)$, the sections
     $u_i\(s|_(V inter U_i))$ agree on the overlaps $V inter U_i inter U_j$.
     Glue them in $shf.g$ and call the result $u_V\(s)$.
 
   + *Check restriction compatibility.* To compare restriction
-    to $W subset.eq V$ with $u_W\(s|_W)$, restrict both to $W inter U_i$;
+    to $W subset V$ with $u_W\(s|_W)$, restrict both to $W inter U_i$;
     they are equal there by the naturality of $u_i$, hence equal on $W$.
     Thus the $u_V$ define a sheaf morphism.
 
@@ -176,7 +176,7 @@ Use the definitions and stalkwise isomorphism criterion of
 
 #proof[
 
-  + *Construct the compatible-family presheaf.* For an open set $V subset.eq X$, define $shf.f (V)$ to be the set
+  + *Construct the compatible-family presheaf.* For an open set $V subset X$, define $shf.f\(V)$ to be the set
     of compatible families
     $
       (s_i)_i,
@@ -205,7 +205,7 @@ Use the definitions and stalkwise isomorphism criterion of
   + *Identify the local pieces.* The construction also handles empty intersections, whose section objects
     are terminal.  Fix $i$.  Projection to the $i$-th component gives
     $rho_i:shf.f|_(U_i)->shf.f_i$.  It is an isomorphism.  Indeed, if
-    $t in shf.f_i(V)$ for $V subset.eq U_i$, its inverse image has $j$-th
+    $t in shf.f_i(V)$ for $V subset U_i$, its inverse image has $j$-th
     component
     $
       phi_(i j)(t|_(V inter U_j)).

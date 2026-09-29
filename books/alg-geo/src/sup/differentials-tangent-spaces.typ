@@ -3,6 +3,7 @@
 #show: show-theorion
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 
 == DF — Differentials and Tangent Geometry <sup-df>
 
@@ -52,6 +53,7 @@ the reader; the geometric reductions explain exactly where they are used.
   bijections are left to the reader to verify. They commute with localization,
   so changing $U$ leaves the constructed morphism unchanged; equivalently,
   the constructions agree on an affine refinement of two neighborhoods.
+  #align(center)[#diagram(cell-size: 23mm, $shf.o_(X,x) edge("r", d, ->) edge("dr", D, ->) & Omega_(shf.o_(X,x)\/k) edge("d", ->, stroke: #(dash: "dashed")) \ & k$)]
 ]
 
 #metadata(none) <sup-df-2>
@@ -68,8 +70,8 @@ the reader; the geometric reductions explain exactly where they are used.
 #proof[
   Put $P=A[x_1,dots,x_n]$ and $I=ideal(f_1 "," dots "," f_r)$. Apply II.8.4A to
   $P -> B$. The free basis $d x_j$ of $Omega_(P\/A)$ identifies its tensor
-  product with $B^n$. The surjection $B^r -> I\/I^2$ sends $e_i$ to
-  $f_i$ modulo $I^2$, so its composite with the conormal map is exactly $J$.
+  product with $B^n$. The surjection $B^r -> I\/I^2$,
+  $e_i mapsto f_i+I^2$, has composite with the conormal map equal to $J$.
   The derivative formula and right exactness of tensor products are the
   purely algebraic checks left to the reader. This also gives the stated
   presentation after base change. For instance, the relation $d(x^2)=2x d x$
@@ -93,10 +95,14 @@ the reader; the geometric reductions explain exactly where they are used.
   Restrict $X$ to $ops.spec B$ about $x$ and localize at its prime ideal.
   The localization formula of II.8.2A identifies the stalk of
   $Omega_(X\/k)$ with $Omega_(B_idl.p\/k)$. Apply II.8.4A to the
-  quotient $R -> K$; the first map sends $a$ modulo $idl.m_x^2$ to
-  $d a times.o 1$.
+  quotient $R -> K$; the first map is
+  $a+idl.m_x^2 mapsto d a times.o 1$.
   Thus this sequence concerns the actual stalk and not the differentials of
   an arbitrarily chosen rational point.
+  #align(center)[#diagram(cell-size: 27mm, $
+    R edge("r", d, ->) edge("d", ->) & Omega_(R\/k) edge("d", ->) \
+    K edge("r", d, ->) & Omega_(K\/k)
+  $)]
 
   In the closed separable case, $K\/k$ is finite separable. Use the following
   precise algebraic fact: for a local $k$-algebra $R$ with finite separable
@@ -127,6 +133,10 @@ the reader; the geometric reductions explain exactly where they are used.
   It is the isomorphism of II.8.2A, and DF-2 checks it directly on any finite
   presentation. Principal refinements localize this same map; the formula on
   universal differentials therefore agrees on all overlaps and glues.
+  #align(center)[#diagram(cell-size: 30mm, $
+    B edge("r", d, ->) edge("d", ->) & Omega_(B\/A) edge("d", ->) \
+    B' edge("r", d, ->) & Omega_(B'\/A')
+  $)]
   Taking $Y'=ops.spec kappa(y)$ proves the fiber statement. The same argument
   applies to extension of the ground field.
 ]
@@ -164,8 +174,8 @@ the reader; the geometric reductions explain exactly where they are used.
   $
   At the origin the tangent space has dimension two, the curve has local
   dimension one, and the tangent cone is the doubled line $y^2=0$.
-  Its normalization $k[x,y]\/ideal(y^2-x^3) -> k[t]$ sends
-  $x mapsto t^2$, $y mapsto t^3$. The differential map sends
+  Its normalization $k[x,y]\/ideal(y^2-x^3) -> k[t]$ is given by
+  $x mapsto t^2$, $y mapsto t^3$. The differential map is given by
   $d x mapsto 2t d t$, $d y mapsto 3t^2 d t$, and has kernel
   $
     A\/ideal(x^2 "," y) dot tau, quad tau=2x d y-3y d x.
@@ -198,8 +208,8 @@ the reader; the geometric reductions explain exactly where they are used.
   This last ring-theoretic criterion is left to the reader.
 
   The kernel computation can be checked without guessing generators.
-  For the cusp, write $A=k[t^2,t^3]$. A pair $(a,b)$ maps to zero exactly
-  when $(a,b)=(-3t h,2h)$, with $h in (t^2,t^3)A$; the defining
+  For the cusp, write $A=k[t^2,t^3]$. A pair $(a,b)$ maps to zero if and only
+  if $(a,b)=(-3t h,2h)$, with $h in (t^2,t^3)A$; the defining
   differential relation corresponds to $h=t^3$. Thus the kernel is
   $(t^2,t^3)A\/t^3 A$, with basis represented by $t^2,t^4$.
   For the node use
@@ -354,14 +364,14 @@ the reader; the geometric reductions explain exactly where they are used.
   intersection $X subset sch.p_k^n$ is cut out by a homogeneous regular
   sequence of degrees $d_1,dots,d_r$, then
   $
-    omega_X=op("det") Omega_(X\/k)
+    omega_X=ops.det Omega_(X\/k)
     simeq shf.o_X(sum_i d_i-n-1).
   $
   (Ex. II.8.4(d))
 ]
 #proof[
   Taking the determinant in DF-12 gives
-  $op("det") Omega_((sch.p^n)\/k)=shf.o_((sch.p)^n)(-n-1)$.
+  $ops.det Omega_((sch.p^n)\/k)=shf.o_((sch.p)^n)(-n-1)$.
   In the hypersurface case apply the determinant rule of
   #book-link(<sup-al-9>)[AL-9, in top exterior degree] to DF-10 and use DF-11.
   For the complete intersection, the classes of the equations form a basis
@@ -369,8 +379,8 @@ the reader; the geometric reductions explain exactly where they are used.
   #book-link(<sup-al2>)[AL2]. Their homogeneous transitions identify this
   sheaf with $bigOPlus(shf.o_X(-d_i), i=1, top: r)$. Therefore
   $
-    op("det") i^*Omega_((sch.p^n)\/k)
-    simeq tensor(op("det")(shf.i\/shf.i^2), omega_X),
+    ops.det i^*Omega_((sch.p^n)\/k)
+    simeq tensor(ops.det (shf.i\/shf.i^2), omega_X),
   $
   where the right side denotes the tensor product of the two line bundles.
   Cancel $shf.o_X(-sum_i d_i)$ to obtain the formula. All determinant

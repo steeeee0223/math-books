@@ -113,7 +113,7 @@ exercises are left to the reader.
   *Question.* What does replacing the base point of a pencil accomplish?
   For $[x:y:z] mapsto [x:y]$, RM-9 gives the incidence surface
   $H=V(x v-y u) subset sch.p^2 times sch.p^1$. BU identifies its first
-  projection with $op("Bl")_p sch.p^2$, $p=[0:0:1]$.
+  projection with $ops.bl_p sch.p^2$, $p=[0:0:1]$.
   Its second projection identifies $H$ with
   $F_1=sch.p_(sch.p^1)(shf.o plus.o shf.o (1))$ in the quotient convention.
 ]
@@ -244,7 +244,7 @@ exercises are left to the reader.
 #proof[
   *Charts and projectivity.* The homogeneous quotient
   $k[t][X_0,X_1,X_2]\/(X_0 X_1-t X_2^2)$ defines a closed immersion
-  into $sch.p^2_T$ by PJ and CS. Thus $f$ is projective by LP-54
+  into $sch.p^2_T$ by PJ and CS. Thus $f$ is projective by LP-50
   and proper by II.4.9. On $X_0!=0$, put $z=X_2/X_0$; the equation
   eliminates $X_1/X_0=t z^2$, giving $ops.spec k[t,z]$. On $X_1!=0$
   one similarly gets $ops.spec k[t,w]$. On $X_2!=0$, put

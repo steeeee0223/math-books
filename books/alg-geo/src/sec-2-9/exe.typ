@@ -8,7 +8,7 @@
 
 // Hartshorne II.9, Exercise 9.1
 #exercise(title: "Exercise 9.1 (Formal-Regular Functions)")[
-  Let $Y subset.eq sch.p_k^n$ be connected, nonsingular, and positive-dimensional,
+  Let $Y subset sch.p_k^n$ be connected, nonsingular, and positive-dimensional,
   and let $hat(X)$ be the completion of $sch.p^n$ along $Y$, with ideal $shf.j$.
 
   + Use 8.13 and 8.17 to embed $shf.j\/shf.j^2$ in $shf.o_Y (-1)^(plus.o(n+1))$.
@@ -51,7 +51,7 @@
   Let $shf.j$ be an ideal of definition and
   $Y_n=(hat(X),shf.o_(hat(X))\/shf.j^n)$. Assuming
   $(Gamma(Y_n, shf.o_(Y_n)))$ satisfies Mittag–Leffler, prove
-  $ops.pic hat(X) simeq op("lim") ops.pic Y_n$.
+  $ops.pic hat(X) simeq ops.lim ops.pic Y_n$.
 
   + Prove the units also satisfy Mittag–Leffler.
   + Compatible trivializations modulo $shf.j^n$ prove injectivity.

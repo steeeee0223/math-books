@@ -33,7 +33,7 @@
 
 // Hartshorne I.5, Exercise 5.3
 #exercise(title: "Exercise 5.3 (Multiplicities)")[
-  Let $Y subset.eq sch.a^2$ be $f(x,y)=0$ and move $P$ to $(0,0)$. Write
+  Let $Y subset sch.a^2$ be $f(x,y)=0$ and move $P$ to $(0,0)$. Write
   $f=f_0+f_1+dots+f_d$ with $f_i$ homogeneous of degree $i$. The
   *multiplicity* $mu_P (Y)$ is the least $r$ with $f_r!=0$; the linear factors
   of $f_r$ are the tangent directions at $P$.
@@ -54,7 +54,7 @@
   + Show it is finite and $(Y dot Z)_P >= mu_P (Y) mu_P (Z)$.
   + If $P in Y$, show that $(L dot Y)_P=mu_P (Y)$ for all but finitely many
     lines $L$ through $P$.
-  + If $Y subset.eq sch.p^2$ has degree $d$ and $L!=Y$ is a line, show that
+  + If $Y subset sch.p^2$ has degree $d$ and $L!=Y$ is a line, show that
     $(L dot Y)=sum_(P in L inter Y) (L dot Y)_P=d$.
 ]
 
@@ -81,8 +81,8 @@
 
 // Hartshorne I.5, Exercise 5.7
 #exercise(title: "Exercise 5.7")[
-  Let $Y subset.eq sch.p^2$ be a nonsingular plane curve of degree greater than
-  $1$, defined by homogeneous $f$, and let $X=Z(f) subset.eq sch.a^3$ be its cone
+  Let $Y subset sch.p^2$ be a nonsingular plane curve of degree greater than
+  $1$, defined by homogeneous $f$, and let $X=Z(f) subset sch.a^3$ be its cone
   with vertex $P=0$. Blow up $X$ at $P$.
 
   #set enum(numbering: "a)", spacing: 0.8em)
@@ -94,7 +94,7 @@
 
 // Hartshorne I.5, Exercise 5.8
 #exercise(title: "Exercise 5.8")[
-  Let $Y subset.eq sch.p^n$ have dimension $r$, with homogeneous ideal generated
+  Let $Y subset sch.p^n$ have dimension $r$, with homogeneous ideal generated
   by $f_1,...,f_t$. For $P=(a_0:...:a_n)$, show that $P$ is nonsingular if and
   only if the matrix $((partial f_i)/(partial x_j)(a_0,...,a_n))$ has rank
   $n-r$. Use Euler's identity
@@ -103,7 +103,7 @@
 
 // Hartshorne I.5, Exercise 5.9
 #exercise(title: "Exercise 5.9")[
-  Let $f in k[x,y,z]$ be homogeneous and $Y=Z(f) subset.eq sch.p^2$. Suppose
+  Let $f in k[x,y,z]$ be homogeneous and $Y=Z(f) subset sch.p^2$. Suppose
   that at every $P in Y$ at least one of
   $(partial f)/(partial x)$, $(partial f)/(partial y)$, $(partial f)/(partial z)$ is
   nonzero. Show that $f$ is irreducible and hence $Y$ is nonsingular.
@@ -111,12 +111,12 @@
 
 // Hartshorne I.5, Exercise 5.10
 #exercise(title: "Exercise 5.10 (Zariski Tangent Space)")[
-  For $P in X$, with maximal ideal $idl.m subset.eq shf.o_P$, define
+  For $P in X$, with maximal ideal $idl.m subset shf.o_P$, define
   $T_P (X)=(idl.m\/idl.m^2)^ast$.
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + Show that $dim T_P (X)>=dim X$, with equality exactly when $P$ is
+  + Show that $dim T_P (X)>=dim X$, with equality if and only if $P$ is
     nonsingular.
   + Show that a morphism $phi:X->Y$ induces a natural linear map
     $T_P (phi):T_P (X)->T_(phi(P)) (Y)$.
@@ -126,7 +126,7 @@
 
 // Hartshorne I.5, Exercise 5.11
 #exercise(title: "Exercise 5.11 (The Elliptic Quartic Curve in $PP^3$)")[
-  Let $Y subset.eq sch.p^3$ be defined by
+  Let $Y subset sch.p^3$ be defined by
   $x^2-x z-y w=0$ and $y z-x w-z w=0$. Let $P=(0:0:0:1)$ and project from $P$ to
   $w=0$. Show that this induces an isomorphism from $Y without {P}$ to the
   plane cubic $y^2 z-x^3+x z^2=0$ minus $(1:0:-1)$. Then show that $Y$ is an
@@ -143,9 +143,9 @@
   + Show that a linear change of variables puts $f$ in the form
     $x_0^2+dots+x_r^2$ for some $0<=r<=n$.
   + Show that $f$ is irreducible if and only if $r>=2$.
-  + For $r>=2$, let $Q=Z(f) subset.eq sch.p^n$. Show that $ops.sing Q$ is a linear
-    variety of dimension $n-r-1$; in particular $Q$ is nonsingular exactly
-    when $r=n$.
+  + For $r>=2$, let $Q=Z(f) subset sch.p^n$. Show that $ops.sing Q$ is a linear
+    variety of dimension $n-r-1$; in particular $Q$ is nonsingular if and
+    only if $r=n$.
   + If $r<n$, show that $Q$ is a cone, with axis $ops.sing Q$, over a
     nonsingular quadric in $sch.p^r$.
 ]

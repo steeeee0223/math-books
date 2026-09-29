@@ -20,17 +20,19 @@ Kernel-checked companions to the revised proofs in `../local-props.typ`.
 The textbook uses Hartshorne-style definitions and spells out the geometric
 reductions.  The declarations below verify the corresponding ring-locality,
 affine-comparison, stalk, target-locality, and base-change claims available in
-mathlib.  The negative examples, the derivation of source gluing for integral
-and finite maps, and the faithful-flat gluing arguments remain mathematical
-arguments in the textbook; their supporting positive equivalences are checked
-below.
+mathlib. The shared source-localization counterexample is consolidated in
+LP-37; its finite, integral, surjective, and faithfully-flat failures, the
+derivation of source gluing for integral and finite maps, and the
+faithful-flat gluing arguments remain mathematical arguments in the textbook;
+their supporting positive equivalences are checked below.
 
 The shared proof locations are now XL-7 / II.2.17(b) for the global
 principal-open affineness criterion and CS-1 for the affine closed-immersion
 dictionary. The declarations below check those inputs, the trivial-property
-specialization in LP-46, and the surjectivity specialization in LP-33.
-LP-44, LP-47 and LP-50 now refer to the existing XP/MG examples; those
-explicit counterexample schemes are still not assembled in this file.
+specialization in LP-43, and the surjectivity specialization in LP-30.
+The shared geometric counterexamples in LP-48 and LP-49 refer to the existing
+XP/MG examples; those explicit counterexample schemes are still not assembled
+in this file.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -42,7 +44,7 @@ universe u
 
 namespace HartshorneII3LocalProperties
 
-/-- LP-30: the quotient isomorphism must recover the specified ring map. -/
+/-- LP-28: the quotient isomorphism must recover the specified ring map. -/
 theorem surjective_iff_compatible_quotient_iso {R S : Type u}
     [CommRing R] [CommRing S] (f : R →+* S) :
     Function.Surjective f ↔
@@ -58,20 +60,21 @@ theorem surjective_iff_compatible_quotient_iso {R S : Type u}
 
 section AbstractLocality
 
-/-- LP-13 uses exactly the global principal-open criterion proved in XL-7,
-including the empty scheme and the empty generating set. -/
+/-- LP-13's whole-inverse-image TFAE uses exactly the global principal-open
+criterion proved in XL-7, including the empty scheme and the empty generating
+set. -/
 theorem affine_of_global_principal_cover {X : Scheme.{u}}
     (s : Set Γ(X, ⊤)) (hs : Ideal.span s = ⊤)
     (hAffine : ∀ a ∈ s, IsAffineOpen (X.basicOpen a)) : IsAffine X :=
   isAffine_of_isAffineOpen_basicOpen s hs hAffine
 
-/-- LP-46: on an affine target the whole-inverse-image property for the
+/-- LP-43: on an affine target the whole-inverse-image property for the
 always-true ring property is exactly affineness of the source. -/
 theorem affineAnd_true_iff {X Y : Scheme.{u}} (f : X ⟶ Y) [IsAffine Y] :
     affineAnd (fun _ ↦ True) f ↔ IsAffine X := by
   simp only [affineAnd_apply, and_true]
 
-/-- LP-33 / CS-1: the affine closed-immersion dictionary supplies the
+/-- LP-30 / CS-1: the affine closed-immersion dictionary supplies the
 whole-inverse-image criterion before locality is applied. Mathlib's
 HasAffineProperty compares the restricted morphism on the entire inverse
 image of an affine target, as in the textbook. -/
@@ -82,6 +85,17 @@ theorem closedImmersion_affine_target_criterion {X Y : Scheme.{u}}
 
 variable (P : ∀ {R S : Type u} [CommRing R] [CommRing S], (R →+* S) → Prop)
 
+/-- LP-12: `affineLocally P` is precisely the property that every affine pair
+has a coordinate map satisfying `P`.  The S/GS-only fixed-target cover
+induction is kept in the textbook: mathlib's `HasRingHomProperty` interface
+packages source and target locality together, which is stronger than LP-12's
+hypotheses. -/
+theorem lp12_affinePair_iff {X Y : Scheme.{u}} (f : X ⟶ Y) :
+    affineLocally P f ↔
+      ∀ {U : Y.Opens} (_ : IsAffineOpen U) {V : X.Opens} (_ : IsAffineOpen V)
+        (e : V ≤ f ⁻¹ᵁ U), P (f.appLE U V e).hom :=
+  affineLocally_iff_forall_isAffineOpen P f
+
 /-- The two localization fields used by a principal target refinement followed
 by a principal source refinement. -/
 theorem principalRefinement_fields (h : RingHom.PropertyIsLocal P) :
@@ -89,9 +103,9 @@ theorem principalRefinement_fields (h : RingHom.PropertyIsLocal P) :
       RingHom.StableUnderCompositionWithLocalizationAwayTarget P :=
   ⟨h.localizationAwayPreserves, h.StableUnderCompositionWithLocalizationAwayTarget⟩
 
-/-- Target localization and target gluing make the all-affine-pairs property
-local as an affine-target property.  This is the target half of strong affine
-locality. -/
+/-- LP-14: target localization and target gluing make the all-affine-pairs
+property local as an affine-target property. This is the target half of strong
+affine locality. -/
 theorem sourceAffineLocally_isLocal
     (hIso : RingHom.RespectsIso P)
     (hT : RingHom.LocalizationAwayPreserves P)
@@ -99,8 +113,8 @@ theorem sourceAffineLocally_isLocal
     (sourceAffineLocally P).IsLocal :=
   AlgebraicGeometry.sourceAffineLocally_isLocal P hIso hT hGT
 
-/-- The whole-affine-inverse-image route uses target localization and target
-gluing, and is the formal counterpart of the affineAnd proof. -/
+/-- LP-13: the whole-affine-inverse-image route uses target localization and
+target gluing. -/
 theorem affineAnd_isLocal
     (hIso : RingHom.RespectsIso P)
     (hT : RingHom.LocalizationAwayPreserves P)
@@ -124,7 +138,7 @@ theorem fixedTarget_affineCommunication {X Y : Scheme.{u}} (f : X ⟶ Y)
     (h : ∀ i, P ((𝒰.f i ≫ f).appTop).hom) : Q f :=
   HasRingHomProperty.of_source_openCover (P := Q) 𝒰 h
 
-/-- The logical core of the RS/GSS and RT/GTT equivalences. -/
+/-- LP-11: the logical core of the RS/GSS and RT/GTT equivalences. -/
 theorem restriction_and_gluing_iff {I : Type*} (q : Prop) (qᵢ : I → Prop) :
     ((q → ∀ i, qᵢ i) ∧ ((∀ i, qᵢ i) → q)) ↔ (q ↔ ∀ i, qᵢ i) := by
   tauto
@@ -317,6 +331,6 @@ inputs in the prose. The mathematical reductions and the verification coverage
 of the declarations in this companion are unchanged. -/
 
 /- The target-locality criteria are contained in the proved profiles
-LP-43, LP-46, LP-49, and LP-52. LP-21 now cites the ring-local
-criterion and affine-chart theorem explicitly; LP-5 isolates its localization
+LP-41, LP-43, LP-45, and LP-47. LP-18, LP-21, and LP-33 now cite the
+scheme-level affine-pair criterion explicitly; LP-5 isolates its localization
 base-change argument. All use the existing locality and tensor interfaces. -/

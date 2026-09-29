@@ -6,14 +6,14 @@
 // Hartshorne I.4, Lemma 4.1
 #lemma(number: "4.1")[
   Let $X,Y$ be varieties and let $phi,psi:X->Y$ be morphisms. If they agree on
-  a nonempty open subset $U subset.eq X$, then $phi=psi$.
+  a nonempty open subset $U subset X$, then $phi=psi$.
 ]
 
 
 // Hartshorne I.4, Definition D1
 #definition(number: none, title: "Rational Map")[
   A *rational map* $phi:X arrow.r.long Y$ is an equivalence class of pairs
-  $(U,phi_U)$, where $U subset.eq X$ is nonempty open and $phi_U:U->Y$ is a
+  $(U,phi_U)$, where $U subset X$ is nonempty open and $phi_U:U->Y$ is a
   morphism; two pairs are equivalent when their morphisms agree on the
   intersection. It is *dominant* if the image of one, hence every,
   representative is dense in $Y$.
@@ -28,9 +28,9 @@
 
 // Hartshorne I.4, Lemma 4.2
 #lemma(number: "4.2")[
-  Let $Y=Z(f) subset.eq sch.a^n$ be a hypersurface. Then
+  Let $Y=Z(f) subset sch.a^n$ be a hypersurface. Then
   $sch.a^n without Y$ is isomorphic to the hypersurface
-  $H=Z(x_(n+1) f-1) subset.eq sch.a^(n+1)$. In particular it is affine, with
+  $H=Z(x_(n+1) f-1) subset sch.a^(n+1)$. In particular it is affine, with
   coordinate ring $k[x_1,...,x_n]_f$.
 ]
 
@@ -57,7 +57,7 @@
   #set enum(numbering: "(i)", spacing: 0.8em)
 
   + $X$ and $Y$ are birational.
-  + Some nonempty open subsets $U subset.eq X$ and $V subset.eq Y$ are
+  + Some nonempty open subsets $U subset X$ and $V subset Y$ are
     isomorphic.
   + $K(X) simeq K(Y)$ as $k$-algebras.
 ]
@@ -102,9 +102,9 @@
 // Hartshorne I.4, Definition D4
 #definition(number: none, title: "Blowing Up a Variety at a Point")[
   The blow-up of $sch.a^n$ at $0$ is the closed subvariety
-  $X subset.eq sch.a^n times sch.p^(n-1)$ defined by
+  $X subset sch.a^n times sch.p^(n-1)$ defined by
   $x_i y_j=x_j y_i$, with projection $phi:X->sch.a^n$. If
-  $Y subset.eq sch.a^n$ is a closed subvariety through $0$, its *blow-up at* $0$
+  $Y subset sch.a^n$ is a closed subvariety through $0$, its *blow-up at* $0$
   is $tildeOf(Y)=overline(phi^(-1) (Y without {0}))$, with the restricted
   morphism $phi:tildeOf(Y)->Y$. A linear change of coordinates defines the
   blow-up at any other point.

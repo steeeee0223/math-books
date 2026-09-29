@@ -59,10 +59,10 @@
   #set enum(numbering: "a)", spacing: 0.8em)
 
   + Show that this fractional linear transformation is an automorphism of
-    $sch.p^1$; denote their group by $op("PGL")(1)$.
+    $sch.p^1$; denote their group by $ops.pgl (1)$.
   + Show $ops.aut (sch.p^1) simeq ops.aut_k (k(x))$.
   + Show every $k$-automorphism of $k(x)$ is fractional linear, and deduce
-    $op("PGL")(1) simeq ops.aut (sch.p^1)$.
+    $ops.pgl (1) simeq ops.aut (sch.p^1)$.
 ]
 
 // Hartshorne I.6, Exercise 6.7

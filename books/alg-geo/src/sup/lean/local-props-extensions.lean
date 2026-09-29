@@ -6,23 +6,23 @@ import Mathlib.RingTheory.Spectrum.Prime.Topology
 import Mathlib.RingTheory.Ideal.Maps
 
 /-!
-Companion for LP-54–LP-58 and LP-59–LP-64.
+Companion for LP-50–LP-54 and LP-55–LP-60.
 
-Definition comparison: `IsDominant` is dense range, exactly LP-59.
+Definition comparison: `IsDominant` is dense range, exactly LP-55.
 `IsSchemeTheoreticallyDominant` uses the quasi-coherent kernel. Its
 sectionwise interpretation below retains QuasiCompact; it is not silently
 identified with sheaf injectivity for arbitrary maps. The flat-base-change
 scheme theorem below assumes a reduced target. The general nonreduced
-LP-61 reduction is supported by the nil-kernel spectrum equivalence,
+LP-57 reduction is supported by the nil-kernel spectrum equivalence,
 flat tensor kernel comparison, and nil-ideal extension theorem separately.
 
-LP-57: PicOverlap and nodalTransition encode the *computed* Picard group
+LP-53: PicOverlap and nodalTransition encode the *computed* Picard group
 coordinates (unit, Laurent exponent, degree). compatible_degree_zero is
 the exact terminal obstruction; it does not construct C, its conductor,
 the classification Pic(C_R), or its projective degree interpretation.
-LP-54–LP-56 projective embeddings and their counterexample schemes, LP-58's
-ample criterion, LP-61's finite affine-cover assembly in the nonreduced case,
-LP-62's coherent-sheaf associated-point bridge, and LP-64's normal-domain
+LP-50–LP-52 projective embeddings and their counterexample schemes, LP-54's
+ample criterion, LP-57's finite affine-cover assembly in the nonreduced case,
+LP-58's coherent-sheaf associated-point bridge, and LP-60's normal-domain
 height-one intersection and its sheaf assembly are outstanding interfaces.
 These are verification gaps, not additional axioms or completed theorems.
 -/
@@ -46,7 +46,7 @@ abbrev densityCriterion := @PrimeSpectrum.denseRange_comap_iff_ker_le_nilRadical
 abbrev finiteAffineDisjointUnion := @PrimeSpectrum.sigmaToPi_bijective
 abbrev tensorKernel := @Module.Flat.ker_lTensor_eq
 
-/-- Extending a nil ideal along any ring map remains a nil ideal (LP-61). -/
+/-- Extending a nil ideal along any ring map remains a nil ideal (LP-57). -/
 theorem extended_nil_ideal {R S : Type*} [CommRing R] [CommRing S]
     (f : R →+* S) (I : Ideal R) (hI : I ≤ nilradical R) :
     I.map f ≤ nilradical S := by
@@ -71,7 +71,7 @@ abbrev glue_unique := @Scheme.Cover.hom_ext
 variable (G : Type*)
 abbrev PicOverlap := G × ℤ × ℤ
 
-/-- The overlap automorphism (a,d,n) ↦ (a,d+n,n) from LP-57. -/
+/-- The overlap automorphism (a,d,n) ↦ (a,d+n,n) from LP-53. -/
 def nodalTransition : PicOverlap G ≃ PicOverlap G where
   toFun p := (p.1, p.2.1 + p.2.2, p.2.2)
   invFun p := (p.1, p.2.1 - p.2.2, p.2.2)
@@ -94,7 +94,7 @@ theorem no_positive_compatible_degree {G : Type*} (a b : G) (m n : ℤ)
 
 end Supplements.LPExtensions
 
-/- LP-63 is now the schematically dense extension of MG-6, with a single
+/- LP-59 is now the schematically dense extension of MG-6, with a single
 equalizer-ideal argument. The reduced case and embedded-point counterexample
 are cited from MG/AL2 rather than reproduced. The sectionwise injectivity
 interfaces in this file check its terminal zero-kernel reduction; the general

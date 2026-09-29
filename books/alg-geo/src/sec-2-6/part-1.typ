@@ -74,18 +74,18 @@
   If $X = ops.spec A$ is affine, there is a one-to-one correspondence
   $
     {Y subset X : text("prime divisor")} & arrow.l.r.long {idl.p in ops.spec A : ops.ht idl.p = 1}, \
-                            ops.spec (A \/ idl.p) & arrow.l.bar.long idl.p.
+                      ops.spec(A\/idl.p) & arrow.l.bar.long idl.p.
   $
 ]
 
 #proof[
   Indeed, we see that
 
-  - $Y subset X$ is a closed subscheme iff $Y simeq ops.spec (A \/ idl.a)$ for some
+  - $Y subset X$ is a closed subscheme iff $Y simeq ops.spec (A\/idl.a)$ for some
     $idl.a lt.closed A$.
-  - $Y$ is an integral scheme iff $A \/ idl.a$ is an integral domain iff
+  - $Y$ is an integral scheme iff $A\/idl.a$ is an integral domain iff
     $idl.a = idl.p lt.closed A$ is a prime ideal.
-  - Further, $ops.codim(Y, X) = dim A - dim(A \/ idl.p) = ops.ht idl.p$.
+  - Further, $ops.codim(Y, X) = dim A - dim(A\/idl.p) = ops.ht idl.p$.
 ]
 
 #definition(title: "Regular Functions")[
@@ -541,7 +541,7 @@
 #proposition(number: "6.8")[
   Let $X$ be a complete nonsingular curve and $Y$ any curve over $k$. For a
   morphism $f:X->Y$, either $f$ is constant or $f$ is surjective and induces
-  a finite extension $K(Y) subset.eq K(X)$; in the latter case $f$ is finite.
+  a finite extension $K(Y) subset K(X)$; in the latter case $f$ is finite.
 ]
 
 

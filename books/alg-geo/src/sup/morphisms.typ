@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == MG — Morphisms, diagonals and graphs <sup-mg>
@@ -27,6 +28,14 @@ the diagonal and separatedness criteria of
   + *Apply the tensor-product universal property.* The tensor-product universal property identifies
     these with pairs of maps from $B,C$ agreeing on $A$, hence with pairs
     $T->ops.spec B$, $T->ops.spec C$ agreeing over $ops.spec A$.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $
+        & T edge("dl", ->) edge("d", ->, stroke: #(dash: "dashed")) edge("dr", ->) \
+        ops.spec B edge("dr", ->) & ops.spec tensor(B, C, over: A) edge("l", ->) edge("r", ->) & ops.spec C edge("dl", ->) \
+        & ops.spec A
+      $,
+    )]
     Check the tensor-product universal property for commutative algebras (Check!).
 
   + *Identify the projections and conclude.* This correspondence is natural in $T$ and sends the two specified
@@ -52,6 +61,10 @@ the diagonal and separatedness criteria of
     those of $k[t]$. Successive localization and tensor-product universal
     properties give the displayed tensor ring. The localization prime
     correspondence identifies its primes with the primes avoiding both sets.
+    #align(center)[#diagram(
+      cell-size: 23mm,
+      $k[s,t] edge("r", ->) edge("dr", ->) & k(s)[t] edge("d", ->) \ & tensor(k(s), k(t), over: k)$,
+    )]
 
   + *Exhibit two distinct primes.* The zero prime avoids them since $k[s,t]$ is a domain. The prime $(s-t)$
     also avoids them, since substitution $s=t$ is injective on each of the
@@ -157,7 +170,7 @@ the diagonal and separatedness criteria of
 
   + *Use reducedness to kill its ideal.* On an affine chart
     $ops.spec A$ of $X$, write $E$ as $ops.spec(A/I)$. The equality
-    $V(I)=ops.spec A$ gives $I subset.eq sqrt((0))=0$, because $X$ is
+    $V(I)=ops.spec A$ gives $I subset sqrt((0))=0$, because $X$ is
     reduced.
 
   + *Conclude globally.* Thus $E->X$ is an isomorphism on an affine cover and hence
@@ -211,7 +224,7 @@ the diagonal and separatedness criteria of
 
 #proof[
 
-  + *Use the closed diagonal.* For affine opens $U,V subset.eq X$, the pullback of the diagonal
+  + *Use the closed diagonal.* For affine opens $U,V subset X$, the pullback of the diagonal
     $X->fiber(X, X, base: S)$ to $fiber(U, V, base: S)$ is $U inter V$.
     The product is affine by MG-1, since $S$ is affine. Its closed
     subscheme $U inter V$ is affine by the affine closed-immersion criterion.
@@ -282,8 +295,8 @@ the diagonal and separatedness criteria of
     principal opens over each affine target.
 
   + *Prove finite-type cancellation.* For the additional cancellation,
-    choose $V=ops.spec B subset.eq Y$ mapping into $W=ops.spec A subset.eq Z$,
-    and an affine $U=ops.spec C subset.eq f^(-1)(V)$. The local finite-type
+    choose $V=ops.spec B subset Y$ mapping into $W=ops.spec A subset Z$,
+    and an affine $U=ops.spec C subset f^(-1)(V)$. The local finite-type
     criterion for $g f$ makes $C$ a finite-type $A$-algebra. The same
     generators generate it over $B$, since the $A$-map factors through $B$.
     Such $U,V$ cover the source and target in question, so $f$ is locally
@@ -308,6 +321,10 @@ the diagonal and separatedness criteria of
   + *Recover the residue-field inclusion.* A map from the one-point scheme has image $x$ and gives a local map
     $shf.o_(X,x)->K$. Its kernel is the maximal ideal, so it factors uniquely
     through an inclusion $kappa(x)->K$.
+    #align(center)[#diagram(
+      cell-size: 20mm,
+      $shf.o_(X,x) edge("r", ->) edge("dr", ->) & kappa(x) edge("d", ->, stroke: #(dash: "dashed")) \ & K$,
+    )]
 
   + *Construct a morphism from the pair.* Conversely, choose an affine
     neighborhood $ops.spec A$ of $x$, with prime $idl.p$. Compose
@@ -385,10 +402,10 @@ the diagonal and separatedness criteria of
 
 #proof[
 
-  + *Identify the kernel on affine charts.* Restrict to $V=ops.spec A subset.eq Y$ and choose a finite affine cover
+  + *Identify the kernel on affine charts.* Restrict to $V=ops.spec A subset Y$ and choose a finite affine cover
     $W_i=ops.spec B_i$ of $f^(-1)(V)$. Put
-    $I=ops.ker(A->product_i B_i)$. A function pulls back to zero exactly
-    when it does so on this cover. Over $D(a)$ the cover becomes
+    $I=ops.ker(A->product_i B_i)$. A function pulls back to zero if and only
+    if it does so on this cover. Over $D(a)$ the cover becomes
     $ops.spec (B_i)_a$; exact localization and its commutation with finite
     products give kernel $I_a$. Thus the actual kernel sheaf on $V$ is
     $tildeOf(I)$. These descriptions prove quasi-coherence and agree under

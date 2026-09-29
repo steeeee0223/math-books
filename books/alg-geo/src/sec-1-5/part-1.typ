@@ -5,7 +5,7 @@
 
 // Hartshorne I.5, Definition D1
 #definition(number: none, title: "Nonsingularity via the Jacobian")[
-  Let $Y subset.eq sch.a^n$ be affine of dimension $r$, and let
+  Let $Y subset sch.a^n$ be affine of dimension $r$, and let
   $f_1,...,f_t$ generate $I(Y)$. The variety $Y$ is *nonsingular at*
   $P in Y$ if the Jacobian matrix
   $(partial f_i)/(partial x_j)(P)$ has rank $n-r$. It is *nonsingular* if this
@@ -20,7 +20,7 @@
 
 // Hartshorne I.5, Theorem 5.1
 #theorem(number: "5.1")[
-  Let $Y subset.eq sch.a^n$ be affine and $P in Y$. Then $Y$ is nonsingular at
+  Let $Y subset sch.a^n$ be affine and $P in Y$. Then $Y$ is nonsingular at
   $P$ if and only if $shf.o_(P,Y)$ is a regular local ring.
 ]
 

@@ -9,17 +9,17 @@
 The definitions are in #book-link(<text-ii-3>)[II.3, D7–D8]. The ideal-sheaf
 correspondence remains in #book-link(<text-ii-5>)[II.5, Proposition 5.9 and
   Corollary 5.10]. CS-1 gives the affine quotient dictionary; target locality
-and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
+and base-change stability are deduced in #book-link(<sup-lp-30>)[LP-30].
 
 #metadata(none) <sup-cs-1>
 #proposition(number: "CS-1", title: "Affine quotient dictionary")[
-  + For $X=ops.spec A$ and $I subset.eq A$, the above results identify the
+  + For $X=ops.spec A$ and $I subset A$, the above results identify the
     ideal sheaf $tildeOf(I)$, the quotient structure sheaf, and the closed
     immersion $ops.spec(A\/I)->X$. On each $D(f)$, the comparison is the
-    canonical quotient $A_f\/I A_f simeq (A\/I)_(bar(f))$.
+    canonical quotient $A_f\/I A_f simeq (A\/I)_f$.
 
   + In particular, the affine map induced by $A->B$ is a closed immersion
-    exactly when this ring map is surjective.
+    if and only if this ring map is surjective.
 
   + Use this as the common entry for II.2.18(c)–(d), II.3.11(b), and
     II.5.5(b), the last of which also uses that a quotient is a finite module.
@@ -35,8 +35,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 
   + *Identify the quotient structure sheaf.* On $D(f)$, localization of the exact sequence
     $I->A->A\/I->0$ gives the quotient $A_f\/I A_f$.
-    The maps sending $a/f^n$ to $bar(a)/bar(f)^n$ give its canonical
-    identification with $(A\/I)_(bar(f))$. These identifications commute with
+    The maps $a\/f^n mapsto macron(a)\/macron(f)^n$ give its canonical
+    identification with $(A\/I)_(f)$. These identifications commute with
     further localization and therefore identify the quotient sheaf and the
     structure sheaf on the closed subset. This is precisely the ideal-sheaf
     correspondence of II.5.9–II.5.10.
@@ -106,8 +106,8 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
     are the ones of CS-1–CS-2.
 
   + The ideals and closed subschemes are ordered
-    in opposite directions: $shf.i subset.eq shf.j$ gives
-    $V(shf.j) subset.eq V(shf.i)$ as closed subschemes.
+    in opposite directions: $shf.i subset shf.j$ gives
+    $V(shf.j) subset V(shf.i)$ as closed subschemes.
 
   + For reduction of the whole scheme and its reduced-source universal
     property use #book-link(<sup-xp-9>)[XP-9].
@@ -130,7 +130,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
   + *Prove uniqueness.* Conversely, every reduced closed subscheme has radical quotient kernels
     on these charts, forcing the same $I_U$ and hence the same ideal sheaf.
 
-  + *Reverse inclusions.* If $I subset.eq J$, the quotient map $A\/I->A\/J$ is surjective;
+  + *Reverse inclusions.* If $I subset J$, the quotient map $A\/I->A\/J$ is surjective;
     these quotient maps commute with localization and glue to the asserted
     inclusion of closed subschemes. This also proves the reversal of order.
 ]
@@ -142,7 +142,7 @@ and base-change stability are deduced in #book-link(<sup-lp-33>)[LP-33].
 ]
 
 #proof[
-  A prime contains $t^2$ exactly when it contains $t$, so the two vanishing
+  A prime contains $t^2$ if and only if it contains $t$, so the two vanishing
   sets agree. The image of $t$ in $k[t]\/(t^2)$ is nonzero, by comparison
   of polynomial degrees, and has square zero. Thus this quotient is not
   reduced, whereas $k[t]\/(t) simeq k$ is reduced. Their distinct ideals

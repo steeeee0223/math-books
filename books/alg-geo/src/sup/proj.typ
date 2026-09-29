@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == PJ — Proj and graded modules <sup-pj>
@@ -26,9 +27,9 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
   + *Test emptiness on homogeneous affine charts.* The opens $D_+(f)$ for homogeneous $f$ of positive degree cover
     $ops.proj S$. By II.2.5, such an open is the spectrum of $(S_f)_0$.
-    This spectrum is empty exactly when its ring is zero, equivalently
-    $1=0$ in $S_f$, or $f^m=0$ for some $m$. Thus Proj is empty exactly
-    when every positive-degree homogeneous element is nilpotent.
+    This spectrum is empty if and only if its ring is zero, equivalently
+    $1=0$ in $S_f$, or $f^m=0$ for some $m$. Thus Proj is empty if and only
+    if every positive-degree homogeneous element is nilpotent.
 
   + *Pass from homogeneous elements to the irrelevant ideal.* Each element of $S_+$ is a finite sum of such elements, and a finite
     sum of commuting nilpotents is nilpotent (Check!). This proves the assertion
@@ -43,7 +44,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     contraction and the degree-zero localization maps.
 
   + This morphism is defined on all of $ops.proj T$ if and only if
-    $T_+ subset.eq sqrt(phi(S_+)T)$.
+    $T_+ subset sqrt(phi(S_+)T)$.
 ]
 
 #proof[
@@ -61,13 +62,13 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 
   + *Test when the domain is all of Proj.* The excluded locus is the underlying Proj of the homogeneous quotient
     $T\/phi(S_+)T$, by homogeneous-prime correspondence for a quotient.
-    Applying PJ-1 to this quotient shows that it is empty exactly when
+    Applying PJ-1 to this quotient shows that it is empty if and only if
     every element of $T_+$ has some power in $phi(S_+)T$.
 ]
 
 #metadata(none) <sup-pj-3>
 #example(number: "PJ-3", title: "A graded map with empty domain on Proj")[
-  For $k[x_0,x_1]->k[t]$ sending both $x_i$ to zero, the target Proj of
+  For $k[x_0,x_1]->k[t]$, $x_i mapsto 0$ for $i=0,1$, the target Proj of
   the ring map, $ops.proj k[t]$, is nonempty but $U$ is empty.
 ]
 
@@ -205,7 +206,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     This proves the high-degree comparison.
 
   + *Characterize the zero associated sheaf.* For the zero-sheaf assertion, triviality of $shf.o (1)$ on $U_i$ implies
-    that $tildeOf(M)=0$ exactly when all graded localizations $M_(x_i)$
+    that $tildeOf(M)=0$ if and only if all graded localizations $M_(x_i)$
     vanish. Choose finitely many homogeneous generators of $M$. If the
     localizations vanish, powers of each $x_i$ kill all these generators.
     The elementary monomial bound then gives $S_+^q M=0$ for some $q$,
@@ -223,6 +224,10 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     division formula proves agreement. Conversely, twist a sheaf map and
     apply it to the canonical sections of every degree. These constructions
     are inverse on each $U_i$, and hence globally, and are natural.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $M edge("r", ->) edge("dr", u, ->) & Gamma_*(tildeOf(M)) edge("d", Gamma_*(tildeOf(u)), ->, stroke: #(dash: "dashed")) \ & Gamma_*shf.f$,
+    )]
     The reconstruction statement is exactly II.5.15, whose comparison on
     $U_i$ uses this same fraction formula.
 ]
@@ -230,26 +235,26 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
 #metadata(none) <sup-pj-7>
 #definition(number: "PJ-7", title: "Saturation")[
   Let $S=A[x_0,dots,x_r]$ with $A$ Noetherian. For a homogeneous ideal $I$,
-  define $I^op("sat")={s in S:S_+^n s subset.eq I " for some " n>=0}$.
+  define $I^ops.sat={s in S:S_+^n s subset I " for some " n>=0}$.
 ]
 
 #metadata(none) <sup-pj-8>
 #proposition(number: "PJ-8", title: "Saturation and ideal sheaves")[
-  + The ideals $I$ and $I^op("sat")$ give the same ideal sheaf.
+  + The ideals $I$ and $I^ops.sat$ give the same ideal sheaf.
 
-  + Homogeneous ideals define the same closed subscheme exactly when their
+  + Homogeneous ideals define the same closed subscheme if and only if their
     saturations agree.
 
   + Saturated homogeneous ideals correspond to the
     quasi-coherent ideal sheaves of closed subschemes of $ops.proj S$.
 
   + For $I=(x_0)$ and $J=(x_0^2,x_0 x_1)$ in $k[x_0,x_1]$,
-    $I!=J$ but $I^op("sat")=J^op("sat")=(x_0)$.
+    $I!=J$ but $I^ops.sat=J^ops.sat=(x_0)$.
 ]
 
 #proof[
 
-  + *Test saturation by localization.* For homogeneous $s$, membership in $I^op("sat")$ is equivalent to
+  + *Test saturation by localization.* For homogeneous $s$, membership in $I^ops.sat$ is equivalent to
     membership of $s/1$ in $I S_(x_i)$ for every $i$.
     One direction follows since $x_i$ is invertible there. Conversely, choose
     $n_i$ with $x_i^(n_i)s in I$. Taking all $n_i$ positive, every
@@ -261,13 +266,13 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     equivalent to equality of saturated ideals, degree by degree.
     Applying the same criterion twice proves idempotence of saturation.
 
-  + *Recover every closed-subscheme ideal sheaf.* For completeness, an ideal sheaf $shf.j subset.eq shf.o_X$ yields the
+  + *Recover every closed-subscheme ideal sheaf.* For completeness, an ideal sheaf $shf.j subset shf.o_X$ yields the
     homogeneous ideal whose degree $n>=0$ part consists of those
-    $s in S_n$ whose canonical section belongs to $shf.j (n)$.
+    $s in S_n$ whose canonical section belongs to $shf.j\(n)$.
     It recovers $shf.j$ on every $U_i$. Indeed, for a section of $shf.j$
     on $U_i$, clearing powers of $x_i$ in a finite affine cover and then
     clearing the differences on the pairwise intersections extends it to
-    a section of $shf.j (n)$ for some $n$. This is the extension argument
+    a section of $shf.j\(n)$ for some $n$. This is the extension argument
     of II.5.14 used in II.5.15. Increasing $n$ further makes its image in
     $Gamma(X, shf.o (n))$ come from $S_n$ by PJ-6.
     Dividing by $x_i^n$ recovers the original section. Hence the resulting
@@ -275,9 +280,9 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     unique by the preceding criterion.
 
   + *Compute the example.* In the example, $J=x_0(x_0,x_1)$, so $x_0$ belongs to its saturation.
-    The ideal $(x_0)$ is saturated: if $S_+^n s subset.eq (x_0)$,
+    The ideal $(x_0)$ is saturated: if $S_+^n s subset (x_0)$,
     reduce $x_1^n s$ modulo $x_0$ in the domain $k[x_1]$ to get
-    $s in (x_0)$. Since $J subset.eq (x_0)$ this proves the claimed
+    $s in (x_0)$. Since $J subset (x_0)$ this proves the claimed
     equality of saturations. Their degree-one parts show $I!=J$.
 ]
 

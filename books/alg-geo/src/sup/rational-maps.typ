@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == RM — Rational maps of schemes <sup-rm>
@@ -10,7 +11,7 @@ This supplement translates Chapter I's rational maps into scheme language.
 The basic inputs are the generic-point dictionary in
 #book-link(<sup-xp-generic-points>)[XP-1–XP-7], scheme gluing in
 #book-link(<sup-xl>)[XL], and the dominance and dense-open criteria
-#book-link(<sup-lp-59>)[LP-59–LP-64]. The extension results additionally use
+#book-link(<sup-lp-55>)[LP-55–LP-60]. The extension results additionally use
 normal local rings and the valuative criterion of II.4.
 
 === Domains, composition and function fields
@@ -42,11 +43,11 @@ normal local rings and the valuative criterion of II.4.
   Take the union $D$ of the domains of its $S$-representatives. Given
   representatives on $U,V$, their common dense agreement open remains
   dense in $U inter V$. The latter is reduced. By
-  #book-link(<sup-lp-63>)[LP-63], their restrictions agree as morphisms on
+  #book-link(<sup-lp-59>)[LP-59], their restrictions agree as morphisms on
   all of $U inter V$. The gluing theorem of XL therefore gives a unique
   map $D->Y$. Its structural composite to $S$ equals the structural map
   on the cover by representative domains, hence globally. Any other
-  representative on $D$ agrees on that cover by LP-63. This proves both
+  representative on $D$ agrees on that cover by LP-59. This proves both
   existence and uniqueness. For ordinary rational maps take
   $S=ops.spec ZZ$.
 ]
@@ -65,7 +66,7 @@ normal local rings and the valuative criterion of II.4.
   common agreement open is also dense; dominance guarantees this condition.
 ]
 #proof[
-  By LP-60 every restriction to a nonempty open of $U$ is dominant, so
+  By LP-56 every restriction to a nonempty open of $U$ is dominant, so
   dominance is independent of the representative. The generic point of
   $X$ maps to that of $Y$ by XP-1–XP-7; the latter belongs to $V$. Thus
   $W=f^(-1)(V)$ is an open containing the generic point of $X$, and is
@@ -174,7 +175,7 @@ normal local rings and the valuative criterion of II.4.
   reduced structure. Projection is therefore an isomorphism over $U$.
   Finally $p$ is the composite of the closed immersion into the product
   and its projection to $X$. Properness follows from base change and
-  composition in LP; projectivity follows from LP-55. No assertion of
+  composition in LP; projectivity follows from LP-51. No assertion of
   finiteness follows merely from this properness.
 ]
 
@@ -193,6 +194,7 @@ normal local rings and the valuative criterion of II.4.
   the structural map $ops.spec R->S$ give a valuative diagram. The
   properness criterion of II.4 supplies its unique lift
   $h:ops.spec R->Y$.
+  #align(center)[#diagram(cell-size: 23mm, $ops.spec K edge("r", ->) edge("d", ->) & Y edge("d", ->) \ ops.spec R edge("r", ->) edge("ur", h, ->, stroke: #(dash: "dashed")) & S$)]
 
   Choose an affine neighborhood $ops.spec A$ of $x$ mapping into an
   affine open $ops.spec R_0$ of $S$. An affine open $ops.spec B$ of
@@ -232,12 +234,13 @@ normal local rings and the valuative criterion of II.4.
   the identity on a dense open and hence everywhere by MG-6.
 
   For the affine target, the given morphism is a $k$-algebra map
-  $B->Gamma(X minus Z, shf.o_X)$. LP-64 identifies the latter ring
+  $B->Gamma(X minus Z, shf.o_X)$. LP-60 identifies the latter ring
   canonically with $Gamma(X, shf.o_X)$. The affine-target adjunction in
   XL then constructs the required map to $ops.spec B$. Restriction
   recovers the given ring map, and injectivity of restriction proves
   uniqueness. This proof requires an affine target; a proper target
   alone does not give extension across codimension two.
+  #align(center)[#diagram(cell-size: 23mm, $X minus Z edge("r", ->) edge("dr", ->) & X edge("d", ->, stroke: #(dash: "dashed")) \ & ops.spec B$)]
 ]
 
 === Examples that distinguish the hypotheses
@@ -294,7 +297,7 @@ normal local rings and the valuative criterion of II.4.
   Finally, on $ops.spec k[u,v]\/(u^2,u v)$ the maps to the affine line
   defined by $0$ and $u$ represent the same rational map but are distinct
   everywhere-defined morphisms. The dense domain $D(v)$ has forgotten
-  the embedded point, as computed in LP-63. Thus the reduced-source
+  the embedded point, as computed in LP-59. Thus the reduced-source
   hypothesis in RM-2 cannot simply be discarded.
 ]
 

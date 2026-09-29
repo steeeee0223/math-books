@@ -39,9 +39,9 @@
   Let $R$ be a valuation ring of $K$, $T=ops.spec R$, and $U=ops.spec K$.
 
   + A morphism $U->X$ is equivalent to a point $x_1 in X$ and an inclusion
-    $kappa(x_1) subset.eq K$.
+    $kappa(x_1) subset K$.
   + A morphism $T->X$ is equivalent to points $x_0,x_1$ with $x_0$ a
-    specialization of $x_1$, an inclusion $kappa(x_1) subset.eq K$, and the
+    specialization of $x_1$, an inclusion $kappa(x_1) subset K$, and the
     condition that $R$ dominate the local ring of $x_0$ on the reduced
     induced subscheme $overline({x_1})$.
 ]
@@ -111,7 +111,7 @@
 // Hartshorne II.4, Proposition 4.10
 #proposition(number: "4.10")[
   For algebraically closed $k$, the image of
-  $t:op("Var")(k)->op("Sch")(k)$ is exactly the quasi-projective integral
+  $t:ops.var (k)->ops.sch (k)$ is exactly the quasi-projective integral
   $k$-schemes; projective varieties correspond exactly to projective
   integral $k$-schemes. Thus every variety gives an integral separated
   finite-type $k$-scheme.

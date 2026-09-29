@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
 == RV — Relative Spec and vector bundles <sup-rv>
@@ -13,7 +14,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-1>
 #definition(number: "RV-1", title: "Relative spectrum")[
   + Let $shf.a$ be a quasi-coherent $shf.o_Y$-algebra. The relative spectrum
-    $op("Spec")_Y shf.a$ is obtained from $ops.spec Gamma(U, shf.a)$ over
+    $ops.spec_Y shf.a$ is obtained from $ops.spec Gamma(U, shf.a)$ over
     affine opens $U$ of $Y$.
 
   + The canonical localization identifications over
@@ -25,7 +26,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #proof[
 
   + *Compare principal opens.* For $U=ops.spec A$, put $B_U=Gamma(U, shf.a)$, with its specified
-    $A$-algebra map. If $D(a) subset.eq U$, quasi-coherence gives the
+    $A$-algebra map. If $D(a) subset U$, quasi-coherence gives the
     canonical algebra isomorphism $B_(D(a)) simeq (B_U)_a$. It identifies
     its spectrum with the inverse image of $D(a)$ in $ops.spec B_U$.
 
@@ -53,22 +54,26 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-2>
 #proposition(number: "RV-2", title: "Universal property")[
   + For $g:T->Y$, there is a natural bijection
-    $ops.hom(T, op("Spec")_Y shf.a, over: Y) simeq
+    $ops.hom(T, ops.spec_Y shf.a, over: Y) simeq
     ops.hom(shf.a, g_*shf.o_T, over: shf.o_Y)$,
     where the right side consists of algebra homomorphisms.
     It sends a morphism to the induced map on the algebra of functions.
 
-  + The structural map $shf.a->f_*shf.o_(op("Spec")_Y shf.a)$ is an
+  + The structural map $shf.a->f_*shf.o_(ops.spec_Y shf.a)$ is an
     isomorphism.
 ]
 
 #proof[
 
   + *Construct the two assignments.* A $Y$-map induces the displayed algebra map on functions. Conversely,
-    from $u:shf.a->g_*shf.o_T$ and an affine $U subset.eq Y$ obtain
+    from $u:shf.a->g_*shf.o_T$ and an affine $U subset Y$ obtain
     $B_U->Gamma(g^(-1)(U), shf.o_T)$. The affine-target adjunction of II.2
     gives a unique morphism $g^(-1)(U)->ops.spec B_U$. It is over $U$
     because the algebra map respects the structural map from $Gamma(U, shf.o_Y)$.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $T edge("r", ->, stroke: #(dash: "dashed")) edge("dr", g, ->) & ops.spec_Y shf.a edge("d", f, ->) \ & Y$,
+    )]
 
   + *Glue the local morphisms.* Over a principal open these maps coincide by localization; refining
     overlaps as in RV-1 gives equality there. XL glues them to a $Y$-map.
@@ -84,10 +89,10 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
 #metadata(none) <sup-rv-3>
 #corollary(number: "RV-3", title: "Affine morphisms and algebras")[
-  + The assignments $shf.a mapsto op("Spec")_Y shf.a$ and
+  + The assignments $shf.a mapsto ops.spec_Y shf.a$ and
     $(f:X->Y) mapsto f_*shf.o_X$ give a contravariant equivalence between
     quasi-coherent $shf.o_Y$-algebras and affine schemes over $Y$.
-  + The comparison $X->op("Spec")_Y f_*shf.o_X$ is the canonical
+  + The comparison $X->ops.spec_Y f_*shf.o_X$ is the canonical
     isomorphism for affine $f$.
 
   Affine locality, quasi-compactness, and separatedness are in
@@ -148,8 +153,8 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #metadata(none) <sup-rv-5>
 #corollary(number: "RV-5", title: "Base change")[
   For $g:Y'->Y$, the canonical map identifies
-  $fiber(op("Spec")_Y shf.a, Y', base: Y)$ with
-  $op("Spec")_(Y') g^*shf.a$ over $Y'$.
+  $fiber(ops.spec_Y shf.a, Y', base: Y)$ with
+  $ops.spec_(Y') g^*shf.a$ over $Y'$.
   On affine charts, this is the tensor-product comparison of
   #book-link(<sup-mg-1>)[MG-1], with its specified algebra maps.
 ]
@@ -189,8 +194,12 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
   + *Identify each trivial bundle.* On a trivializing open $U$, the symmetric algebra of
     $shf.o_U^r$ is $shf.o_U[t_1,dots,t_r]$ by AL-6's universal property,
-    sending basis sections to polynomial variables. RV-1 therefore gives
+    $e_i mapsto t_i$ for the standard basis. RV-1 therefore gives
     relative affine $r$-space there.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $shf.o_U^r edge("r", ->) edge("dr", e_i mapsto t_i, ->) & ops.sym(shf.o_U^r) edge("d", ->, stroke: #(dash: "dashed")) \ & shf.o_U[t_1,dots,t_r]$,
+    )]
 
   + *Transport the transition cocycle.* A basis change acts on degree one,
     extends uniquely to a symmetric-algebra isomorphism, and hence induces
@@ -227,7 +236,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 
 #metadata(none) <sup-rv-8>
 #corollary(number: "RV-8", title: "Sections and the dual convention")[
-  We use $V(shf.e)=op("Spec")_X op("Sym")(shf.e)$.
+  We use $V(shf.e)=ops.spec_X ops.sym (shf.e)$.
 
   + Its sections over an open $U$ correspond to linear maps
     $shf.e|_U->shf.o_U$, so its sheaf of sections is $shf.e^or$.
@@ -239,10 +248,14 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #proof[
 
   + *Identify the section sheaf.* Apply RV-2 to the inclusion $U->X$. Algebra maps from
-    $op("Sym")(shf.e|_U)$ to $shf.o_U$ correspond by the symmetric-algebra
+    $ops.sym (shf.e|_U)$ to $shf.o_U$ correspond by the symmetric-algebra
     universal property to linear maps $shf.e|_U->shf.o_U$; the bijection
     restricts an algebra map to degree one. It commutes with restrictions
     in $U$, so the section sheaf is the dual sheaf.
+    #align(center)[#diagram(
+      cell-size: 21mm,
+      $shf.e|_U edge("r", ->) edge("dr", u, ->) & ops.sym(shf.e|_U) edge("d", tilde(u), ->, stroke: #(dash: "dashed")) \ & shf.o_U$,
+    )]
 
   + *Apply double-dual evaluation.* Finite local freeness
     makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-11:

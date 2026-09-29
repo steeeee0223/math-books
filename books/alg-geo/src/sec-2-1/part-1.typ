@@ -13,15 +13,15 @@
   Let $X$ be a topological space. A *presheaf* $shf.f$ of abelian groups on
   $X$ consists of the data
 
-  - for every open subset $U subset.eq X$, an abelian group $shf.f (U)$, and
-  - for every inclusion $V subset.eq U$ of open subsets, a homomorphism of abelian group $rho_(U V): shf.f (U) -> shf.f (V)$,
+  - for every open subset $U subset X$, an abelian group $shf.f (U)$, and
+  - for every inclusion $V subset U$ of open subsets, a homomorphism of abelian group $rho_(U V): shf.f (U) -> shf.f (V)$,
 
   subject to the conditions
 
   #set enum(numbering: "(PS1)", indent: 1em)
   + $shf.f (emptyset)=0$,
   + $rho_(U U)=ops.id_U$,
-  + $rho_(U W)=rho_(V W) compose rho_(U V)$ whenever $W subset.eq V subset.eq U$.
+  + $rho_(U W)=rho_(V W) compose rho_(U V)$ whenever $W subset V subset U$.
 
   Presheaves of rings, sets, or objects of a fixed category are defined in the same way.
 ]
@@ -85,7 +85,7 @@
 // Hartshorne II.1, Definition D6
 #definition(number: none, title: "Subsheaves, Images, Quotients, and Exactness")[
 
-  - A *subsheaf* $shf.f'$ of $shf.f$ has subgroups $shf.f'(U) subset.eq shf.f (U)$ and the induced restrictions.
+  - A *subsheaf* $shf.f'$ of $shf.f$ has subgroups $shf.f'(U) subset shf.f (U)$ and the induced restrictions.
   - For a sheaf morphism $phi:shf.f->shf.g$, its *kernel* is the presheaf kernel, while its *image* and *cokernel* are the sheaves associated to the corresponding presheaves.
   - The morphism is *injective* if $ops.ker phi=0$ and *surjective* if $ops.im phi=shf.g$.
   - A sequence is *exact* when the image at each term equals the next kernel.

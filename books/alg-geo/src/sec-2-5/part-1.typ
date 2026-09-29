@@ -449,7 +449,7 @@
       = phi_(i j) (f_k^m tilde(s)'_(i j)) = 0,
     $
     so $f_k^m tilde(t)_i|_j = f_k^m tilde(t)_j|_i$ in $shf.f (U_(i j))$.
-    Glue the sections ${f_k^m tilde(t)_i}_(i=1)^p$ on ${U_i}_(i=1)^p$ to
+    Glue the sections ${f_k^m tilde(t)_i}_(i=1)^p$ on $cov(U_i, i=1, top: p)$ to
     obtain $hat(t)_k in shf.f (X)$.
 
   + For each $i$,
@@ -1046,7 +1046,7 @@
       $f^(m_(i j)) s_(i j) = 0$. Choose
       $m >= max{ m_(i j) : 1 lt.eq i,j lt.eq r }$. Then
       $f^m tilde(t)_i|_j = f^m tilde(t)_j|_i$.
-    - Glue the sections ${f^m tilde(t)_i}_(i=1)^r$ on ${U_i}_(i=1)^r$ to
+    - Glue the sections ${f^m tilde(t)_i}_(i=1)^r$ on $cov(U_i, i=1, top: r)$ to
       obtain $s in Gamma(X, tensor(shf.f, shf.l^(times.o (n+m)), over: shf.o_X))$ with
       $s|_(X_f) = f^(n+m) t$.
 ]

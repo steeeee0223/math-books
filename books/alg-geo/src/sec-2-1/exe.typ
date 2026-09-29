@@ -20,9 +20,9 @@ See #book-link(<sup-sc-10>)[SC-10].
   Let $phi:shf.f->shf.g$ be a morphism of sheaves.
 
   + Show $(ops.ker phi)_P=ops.ker (phi_P)$ and $(ops.im phi)_P=ops.im (phi_P)$.
-  + Show that $phi$ is injective, respectively surjective, exactly when all
-    $phi_P$ are so.
-  + Show that a sequence of sheaves is exact exactly when every induced
+  + Show that $phi$ is injective if and only if every $phi_P$ is injective,
+    and similarly for surjectivity.
+  + Show that a sequence of sheaves is exact if and only if every induced
     sequence of stalks is exact.
 ] <exercise-1-2>
 
@@ -30,7 +30,7 @@ See #book-link(<sup-sc-4>)[SC-4].
 
 // Hartshorne II.1, Exercise 1.3
 #exercise(title: "Exercise 1.3")[
-  + Show that $phi:shf.f->shf.g$ is surjective exactly when every section
+  + Show that $phi:shf.f->shf.g$ is surjective if and only if every section
     $s in shf.g (U)$ locally lifts: some cover $U=union U_i$ admits
     $t_i in shf.f (U_i)$ with $phi(t_i)=s|_(U_i)$.
   + Give a surjective sheaf morphism whose map on sections over some open
@@ -59,7 +59,7 @@ See #book-link(<sup-sc-4>)[SC-4].
 
 // Hartshorne II.1, Exercise 1.6
 #exercise(title: "Exercise 1.6")[
-  + For a subsheaf $shf.f' subset.eq shf.f$, show that $shf.f->shf.f\/shf.f'$ is surjective
+  + For a subsheaf $shf.f' subset shf.f$, show that $shf.f->shf.f\/shf.f'$ is surjective
     with kernel $shf.f'$, giving $0->shf.f'->shf.f->shf.f\/shf.f'->0$.
   + Conversely, show that an exact sequence $0->shf.f'->shf.f->shf.f''->0$
     identifies $shf.f'$ with a subsheaf of $shf.f$ and $shf.f''$ with its quotient.
@@ -115,19 +115,19 @@ See #book-link(<sup-sc-9>)[SC-9].
 
 // Hartshorne II.1, Exercise 1.12
 #exercise(title: "Exercise 1.12 (Inverse Limit)")[
-  For an inverse system $shf.f_i$, show that $U mapsto op("lim") shf.f_i (U)$ is a sheaf
-  and has the universal property of $op("lim") shf.f_i$ in the category of sheaves.
+  For an inverse system $shf.f_i$, show that $U mapsto ops.lim shf.f_i (U)$ is a sheaf
+  and has the universal property of $ops.lim shf.f_i$ in the category of sheaves.
 ] <exercise-1-12>
 
 See #book-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.13
 #exercise(title: "Exercise 1.13 (Espace Étale of a Presheaf)")[
-  Given a presheaf $shf.f$, set $op("Spe")(shf.f)=union_(P in X) shf.f_P$ and project
+  Given a presheaf $shf.f$, set $ops.spe (shf.f)=union_(P in X) shf.f_P$ and project
   it to $X$. Give it the strongest topology making every germ map
-  $s:U->op("Spe")(shf.f)$, for $s in shf.f (U)$, continuous. Show that $shf.f^+(U)$
-  is the set of continuous sections over $U$. Hence $shf.f$ is a sheaf exactly
-  when its sections are all continuous sections of this espace étale.
+  $s:U->ops.spe (shf.f)$, for $s in shf.f (U)$, continuous. Show that $shf.f^+(U)$
+  is the set of continuous sections over $U$. Hence $shf.f$ is a sheaf if and
+  only if its sections are all continuous sections of this espace étale.
 ]
 
 // Hartshorne II.1, Exercise 1.14
@@ -184,13 +184,13 @@ See #book-link(<sup-sc-6>)[SC-6].
 
 // Hartshorne II.1, Exercise 1.19
 #exercise(title: "Exercise 1.19 (Extending a Sheaf by Zero)")[
-  Let $Z subset.eq X$ be closed, $U=X-Z$, and let $i:Z->X$, $j:U->X$ be
+  Let $Z subset X$ be closed, $U=X-Z$, and let $i:Z->X$, $j:U->X$ be
   inclusions.
 
   + For a sheaf $shf.f$ on $Z$, show $(i_*shf.f)_P=shf.f_P$ on $Z$ and is $0$
     outside $Z$.
   + For a sheaf $shf.f$ on $U$, sheafify the presheaf taking $V$ to $shf.f (V)$
-    when $V subset.eq U$ and to $0$ otherwise. Show the resulting $j_!shf.f$
+    when $V subset U$ and to $0$ otherwise. Show the resulting $j_!shf.f$
     has stalk $shf.f_P$ on $U$ and $0$ outside, and is uniquely characterized
     by this property and its restriction to $U$.
   + For a sheaf $shf.f$ on $X$, show
@@ -199,7 +199,7 @@ See #book-link(<sup-sc-6>)[SC-6].
 
 // Hartshorne II.1, Exercise 1.20
 #exercise(title: "Exercise 1.20 (Subsheaf with Supports)")[
-  For closed $Z subset.eq X$, let $Gamma_Z (X,shf.f)$ be sections supported in
+  For closed $Z subset X$, let $Gamma_Z (X,shf.f)$ be sections supported in
   $Z$.
 
   + Show $V mapsto Gamma_(Z inter V) (V,shf.f|_V)$ is a sheaf, denoted
@@ -214,8 +214,8 @@ See #book-link(<sup-sc-6>)[SC-6].
   Let $X$ be a variety over an algebraically closed field and $shf.o_X$ its
   sheaf of regular functions.
 
-  + For closed $Y subset.eq X$, show that the ideals of functions vanishing
-    on $Y inter U$ form an ideal sheaf $cal(I)_Y subset.eq shf.o_X$.
+  + For closed $Y subset X$, show that the ideals of functions vanishing
+    on $Y inter U$ form an ideal sheaf $cal(I)_Y subset shf.o_X$.
   + If $Y$ is a subvariety, show
     $shf.o_X\/cal(I)_Y simeq i_*shf.o_Y$.
   + For $X=sch.p^1$ and $Y={P,Q}$, use

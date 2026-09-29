@@ -14,7 +14,7 @@ See #book-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
 
 // Hartshorne II.6, Exercise 6.2
 #exercise(title: "Exercise 6.2 (Varieties in Projective Space)")[
-  Let $X subset.eq sch.p^n$ be nonsingular in codimension one.
+  Let $X subset sch.p^n$ be nonsingular in codimension one.
 
   + For a hypersurface $V$ not containing $X$, define the intersection
     divisor $V dot X$ using valuations of local equations, and extend this
@@ -30,7 +30,7 @@ See #book-link(<sup-dv-16>)[DV-16] ($sch.p^1 times sch.p^1$ case).
 
 // Hartshorne II.6, Exercise 6.3
 #exercise(title: "Exercise 6.3 (Cones)")[
-  Let $V subset.eq sch.p^n$ be projectively normal and nonsingular in
+  Let $V subset sch.p^n$ be projectively normal and nonsingular in
   codimension one, and let $X=C(V)$ with projective closure $bar(X)$ and
   vertex $P$.
 
@@ -107,7 +107,7 @@ For the surface cases, see #book-link(<sup-dv-15>)[DV-15] (affine cone) and #boo
 
   + Compute $K(ops.spec k)=ZZ$.
   + For integral $X$, show rank gives a surjection $K(X)->ZZ$.
-  + For closed $Y subset.eq X$, prove
+  + For closed $Y subset X$, prove
     $K(Y)->K(X)->K(X-Y)->0$ is exact, using filtrations for sheaves supported
     on $Y$ and extension of coherent sheaves.
 ]
@@ -128,5 +128,5 @@ For the surface cases, see #book-link(<sup-dv-15>)[DV-15] (affine cone) and #boo
 #exercise(title: "Exercise 6.12 (Degree of a Coherent Sheaf)")[
   On a complete nonsingular curve, prove there is a unique additive degree on
   coherent sheaves such that $deg shf.l (D)=deg D$ and a torsion sheaf has degree
-  $sum_P op("length")(shf.f_P)$.
+  $sum_P ops.length (shf.f_P)$.
 ]

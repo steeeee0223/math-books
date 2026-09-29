@@ -59,19 +59,19 @@
 #proof[
   The case $U = emptyset$ is clear, so assume $U != emptyset$.
 
-  - Suppose $f in shf.k (U)$ such that $f(x) in shf.k_x^times$ for every $x in U$
+  - Suppose $f in shf.k\(U)$ such that $f(x) in shf.k_x^times$ for every $x in U$
     (note $shf.k_x$ equals the stalk of the presheaf total quotient ring). Take
     $g(x) := f(x)^(-1)$ for each $x in U$; this defines $g$ in the presheaf
-    total quotient ring on $U$. We check that $g in shf.k (U)$. Indeed, if
+    total quotient ring on $U$. We check that $g in shf.k\(U)$. Indeed, if
     $x in U$, then there exists $V in shf.n_x (X)$ with $V subset U$ and
     $s$ in the presheaf total quotient ring on $V$ such that
     $f(y) = s_y$ in the presheaf stalk for every $y in V$. Now, if $t$ is a
     presheaf section on $W$ with $t_y = (s_y)^(-1)$ in the presheaf stalk for
     every $y in V inter W$, then $g(y) = t_y$ for every $y in V inter W$,
-    which shows that $g in shf.k (U)$. Further, it is easy to see that
-    $g in shf.k (U)^times$. Therefore,
+    which shows that $g in shf.k\(U)$. Further, it is easy to see that
+    $g in shf.k\(U)^times$. Therefore,
     $
-      f in shf.k (U)^times
+      f in shf.k\(U)^times
       arrow.l.r.double.long
       f(x) in shf.k_x^times text(" for every ") x in U.
     $
@@ -172,7 +172,7 @@
 
     - Cover $X$ with an open cover ${U_i}$ such that
       $shf.l|_(U_i) simeq shf.o_X|_(U_i)$ for all $i$. For each $i$, pick
-      $f_i in shf.l (U_i) subset shf.k (U_i)$ corresponding to $1 in shf.o (U_i)$ under
+      $f_i in shf.l (U_i) subset shf.k\(U_i)$ corresponding to $1 in shf.o (U_i)$ under
       this isomorphism.
 
     - *Check.* $f_i in shf.k^times (U_i)$ for each $i$. By _(6.D)_, it suffices

@@ -17,7 +17,7 @@
 // Hartshorne I.1, Definition D1
 #definition(number: none, title: "Algebraic Set")[
   A subset $Y$ of $sch.a^n$ is an *algebraic set* if there is a subset
-  $T subset.eq A = k[x_1, ..., x_n]$ such that
+  $T subset A = k[x_1, ..., x_n]$ such that
   $Y = Z(T) = { P in sch.a^n | f(P) = 0 text(" for every ") f in T }$.
 ]
 
@@ -55,14 +55,14 @@
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + If $T_1 subset.eq T_2$ are subsets of $A$, then
+  + If $T_1 subset T_2$ are subsets of $A$, then
     $Z(T_1) supset.eq Z(T_2)$.
-  + If $Y_1 subset.eq Y_2$ are subsets of $sch.a^n$, then
+  + If $Y_1 subset Y_2$ are subsets of $sch.a^n$, then
     $I(Y_1) supset.eq I(Y_2)$.
-  + For any two subsets $Y_1, Y_2 subset.eq sch.a^n$,
+  + For any two subsets $Y_1, Y_2 subset sch.a^n$,
     $I(Y_1 union Y_2) = I(Y_1) inter I(Y_2)$.
-  + For any ideal $idl.a subset.eq A$, $I(Z(idl.a)) = sqrt(idl.a)$.
-  + For any subset $Y subset.eq sch.a^n$, $Z(I(Y)) = overline(Y)$, the closure of
+  + For any ideal $idl.a subset A$, $I(Z(idl.a)) = sqrt(idl.a)$.
+  + For any subset $Y subset sch.a^n$, $Z(I(Y)) = overline(Y)$, the closure of
     $Y$.
 ]
 
@@ -112,7 +112,7 @@
 
 // Hartshorne I.1, Definition D5
 #definition(number: none, title: "Affine Coordinate Ring")[
-  If $Y subset.eq sch.a^n$ is an affine algebraic set, its *affine coordinate
+  If $Y subset sch.a^n$ is an affine algebraic set, its *affine coordinate
   ring* is $A(Y) = A slash I(Y)$.
 ]
 

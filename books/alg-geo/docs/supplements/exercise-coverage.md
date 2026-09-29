@@ -104,7 +104,7 @@
 | 題號 | 狀態 | 位置與範圍 |
 | --- | --- | --- |
 | II.4.1 | 收錄 | MG-11：finite implies proper，引用正文 proper 定義與 finite-map 工具。 |
-| II.4.2 | 收錄 | MG-6–MG-7：dense-open uniqueness 與兩類反例；LP-63 提供 schematically dense 版本。 |
+| II.4.2 | 收錄 | MG-6–MG-7：dense-open uniqueness 與兩類反例；LP-59 提供 schematically dense 版本。 |
 | II.4.3 | 收錄 | MG-8：affine intersections，另加 nonseparated 的非 affine overlap 例子。 |
 | II.4.4 | 收錄 | MG-13：proper subscheme image；MG-5、MG-12 提供 graph 與 image。 |
 | II.4.5 | 後續 | Valuations 的 centers；generic-point 教材只提供先備。 |
@@ -157,7 +157,7 @@
 | II.7.5 | 部分 | PM-4 使用 very ample 與 globally generated tensor 的建構，證明 very ample differences；不宣稱涵蓋所有五項。 |
 | II.7.10 | 部分 | PJ2-6–PJ2-7 處理 P(E)、twisting、quotient section 與 transitions；任意 projective-space bundle 的 converse classification 未證明。 |
 | II.7.11 | 部分 | BU-2 與 PJ2 的 Veronese／twisting 提供先備；一般 center-support 強化未證明，未標成整題解答。 |
-| II.7.13 | 收錄 | LP-57 完整寫出 nodal gluing、Pic(C×A¹)／Pic(C×Gₘ)、overlap action 及 degree obstruction；其 Picard 分類尚未完整形式驗證。 |
+| II.7.13 | 收錄 | LP-53 完整寫出 nodal gluing、Pic(C×A¹)／Pic(C×Gₘ)、overlap action 及 degree obstruction；其 Picard 分類尚未完整形式驗證。 |
 | II.8.1 | 部分 | DF-3 的 residue term 與 finite-separable closed-point 比較；LP2 補 smooth locus 的判準。任意點的所有 rank assertions 未視為已完成。 |
 | II.8.4 | 部分 | DF-13–DF-14 提供 determinant adjunction 與 smooth hypersurface formula；不納入 projective-normality、Bertini construction 或 genus formulas。 |
 | II.8.5 | 部分 | BU-8 是 exceptional geometry 先備；blowup 的 global Picard 與 canonical formulas 仍是本題要求，未在補充教材證明。 |

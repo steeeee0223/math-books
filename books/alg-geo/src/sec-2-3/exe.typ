@@ -3,10 +3,14 @@
 #show: show-theorion
 #import "../defs.typ": *
 
+For Exercises II.3.1\~II.3.4, use #book-link(<sup-lp-18>)[LP-18] for local
+finite type, #book-link(<sup-lp-24>)[LP-24] for finite morphisms, and
+#book-link(<sup-lp-41>)[LP-41] for quasi-compactness.
+
 // Hartshorne II.3, Exercise 3.1
 #exercise(title: "Exercise 3.1")[
   Show that $f:X->Y$ is locally of finite type iff, for every affine
-  $V=ops.spec B subset.eq Y$, $f^(-1) (V)$ has an affine cover $ops.spec A_i$ with
+  $V=ops.spec B subset Y$, $f^(-1) (V)$ has an affine cover $ops.spec A_i$ with
   every $A_i$ a finitely generated $B$-algebra.
 ]
 
@@ -14,7 +18,7 @@
 #exercise(title: "Exercise 3.2 (Quasi-compact Morphisms)")[
   A morphism is quasi-compact if some affine cover $V_i$ of $Y$ has all
   $f^(-1) (V_i)$ quasi-compact. Show this then holds for every affine open
-  $V subset.eq Y$.
+  $V subset Y$.
 ]
 
 // Hartshorne II.3, Exercise 3.3
@@ -23,13 +27,13 @@
     quasi-compact.
   + Deduce that over every affine $V=ops.spec B$, $f^(-1) (V)$ has a finite affine
     cover $ops.spec A_i$ with finitely generated $B$-algebras $A_i$.
-  + Show that then every affine $ops.spec A subset.eq f^(-1) (V)$ has $A$ finitely
+  + Show that then every affine $ops.spec A subset f^(-1) (V)$ has $A$ finitely
     generated over $B$.
 ]
 
 // Hartshorne II.3, Exercise 3.4
 #exercise(title: "Exercise 3.4")[
-  Show $f$ is finite iff for every affine $V=ops.spec B subset.eq Y$,
+  Show $f$ is finite iff for every affine $V=ops.spec B subset Y$,
   $f^(-1) (V)=ops.spec A$ with $A$ a finite $B$-module.
 ]
 
@@ -44,7 +48,7 @@
 // Hartshorne II.3, Exercise 3.6
 #exercise(title: "Exercise 3.6 (Function Field)")[
   If $X$ is integral, show the local ring at its generic point is a field,
-  denoted $K(X)$, and for every nonempty affine $ops.spec A subset.eq X$ it is
+  denoted $K(X)$, and for every nonempty affine $ops.spec A subset X$ it is
   the fraction field of $A$.
 ]
 
@@ -52,7 +56,7 @@
 #metadata(none) <exercise-ii-3-7>
 #exercise(title: "Exercise 3.7")[
   Let $f:X->Y$ be dominant, generically finite, and of finite type between
-  integral schemes. Show there is a dense open $U subset.eq Y$ such that
+  integral schemes. Show there is a dense open $U subset Y$ such that
   $f^(-1) (U)->U$ is finite. First show $K(X)\/K(Y)$ is finite.
 ]
 
@@ -60,7 +64,7 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 
 // Hartshorne II.3, Exercise 3.8
 #exercise(title: "Exercise 3.8 (Normalization)")[
-  For integral $X$, glue $ops.spec overline(A)$ over affine $ops.spec A subset.eq X$,
+  For integral $X$, glue $ops.spec overline(A)$ over affine $ops.spec A subset X$,
   where $overline(A)$ is the integral closure in $K(X)$. Show the resulting
   normal integral scheme $overline(X)->X$ is universal for dominant maps
   from normal integral schemes. If $X$ is of finite type over a field, show
@@ -87,7 +91,7 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 #exercise(title: "Exercise 3.11 (Closed Subschemes)")[
   + Show closed immersions are stable under base extension.
   + Show every closed subscheme of $ops.spec A$ is $ops.spec (A\/idl.a)$ for an ideal
-    $idl.a subset.eq A$.
+    $idl.a subset A$.
   + On a closed subset, show the reduced induced structure is the smallest
     closed subscheme structure.
   + Show every morphism $Z->X$ has a smallest closed subscheme through which
@@ -99,7 +103,7 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 #exercise(title: "Exercise 3.12 (Closed Subschemes of Proj)")[
   + If $S->T$ is a surjective graded map, show $ops.proj T->ops.proj S$ is a closed
     immersion.
-  + For homogeneous $I subset.eq S$, study $ops.proj (S\/I) subset.eq ops.proj S$ and
+  + For homogeneous $I subset S$, study $ops.proj (S\/I) subset ops.proj S$ and
     show truncating $I$ in sufficiently high degrees gives the same closed
     subscheme.
 ]
@@ -174,7 +178,7 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 
   + Reduce to the dominant affine integral case and to the image of $X$.
   + Show that image contains a nonempty open, using the algebraic lemma that
-    for $A subset.eq B$ noetherian domains with $B$ finite type over $A$ and
+    for $A subset B$ noetherian domains with $B$ finite type over $A$ and
     $0!=b in B$, some $0!=a in A$ makes every map $A->K$ to an algebraically
     closed field with $a$ nonzero extend to $B->K$ with $b$ nonzero.
   + Finish by noetherian induction, and give variety morphisms whose images
@@ -186,8 +190,8 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
   For integral finite-type $X\/k$, prove:
   $dim X=dim shf.o_(X,P)$ at closed points;
   $dim X=ops.trdeg_k K(X)$;
-  $ops.codim(Y,X)=inf_{P in Y} dim shf.o_(X,P)$;
-  $dim Y+ops.codim(Y,X)=dim X$;
+  $ops.codim(Y, X)=inf_{P in Y} dim shf.o_(X,P)$;
+  $dim Y+ops.codim(Y, X)=dim X$;
   nonempty opens have dimension $dim X$; and every irreducible component of
   $X times_k k'$ has dimension $dim X$.
 ]
@@ -205,9 +209,9 @@ See #book-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schemes).
 
   + For irreducible closed $Y'$ whose generic point lies in $f(X)$ and a
     component $Z$ of $f^(-1) (Y')$ dominating $Y'$, show
-    $ops.codim(Z,X)<=ops.codim(Y',Y)$.
+    $ops.codim(Z, X)<=ops.codim(Y', Y)$.
   + Every component of every nonempty fibre has dimension at least $e$.
-  + On a dense open $U subset.eq X$, all nonempty fibres have dimension $e$.
+  + On a dense open $U subset X$, all nonempty fibres have dimension $e$.
   + Show the locus where a fibre component through $x$ has dimension at
     least $h$ is closed; use this to prove Chevalley's theorem that the loci
     ${y | dim X_y=h}$ are constructible and the $h=e$ locus contains a dense

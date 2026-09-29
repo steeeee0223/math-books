@@ -154,7 +154,7 @@ algebra and topology are assumed.
     roadmap-node("n13", 1, 3, <sup-mg>, "MG — Affine products, fibers and field-valued points"),
     roadmap-node("n16", 1, 4, <text-ii-4>, "II.4 — Separated and proper morphisms", main: true),
     roadmap-node("n17", 0, 5, <sup-xp-11>, "XP-11 — Quasi-separatedness"),
-    roadmap-node("n18", 1, 5, <sup-lp>, "LP-48~LP-53 — Separated, universally closed, integral morphisms"),
+    roadmap-node("n18", 1, 5, <sup-lp>, "LP-44~LP-49 — Separated and universally closed morphisms"),
     roadmap-node("n20", 2, 5, <sup-vs>, "VS — Varieties and schemes"),
   ),
   (
@@ -221,11 +221,11 @@ algebra and topology are assumed.
   (
     roadmap-node("n35", 0, 0, <text-ii-6>, "II.6 — Divisors", main: true),
     roadmap-node("n36", 0, 1, <sup-al2>, "AL2 — Associated points and total quotients"),
-    roadmap-node("n37", 0, 2, <sup-lp-62>, "LP-62~LP-64 — Dense opens and extension"),
+    roadmap-node("n37", 0, 2, <sup-lp-58>, "LP-58~LP-60 — Dense opens and extension"),
     roadmap-node("n38", 0, 3, <sup-dv>, "DV — Divisors and line bundles"),
     roadmap-node("n39", 1.5, 0, <text-ii-7>, "II.7 — Projective morphisms", main: true),
     roadmap-node("n40", 1, 1, <sup-pj2>, "PJ2 — Relative Proj and projectivization"),
-    roadmap-node("n42", 1.5, 3, <sup-lp-54>, "LP-54~LP-58 — Projectivity and its locality failures"),
+    roadmap-node("n42", 1.5, 3, <sup-lp-50>, "LP-50~LP-54 — Projectivity and its locality failures"),
     roadmap-node("n43", 2, 1, <sup-rm>, "RM — Rational maps, function fields and graphs"),
     roadmap-node("n41", 1, 2, <sup-pm>, "PM — Global embeddings and positivity"),
     roadmap-node("n44", 2, 2, <sup-bu>, "BU — Blowup charts and base points"),

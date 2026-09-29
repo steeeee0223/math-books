@@ -3,6 +3,7 @@
 #show: show-theorion
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
+#import "@preview/fletcher:0.5.8": diagram, edge, node
 
 == LP2 — Further Locality Criteria <sup-lp2>
 
@@ -86,7 +87,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 #proof[
   Cover $Y$ by $V=ops.spec A$ and each $f^(-1)V$ by $U=ops.spec B$.
   The restriction of $Omega_(X\/Y)$ to $U$ is
-  $tildeOf(Omega_(B\/A))$; it is zero exactly when its module of sections
+  $tildeOf(Omega_(B\/A))$; it is zero if and only if its module of sections
   is zero. On $U times_V U$ the diagonal is induced by multiplication
   $tensor(B, B, over: A) -> B$. LP2-2 identifies vanishing of differentials
   with an idempotent diagonal ideal, so this diagonal is an open and closed
@@ -98,7 +99,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   calculation. This proves the unramified criterion.
 
   Flatness is checked on these affine pairs by
-  #book-link(<sup-lp-36>)[LP's flatness criterion]. Apply LP2-2 to obtain the
+  #book-link(<sup-lp-33>)[LP's flatness criterion]. Apply LP2-2 to obtain the
   étale equivalence. For smoothness, choose the standard charts of LP2-2.
   DF-2 eliminates the differentials corresponding to the invertible minor,
   leaving a free module of rank $n-r$. The same presentation has fibers
@@ -121,7 +122,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
 #metadata(none) <sup-lp2-4>
 #proposition(number: "LP2-4", title: "Standard smooth charts and étale coordinates")[
   Put $B=(A[t_1,dots,t_n]\/ideal(f_1 "," dots "," f_r))_g$ and suppose
-  $Delta=op("det")((partial f_i)/(partial t_j))_(1<=i,j<=r)$ is a unit
+  $Delta=ops.det ((partial f_i)/(partial t_j))_(1<=i,j<=r)$ is a unit
   in $B$. Then $ops.spec B -> ops.spec A$ is smooth of relative dimension
   $n-r$. The coordinate map
   $ops.spec B -> sch.a_A^(n-r)$ given by $t_(r+1),dots,t_n$ is étale.
@@ -145,6 +146,10 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   smooth point, proving openness. The differential map to affine space
   identifies the free basis $d t_(r+1),dots d t_n$, and its compatibility
   on overlaps follows from the universal derivation, as in DF-4.
+  #align(center)[#diagram(cell-size: 26mm, $
+    A' edge("r", ->) edge("d", d, ->) & B edge("d", d, ->) \
+    Omega_(A'\/A) edge("r", ->) & Omega_(B\/A)
+  $)]
 ]
 
 #metadata(none) <sup-lp2-5>
@@ -425,7 +430,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   its graph is closed because projective space is separated, and projection
   from the graph is proper by base change of $X_y^"loc" -> ops.spec A_idl.p$.
   A proper immersion is a closed immersion, by the immersion criterion in
-  #book-link(<sup-lp-54>)[LP-54]. Spread these sections as just above; after
+  #book-link(<sup-lp-50>)[LP-50]. Spread these sections as just above; after
   shrinking they generate and give
   $h:X_V -> sch.p_V^N$ with $h^*shf.o (1)=shf.l^n$.
 
@@ -484,7 +489,8 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   + Give a closed immersion with locally free conormal sheaf which is not
     regular, and explain why LP2-9 does not apply.
   + Apply LP2-7 to a flat family and to its inclusion of a special fiber.
-    Determine exactly when a fixed effective Cartier divisor remains Cartier.
+    Determine the conditions under which a fixed effective Cartier divisor
+    remains Cartier.
   + In LP2-12 identify each use of Noetherianity, finite presentation,
     separatedness, and properness. State which denominator-clearing step
     cannot be replaced by an argument only on the closed fiber.

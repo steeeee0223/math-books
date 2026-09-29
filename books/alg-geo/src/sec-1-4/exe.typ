@@ -25,7 +25,7 @@
 
   + For the rational function $f=x_1/x_0$ on $sch.p^2$, find its domain of
     definition and describe the regular function there.
-  + Regard $f$ as a rational map $sch.p^2 arrow.r.long sch.a^1 subset.eq sch.p^1$. Find
+  + Regard $f$ as a rational map $sch.p^2 arrow.r.long sch.a^1 subset sch.p^1$. Find
     its domain of definition and describe the corresponding morphism.
 ]
 
@@ -56,7 +56,7 @@
   #set enum(numbering: "a)", spacing: 0.8em)
 
   + Show that $phi$ is birational and is its own inverse.
-  + Find open sets $U,V subset.eq sch.p^2$ for which $phi:U->V$ is an isomorphism.
+  + Find open sets $U,V subset sch.p^2$ for which $phi:U->V$ is an isomorphism.
   + Find the largest domains of definition of $phi$ and $phi^(-1)$ and
     describe the corresponding morphisms.
 ]
@@ -64,8 +64,8 @@
 // Hartshorne I.4, Exercise 4.7
 #exercise(title: "Exercise 4.7")[
   Suppose $P in X$, $Q in Y$, and $shf.o_(P,X) simeq shf.o_(Q,Y)$ as $k$-algebras.
-  Show that there are open neighborhoods $P in U subset.eq X$ and
-  $Q in V subset.eq Y$ and an isomorphism $U->V$ sending $P$ to $Q$.
+  Show that there are open neighborhoods $P in U subset X$ and
+  $Q in V subset Y$ and an isomorphism $U->V$ sending $P$ to $Q$.
 ]
 
 // Hartshorne I.4, Exercise 4.8
@@ -79,8 +79,8 @@
 
 // Hartshorne I.4, Exercise 4.9
 #exercise(title: "Exercise 4.9")[
-  Let $X subset.eq sch.p^n$ be projective of dimension $r$, with $n>=r+2$.
-  Show that for suitable $P in.not X$ and a linear $sch.p^(n-1) subset.eq sch.p^n$,
+  Let $X subset sch.p^n$ be projective of dimension $r$, with $n>=r+2$.
+  Show that for suitable $P in.not X$ and a linear $sch.p^(n-1) subset sch.p^n$,
   projection from $P$ induces a birational morphism of $X$ onto its image in
   $sch.p^(n-1)$. Use Theorems 4.6A–4.8A.
 ]

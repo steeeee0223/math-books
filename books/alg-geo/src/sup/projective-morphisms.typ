@@ -11,7 +11,7 @@ immersion into one finite-dimensional $sch.p_Y^N$. A very ample sheaf
 relative to $Y$ is the pullback of $shf.o (1)$ under an immersion into
 such a space; the immersion is closed when the morphism to $Y$ is proper.
 The locality and stability statements belong to
-#book-link(<sup-lp-54>)[LP's projectivity criteria]. This supplement
+#book-link(<sup-lp-50>)[LP's projectivity criteria]. This supplement
 constructs embeddings from specified positivity data, using the section
 extension and generation results of II.5–II.7.
 
@@ -183,8 +183,8 @@ extension and generation results of II.5–II.7.
   Its global sections are bihomogeneous polynomials of bidegree $(a,b)$;
   they are zero if either degree is negative and otherwise have basis
   $X_0^(a-i)X_1^i Y_0^(b-j)Y_1^j$ for $0<=i<=a$, $0<=j<=b$.
-  It is globally generated exactly when $a,b>=0$, and ample, equivalently
-  very ample, exactly when $a,b>0$.
+  It is globally generated if and only if $a,b>=0$. It is ample, equivalently
+  very ample, if and only if $a,b>0$.
 ]
 #proof[
   Use the four products of standard affine charts. Their section
@@ -243,7 +243,7 @@ extension and generation results of II.5–II.7.
 
 #metadata(none) <sup-pm-8>
 #theorem(number: "PM-8", title: "Finite linear projection")[
-  Let $X subset.eq sch.p_k^N$ be an integral projective variety of
+  Let $X subset sch.p_k^N$ be an integral projective variety of
   dimension $d$ over an algebraically closed field. There are linear
   forms $l_0,dots,l_d$ whose common center misses $X$ and whose
   projection restricts to a finite surjective morphism

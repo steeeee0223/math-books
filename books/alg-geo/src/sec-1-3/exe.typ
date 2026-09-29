@@ -51,7 +51,7 @@
 // Hartshorne I.3, Exercise 3.5
 #exercise(title: "Exercise 3.5")[
   A variety is called *affine* if it is isomorphic to an affine variety. If
-  $H subset.eq sch.p^n$ is any hypersurface, show that $sch.p^n without H$ is affine.
+  $H subset sch.p^n$ is any hypersurface, show that $sch.p^n without H$ is affine.
 
   _Hint:_ If $deg H=d$, use the $d$-uple embedding and the fact that projective
   space minus a hyperplane is affine.
@@ -69,7 +69,7 @@
   #set enum(numbering: "a)", spacing: 0.8em)
 
   + Show that any two curves in $sch.p^2$ have nonempty intersection.
-  + More generally, if $Y subset.eq sch.p^n$ is projective with $dim Y >= 1$ and
+  + More generally, if $Y subset sch.p^n$ is projective with $dim Y >= 1$ and
     $H$ is a hypersurface, show that $Y inter H != emptyset$.
 
   _Hint:_ Use Exercises 3.5 and 3.1(e).
@@ -97,9 +97,9 @@
   closed subset $Y$ of a quasi-affine or quasi-projective variety $X$ inherits
   a variety structure and is called a *subvariety*.
 
-  Let $phi:X->Y$ be a morphism, and let $X' subset.eq X$ and
-  $Y' subset.eq Y$ be irreducible locally closed subsets with
-  $phi(X') subset.eq Y'$. Show that the restriction $phi|_(X'):X'->Y'$ is a
+  Let $phi:X->Y$ be a morphism, and let $X' subset X$ and
+  $Y' subset Y$ be irreducible locally closed subsets with
+  $phi(X') subset Y'$. Show that the restriction $phi|_(X'):X'->Y'$ is a
   morphism.
 ]
 
@@ -118,8 +118,8 @@
 
 // Hartshorne I.3, Exercise 3.13
 #exercise(title: "Exercise 3.13 (The Local Ring of a Subvariety)")[
-  Let $Y subset.eq X$ be a subvariety. Let $shf.o_(Y,X)$ consist of equivalence
-  classes of pairs $(U,f)$, where $U subset.eq X$ is open,
+  Let $Y subset X$ be a subvariety. Let $shf.o_(Y,X)$ consist of equivalence
+  classes of pairs $(U,f)$, where $U subset X$ is open,
   $U inter Y != emptyset$, and $f$ is regular on $U$, with two pairs equivalent
   when their functions agree on $U inter V$. Show that $shf.o_(Y,X)$ is a local
   ring with residue field $K(Y)$ and dimension $dim X-dim Y$. Note that
@@ -136,7 +136,7 @@
   #set enum(numbering: "a)", spacing: 0.8em)
 
   + Show that $phi$ is a morphism.
-  + Let $Y subset.eq sch.p^3$ be the twisted cubic parametrized by
+  + Let $Y subset sch.p^3$ be the twisted cubic parametrized by
     $(x:y:z:w)=(t^3:t^2 u:t u^2:u^3)$. Take $P=(0:0:1:0)$ and the plane
     $z=0$. Show that projection of $Y$ from $P$ is a cuspidal plane cubic and
     find its equation.
@@ -144,11 +144,11 @@
 
 // Hartshorne I.3, Exercise 3.15
 #exercise(title: "Exercise 3.15 (Products of Affine Varieties)")[
-  Let $X subset.eq sch.a^n$ and $Y subset.eq sch.a^m$ be affine varieties.
+  Let $X subset sch.a^n$ and $Y subset sch.a^m$ be affine varieties.
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + Show that $X times Y subset.eq sch.a^(n+m)$ is irreducible in its induced
+  + Show that $X times Y subset sch.a^(n+m)$ is irreducible in its induced
     topology. This affine variety is called the *product* of $X$ and $Y$.
   + Show that $A(X times Y) simeq tensor(A(X), A(Y), over: k)$.
   + Show that $X times Y$ is a categorical product: the projections are
@@ -160,8 +160,8 @@
 // Hartshorne I.3, Exercise 3.16
 #exercise(title: "Exercise 3.16 (Products of Quasi-projective Varieties)")[
   Use the Segre embedding to give $sch.p^n times sch.p^m$ a projective variety
-  structure. For quasi-projective varieties $X subset.eq sch.p^n$ and
-  $Y subset.eq sch.p^m$:
+  structure. For quasi-projective varieties $X subset sch.p^n$ and
+  $Y subset sch.p^m$:
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
@@ -192,7 +192,7 @@
 
 // Hartshorne I.3, Exercise 3.18
 #exercise(title: "Exercise 3.18 (Projectively Normal Varieties)")[
-  A projective variety $Y subset.eq sch.p^n$ is *projectively normal* for the
+  A projective variety $Y subset sch.p^n$ is *projectively normal* for the
   given embedding if $S(Y)$ is integrally closed.
 
   #set enum(numbering: "a)", spacing: 0.8em)

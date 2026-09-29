@@ -5,12 +5,12 @@
 
 // Hartshorne II.2, Lemma 2.1
 #lemma(number: "2.1")[
-  Let $A$ be a ring and, for an ideal $idl.a subset.eq A$, put
+  Let $A$ be a ring and, for an ideal $idl.a subset A$, put
   $V(idl.a)={idl.p in ops.spec A | idl.p supset.eq idl.a}$.
 
   + For ideals $idl.a,idl.b$, $V(idl.a idl.b)=V(idl.a) union V(idl.b)$.
   + For any family $idl.a_i$, $V(sum_i idl.a_i)=inter_i V(idl.a_i)$.
-  + $V(idl.a) subset.eq V(idl.b)$ if and only if $sqrt(idl.a) supset.eq sqrt(idl.b)$.
+  + $V(idl.a) subset V(idl.b)$ if and only if $sqrt(idl.a) supset.eq sqrt(idl.b)$.
 ]
 
 

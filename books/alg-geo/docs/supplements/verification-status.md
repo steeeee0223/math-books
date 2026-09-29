@@ -13,7 +13,7 @@ Companion 通過 Lean 只驗證檔案中實際陳述的定理。它不自動驗�
 | [SC](../../src/sup/lean/sheaf-constructions.lean) | Limits、stalks 與 module-sheaf adjunction；tensor 的 stalk formula、symmetric／exterior sheaf comparisons 尚未組成完整全域同構，反例的具體空間也未全部建構。 |
 | [AL](../../src/sup/lean/module-algebra.lean) | Finiteness、localization、duality 與 power operations 的代數接口；graded decomposition／filtration 到 graded sheaf 的組裝尚未編碼。 |
 | [XL](../../src/sup/lean/scheme-locality.lean) | Scheme-morphism gluing 與 exact localization；XL-1、XL-2、XL-4–XL-7 另由 [II.2 companion](../../src/sup/lean/ii-2-exe.lean) 與 [LP](../../src/sup/lean/local-props.lean) 提供對應。 |
-| [LP 基礎](../../src/sup/lean/local-props.lean) | Ring locality、affine／stalk comparisons、target locality 與 base change；integral／finite source gluing、faithfully-flat gluing 與具體反例尚未完整形式化。LP-54–LP-64 見下表。 |
+| [LP 基礎](../../src/sup/lean/local-props.lean) | Ring locality、affine／stalk comparisons、target locality 與 base change；integral／finite source gluing、faithfully-flat gluing 與具體反例尚未完整形式化。來源與介面見 [LP 的 mathlib 對照](local-props-mathlib.md)，LP-50–LP-60 見下表。 |
 | [XP](../../src/sup/lean/scheme-properties.lean) | Generic points、dominance、idempotents、compactness 與 Noetherianity；normal scheme 的全域組裝與具體反例尚缺。Reduction 另見 II.2 companion。 |
 | [MG](../../src/sup/lean/morphisms.lean) | 實際 scheme fiber products、graphs、quasi-compact image kernel；完整反例 schemes 與 global reduced-morphism construction 尚未組裝。 |
 | [QC](../../src/sup/lean/quasi-coherent.lean) | Affine comparison、colimits、Hom 與有限 Čech equalizer；qcqs pushforward 的全域 sheaf 比較與 coherence 比較尚待組裝。 |

@@ -17,14 +17,14 @@
 
 // Hartshorne II.4, Exercise 4.3
 #exercise(title: "Exercise 4.3")[
-  If $X$ is separated over affine $S$ and $U,V subset.eq X$ are affine open,
+  If $X$ is separated over affine $S$ and $U,V subset X$ are affine open,
   show $U inter V$ is affine. Give a counterexample without separatedness.
 ]
 
 // Hartshorne II.4, Exercise 4.4
 #exercise(title: "Exercise 4.4")[
   Let $f:X->Y$ be a morphism of separated finite-type schemes over
-  noetherian $S$, and let $Z subset.eq X$ be a closed subscheme proper over
+  noetherian $S$, and let $Z subset X$ be a closed subscheme proper over
   $S$. Show its scheme-theoretic image $f(Z)$ is closed in $Y$ and proper
   over $S$. Factor $f$ through its graph in $X times_S Y$.
 ]
@@ -38,7 +38,7 @@
   + If $X$ is proper, show every valuation has a unique center.
   + Prove the converses.
   + If $X$ is proper and $k$ algebraically closed, show
-    $Gamma(X,shf.o_X)=k$.
+    $Gamma(X, shf.o_X)=k$.
 ]
 
 // Hartshorne II.4, Exercise 4.6

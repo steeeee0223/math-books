@@ -7,21 +7,21 @@
 #definition(number: none, title: "Valuation and Valuation Ring")[
   Let $K$ be a field and $G$ a totally ordered abelian group. A *valuation* of
   $K$ with values in $G$ is a map $v:K without {0}->G$ satisfying
-  $v(x y)=v(x)+v(y)$ and $v(x+y)>=min(v(x),v(y))$. Its *valuation ring* is
+  $v(x y)=v(x)+v(y)$ and $v(x+y)>=min(v(x), v(y))$. Its *valuation ring* is
   $R={x in K | v(x)>=0} union {0}$, with maximal ideal
-  $idl.m={x in K | v(x)>0} union {0}$. If $k subset.eq K$ and $v$ vanishes on
+  $idl.m={x in K | v(x)>0} union {0}$. If $k subset K$ and $v$ vanishes on
   $k without {0}$, then $v$ and $R$ are said to be of $K\/k$.
 ]
 
 // Hartshorne I.6, Definition D2
 #definition(number: none, title: "Domination of Local Rings")[
   If $A,B$ are local rings contained in a field $K$, then $B$ *dominates* $A$
-  if $A subset.eq B$ and $idl.m_B inter A=idl.m_A$.
+  if $A subset B$ and $idl.m_B inter A=idl.m_A$.
 ]
 
 // Hartshorne I.6, Theorem 6.1A
 #theorem(number: "6.1A")[
-  A local ring $R subset.eq K$ is a valuation ring of $K$ if and only if it is
+  A local ring $R subset K$ is a valuation ring of $K$ if and only if it is
   maximal among local subrings of $K$ under domination. Every local subring of
   $K$ is dominated by a valuation ring.
 ]
@@ -63,7 +63,7 @@
 // Hartshorne I.6, Lemma 6.4
 #lemma(number: "6.4")[
   Let $Y$ be quasi-projective and $P,Q in Y$. If
-  $shf.o_(Q,Y) subset.eq shf.o_(P,Y)$ as subrings of $K(Y)$, then $P=Q$.
+  $shf.o_(Q,Y) subset shf.o_(P,Y)$ as subrings of $K(Y)$, then $P=Q$.
 ]
 
 
@@ -86,7 +86,7 @@
 #definition(number: none, title: "Abstract Nonsingular Curve")[
   Let $K\/k$ be a function field of dimension $1$ and $C_K$ its set of DVRs
   over $k$, topologized so finite subsets and $C_K$ are closed. For open
-  $U subset.eq C_K$, put $shf.o (U)=inter_(P in U)R_P$. An *abstract nonsingular
+  $U subset C_K$, put $shf.o (U)=inter_(P in U)R_P$. An *abstract nonsingular
   curve* is an open subset of $C_K$ with this topology and these regular
   functions.
 ]
@@ -95,7 +95,7 @@
 #definition(number: none, title: "Morphisms of Abstract Curves")[
   A morphism $phi:X->Y$ between abstract nonsingular curves or varieties is a
   continuous map such that every regular function on an open
-  $V subset.eq Y$ pulls back to a regular function on $phi^(-1) (V)$.
+  $V subset Y$ pulls back to a regular function on $phi^(-1) (V)$.
 ]
 
 // Hartshorne I.6, Proposition 6.7

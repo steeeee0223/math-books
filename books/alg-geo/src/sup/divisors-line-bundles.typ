@@ -34,9 +34,12 @@ geometric constructions specify the restriction and gluing maps.
   with $shf.o_(U_i)$. The displayed frame identity shows that the subsheaves
   agree on overlaps. The transition units satisfy
   $(f_j/f_i)(f_l/f_j)=f_l/f_i$, so the sheaf gluing result
-  #book-link(<sup-sl-3>)[SL-3] applies. The multiplication map
-  $tensor(shf.o (D), shf.o (E), over: shf.o_X)->shf.o (D+E)$ sends
-  $f_i^(-1) times.o g_i^(-1)$ to $(f_i g_i)^(-1)$ on a common refinement.
+  #book-link(<sup-sl-3>)[SL-3] applies. On a common refinement, the
+  multiplication map is
+  $
+    tensor(shf.o (D), shf.o (E), over: shf.o_X) & -> shf.o (D+E), \
+    f_i^(-1) times.o g_i^(-1) & mapsto (f_i g_i)^(-1).
+  $
   It is an isomorphism in each frame; the multiplication description is
   unchanged by restriction, hence glues. Setting $E=-D$ gives the dual
   identification. These are the constructions of II.6.13 with the frame
@@ -62,7 +65,7 @@ geometric constructions specify the restriction and gluing maps.
   $a_i in K(X)^times$. On an overlap with $e_i=u_(i j)e_j$,
   equality of the two expressions for $s$ gives $a_j=u_(i j)a_i$.
   Consequently $a_i/a_j$ is a regular unit, as required for a Cartier
-  divisor. The displayed map sends the frame $a_i^(-1)$ to $e_i$,
+  divisor. The displayed map is $a_i^(-1) mapsto e_i$ on frames,
   and these maps agree on overlaps because they all multiply by the same
   rational section. SL-3 glues them and their inverses. If $s$ is regular,
   each coefficient belongs to $shf.o_X(U_i)$; every stalk coefficient is
@@ -79,7 +82,7 @@ geometric constructions specify the restriction and gluing maps.
     0 -> shf.o_X(-D) -> shf.o_X -> shf.o_D -> 0.
   $
   More generally, a section of an invertible sheaf defines an effective
-  Cartier zero scheme exactly when its coefficients in local frames are
+  Cartier zero scheme if and only if its coefficients in local frames are
   non-zero-divisors.
 ]
 
@@ -120,7 +123,7 @@ must still pass the non-zero-divisor test.
   Choose an equation $a$ on an affine $V=ops.spec A subset Y$ and affine
   opens $U=ops.spec B$ in $f^(-1)V$, with ring map $phi:A->B$. The
   inverse-image ideal is $(phi(a))$; it is free on its proposed generator
-  exactly when $phi(a)$ is regular. The stalk and cover criterion, and
+  if and only if $phi(a)$ is regular. The stalk and cover criterion, and
   preservation under flat maps, are the Cartier-divisor criteria in
   #book-link(<sup-lp2>)[LP2]. Concretely flatness preserves the injection
   $A ->^a A$ after tensoring with $B$. For a dominant map of integral
@@ -291,11 +294,11 @@ of the generic points. The second accommodates the embedded point in AL2-4.
   $
     0 -> A\/(b) ->^(times a) A\/(a b) -> A\/(a) -> 0,
     quad
-    op("length")(A\/(a b))=op("length")(A\/(a))+op("length")(A\/(b)).
+    ops.length (A\/(a b))=ops.length (A\/(a))+ops.length (A\/(b)).
   $
   Consequently
   $
-    op("mult")_A(a/b)=op("length")_A(A\/(a))-op("length")_A(A\/(b))
+    ops.mult_A(a/b)=ops.length_A(A\/(a))-ops.length_A(A\/(b))
   $
   is a well-defined homomorphism $Q(A)^times\/A^times->ZZ$. If $A$ is a DVR,
   it is the usual valuation.
@@ -307,7 +310,7 @@ one-dimensional spectrum consist only of the closed point. This gives
 finite length. Verify the displayed sequence, use length additivity,
 and compare two fraction presentations by cross multiplication. In a DVR
 the filtration by powers of a uniformizer has one-dimensional residue-field
-quotients, giving $op("length")(A\/(pi^n))=n$.
+quotients, giving $ops.length (A\/(pi^n))=n$.
 
 For a Cartier divisor on a Noetherian scheme, apply this calculation to the
 one-dimensional local rings at codimension-one points. Unit ratios preserve
@@ -321,7 +324,7 @@ construction uses lengths even when those local rings are not DVRs.
   Let $C$ be a proper integral curve over a field $k$. For a Cartier divisor
   $D$, define
   $
-    deg_k(D)=sum_(x in C text(" closed"))op("mult")_x(D)[k(x):k].
+    deg_k(D)=sum_(x in C text(" closed"))ops.mult_x(D)[k(x):k].
   $
   For an effective Cartier divisor $E$ this is
   $deg_k(E)=dim_k Gamma(E, shf.o_E)$. Every Cartier divisor is a difference
@@ -338,7 +341,7 @@ construction uses lengths even when those local rings are not DVRs.
   $B=Gamma(E, shf.o_E)$. Its decomposition into its local factors gives
   $B=product_(x in E) shf.o_(E,x)$. Each composition factor over
   $shf.o_(C,x)$ is $k(x)$, hence
-  $dim_k shf.o_(E,x)=[k(x):k]op("length")_(shf.o_(C,x))(shf.o_(E,x))$.
+  $dim_k shf.o_(E,x)=[k(x):k]ops.length_(shf.o_(C,x))(shf.o_(E,x))$.
   The product decomposition and dimension formula are *left to the reader
   (commutative algebra)*. Summing gives the assertion.
 

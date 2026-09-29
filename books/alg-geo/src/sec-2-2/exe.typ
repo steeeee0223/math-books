@@ -13,7 +13,7 @@ See #book-link(<sup-xl-1>)[XL-1].
 
 // Hartshorne II.2, Exercise 2.2
 #exercise(title: "Exercise 2.2")[
-  If $U subset.eq X$ is open in a scheme, show $(U,shf.o_X|_U)$ is a scheme.
+  If $U subset X$ is open in a scheme, show $(U,shf.o_X|_U)$ is a scheme.
   It is the *open subscheme* induced on $U$.
 ] <exercise-2-2>
 
@@ -132,7 +132,7 @@ See #book-link(<sup-xl-4>)[XL-4].
 #exercise(title: "Exercise 2.16")[
   For $f in Gamma(X, shf.o_X)$, let $X_f$ be the points where $f_x$ is a unit.
 
-  + On $ops.spec B subset.eq X$, show $X_f inter ops.spec B=D(f|_(ops.spec B))$; hence
+  + On $ops.spec B subset X$, show $X_f inter ops.spec B=D(f|_(ops.spec B))$; hence
     $X_f$ is open.
   + If $X$ is quasi-compact and $a|_(X_f)=0$, show $f^n a=0$ for some $n$.
   + If $X$ has a finite affine cover with quasi-compact pairwise
@@ -177,9 +177,9 @@ For (a), see #book-link(<sup-xl-5>)[XL-5]. For (b), see #book-link(<sup-xl-7>)[X
 #exercise(title: "Exercise 2.A (Supplementary)")[
   For $X=ops.spec A$ and $f in A$, verify:
 
-  + $D(f)$ is empty exactly when $f$ is nilpotent
-  + $D(f)=X$ exactly when $f$ is a unit
-  + $X$ is empty exactly when $A$ is the zero ring
+  + $D(f)$ is empty if and only if $f$ is nilpotent
+  + $D(f)=X$ if and only if $f$ is a unit
+  + $X$ is empty if and only if $A$ is the zero ring
   + closed subsets correspond contravariantly to radical ideals
   + every $D(f)$ is quasi-compact
   + the closed points of $X$ are precisely the maximal ideals.

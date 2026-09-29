@@ -5,7 +5,7 @@
 
 // Hartshorne I.7, Proposition 7.1
 #proposition(number: "7.1", title: "Affine Dimension Theorem")[
-  Let $Y,Z subset.eq sch.a^n$ be varieties of dimensions $r,s$. Every
+  Let $Y,Z subset sch.a^n$ be varieties of dimensions $r,s$. Every
   irreducible component $W$ of $Y inter Z$ has
   $dim W>=r+s-n$.
 ]
@@ -13,7 +13,7 @@
 
 // Hartshorne I.7, Theorem 7.2
 #theorem(number: "7.2", title: "Projective Dimension Theorem")[
-  Let $Y,Z subset.eq sch.p^n$ have dimensions $r,s$. Every irreducible component
+  Let $Y,Z subset sch.p^n$ have dimensions $r,s$. Every irreducible component
   of $Y inter Z$ has dimension at least $r+s-n$. If $r+s-n>=0$, then
   $Y inter Z!=emptyset$.
 ]
@@ -42,22 +42,22 @@
 #proposition(number: "7.4")[
   Let $M$ be a finitely generated graded module over a noetherian graded ring
   $S$. There is a filtration by graded submodules
-  $0=M_0 subset.eq dots subset.eq M_t=M$ with
+  $0=M_0 subset dots subset M_t=M$ with
   $M_i\/M_(i-1) simeq (S\/idl.p_i)(l_i)$ for homogeneous primes $idl.p_i$.
 
   #set enum(numbering: "a)", spacing: 0.8em)
 
-  + A homogeneous prime contains $ops.ann (M)$ exactly when it contains some
+  + A homogeneous prime contains $ops.ann (M)$ if and only if it contains some
     $idl.p_i$; hence the minimal $idl.p_i$ are the minimal primes of $M$.
   + For a minimal prime $idl.p$ of $M$, its number of occurrences among the
-    $idl.p_i$ is $op("length")_(S_idl.p) (M_idl.p)$ and is independent of the filtration.
+    $idl.p_i$ is $ops.length_(S_idl.p) (M_idl.p)$ and is independent of the filtration.
 ]
 
 
 // Hartshorne I.7, Definition D2
 #definition(number: none, title: "Multiplicity at a Minimal Prime")[
   If $idl.p$ is a minimal prime of a graded $S$-module $M$, define
-  $mu_idl.p (M)=op("length")_(S_idl.p) (M_idl.p)$.
+  $mu_idl.p (M)=ops.length_(S_idl.p) (M_idl.p)$.
 ]
 
 // Hartshorne I.7, Theorem 7.5
@@ -76,7 +76,7 @@
 
 // Hartshorne I.7, Definition D4
 #definition(number: none, title: "Hilbert Polynomial and Degree of a Projective Set")[
-  If $Y subset.eq sch.p^n$ is algebraic of dimension $r$, its *Hilbert polynomial*
+  If $Y subset sch.p^n$ is algebraic of dimension $r$, its *Hilbert polynomial*
   is $P_Y=P_(S(Y))$. Its *degree* is $r!$ times the leading coefficient of
   $P_Y$.
 ]
@@ -96,7 +96,7 @@
 
 // Hartshorne I.7, Theorem 7.7
 #theorem(number: "7.7")[
-  Let $Y subset.eq sch.p^n$ have dimension $r$ and let $H$ be a hypersurface not
+  Let $Y subset sch.p^n$ have dimension $r$ and let $H$ be a hypersurface not
   containing $Y$. If $Z_1,...,Z_s$ are the irreducible components of
   $Y inter H$, then
   $sum_(j=1)^s i(Y,H;Z_j) deg Z_j=(deg Y)(deg H)$.
@@ -105,7 +105,7 @@
 
 // Hartshorne I.7, Corollary 7.8
 #corollary(number: "7.8", title: "Bézout's Theorem")[
-  Let $Y,Z subset.eq sch.p^2$ be distinct curves of degrees $d,e$, and let
+  Let $Y,Z subset sch.p^2$ be distinct curves of degrees $d,e$, and let
   $Y inter Z={P_1,...,P_s}$. Then
   $sum_i i(Y,Z;P_i)=d e$.
 ]

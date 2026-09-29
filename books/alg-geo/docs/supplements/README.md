@@ -5,6 +5,7 @@
 - [習題對照](exercise-coverage.md)：逐題列出教材位置、適用條件與尚缺範圍。
 - [後續範圍](TODO.md)：尚未納入的內容及編輯範圍。
 - [形式驗證狀態](verification-status.md)：Lean companions 的覆蓋範圍、缺口與檢查方式。
+- [LP 的 mathlib 來源與驗證對照](local-props-mathlib.md)：LP 使用的 mathlib 介面、固定版本來源與 companion 範圍。
 
 已落實的逐篇設計稿不再另行維護。選材與設計沿革可查 Git 歷史；現行編號與來源註記直接查閱各篇 Typst。
 
@@ -19,7 +20,7 @@
 | SC-1–SC-16 | [Sheaf constructions and exactness](../../src/sup/sheaf-constructions.typ) | Sheaf operations、exactness、adjunctions 及不交換的反例。 |
 | AL-1–AL-15 | [Algebraic tools for modules](../../src/sup/module-algebra.typ) | Finite presentation、localization、tensor、duality、symmetric 與 exterior powers。 |
 | XL-1–XL-8 | [Scheme locality and gluing](../../src/sup/scheme-locality.typ) | Morphisms into affine schemes、scheme gluing、principal opens 與 affineness criterion。 |
-| LP-1–LP-65 | [A Locality Calculus for Morphisms](../../src/sup/local-props.typ) | Ring-local conditions、affine communication、morphism locality、projectivity、dominance 與 dense opens。 |
+| LP-1–LP-61 | [A Locality Calculus for Morphisms](../../src/sup/local-props.typ) | Ring-local conditions、affine communication、morphism locality、projectivity、dominance 與 dense opens。 |
 | XP-1–XP-21 | [Topology and intrinsic properties of schemes](../../src/sup/scheme-properties.typ) | Generic points、reduction、normality、Noetherianity 與反例。 |
 | MG-1–MG-13 | [Morphisms, diagonals and graphs](../../src/sup/morphisms.typ) | Fiber products、graphs、finite maps 與 quasi-compact scheme-theoretic images。 |
 | QC-1–QC-14 | [Quasi-coherent and coherent operations](../../src/sup/quasi-coherent.typ) | Affine dictionary、Hom、pushforward 與有限性條件。 |
@@ -52,14 +53,14 @@ rg 'number: "(CAT|SL|SC|AL|XL|LP|XP|MG|QC|SE|RV|PJ|CS|VS|AL2|DV|PJ2|PM|RM|BU|DF|
 | 共用內容 | 主要位置與分工 |
 | --- | --- |
 | 一般 sheaf operations 與純代數工具 | SC 維護 sheaf constructions；AL 維護 module algebra；AL2 維護 associated primes 與 regular sequences。 |
-| Affineness 的 unit-ideal criterion | XL-7 保存 II.2.17(b) 的證明；LP-13 引用它，LP-46 再套用 LP-13。 |
-| Affine closed-immersion dictionary | CS-1 維護 quotient dictionary；LP-33 處理 locality，MG、QC、PJ 引用它。 |
-| Projectivity 的 locality 與反例 | LP-54–LP-58；取得全域 embedding 的定理在 PM。 |
-| Dominance、dense-open restriction 與 Hartogs | LP-59–LP-64；RM 維護 rational-map constructions，DV 使用 meromorphic extension。 |
+| Affineness 的 unit-ideal criterion | XL-7 保存 II.2.17(b) 的證明；LP-13 引用它，LP-43 再套用 LP-13。 |
+| Affine closed-immersion dictionary | CS-1 維護 quotient dictionary；LP-30 處理 locality，MG、QC、PJ 引用它。 |
+| Projectivity 的 locality 與反例 | LP-50–LP-54；取得全域 embedding 的定理在 PM。 |
+| Dominance、dense-open restriction 與 Hartogs | LP-55–LP-60；RM 維護 rational-map constructions，DV 使用 meromorphic extension。 |
 | 新的 locality criteria | LP2；relative Proj、Rees algebra 與 Ω 的 base-change 比較分別留在 PJ2、BU、DF。 |
 | 共用案例 | DV、PJ2、PM、RM、BU、DF 維護各自計算；VS2 串接它們，並維護 VS2-10 的完整 conic family。 |
 
-LP 的 ring-level base change 只需 tensor product，scheme-level base change 才需 II.3 的 fiber products。LP-27 的 integral source gluing 另用「integral iff affine and universally closed」，LP-23 再引用它。Flat 與 faithfully flat 案例也需要相應的 module criteria，不能將整篇 LP 都視為只有 II.2 的先備。
+LP 的 ring-level base change 只需 tensor product，scheme-level base change 才需 II.3 的 fiber products。LP-26 的 integral source gluing 另用「integral iff affine and universally closed」，LP-23 再引用它。Flat 與 faithfully flat 案例也需要相應的 module criteria，不能將整篇 LP 都視為只有 II.2 的先備。
 
 ## 編輯與引用慣例
 

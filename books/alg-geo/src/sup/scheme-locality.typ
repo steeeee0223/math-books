@@ -24,7 +24,7 @@ with the affine pushforward formula of II.5.2.
   For every open subset $U$ of a scheme $X$, the restricted locally ringed
   space $(U,shf.o_X|_U)$ is a scheme, called the *open subscheme* on $U$.
   Its stalks are the corresponding local rings of $X$.
-  (Ex. II.2.1~2)
+  (Ex. II.2.1\~2)
 ]
 
 #proof[
@@ -53,11 +53,11 @@ with the affine pushforward formula of II.5.2.
     restriction; these localization identities are algebraic checks (Check!).  A morphism of sheaves which is an isomorphism on a basis is
     an isomorphism, so $pi$ yields the required isomorphism of schemes.
   + *Choose a distinguished neighborhood.* Let $x in U$.  Choose an affine neighborhood
-    $V=ops.spec A subset.eq X$ of $x$.  The intersection $U inter V$ is open in
+    $V=ops.spec A subset X$ of $x$.  The intersection $U inter V$ is open in
     $ops.spec A$, and principal opens form a basis of its topology, so there is
     some $f in A$ with
     $
-      x in D(f) subset.eq U inter V.
+      x in D(f) subset U inter V.
     $
 
   + *Obtain an affine neighborhood in the open.* By the distinguished-open isomorphism just proved, with its restricted structure sheaf, this neighborhood is
@@ -75,7 +75,7 @@ with the affine pushforward formula of II.5.2.
 #proposition(number: "XL-2", title: "Morphisms into an affine scheme")[
   + For any scheme $X$ and ring $A$, taking global sections gives the natural
     bijection $ ops.hom(X, ops.spec A, over: cat.sch) simeq
-    ops.hom(A, Gamma(X, shf.o_X), over: cat.ring) $.
+    ops.hom(A, Gamma(X, shf.o_X), over: cat.ring). $
     (Ex. II.2.4)
 
   + In particular, $ops.spec ZZ$ is terminal.
@@ -95,27 +95,11 @@ with the affine pushforward formula of II.5.2.
     $
     This defines the map from left to right.
 
-  + *Construct and glue affine morphisms.* Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open
-    $U=ops.spec B subset.eq X$, restriction gives a ring map
-    $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism
-    $U->ops.spec A$.  Cover each overlap $U inter U'$ by affine opens
-    $W=ops.spec C$.  Both restricted morphisms $W->ops.spec A$ correspond
-    to the same ring map $A->Gamma(X, shf.o_X)->C$.  The affine
-    correspondence therefore makes them equal on $W$, and hence on the
-    overlap.  The gluing lemma for scheme morphisms now glues them
-    to a morphism $X->ops.spec A$.
+  + *Construct and glue affine morphisms.* Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open $U=ops.spec B subset X$, restriction gives a ring map $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism $U->ops.spec A$. Cover each overlap $U inter U'$ by affine opens $W=ops.spec C$. Both restricted morphisms $W->ops.spec A$ correspond to the same ring map $A->Gamma(X, shf.o_X)->C$. The affine correspondence therefore makes them equal on $W$, and hence on the overlap. The gluing lemma for scheme morphisms now glues them to a morphism $X->ops.spec A$.
 
-  + *Check inverse constructions and naturality.* On an affine open, the two constructions are inverse by the contravariant
-    equivalence between rings and affine schemes.  Since affine opens cover
-    $X$, they are inverse globally.  Every step commutes with precomposition in
-    $X$ and with ring maps in $A$, so the bijection is natural.
+  + *Check inverse constructions and naturality.* On an affine open, the two constructions are inverse by the contravariant equivalence between rings and affine schemes.  Since affine opens cover $X$, they are inverse globally.  Every step commutes with precomposition in $X$ and with ring maps in $A$, so the bijection is natural.
 
-  + *Identify the terminal and initial schemes.* There is a unique unital
-    ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$
-    terminal. Its primes and their inclusions are the elementary arithmetic
-    description of $ops.spec ZZ$ (Check!). The zero ring has no prime
-    ideals, and the empty locally ringed space has exactly one morphism to
-    every scheme, including itself (Check!). Thus its spectrum is initial.
+  + *Identify the terminal and initial schemes.* There is a unique unital ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$ terminal. Its primes and their inclusions are the elementary arithmetic description of $ops.spec ZZ$ (Check!). The zero ring has no prime ideals, and the empty locally ringed space has exactly one morphism to every scheme, including itself (Check!). Thus its spectrum is initial.
 ]
 
 #metadata(none) <sup-xl-3>
@@ -134,7 +118,7 @@ with the affine pushforward formula of II.5.2.
 #proof[
 
   + *Glue the point maps.* The local point maps agree on overlaps, so define a unique map $f:X->Y$.
-    For an open $V subset.eq Y$, its inverse image intersects $U_i$ in
+    For an open $V subset Y$, its inverse image intersects $U_i$ in
     $f_i^(-1)(V)$, which is open; thus $f$ is continuous.
 
   + *Glue the structure-sheaf maps.* A section
@@ -178,11 +162,11 @@ with the affine pushforward formula of II.5.2.
     $
     The inverse and cocycle conditions say exactly that this is already an
     equivalence relation on the indicated points.  Let $X$ be the quotient.
-    Give it the topology in which $W subset.eq X$ is open precisely when its
+    Give it the topology in which $W subset X$ is open precisely when its
     inverse image in every $X_i$ is open.  Because each $U_(i j)$ is open and
     every $phi_(i j)$ is a homeomorphism, the maps
     $q_i:X_i->X$ are open embeddings.  More explicitly, the inverse image
-    in $X_j$ of the image of an open $W_i subset.eq X_i$ is
+    in $X_j$ of the image of an open $W_i subset X_i$ is
     $phi_(i j)(W_i inter U_(i j))$, which is open; the cocycle condition
     ensures that no further identifications occur within a single $X_i$.
     The equivalence-relation and quotient-topology checks in this step
@@ -253,7 +237,10 @@ with the affine pushforward formula of II.5.2.
     every $b in Gamma(X_f, shf.o_X)$ satisfies $f^n b=a|_(X_f)$ for some
     $n$ and some $a in A$.
   + Under this last hypothesis, restriction induces the isomorphism
-    $A_f simeq Gamma(X_f, shf.o_X)$, with $a/f^n mapsto a|_(X_f)/f^n$.
+    $
+         A_f & -> Gamma(X_f, shf.o_X), \
+      a\/f^n & mapsto (a|_(X_f)\/f^n).
+    $
 
   The finite-cover hypothesis is equivalent to $X$ being quasi-compact
   and quasi-separated; see XP-11. A function on just one chart does not
@@ -265,10 +252,10 @@ with the affine pushforward formula of II.5.2.
 #proof[
   Write $A=Gamma(X, shf.o_X)$.
 
-  + Let $U=ops.spec B subset.eq X$ and write $f_U in B$ for the restriction of
-    $f$.  A point $p in U$ belongs to $X_f$ exactly when the germ of $f_U$ in
-    $B_p$ is a unit.  The local-ring unit criterion gives $f_U in.not p$ (Check!), hence exactly
-    when $p in D(f_U)$.  Therefore
+  + Let $U=ops.spec B subset X$ and write $f_U in B$ for the restriction of
+    $f$.  A point $p in U$ belongs to $X_f$ if and only if the germ of $f_U$ in
+    $B_p$ is a unit. By the local-ring unit criterion, the germ is a unit if
+    and only if $f_U in.not p$ (Check!), which means $p in D(f_U)$. Therefore
     $X_f inter U=D(f_U)$.  The right side is open for every affine $U$, so
     $X_f$ is open.
 
@@ -372,7 +359,11 @@ with the affine pushforward formula of II.5.2.
 #metadata(none) <sup-xl-8>
 #remark(number: "XL-8", title: "Affine ring maps and principal-open index")[
   For $phi:A->B$ and $f:ops.spec B->ops.spec A$, the map $phi$ is
-  injective exactly when $shf.o_(ops.spec A)->f_*shf.o_(ops.spec B)$ is injective. The canonical identification uses the affine pushforward formula of #book-link(<text-ii-5>)[II.5, Proposition 5.2]. Surjectivity and closed immersions are indexed in #book-link(<sup-cs-1>)[CS-1]; dominance is distinguished from injectivity in #book-link(<sup-xp-6>)[XP-6].
+  injective if and only if $shf.o_(ops.spec A)->f_*shf.o_(ops.spec B)$ is
+  injective. The canonical identification uses the affine pushforward formula
+  of #book-link(<text-ii-5>)[II.5, Proposition 5.2]. Surjectivity and closed
+  immersions are indexed in #book-link(<sup-cs-1>)[CS-1]; dominance is
+  distinguished from injectivity in #book-link(<sup-xp-6>)[XP-6].
 
   For II.2.A and II.2.18(a), the following is a lookup index:
 

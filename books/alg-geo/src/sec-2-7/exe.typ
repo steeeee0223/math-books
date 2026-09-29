@@ -62,7 +62,7 @@ For an application of (d), see #book-link(<sup-pm-4>)[PM-4].
   Let $X$ be a nonsingular projective variety over an algebraically closed
   field and $D$ a divisor.
 
-  + If $D$ is very ample and $X subset.eq sch.p^N$ is its embedding, show that
+  + If $D$ is very ample and $X subset sch.p^N$ is its embedding, show that
     $dim |n D|=P_X (n)-1$ for all sufficiently large $n$.
   + If the class of $D$ has order $r$ in $ops.pic X$, show that $dim |n D|=0$ when
     $r$ divides $n$, and is $-1$ otherwise.
@@ -138,7 +138,7 @@ For the Rees charts, see #book-link(<sup-bu-2>)[BU-2]; for Veronese and twisting
 #metadata(none) <exercise-ii-7-13>
 #exercise(title: "Exercise 7.13 (A Complete Nonprojective Variety)")[
   Let $k$ be algebraically closed of characteristic not $2$, and let
-  $C subset.eq sch.p_k^2$ be the nodal cubic $y^2 z=x^3+x^2z$. Glue two copies
+  $C subset sch.p_k^2$ be the nodal cubic $y^2 z=x^3+x^2z$. Glue two copies
   of $C times sch.a^1$ over $C times shf.g_m$ by
   $(P,u) mapsto (u dot P,u)$, where multiplication by $u$ is translation on
   $C-{P_0} simeq shf.g_m$. Call the resulting scheme $X$, with $pi:X->sch.p^1$.
@@ -153,7 +153,7 @@ For the Rees charts, see #book-link(<sup-bu-2>)[BU-2]; for Veronese and twisting
     projective.
 ]
 
-See #book-link(<sup-lp-57>)[LP-57].
+See #book-link(<sup-lp-53>)[LP-53].
 
 // Hartshorne II.7, Exercise 7.14
 #exercise(title: "Exercise 7.14")[
