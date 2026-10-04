@@ -84,7 +84,9 @@
 // fiber product of `x` and `y` over `base`
 #let fiber(x, y, base: "") = $#x times_#base #y$
 // a morphism named `top` under category `bottom`
-#let morph(top, bottom) = $stretch(->, size: #150%)_#bottom^#top$
+#let morph(top, bottom) = $attach(stretch(arrow.r, size: #150%), t: #top, b: #bottom)$
+#let epi(t: none, b: none) = $attach(stretch(arrow.r.twohead, size: #150%), t: #t, b: #b)$
+#let mono(t: none, b: none) = $attach(stretch(arrow.r.tail, size: #150%), t: #t, b: #b)$
 #let inclusion(top, bottom) = $stretch(arrow.r.hook, size: #150%)_#bottom^#top$
 // direct sum of `val` under index set from `bottom` to `top`
 #let bigOPlus(val, bottom, top: none) = $attach(plus.o.big, tr: #top, br: #bottom) #val$

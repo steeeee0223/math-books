@@ -19,8 +19,7 @@ topological fact to the reader; a longer reader proof may include a hint.
 The geometric argument still specifies its canonical maps, hypotheses,
 affine or stalk reductions, and compatibility on overlaps.
 
-#metadata(none) <sup-roadmap>
-*Reading roadmap*
+== Reading roadmap <sup-roadmap>
 
 Read each diagram from top to bottom, following the connecting lines.
 Blue cards are main-text entry points; pale cards are supplements.

@@ -5,7 +5,7 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("XP")
 
 == XP — Topology and intrinsic properties of schemes <sup-xp>
@@ -469,9 +469,9 @@ The definitions of connected, irreducible, reduced, integral, and
   fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
   stroke: none,
   table.header([Property], [Open restriction], [Open-cover test], [Stalk / affine test]),
-  [Reduced], [Yes], [Yes], [Reduced stalks / reduced rings],
-  [Normal], [Yes], [Yes], [Normal local rings / XP-12],
-  [Locally Noetherian], [Yes], [Yes], [Noetherian affine rings; Noetherian stalks alone do not suffice],
+  [Reduced], [$checkmark$], [$checkmark$], [Reduced stalks / reduced rings],
+  [Normal], [$checkmark$], [$checkmark$], [Normal local rings / XP-12],
+  [Locally Noetherian], [$checkmark$], [$checkmark$], [Noetherian affine rings; Noetherian stalks alone do not suffice],
   [Quasi-compact], [Not in general], [Finite cover by quasi-compact opens], [No stalk test],
   [Irreducible],
   [Nonempty opens],

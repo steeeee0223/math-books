@@ -1,6 +1,9 @@
 #let scr(it) = text(features: ("ss01",), box($cal(it)$))
 #let bf(x) = math.bold(math.upright(x))
 
+// Notation: collections
+#let coll(val, bottom, top: none) = $attach({#val}, br: #bottom, tr: #top)$
+
 // Notation: sheaves
 #let shf = (
   a: $scr("A")$,
@@ -38,3 +41,7 @@
 )
 // Linear system
 #let linsys = $frak("d")$
+
+// Notation: homology
+#let cplx(x) = $#x^circle.filled.tiny$
+#let coho(x, i) = $h^#i paren.l #x paren.r$

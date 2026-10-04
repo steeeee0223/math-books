@@ -3,6 +3,8 @@
 #show: show-theorion
 #import "../defs.typ": *
 
+=== Exercises
+
 For Exercises II.3.1\~II.3.4, use #supplement-link(<sup-lp-18>)[LP-18] for local
 finite type, #supplement-link(<sup-lp-24>)[LP-24] for finite morphisms, and
 #supplement-link(<sup-lp-41>)[LP-41] for quasi-compactness.

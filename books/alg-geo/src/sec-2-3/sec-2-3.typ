@@ -8,7 +8,4 @@ criteria. The scheme-level base-change conclusions can be read after
 Theorem 3.3 below.
 
 #include "part-1.typ"
-
-=== Exercises
-
 #include "exe.typ"

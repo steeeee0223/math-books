@@ -3,6 +3,8 @@
 #show: show-theorion
 #import "../defs.typ": *
 
+=== Exercises
+
 // Hartshorne II.2, Exercise 2.1
 #exercise(title: "Exercise 2.1")[
   For $X=ops.spec A$ and $f in A$, show
