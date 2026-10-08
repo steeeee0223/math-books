@@ -35,6 +35,44 @@ noncomputable def homEquiv (G : TopCat.Sheaf Ab Y)
   (adjunction f).homEquiv G F
 
 
+/- SC-6(a): the presheaf map [s] ↦ β(s)|_U extends uniquely through
+sheafification, and the reverse map sends s to α(s^f). Mathlib constructs
+inverse image by presheaf pullback and sheafification, with the same
+colimit and sheafification universal properties as Hartshorne's definition.
+Below we check the complete adjunction for abelian sheaves, the transpose
+formulas, their inverse laws, and the images of identities. -/
+theorem homEquiv_forward (G : TopCat.Sheaf Ab Y) (F : TopCat.Sheaf Ab X)
+    (α : (TopCat.Sheaf.pullback Ab f).obj G ⟶ F) :
+    homEquiv f G F α = unit f G ≫ (TopCat.Sheaf.pushforward Ab f).map α := rfl
+
+theorem homEquiv_inverse (G : TopCat.Sheaf Ab Y) (F : TopCat.Sheaf Ab X)
+    (β : G ⟶ (TopCat.Sheaf.pushforward Ab f).obj F) :
+    (homEquiv f G F).symm β =
+      (TopCat.Sheaf.pullback Ab f).map β ≫ counit f F := rfl
+
+theorem inverse_forward (G : TopCat.Sheaf Ab Y) (F : TopCat.Sheaf Ab X)
+    (α : (TopCat.Sheaf.pullback Ab f).obj G ⟶ F) :
+    (homEquiv f G F).symm (homEquiv f G F α) = α :=
+  (homEquiv f G F).symm_apply_apply α
+
+theorem forward_inverse (G : TopCat.Sheaf Ab Y) (F : TopCat.Sheaf Ab X)
+    (β : G ⟶ (TopCat.Sheaf.pushforward Ab f).obj F) :
+    homEquiv f G F ((homEquiv f G F).symm β) = β :=
+  (homEquiv f G F).apply_symm_apply β
+
+
+/-- The unit is the transpose of the identity on the inverse image. -/
+theorem unit_from_identity (G : TopCat.Sheaf Ab Y) :
+    homEquiv f G ((TopCat.Sheaf.pullback Ab f).obj G) (𝟙 _) = unit f G := by
+  rw [homEquiv_forward, CategoryTheory.Functor.map_id, Category.comp_id]
+
+/-- The counit is the inverse transpose of the identity on the direct image. -/
+theorem counit_from_identity (F : TopCat.Sheaf Ab X) :
+    (homEquiv f ((TopCat.Sheaf.pushforward Ab f).obj F) F).symm (𝟙 _) =
+      counit f F := by
+  rw [homEquiv_inverse, CategoryTheory.Functor.map_id, Category.id_comp]
+
+
 /-- The first triangle identity used to show that the two hom-set maps invert. -/
 theorem left_triangle (G : TopCat.Sheaf Ab Y) :
     (TopCat.Sheaf.pullback Ab f).map (unit f G) ≫
@@ -50,4 +88,5 @@ theorem right_triangle (F : TopCat.Sheaf Ab X) :
 end Exercise1_18
 
 /- The II.1.18 construction is now the proof of SC-6. The unit, counit,
-Hom equivalence, and triangle identities below verify the same maps. -/
+Hom equivalence, transpose formulas, inverse laws, and triangle identities
+above verify the same maps. -/

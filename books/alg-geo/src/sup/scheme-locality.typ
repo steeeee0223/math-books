@@ -4,7 +4,7 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("XL")
 
 == XL — Scheme locality and gluing <sup-xl>
@@ -74,9 +74,11 @@ with the affine pushforward formula of II.5.2.
 ]
 
 #proposition(key: "sup-xl-2", title: "Morphisms into an affine scheme")[
-  + For any scheme $X$ and ring $A$, taking global sections gives the natural
-    bijection $ ops.hom(X, ops.spec A, over: cat.sch) simeq
-    ops.hom(A, Gamma(X, shf.o_X), over: cat.ring). $
+  + For any locally ringed space $X$ and ring $A$, taking global sections gives the natural bijection
+    $
+      ops.hom(X, ops.spec A, over: cat.lrs) simeq
+      ops.hom(A, Gamma(X, shf.o_X), over: cat.ring).
+    $
     (Ex. II.2.4)
 
   + In particular, $ops.spec ZZ$ is terminal.
@@ -89,16 +91,72 @@ with the affine pushforward formula of II.5.2.
 
 #proof[
 
-  + *Take global sections.* A scheme morphism $f:X->ops.spec A$ induces on global sections a ring map
+  + *Construct the canonical point map.* Put $B=Gamma(X, shf.o_X)$.
+    For $x in X$, let $rho_x:B->shf.o_(X,x)$ be the germ map and let
+    $idl.m_x$ be the maximal ideal of this local ring. Define
     $
-      A simeq Gamma(ops.spec A, shf.o) ->^(f^sharp)
-      Gamma(X, shf.o_X).
+      eta_(X)(x)=rho_x^(-1)(idl.m_x) in ops.spec B.
     $
-    This defines the map from left to right.
+    This is a prime ideal because it is the inverse image of a prime ideal.
+    For $b in B$, its principal open has inverse image
+    $
+      eta_X^(-1)(D(b))=X_b:={x in X | b_x in shf.o_(X,x)^times}.
+    $
+    If $b_x$ is a unit, represent its inverse by a section near $x$ and
+    shrink that neighborhood until its product with $b$ is $1$.
+    Thus $X_b$ is open. Since the $D(b)$ form a basis, $eta_X$ is continuous.
 
-  + *Construct and glue affine morphisms.* Conversely, let $phi:A->Gamma(X, shf.o_X)$.  For each affine open $U=ops.spec B subset X$, restriction gives a ring map $A->Gamma(U, shf.o_U) simeq B$, hence a scheme morphism $U->ops.spec A$. Cover each overlap $U inter U'$ by affine opens $W=ops.spec C$. Both restricted morphisms $W->ops.spec A$ correspond to the same ring map $A->Gamma(X, shf.o_X)->C$. The affine correspondence therefore makes them equal on $W$, and hence on the overlap. The gluing lemma for scheme morphisms now glues them to a morphism $X->ops.spec A$.
+  + *Construct its structure-sheaf map.* On $X_b$, the local inverses of $b$
+    agree by uniqueness and glue, so $b|_(X_b)$ is a unit. Localization
+    therefore gives a unique ring map
+    $
+      B_b simeq shf.o_(ops.spec B)(D(b))->shf.o_(X)(X_b),
+      quad c/b^n mapsto c|_(X_b)(b|_(X_b))^(-n).
+    $
+    These maps commute with restrictions between principal opens: on both
+    sides they extend the restriction of $B$, and uniqueness of localization
+    forces equality. By #supplement-link(<sup-sl-2>)[SL-2], they extend
+    uniquely to a sheaf map $shf.o_(ops.spec B)->(eta_X)_*shf.o_X$.
+    At $x$, put $idl.p=eta_X(x)$. The stalk map is the localization
+    $B_idl.p->shf.o_(X,x)$ of $rho_x$. Its inverse image of $idl.m_x$ is
+    $idl.p B_idl.p$, since a fraction $c/d$ with $d in.not idl.p$ maps into
+    $idl.m_x$ exactly when $c in idl.p$. It is therefore local.
+    We have constructed a morphism of locally ringed spaces $eta_X$;
+    under $Gamma(ops.spec B, shf.o) simeq B$, its global-sections map is $ops.id_B$.
 
-  + *Check inverse constructions and naturality.* On an affine open, the two constructions are inverse by the contravariant equivalence between rings and affine schemes.  Since affine opens cover $X$, they are inverse globally.  Every step commutes with precomposition in $X$ and with ring maps in $A$, so the bijection is natural.
+  + *Construct the inverse correspondence.* A morphism
+    $h:X->ops.spec A$ induces a ring map
+    $alpha(h):A->Gamma(X, shf.o_X)=B$. Conversely, for $phi:A->B$, set
+    $
+      beta(phi)=ops.spec (phi) compose eta_X:X->ops.spec A.
+    $
+    Functoriality of $ops.spec$ and the preceding identity on global
+    sections give $alpha(beta(phi))=phi$.
+
+  + *Prove uniqueness directly on stalks and principal opens.* Suppose
+    $alpha(h)=phi$. At $x$, the composite
+    $A->A_(h(x))->shf.o_(X,x)$ is $rho_x compose phi$.
+    Locality of the second map implies
+    $
+      h(x)=(rho_x compose phi)^(-1)(idl.m_x).
+    $
+    This is also the point map of $beta(phi)$. For $a in A$, both
+    morphisms therefore have inverse image $X_(phi(a))$ over $D(a)$.
+    Their section maps $A_a->shf.o_(X)(X_(phi(a)))$ both extend the
+    restriction of $phi$, so uniqueness of localization makes them equal.
+    Principal opens form a basis, hence their sheaf maps agree by SL-2.
+    Thus $h=beta(phi)$, proving $beta(alpha(h))=h$.
+
+  + *Check functoriality.* For a morphism of locally ringed spaces
+    $u:X'->X$, let $u^sharp:B->Gamma(X', shf.o_(X'))$ be its map on
+    global sections. The uniqueness just proved gives
+    $eta_X compose u=ops.spec (u^sharp) compose eta_(X')$.
+    Moreover, precomposing $h$ with $u$ sends $alpha(h)$ to
+    $u^sharp compose alpha(h)$, while composing $h$ with
+    $ops.spec (v)$ for a ring map $v:A'->A$ sends it to $alpha(h) compose v$.
+    The bijection is therefore natural in both variables, which is the
+    stated adjunction. Scheme morphisms are precisely morphisms of their
+    underlying locally ringed spaces, so the scheme case follows.
 
   + *Identify the terminal and initial schemes.* There is a unique unital ring map $ZZ->Gamma(X, shf.o_X)$, so the bijection makes $ops.spec ZZ$ terminal. Its primes and their inclusions are the elementary arithmetic description of $ops.spec ZZ$ (Check!). The zero ring has no prime ideals, and the empty locally ringed space has exactly one morphism to every scheme, including itself (Check!). Thus its spectrum is initial.
 ]

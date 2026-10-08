@@ -53,6 +53,44 @@ noncomputable def hom_Spec_equiv {X : Scheme.{u}} :
     (X ⟶ Spec R) ≃ (R ⟶ Γ(X, ⊤)) :=
   (ΓSpec.adjunction.homEquiv X (op R)).symm.trans unopHomEquiv
 
+/- XL-2(a) holds for all locally ringed spaces. Mathlib's structure sheaf
+and local morphisms agree with Hartshorne's conventions; its spectrum
+sections are canonically identified with the ring. No affine cover of X
+is used. The following checks the full bijection and its canonical inverse,
+as well as the unit-locus and localization steps of the revised proof. -/
+noncomputable def lrs_hom_Spec_equiv (X : LocallyRingedSpace.{u}) :
+    (X ⟶ Spec.locallyRingedSpaceObj R) ≃
+      (R ⟶ LocallyRingedSpace.Γ.obj (op X)) :=
+  (ΓSpec.locallyRingedSpaceAdjunction.homEquiv X (op R)).symm.trans unopHomEquiv
+
+theorem lrs_hom_Spec_equiv_inverse (X : LocallyRingedSpace.{u})
+    (φ : R ⟶ LocallyRingedSpace.Γ.obj (op X)) :
+    (lrs_hom_Spec_equiv R X).symm φ =
+      X.toΓSpec ≫ Spec.locallyRingedSpaceMap φ := rfl
+
+theorem lrs_unit_point_unit_criterion (X : LocallyRingedSpace.{u})
+    (b : LocallyRingedSpace.Γ.obj (op X)) (x : X) :
+    b ∉ (X.toΓSpecFun x).asIdeal ↔ IsUnit (X.presheaf.Γgerm x b) :=
+  X.notMem_prime_iff_unit_in_stalk b x
+
+theorem lrs_unit_preimage_basicOpen (X : LocallyRingedSpace.{u})
+    (b : LocallyRingedSpace.Γ.obj (op X)) :
+    X.toΓSpecFun ⁻¹' PrimeSpectrum.basicOpen b =
+      SetLike.coe (X.toRingedSpace.basicOpen b) :=
+  X.toΓSpec_preimage_basicOpen_eq b
+
+theorem lrs_unit_localization_extends_restriction (X : LocallyRingedSpace.{u})
+    (b : LocallyRingedSpace.Γ.obj (op X)) :
+    CommRingCat.ofHom (algebraMap (LocallyRingedSpace.Γ.obj (op X)) _) ≫
+      X.toΓSpecCApp b = X.toToΓSpecMapBasicOpen b :=
+  X.toΓSpecCApp_spec b
+
+theorem lrs_unit_stalk_extends_germ (X : LocallyRingedSpace.{u}) (x : X) :
+    AlgebraicGeometry.StructureSheaf.toStalk _ _ ≫
+      X.toΓSpecSheafedSpace.hom.stalkMap x = X.presheaf.Γgerm x :=
+  X.toStalk_stalkMap_toΓSpec x
+
+
 end Exercises2_1_2_4
 
 section Exercise2_3

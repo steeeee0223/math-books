@@ -5,7 +5,7 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("SC")
 
 == SC — Sheaf constructions and exactness <sup-sc>
@@ -299,73 +299,40 @@ sheafification definitions remain in #book-link(<text-ii-1>)[II.1, D5–D7].
   $P_f shf.g\(U)=ops.colim_(f(U) subset V) shf.g\(V)$.
   By definition, $f^(-1)shf.g$ is the sheafification of $P_f shf.g$.
 
+  + *Construct the two Hom maps.* For $s in shf.g (V)$, write $s^f$ for
+    its canonical image in $(f^(-1)shf.g)(f^(-1)(V))$.
+    Given $beta:shf.g->f_*shf.f$, its section maps define
+    $
+      P_f shf.g (U) to shf.f (U), quad [s in shf.g (V)] mapsto beta_V(s)|_U,
+      quad U subset f^(-1)(V).
+    $
+    Compatibility of $beta$ with restriction makes this well-defined on
+    the colimit and compatible with restriction in $U$. The universal
+    property of sheafification extends it uniquely to
+    $Psi(beta):f^(-1)shf.g->shf.f$.
+    Conversely, for $alpha:f^(-1)shf.g->shf.f$, the maps
+    $
+      Phi(alpha)_V:shf.g (V) to shf.f (f^(-1)(V))=(f_*shf.f)(V),
+      quad s mapsto alpha_(f^(-1)(V))(s^f)
+    $
+    commute with restrictions and hence define $Phi(alpha):shf.g->f_*shf.f$.
 
-  + *Construct the counit.* First let $shf.f$ be a sheaf on $X$. For every $V$ occurring in
-    $P_f (f_*shf.f)(U)$, the inclusion $U subset f^(-1)(V)$ gives a restriction
-    homomorphism
-    $shf.f\(f^(-1)(V))->shf.f\(U)$.
-    These homomorphisms are compatible as $V$ varies, so the universal property
-    of the colimit gives $P_f (f_*shf.f)(U)->shf.f\(U)$. They commute with restriction
-    in $U$ and hence form a presheaf morphism $P_f (f_*shf.f)->shf.f$.
-    Since $shf.f$ is already a sheaf, the universal property of sheafification
-    extends it uniquely to a sheaf morphism
-    $epsilon_(shf.f): f^(-1)f_*shf.f->shf.f$.
-    The construction uses only restriction maps, so it is natural in $shf.f$.
-    #align(center)[#diagram(
-      cell-size: 22mm,
-      $P_f(f_*shf.f) edge("r", ->) edge("dr", ->) & f^(-1)f_*shf.f edge("d", epsilon_(shf.f), ->, stroke: #(dash: "dashed")) \ & shf.f$,
-    )]
+  + *Check inverses and naturality.* The formulas give
+    $Phi(Psi(beta))_(V)(s)=beta_(V)(s)$. They also give
+    $Psi(Phi(alpha))(s^f|_U)=alpha(s^f|_U)$.
+    Every inverse-image section is locally of this form by
+    #supplement-link(<sup-sl-5>)[SL-5], so the sheaf axiom gives
+    $Psi(Phi(alpha))=alpha$. Both formulas commute with precomposition in
+    $shf.g$ and postcomposition in $shf.f$, proving the natural bijection.
 
-  + *Construct the unit.* Now let $shf.g$ be a sheaf on $Y$. If $V subset Y$ is open, then
-    $f(f^(-1)(V)) subset V$. Thus $V$ is one of the indices in
-    $P_f shf.g\(f^(-1)(V))$, and the corresponding colimit map followed by
-    sheafification is
-    $shf.g\(V)->P_f shf.g\(f^(-1)(V))->f^(-1)shf.g\(f^(-1)(V))$.
-    These maps commute with restrictions in $V$, giving a natural sheaf morphism
-    $eta_(shf.g):shf.g->f_*f^(-1)shf.g$.
-
-  + *Define the two Hom maps.* For $alpha:f^(-1)shf.g->shf.f$ and $beta:shf.g->f_*shf.f$, define
+  + *Identify the unit and counit.* The images of the identity maps are
+    $eta_(shf.g)=Phi(ops.id_(f^(-1)shf.g))$ and
+    $epsilon_(shf.f)=Psi(ops.id_(f_*shf.f))$: the former sends $s$ to $s^f$,
+    and the latter sends $t^f|_U$ to $t|_U$. Thus
     $
-      Phi(alpha) & =f_*alpha compose eta_(shf.g),       && Phi(alpha):shf.g->f_*shf.f, \
-       Psi(beta) & =epsilon_(shf.f) compose f^(-1)beta, && Psi(beta):f^(-1)shf.g->shf.f.
+      Phi(alpha)=f_*alpha compose eta_(shf.g), quad
+      Psi(beta)=epsilon_(shf.f) compose f^(-1)beta.
     $
-
-  + *Verify the triangle identities.* On stalks, identify $(f^(-1)shf.g)_x$ with $shf.g_(f(x))$ by
-    representing a germ on a neighborhood $V$ of $f(x)$.  The unit sends this
-    representative to its inverse-image section on $f^(-1)(V)$, and the
-    counit restricts a representative to the chosen source neighborhood.
-    Applying these operations successively recovers the original germ.
-    Thus the colimit maps used above satisfy the two triangle identities
-    $
-      f^(-1)shf.g
-      ->^(f^(-1)eta_(shf.g))f^(-1)f_*f^(-1)shf.g
-      ->^(epsilon_(f^(-1)shf.g))f^(-1)shf.g & =ops.id_(f^(-1)shf.g), \
-       f_*shf.f
-       ->^(eta_(f_*shf.f))f_*f^(-1)f_*shf.f
-       ->^(f_*epsilon_(shf.f))f_*shf.f      & =ops.id_(f_*shf.f).
-    $
-    Indeed, before sheafification, both composites are the canonical colimit map
-    followed by the restriction map belonging to the same inclusion; the colimit
-    and sheafification universal properties identify this composite with the
-    identity.
-
-  + *Show the Hom maps are inverse and natural.* Naturality of $epsilon$ and the first triangle identity now give
-    $
-      Psi(Phi(alpha)) & =epsilon_(shf.f) compose f^(-1)f_*alpha compose f^(-1)eta_(shf.g) \
-                      & =alpha compose epsilon_(f^(-1)shf.g) compose f^(-1)eta_(shf.g)
-                        =alpha.
-    $
-    Similarly, naturality of $eta$ and the second triangle identity give
-    $
-      Phi(Psi(beta)) & =f_*epsilon_(shf.f) compose f_*f^(-1)beta compose eta_(shf.g) \
-                     & =f_*epsilon_(shf.f) compose eta_(f_*shf.f) compose beta
-                       =beta.
-    $
-    Therefore $Phi$ and $Psi$ are inverse bijections. Every ingredient is natural
-    in both $shf.g$ and $shf.f$, so the bijection is natural in both variables.
-
-    The constructions use restriction and local representatives, so they
-    preserve ring operations and the corresponding inverse-image scalar actions.
 
   + *Compare composites.* Direct images
     compose because inverse images of open subsets compose. Applying the two
