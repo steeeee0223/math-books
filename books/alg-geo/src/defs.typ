@@ -83,11 +83,28 @@
 #let tensor(x, y, over: "") = $#x times.o_#over #y$
 // fiber product of `x` and `y` over `base`
 #let fiber(x, y, base: "") = $#x times_#base #y$
+// Keep arrow labels small and close to the shaft.
+#let arrow-label(body, top: false) = if body != none and body != "" {
+  pad(
+    top: if top { 0em } else { -0.15em },
+    bottom: if top { -0.15em } else { 0em },
+    move(
+      dy: if top { 0.1em } else { -0.15em },
+      text(size: 0.9em, $script(#body)$),
+    ),
+  )
+}
+#let labeled-arrow(symbol, top, bottom) = math.attach(
+  // Add shaft length even when the labels are short or absent.
+  math.stretch(symbol, size: 100% + 1.5em),
+  t: arrow-label(top, top: true),
+  b: arrow-label(bottom),
+)
 // a morphism named `top` under category `bottom`
-#let morph(top, bottom) = $attach(stretch(arrow.r, size: #150%), t: #top, b: #bottom)$
-#let epi(t: none, b: none) = $attach(stretch(arrow.r.twohead, size: #150%), t: #t, b: #b)$
-#let mono(t: none, b: none) = $attach(stretch(arrow.r.tail, size: #150%), t: #t, b: #b)$
-#let inclusion(top, bottom) = $stretch(arrow.r.hook, size: #150%)_#bottom^#top$
+#let morph(top, bottom) = labeled-arrow($arrow.r$, top, bottom)
+#let epi(t: none, b: none) = labeled-arrow($arrow.r.twohead$, t, b)
+#let mono(t: none, b: none) = labeled-arrow($arrow.r.tail$, t, b)
+#let inclusion(top, bottom) = labeled-arrow($arrow.r.hook$, top, bottom)
 // direct sum of `val` under index set from `bottom` to `top`
 #let bigOPlus(val, bottom, top: none) = $attach(plus.o.big, tr: #top, br: #bottom) #val$
 // coproduct of `val` under index set from `bottom` to `top`
