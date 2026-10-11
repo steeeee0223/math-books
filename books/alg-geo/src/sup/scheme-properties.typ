@@ -271,7 +271,7 @@ The definitions of connected, irreducible, reduced, integral, and
 
     + *Form the nilradical quotient sheaf.* Let $shf.n$ be the sheafification of the ideal presheaf
       $U mapsto sqrt((0)) subset shf.o_X(U)$.  Its inclusion into
-      $shf.o_X$ is injective by SC-4.  Thus $shf.n (U)$ consists
+      $shf.o_X$ is injective by SC-1.  Thus $shf.n (U)$ consists
       of locally nilpotent sections; a uniform nilpotence exponent on an
       arbitrary open $U$ is not required.  Define
       $

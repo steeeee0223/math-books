@@ -1,6 +1,8 @@
 #import "../defs.typ": book-link
 #import "@preview/cetz:0.3.4"
 
+#set enum(numbering: "(a)(i)", spacing: 0.7em)
+
 #pagebreak(weak: true)
 = Supplements <supplements>
 
@@ -177,7 +179,7 @@ algebra and topology are assumed.
     roadmap-node("n23", 2, 1, <sup-sc>, "SC — Module statements"),
     roadmap-node("n24", 1, 2, <text-ii-5>, "II.5.1-5.8 — The affine module dictionary", main: true),
     roadmap-node("n25", 0.5, 3, <sup-qc>, "QC — Quasi-coherent and coherent operations"),
-    roadmap-node("n28", 2, 3, <sup-xl-8>, "XL-8 — Affine ring-map dictionary"),
+    roadmap-node("n28", 2, 3, <sup-xl-9>, "XL-9 — Affine ring-map dictionary"),
     roadmap-node("n26", 0, 4, <sup-se>, "SE — Support, extension and local freeness"),
     roadmap-node("n27", 1, 4, <sup-rv>, "RV — Relative Spec and vector bundles"),
   ),

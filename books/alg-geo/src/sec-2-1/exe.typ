@@ -13,7 +13,7 @@
   constant sheaf determined by $A$ is its associated sheaf.
 ] <exercise-1-1>
 
-See #supplement-link(<sup-sc-10>)[SC-10].
+See #supplement-link(<sup-sc-8>)[SC-8].
 
 // Hartshorne II.1, Exercise 1.2
 #exercise(title: "Exercise 1.2")[
@@ -26,7 +26,7 @@ See #supplement-link(<sup-sc-10>)[SC-10].
     sequence of stalks is exact.
 ] <exercise-1-2>
 
-See #supplement-link(<sup-sc-4>)[SC-4].
+See #supplement-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.3
 #exercise(title: "Exercise 1.3")[
@@ -37,7 +37,7 @@ See #supplement-link(<sup-sc-4>)[SC-4].
     set is not surjective.
 ] <exercise-1-3>
 
-For (a), see #supplement-link(<sup-sc-4>)[SC-4]. For (b), see #supplement-link(<sup-sc-14>)[SC-14].
+For (a), see #supplement-link(<sup-sc-1>)[SC-1]. For (b), see #supplement-link(<sup-sc-13>)[SC-13].
 
 // Hartshorne II.1, Exercise 1.4
 #exercise(title: "Exercise 1.4")[
@@ -47,7 +47,7 @@ For (a), see #supplement-link(<sup-sc-4>)[SC-4]. For (b), see #supplement-link(<
     of the target.
 ] <exercise-1-4>
 
-See #supplement-link(<sup-sc-4>)[SC-4].
+See #supplement-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.5
 #exercise(title: "Exercise 1.5")[
@@ -55,7 +55,7 @@ See #supplement-link(<sup-sc-4>)[SC-4].
   injective and surjective.
 ] <exercise-1-5>
 
-See #supplement-link(<sup-sc-4>)[SC-4].
+See #supplement-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.6
 #exercise(title: "Exercise 1.6")[
@@ -65,7 +65,7 @@ See #supplement-link(<sup-sc-4>)[SC-4].
     identifies $shf.f'$ with a subsheaf of $shf.f$ and $shf.f''$ with its quotient.
 ] <exercise-1-6>
 
-See #supplement-link(<sup-sc-4>)[SC-4].
+See #supplement-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.7
 #exercise(title: "Exercise 1.7")[
@@ -73,7 +73,7 @@ See #supplement-link(<sup-sc-4>)[SC-4].
   $ops.im phi simeq shf.f\/ops.ker phi$ and $ops.coker phi simeq shf.g\/ops.im phi$.
 ] <exercise-1-7>
 
-See #supplement-link(<sup-sc-4>)[SC-4].
+See #supplement-link(<sup-sc-1>)[SC-1].
 
 // Hartshorne II.1, Exercise 1.8
 #exercise(title: "Exercise 1.8")[
@@ -83,7 +83,7 @@ See #supplement-link(<sup-sc-4>)[SC-4].
   right exact; compare Exercise 1.21.
 ] <exercise-1-8>
 
-See #supplement-link(<sup-sc-6>)[SC-6].
+See #supplement-link(<sup-sc-3>)[SC-3].
 
 // Hartshorne II.1, Exercise 1.9
 #exercise(title: "Exercise 1.9 (Direct Sum)")[
@@ -93,7 +93,7 @@ See #supplement-link(<sup-sc-6>)[SC-6].
   of sheaves of abelian groups.
 ] <exercise-1-9>
 
-See #supplement-link(<sup-sc-3>)[SC-3].
+See #supplement-link(<sup-sc-4>)[SC-4].
 
 // Hartshorne II.1, Exercise 1.10
 #exercise(title: "Exercise 1.10 (Direct Limit)")[
@@ -102,7 +102,7 @@ See #supplement-link(<sup-sc-3>)[SC-3].
   direct limit in the category of sheaves.
 ] <exercise-1-10>
 
-See #supplement-link(<sup-sc-1>)[SC-1].
+See #supplement-link(<sup-sc-2>)[SC-2].
 
 // Hartshorne II.1, Exercise 1.11
 #exercise(title: "Exercise 1.11")[
@@ -111,7 +111,7 @@ See #supplement-link(<sup-sc-1>)[SC-1].
   $Gamma(X, ops.colim shf.f_i)=ops.colim Gamma(X, shf.f_i)$.
 ] <exercise-1-11>
 
-See #supplement-link(<sup-sc-9>)[SC-9].
+See #supplement-link(<sup-sc-2>)[SC-2].
 
 // Hartshorne II.1, Exercise 1.12
 #exercise(title: "Exercise 1.12 (Inverse Limit)")[
@@ -119,7 +119,7 @@ See #supplement-link(<sup-sc-9>)[SC-9].
   and has the universal property of $ops.lim shf.f_i$ in the category of sheaves.
 ] <exercise-1-12>
 
-See #supplement-link(<sup-sc-1>)[SC-1].
+See #supplement-link(<sup-sc-2>)[SC-2].
 
 // Hartshorne II.1, Exercise 1.13
 #exercise(title: "Exercise 1.13 (Espace Étale of a Presheaf)")[
@@ -180,7 +180,7 @@ See #supplement-link(<sup-sc-5>)[SC-5].
   Thus $f^(-1)$ is left adjoint to $f_*$.
 ] <exercise-1-18>
 
-See #supplement-link(<sup-sc-6>)[SC-6].
+See #supplement-link(<sup-sc-3>)[SC-3].
 
 // Hartshorne II.1, Exercise 1.19
 #exercise(title: "Exercise 1.19 (Extending a Sheaf by Zero)")[

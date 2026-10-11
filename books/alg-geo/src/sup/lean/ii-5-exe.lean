@@ -230,7 +230,7 @@ theorem free_stalk_spreads (R M : Type*) [CommRing R]
 
 end HartshorneII5
 
-/- The II.5.1 proof is split between SC-7 (tensor-Hom) and SC-11 (finite
+/- The II.5.1 proof is split between SC-6 (tensor-Hom) and SC-10 (finite
 locally free duality and projection). II.5.2-5 are incorporated into QC,
 and II.5.7 into SE-10/10. The exercise-based declaration names and the
 local-to-global verification boundaries recorded above are unchanged. -/

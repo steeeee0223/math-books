@@ -4,7 +4,7 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("SE")
 
 == SE — Support, extension and local freeness <sup-se>
@@ -317,13 +317,13 @@ for powers of an invertible-sheaf section remains in
   + *Use the dual of a line bundle.* If $shf.f$ is invertible, its dual
     is locally free of rank one and coherent. Evaluation
     $tensor(shf.f, shf.f^or, over: shf.o_X)->shf.o_X$ is an isomorphism on
-    every trivializing open by SC-11, hence globally by SL-1.
+    every trivializing open by SC-10, hence globally by SL-1.
 
   + *Compute a stalk of a tensor inverse.* Conversely, an isomorphism
     $tensor(shf.f, shf.g, over: shf.o_X) simeq shf.o_X$ gives, at each $x$,
     $tensor(M, N, over: R) simeq R$, where
     $R=shf.o_(X,x)$, $M=shf.f_x$, and $N=shf.g_x$. The stalk formula
-    follows from the finite-representative tensor construction in SC-8.
+    follows from the finite-representative tensor construction in SC-7.
     Both modules are finite over the local ring $R$. AL-11 therefore
     makes $M$ free of rank one. Its purely algebraic ingredients are
     Nakayama's lemma and the dimension formula for tensor products of

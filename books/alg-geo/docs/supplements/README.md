@@ -2,6 +2,7 @@
 
 本目錄維護現行教材的索引、習題分工與未完成工作。數學敘述、證明、例子及閱讀路徑以 [正式教材入口](../../src/sup/sup.typ) 為準，已由 [主書](../../src/main.typ) 納入。
 
+- [編輯補充教材](editing.md)：建構、敘述、記號、引用與檢查步驟。
 - [習題對照](exercise-coverage.md)：逐題列出教材位置、適用條件與尚缺範圍。
 - [後續範圍](TODO.md)：尚未納入的內容及編輯範圍。
 - [形式驗證狀態](verification-status.md)：Lean companions 的覆蓋範圍、缺口與檢查方式。
@@ -17,9 +18,9 @@
 | --- | --- | --- |
 | CAT-1–CAT-10 | [Categorical language](../../src/sup/categorical-language.typ) | Natural transformations、universal properties、limits、colimits、adjunctions。 |
 | SL-1–SL-5 | [Sheaf locality and gluing](../../src/sup/sheaf-locality.typ) | Open covers、bases、stalks 與 sheaf gluing。 |
-| SC-1–SC-16 | [Sheaf constructions and exactness](../../src/sup/sheaf-constructions.typ) | Sheaf operations、exactness、adjunctions 及不交換的反例。 |
+| SC-1–SC-15 | [Sheaf constructions and exactness](../../src/sup/sheaf-constructions.typ) | Presheaf constructions、exactness、stalk formulas、adjunctions 與失敗反例。 |
 | AL-1–AL-15 | [Algebraic tools for modules](../../src/sup/module-algebra.typ) | Finite presentation、localization、tensor、duality、symmetric 與 exterior powers。 |
-| XL-1–XL-8 | [Scheme locality and gluing](../../src/sup/scheme-locality.typ) | Morphisms into affine schemes、scheme gluing、principal opens 與 affineness criterion。 |
+| XL-1–XL-9 | [Scheme locality and gluing](../../src/sup/scheme-locality.typ) | Unit loci、morphisms into affine schemes、initial 與 terminal schemes、gluing 及 affineness criterion。 |
 | LP-1–LP-61 | [A Locality Calculus for Morphisms](../../src/sup/local-props.typ) | Ring-local conditions、affine communication、morphism locality、projectivity、dominance 與 dense opens。 |
 | XP-1–XP-21 | [Topology and intrinsic properties of schemes](../../src/sup/scheme-properties.typ) | Generic points、reduction、normality、Noetherianity 與反例。 |
 | MG-1–MG-13 | [Morphisms, diagonals and graphs](../../src/sup/morphisms.typ) | Fiber products、graphs、finite maps 與 quasi-compact scheme-theoretic images。 |
@@ -35,16 +36,11 @@
 | PM-1–PM-9 | [Projective morphisms and positivity](../../src/sup/projective-morphisms.typ) | Global embeddings、relative positivity、finite maps、ruled surfaces 與有限投影。 |
 | RM-1–RM-10 | [Rational maps of schemes](../../src/sup/rational-maps.typ) | Representatives、composition、function fields、graph closure 與 extension。 |
 | BU-1–BU-13 | [Blowups and birational constructions](../../src/sup/blowups.typ) | Rees algebra、saturated charts、transforms、regular centers 與 base points。 |
-| DF-1–DF-15 | [Differentials and Tangent Geometry](../../src/sup/differentials-tangent-spaces.typ) | Tangent vectors、residue fields、Jacobian、conormal、normal 與 canonical bundles。 |
+| DF-1–DF-16 | [Differentials and Tangent Geometry](../../src/sup/differentials-tangent-spaces.typ) | Tangent vectors、residue fields、Jacobian、conormal、normal 與 canonical bundles。 |
 | LP2-1–LP2-12 | [Further Locality Criteria](../../src/sup/local-props-2.typ) | Smooth／étale／unramified、Cartier／regular immersion 與固定 line bundle 的 relative ampleness。 |
 | VS2-1–VS2-10 | [Calculations on varieties](../../src/sup/varieties-schemes-2.typ) | Divisors、weighted Proj、pencils、singularities 與退化 conic family 的綜合案例。 |
 
-收錄次序與編號可從 repository root 核對：
-
-```sh
-rg '^#include ' books/alg-geo/src/sup/sup.typ
-rg 'number: "(CAT|SL|SC|AL|XL|LP|XP|MG|QC|SE|RV|PJ|CS|VS|AL2|DV|PJ2|PM|RM|BU|DF|LP2|VS2)-' books/alg-geo/src/sup/*.typ
-```
+收錄次序由 `sup.typ` 的 `#include` 決定。編號由各篇的 `#supplement-numbering` 與區塊次序決定，`key` 提供引用目標。核對指令見 [編輯補充教材](editing.md#核對編號與引用)。
 
 ## 閱讀與內容分工
 
@@ -53,7 +49,7 @@ rg 'number: "(CAT|SL|SC|AL|XL|LP|XP|MG|QC|SE|RV|PJ|CS|VS|AL2|DV|PJ2|PM|RM|BU|DF|
 | 共用內容 | 主要位置與分工 |
 | --- | --- |
 | 一般 sheaf operations 與純代數工具 | SC 維護 sheaf constructions；AL 維護 module algebra；AL2 維護 associated primes 與 regular sequences。 |
-| Affineness 的 unit-ideal criterion | XL-7 保存 II.2.17(b) 的證明；LP-13 引用它，LP-43 再套用 LP-13。 |
+| Affineness 的 unit-ideal criterion | XL-8 保存 II.2.17(b) 的證明；LP-13 引用它，LP-43 再套用 LP-13。 |
 | Affine closed-immersion dictionary | CS-1 維護 quotient dictionary；LP-30 處理 locality，MG、QC、PJ 引用它。 |
 | Projectivity 的 locality 與反例 | LP-50–LP-54；取得全域 embedding 的定理在 PM。 |
 | Dominance、dense-open restriction 與 Hartogs | LP-55–LP-60；RM 維護 rational-map constructions，DV 使用 meromorphic extension。 |
@@ -62,19 +58,29 @@ rg 'number: "(CAT|SL|SC|AL|XL|LP|XP|MG|QC|SE|RV|PJ|CS|VS|AL2|DV|PJ2|PM|RM|BU|DF|
 
 LP 的 ring-level base change 只需 tensor product，scheme-level base change 才需 II.3 的 fiber products。LP-26 的 integral source gluing 另用「integral iff affine and universally closed」，LP-23 再引用它。Flat 與 faithfully flat 案例也需要相應的 module criteria，不能將整篇 LP 都視為只有 II.2 的先備。
 
-## 編輯與引用慣例
+## SL、SC、XL 的內容結構
 
-- 每個 construction 或證明維護一個主要位置；正文已有結果改用引用，習題入口與補充教材維護雙向連結。
-- 文件使用中文；正式教材使用英文並沿用 [defs.typ](../../src/defs.typ) 的記號。證明編輯依 [ag-proof](../../../../.agents/skills/ag-proof/SKILL.md)。
-- 依數學主題組織段落；在結果旁標明來源、hypotheses、canonical maps 與約化步驟。不可只用題號或抽象同構取代適用條件。
-- Projective 沿用 Hartshorne 的有限 projective-space embedding 慣例；`P(E)=Proj Sym E` 採 invertible quotient 慣例；`V(E)=Spec Sym E` 的 sections 對應 `E^∨`。
-- II.6–II.8 的補充限用第二章、其先備與已建立的工具；範圍之外的專題見 [TODO](TODO.md)。
-- `Check!` 表示正文明確交由讀者證明的純代數或拓撲步驟；形式化缺口另記於 companion 與 [驗證狀態](verification-status.md)。
+[SL](../../src/sup/sheaf-locality.typ) 維護 germ equality、basis extension、morphism gluing、sheaf gluing 與 sheafification 的 local representatives。SC 使用這些結果處理局部代表與相等條件。
 
-區塊編號使用 `number: "RV-2"`，標題只放 `title: "Universal property"`。連結目標放在區塊之前：
+[SC](../../src/sup/sheaf-constructions.typ) 依下列順序收錄建構與性質。
 
-```typst
-#metadata(none) <sup-rv-2>
-```
+| 位置 | 內容 |
+| --- | --- |
+| SC-1 | Subpresheaves、subsheaves、quotients、kernels、images、cokernels、morphism criteria 與 exactness。 |
+| SC-2 | Limits、colimits、stalk comparisons 與 Noetherian space 上的 directed colimits。 |
+| SC-3–SC-7 | Direct image、inverse image、direct sums、Hom、tensor product、module pullback 與 power operations。 |
+| SC-8–SC-9 | Constant sheaves 與 skyscraper sheaves，分別置於獨立 proposition。 |
+| SC-10 | Finite locally free duality 與 projection formula。 |
+| SC-11–SC-15 | Infinite-limit、sections、ring epimorphism 與 pullback exactness 的反例。 |
 
-引用使用 `#book-link(<sup-rv-2>)[RV-2]`。獨立預覽缺少目標時只顯示文字，因此仍須核對每個目標存在且唯一。
+[XL](../../src/sup/scheme-locality.typ) 先收錄 open subschemes 與 global principal opens，再處理 morphisms into affine schemes。XL-4 單獨收錄 initial 與 terminal schemes。XL-5–XL-9 依序處理 morphism gluing、scheme gluing、target-cover isomorphism criterion、affineness criterion 與 injective affine ring maps。
+
+## 教材慣例
+
+文件使用中文，正式教材使用英文並沿用 [defs.typ](../../src/defs.typ) 的記號。每個建構或證明有一個主要位置，正文與習題入口以引用連結該位置。
+
+Projective 採 Hartshorne 的有限 projective-space embedding 慣例。`P(E)=Proj Sym E` 採 invertible quotient 慣例，`V(E)=Spec Sym E` 的 sections 對應 `E^∨`。
+
+II.6–II.8 的補充限用第二章、其先備與已建立的工具。範圍之外的專題見 [後續範圍](TODO.md)。
+
+`Check!` 表示正文交由讀者證明的純代數或拓撲步驟。形式化缺口記於 Lean companion 與 [形式驗證狀態](verification-status.md)。編輯規則與檢查步驟見 [編輯補充教材](editing.md)。

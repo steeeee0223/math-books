@@ -35,7 +35,7 @@ noncomputable def homEquiv (G : TopCat.Sheaf Ab Y)
   (adjunction f).homEquiv G F
 
 
-/- SC-6(a): the presheaf map [s] ↦ β(s)|_U extends uniquely through
+/- SC-3(a): the presheaf map [s] ↦ β(s)|_U extends uniquely through
 sheafification, and the reverse map sends s to α(s^f). Mathlib constructs
 inverse image by presheaf pullback and sheafification, with the same
 colimit and sheafification universal properties as Hartshorne's definition.
@@ -87,6 +87,6 @@ theorem right_triangle (F : TopCat.Sheaf Ab X) :
 
 end Exercise1_18
 
-/- The II.1.18 construction is now the proof of SC-6. The unit, counit,
+/- The II.1.18 construction is now the proof of SC-3. The unit, counit,
 Hom equivalence, transpose formulas, inverse laws, and triangle identities
 above verify the same maps. -/

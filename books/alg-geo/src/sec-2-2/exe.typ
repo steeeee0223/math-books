@@ -41,7 +41,7 @@ See #supplement-link(<sup-xp-9>)[XP-9].
   ops.hom(A, Gamma(X, shf.o_X), over: cat.ring)$.
 ] <exercise-2-4>
 
-See #supplement-link(<sup-xl-2>)[XL-2].
+See #supplement-link(<sup-xl-3>)[XL-3].
 
 // Hartshorne II.2, Exercise 2.5
 #exercise(title: "Exercise 2.5")[
@@ -98,7 +98,7 @@ See #supplement-link(<sup-xl-2>)[XL-2].
   are identified. Include the special case of the disjoint union.
 ] <exercise-2-12>
 
-See #supplement-link(<sup-xl-4>)[XL-4].
+See #supplement-link(<sup-xl-6>)[XL-6].
 
 // Hartshorne II.2, Exercise 2.13
 #exercise(title: "Exercise 2.13 (Quasi-compactness)")[
@@ -143,7 +143,7 @@ See #supplement-link(<sup-xl-4>)[XL-4].
   + Under this hypothesis, conclude $Gamma(X_f, shf.o) simeq Gamma(X, shf.o_X)_f$.
 ] <exercise-2-16>
 
-See #supplement-link(<sup-xl-6>)[XL-6].
+See #supplement-link(<sup-xl-2>)[XL-2].
 
 // Hartshorne II.2, Exercise 2.17
 #exercise(title: "Exercise 2.17 (A Criterion for Affineness)")[
@@ -153,7 +153,7 @@ See #supplement-link(<sup-xl-6>)[XL-6].
     the unit ideal and every $X_(f_i)$ is affine.
 ] <exercise-2-17>
 
-For (a), see #supplement-link(<sup-xl-5>)[XL-5]. For (b), see #supplement-link(<sup-xl-7>)[XL-7].
+For (a), see #supplement-link(<sup-xl-7>)[XL-7]. For (b), see #supplement-link(<sup-xl-8>)[XL-8].
 
 // Hartshorne II.2, Exercise 2.18
 #exercise(title: "Exercise 2.18")[

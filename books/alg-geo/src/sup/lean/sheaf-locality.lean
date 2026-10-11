@@ -6,6 +6,10 @@ import Mathlib.CategoryTheory.Sites.DenseSubsite.SheafEquiv
 import Mathlib.Geometry.RingedSpace.PresheafedSpace.Gluing
 
 /-!
+
+The statement layout now separates grouping text from its assertions and
+names the extension and gluing presheaves before their sheaf identifications.
+The compatible-family constructions and proof reductions are unchanged.
 SL-1–SL-5. SL-1 combines local equality with finite common neighborhoods.
 These interfaces retain the concrete-category hypotheses of
 mathlib's stalk results, rather than claiming arbitrary category-valued
@@ -16,6 +20,8 @@ The ring/module versions use the same operations on compatible families.
 SL-4 now contains the compatible-family proof formerly placed in the
 II.1.22 application. It is checked by ii-1-exercise-15-22.lean, whose final
 comment records the remaining fixed-base gluing interface gap.
+The reordered SL-1 proof uses stalkwise isomorphism detection directly;
+it no longer invokes the later morphism-gluing lemma SL-3.
 -/
 open CategoryTheory CategoryTheory.Limits TopologicalSpace
 noncomputable section
@@ -46,6 +52,10 @@ def sheafificationStalk := @TopCat.Presheaf.sheafifyStalkIso
 abbrev canonicalSheafificationStalk := @TopCat.Presheaf.stalkFunctor_map_unit_toSheafify_isIso
 
 abbrev homSheaf := @CategoryTheory.Presheaf.IsSheaf.hom
+
+/-- SL-1's local isomorphism conclusion uses this stalk criterion,
+without depending on any subsequent gluing proposition. -/
+abbrev stalkIsoCriterion := @TopCat.Presheaf.isIso_iff_stalkFunctor_map_iso
 
 section EqualityCriteria
 universe v u

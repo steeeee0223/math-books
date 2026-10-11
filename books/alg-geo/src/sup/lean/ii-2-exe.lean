@@ -53,7 +53,7 @@ noncomputable def hom_Spec_equiv {X : Scheme.{u}} :
     (X ⟶ Spec R) ≃ (R ⟶ Γ(X, ⊤)) :=
   (ΓSpec.adjunction.homEquiv X (op R)).symm.trans unopHomEquiv
 
-/- XL-2(a) holds for all locally ringed spaces. Mathlib's structure sheaf
+/- XL-3 holds for all locally ringed spaces. Mathlib's structure sheaf
 and local morphisms agree with Hartshorne's conventions; its spectrum
 sections are canonically identified with the ring. No affine cover of X
 is used. The following checks the full bijection and its canonical inverse,

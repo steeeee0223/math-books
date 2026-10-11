@@ -1,6 +1,6 @@
 # 補充教材的形式驗證狀態
 
-本檔依現行 [Lean companions](../../src/sup/lean/) 的宣告與缺口註記整理，核對日期為 2026-09-18。教材位置見 [總覽](README.md)，尚未納入的教材內容見 [TODO](TODO.md)。
+本檔依現行 [Lean companions](../../src/sup/lean/) 的宣告與缺口註記整理，SL、SC、XL 的對照更新於 2026-10-11，其餘項目沿用 2026-09-18 的整理。教材位置見 [總覽](README.md)，尚未納入的教材內容見 [TODO](TODO.md)。
 
 Companion 通過 Lean 只驗證檔案中實際陳述的定理。它不自動驗證整篇教材，也不補上未編碼的 sheaf comparison、scheme gluing 或終端代數斷言。以下是覆蓋索引，不是本次重新執行所有 Lean 檔案的結果。
 
@@ -9,10 +9,10 @@ Companion 通過 Lean 只驗證檔案中實際陳述的定理。它不自動驗�
 | Companion | 現有內容與尚待完成的比較 |
 | --- | --- |
 | [CAT](../../src/sup/lean/categorical-language.lean) | Universal properties、localization、filtered colimits 與 adjunction 的範疇接口；涵蓋範圍以各宣告的型別與假設為準。 |
-| [SL](../../src/sup/lean/sheaf-locality.lean) | Local equality、basis extension 與 compatible families；SL-4 另用 [II.1.15–1.22 companion](../../src/sup/lean/ii-1-exercise-15-22.lean)，其中仍有 fixed-base gluing 的接口缺口。 |
-| [SC](../../src/sup/lean/sheaf-constructions.lean) | Limits、stalks 與 module-sheaf adjunction；tensor 的 stalk formula、symmetric／exterior sheaf comparisons 尚未組成完整全域同構，反例的具體空間也未全部建構。 |
+| [SL](../../src/sup/lean/sheaf-locality.lean) | Germ equality、stalkwise isomorphism detection、basis extension 與 compatible families。SL-4 另用 [II.1.15–1.22 companion](../../src/sup/lean/ii-1-exercise-15-22.lean)，其中仍有 fixed-base gluing 的介面缺口。 |
+| [SC](../../src/sup/lean/sheaf-constructions.lean) | Limits、stalks、direct-image comparison、module-sheaf adjunction、local constant representatives 與反例的代數斷言。完整 sheaf comparisons 的缺口見下表。 |
 | [AL](../../src/sup/lean/module-algebra.lean) | Finiteness、localization、duality 與 power operations 的代數接口；graded decomposition／filtration 到 graded sheaf 的組裝尚未編碼。 |
-| [XL](../../src/sup/lean/scheme-locality.lean) | Scheme-morphism gluing 與 exact localization；XL-1、XL-2、XL-4–XL-7 另由 [II.2 companion](../../src/sup/lean/ii-2-exe.lean) 與 [LP](../../src/sup/lean/local-props.lean) 提供對應。 |
+| [XL](../../src/sup/lean/scheme-locality.lean) | XL-2 的 unit-locus 介面、XL-4 的 initial 與 terminal schemes、XL-5 的 morphism gluing，以及 XL-9 的 exact localization。XL-1–XL-3、XL-6–XL-8 另由 [II.2 companion](../../src/sup/lean/ii-2-exe.lean) 與 [LP](../../src/sup/lean/local-props.lean) 提供對應。 |
 | [LP 基礎](../../src/sup/lean/local-props.lean) | Ring locality、affine／stalk comparisons、target locality 與 base change；integral／finite source gluing、faithfully-flat gluing 與具體反例尚未完整形式化。來源與介面見 [LP 的 mathlib 對照](local-props-mathlib.md)，LP-50–LP-60 見下表。 |
 | [XP](../../src/sup/lean/scheme-properties.lean) | Generic points、dominance、idempotents、compactness 與 Noetherianity；normal scheme 的全域組裝與具體反例尚缺。Reduction 另見 II.2 companion。 |
 | [MG](../../src/sup/lean/morphisms.lean) | 實際 scheme fiber products、graphs、quasi-compact image kernel；完整反例 schemes 與 global reduced-morphism construction 尚未組裝。 |
@@ -24,6 +24,30 @@ Companion 通過 Lean 只驗證檔案中實際陳述的定理。它不自動驗�
 | [VS](../../src/sup/lean/varieties-schemes.lean) | Nullstellensatz、closed points、Proj charts 與 gluing uniqueness；尚未定義 classical variety category 與 Hartshorne 的 t functor，full faithfulness 尚未端到端形式化。 |
 
 SC、QC、SE 的部分結果另由 [II.1.1–1.12](../../src/sup/lean/ii-1-exercise-1-12.lean)、[II.1.18](../../src/sup/lean/ii-1-exercise-18.lean) 與 [II.5](../../src/sup/lean/ii-5-exe.lean) 的 exercise companions 提供。核對時須一起閱讀，不能只按同名檔案判斷覆蓋。
+
+## SC 的 sheaf comparison 缺口
+
+下表依 [SC companion 的缺口註記](../../src/sup/lean/sheaf-constructions.lean) 區分已檢查的約化與尚未組裝的 sheaf 命題。
+
+| 位置 | 已檢查的部分 | 尚缺的比較 |
+| --- | --- | --- |
+| SC-1 | Stalk exactness、kernel 與 cokernel exact sequences，以及兩點反例的 diagonal obstruction。 | Projective-line global sections 的計算、vanishing subsheaf 的 quotient，以及其 glued section 尚未組成完整反例。 |
+| SC-2 | Limit 與 colimit Hom universal properties、stalk colimits 與 finite limits；II.1.1–1.12 companion 提供 Noetherian opens 的 compactness 與 filtered-colimit inputs。 | Noetherian 情況的有限階段 gluing 與一般 ring、module sheaf 的全部比較仍未組裝。 |
+| SC-3 | Direct-image germ map、inducing-map stalk comparison、各 open 上 sections 的 left exactness，以及兩點反例中的非單射投影。 | 完整的離散兩點 sheaf 反例尚未建構。Stalk comparison 的介面以 inducing map 為假設，open embedding 滿足此假設。 |
+| SC-5 | Stalk exactness、finite limits，以及 Hom 反例的 prime-denominator obstruction。 | Local presentation 的 Hom sheaf 與 finite-power kernel 的識別，以及 generic-point Hom 反例的完整 sheaf 組裝。 |
+| SC-6–SC-7 | Tensor universal property、colimit preservation，以及 [AL](../../src/sup/lean/module-algebra.lean) 的 power operations。 | Varying scalar rings、sheafification 與 tensor stalk formula 尚未組成 module-sheaf isomorphism。Symmetric power、exterior power 與 pullback 的 sheaf comparisons 也有這項缺口。 |
+| SC-8 | Locally constant functions 在每點附近有 constant representative。 | Locally constant function model 與 categorical constant sheaf 的同構尚未組裝。 |
+| SC-9 | Skyscraper stalks，以及 preconnected space 上 locally constant functions 的 constancy。 | Skyscraper 與其支撐點 closure 上 constant sheaf 的 direct image 尚未組成 sheaf isomorphism。 |
+| SC-10 | II.5 companion 中的 double-dual、dual-tensor 與 finite-free projection maps。 | Trivializing cover 上的 maps 與全域 sheaf inverses 的 gluing 尚未組裝。 |
+| SC-11–SC-15 | Tail-coordinate obstruction、diagonal 非滿射、rational ring epimorphism 與 integer-to-rational map 非滿射，以及乘以二在 `ℤ` 上單射、在 `ZMod 2` 上為非單射零映射。 | Tail space 的 sheaf 反例、兩點 restriction map 的全域 scheme 組裝，以及 scalar extension 與 one-point sheaf pullback 的具體比較尚未完整編碼。 |
+
+## 2026-10-11 的檢查紀錄
+
+SL、SC、XL 的同名 Lean companions 均通過 `lake env lean`。主書通過 Typst 編譯，並完成編號、引用目標、篇內向後依賴與 `git diff --check` 的檢查。Typst 仍回報 Iosevka 與 Fira Mono 字型缺失警告。
+
+SC 的 proof 順序與分組已對齊現行 statements；statements 保持原樣。同名 companion 新增 limit、colimit 的 Hom universal properties、sections 的 left exactness，以及 SC-15 的乘以二反例。此次另檢查 II.1.1–1.12、II.5 與 AL companions。以上 sheaf comparison 缺口仍保留。
+
+這些結果只涵蓋上述檔案與檢查項目。其他 companions 的表列狀態不代表本日全部重新執行。
 
 ## II.6–II.8 與 LP 擴充
 
@@ -44,15 +68,8 @@ SC、QC、SE 的部分結果另由 [II.1.1–1.12](../../src/sup/lean/ii-1-exerc
 
 後續工作按各 companion 的缺口補足教材實際使用的約化；不能用無關的代數等式取代全域命題，也不能把 `Check!` 的讀者作業計為已完成的 Lean 證明。
 
-## 檢查方式
+## 檢查規則
 
-從 repository root 執行，將 `<name>` 換成受影響檔案的名稱：
+證明變更依 [ag-proof](../../../../.agents/skills/ag-proof/SKILL.md) 核對對應 companion。完整命題與部分約化分別記錄，`Check!` 的讀者作業不計為已完成的 Lean 證明。
 
-```sh
-typst compile books/alg-geo/src/main.typ /tmp/math-books-alg-geo.pdf
-typst compile --root books/alg-geo/src books/alg-geo/src/sup/<name>.typ /tmp/<name>.pdf
-lake env lean books/alg-geo/src/sup/lean/<name>.lean
-git diff --check
-```
-
-證明變更依 [ag-proof](../../../../.agents/skills/ag-proof/SKILL.md) 核對對應 companion；交叉引用另查 `book-link` 目標是否存在且唯一。記錄檢查結果時列明執行日期、檔案與仍缺的證明，不能將歷史 build、PDF 頁數或一次編譯成功當作目前驗證完成的依據。
+編譯、Lean 檢查與引用核對的操作步驟見 [編輯補充教材](editing.md#檢查變更)。檢查紀錄包含執行日期、檔案與尚缺的證明。

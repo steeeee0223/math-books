@@ -5,14 +5,14 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("RV")
 
 == RV — Relative Spec and vector bundles <sup-rv>
 
 This construction uses #book-link(<sup-xl>)[XL] for gluing,
 #book-link(<sup-qc>)[QC] for quasi-coherent modules, and
-#supplement-link(<sup-al-6>)[AL-6] and #supplement-link(<sup-sc-7>)[SC-7] for symmetric algebras.
+#supplement-link(<sup-al-6>)[AL-6] and #supplement-link(<sup-sc-6>)[SC-6] for symmetric algebras.
 
 #definition(key: "sup-rv-1", title: "Relative spectrum")[
   + Let $shf.a$ be a quasi-coherent $shf.o_Y$-algebra. The relative spectrum
@@ -253,7 +253,7 @@ This construction uses #book-link(<sup-xl>)[XL] for gluing,
     )]
 
   + *Apply double-dual evaluation.* Finite local freeness
-    makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-11:
+    makes evaluation $shf.e->shf.e^(or or)$ an isomorphism by SC-10:
     on each trivialization it is the usual finite free double-dual map.
     Applying the first assertion to $shf.e^or$ gives the final convention.
 ]

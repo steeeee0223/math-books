@@ -5,7 +5,7 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("AL")
 
 == AL — Algebraic tools for modules <sup-al>
@@ -128,7 +128,7 @@ algebra used by #book-link(<sup-sc>)[SC], #book-link(<sup-qc>)[QC],
     is an isomorphism.
 
   The sheaf versions of these duality isomorphisms, obtained on trivializing
-  covers, are proved in #supplement-link(<sup-sc-11>)[SC-11]. (Ex. II.5.1(a)~(b))
+  covers, are proved in #supplement-link(<sup-sc-10>)[SC-10]. (Ex. II.5.1(a)~(b))
 ]
 
 #proof[

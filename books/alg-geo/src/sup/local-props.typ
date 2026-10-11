@@ -4,7 +4,7 @@
 #import "../defs.typ": *
 #import "proof-layout.typ": proof
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("LP")
 
 == LP — A Locality Calculus for Morphisms <sup-lp>
@@ -17,9 +17,9 @@ The letters below abbreviate the restriction and gluing operations used in
 these arguments.
 
 *Reading route.* After #book-link(<text-ii-2>)[II.2], read
-#book-link(<sup-xl>)[XL-1\~XL-7] and then LP-1\~LP-15 for the locality framework.
+#book-link(<sup-xl>)[XL-1\~XL-8] and then LP-1\~LP-15 for the locality framework.
 The whole-inverse-image argument uses the affineness criterion of
-#supplement-link(<sup-xl-7>)[XL-7]. Ring-level BC is a tensor-product
+#supplement-link(<sup-xl-8>)[XL-8]. Ring-level BC is a tensor-product
 condition; the scheme-level BC conclusions require the fiber products of
 #book-link(<text-ii-3>)[II.3, Theorem 3.3]. Read the finite-type and finite
 cases alongside II.3. Revisit the diagonal and universal-closedness cases
@@ -356,7 +356,7 @@ scheme level.
     finitely many such neighborhoods covering $V$.  Their whole inverse images
     are affine by the preceding paragraph.  The pulled-back sections $a_k$
     generate the unit ideal and have those affine inverse images as their
-    nonvanishing loci, so #supplement-link(<sup-xl-7>)[XL-7] makes $f^(-1)(V)$ affine,
+    nonvanishing loci, so #supplement-link(<sup-xl-8>)[XL-8] makes $f^(-1)(V)$ affine,
     say $ops.spec B$.  The restricted coordinate maps are
     $A_(a_k)->B_(a_k)$ and have $cal(P)$; GT gives $cal(P)(A->B)$.  Thus the
     first condition holds.

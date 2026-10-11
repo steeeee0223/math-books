@@ -151,7 +151,7 @@ def splitFiltrationQuotient (R P Q : Type*) [Ring R] [AddCommGroup P]
     ((P × Q) ⧸ LinearMap.ker (LinearMap.fst R P Q)) ≃ₗ[R] P :=
   (LinearMap.fst R P Q).quotKerEquivOfSurjective (fun p ↦ ⟨(p,0), rfl⟩)
 
-/-- AL-12 and SC-16: the actual residue-field multiplication map is zero. -/
+/-- AL-12 and SC-15: the actual residue-field multiplication map is zero. -/
 theorem multiplication_two_mod_two (x : ZMod 2) : (2 : ZMod 2) * x = 0 := by
   rw [show (2 : ZMod 2) = 0 from ZMod.natCast_self 2, zero_mul]
 

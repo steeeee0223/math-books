@@ -4,7 +4,7 @@
 #import "proof-layout.typ": proof
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("CS")
 
 == CS — Closed subschemes and ideal sheaves <sup-cs>
@@ -156,10 +156,10 @@ and base-change stability are deduced in #supplement-link(<sup-lp-30>)[LP-30].
 
   + This is the application of II.5.9–II.5.10 to II.1.21(a)–(b); quotient
     sheaves and stalkwise surjectivity have the meaning of
-    #supplement-link(<sup-sc-4>)[SC-4].
+    #supplement-link(<sup-sc-1>)[SC-1].
 
   + Surjectivity on every open is not implied.
-    The two-point global-sections example is in #supplement-link(<sup-sc-14>)[SC-14].
+    The two-point global-sections example is in #supplement-link(<sup-sc-13>)[SC-13].
 ]
 
 #proof[
@@ -177,5 +177,5 @@ and base-change stability are deduced in #supplement-link(<sup-lp-30>)[LP-30].
 
   + *Identify the quotient sheaf.* CS-1 now identifies the quotient sheaf with $i_*shf.o_Y$ on every chart,
     and thus globally. This is an isomorphism of sheaves: its quotient map
-    is surjective on stalks, as explained in SC-4.
+    is surjective on stalks, as explained in SC-1.
 ]

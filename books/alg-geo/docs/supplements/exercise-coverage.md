@@ -17,27 +17,27 @@
 
 | 題號 | 狀態 | 位置與範圍 |
 | --- | --- | --- |
-| II.1.1 | 收錄 | SC-10：constant presheaf 的 sheafification。 |
-| II.1.2 | 收錄 | SC-2、SC-4：stalks、kernel／image、injectivity／surjectivity／exactness。 |
-| II.1.3 | 收錄 | SC-4 的 local lifting；SC-14 的 sections 非滿射例子。 |
-| II.1.4 | 收錄 | SL-5、SC-2／SC-4：sheafification 保留 monomorphisms、image subsheaf。 |
-| II.1.5 | 收錄 | SC-4 配合正文 II.1.1；只在 abelian groups／modules 使用 mono+epi 判準。 |
-| II.1.6 | 收錄 | SC-4：subsheaf quotient 與 short exact sequences。 |
-| II.1.7 | 收錄 | SC-4：first isomorphism theorem。 |
-| II.1.8 | 收錄 | SC-6：sections left exact；SC-14 提供非 right-exact 例子。 |
-| II.1.9 | 收錄 | SC-3：abelian-group finite biproduct。 |
-| II.1.10 | 收錄 | SC-1：sheaf colimit construction；CAT 只供 universal-property 語言。 |
-| II.1.11 | 收錄 | SC-9：Noetherian space 上 sections 與 directed colimits。 |
-| II.1.12 | 收錄 | SC-1：inverse limits；SC-13 補 stalk 不交換的反例。 |
+| II.1.1 | 收錄 | SC-8：constant presheaf 的 sheafification。 |
+| II.1.2 | 收錄 | SC-1：kernel、image、injectivity、surjectivity 與 exactness 的 stalk criteria。 |
+| II.1.3 | 收錄 | SC-1 的 local lifting；SC-13 的 sections 非滿射例子。 |
+| II.1.4 | 收錄 | SL-5 與 SC-1：sheafification 保留 monomorphisms，image sheaf 是 subsheaf。 |
+| II.1.5 | 收錄 | SC-1 配合正文 II.1.1；只在 abelian groups／modules 使用 mono+epi 判準。 |
+| II.1.6 | 收錄 | SC-1：subsheaf quotient 與 short exact sequences。 |
+| II.1.7 | 收錄 | SC-1：first isomorphism theorem。 |
+| II.1.8 | 收錄 | SC-3：sections left exact；SC-13 提供非 right-exact 例子。 |
+| II.1.9 | 收錄 | SC-4：abelian-group finite biproduct。 |
+| II.1.10 | 收錄 | SC-2：sheaf colimit construction；CAT 只供 universal-property 語言。 |
+| II.1.11 | 收錄 | SC-2：Noetherian space 上 sections 與 directed colimits。 |
+| II.1.12 | 收錄 | SC-2：inverse limits 與 stalk comparison；SC-11–SC-12 提供失敗反例。 |
 | II.1.13 | 後續 | Espace étalé；SL 的 sheafification 不等於已涵蓋此幾何模型。 |
 | II.1.14 | 收錄 | SE-1：section support 與 sheaf support 的差別。 |
 | II.1.15 | 收錄 | SC-5：sheaf Hom；SL-3 提供 morphism gluing。 |
 | II.1.16 | 後續 | (a)–(e) 的 flasque 理論，保留完整題群。 |
-| II.1.17 | 收錄 | SC-10：skyscraper、非閉點的 stalks、closure 上的 constant sheaf。 |
-| II.1.18 | 收錄 | SC-6：adjunction、unit／counit；CAT 只供語言。 |
+| II.1.17 | 收錄 | SC-9：skyscraper、非閉點的 stalks、closure 上的 constant sheaf。 |
+| II.1.18 | 收錄 | SC-3：adjunction、unit／counit；CAT 只供語言。 |
 | II.1.19 | 收錄 | SE-5–SE-6：(a)–(c) 的 extension by zero 與 open-closed exact sequence。 |
 | II.1.20 | 部分 | SE-3–SE-4 包含 (a)、(b) 的 left-exact sequence，SE-7 提供 affine support torsion；flasque 時的 surjectivity 留待後續。 |
-| II.1.21 | 部分 | (a)–(b) 由 CS-6 引用 ideal／quotient 結果，VS 提供語境識別；(c) 為 SC-14；(d)–(e) 的 rational functions／principal parts 留待後續。 |
+| II.1.21 | 部分 | (a)–(b) 由 CS-6 引用 ideal／quotient 結果，VS 提供語境識別；(c) 為 SC-13；(d)–(e) 的 rational functions／principal parts 留待後續。 |
 | II.1.22 | 收錄 | SL-4：gluing sheaves 及 compatible uniqueness。 |
 
 ## II.2 — Schemes
@@ -49,21 +49,21 @@
 | II.2.1 | 收錄 | XL-1：distinguished open 的 scheme identification；正文 localization 公式只引用。 |
 | II.2.2 | 收錄 | XL-1：open subschemes。 |
 | II.2.3 | 收錄／引用 | (a) 的 reduced criterion 引用正文；(b)–(c) 在 XP-9。 |
-| II.2.4 | 收錄 | XL-2：morphisms into Spec 與 global sections 的自然對應。 |
-| II.2.5 | 收錄 | XL-2：Spec Z 的描述與 terminal property；CAT-4 提供範疇語言。 |
-| II.2.6 | 收錄 | XL-2：empty scheme 與 initial property；CAT-4 提供範疇語言。 |
+| II.2.4 | 收錄 | XL-3：morphisms into Spec 與 global sections 的自然對應。 |
+| II.2.5 | 收錄 | XL-3：Spec Z 的描述與 terminal property；CAT-4 提供範疇語言。 |
+| II.2.6 | 收錄 | XL-3：empty scheme 與 initial property；CAT-4 提供範疇語言。 |
 | II.2.7 | 收錄 | MG-10：field-valued points；不需另開 residue-field 專題。 |
 | II.2.8 | 收錄 | [DF-1](../../src/sup/differentials-tangent-spaces.typ)：固定 k-rational point 的 dual-number morphisms、derivations 與 tangent vectors 的自然對應。 |
 | II.2.9 | 收錄 | XP-1：generic points。 |
 | II.2.10 | 後續 | Spec R[x] 的完整點集、拓撲與 residue-field 計算。 |
 | II.2.11 | 後續 | Finite-field polynomial spectrum 與 residue-field 計數。 |
-| II.2.12 | 收錄 | XL-4：gluing schemes、disjoint union。 |
+| II.2.12 | 收錄 | XL-6：gluing schemes、disjoint union。 |
 | II.2.13 | 收錄 | XP-10 及其 counterexamples。 |
 | II.2.14 | 收錄／引用 | (a)–(c) 在 PJ-1–PJ-4；(d) 在 VS-2 引用正文 Proj charts 與 II.2.6 建立識別。 |
 | II.2.15 | 收錄／引用 | VS-1／VS-3 為主要入口；(a)–(b) 引用 MG-10 的一般結果與 closed-point 判準，(c) 引用正文 II.2.6。 |
-| II.2.16 | 收錄 | XL-6：global principal opens、清分母與 qcqs 假設。 |
-| II.2.17 | 收錄／引用 | (a) 在 XL-5；(b) 在 XL-7 連到 local-props 的 affineness 工具。 |
-| II.2.18 | 收錄／引用 | (a) 為 XL principal-open 索引；(b) 在 XL-8、(c)–(d) 在 CS-1；dominance 的條件與反例在 XP-6。 |
+| II.2.16 | 收錄 | XL-2：global principal opens、清分母與 qcqs 假設。 |
+| II.2.17 | 收錄／引用 | (a) 在 XL-7；(b) 在 XL-8 連到 local-props 的 affineness 工具。 |
+| II.2.18 | 收錄／引用 | (a) 為 XL principal-open 索引；(b) 在 XL-9、(c)–(d) 在 CS-1；dominance 的條件與反例在 XP-6。 |
 | II.2.19 | 收錄 | XP-8：clopen／idempotent／product decomposition。 |
 | II.2.A | 引用 | 六個小題分別索引到正文 spectrum 性質、XL principal opens 與 XP；不複製命題。 |
 
@@ -122,9 +122,9 @@
 
 | 題號 | 狀態 | 位置與範圍 |
 | --- | --- | --- |
-| II.5.1 | 收錄 | (a)–(b)、(d) SC-11 的 duality 與 finite locally free projection formula；(c) SC-7 的 tensor–Hom adjunction。 |
+| II.5.1 | 收錄 | (a)–(b)、(d) SC-10 的 duality 與 finite locally free projection formula；(c) SC-6 的 tensor–Hom adjunction。 |
 | II.5.2 | 收錄 | QC-9：DVR 的兩點模型與 quasi-coherence 判準。 |
-| II.5.3 | 收錄 | QC-1 的 tilde–Γ adjunction；不與 SC-8 的 f^*–f_* 混同。 |
+| II.5.3 | 收錄 | QC-1 的 tilde–Γ adjunction；不與 SC-7 的 f^*–f_* 混同。 |
 | II.5.4 | 收錄 | QC-7：local presentation。 |
 | II.5.5 | 收錄／引用 | (a) QC-13；(b) finite-map 判準；(c) QC-5／QC-6 的 finite pushforward 應用。 |
 | II.5.6 | 收錄 | (a)–(c) SE-1／SE-2；(d)–(e) SE-7，明列 support subsheaf 的 QCoh／Coh 保留性。 |
@@ -137,7 +137,7 @@
 | II.5.13 | 收錄 | PJ-9：Veronese 與 twisting comparison。 |
 | II.5.14 | 收錄 | PJ-12：projective normality；connected normal→integral 使用 XP 及其 Noetherian／非空條件。 |
 | II.5.15 | 收錄 | SE-8–SE-9：coherent extension／approximation。 |
-| II.5.16 | 收錄 | AL-6–AL-9：代數 operations、rank／pairing／filtrations；SC-7–SC-8：sheafification 與 pullback。 |
+| II.5.16 | 收錄 | AL-6–AL-9：代數 operations、rank／pairing／filtrations；SC-6–SC-7：tensor、symmetric power、exterior power 的 sheafification 與 pullback。 |
 | II.5.17 | 收錄／引用 | (a) 引用 LP；(b)–(d) RV-1–RV-4。 |
 | II.5.18 | 收錄 | RV-6–RV-8，保留 V(E) 的 dual convention。 |
 | II.5.3* | 收錄 | PJ-6 的 graded adjunction，以正文 degree-one generation 假設為範圍。 |

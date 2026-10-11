@@ -5,7 +5,7 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("PJ")
 
 == PJ — Proj and graded modules <sup-pj>
@@ -487,7 +487,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
   + On $sch.p^1_k$, the ideal
     sequence of two distinct points gives in degree zero the diagonal map
     $k->k times k$. Hence $Gamma_*$ does not in general preserve the
-    surjectivity of short exact sequences; compare #supplement-link(<sup-sc-14>)[SC-14].
+    surjectivity of short exact sequences; compare #supplement-link(<sup-sc-13>)[SC-13].
 ]
 
 #proof[

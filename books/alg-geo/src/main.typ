@@ -21,7 +21,7 @@
 )
 
 #set list(indent: 1em)
-#set enum(numbering: "(a)", indent: 1em)
+#set enum(numbering: "(a)(i)", spacing: 0.7em)
 
 = Variaties
 

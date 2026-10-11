@@ -19,7 +19,7 @@
     simeq tensor(f_*shf.f, shf.e, over: shf.o_Y)$.
 ] <exercise-5-1>
 
-For (a), (b), and (d), see #supplement-link(<sup-sc-11>)[SC-11]. For (c), see #supplement-link(<sup-sc-7>)[SC-7].
+For (a), (b), and (d), see #supplement-link(<sup-sc-10>)[SC-10]. For (c), see #supplement-link(<sup-sc-6>)[SC-6].
 
 // Hartshorne II.5, Exercise 5.2
 #exercise(title: "Exercise 5.2")[

@@ -5,7 +5,7 @@
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 #show: show-theorion
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
 #supplement-numbering("QC")
 
 == QC — Quasi-coherent and coherent operations <sup-qc>
@@ -134,7 +134,7 @@ stalks do not show that a specified morphism is an isomorphism.
   $shf.g$, the canonical map
   $f^*shf.hom (shf.e,shf.g)->shf.hom (f^*shf.e,f^*shf.g)$ is an
   isomorphism. It is induced by pulling back evaluation. Use the finite
-  locally free duality of #supplement-link(<sup-sc-11>)[SC-11];
+  locally free duality of #supplement-link(<sup-sc-10>)[SC-10];
   finite presentation alone does not suffice
   for arbitrary base change.
 ]
@@ -220,7 +220,7 @@ stalks do not show that a specified morphism is an isomorphism.
     (Ex. II.5.5(c))
 
   The projection formula has its more general ringed-space form in
-  #supplement-link(<sup-sc-11>)[SC-11].
+  #supplement-link(<sup-sc-10>)[SC-10].
 ]
 
 #proof[

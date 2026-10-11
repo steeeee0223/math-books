@@ -26,7 +26,7 @@ derivation of source gluing for integral and finite maps, and the
 faithful-flat gluing arguments remain mathematical arguments in the textbook;
 their supporting positive equivalences are checked below.
 
-The shared proof locations are now XL-7 / II.2.17(b) for the global
+The shared proof locations are now XL-8 / II.2.17(b) for the global
 principal-open affineness criterion and CS-1 for the affine closed-immersion
 dictionary. The declarations below check those inputs, the trivial-property
 specialization in LP-43, and the surjectivity specialization in LP-30.
@@ -61,7 +61,7 @@ theorem surjective_iff_compatible_quotient_iso {R S : Type u}
 section AbstractLocality
 
 /-- LP-13's whole-inverse-image TFAE uses exactly the global principal-open
-criterion proved in XL-7, including the empty scheme and the empty generating
+criterion proved in XL-8, including the empty scheme and the empty generating
 set. -/
 theorem affine_of_global_principal_cover {X : Scheme.{u}}
     (s : Set Γ(X, ⊤)) (hs : Ideal.span s = ⊤)

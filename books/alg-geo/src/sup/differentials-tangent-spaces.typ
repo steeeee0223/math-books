@@ -5,7 +5,9 @@
 #import "proof-layout.typ": proof
 #import "@preview/fletcher:0.5.8": diagram, edge, node
 
-#import "environments.typ": supplement-numbering, supplement-exercise, theorem, lemma, corollary, definition, proposition, example, remark
+#import "environments.typ": (
+  corollary, definition, example, lemma, proposition, remark, supplement-exercise, supplement-numbering, theorem,
+)
 #supplement-numbering("DF")
 
 == DF — Differentials and Tangent Geometry <sup-df>
@@ -55,7 +57,10 @@ the reader; the geometric reductions explain exactly where they are used.
   bijections are left to the reader to verify. They commute with localization,
   so changing $U$ leaves the constructed morphism unchanged; equivalently,
   the constructions agree on an affine refinement of two neighborhoods.
-  #align(center)[#diagram(cell-size: 23mm, $shf.o_(X,x) edge("r", d, ->) edge("dr", D, ->) & Omega_(shf.o_(X,x)\/k) edge("d", ->, stroke: #(dash: "dashed")) \ & k$)]
+  #align(center)[#diagram(
+    cell-size: 23mm,
+    $shf.o_(X,x) edge("r", d, ->) edge("dr", D, ->) & Omega_(shf.o_(X,x)\/k) edge("d", ->, stroke: #(dash: "dashed")) \ & k$,
+  )]
 ]
 
 #proposition(key: "sup-df-2", title: "The Jacobian presentation")[
@@ -99,10 +104,13 @@ the reader; the geometric reductions explain exactly where they are used.
   $a+idl.m_x^2 mapsto d a times.o 1$.
   Thus this sequence concerns the actual stalk and not the differentials of
   an arbitrarily chosen rational point.
-  #align(center)[#diagram(cell-size: 27mm, $
-    R edge("r", d, ->) edge("d", ->) & Omega_(R\/k) edge("d", ->) \
-    K edge("r", d, ->) & Omega_(K\/k)
-  $)]
+  #align(center)[#diagram(
+    cell-size: 27mm,
+    $
+      R edge("r", d, ->) edge("d", ->) & Omega_(R\/k) edge("d", ->) \
+                    K edge("r", d, ->) & Omega_(K\/k)
+    $,
+  )]
 
   In the closed separable case, $K\/k$ is finite separable. Use the following
   precise algebraic fact: for a local $k$-algebra $R$ with finite separable
@@ -132,10 +140,13 @@ the reader; the geometric reductions explain exactly where they are used.
   It is the isomorphism of II.8.2A, and DF-2 checks it directly on any finite
   presentation. Principal refinements localize this same map; the formula on
   universal differentials therefore agrees on all overlaps and glues.
-  #align(center)[#diagram(cell-size: 30mm, $
-    B edge("r", d, ->) edge("d", ->) & Omega_(B\/A) edge("d", ->) \
-    B' edge("r", d, ->) & Omega_(B'\/A')
-  $)]
+  #align(center)[#diagram(
+    cell-size: 30mm,
+    $
+      B edge("r", d, ->) edge("d", ->) & Omega_(B\/A) edge("d", ->) \
+                   B' edge("r", d, ->) & Omega_(B'\/A')
+    $,
+  )]
   Taking $Y'=ops.spec kappa(y)$ proves the fiber statement. The same argument
   applies to extension of the ground field.
 ]
@@ -309,7 +320,7 @@ the reader; the geometric reductions explain exactly where they are used.
   sequence of finite free modules gives a split exact sequence in the
   reverse order (Check!). These local duals are restrictions of the
   global sheaf-Hom maps, so exactness holds on the cover and hence on $X$
-  by SC-4. The middle dual is $i^*shf.t_Y$ by QC-4, since
+  by SC-1. The middle dual is $i^*shf.t_Y$ by QC-4, since
   $Omega_(Y/k)$ is finite locally free. The other duals are $shf.t_X$
   and the normal sheaf by definition. The maps agree on overlaps because
   they are the duals of the same canonical maps, irrespective of the
