@@ -54,3 +54,16 @@ typst init @preview/ilm:1.4.1 <DIR>
   }
 }
 ```
+
+## alg-geo Typst packages
+
+alg-geo 使用兩個 repo 內的 [Typst packages](packages/README.md)：
+`@steee-book/blocks` 提供 block／box 與補充教材編號，
+`@steee-book/symbols` 提供數學符號。不需發布或全域安裝。
+書籍 build/dev scripts 已設定 package 搜尋路徑。
+
+從 repo 根目錄編譯：
+
+```sh
+typst compile --package-path packages books/alg-geo/src/main.typ books/alg-geo/dist/alg-geo.pdf
+```

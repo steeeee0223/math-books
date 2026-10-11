@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("VS2")
 
 == VS2 — Calculations on varieties <sup-vs2>
@@ -131,7 +129,7 @@ exercises are left to the reader.
   and equals its strict transform. This computes both transforms from
   their equations, using BU's definition by closure away from the center.
 ]
-#exercise(title: "Variation on VS2-5")[
+#exercise(numbered: false, title: "Variation on VS2-5")[
   Compute the strict transform of a degree-$d$ curve with multiplicity
   $r$ at $p$ by removing the factor $x^r$ on this chart. Determine its
   intersection with the exceptional curve from its lowest-degree form.
@@ -281,7 +279,7 @@ exercises are left to the reader.
   been tested on their respective rings and differential modules.
 ]
 
-#exercise(title: "Three further calculations")[
+#exercise(numbered: false, title: "Three further calculations")[
   + Resolve the three coordinate base points of the Cremona involution;
     use BU's charts to determine the images of the coordinate lines.
   + Revisit the degree-two point on $sch.p^1_(bb(R))$ under a field

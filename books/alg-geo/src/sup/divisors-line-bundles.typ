@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("DV")
 
 == DV — Divisors and line bundles <sup-dv>
@@ -507,7 +505,7 @@ points without their lengths gives the wrong degree.
   (Ex. II.6.1, II.6.5(c), projective surface cases)
 ]
 
-#exercise(title: "Exercises: rebuild the dictionary")[
+#exercise(numbered: false, title: "Exercises: rebuild the dictionary")[
   + On the two charts of $sch.p^1$, glue frames by $e_0=t^(-d)e_infinity$.
     Choose a rational section, recover its Cartier equations, and compute
     what changes when the section is multiplied by $t-1$.

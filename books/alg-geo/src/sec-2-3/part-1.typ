@@ -1,7 +1,7 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#show: show-theorion
-#import "../defs.typ": *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
+
+#show: show-blocks
 
 // Hartshorne II.3, Definition D1
 #definition(number: none, title: "Connected and Irreducible Schemes")[

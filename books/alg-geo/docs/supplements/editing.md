@@ -36,7 +36,7 @@
 
 ## 核對 Typst 記號
 
-1. 沿用 [defs.typ](../../src/defs.typ) 匯入的記號。新增記號前，依 ag-proof 提出用途與寫法。
+1. 沿用 [symbols package](../../../../packages/steee-book/symbols/0.1.0/lib.typ) 匯入的記號。新增記號前，依 ag-proof 提出用途與寫法。
 2. 在 formal statements 中，以文字表達量詞，不使用 `forall`、`exists` 或 `exists.not`。
 3. 用文字表達「if and only if」，或在 display math 中使用對齊的 `arrow.l.r.double`。不要使用 `arrow.l.r`。
 4. 若要印出 quotient slash，使用 `\/`。保留 `/` 給分數。
@@ -88,8 +88,8 @@ rg '^#supplement-numbering|^#(definition|lemma|proposition|theorem|corollary|exa
 從 repository root 執行以下指令，將 `<name>` 換成受影響的檔名：
 
 ```sh
-typst compile --root . books/alg-geo/src/main.typ /tmp/math-books-alg-geo.pdf
-typst compile --root . books/alg-geo/src/sup/<name>.typ /tmp/<name>.pdf
+typst compile --root . --package-path packages books/alg-geo/src/main.typ /tmp/math-books-alg-geo.pdf
+typst compile --root . --package-path packages books/alg-geo/src/sup/<name>.typ /tmp/<name>.pdf
 lake env lean books/alg-geo/src/sup/lean/<name>.lean
 git diff --check
 ```

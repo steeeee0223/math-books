@@ -1,11 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#import "@preview/fletcher:0.5.8": diagram, edge, node
-#show: show-theorion
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("PJ2")
 
 == PJ2 — Relative Proj and projectivization <sup-pj2>
@@ -279,7 +277,7 @@ exercises: their proofs are left to the reader.
   underlying Proj admits a projective embedding.
 ]
 
-#exercise(title: "Exercises on relative Proj")[
+#exercise(numbered: false, title: "Exercises on relative Proj")[
   + Over $k[t]$, give necessary and sufficient equations on an invertible
     quotient with coordinates $(a,b,c)$ for it to define a section of
     $ops.proj k[t][u,v,w]/(u w-t v^2)$. Compute the special fiber.

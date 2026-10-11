@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("AL2")
 
 == AL2 — Associated points and regular sequences <sup-al2>
@@ -336,7 +334,7 @@ not one of the hypotheses of this ring statement.
   over an arbitrary imperfect field.
 ]
 
-#exercise(title: "Exercises: equations and hidden hypotheses")[
+#exercise(numbered: false, title: "Exercises: equations and hidden hypotheses")[
   + In AL2-4 determine the elements that become units in $Q(A)$ and in
     $A_(u)$, and exhibit the difference.
   + Verify every map and kernel in the two-variable Koszul complex of

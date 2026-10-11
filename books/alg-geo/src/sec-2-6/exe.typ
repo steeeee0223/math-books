@@ -1,5 +1,5 @@
-#import "@preview/theorion:0.6.0": *
-#import "../defs.typ": *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
 === Exercises
 

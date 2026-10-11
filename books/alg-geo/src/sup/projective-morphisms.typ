@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("PM")
 
 == PM — Projective morphisms and positivity <sup-pm>
@@ -290,7 +288,7 @@ extension and generation results of II.5–II.7.
   no information from which to recover the exceptional divisor.
 ]
 
-#exercise(title: "Exercises on positivity")[
+#exercise(numbered: false, title: "Exercises on positivity")[
   + In PM-7, write the equations relating adjacent coordinates in the
     two blocks for $n=1,m=1$. Identify the resulting cubic scroll.
   + Show directly that the finite affine construction in PM-5 excludes

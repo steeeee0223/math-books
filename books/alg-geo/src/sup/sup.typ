@@ -1,5 +1,6 @@
-#import "../defs.typ": book-link
-#import "@preview/cetz:0.3.4"
+#import "@preview/cetz:0.3.4" as cetz: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
 #set enum(numbering: "(a)(i)", spacing: 0.7em)
 
@@ -91,7 +92,7 @@ algebra and topology are assumed.
     }
     let ports = ()
     cetz.canvas(length: 1pt, {
-      import cetz.draw: bezier, circle, content, rect
+      import cetz.draw: *
       rect((0, 0), (width, -height), fill: rgb("#fafcfd"), stroke: none, radius: 8)
       // Shared endpoints keep forks and merges on the same visual axis.
       for (source, target) in edges {

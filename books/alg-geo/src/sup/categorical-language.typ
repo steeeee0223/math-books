@@ -1,11 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "@preview/fletcher:0.5.8": diagram, edge, node
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
+#show: show-blocks
+
 #supplement-numbering("CAT")
 
 == CAT — Categorical language <sup-cat>

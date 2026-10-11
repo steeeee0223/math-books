@@ -1,0 +1,7 @@
+[package]
+name = "symbols"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Shih-Wen Yu"]
+license = "ISC"
+description = "Math notation, operators, categories, and symbols."

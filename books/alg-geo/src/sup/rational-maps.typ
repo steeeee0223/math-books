@@ -1,11 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#import "@preview/fletcher:0.5.8": diagram, edge, node
-#show: show-theorion
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("RM")
 
 == RM — Rational maps of schemes <sup-rm>
@@ -294,7 +292,7 @@ normal local rings and the valuative criterion of II.4.
   hypothesis in RM-2 cannot simply be discarded.
 ]
 
-#exercise(title: "Working with representatives")[
+#exercise(numbered: false, title: "Working with representatives")[
   For the pencil and the Cremona involution, write the inverse images
   of the standard affine target charts, the coordinate ring maps, and
   the agreement maps on their intersections. For the cusp, locate the

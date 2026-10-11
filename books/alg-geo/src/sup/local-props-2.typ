@@ -1,11 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#show: show-theorion
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#import "@preview/fletcher:0.5.8": diagram, edge, node
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("LP2")
 
 == LP2 — Further Locality Criteria <sup-lp2>
@@ -478,7 +476,7 @@ they can be read independently of LP2-1–LP2-9. No argument below uses cohomolo
   with nor deduces a criterion concerning ampleness on a single fiber.
 ]
 
-#exercise(title: "LP2 — Checking hypotheses in applications")[
+#exercise(numbered: false, title: "LP2 — Checking hypotheses in applications")[
   + Give the square-zero correction for a one-equation standard étale
     algebra $A[t]\/ideal(F)$ on $D(F')$. Explain why the correction is unique.
   + Give a closed immersion with locally free conormal sheaf which is not

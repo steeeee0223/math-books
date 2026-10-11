@@ -1,11 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#import "@preview/fletcher:0.5.8": diagram, edge, node
-#show: show-theorion
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
+#show: show-blocks
+
 #supplement-numbering("RV")
 
 == RV — Relative Spec and vector bundles <sup-rv>

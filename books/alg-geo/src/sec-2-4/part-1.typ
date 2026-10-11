@@ -1,8 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
-#import cosmos.clouds: *
-#show: show-theorion
-#import "../defs.typ": *
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
+
+#show: show-blocks
 
 // Keep diagram labels compact and leave a little clearance at arrow tips.
 #let diagram = fletcher.diagram.with(

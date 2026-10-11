@@ -1,5 +1,5 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: render-fn
+#import "@preview/theorion:0.6.0" as theorion: *
+#import theorion.cosmos.clouds: *
 
 #let supplement-prefix = state("supplement-prefix", "")
 #let supplement-counter = richer-counter(

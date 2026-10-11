@@ -1,7 +1,7 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#show: show-theorion
-#import "../defs.typ": *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
+
+#show: show-blocks
 
 // Hartshorne II.2, Lemma 2.1
 #lemma(number: "2.1")[

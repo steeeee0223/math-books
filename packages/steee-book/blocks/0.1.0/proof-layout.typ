@@ -1,4 +1,4 @@
-#import "@preview/theorion:0.6.0": proof as theorion-proof
+#import "@preview/theorion:0.6.0" as theorion: *
 
 #let paragraph-text(it) = {
   if it.has("text") { it.text }
@@ -16,5 +16,5 @@
       block(sticky: true, it)
     } else { it }
   }
-  theorion-proof(..args)
+  theorion.proof(..args)
 }

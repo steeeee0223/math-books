@@ -1,13 +1,9 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#show: show-theorion
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#import "@preview/fletcher:0.5.8": diagram, edge, node
+#import "@preview/fletcher:0.5.8" as fletcher: *
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": (
-  corollary, definition, example, lemma, proposition, remark, supplement-exercise, supplement-numbering, theorem,
-)
+#show: show-blocks
+
 #supplement-numbering("DF")
 
 == DF — Differentials and Tangent Geometry <sup-df>
@@ -447,7 +443,7 @@ the reader; the geometric reductions explain exactly where they are used.
   #book-link(<sup-vs2>)[VS2].
 ]
 
-#supplement-exercise(key: "sup-df-16", title: "Calculations and hypothesis checks")[
+#exercise(key: "sup-df-16", title: "Calculations and hypothesis checks")[
   + Compute the tangent map of $t mapsto (t^2,t^3)$ at zero and away from
     zero. Explain why a zero tangent map at zero does not imply a constant
     morphism.

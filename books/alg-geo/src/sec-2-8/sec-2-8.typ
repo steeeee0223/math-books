@@ -1,4 +1,5 @@
-#import "../defs.typ": book-link, supplement-link
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
 == Differentials <text-ii-8>
 

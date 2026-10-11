@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": corollary, definition, example, lemma, proposition, remark, supplement-numbering, theorem
+#show: show-blocks
+
 #supplement-numbering("SL")
 
 == SL — Sheaf locality and gluing <sup-sl>

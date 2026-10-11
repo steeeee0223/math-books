@@ -1,10 +1,8 @@
-#import "@preview/theorion:0.6.0": *
-#import cosmos.clouds: *
-#import "../defs.typ": *
-#import "proof-layout.typ": proof
-#show: show-theorion
+#import "@steee-book/blocks:0.1.0": *
+#import "@steee-book/symbols:0.1.0": *
 
-#import "environments.typ": supplement-numbering, theorem, lemma, corollary, definition, proposition, example, remark
+#show: show-blocks
+
 #supplement-numbering("BU")
 
 == BU — Blowups and birational constructions <sup-bu>
@@ -396,7 +394,7 @@ to the reader to prove.
   the quotient onto $shf.o$. PJ2-7 gives its normal bundle $shf.o (-1)$.
 ]
 
-#exercise(title: "The quadratic Cremona map")[
+#exercise(numbered: false, title: "The quadratic Cremona map")[
   For $[x:y:z] mapsto [y z:x z:x y]$, show that the base ideal is
   the ideal of the three coordinate points: on $x!=0$ it is $(y,z)$,
   and cyclically on the other charts. Blow up these three disjoint

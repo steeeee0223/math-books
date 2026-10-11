@@ -88,7 +88,7 @@ Flatness 的 affine／stalk comparison 使用 `Flat.iff_flat_stalkMap`。Closed 
 從 repository root 執行：
 
 ```sh
-typst compile --root . books/alg-geo/src/main.typ /tmp/math-books-alg-geo.pdf
+typst compile --root . --package-path packages books/alg-geo/src/main.typ /tmp/math-books-alg-geo.pdf
 lake env lean books/alg-geo/src/sup/lean/local-props.lean
 lake env lean books/alg-geo/src/sup/lean/local-props-extensions.lean
 git diff --check

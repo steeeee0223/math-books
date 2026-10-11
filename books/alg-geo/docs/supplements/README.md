@@ -77,7 +77,7 @@ LP 的 ring-level base change 只需 tensor product，scheme-level base change �
 
 ## 教材慣例
 
-文件使用中文，正式教材使用英文並沿用 [defs.typ](../../src/defs.typ) 的記號。每個建構或證明有一個主要位置，正文與習題入口以引用連結該位置。
+文件使用中文，正式教材使用英文並沿用 [symbols package](../../../../packages/steee-book/symbols/0.1.0/lib.typ) 的記號。每個建構或證明有一個主要位置，正文與習題入口以引用連結該位置。
 
 Projective 採 Hartshorne 的有限 projective-space embedding 慣例。`P(E)=Proj Sym E` 採 invertible quotient 慣例，`V(E)=Spec Sym E` 的 sections 對應 `E^∨`。
 
