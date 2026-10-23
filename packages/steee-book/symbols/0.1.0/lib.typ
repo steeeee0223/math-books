@@ -38,6 +38,7 @@
 #let bigOPlus(val, bottom, top: none) = $attach(plus.o.big, tr: #top, br: #bottom) #val$
 // coproduct of `val` under index set from `bottom` to `top`
 #let coprod(val, bottom, top: none) = $attach(product.co, tr: #top, br: #bottom) #val$
+#let prod(val, t: none, b: none) = $attach(product, tr: #t, br: #b) #val$
 
 // indexed family of covering sets
 #let cov(val, bottom, top: none) = $attach({#val}, br: #bottom, tr: #top)$
