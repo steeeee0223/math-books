@@ -8,11 +8,14 @@
   else { "" }
 }
 
-// A list puts theorion's inline proof heading in its own paragraph. Keep
-// that heading with the first step; leave ordinary paragraph proofs alone.
+// Lists put proof and stage headings in separate paragraphs. Keep each
+// heading with the following step; leave ordinary proof paragraphs alone.
 #let proof(..args) = {
   show par: it => {
-    if paragraph-text(it.body).trim() == "Proof." {
+    let heading = paragraph-text(it.body).trim()
+    let proof-heading = heading.replace(regex("\\s+"), "") in ("Proof.", "Proof.Sketch.")
+    let stage-heading = heading.contains(regex("^\\([IVXLCDM]+\\)\\."))
+    if proof-heading or stage-heading {
       block(sticky: true, it)
     } else { it }
   }

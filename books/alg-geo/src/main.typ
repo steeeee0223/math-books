@@ -49,6 +49,8 @@
 = Cohomology
 
 #include "sec-3-1/sec-3-1.typ"
+#include "sec-3-2/sec-3-2.typ"
+#include "sec-3-3/sec-3-3.typ"
 
 // Supplement codes identify each article; nested headings use indentation
 // instead of the book's numeric prefixes in both the text and the outline.

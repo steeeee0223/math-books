@@ -259,7 +259,7 @@ the diagonal and separatedness criteria of
     if $f$ is quasi-compact and $g compose f$ is finite type, then $f$ is
     finite type, without assuming $g$ separated. Use the affine
     finite-generation criterion of #book-link(<sup-lp>)[the locality calculus].
-    The Noetherian conclusion is #supplement-link(<sup-xp-13>)[XP-13].
+    The Noetherian conclusion is #supplement-link(<sup-xp-16>)[XP-16].
 ]
 
 #proof[

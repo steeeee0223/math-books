@@ -85,12 +85,12 @@
 | II.3.10 | 收錄 | MG-3–MG-4：fiber topology 與 closed／generic fiber 計算，標明 characteristic。 |
 | II.3.11 | 部分 | (a)–(c) 由 CS-1–CS-4 統一引用 LP、正文與 XP-9；(d) MG-12 先處理 quasi-compact f，任意 f 的版本留待後續。 |
 | II.3.12 | 收錄 | PJ-5：homogeneous quotient 與 ideal truncation。 |
-| II.3.13 | 收錄／引用 | MG-9 的 finite-type 應用索引與 LP；最後的 Noetherian 結論在 XP-13。取消判準不得偷加 separated 假設。 |
+| II.3.13 | 收錄／引用 | MG-9 的 finite-type 應用索引與 LP；最後的 Noetherian 結論在 XP-16。取消判準不得偷加 separated 假設。 |
 | II.3.14 | 收錄 | XP-7：closed-point density 及 DVR 反例。 |
 | II.3.15 | 後續 | Geometric properties 與 field extension；不由一般 locality 自動推出。 |
 | II.3.16 | 收錄 | XP-10：Noetherian induction 工具。 |
-| II.3.17 | 部分 | XP-2–XP-4、XP-7 處理 (a)–(d)；(e) 的 t(X) 比較留待後續。 |
-| II.3.18 | 後續 | XP 只連結 (b) 的 generic-point 動機，不宣稱完成 constructibility 題群。 |
+| II.3.17 | 收錄／引用 | XP-1–XP-4、XP-7；generic points 與 specialization 放寬至 sober spaces，XP-1 包含 t(X) 比較。 |
+| II.3.18 | 收錄／引用 | XP-12 給出 spectral spaces 的 constructible-set 性質；Noetherian 情形由 XP-10 回復原題。 |
 | II.3.19 | 後續 | Chevalley；MG／XP 的工具不足以直接視為涵蓋。 |
 | II.3.20 | 後續 | Dimension formula 題群。 |
 | II.3.21 | 後續 | Dimension formula 的 DVR 反例。 |

@@ -160,6 +160,12 @@ See #supplement-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schem
     is noetherian, and $X$ is Zariski iff $X->t(X)$ is a homeomorphism.
 ]
 
+#proof[
+  - #supplement-link(<sup-xp-1>)[XP-1] and #supplement-link(<sup-xp-7>)[XP-7] give (a).
+  - #supplement-link(<sup-xp-3>)[XP-3] and #supplement-link(<sup-xp-4>)[XP-4] prove (b)–(d) more generally for sober spaces, without Noetherianity.
+  - XP-1(b)–(c) give (e).
+]
+
 // Hartshorne II.3, Exercise 3.18
 #exercise(title: "Exercise 3.18 (Constructible Sets)")[
   In a Zariski space, define constructible sets as the Boolean algebra
@@ -171,6 +177,14 @@ See #supplement-link(<sup-rm-5>)[RM-5] (integral separated finite-type $k$-schem
   + Show closed sets are exactly constructible sets stable under
     specialization, and similarly for opens and generization.
   + Continuous inverse images preserve constructible sets.
+]
+
+#proof[
+  #supplement-link(<sup-xp-12>)[XP-12] proves the assertions more generally
+  for spectral spaces. By #supplement-link(<sup-xp-10>)[XP-10], its
+  definition of constructibility agrees with the present one for Zariski
+  spaces, and its condition on inverse images of quasi-compact opens is
+  automatic for continuous maps between them.
 ]
 
 // Hartshorne II.3, Exercise 3.19

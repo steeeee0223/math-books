@@ -427,7 +427,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     $Gamma(sch.p^r_k, shf.o (n))->Gamma(X, shf.o_X(n))$ for every $n>=0$.
 
   + The nonempty connected normal formulation of II.5.14 is integral by
-    #supplement-link(<sup-xp-12>)[XP-12], since these schemes are Noetherian.
+    #supplement-link(<sup-xp-15>)[XP-15], since these schemes are Noetherian.
 ]
 
 #proof[
@@ -435,7 +435,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
   + *Identify the normal affine coordinate rings.* The homogeneous ideal of an integral closed subscheme is prime, so its
     coordinate ring $S$ is a domain. Discard any coordinate whose image is
     zero, and write $x_i$ for the remaining degree-one coordinates.
-    Put $A_i=(S_(x_i))_0$. Normality of $X$, and XP-12, say that each
+    Put $A_(i)=(S_(x_(i)))_(0)$. Normality of $X$, and XP-15, say that each
     $A_i$ is an integrally closed domain. Inside $K=ops.frac S$ one has
     $S_(x_i)=A_i[x_i,x_i^(-1)]$, with $x_i$ transcendental over $A_i$;
     uniqueness follows by comparing homogeneous degrees.
@@ -473,7 +473,7 @@ their properness remain in #book-link(<text-ii-4>)[II.4, Theorem 4.9].
     $X$ and surjectivity of every displayed restriction map give $S=S'$
     degree by degree, so $S$ is normal. Here the image of the restriction
     map is exactly $S_n$ by the definition of the homogeneous coordinate
-    ideal. This proves the equivalence. XP-12 supplies the last reduction
+    ideal. This proves the equivalence. XP-15 supplies the last reduction
     from connected normal Noetherian schemes to integral schemes.
 ]
 

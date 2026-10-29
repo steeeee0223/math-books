@@ -60,3 +60,50 @@
   By taking $shf.o_X$ to be the constant sheaf of rings $bb(Z)$, $(X, shf.o_X)$ is a ringed space and $cat.mod(X)=cat.ab(X)$.
 ]
 
+#definition(title: "Sheaf Cohomology")[
+  Let $X$ be a topological space. The _cohomology groups_ of an abelian
+  sheaf $shf.f$ on $X$ are
+  $
+    H^(q)(X, shf.f) := R^(q) Gamma(X, shf.f), quad q >= 0,
+  $
+  where the right derived functors are taken in $cat.ab(X)$.
+  For an open subset $U subset X$, write
+  $H^(q)(U, shf.f)=H^(q)(U, shf.f|_(U))$.
+]
+
+Recall the definition of flasque sheaves in _[II.1.16]_. We will use the results in the remaining section:
+
+#definition(title: "Flasque Sheaves")[
+  Let $(X, shf.o_X)$ be a ringed space. A sheaf $shf.f in cat.mod(shf.o_X)$ is _flasque_ if
+  the restriction map
+  $
+    Gamma(U, shf.f) to Gamma(V, shf.f)
+  $
+  is surjective for every inclusion of open subsets $V subset U$ of $X$.
+]
+
+// Hartshorne III.2.4.
+#lemma(number: "2.4", title: "Injective Sheaves Are Flasque")[
+  Let $X$ be a topological space. Every injective object of $cat.mod(shf.o_X)$ is flasque.
+]
+
+#remark()[
+  Let $(X, shf.o_X)$ be a ringed space.
+  - From the results of _(2.2)_ and _(1.Aa)_, every object $shf.f in cat.mod(shf.o_X)$ admits an injective resolution.
+  - By _(2.4)_, the result gives rise to a flasque resolution.
+  Thus, we can always pick a flasque resolution of an $shf.o_X$-module.
+]
+
+// Hartshorne III.2.5 and its acyclic-resolution consequence.
+#proposition(number: "2.5", title: "Flasque Resolutions Compute Cohomology")[
+  If $shf.f$ is a flasque abelian sheaf on a topological space $X$, then
+  $
+    H^(q)(U, shf.f)=0 quad (q>0)
+  $
+  for every open subset $U subset X$.
+  Consequently, if $0 to shf.f to sym.cplx(I)$ is a flasque resolution, then
+  $
+    H^(q)(X, shf.f) simeq sym.coho(Gamma(X, sym.cplx(I)), q)
+    quad (q>=0).
+  $
+]

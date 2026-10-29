@@ -14,10 +14,22 @@ The definitions of connected, irreducible, reduced, integral, and
 
 === Generic points and specialization <sup-xp-generic-points>
 
+A topological space is _sober_ if every nonempty irreducible closed subset
+has a unique generic point. A _Zariski space_ is a Noetherian sober space,
+as in Ex. II.3.17.
+
 #proposition(key: "sup-xp-1", title: "Existence and uniqueness")[
-  Every nonempty irreducible closed subset of a scheme has a unique generic
-  point, without a Noetherian hypothesis. On $ops.spec A$, the generic point
-  of $V(idl.p)$ is $idl.p$ for each prime $idl.p$ (II.2.9).
+  + Every scheme is sober, without a Noetherian hypothesis. On $ops.spec A$,
+    the generic point of $V(idl.p)$ is $idl.p$ for each prime $idl.p$.
+    (Ex. II.2.9)
+  + For any topological space $Y$, let $t(Y)$ be the set of its nonempty
+    irreducible closed subsets, with opens
+    $t(U)={C in t(Y) | C inter U != emptyset}$ for opens $U subset Y$.
+    Then $t(Y)$ is sober, and $U mapsto t(U)$ is an isomorphism of lattices
+    of open subsets. In particular, $Y$ is Noetherian if and only if
+    $t(Y)$ is Noetherian.
+  + The canonical map $Y to t(Y)$, $y mapsto overline({y})$, is a
+    homeomorphism if and only if $Y$ is sober.
 ]
 
 #proof[
@@ -36,25 +48,51 @@ The definitions of connected, irreducible, reduced, integral, and
     an open containing a specialization contains its generizations. Choose
     an affine neighborhood of one. In this affine chart, equal closures
     mean equal prime ideals, so the two points coincide.
+
+  + *Describe the opens and closed subsets of $t(Y)$.* Irreducibility gives
+    $t(U inter V)=t(U) inter t(V)$, and $t$ preserves arbitrary unions of
+    opens. The inverse image of $t(U)$ under the canonical map is $U$,
+    so this correspondence is injective as well as surjective. It
+    preserves ascending chains, proving the Noetherian assertion.
+    Every closed subset of $t(Y)$ therefore has the form
+    $F^(t)={C in t(Y) | C subset F}$ for a closed subset $F subset Y$.
+    Such a subset is nonempty and irreducible exactly when $F$ is:
+    use the same correspondence on unions of two closed subsets.
+    In this case its unique generic point is the point $F$ of $t(Y)$,
+    since the closure of a point $C$ is $C^(t)$.
+
+  + *Identify the homeomorphism criterion.* The canonical map is continuous
+    and induces the preceding isomorphism on opens. It is bijective
+    exactly when every nonempty irreducible closed subset of $Y$ is the
+    closure of a unique point. A bijection inducing this isomorphism on
+    opens is a homeomorphism.
 ]
 
 #definition(key: "sup-xp-2", title: "Specialization and components")[
   A point $y$ is a specialization of $x$ if $y in overline({x})$; $x$ is
   then a generization of $y$.
+  A subset is _stable under generization_ if it contains every generization
+  of each of its points; stability under specialization is defined similarly.
 ]
 
-#proposition(key: "sup-xp-3", title: "Specialization in an affine scheme")[
+#proposition(key: "sup-xp-3", title: "Specialization and closed points")[
   + For points $x,y in ops.spec A$, $y in overline({x})$ if and only if
-    $idl.p_x subset idl.p_y$.
+    $idl.p_(x) subset idl.p_(y)$.
 
-  + Schemes are $cal(T)_0$: distinct points have
-    distinct closures.
+  + Every sober space is $cal(T)_(0)$: distinct points have distinct
+    closures. Specialization defines a partial order by $y<=x$ when
+    $y in overline({x})$. Its minimal points are the closed points,
+    and its maximal points are the generic points of irreducible components.
+    The minimal nonempty closed subsets are single closed points.
 
   + Closed points of an affine scheme are the maximal
     ideals.
 
   + Its irreducible components correspond to minimal primes, with those
     primes as their generic points.
+
+  + In every topological space, closed subsets are stable under
+    specialization and open subsets are stable under generization.
 ]
 
 #proof[
@@ -63,43 +101,61 @@ The definitions of connected, irreducible, reduced, integral, and
     intersecting these sets gives $overline({idl.p})=V(idl.p)$.
     This proves the specialization criterion.
 
-  + *Separate distinct points by their closures.* If two points of a scheme
-    have equal closures, an affine neighborhood of either contains both,
-    and the criterion gives both inclusions of their primes. Thus the
-    scheme is $cal(T)_0$.
+  + *Order points by their closures.* In a sober space, equal closures
+    give equal points by uniqueness of generic points. Thus specialization
+    is antisymmetric. Its minimal points have singleton closure, and its
+    maximal points have closure maximal among irreducible closed subsets.
+    A minimal nonempty closed subset contains the closure of each of its
+    points; minimality and the $cal(T)_(0)$ property make it a singleton.
 
   + *Identify closed points.* The closure is a singleton exactly for a maximal prime.
 
   + *Identify irreducible components.* By XP-1, every irreducible closed set is $V(idl.p)$, and maximality of
     that closed set is exactly minimality of $idl.p$ among prime ideals.
+
+  + *Check stability.* A closed subset containing $x$ contains
+    $overline({x})$. Taking complements proves the assertion for opens.
 ]
 
-#lemma(key: "sup-xp-4", title: "Restriction to opens")[
-  + Every nonempty open of an irreducible scheme contains its generic point
-    and is irreducible with the same generic point.
-
-  + For any scheme $X$ and
-    open $U$, the components of $U$ are exactly the nonempty intersections
-    $C inter U$ for components $C$ of $X$. No finiteness of the component set
-    is assumed.
+#lemma(key: "sup-xp-4", title: "Subspaces and generic points")[
+  Let $Y$ be a sober space, and give its subsets their subspace topologies.
+  + If $T subset Y$ is stable under generization, then $T$ is sober.
+    Its irreducible components are exactly the nonempty intersections
+    $C inter T$ for components $C$ of $Y$.
+  + Every nonempty open of an irreducible sober space contains its generic
+    point and is irreducible with the same generic point.
+  + The dimension of a sober space is the supremum of the lengths of its
+    strict specialization chains. No Noetherian or finiteness hypothesis
+    on the set of components is required.
 ]
 
 #proof[
 
-  + *Restrict the generic point.* A nonempty open in an irreducible space is dense and irreducible.
-    Since its points specialize from the generic point, it contains that
-    point, whose closure in the open is the whole open.
+  + *Restrict generic points to $T$.* For a nonempty irreducible closed
+    subset $D subset T$, let $C=overline(D)$ in $Y$. This is irreducible,
+    so has a generic point $eta$. Each point of $D$ is a specialization
+    of $eta$; hence $eta in T$ by stability. The subspace closure formula
+    gives $overline({eta}) inter T=C inter T=D$. Uniqueness is inherited
+    from the $cal(T)_(0)$ property of $Y$.
 
-  + *Restrict an irreducible component.* Now let $C$ be a component meeting $U$. If an irreducible closed subset
-    of $U$ contains $C inter U$, its closure in $X$ is irreducible and
-    contains $C$, hence equals $C$. This proves maximality of $C inter U$.
+  + *Restrict components.* If a component $C$ meets $T$, its generic point
+    lies in $T$, so $C inter T$ is irreducible and dense in $C$.
+    An irreducible closed subset of $T$ containing it has irreducible
+    closure in $Y$ containing $C$, hence equal to $C$.
+    Conversely, close a component of $T$ in $Y$ and include it in a
+    component $C$ of $Y$; maximality in $T$ gives equality with $C inter T$.
+    Existence of a containing component follows from the maximality
+    principle: the closure of the union of a chain of irreducible subsets
+    is irreducible.
 
-  + *Recover every component of the open.* Conversely, close a component $D$ of $U$ in $X$ and include that
-    irreducible closed set in a maximal one $C$. Such a maximal set exists
-    by the maximality principle: the closure of the union of a chain of
-    irreducible subsets is irreducible. Then $D subset C inter U$, and
-    maximality in $U$ gives equality. This argument uses no finite list of
-    components.
+  + *Restrict to a nonempty open.* Opens are stable under generization by
+    XP-3. A nonempty open of an irreducible sober space contains its
+    generic point, whose closure in that open is the whole open.
+
+  + *Compare chains.* The correspondence
+    $y mapsto overline({y})$ identifies points with nonempty irreducible
+    closed subsets. Strict specialization corresponds to strict reverse
+    inclusion of these closures, preserving chain lengths.
 ]
 
 #proposition(key: "sup-xp-5", title: "Function fields")[
@@ -376,6 +432,8 @@ The definitions of connected, irreducible, reduced, integral, and
   + $X$ is quasi-separated.
   + $U inter V$ is quasi-compact for every pair of affine open subsets
     $U,V subset X$.
+  + The intersection of two quasi-compact open subsets of $X$ is
+    quasi-compact.
 
   Every separated scheme is quasi-separated. The converse fails:
   the doubled affine line has affine overlap and is not separated.
@@ -388,6 +446,11 @@ The definitions of connected, irreducible, reduced, integral, and
     the diagonal is $U inter V$. The target criterion for quasi-compactness
     in LP gives the equivalence.
 
+  + *Pass to quasi-compact opens.* Each quasi-compact open has a finite
+    affine open cover. Distributing an intersection over these covers
+    expresses it as a finite union of affine intersections. The converse
+    follows because affine opens are quasi-compact by XP-10.
+
   + *Deduce quasi-separatedness from separatedness.* A closed immersion is quasi-compact, so
     separatedness implies the condition.
 
@@ -398,7 +461,178 @@ The definitions of connected, irreducible, reduced, integral, and
     It is therefore not a closed immersion.
 ]
 
-#proposition(key: "sup-xp-12", title: "Normality")[
+=== Constructible sets and quasi-compact subspaces <sup-xp-constructible>
+
+A space is _spectral_ if it is sober and quasi-compact, and its
+quasi-compact open subsets form a basis closed under finite intersections.
+Every quasi-compact, quasi-separated scheme is spectral by XP-1, XP-10,
+and XP-11. Every Zariski space is spectral, since every open of a
+Noetherian space is quasi-compact.
+
+#proposition(key: "sup-xp-12", title: "Constructible sets")[
+  Let $Y$ be a spectral space. A subset is _constructible_ if it belongs
+  to the Boolean algebra generated by quasi-compact opens. The
+  _constructible topology_ is generated by these opens and their complements.
+  + Constructible subsets are exactly the finite disjoint unions of sets
+    $U minus V$, where $U,V subset Y$ are quasi-compact and open.
+    In a Noetherian space these are precisely the finite disjoint unions
+    of locally closed subsets, as in Ex. II.3.18.
+  + The constructible topology is compact and Hausdorff. Its clopen
+    subsets are exactly the constructible subsets. In particular, a
+    family of constructible subsets with the finite-intersection
+    property has nonempty intersection.
+  + A subset closed in the constructible topology is closed in $Y$ if
+    and only if it is stable under specialization. Consequently, a
+    constructible subset is closed if and only if it is stable under
+    specialization, and is open if and only if it is stable under
+    generization. A constructible open is quasi-compact.
+  + If $Y$ is irreducible with generic point $eta$, a constructible
+    subset $E$ is dense if and only if $eta in E$. In this case $E$
+    contains a nonempty open subset.
+  + A continuous map between spectral spaces preserves constructible
+    subsets under inverse image if inverse images of quasi-compact
+    opens are quasi-compact. For maps between Noetherian spaces this
+    extra condition is automatic.
+]
+
+#proof[
+  + *Put Boolean expressions in disjoint form.* Partition $Y$ according
+    to membership in the finitely many quasi-compact opens appearing
+    in an expression. Each part is $U minus V$: intersect the positive
+    conditions and take the union of the negative ones. Empty intersections
+    mean $Y$, which is quasi-compact. These parts are disjoint and locally
+    closed. If $Y$ is Noetherian, every locally closed set has this form.
+
+  + *Prove compactness of the constructible topology.* Extend a family
+    of constructible sets with the finite-intersection property to an
+    ultrafilter $cal(F)$ on their Boolean algebra. Put
+    $
+      C=Y minus union_(U in.not cal(F)) U,
+    $
+    where $U$ runs through quasi-compact opens. Quasi-compactness of $Y$
+    makes $C$ nonempty: otherwise a finite union of opens outside the
+    ultrafilter would equal $Y$. For a quasi-compact open $U$,
+    $
+      C inter U != emptyset quad arrow.l.r.double quad U in cal(F).
+    $
+    Indeed, one direction follows from the definition of $C$; for the
+    other, covering $U$ by the excluded opens would give a finite such
+    cover, contradicting $U in cal(F)$. The basis and the filter property
+    now make $C$ irreducible: two basis opens meeting $C$ have intersection
+    in $cal(F)$, hence meet $C$ simultaneously. Sobriety gives a generic
+    point $eta$ of $C$. It belongs to a quasi-compact open $U$ exactly
+    when $U in cal(F)$, and therefore has the same membership rule for
+    every Boolean expression. It lies in the original family.
+    This finite-intersection criterion proves compactness. Distinct
+    points are separated by a quasi-compact open and its complement,
+    so the topology is Hausdorff. Its basic opens are constructible
+    and clopen; compactness makes every clopen a finite union of these.
+
+  + *Recover closed subsets from specialization.* Let $E$ be closed in
+    the constructible topology and stable under specialization. For
+    $x in.not E$ and $y in E$, one has $x in.not overline({y})$. Choose
+    a quasi-compact open $U_(y)$ containing $x$ and avoiding $y$.
+    The complements of the $U_(y)$ cover $E$ in the constructible topology.
+    Compactness gives finitely many, whose corresponding intersection
+    is an open neighborhood of $x$ disjoint from $E$. Thus $E$ is closed
+    in $Y$. Conversely, an ordinary closed subset is an intersection of
+    complements of quasi-compact opens, and is stable under specialization
+    by XP-3. Apply this criterion to a constructible set and its complement.
+    A constructible set is compact in the finer topology and hence
+    quasi-compact in the original topology.
+
+  + *Test density at the generic point.* If a constructible set is dense,
+    its finite locally closed decomposition has a part with closure $Y$,
+    because $Y$ is irreducible. That part is a nonempty open of $Y$,
+    so contains $eta$ by XP-4. Conversely, a subset containing $eta$
+    is dense. The same decomposition then supplies a nonempty open.
+
+  + *Take inverse images.* Inverse image commutes with Boolean operations.
+    The condition on quasi-compact opens therefore suffices. XP-10 makes
+    it automatic when the source is Noetherian.
+]
+
+#proposition(key: "sup-xp-13", title: "Quasi-compact subspaces")[
+  Let $Y$ be a spectral space, and give all subsets their subspace topologies.
+  + A subset $T subset Y$ is quasi-compact and stable under generization
+    if and only if it is an intersection of quasi-compact opens of $Y$.
+    Such a subspace is spectral. Its quasi-compact opens are precisely
+    the sets $T inter V$ with $V subset Y$ quasi-compact and open.
+  + For a quasi-compact subset $E subset Y$, put
+    $
+      W={y in Y | exists e in E, e in overline({y})}.
+    $
+    Then $W$ is quasi-compact and stable under generization, and equals
+    the intersection of the quasi-compact open neighborhoods of $E$.
+  + If $T$ is as in (a), $U subset T$ is quasi-compact and open,
+    $Z=T minus U$, and $W$ is the set of generizations of $Z$ in $T$,
+    then $W$ and $W minus Z=W inter U$ are quasi-compact and stable
+    under generization in $Y$.
+  + Let $T=inter_(i in I) V_(i)$, where the $V_(i)$ are a nonempty
+    family of quasi-compact opens such that for any $i,j$ there is
+    $k$ with $V_(k) subset V_(i) inter V_(j)$. For constructible subsets
+    $A,B subset Y$, if $T inter A subset B$, then
+    $V_(i) inter A subset B$ for some $i$. This applies in particular
+    to finite containment and covering relations between quasi-compact opens.
+]
+
+#proof[
+  + *Express a stable subset as an intersection.* Suppose $T$ is
+    quasi-compact and stable under generization. For $x in.not T$,
+    $overline({x})$ is disjoint from $T$. Refine its open complement by
+    the quasi-compact open basis and take a finite subcover of $T$.
+    Its union is a quasi-compact open containing $T$ and avoiding $x$.
+    Thus $T$ is the intersection of these neighborhoods.
+    Conversely, such an intersection is closed in the compact
+    constructible topology by XP-12, hence quasi-compact in the original
+    topology, and is stable under generization by XP-3.
+
+  + *Identify the topology on $T$.* For a quasi-compact open $V subset Y$,
+    $T inter V$ is closed in the constructible topology, hence
+    quasi-compact. These sets form a basis. Every quasi-compact open of
+    $T$ is a finite union of them, hence is $T inter V$ for their union
+    $V$. Finite intersections retain this form, and XP-4 gives sobriety.
+    Thus $T$ is spectral. This also shows that its constructible topology
+    is the subspace topology induced by the constructible topology of $Y$.
+
+  + *Take generizations of $E$.* Every open containing $E$ contains $W$.
+    An open cover of $W$ therefore has a finite subcover as soon as
+    it covers $E$, so $W$ is quasi-compact. It is stable under
+    generization by transitivity. The separating-neighborhood argument
+    in (a) gives the claimed intersection formula.
+
+  + *Remove the closed complement of an open.* In the spectral space
+    $T$, the subset $Z$ is closed and quasi-compact. Part (b) applies
+    to its generizations $W$. Both $W$ and $U$ are closed in the
+    constructible topology of $T$, so $W inter U$ is quasi-compact.
+    It is stable under generization in $T$, hence in $Y$ because $T$
+    is stable there. The same applies to $W$.
+
+  + *Descend finite relations.* The closed subsets
+    $V_(i) inter (A minus B)$ of the compact constructible space have
+    empty intersection. Finitely many already have empty intersection
+    by XP-12. The condition on the family supplies a single $V_(i)$
+    contained in all those finitely many members, proving the assertion.
+]
+
+#corollary(key: "sup-xp-14", title: "Zero-dimensional spaces")[
+  Let $Y$ be a spectral space of dimension zero. Every quasi-compact
+  open is clopen, and every open covering has a finite refinement by
+  pairwise disjoint clopen subsets.
+]
+
+#proof[
+  By XP-4, dimension zero excludes strict specializations. Hence every
+  subset is stable under specialization, and XP-12 makes every
+  quasi-compact open closed. Refine a given cover by the quasi-compact
+  open basis and take a finite subcover $U_(1),dots.c,U_(r)$.
+  The sets $U_(i) minus union_(j<i) U_(j)$ are clopen, pairwise disjoint,
+  and cover $Y$; each lies in a member of the original cover.
+]
+
+=== Local algebra and intrinsic properties
+
+#proposition(key: "sup-xp-15", title: "Normality")[
   + A scheme $X$ is normal if and only if $shf.o_(X,x)$ is an integrally
     closed domain for every $x in X$.
 
@@ -439,7 +673,7 @@ The definitions of connected, irreducible, reduced, integral, and
     reducedness and irreducibility give integrality.
 ]
 
-#corollary(key: "sup-xp-13", title: "Finite type and Noetherianity")[
+#corollary(key: "sup-xp-16", title: "Finite type and Noetherianity")[
   A finite-type scheme over a Noetherian scheme is Noetherian.
   Local finite type supplies Noetherian affine charts by the Hilbert basis
   theorem; quasi-compactness supplies a finite affine cover. The distinction
@@ -468,7 +702,7 @@ The definitions of connected, irreducible, reduced, integral, and
   stroke: none,
   table.header([Property], [Open restriction], [Open-cover test], [Stalk / affine test]),
   [Reduced], [$checkmark$], [$checkmark$], [Reduced stalks / reduced rings],
-  [Normal], [$checkmark$], [$checkmark$], [Normal local rings / XP-12],
+  [Normal], [$checkmark$], [$checkmark$], [Normal local rings / XP-15],
   [Locally Noetherian], [$checkmark$], [$checkmark$], [Noetherian affine rings; Noetherian stalks alone do not suffice],
   [Quasi-compact], [Not in general], [Finite cover by quasi-compact opens], [No stalk test],
   [Irreducible],
@@ -484,7 +718,7 @@ The definitions of connected, irreducible, reduced, integral, and
 )
 
 #metadata(none) <sup-xp-examples>
-#example(key: "sup-xp-14", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-17", title: "Calculations and counterexamples")[
   In $ops.spec(k[x,y]\/(x y))$, the generic primes are $(x)$ and $(y)$,
   with closures the two axes. Only the component $V(y)$ meets $D(x)$;
   only $V(x)$ meets $D(y)$. Deleting the origin gives a disconnected open
@@ -495,7 +729,7 @@ The definitions of connected, irreducible, reduced, integral, and
   A prime containing $x y$ contains $x$ or $y$, giving precisely the two minimal primes. On $D(x)$ the relation forces $y=0$, and on $D(y)$ it forces $x=0$. The two axes are connected and meet at the origin, so their union is connected; deleting that point leaves two disjoint nonempty opens.
 ]
 
-#example(key: "sup-xp-15", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-18", title: "Calculations and counterexamples")[
   $ops.spec(k[epsilon]\/(epsilon^2))$ has one point, both closed and
   generic, but its local ring is not a field.
 ]
@@ -504,7 +738,7 @@ The definitions of connected, irreducible, reduced, integral, and
   Every prime contains $epsilon$, and the quotient by $(epsilon)$ is $k$. Thus there is just one prime. The element $epsilon$ is nonzero with square zero in the local ring, so this ring is not a field.
 ]
 
-#example(key: "sup-xp-16", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-19", title: "Calculations and counterexamples")[
   The closed points of $sch.a^1_k$ for algebraically closed $k$ are dense
   and omit its generic point. In contrast, a nonfield DVR has one closed
   point and one generic point, and its closed points are not dense.
@@ -514,7 +748,7 @@ The definitions of connected, irreducible, reduced, integral, and
   A nonzero polynomial in one variable has only finitely many roots, whereas an algebraically closed field is infinite. Thus no proper closed subset contains all $k$-points. In a nonfield DVR the only nonzero prime is its maximal ideal, whose singleton is closed and proper.
 ]
 
-#example(key: "sup-xp-17", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-20", title: "Calculations and counterexamples")[
   For $k[s]->k[t]$, $s mapsto t^2$, the generic map is $k(s)->k(t)$
   with the same substitution. See #supplement-link(<sup-mg-3>)[MG-3] for the fibers.
 ]
@@ -524,7 +758,7 @@ The definitions of connected, irreducible, reduced, integral, and
 ]
 
 #metadata(none) <sup-xp-disjoint-points>
-#example(key: "sup-xp-18", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-21", title: "Calculations and counterexamples")[
   An infinite disjoint union of copies of $ops.spec k$ is locally
   Noetherian but not quasi-compact. Two copies already have an integral
   affine cover without being connected or irreducible.
@@ -534,7 +768,7 @@ The definitions of connected, irreducible, reduced, integral, and
   The components themselves form an open cover with no finite subcover. Each component is a Noetherian affine open. Two components form a disjoint clopen decomposition, which prevents connectedness and irreducibility.
 ]
 
-#example(key: "sup-xp-19", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-22", title: "Calculations and counterexamples")[
   The square-zero ring $k plus.o V$, with $V$ infinite-dimensional and
   $V^2=0$, is not Noetherian, though its spectrum has one point.
 ]
@@ -543,7 +777,7 @@ The definitions of connected, irreducible, reduced, integral, and
   Every prime contains the square-zero ideal $V$ and the quotient is $k$, giving one prime. A generating set for $V$ as an ideal must span it over $k$, since $V$ acts on itself by zero. Thus $V$ is not finitely generated.
 ]
 
-#example(key: "sup-xp-20", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-23", title: "Calculations and counterexamples")[
   For $A=product_(n>=0) bb(F)_2$, every local ring is a field but $A$ is
   not Noetherian. Noetherian stalks do not imply local Noetherianity.
 ]
@@ -557,7 +791,7 @@ The definitions of connected, irreducible, reduced, integral, and
   + *Exclude local Noetherianity.* If the scheme were locally Noetherian, its affine quasi-compactness would give a finite Noetherian affine cover and force $A$ Noetherian, a contradiction.
 ]
 
-#example(key: "sup-xp-21", title: "Calculations and counterexamples")[
+#example(key: "sup-xp-24", title: "Calculations and counterexamples")[
   $ops.spec(k times k)$ is normal and is not integral.
 ]
 

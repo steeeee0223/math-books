@@ -22,7 +22,7 @@
 | AL-1–AL-15 | [Algebraic tools for modules](../../src/sup/module-algebra.typ) | Finite presentation、localization、tensor、duality、symmetric 與 exterior powers。 |
 | XL-1–XL-9 | [Scheme locality and gluing](../../src/sup/scheme-locality.typ) | Unit loci、morphisms into affine schemes、initial 與 terminal schemes、gluing 及 affineness criterion。 |
 | LP-1–LP-61 | [A Locality Calculus for Morphisms](../../src/sup/local-props.typ) | Ring-local conditions、affine communication、morphism locality、projectivity、dominance 與 dense opens。 |
-| XP-1–XP-21 | [Topology and intrinsic properties of schemes](../../src/sup/scheme-properties.typ) | Generic points、reduction、normality、Noetherianity 與反例。 |
+| XP-1–XP-24 | [Topology and intrinsic properties of schemes](../../src/sup/scheme-properties.typ) | Generic points、constructible sets、quasi-compact 子空間、reduction、normality、Noetherianity 與反例。 |
 | MG-1–MG-13 | [Morphisms, diagonals and graphs](../../src/sup/morphisms.typ) | Fiber products、graphs、finite maps 與 quasi-compact scheme-theoretic images。 |
 | QC-1–QC-14 | [Quasi-coherent and coherent operations](../../src/sup/quasi-coherent.typ) | Affine dictionary、Hom、pushforward 與有限性條件。 |
 | SE-1–SE-16 | [Support, extension and local freeness](../../src/sup/support-extension.typ) | Support、extension by zero、coherent extension、fiber rank 與 local freeness。 |
